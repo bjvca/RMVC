@@ -122,15 +122,40 @@ thanks{Development Strategy and Governance Division, International Food
 
 \end_inset
 
-Incentivizing quality in the dairy value chain? A pre-analysis plan
+Incentivizing quality in the dairy value chain: A pre-analysis plan
 \end_layout
 
 \begin_layout Section*
 Motivation
 \end_layout
 
+\begin_layout Standard
+Research design for a randomized control trial of scaling efforts under
+ the Quality-Based Milk Payment Scheme (QBMPS) that was piloted by DDA and
+ SNV last year in Uganda’s SW milkshed.
+\end_layout
+
 \begin_layout Section*
 Related Literature
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rao2021got"
+literal "false"
+
+\end_inset
+
+ explore the effect of collective incentives on group production among rural
+ Indian dairy cooperatives.
+ In a randomized evaluation, they find village-level cooperatives can solve
+ internal collective action problems to improve production quality.
+ However, some village elites decline payments when they cannot control
+ information disclosure.
+ Opting out reflects frictions in allocating surplus within a social network,
+ and suggests some transparency-based efforts to limit elite capture may
+ undermine policy goals.
 \end_layout
 
 \begin_layout Section*
@@ -142,6 +167,55 @@ Experimental design and power calculations
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Experimental-design-and"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We randomly allocate quality testing equipment to eligible milk collection
+ centers (MCCs), which agree to implement some kind of quality bonus to
+ suppliers.
+ In a cross-cutting design, at the farmer level, we will randomly allocate
+ training on quality parameters and linkages with production management
+ decisions, as well as distribute lactometers, which serve as partial quality
+ indicators.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename design.jpg
+	lyxscale 20
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Design
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -162,6 +236,16 @@ Specifications
 
 \begin_layout Section*
 Data collection and endpoints
+\end_layout
+
+\begin_layout Standard
+Outcomes of interest at MCC level: average milk quality levels (for different
+ quality parameters); milk purchase price and volume; milk sales channel
+ (to whom sold), price, volume and profits.
+ Outcomes of interest at farmer level: perceptions of control of output
+ quality parameters; willingness to experiment; changes in production investment
+s and management; milk quality levels (for different quality parameters);
+ milk sales channel (to whom sold), price, volume and profits.
 \end_layout
 
 \begin_layout Section*
@@ -205,8 +289,8 @@ mock report: After baseline data is collected, a pre-registered report will
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
-bibfiles "../../../malawi/RCT/malawi_RCT"
-options "../../../malawi/RCT/IFPRI_Style"
+bibfiles "rmvc"
+options "IFPRI_Style"
 
 \end_inset
 
