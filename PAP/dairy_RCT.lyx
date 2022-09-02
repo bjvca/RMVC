@@ -212,14 +212,7 @@ At the level of the dairy farmers, we implement and information intervention
 \end_layout
 
 \begin_layout Section*
-Experimental design and power calculations 
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Experimental-design-and"
-
-\end_inset
-
-
+Experimental design
 \end_layout
 
 \begin_layout Standard
@@ -230,6 +223,17 @@ We randomly allocate quality testing equipment to eligible milk collection
  training on quality parameters and linkages with production management
  decisions, as well as distribute lactometers, which serve as partial quality
  indicators.
+ The design is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Design"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -255,6 +259,13 @@ status open
 
 \begin_layout Plain Layout
 Design
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Design"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -269,6 +280,204 @@ Design
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 1: making quality visible at the MCC level increases quality
+ of aggregated milk supplied to processors.
+ 
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 2: making quality visible at the MCC level increases quality
+ of milk that farmers deliver to MCCs.
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 3: providing information on what the desired milk quality parameters
+ are, what affects this parameter and providing as simple technology to
+ approximately measure this parameter increases the quality at the farmer
+ level
+\end_layout
+
+\begin_layout Standard
+Additional research questions:
+\end_layout
+
+\begin_layout Itemize
+Does the MCC level intervention affects farmers that are already connected
+ to the milk collection center differently than farmers that are not already
+ connected to an MCC
+\end_layout
+
+\begin_layout Itemize
+Does the information treatment affect farmers that are connected to an MCC
+ 
+\end_layout
+
+\begin_layout Section*
+Power calculations
+\end_layout
+
+\begin_layout Standard
+We use simulation to determine sample size.
+ The primary outcome variable that we use in our statistical power calculations
+ is Solid Non-Fat (SNF) content, a quality parameter that was referred to
+ by processors as key in determining profitability.
+ 
+\end_layout
+
+\begin_layout Standard
+We start at the level of the milk collection center and assume a random
+ normal distribution of (aggregated) milk quality with an average of 8 and
+ standard deviation of 0.4 (which is slightly higher than the standard deviation
+ of 0.34 obtained from the data in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "neto2019utilization"
+literal "false"
+
+\end_inset
+
+).
+ From these N observations (with N the first key variable to be determined
+ by the power calculations) we then generate N times n observations.
+ These are the n dairy farmers that are connected to the N milk collection
+ centers.
+ the n values are generate again as random normal, but with the mean the
+ value that was drawn for the MCC the n farmers are connected to, and with
+ a slightly higher standard deviation (0.6 — since, as the milk is not aggregated
+ yet, extreme values are not yet averaged out).
+ This procedure gives us a total sample with N values at the MCC level and
+ N.n values at the farmer level and a natural clustering at the MCC level.
+\end_layout
+
+\begin_layout Standard
+We assume that the intervention at the level of the milk collection centers
+ leads to an increase of 0.25.
+ This seems reasonable in light of the fact that processors told us they
+ give a quality premium starting from SNF in excess of 8.5.
+ We thus assuming that the intervention prompts about half of the treated
+ MCCs to reach this threshold.
+ The effect size also corresponds to something between a medium and a large
+ effect according to Cohen's D.
+\end_layout
+
+\begin_layout Standard
+At the level of the farmers, we expect an effect size of .2.
+ This corresponds to .33 standard deviations which is somewhere between a
+ medium and a small effect according to Cohen's D.
+ Finally, at the level of the farmers, the individual level randomization
+ of the information treatment intervention allows us to estimate small effects.
+ For our power simulation, we assumed and effect size of 0.12, which corresponds
+ to a small effect according to Cohen's D.
+\end_layout
+
+\begin_layout Standard
+We calculate power for the joint test that the three hypotheses are true
+ at the 5 percent significance level.
+ To do so, we run two regressions.
+ One is at the MCC level and only includes an indicator variable for the
+ treatment (lactoscan).
+ A second regression is at the level of the dairy farmer and includes an
+ indicator variable that is true if the farmer lives in the catchment area
+ of an MCC that was treated (and zero if it resides in an area where the
+ MCC was not treated), as well as an indicator variable that is true if
+ the farmer received In the second (farmer level) regression, standard errors
+ are clustered at the MCC level.
+ We also include an interaction between the two treatment variables 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "muralidharan2019factorial"
+literal "false"
+
+\end_inset
+
+.
+ We run 500 simulations for each n*N combination.
+\end_layout
+
+\begin_layout Standard
+Results of the simulation are summarized in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Power-plane"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Instead of the usual power curves that plot power against sample size,
+ we obtain a power plane as we determine both the number of clusters (between
+ 90 and 120 MCCs) and the number of farmers per cluster (between 10 and
+ 40 farmers).
+ Power is measured on the z axis and is the proportion of cases (out of
+ the 500 simulations) in which all three coefficients were found significant
+ at p<0.05.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/power.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Power plane
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Power-plane"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The figure shows the trade-off between more clusters and more individuals
+ per cluster.
+ With about 105 MCCs and 40 farmers per cluster we find power in excess
+ of 0.80.
+ However, this leads to a sample of 4200 farmers.
+ At the other extreme, we find that 120 clusters of 10 farmers also hit
+ the .80 threshold.
+ In this case, we would only need 1200 farmers.
+ However, there are also cost implications.
+ For instance, considering only the technology cost at this point, a lactoscan
+ costs about 1500 dollar and a lactometer only 5 dollar.
+ Under this assumption, the cost of 105 MCCs and 40 farmers per MCC is 89250,
+ which is actually lower than the cost of treating 120 MCCs with 10 farmers
+ each (93000).
 \end_layout
 
 \begin_layout Section*
