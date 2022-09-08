@@ -130,31 +130,65 @@ Motivation
 \end_layout
 
 \begin_layout Standard
+Quality is important in supply chains.
+ On the one hand, working with quality inputs often reduces production costs
+ further down the value chain.
+ Quality preservation is also important for a food safety perspective.
+ In general, transformation of value chains often coincide with quality
+ upgrading.
+\end_layout
+
+\begin_layout Standard
 Over the past decade, the dairy sub-sector has developed rapidly in Uganda.
  Particularly in the areas around Mbarara, commonly referred to as the southwest
 ern milk shed, an influx of foreign direct investment has created the preconditi
-ons for a modern dairy value chain to emerge.
+ons for a modern dairy value chain to emerge 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
  The area now has an extensive network of milk cooling and collection centers
  that link smallholder farmers to a cluster of processors.
 \end_layout
 
 \begin_layout Standard
-Processors indicate that their main challenge is related to sourcing milk
- of sufficient quality.
+At the same time, it is surprising that there seems to be no market for
+ quality in the sub-sector.
+ For instance, using recently collected survey data, we find that of a sample
+ of 200 farmers that sold to milk collection centers, only 6 percent indicated
+ that they receive a quality premium.
+ From 114 milk collection centers that were included in the survey, we find
+ that about 18 percent (sometimes) pays a price premium to farmers.
+ At the same time, expert interviews with processors indicate that their
+ main challenge is related to sourcing milk of sufficient quality.
  In particular, they indicate that their profitability depends on butter
  fat content and solid non-fat content of the milk.
+ They also say that the would be willing to pay for it.
 \end_layout
 
 \begin_layout Standard
-When asked about what farmers need to do to increase quality, the mainly
- refer to practices that affect milk sanitary attributes.
+When asked about what farmers need to do to increase quality, farmers mainly
+ refer to practices that affect milk sanitation and safety.
+ Most training and extension activities in the area focuses on the importance
+ of using proper equipment (stainless steel milk churns as opposed to plastic
+ jerry cans) and simple practices such as washing hands and udders.
+ These technologies and practices do not affect the milk quality attributes
+ that processors demand.
+ To increase butter fat content and solid non-fat content, it is especially
+ feeding practices that matter.
 \end_layout
 
 \begin_layout Standard
-The above point to several problems within the value chain.
+The above points to several problems within the value chain.
  At a technological level, instruments necessary to make the desired quality
  attributed visible are lacking.
- Milk collection centers only engage in rudimentary testing.
+ Most milk collection centers only engage in rudimentary testing for adulteratio
+n (using a gravity based test with a device called a lactometer) and freshness
+ (using the alcohol test).
  Farmers do not have access to testing equipment.
  At the knowledge level, farmers do not seem to know what quality parameters
  are important further downstream the value chain.
@@ -162,9 +196,19 @@ The above point to several problems within the value chain.
 \end_layout
 
 \begin_layout Standard
-Research design for a randomized control trial of scaling efforts under
- the Quality-Based Milk Payment Scheme (QBMPS) that was piloted by DDA and
- SNV last year in Uganda’s SW milkshed.
+In this research, we will test various hypothesis using a randomized control
+ trial with interventions at the level of the milk collection centers and
+ the farmers.
+ At the level of the milk collection center, we work with DDA and SNV to
+ scale up their Quality-Based Milk Payment Scheme (QBMPS) that was piloted
+ by last year in Uganda’s SW milkshed.
+ It involves installing lactoscans at milk collection centers that allows
+ testing of individual milk deliveries for quality parameters desired by
+ processors.
+ We want to test what the impact of visualizing these quality attributes
+ at this level is on both farmers and milk collection centers.
+ We then use a split plot design to mix in a second intervention at the
+ level of the 
 \end_layout
 
 \begin_layout Section*
@@ -284,20 +328,32 @@ name "fig:Design"
 
 \begin_layout Itemize
 Hypothesis 1: making quality visible at the MCC level increases quality
- of aggregated milk supplied to processors.
+ of aggregated milk supplied to processors 
+\begin_inset Formula $\left(\beta_{H1}>0\right)$
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Itemize
 Hypothesis 2: making quality visible at the MCC level increases quality
- of milk that farmers deliver to MCCs.
+ of milk that farmers deliver 
+\begin_inset Formula $\left(\beta_{H2}>0\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
 Hypothesis 3: providing information on what the desired milk quality parameters
- are, what affects this parameter and providing as simple technology to
+ are, what affects this parameter, and providing as simple technology to
  approximately measure this parameter increases the quality at the farmer
- level
+ level 
+\begin_inset Formula $\left(\beta_{H3}>0\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -307,12 +363,88 @@ Additional research questions:
 \begin_layout Itemize
 Does the MCC level intervention affects farmers that are already connected
  to the milk collection center differently than farmers that are not already
- connected to an MCC
+ connected to an MCC 
+\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2}\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
 Does the information treatment affect farmers that are connected to an MCC
+ differently than farmers that are not connected to an MCC 
+\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Specifications
+\end_layout
+
+\begin_layout Standard
+We will estimate two equations using Ordinary Least Squares.
+ One equation is at level of the milk collection centers, the second equation
+ is at the level of the dairy farmers.
+\end_layout
+
+\begin_layout Standard
+Denote milk collection centers by m, running from 1 to M.
  
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ is a treatment indicator at the MCC level that is one if the MCC (in who's
+ catchment area the farmer resides) was allocated to the lactoscan treatment.
+ 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ is a treatment indicator at the farmer level that is one if the farmer
+ was allocated to the information treatment.
+ 
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ is an indicator variable at the farmer level that is one if the farmer
+ is connected to an MCC and zero otherwise.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{m}=\alpha+\beta_{H1}.T_{m}+\varepsilon_{m}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{m,f}=\alpha+\alpha{}_{C}C_{i}+\beta_{H2}.T_{m}+\beta_{H3}T_{i}+\gamma T_{i}.T_{m}+\beta_{H2C}.T_{m}.C_{i}+\beta_{H3C}T_{i}.C_{i}+\gamma_{C}T_{i}.T_{m}.C_{i}+\varepsilon_{m,f}\label{eq:two}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Standard errors in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ are clustered at the milk collection level.
 \end_layout
 
 \begin_layout Section*
@@ -322,55 +454,70 @@ Power calculations
 \begin_layout Standard
 We use simulation to determine sample size.
  The primary outcome variable that we use in our statistical power calculations
- is Solid Non-Fat (SNF) content, a quality parameter that was referred to
- by processors as key in determining profitability.
- 
+ is the price of milk.
 \end_layout
 
 \begin_layout Standard
-We start at the level of the milk collection center and assume a random
- normal distribution of (aggregated) milk quality with an average of 8 and
- standard deviation of 0.4 (which is slightly higher than the standard deviation
- of 0.34 obtained from the data in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "neto2019utilization"
-literal "false"
-
-\end_inset
-
-).
- From these N observations (with N the first key variable to be determined
- by the power calculations) we then generate N times n observations.
- These are the n dairy farmers that are connected to the N milk collection
- centers.
- the n values are generate again as random normal, but with the mean the
- value that was drawn for the MCC the n farmers are connected to, and with
- a slightly higher standard deviation (0.6 — since, as the milk is not aggregated
- yet, extreme values are not yet averaged out).
- This procedure gives us a total sample with N values at the MCC level and
- N.n values at the farmer level and a natural clustering at the MCC level.
+We start at the level of the milk collection center and assume that at this
+ level, the price at which milk collection centers sell their aggregated
+ milk is normally distributed with mean 1000 UGX per liter and standard
+ deviation of 50 (which is half of what we will assume at the farmer level).
+ From these 
+\emph on
+N
+\emph default
+ observations (with 
+\emph on
+N
+\emph default
+ denoting the number of milk collection centers recruited for our study
+ and hence the first key variable to be determined by the power calculations)
+ we then generate N times n observations.
+ These are the n dairy farmers that are located in the catchment areas of
+ the 
+\emph on
+N
+\emph default
+ milk collection centers.
+ The outcome variable at this level, prices that farmers obtain from milk
+ collection centers, are generated again as random normal, but with the
+ mean the value that was drawn for the MCC the n farmers are connected to,
+ and with a slightly higher standard deviation (100 — since, as the milk
+ is not aggregated yet, extreme values are not yet averaged out.
+ The standard deviation was obtained from data collected during a survey
+ in 2021).
+ This procedure gives us a total sample with 
+\emph on
+N
+\emph default
+ prices at the MCC level and 
+\emph on
+N.n
+\emph default
+ prices at the farmer level, the latter being clustered at the MCC catchment
+ area level by design.
 \end_layout
 
 \begin_layout Standard
 We assume that the intervention at the level of the milk collection centers
- leads to an increase of 0.25.
- This seems reasonable in light of the fact that processors told us they
- give a quality premium starting from SNF in excess of 8.5.
- We thus assuming that the intervention prompts about half of the treated
- MCCs to reach this threshold.
- The effect size also corresponds to something between a medium and a large
- effect according to Cohen's D.
+ leads to an increase of in the price of UGX30 per liter.
+ This seems reasonable in light of the fact that processors told that they
+ either pay a 10 percent premium for quality milk, or UGX100 per liter.
+ However, as we assume a pretty narrow distribution of prices, even though
+ this effect is only a 3 percent increase, this is considered a medium to
+ large effect according to Cohen's D.
 \end_layout
 
 \begin_layout Standard
-At the level of the farmers, we expect an effect size of .2.
- This corresponds to .33 standard deviations which is somewhere between a
- medium and a small effect according to Cohen's D.
+At the level of the farmers, for the intervention at the MCC level, we expect
+ an effect size of 40.
+ While this represents a 4.4 percent increase, the larger variance at this
+ level means that according to Cohen's D, this effect is considered small
+ to medium.
  Finally, at the level of the farmers, the individual level randomization
  of the information treatment intervention allows us to estimate small effects.
- For our power simulation, we assumed and effect size of 0.12, which corresponds
- to a small effect according to Cohen's D.
+ For our power simulation, we assumed and effect size of UGX25, which correspond
+s to a small effect according to Cohen's D.
 \end_layout
 
 \begin_layout Standard
@@ -385,7 +532,22 @@ We calculate power for the joint test that the three hypotheses are true
  MCC was not treated), as well as an indicator variable that is true if
  the farmer received In the second (farmer level) regression, standard errors
  are clustered at the MCC level.
- We also include an interaction between the two treatment variables 
+ We also include a full set of interactions between all treatment variables
+ and the blocking variable (
+\begin_inset Formula $C_{i}$
+\end_inset
+
+ in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:two"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "muralidharan2019factorial"
@@ -394,7 +556,7 @@ literal "false"
 \end_inset
 
 .
- We run 500 simulations for each n*N combination.
+ We run 1000 simulations for each n*N combination.
 \end_layout
 
 \begin_layout Standard
@@ -411,11 +573,12 @@ noprefix "false"
 .
  Instead of the usual power curves that plot power against sample size,
  we obtain a power plane as we determine both the number of clusters (between
- 90 and 120 MCCs) and the number of farmers per cluster (between 10 and
+ 100 and 130 MCCs) and the number of farmers per cluster (between 10 and
  40 farmers).
  Power is measured on the z axis and is the proportion of cases (out of
- the 500 simulations) in which all three coefficients were found significant
+ the 1000 simulations) in which all three coefficients were found significant
  at p<0.05.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -464,20 +627,27 @@ name "fig:Power-plane"
 \end_layout
 
 \begin_layout Standard
-The figure shows the trade-off between more clusters and more individuals
- per cluster.
- With about 105 MCCs and 40 farmers per cluster we find power in excess
- of 0.80.
- However, this leads to a sample of 4200 farmers.
- At the other extreme, we find that 120 clusters of 10 farmers also hit
- the .80 threshold.
- In this case, we would only need 1200 farmers.
- However, there are also cost implications.
- For instance, considering only the technology cost at this point, a lactoscan
- costs about 1500 dollar and a lactometer only 5 dollar.
- Under this assumption, the cost of 105 MCCs and 40 farmers per MCC is 89250,
- which is actually lower than the cost of treating 120 MCCs with 10 farmers
- each (93000).
+The figure, which can be found as an interactive figure 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://bjornvancampenhout.com/wp-content/uploads/2022/09/power_3D.html"
+literal "false"
+
+\end_inset
+
+, shows the trade-off between more clusters and more individuals per cluster.
+ With about 125 MCCs and 20 farmers per cluster we find power in just below
+ .80.
+ This corresponds to a sample of 2500.
+ Note that the requirement to detect minimum effect sizes for all three
+ hypotheses simultaneously is very strict.
+ For instance, if we require only one hypothesis to be significant, we obtain
+ power of .99 for a sample with 125 MCCs and 20 farmers.
+ Similarly, if we consider each hypothesis separately, we get power levels
+ of .88 for the MCC level intervention with outcome at the MCC level, .91
+ for the MCC level intervention with outcome at the farmer level, and .93
+ for the farmer level intervention with outcome at the farmer level.
 \end_layout
 
 \begin_layout Section*
@@ -489,25 +659,46 @@ Context and study area
 \end_layout
 
 \begin_layout Section*
-Specifications
-\end_layout
-
-\begin_layout Section*
-Data collection and endpoints
+Data collection and outcomes
 \end_layout
 
 \begin_layout Standard
 Outcomes of interest at MCC level: average milk quality levels (for different
  quality parameters); milk purchase price and volume; milk sales channel
  (to whom sold), price, volume and profits.
- Outcomes of interest at farmer level: perceptions of control of output
- quality parameters; willingness to experiment; changes in production investment
-s and management; milk quality levels (for different quality parameters);
+ 
+\end_layout
+
+\begin_layout Standard
+Outcomes of interest at farmer level: perceptions of control of output quality
+ parameters; willingness to experiment; changes in production investments
+ and management; milk quality levels (for different quality parameters);
  milk sales channel (to whom sold), price, volume and profits.
+ 
+\end_layout
+
+\begin_layout Standard
+We also investigate the gender implications of the intervention.
+ In particular, we will zoom in on the household and see if the intervention
+ has an impact on the use of animal sourced food for eg children within
+ the household.
+ Cows are milked twice a day.
+ Normally, milk for commercial use is sourced early in the morning.
+ If cows are also milked in the evening, this milk is usually consumed within
+ the household.
+ It may be that our intervention affects this practice and milk used within
+ the household reduces because the shadow cost increases.
 \end_layout
 
 \begin_layout Section*
 Ethical clearance
+\end_layout
+
+\begin_layout Standard
+This research received clearance form Makerere's School of Social Sciences
+ Research Ethics Committee ) as well as from IFPRI IRB ().
+ The research was also registered at the Ugandan National Commission for
+ Science and Technology ().
 \end_layout
 
 \begin_layout Section*
