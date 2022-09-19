@@ -247,12 +247,30 @@ l intervention that can be used to discover all relevant quality parameters
 
 \begin_layout Standard
 At the level of the dairy farmers, we implement and information intervention
- where we .Furthemrore, we also want to make quality visible by providing
- a low cost technology.
+ where we explain to farmers what processors are looking for.
+ Furthermore, we also want to make quality visible by providing a low cost
+ technology.
  In particular, we will distribute lactometers.
  These simple tools do not allow farmers to directly measure the parameters
  of interest.
  However they can be used to give an indication of solid non-fat content.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Unfortunately, the two components of interest to the processors work in
+ opposite directions.
+ A lactomer is based on gravity of different components of milk.
+ Butter fat is lighter than water, while SNF is heavier than water.
+ Therefore, milk with high fat and SNF contents could have the same specific
+ gravity as milk with low fat and low SNF contents.
+ However, weight of water is very close to weight of butter fat, so overall
+ it is likely that a higher readings correspond to more SNF.
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Section*
@@ -356,6 +374,16 @@ Hypothesis 3: providing information on what the desired milk quality parameters
 .
 \end_layout
 
+\begin_layout Itemize
+Hypothesis 4: making quality visible at the MCC level and providing information
+ on what the desired milk quality parameters are increases the quality at
+ the farmer level 
+\begin_inset Formula $\left(\beta_{H4}>0\right)$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Standard
 Additional research questions:
 \end_layout
@@ -374,6 +402,15 @@ Does the MCC level intervention affects farmers that are already connected
 Does the information treatment affect farmers that are connected to an MCC
  differently than farmers that are not connected to an MCC 
 \begin_inset Formula $\left(\beta_{H3C}=\beta_{H3}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Does the combined treatment affect farmers that are connected to an MCC
+ differently than farmers that are not connected to an MCC 
+\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4}\right)$
 \end_inset
 
 
@@ -425,7 +462,7 @@ y_{m}=\alpha+\beta_{H1}.T_{m}+\varepsilon_{m}
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{m,f}=\alpha+\alpha{}_{C}C_{i}+\beta_{H2}.T_{m}+\beta_{H3}T_{i}+\gamma T_{i}.T_{m}+\beta_{H2C}.T_{m}.C_{i}+\beta_{H3C}T_{i}.C_{i}+\gamma_{C}T_{i}.T_{m}.C_{i}+\varepsilon_{m,f}\label{eq:two}
+y_{m,f}=\alpha+\alpha{}_{C}C_{i}+\beta_{H2}.T_{m}+\beta_{H3}T_{i}+\beta_{H4}T_{i}.T_{m}+\beta_{H2C}.T_{m}.C_{i}+\beta_{H3C}T_{i}.C_{i}+\beta_{H4C}T_{i}.T_{m}.C_{i}+\varepsilon_{m,f}\label{eq:two}
 \end{equation}
 
 \end_inset
@@ -506,11 +543,8 @@ We assume that the intervention at the level of the milk collection centers
  However, as we assume a pretty narrow distribution of prices, even though
  this effect is only a 3 percent increase, this is considered a medium to
  large effect according to Cohen's D.
-\end_layout
-
-\begin_layout Standard
-At the level of the farmers, for the intervention at the MCC level, we expect
- an effect size of 40.
+ At the level of the farmers, for the intervention at the MCC level, we
+ expect an effect size of UGX40.
  While this represents a 4.4 percent increase, the larger variance at this
  level means that according to Cohen's D, this effect is considered small
  to medium.
@@ -518,6 +552,7 @@ At the level of the farmers, for the intervention at the MCC level, we expect
  of the information treatment intervention allows us to estimate small effects.
  For our power simulation, we assumed and effect size of UGX25, which correspond
 s to a small effect according to Cohen's D.
+ For the interaction, we assume a large effect (UGX50 per liter).
 \end_layout
 
 \begin_layout Standard
@@ -596,9 +631,6 @@ status open
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -637,7 +669,7 @@ literal "false"
 \end_inset
 
 , shows the trade-off between more clusters and more individuals per cluster.
- With about 125 MCCs and 20 farmers per cluster we find power in just below
+ With about 125 MCCs and 20 farmers per cluster we find power just above
  .80.
  This corresponds to a sample of 2500.
  Note that the requirement to detect minimum effect sizes for all three
@@ -645,9 +677,10 @@ literal "false"
  For instance, if we require only one hypothesis to be significant, we obtain
  power of .99 for a sample with 125 MCCs and 20 farmers.
  Similarly, if we consider each hypothesis separately, we get power levels
- of .88 for the MCC level intervention with outcome at the MCC level, .91
- for the MCC level intervention with outcome at the farmer level, and .93
+ of .87 for the MCC level intervention with outcome at the MCC level, .93
+ for the MCC level intervention with outcome at the farmer level, and .94
  for the farmer level intervention with outcome at the farmer level.
+ For the interaction, we obtain power of .99.
 \end_layout
 
 \begin_layout Section*

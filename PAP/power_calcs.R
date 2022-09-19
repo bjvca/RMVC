@@ -6,7 +6,7 @@ library(plotly)
 library(lmtest)
 library(car)
 library(clubSandwich)
-
+set.seed(1492023) #set seed to date
 
 #run in /home/bjvca/data/projects/OneCG/MIPP/study_design/
 N_MCCs <- seq(from=100, to=135, by=5)     # The sample sizes we'll be considering
@@ -14,7 +14,8 @@ n_farmers_per_MCC <- seq(from=10, to=40, by=5)
 power <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC))           # Empty object to collect simulation estimates
 power_H1 <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC))    
 power_H2 <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC))    
-power_H3 <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC))    
+power_H3 <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC)) 
+power_H4 <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC))  
 power_one <- matrix(NA, length(N_MCCs),length(n_farmers_per_MCC))    
 alpha <- 0.05                                    # Standard significance level
 sims <- 1000                                     # Number of simulations to conduct for each N
@@ -29,6 +30,7 @@ for (j in 1:length(N_MCCs)){
   significant.experiments_H1 <- rep(NA, sims) 
   significant.experiments_H2 <- rep(NA, sims) 
   significant.experiments_H3 <- rep(NA, sims) 
+  significant.experiments_H4 <- rep(NA, sims) 
   significant.experiments_one <- rep(NA, sims) 
   
   #### Inner loop to conduct experiments "sims" times over for each N ####
@@ -65,6 +67,12 @@ for (j in 1:length(N_MCCs)){
      Y1_i2 <- Y.sim_i + tau_i2
            # Do a random assignment
      Y.sim_i2 <- Y1_i2*Z.sim_i2 + Y.sim_i*(1-Z.sim_i2)
+    
+     tau_interact <- 50
+     Y1_i2 <- Y.sim_i2 + tau_interact
+     Y.sim_i2 <- Y1_i2*Z.sim_i2*Z.sim_i + Y.sim_i2*(1-Z.sim_i2*Z.sim_i)
+     
+     
      fit.sim_i2 <- lm(Y.sim_i2 ~ Z.sim_i[1:length(Y.sim_i2)]*Z.sim_i2[1:length(Y.sim_i2)]*Z.con_i2[1:length(Y.sim_i)]  )  
      vcov_cluster <- vcovCR(fit.sim_i2,cluster=clust,type="CR3")
      coef_test( fit.sim_i2 , vcov_cluster)$p_Satt
@@ -72,11 +80,13 @@ for (j in 1:length(N_MCCs)){
     p.value <- summary(fit.sim)$coefficients[2,4]  # Extract p-values
     p.value_i <-  coef_test( fit.sim_i2 , vcov_cluster)$p_Satt[2]  # Extract p-values
     p.value_i2 <-  coef_test( fit.sim_i2 , vcov_cluster)$p_Satt[3]  # Extract p-values
-    significant.experiments[i] <-  p.value < alpha & p.value_i < alpha & p.value_i2 < alpha 
+    p.value_interact <-  coef_test( fit.sim_i2 , vcov_cluster)$p_Satt[5]  # Extract p-values
+    significant.experiments[i] <-  p.value < alpha & p.value_i < alpha & p.value_i2 < alpha  & p.value_interact < alpha 
     significant.experiments_H1[i] <-  p.value < alpha 
     significant.experiments_H2[i] <-  p.value_i < alpha
     significant.experiments_H3[i] <-  p.value_i2 < alpha
-    significant.experiments_one[i] <-  p.value < alpha | p.value_i < alpha | p.value_i2 < alpha 
+    significant.experiments_H4[i] <-  p.value_interact < alpha
+    significant.experiments_one[i] <-  p.value < alpha | p.value_i < alpha | p.value_i2 < alpha | p.value_interact < alpha  
     
    # print(c(p.value, p.value_i, p.value_i2))
   }
@@ -85,6 +95,7 @@ for (j in 1:length(N_MCCs)){
     power_H1[j,k] <- mean(significant.experiments_H1)    
     power_H2[j,k] <- mean(significant.experiments_H2)    
     power_H3[j,k] <- mean(significant.experiments_H3)   
+    power_H4[j,k] <- mean(significant.experiments_H4)   
     power_one[j,k] <- mean(significant.experiments_one)  
       }
    # store average success rate (power) for each N
