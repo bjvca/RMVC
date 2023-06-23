@@ -1,3 +1,4 @@
+
 library(leaflet)
 library(reshape2)
 library(htmlwidgets)
@@ -98,7 +99,7 @@ counter <- 1
 for (mcc_1 in names(table(MCC$MCC_ID))) {
   MCC$catchment_ID[MCC$MCC_ID == mcc_1] <- counter
   for (mcc_2 in names(table(MCC$MCC_ID))) {
-    ### key parameter is chosen here: distance to define a catchment area. Here we assume that if shops are less then 5 km apart, they serve the same catchment area
+    ### key parameter is chosen here: distance to define a catchment area. Here we assume that if shops are less then 2 km apart, they serve the same catchment area
     if ( haversine(c(MCC$mcc._gps_latitude[MCC$MCC_ID == mcc_1] ,MCC$mcc._gps_longitude[MCC$MCC_ID == mcc_1]),c(MCC$mcc._gps_latitude[MCC$MCC_ID == mcc_2] ,MCC$mcc._gps_longitude[MCC$MCC_ID == mcc_2])) < 2) {
       if (is.na(MCC$catchment_ID[MCC$MCC_ID == mcc_2])) {  ## if the shop has not been allocated to a catcchment area yet, create a new one
         MCC$catchment_ID[MCC$MCC_ID == mcc_2] <- counter
@@ -207,7 +208,7 @@ farmers$farmer_ID[farmers$X_uuid == "e83169c8-e6f1-477e-b73c-806a135fdc93"] <- p
 farmers$farmer_ID[farmers$X_uuid == "fc424a15-1f6c-4060-a7ba-88e44ea39bc3"] <- paste(farmers$farmer_ID[farmers$X_uuid == "fc424a15-1f6c-4060-a7ba-88e44ea39bc3"], "R", sep = "_")
 farmers$farmer_ID[farmers$X_uuid == "ed32da23-907b-4147-af91-096892b6e672"] <- paste(farmers$farmer_ID[farmers$X_uuid == "ed32da23-907b-4147-af91-096892b6e672"], "R", sep = "_")
 farmers$farmer_ID[farmers$X_uuid == "31d24908-a603-461b-86da-d85b1ed7e7d3"] <- paste(farmers$farmer_ID[farmers$X_uuid == "31d24908-a603-461b-86da-d85b1ed7e7d3"], "R", sep = "_")
-farmers$farmer_ID[farmers$X_uuid == "71335f3f-ad2b-48d6-ab95-27c600fa5f42"] <- paste(farmers$farmer_ID[farmers$X_uuid == "71335f3f-ad2b-48d6-ab95-27c600fa5f42"], "R", sep = "_")
+#farmers$farmer_ID[farmers$X_uuid == "71335f3f-ad2b-48d6-ab95-27c600fa5f42"] <- paste(farmers$farmer_ID[farmers$X_uuid == "71335f3f-ad2b-48d6-ab95-27c600fa5f42"], "R", sep = "_")
 farmers$farmer_ID[farmers$X_uuid == "3e20b5a6-d635-4fd2-bda9-4c5154e4de07"] <- paste(farmers$farmer_ID[farmers$X_uuid == "3e20b5a6-d635-4fd2-bda9-4c5154e4de07"], "R", sep = "_")
 farmers$farmer_ID[farmers$X_uuid == "f1692b8a-04ab-4b91-885c-388607d9789d"] <- paste(farmers$farmer_ID[farmers$X_uuid == "f1692b8a-04ab-4b91-885c-388607d9789d"], "R", sep = "_")
 farmers$farmer_ID[farmers$X_uuid == "4b4c62fb-c860-4b60-976e-9860e0378574"] <- paste(farmers$farmer_ID[farmers$X_uuid == "4b4c62fb-c860-4b60-976e-9860e0378574"], "R", sep = "_")
@@ -228,6 +229,8 @@ farmers$farmer_ID[farmers$X_uuid=="25fdacaa-509c-474b-98d6-ab69e2fe04f1"] <- pas
 
 farmers$farmer_ID[farmers$X_uuid=="9e9ffbe8-0d53-4d93-aaa5-59a7134d8d24"] <- paste(farmers$farmer_ID[farmers$X_uuid == "9e9ffbe8-0d53-4d93-aaa5-59a7134d8d24"], "R", sep = "_")
 farmers$farmer_ID[farmers$X_uuid=="4db51899-ef72-4ea5-b32c-4df7c4de1be2"] <- paste(farmers$farmer_ID[farmers$X_uuid == "4db51899-ef72-4ea5-b32c-4df7c4de1be2"], "R", sep = "_")
+farmers$farmer_ID[farmers$X_uuid=="8fe74d5b-a0c9-4c72-85fb-4e669f517337"] <- paste(farmers$farmer_ID[farmers$X_uuid == "8fe74d5b-a0c9-4c72-85fb-4e669f517337"], "R", sep = "_")
+farmers$farmer_ID[farmers$X_uuid=="5c78d865-a3cc-4579-8288-297555d6ba6c"] <- paste(farmers$farmer_ID[farmers$X_uuid == "5c78d865-a3cc-4579-8288-297555d6ba6c"], "R", sep = "_")
 
 
 
@@ -240,10 +243,8 @@ farmers <- subset(farmers,X_uuid!="6e0ca483-33e3-4f6a-ac4c-c40d6c37d099")
 farmers <- subset(farmers,X_uuid!="839171fe-ae9b-4c59-bc1e-c495fb9eaaca")
 farmers <- subset(farmers,X_uuid!="b5ee7c77-534f-4ebd-b993-ed18f91743c0")
 farmers <- subset(farmers,X_uuid!="d8e77d2e-83d6-45c8-9a81-2201d864374b")
-
-
-
-
+farmers <- subset(farmers,X_uuid!="71335f3f-ad2b-48d6-ab95-27c600fa5f42")
+farmers <- subset(farmers,X_uuid!="40989731-3a12-4878-ac0a-1af8696d47f7")
 
 
 sum(duplicated(farmers$farmer_ID))
@@ -256,10 +257,10 @@ farmers[farmers$farmer_ID==ID,c("check.check2.Dairy._GPS_latitude", "check.check
 
 trial <- data.frame("Dup",farmers[farmers$farmer_ID==ID,c("X_uuid","check.check2.Dairy._GPS_latitude", "check.check2.Dairy._GPS_longitude")])
 names(trial) <- c("type","ID","lat","long")
-trial2 <- data.frame("MCC",c("MCC",MCC[MCC$MCC_ID==(farmers$q5[farmers$farmer_ID==ID][1]),c("mcc._gps_latitude","mcc._gps_longitude")]))
+trial2 <- data.frame("MCC",c("MCC",MCC[MCC$MCC_ID=="MCC_77",c("mcc._gps_latitude","mcc._gps_longitude")]))
 names(trial2) <- c("type","ID","lat","long")
 
-trial3 <- data.frame("farmers",c(farmers[farmers$q5==(farmers$q5[farmers$farmer_ID==ID][1]),c("X_uuid","check.check2.Dairy._GPS_latitude", "check.check2.Dairy._GPS_longitude")]))
+trial3 <- data.frame("farmers",c(farmers[farmers$q5=="MCC_77",c("X_uuid","check.check2.Dairy._GPS_latitude", "check.check2.Dairy._GPS_longitude")]))
 names(trial3) <- c("type","ID","lat","long")
 
 trial <- rbind(trial,trial2,trial3)
@@ -270,28 +271,7 @@ pal <- colorFactor(
 )
 m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=trial, lng=~as.numeric(long), lat=~as.numeric(lat),radius= 8, color=~pal(type), popup = ~as.character(ID), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### make a map with
-
-
 
 farmers <- merge(farmers, MCC[c("MCC_ID","catchment_ID","lactoscan")],by.x="q5",by.y="MCC_ID" )
 
@@ -303,7 +283,6 @@ pal <- colorFactor(
 )
 
 m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 8, color=~pal(MCC_ID), popup = ~as.character(farmer_ID), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
-
 
 pal <- colorFactor(
   palette = 'Dark2',
@@ -354,5 +333,7 @@ to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid",
              "X_xform_id")        
 MCC <- MCC[ , !(names(MCC) %in% to_drop)]
 
+names(farmers) <- sub("check.check2.Dairy.", "",names(farmers))
+names(MCC) <- sub("mcc.", "",names(MCC))
 write.csv(farmers,"/home/bjvca/data/projects/OneCG/RMVC/baseline/data/public/farmers.csv", row.names=FALSE)
 write.csv(MCC,"/home/bjvca/data/projects/OneCG/RMVC/baseline/data/public/MCCs.csv", row.names=FALSE)
