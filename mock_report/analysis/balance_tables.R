@@ -107,3 +107,5 @@ summary(lm((video_shown*(lactoscan=="T")) ~hh_size+age_head+herd_size+improved_s
 F_test[1]
 
 saveRDS(balance_farmer, file= paste(path,"mock_report/balance_farmer.RData", sep="/"))
+saveRDS(F_test, file= paste(path,"mock_report/F_test.RData", sep="/"))
+

@@ -3,7 +3,8 @@ library(leaflet)
 library(reshape2)
 library(htmlwidgets)
 library(pracma) # for haversine function
-set.seed(20042023)  #today's date
+#set.seed(20042023)  #today's date
+set.seed(24092023)  #today's date
 
 path <- getwd()
 MCC <- read.csv("latest_MCC.csv")
@@ -138,7 +139,9 @@ pal <- colorFactor(
   domain = MCC$lactoscan
 )
 
-m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=MCC, lng=~mcc._gps_longitude, lat=~mcc._gps_latitude,radius= 8, color=~pal(lactoscan), popup = ~as.character(catchment_ID), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
+pal <- colorFactor(c("red", "green"),MCC$lactoscan)
+
+m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=MCC, lng=~mcc._gps_longitude, lat=~mcc._gps_latitude,radius= 1, color=~pal(lactoscan), popup = ~as.character(catchment_ID), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
 
 
 
@@ -246,6 +249,12 @@ farmers <- subset(farmers,X_uuid!="d8e77d2e-83d6-45c8-9a81-2201d864374b")
 farmers <- subset(farmers,X_uuid!="71335f3f-ad2b-48d6-ab95-27c600fa5f42")
 farmers <- subset(farmers,X_uuid!="40989731-3a12-4878-ac0a-1af8696d47f7")
 
+farmers$q5[farmers$q5=="MCC_28"] <- "MCC_227" 
+farmers$q5[farmers$q5=="MCC_608"] <- "MCC_614" 
+
+farmers <- subset(farmers, !(farmers$q5 %in% c("MCC_214","MCC_284","MCC_292","MCC_627")))
+
+MCC <- subset(MCC, !(MCC$MCC_ID %in% c("MCC_16","MCC_215")))
 
 sum(duplicated(farmers$farmer_ID))
 
@@ -273,7 +282,11 @@ m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(
 
 ### make a map with
 
-farmers <- merge(farmers, MCC[c("MCC_ID","catchment_ID","lactoscan")],by.x="q5",by.y="MCC_ID" )
+setdiff(names(table(MCC$MCC_ID)), names(table(farmers$q5)))
+
+setdiff( names(table(farmers$q5)), names(table(MCC$MCC_ID)))
+
+farmers <- merge(farmers, MCC[c("MCC_ID","mcc.q3c","catchment_ID","lactoscan")],by.x="q5",by.y="MCC_ID")
 
 names(farmers)[names(farmers) == 'q5'] <- 'MCC_ID'
 ## make a map with catchment ID coloring and pictures (not public)
@@ -284,13 +297,23 @@ pal <- colorFactor(
 
 m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 8, color=~pal(MCC_ID), popup = ~as.character(farmer_ID), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
 
-pal <- colorFactor(
-  palette = 'Dark2',
-  domain = farmers$lactoscan
-)
 
 
-m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 8, color=~pal(lactoscan), popup = ~as.character(lactoscan), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
+pal <- colorFactor(c("red", "green"),farmers$check.check2.Dairy.video_shown)
+m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 1, color=~pal(check.check2.Dairy.video_shown), popup = ~as.character(check.check2.Dairy.video_shown), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
+
+pal <- colorFactor(c("red", "green"),farmers$lactoscan)
+m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 1, color=~pal(lactoscan), popup = ~as.character(lactoscan), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
+
+
+### export for Charles
+charles_set <- subset(farmers,check.check2.Dairy.video_shown == TRUE)
+
+charles_set <- charles_set[c("q3","q4","enumerator","mcc.q3c", "farmer_ID", "parish","village", "check.check2.Dairy.q10","check.check2.Dairy.q11", "check.check2.Dairy.q12", "check.check2.Dairy._GPS_latitude", "check.check2.Dairy._GPS_longitude")] 
+names(charles_set) <- c("district","sub","enumerator","mcc_village", "farmer_ID", "parish","village", "name","tel_1", "tel_2", "latitude", "longitude")
+###remove trailing and leading spaces for names
+charles_set$name <- trimws(charles_set$name)
+write.csv(charles_set,file="list_charles.csv", row.names=FALSE)
 
 
 ## drop location, names and contact details
@@ -312,6 +335,11 @@ to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid",
              "X_xform_id")            
 farmers <- farmers[ , !(names(farmers) %in% to_drop)]
 
+### export for wilberfoce
+
+wilber_set <- MCC[,c("enumerator","district","sub",  "MCC_ID", "mcc.q1","mcc.q2","mcc.q3","mcc.q3a","mcc.q3b","mcc.q3c", "lactoscan")]
+wilber_set <- subset(wilber_set, lactoscan=="T")
+write.csv(wilber_set,file="list_wilber.csv", row.names=FALSE)
 
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid", "enumerator","district","sub","consent", "mcc.q1","mcc.q2","mcc.q3",
