@@ -4,7 +4,7 @@ library(reshape2)
 library(htmlwidgets)
 library(pracma) # for haversine function
 #set.seed(20042023)  #today's date
-set.seed(24092023)  #today's date
+set.seed(26092023)  #today's date
 
 path <- getwd()
 MCC <- read.csv("latest_MCC.csv")
