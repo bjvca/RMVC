@@ -142,8 +142,7 @@ In value chains where quality of the underlying commodity is hard to observe
  We also provide them with a small incentive to put what they learned into
  practice.
  Midstream, at milk collection centers where milk is bulked and chilled,
- we install technology that enables for quick and cheap testing of the milk
- that is brought in.
+ we provide technology aimed at facilitating quality discovery and tracking.
  We look at impact of both interventions at both farmer and milk collection
  center level and consider outcomes such as milk quality, prices received
  and quantities transacted.
@@ -168,8 +167,8 @@ Quality of products transacted within value chains, and the preservation
  the value chain.
  Quality inputs and safeguarding quality while processing, storing, and
  transporting commodities is also important from a food safety perspective.
- In general, transformation of value chains often coincide with quality
- upgrading.
+ In general, transformation of value chains often coincide with significant
+ quality upgrading.
 \end_layout
 
 \begin_layout Standard
@@ -188,11 +187,8 @@ literal "false"
  The area now has an extensive network of milk cooling and collection centers
  that link smallholder farmers to a cluster of processors.
  In the dairy value chain, quality is particularly important.
- Milk quality determines what products can be produced.
- For instance, for production of cheese, a high fat content is needed and
- milk needs to be fresh.
- To extract caseine, freshness is less important, but the protein content
- needs to be high.
+ Milk quality determines how much end product (eg cheese, caseine, milk
+ powder,..) can be obtained from a given quantity of milk.
  Furthermore, it goes without saying that the protection of milk from dirt
  and contamination is important for food safety, as milk is very unstable.
  
@@ -200,7 +196,21 @@ literal "false"
 
 \begin_layout Standard
 At the same time, it is surprising that there seems to be no market for
- quality in the sub-sector.
+ quality in the sub-sector (while this is generally the case in more developed
+ dairy value chain where the price is not a fixed price per liter of milk
+ supplied.
+ Generally, payment differs per dairy farmer, depending on the protein and
+ fat and lactose content of the milk supplied by the farmer
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://www.frieslandcampina.com/owned-by-farmers/milk-price-system/
+\end_layout
+
+\end_inset
+
+).
  For instance, using recently collected survey data, we find that of a sample
  of 200 farmers that sold to milk collection centers, only 6 percent indicated
  that they received a quality premium.
@@ -501,14 +511,14 @@ ly exposed to the treatments.
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename design.jpg
+	filename figures/design.png
 	lyxscale 20
-	scale 10
+	scale 30
 
 \end_inset
 
@@ -631,47 +641,172 @@ Interventions
 
 \begin_layout Standard
 To make relevant quality parameters visible at the level of the milk collection
- centers, we focus on a technological intervention.
- In close collaboration with DDA, we install digital lactoscans at a random
+ centers, we focus on a technology bundle.
+ In close collaboration with DDA, we install milk analyzers at a random
  sample of milk collection centers.
  These can be used to test milk samples of individual farmers or traders
  that supply to the milk collection centers to establish quality of incoming
  milk, as well as to test samples from the milk tankers when milk is picked
  up by traders or processors.
+ Milk analyzers show butter fat, solid non-fats, added water, temperature
+ of milk, protein content, and corrected lactometer coefficient.
+ Taking a sample is non-destructive and takes about 30 to 50 seconds depending
+ on the temperature of the milk.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Milk-analyzer"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows a milk analyzer during piloting.
 \end_layout
 
 \begin_layout Standard
-The lactoscans will be delivered with clear Standard Operating Procedure
- advising MCCs to test all incoming samples and all outgoing samples and
- keep detailed records of this.
- Handouts and training materials on the use of lactoscans will also be developed
-, and staff will be trained.
-\begin_inset Foot
+\begin_inset Float figure
+wide false
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
-One problem highlighted by MCCs is high staff turnover.
- Therefore, training may have to be repeated by DDA staff in case of new
- staff.
+\align center
+\begin_inset Graphics
+	filename figures/milk_analyzer_installed.jpg
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Milk analyzer
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Milk-analyzer"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The milk analyzers will be delivered with clear Standard Operating Procedure
+ advising MCCs and MCC staff will be trained.
+ We collaborate with the DDA to set up a system to monitor the milk analyzers
+ and its use.
+ In particular, DDA technicians will visit treatment MCCs at set periods.
+ We also set up a hotline that MCCs can contact in case of problems with
+ the milk analyzers.
+ We also make sure that, over the course of the project, equipment is adequately
+ cleaned and calibrated.
  
 \end_layout
 
 \begin_layout Standard
-We learned from similar pilots in Uganda and Kenya on quality-based milk
- payment systems that keeping the lactoscans operational is key to the success
- of the project.
- Therefore, we collaborated with the DDA to set up a system to monitor the
- lactoscans and its use.
- In particular, DDA technicians were expected to visit treatment MCCs at
- set periods.
- We also set up a hotline that MCCs can contact in case of problems with
- the lactoscans.
- We also make sure that, over the course of the project, equipment is adequately
- cleaned and calibrated.
+In addition to the milk analyzers, the MCC level treatment also consists
+ of a digitized system to keep track of milk quantity and quality delivered
+ to the MCC.
+ To do so, we developed a custom Android application that MCCs can use to
+ register farmers that deliver milk.
+ For these farmers, MCC managers can then record milk deliveries, including
+ quantities delivered and price agreed, as well as a range of quality parameters
+ that can be read from milk analyzer, such as butter fat and protein content.
+ The application can also provide MCC managers with simple reports, such
+ as the average butter fat (weighted by quantities supplied) over a different
+ period (today, yesterday, last week, last two weeks and custom data range).
+ Reports by farmer are also possible, such that MCC managers can determine
+ the total sum to be paid to a farmer for milk delivered in the last 14
+ days.
+ The application, which is pre-installed on a Samsung galaxy tab A7 with
+ sim-card for mobile internet, backs up data in the cloud, but is designed
+ following an off-line first principle as some MCCs may not have coverage.
+ A screenshot of the application can be found in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Application"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/app.png
+	lyxscale 20
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Application
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Application"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finally, for the MCC intervention, we also developed a poster to be displayed
+ at MCCs informing farmers that the MCC now has a milk analyzer that can
+ determine milk quality for free.
+ The poster was designed by a local artist.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -715,6 +850,10 @@ To design the video based extension intervention, we first identified the
 ts like Methionine and Lysine.
  To make the information intervention more actionable, we also provide farmers
  with some free inputs (1 kg of Chloris Gayana also known as Rhodes grass).
+ The video will be screened a first time during baseline data collection
+ and a second time just before the distribution of the milk analyzers.
+ We also developed an appealing handout that summarizes some of the main
+ points from the video using cartoons drawn by a local artist.
 \end_layout
 
 \begin_layout Section*
