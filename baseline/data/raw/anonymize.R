@@ -341,10 +341,19 @@ wilber_set <- MCC[,c("enumerator","district","sub",  "MCC_ID", "mcc.q1","mcc.q2"
 wilber_set <- subset(wilber_set, lactoscan=="T")
 write.csv(wilber_set,file="list_wilber.csv", row.names=FALSE)
 
-###one MCC (MCC_50) was replaced during farmer level reinforcement
-replaceID <- read.csv("MCC_50_replace.csv")
-replaceID$MCC_ID <- "MCC_50"
+###one ctrl MCC (MCC_50) was replaced during farmer level reinforcement
+###two treatmetn MCCs ()  were replaced during treatment rollout
+
+#replaceID <- read.csv("MCC_50_replace.csv")
+#replaceID$MCC_ID <- "MCC_50"
+#MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
+
+replaceID <- read.csv("MCCS_replace.csv")
+replaceID$MCC_ID[1] <- "MCC_50"
+replaceID$MCC_ID[2] <- "MCC_50"
+replaceID$MCC_ID[3] <- "MCC_50"
 MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
+
 
 
 ## drop location, names and contact details
