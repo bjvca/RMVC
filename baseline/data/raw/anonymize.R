@@ -335,11 +335,7 @@ to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid",
              "X_xform_id")            
 farmers <- farmers[ , !(names(farmers) %in% to_drop)]
 
-### export for wilberfoce
 
-wilber_set <- MCC[,c("enumerator","district","sub",  "MCC_ID", "mcc.q1","mcc.q2","mcc.q3","mcc.q3a","mcc.q3b","mcc.q3c", "lactoscan")]
-wilber_set <- subset(wilber_set, lactoscan=="T")
-write.csv(wilber_set,file="list_wilber.csv", row.names=FALSE)
 
 ###one ctrl MCC (MCC_50) was replaced during farmer level reinforcement
 ###two treatmetn MCCs ()  were replaced during treatment rollout
@@ -350,11 +346,20 @@ write.csv(wilber_set,file="list_wilber.csv", row.names=FALSE)
 
 replaceID <- read.csv("MCCS_replace.csv")
 replaceID$MCC_ID[1] <- "MCC_50"
-replaceID$MCC_ID[2] <- "MCC_50"
-replaceID$MCC_ID[3] <- "MCC_50"
+
 MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
+MCC[MCC$MCC_ID=="MCC_356",names(replaceID)] <- replaceID[2,]
+MCC[MCC$MCC_ID=="MCC_225",names(replaceID)] <- replaceID[3,]
 
+### export for wilberfoce
 
+wilber_set <- MCC[,c("enumerator","district","sub",  "MCC_ID", "mcc.q1","mcc.q2","mcc.q3","mcc.q3a","mcc.q3b","mcc.q3c", "lactoscan")]
+wilber_set <- subset(wilber_set, lactoscan=="T")
+write.csv(wilber_set,file="list_wilber.csv", row.names=FALSE)
+
+wilber_set <- MCC[,c("enumerator","district","sub",  "MCC_ID", "mcc.q1","mcc.q2","mcc.q3","mcc.q3a","mcc.q3b","mcc.q3c", "lactoscan","mcc._gps_latitude","mcc._gps_longitude")]
+wilber_set <- subset(wilber_set, lactoscan=="T")
+write.csv(wilber_set,file="list_wilber_gps.csv", row.names=FALSE)
 
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid", "enumerator","district","sub","consent", "mcc.q1","mcc.q2","mcc.q3",
