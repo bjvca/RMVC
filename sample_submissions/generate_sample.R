@@ -1,10 +1,31 @@
 
-dta_reports <- read.csv("https://milk.ug/export/report?from=2023-10-14&to=2023-10-30")
-dta_farmers <- read.csv("https://milk.ug/export/farmers")
-dta_MCCs <-  read.csv("https://milk.ug/export/milkcenter")
+dta_reports <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv") 
+
+###update
+
+#url <- "https://milk.ug/export/report?from=2023-10-14&to=2023-11-01"
+url <- paste(paste("https://milk.ug/export/report",Sys.Date()-7,sep="?from="),Sys.Date(), sep="&to=")
+#dta_reports <- read.csv(url)
+dta_reports_update <- read.csv(url)
+dta_reports_update$delivery_date <- as.character(as.Date(dta_reports_update$Report.Date))
+dta_reports_update$delivery_time <- as.character(format(as.POSIXct(dta_reports_update$Report.Date), format = '%H:%M'))
+
+
+dta_reports <- rbind(dta_reports,dta_reports_update)
 
 dta_reports$delivery_date <- as.character(as.Date(dta_reports$Report.Date))
 dta_reports$delivery_time <- as.character(format(as.POSIXct(dta_reports$Report.Date), format = '%H:%M'))
+
+#remove duplicates
+### remove duplicate records from dta_reports
+dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID", "Milk.Center", "Farmer_ID", "Farmer", "Alcohol.Test", "Qty", "Price", "Fat", "SNF", "Protein", "Added.Water", "Rejected", "Corrected.Lactometer.Reading", "Analogue.Lactometer.Test", "Analogue.Test.Done", "Milk.Analyzer.Test.Done", "delivery_date")]),]
+
+write.csv(dta_reports, "/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv",row.names = FALSE) 
+
+
+dta_farmers <- read.csv("https://milk.ug/export/farmers")
+dta_MCCs <-  read.csv("https://milk.ug/export/milkcenter")
+
 
 ### remove duplicate records from dta_reports
 dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID", "Milk.Center", "Farmer_ID", "Farmer", "Alcohol.Test", "Qty", "Price", "Fat", "SNF", "Protein", "Added.Water", "Rejected", "Corrected.Lactometer.Reading", "Analogue.Lactometer.Test", "Analogue.Test.Done", "Milk.Analyzer.Test.Done", "delivery_date")]),]
@@ -88,12 +109,6 @@ dta_reports$Price <- as.numeric(as.character(dta_reports$Price))
 dta_reports$Protein <- as.numeric(as.character(dta_reports$Protein))
 dta_reports$Corrected.Lactometer.Reading <- as.numeric(as.character(dta_reports$Corrected.Lactometer.Reading))
 dta_reports$Analogue.Lactometer.Test <- as.numeric(as.character(dta_reports$Analogue.Lactometer.Test))
-
-dta_reports$Added.Water[ !is.na(dta_reports$Added.Water) & dta_reports$Added.Water == .1] <- 1
-dta_reports$Added.Water[!is.na(dta_reports$Added.Water) & dta_reports$Added.Water > .1 & dta_reports$Added.Water < .2] <-  dta_reports$Added.Water[!is.na(dta_reports$Added.Water) & dta_reports$Added.Water > .1 & dta_reports$Added.Water < .2] *100 
-dta_reports$Added.Water[!is.na(dta_reports$Added.Water) & dta_reports$Added.Water >=.2  & dta_reports$Added.Water <= .9] <-  dta_reports$Added.Water[!is.na(dta_reports$Added.Water) & dta_reports$Added.Water >=.2  & dta_reports$Added.Water <= .9]*10 
-
-tapply(dta_reports$Fat, dta_reports$MCC_ID, FUN=mean, na.rm=T)
 
 # load the library
 library(forcats)
