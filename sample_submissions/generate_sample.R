@@ -1,9 +1,16 @@
+rm(list=ls())
+
+#dta_reports <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/master_export.csv") 
+#dta_reports$delivery_date <- as.character(as.Date(dta_reports$Report.Date))
+#dta_reports$delivery_time <- as.character(format(as.POSIXct(dta_reports$Report.Date), format = '%H:%M'))
+
+#write.csv(dta_reports,"/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv", row.names =  FALSE) 
 
 dta_reports <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv") 
 
 ###update
 
-#url <- "https://milk.ug/export/report?from=2023-10-14&to=2023-11-01"
+#url <- "https://milk.ug/export/report?from=2023-08-01&to=2024-04-29"
 url <- paste(paste("https://milk.ug/export/report",Sys.Date()-7,sep="?from="),Sys.Date(), sep="&to=")
 #dta_reports <- read.csv(url)
 dta_reports_update <- read.csv(url)
@@ -105,6 +112,36 @@ dta_reports$Qty <- as.numeric(as.character(dta_reports$Qty))
 dta_reports$Fat <- as.numeric(as.character(dta_reports$Fat))
 dta_reports$SNF <- as.numeric(as.character(dta_reports$SNF))
 dta_reports$Added.Water <- as.numeric(as.character(dta_reports$Added.Water))
+
+dta_reports$Added.Water[dta_reports$Added.Water>20] <- NA 
+dta_reports$Added.Water[dta_reports$Added.Water==0.01] <- 1 
+dta_reports$Added.Water[dta_reports$Added.Water==0.02] <- 2 
+dta_reports$Added.Water[dta_reports$Added.Water==0.03] <- 3 
+dta_reports$Added.Water[dta_reports$Added.Water==0.1] <- 10 
+dta_reports$Added.Water[dta_reports$Added.Water==0.11] <- 11
+dta_reports$Added.Water[dta_reports$Added.Water==0.12] <- 12 
+dta_reports$Added.Water[dta_reports$Added.Water==0.13] <- 13 
+dta_reports$Added.Water[dta_reports$Added.Water==0.14] <- 14 
+dta_reports$Added.Water[dta_reports$Added.Water==1.1] <- 11 
+dta_reports$Added.Water[dta_reports$Added.Water==1.2] <- 12 
+dta_reports$Added.Water[dta_reports$Added.Water==1.3] <- 13
+dta_reports$Added.Water[dta_reports$Added.Water==1.6] <- 16
+dta_reports$Added.Water[dta_reports$Added.Water==1.8] <- 18
+dta_reports$Added.Water[dta_reports$Added.Water==1.9] <- 19 
+dta_reports$Added.Water[dta_reports$Added.Water==0.2] <- 20 
+dta_reports$Added.Water[dta_reports$Added.Water==0.3] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water==0.6] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water==0.9] <- NA
+
+dta_reports$Added.Water[dta_reports$Added.Water>1 & dta_reports$Added.Water<2] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water>2 & dta_reports$Added.Water<3] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water>3 & dta_reports$Added.Water<4] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water>4 & dta_reports$Added.Water<5] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water>5 & dta_reports$Added.Water<6] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water>8 & dta_reports$Added.Water<9] <- NA
+dta_reports$Added.Water[dta_reports$Added.Water>9 & dta_reports$Added.Water<10] <- NA
+
+
 dta_reports$Price <- as.numeric(as.character(dta_reports$Price))
 dta_reports$Protein <- as.numeric(as.character(dta_reports$Protein))
 dta_reports$Corrected.Lactometer.Reading <- as.numeric(as.character(dta_reports$Corrected.Lactometer.Reading))
@@ -121,5 +158,9 @@ library(ggplot2)
 #   xlab("") +
 #   theme_bw()
 write.csv(dta_reports, "/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/dta_reports.csv",row.names = FALSE) 
+### additional layer of anonymization for public release
+dta_reports$MCC_ID <- as.factor(dta_reports$MCC_ID)
+levels(dta_reports$MCC_ID) <- paste("MA", 1:length(levels(dta_reports$MCC_ID)),sep="_")
+write.csv(dta_reports, "/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/dta_reports_masked.csv",row.names = FALSE) 
 
 #ggplot(data=dta_reports, aes(x=date, y=Qty, group=MCC_ID, color=MCC_ID)) + stat_summary(fun = sum, geom = "line")
