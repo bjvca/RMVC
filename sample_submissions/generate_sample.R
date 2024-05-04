@@ -35,7 +35,7 @@ dta_MCCs <-  read.csv("https://milk.ug/export/milkcenter")
 
 
 ### remove duplicate records from dta_reports
-dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID", "Milk.Center", "Farmer_ID", "Farmer", "Alcohol.Test", "Qty", "Price", "Fat", "SNF", "Protein", "Added.Water", "Rejected", "Corrected.Lactometer.Reading", "Analogue.Lactometer.Test", "Analogue.Test.Done", "Milk.Analyzer.Test.Done", "delivery_date")]),]
+dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID", "Milk.Center", "Farmer_ID", "Farmer", "Alcohol.Test", "Qty", "Price", "Fat", "SNF", "Protein", "Added.Water", "Rejected", "Corrected.Lactometer.Reading", "Analogue.Lactometer.Test", "Analogue.Test.Done", "Sale.Type","Milk.Analyzer.Test.Done", "delivery_date")]),]
 
 #cat(paste(shQuote(names(dta_reports), type="cmd"), collapse=", "))
 
@@ -54,7 +54,7 @@ dta_reports <- merge(dta_reports, dta_farmers, by = "Farmer_ID")
 ### this uniquely identifies based on "MCC_ID", "Farmer_ID", "sample_ID", 
 #keep only relevant variable
 
-dta_reports <- dta_reports[c("MCC_ID", "Farmer_ID", "sample_ID", "Alcohol.Test","Qty","Price","Fat","SNF","Protein","Added.Water","Analogue.Lactometer.Test", "Rejected","Corrected.Lactometer.Reading" ,"Analogue.Test.Done","Milk.Analyzer.Test.Done","Report.Date","Created.Date")]
+dta_reports <- dta_reports[c("MCC_ID", "Farmer_ID", "sample_ID", "Alcohol.Test","Qty","Price","Fat","SNF","Protein","Added.Water","Analogue.Lactometer.Test", "Rejected","Corrected.Lactometer.Reading" ,"Analogue.Test.Done","Milk.Analyzer.Test.Done","Sale.Type","Report.Date","Created.Date")]
 
 ### generate farmer IDs within MCCs and sample_IDs within farmers
 
@@ -98,7 +98,7 @@ dta_reports$sample_new <- NULL
 dta_reports$Farmer_ID <- NULL
 
 
-dta_reports <- dta_reports [c("MCC_ID","farmer_ID" ,"sample_ID",   "Alcohol.Test","Qty","Price","Fat","SNF","Protein","Added.Water","Analogue.Lactometer.Test", "Rejected","Corrected.Lactometer.Reading" ,"Analogue.Test.Done","Milk.Analyzer.Test.Done","Report.Date","Created.Date")]
+dta_reports <- dta_reports [c("MCC_ID","farmer_ID" ,"sample_ID",   "Alcohol.Test","Qty","Price","Fat","SNF","Protein","Added.Water","Analogue.Lactometer.Test", "Rejected","Corrected.Lactometer.Reading" ,"Analogue.Test.Done","Milk.Analyzer.Test.Done","Sale.Type","Report.Date","Created.Date")]
 
 
 dta_reports$date <- as.Date(dta_reports$Report.Date)
