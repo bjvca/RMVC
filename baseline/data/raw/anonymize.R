@@ -338,7 +338,8 @@ farmers <- farmers[ , !(names(farmers) %in% to_drop)]
 
 
 ###one ctrl MCC (MCC_50) was replaced during farmer level reinforcement
-###two treatmetn MCCs ()  were replaced during treatment rollout
+###two treatmetn MCCs (MCC_356,MCC_225)  were replaced during treatment rollout
+
 
 #replaceID <- read.csv("MCC_50_replace.csv")
 #replaceID$MCC_ID <- "MCC_50"
@@ -350,6 +351,7 @@ replaceID$MCC_ID[1] <- "MCC_50"
 MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
 MCC[MCC$MCC_ID=="MCC_356",names(replaceID)] <- replaceID[2,]
 MCC[MCC$MCC_ID=="MCC_225",names(replaceID)] <- replaceID[3,]
+MCC[MCC$MCC_ID=="MCC_363",names(replaceID)] <- replaceID[4,]
 
 ### export for wilberfoce
 

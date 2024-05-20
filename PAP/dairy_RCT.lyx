@@ -202,7 +202,7 @@ At the same time, it is surprising that there seems to be no market for
  Generally, payment differs per dairy farmer, depending on the protein and
  fat and lactose content of the milk supplied by the farmer
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 https://www.frieslandcampina.com/owned-by-farmers/milk-price-system/
@@ -299,7 +299,7 @@ Our study is related to a large literature.
 \begin_layout Itemize
 \begin_inset CommandInset citation
 LatexCommand citet
-key "rao2021got"
+key "RAO2023708"
 literal "false"
 
 \end_inset
@@ -1101,7 +1101,7 @@ ref{eq:two}
  to the coefficient estimate of the treatment of interest after dropping
  the interaction with orthogonal treatment
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 see: https://blogs.worldbank.org/impactevaluations/what-should-you-do-experiments-
@@ -1611,7 +1611,8 @@ average prices at which milk was bought from farmers (during last 7 days)
 \end_layout
 
 \begin_layout Enumerate
-volumes collected in last 7 days 
+volumes collected in last 7 days - note that midline qualitative survey
+ suggests this effect may be negative
 \end_layout
 
 \begin_layout Enumerate
@@ -1638,7 +1639,8 @@ Production investment and management (based on index of five recommended
 
 \begin_layout Enumerate
 Volumes sold (liters on an average days in the week preceding the survey)
- (liters) 
+ (liters) - note that midline qualitative survey suggests this effect may
+ be negative as no more water can be added.
 \end_layout
 
 \begin_layout Enumerate
@@ -1720,6 +1722,11 @@ Information on lactoscan use (for ITT-TOT analysis).
 \begin_layout Enumerate
 Does the intervention lead to formalization (eg.
  better record keeping, payment of taxes, registration with DDA,...)
+\end_layout
+
+\begin_layout Enumerate
+Freshness of milk (alcohol test) and when the milk was delivered (secondary
+ effect of no more skimming)
 \end_layout
 
 \begin_layout Standard
