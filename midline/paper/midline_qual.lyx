@@ -301,7 +301,7 @@ The remainder of this article is organized as follows.
  draw on.
  Next, we discuss the sources of data and explain how the interlocutors
  for the focus group discussions and expert interviews were sampled.
- We then turn to the findings, with sub-sections for impact on quality,
+ We then turn to the findings, with sub-sections for use, impact on quality,
  impact on prices, and the policy context.
  We also have a section that discusses some of the factors that may delay
  or limit the impact of the intervention.
@@ -481,10 +481,10 @@ Context and initiatives to increase milk quality
 \end_layout
 
 \begin_layout Standard
-Over the past decade, the dairy sub-sector in Uganda has changed dramatically.
- Particularly in the areas around Mbarara, commonly referred to as the southwest
-ern milk shed, an influx of foreign direct investment has created the preconditi
-ons for modern dairy value chains to emerge 
+The most dramatic change in the dairy value chain can be observed in the
+ area around Mbarara, commonly referred to as the southwestern milk shed.
+ Here, an influx of foreign direct investment has created the preconditions
+ for modern dairy value chains to emerge 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "van2021leading"
@@ -494,52 +494,54 @@ literal "false"
 
 .
  The area now has an extensive network of milk cooling and collection centers
- that link smallholder farmers to a cluster of processors.
- In the dairy value chain, quality is particularly important.
- Milk quality determines how much end product (eg cheese, caseine, milk
- powder,..) can be obtained from a given quantity of milk.
- Furthermore, it goes without saying that the protection of milk from dirt
- and contamination is important for food safety, as milk is very unstable.
- 
+ that link smallholder farmers to a cluster of processors that produce predomina
+ntly for the regional and global market.
 \end_layout
 
 \begin_layout Standard
-At the same time, it is surprising that there seems to be no market for
- quality in the sub-sector (while this is generally the case in more developed
- dairy value chain where the price is not a fixed price per liter of milk
- supplied.
- Generally, payment differs per dairy farmer, depending on the protein and
- fat and lactose content of the milk supplied by the farmer
+While one would expect that these processors have a lot to gain from better
+ quality raw milk, even in these reasonably formal value chains, payment
+ for quality seems to be limited.
+ For instance, using data collected for the baseline of the IFPRI-CYMMIT-DDA
+ project, we find that of the 1,446 farmers that sold to milk collection
+ centers in the week preceding the survey, only 6 percent indicated that
+ the MCC pays a quality premium.
+ The figures look a bit better when we collected data at the MCC level:
+ From the 125 MCCs included in the study, 25 percent indicated that they
+ paid a quality premium to supplying farmers.
+ Of the 90 MCCs that supplied to a processor in week preceding the baseline
+ survey, 21 percent indicated that the processor paid a premium for superior
+ quality.
+\end_layout
+
+\begin_layout Standard
+In this context, we will study an intervention by a researchers from CIMMYT
+ and IFPRI that is part of the 
+\begin_inset CommandInset href
+LatexCommand href
+name "CGIAR research initiative on Rethinking Food Markets"
+target "https://www.cgiar.org/initiative/rethinking-food-markets/"
+literal "false"
+
+\end_inset
+
+.
+ In close collaboration with the DDA, the research involved the installation
+ of milk analyzers in a random sample of milk collection centers.
+ These can be used to test milk samples of individual farmers or traders
+ that supply to the milk collection centers to establish quality of incoming
+ milk.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-https://www.frieslandcampina.com/owned-by-farmers/milk-price-system/
+However, the equipment was used much more broadly, for example also to test
+ test samples from the milk tankers when milk is picked up by traders or
+ processors prior to mixing in the milk of the MCC.
 \end_layout
 
 \end_inset
 
-).
- For instance, using recently collected survey data, we find that of a sample
- of 2000 farmers that sold to milk collection centers, only 6 percent indicated
- that they received a quality premium.
- From 114 milk collection centers that were included in the survey, we found
- that only about 18 percent (sometimes) paid a price premium to farmers.
- At the same time, expert interviews with processors indicate that their
- main challenge is related to sourcing milk of sufficient quality, pointing
- out issues related to butter fat content and solid non-fat content of the
- milk.
- They also say that the would be willing to pay for it.
-\end_layout
-
-\begin_layout Standard
-The intervention that we focus on is the one by CGIAR.
- In close collaboration with DDA, milk analyzers were installed in a random
- sample of milk collection centers.
- These can be used to test milk samples of individual farmers or traders
- that supply to the milk collection centers to establish quality of incoming
- milk, as well as to test samples from the milk tankers when milk is picked
- up by traders or processors.
  The milk analyzers were delivered with clear Standard Operating Procedure
  and MCC managers were trained on how to use and maintain them.
  
@@ -547,22 +549,22 @@ The intervention that we focus on is the one by CGIAR.
 
 \begin_layout Standard
 In addition to the milk analyzers, an ICT mediated system to keep track
- of milk quantity and quality was also developed and deployed.
+ of milk quantity and quality was developed and deployed.
  In particular, a custom Android application was developed that allows MCCs
  to register farmers and/or traders that deliver or buy milk.
  For these farmers or traders, MCC managers can then record milk deliveries
  (or milk purchases), including quantities delivered and price agreed, as
- well as a range of quality parameters that can be read from milk analyzer,
- such as butter fat and protein content.
+ well as a range of quality parameters that can be copied from milk analyzer,
+ such as butter fat percentage, added water, and protein content.
  The application can also provide MCC managers with simple reports at the
  MCC level, such as the average butter fat (weighted by quantities supplied)
  over a specified period (today, yesterday, last week, last two weeks and
  custom data range).
- Reports by farmer are also possible, such that MCC managers can determine
- the total sum to be paid to a farmer for milk delivered in the last 14
- days.
+ Reports by farmer are also possible, such that MCC managers can fpr example
+ calculate the total sum to be paid to a farmer for milk delivered in the
+ last 14 days.
  The application, which is pre-installed on a Samsung galaxy tab A7 with
- sim-card for mobile internet, backs up data in the cloud, but is designed
+ a sim-card for mobile internet, backs up data in the cloud, but is designed
  following an off-line first principle as some MCCs may not have coverage.
  The application also sends SMS receipts with quantities and quality parameters
  to farmers if so desired.
@@ -573,7 +575,7 @@ Finally, for the MCC intervention, we also developed a poster to be displayed
  at MCCs informing farmers that the MCC now has a milk analyzer that can
  determine milk quality for free.
  The poster was designed by a local artist.
- This was done to increase transparency and fairness and we hope it encourages
+ This was done to increase transparency and fairness in the hope it encourages
  farmers to demand testing if they feel they are being disadvantaged.
 \end_layout
 
@@ -610,13 +612,15 @@ Sources of data and sampling
 \end_layout
 
 \begin_layout Standard
-A first data sources is baseline survey data that was collected before the
- start of the CGIAR project.
- We collected data at two levels.
- First, data was collected on a total of 125 MCCs were the MCC manager was
- interviewed.
- Second, we sampled farmers from the catchment areas of these 125 MCCs (about
- 18 per MCC) leading to a sample of 2,260 farmers.
+This article utilizes multiple data sources.
+ A first data source is the baseline survey data that was collected prior
+ to the commencement of the CGIAR project.
+ Data collection was conducted at two levels.
+ Firstly, data was obtained from 125 milk collection centers (MCCs) through
+ interviews with MCC managers.
+ Secondly, a sample of farmers from the catchment areas of these 125 MCCs
+ was surveyed, with approximately 18 farmers sampled per MCC, resulting
+ in a total sample of 2,260 farmers.
 \begin_inset Foot
 status collapsed
 
@@ -667,13 +671,14 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-A second data source consists of the data on samples taken using the milk
- analyzers that was submitted between the start of the project and now by
- the MCCs.
- At the time of this study, about 30,000 submissions of samples were recorded.
- Each submissions provides data on milk quality of the sample (butter fat,
- Solid Non Fat), total quantity from which the sample was taken, price paid
- for the milk, and date of entry in the application.
+A second data source comprises the data from milk samples that were analyzed
+ using the milk analyzers and was submitted by the MCCs.
+ About six months after the installation of the first milk analyzers, approximat
+ely 30,000 sample submissions have been recorded.
+ Each submission includes detailed information on the milk quality (e.g.,
+ butter fat content and solids-not-fat), the total quantity of milk from
+ which the sample was drawn, the price paid for the milk, and the date of
+ entry into the application.
 \begin_inset Foot
 status collapsed
 
@@ -707,12 +712,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-A third data source consists of qualitative data in the form of semi-structured
- interviews with different actors in the dairy value chain, such as processors,
- MCC owners, MCC managers, and focus group discussions with milk traders,
- transporters and farmers.
- We also held key informant interviews with policy makers and civil servants
- that are involved in the sector.
+A third data source consists of qualitative data obtained through semi-structure
+d interviews with various stakeholders in the dairy value chain, including
+ processors, MCC owners, and MCC managers, as well as focus group discussions
+ with milk traders, transporters, and farmers.
+ Additionally, key informant interviews were conducted with policymakers
+ and civil servants involved in the sector.
 \begin_inset Foot
 status collapsed
 
@@ -736,58 +741,12 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-To decide on the sample for the qualitative data collections, we used the
- submission data mentioned above to select 4 milk collection centers.
- The first milk collection center MCC_216 has very consistent submissions,
- about 20 to 25 submissions per day (top panel in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sample-submissions-to"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
- Over the course of 6 months, this led to almost 3000 submissions.
- The second MCC, MCC_93, also has submissions over the entire 6 month period,
- but submissions are less consistent, with more than 100 submissions on
- some days and only a few on others (see second panel in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sample-submissions-to"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
- In the 6 month period since installation, this led to about 2000 submission.
- Third, MCC_542, shown in the bottom panel of Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sample-submissions-to"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-, shows some submissions in the first few months after installation of the
- milk analyzers, but submissions stopped after the new year.
- This MCC reordered a total of about 430 samples.
- Finally, MCC_553 never really started submitting.
-\end_layout
-
-\begin_layout Standard
-MCC_216 is located in Kirihura and is managed by a woman.
- The MCC is a farmer cooperative and has been in operation for about 10
- years.
- It has about 25 members, and at baseline the manager reported that on a
- typical day, between 22 and 30 farmers supply milk to the MCC, which is
- consistent with the number of samples reported each day in Figure 
+To determine the sample for the qualitative data collection, we utilized
+ the submission data previously mentioned to select four milk collection
+ centers (MCCs).
+ The first MCC, labeled MCC_216, demonstrated very consistent submissions,
+ with approximately 20 to 25 submissions per day, resulting in more than
+ 3,000 submissions over six months (top panel in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sample-submissions-to"
@@ -798,55 +757,104 @@ noprefix "false"
 \end_inset
 
 .
- Total capacity of the MCC is 3000 liters.
- In the dry season, capacity utilization is at 33 percent, while in the
- rainy season the MCC collects up to 4000 liters of raw milk per day.
- The manager indicates that they do not pay a premium for high quality milk.The
- MCC generally sells to a processor (Pearl Diary) and has formal agreement.
- Quality is measured using a lactometer before shipping to Pearl.
- Also here, no premium for quality is paid.
+ The second MCC, labeled MCC_93, also had submissions throughout the six-month
+ period, albeit with less consistency, ranging from over 100 submissions
+ on some days to only a few on others, culminating in approximately 1,600
+ submissions (see second panel in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample-submissions-to"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The third MCC, labeled MCC_542, showed some activity in the initial months
+ following the installation of the milk analyzers, but submissions ceased
+ after the new year, totaling 435 samples (bottom panel of Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample-submissions-to"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Lastly, we randomly selected one MCC, labeled MCC_553, which had virtually
+ no submissions.
 \end_layout
 
 \begin_layout Standard
-Located in Kazo district, MCC_93 is a fairly new cooperative with more than
+We can utilize data from the baseline survey to describe these four MCCs.
+ MCC_216, located in Kirihura, is managed by a woman and operates as a farmer
+ cooperative that has been in existence for approximately 10 years.
+ The cooperative has around 25 members, and at baseline, the manager reported
+ that between 22 and 30 farmers typically supply milk daily, aligning with
+ the number of samples recorded each day in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample-submissions-to"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Total capacity of MCC_216 is 3,000 liters.
+ During the dry season, capacity utilization is at 33 percent, while in
+ the rainy season, the MCC collects up to 4,000 liters of raw milk per day.
+ The manager indicated that the MCC does not offer a premium for high-quality
+ milk to suppliers.
+ The MCC primarily sells to a processor, Pearl Dairy, under a formal agreement.
+ Before the installation of the milk analyzer as part of the project, milk
+ quality was assessed using a lactometer before shipment to Pearl Dairy.
+ The processor also did not pay a premium for quality.
+\end_layout
+
+\begin_layout Standard
+Located in Kazo district, MCC_93 is a relatively new cooperative with over
  200 members.
- On an average day, in the dry season, about 130 farmers supply to the MCC,
- and this number increases to about 150 during the rainy season.
- The MCC does not pay a premium for quality to supplying farmers.
- Total cooler capacity is 3,238 liters.
- On an average day in the dry season, 5000 liters is collected, and this
- increases to 8,200 in the rainy season.
- The MCC also normally sells to a processor, and this processor, Lakeside,
- does pay a premium for quality.
- 
+ On an average day during the dry season, approximately 130 farmers supply
+ milk to the MCC, with this number increasing to about 150 during the rainy
+ season.
+ The MCC does not offer a quality premium to supplying farmers.
+ The total cooling capacity of MCC_93 is 3,238 liters.
+ In the dry season, the MCC collects around 5,000 liters per day, which
+ rises to 8,200 liters per day in the rainy season.
+ The MCC typically sells milk to a processor, Lakeside, which does provide
+ a premium for high-quality milk.
 \end_layout
 
 \begin_layout Standard
-MCC_542 is located in Kirihura.
- The MCC is privately owned and has been in operation for about 20 years.
- It has electricity from the mains but did not have a milk analyzer at baseline.
- The MCC receives milk from about 25 to 30 farmers on an average day, depending
- on the season.
- The MCC reports a total capacity of almost 7000 liters, but only uses up
- to 3000 liters in the rainy season.
- Capacity utilization reduces to 1500 liters in the dry season.
- The MCC does not pay a quality premium to farmers.
- The MCC sold anbout 3000 liters a day to a processor, Amos Dairies, in
- the week preceding the baseline survey.
- Amos Dairies did not pay a quality premium.
+MCC_542 is located in Kirihura and is a privately owned facility that has
+ been in operation for approximately 20 years.
+ It is connected to the mains electricity but did not have a milk analyzer
+ at baseline.
+ The MCC receives milk from about 25 to 30 farmers daily, depending on the
+ season.
+ While the MCC reports a total capacity of nearly 7,000 liters, it utilizes
+ only about 3,000 liters during the rainy season and this reduces to 1,500
+ liters in the dry season.
+ The MCC does not offer a quality premium to supplying farmers.
+ In the week preceding the baseline survey, the MCC sold about 3,000 liters
+ per day to a processor, Amos Dairies, which also did not provide a quality
+ premium.
 \end_layout
 
 \begin_layout Standard
-MCC_553 is also located in Kirihura.
- This MCC is also privately owned and has been in operation for about 5
- years.
- The MCC has a total capacity of 5000 liters.
- During the rainy season, the MCC operates at 100 percent capacity, but
- volumes reduce to 1000 liters in the dry season.
- This milk is supplied by 30 to 50 customers per day.
- The MCC sold to both Pear Dairies and Amost Dairies in the week proceeding
- the baseline survey, but also here no quality premia were paid by the processor
-s.
+MCC_553, also located in Kirihura, is a privately owned facility that has
+ been operational for approximately 5 years.
+ The MCC has a total capacity of 5,000 liters.
+ During the rainy season, the MCC operates at full capacity, but volumes
+ decrease to 1,000 liters during the dry season.
+ This milk is supplied by 30 to 50 customers daily.
+ In the week preceding the baseline survey, the MCC sold milk to both Pearl
+ Dairies and Amos Dairies; however, neither processor paid a quality premium.
 \end_layout
 
 \begin_layout Standard
@@ -859,7 +867,7 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename analysis/submissions.png
-	scale 50
+	scale 70
 
 \end_inset
 
@@ -870,7 +878,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sample submissions to MCCs
+Sample submissions to selected MCCs
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sample-submissions-to"
@@ -891,38 +899,68 @@ name "fig:Sample-submissions-to"
 \end_layout
 
 \begin_layout Standard
-In each of these three MCCs, we will select 3 farmers.
- The three farmers we select for the first two (treatment) MCCs are:
+In each of these four MCCs, we will select a number of farmers to be included
+ in the focus group discussions.
+ For the MCCs that have submissions, we will select 3 farmers: one farmer
+ that was identified as a customer of the MCC at the time of baseline data
+ collection and was also found among the list of farmers that submitted
+ milk to the MCC; one farmer that was identified as a customer of the MCC
+ at the time of baseline data collection but did not feature in the list
+ of farmers that submitted milk to the MCC;
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is potentially a dairy farmer that stopped submitting to the MCC.
+ However we also found that often the names and contact details that farmers
+ used for registration in the application was different than in the baseline
+ survey data, for instance due to spelling mistakes.
+ 
 \end_layout
 
-\begin_layout Itemize
-one farmer that was identified as a customer of the MCC at the time of baseline
- data collection and was also found among the list of farmers that submitted
+\end_inset
+
+ and one farmer that was not sampled as a customer of the MCC at the time
+ of baseline data collection, but was on the list of farmers that submitted
  milk to the MCC.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This is potentially a new customer, but it is also possible that we this
+ farmer was submitting before the start of the project but was not sampled.
 \end_layout
 
-\begin_layout Itemize
-one farmer that was identified as a customer of the MCC at the time of baseline
- data collection but did not feature in the list of farmers that submitted
- milk to the MCC.
- This is potentially a dairy farmer that shifted to another channel.
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-one farmer that was not sampled as a customer of the MCC at the time of
- baseline data collection and was also found among the list of farmers that
- submitted milk to the MCC.
- This is potentially a new customer.
+ In the MCC that has no submissions, we only selected a farmer from the
+ baseline.
 \end_layout
 
 \begin_layout Standard
-We stratified farmers to make sure we had 50% that delivered themselves
- to MCCs and 50% that were using a trader to get their milk to the MCCs.
- Even though we did not survey these traders at baseline and we do not plan
- to survey them at endline, this qualitative midline provided an excellent
- opportunity to get some insights on them.
- We thus selected two farmers from the baseline: one that was directly connected
- and one that was connected through a trader.
+We can use the farmer-level baseline data to characterize the first two
+ types of farmers.
+ On average, a dairy farmer owns about 40 milking cows, with the largest
+ farmer owning 160 cows and the smallest farmer owning only 8 cows.
+ This translates to an average production of 77 liters of milk per day during
+ the rainy season and 46 liters per day in the dry season.
+ Farmers who appear in both the baseline and submission data are generally
+ larger and produce more milk than those who appear only in the baseline
+ data.
+ On average, approximately 18 percent of these farmers reported receiving
+ a price premium, with this proportion being slightly higher among farmers
+ present in both the baseline and submission data.
+\end_layout
+
+\begin_layout Standard
+The CGIAR project stratified farmers to ensure an equal distribution between
+ those who delivered milk directly to MCCs and those who delivered through
+ traders.
+ Although traders were not surveyed at baseline and are not planned to be
+ surveyed at endline, the qualitative midline presented an excellent opportunity
+ to gather insights about them.
+ Therefore, we selected two farmers from the baseline: one who was directly
+ connected to an MCC and one who was connected through a trader.
  In the latter case, the trader was also interviewed.
 \end_layout
 
@@ -931,27 +969,119 @@ Results
 \end_layout
 
 \begin_layout Standard
-In most MCCs, the lactometers were in use when we entered.
- Farmers also indicate that they never have to insist on being tested.
- MCC managers are also very transparent about the results.
- Even in the MCC we did not receive any record from, it seemed the machine
- was used in the first few months.
- The MCC manager told us that he stopped testing because of understaffing.
- Farmers from the MCC told us that they were tested a few times in the beginning
-, but when asked to be tested recently, the MCC manager told them there
- was no cleaning reagents anymore.
+We now turn to the analysis of the data.
+ We mostly focus on what we learned from the focus group discussions and
+ expert interviews, and triangulate this with quantitative data where possible.
+\end_layout
+
+\begin_layout Subsection
+Use of equipment
 \end_layout
 
 \begin_layout Standard
-Even though the application was also appreciated by MCC managers, the use
- of the application was less visible.
- In one MCC, the MCC manager told us that he did not use written records
- anymore and had completely gone digital (we could not check this because
- the MCC was closed when we visited).
- In other cases, it is often still the case that MCC managers keep books
- and then copy into the app.
- One manager told us that he used the book because his customers did not
- trust the application.
+In most MCCs, the milk analyzers were actively being used when we visited
+ the MCCs.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The MCCs we selected were informed of our visit.
+ However, we also paid some surprise visits to some MCCs that were not selected,
+ and also there, the machines were being used.
+\end_layout
+
+\end_inset
+
+ Farmers indicated that they never had to insist on having their milk tested,
+ and MCC managers were very transparent about the results.
+ Even in the MCC from which we did not receive any records, it appeared
+ the machine had been used during the initial months.
+ The MCC manager reported that testing ceased due to understaffing.
+ Farmers from this MCC mentioned that they were tested a few times initially,
+ but when they recently requested testing, the MCC manager informed them
+ that there were no cleaning reagents available.
+\end_layout
+
+\begin_layout Standard
+Although MCC managers also appreciated the application to keep track of
+ milk transactions, its use was less evident.
+ In one MCC, the manager mentioned that he no longer used written records
+ and had transitioned entirely to digital records (we could not verify this
+ as the MCC was closed during our visit).
+ In other cases, MCC managers often maintained written records and then
+ transferred the information into the application.
+ One manager stated that he continued using written records because his
+ customers did not trust the digital application.
+\end_layout
+
+\begin_layout Standard
+We can also gauge the use of the application and milk analyzers by examining
+ the number of submissions by MCCs over the six months since installation.
+ While all MCCs where a milk analyzer was installed submitted some data,
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sample-submissions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ reveals significant variations among MCCs.
+ For instance, 14 MCCs had fewer than 100 submissions over the entire period,
+ whereas 13 had more than 1,000 submissions.
+ The average number of submissions is slightly over 500, equating to about
+ 3 submissions per day.
+ It is important to note that these submission figures likely underestimate
+ the actual use of the application and milk analyzers, as some MCCs may
+ be using the application but not submitting data due to connectivity issues,
+ and some MCCs may be using the milk analyzers without utilizing the application.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename analysis/submissions_all.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sample submissions
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sample-submissions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -972,73 +1102,83 @@ We used to only look at density with a lactometer, which is not really precise.
 \end_layout
 
 \begin_layout Standard
-Actors throughout the value chain agreed that the milk analyzers had a significa
-nt effect on milk quality.
- These primary effects manifested particularly in terms of reductions in
- instances where water was added to the milk, and in an increase in butter
- fat content of the raw milk.
+Actors throughout the value chain concurred that the milk analyzers had
+ a significant positive impact on milk quality.
+ The primary effects were evident in the reduction of instances where water
+ was added to the milk and in the increase of butter fat content in raw
+ milk.
 \end_layout
 
 \begin_layout Standard
-Water is added to raw milk to increase quantity and hence total revenue
- derived from selling more milk.
- Qualitative data suggests that addition of water happened at all links
- in the value chain.
+Water is sometimes added to raw milk to increase quantity and hence total
+ revenue derived from selling more milk.
+ Qualitative data suggests that addition of water happened at all nodes
+ of the value chain.
  For instance, traders reported that farmers sometimes leave water on the
- bottom of their milk cans.
+ bottom of their milk cans when they start milking.
  MCC managers reported that traders sometimes pass by their homes and add
  water to increase the volumes they supply to MCCs.
- Farmers report that MCCs sometimes complains that the milk that the transporter
- brings contains water, even though the farmer did not add water to the
- milk.
- This can happen if transporters replace some share of raw milk with water
- and side sell this milk.
- We also heard reports that MCC managers sometimes add water to the milk
- tankers where milk is aggregated.
+ Farmers reported complaints from MCCs about milk brought by transporters
+ containing water, even though the farmers themselves did not add water.
+ This suggests that transporters might replace a portion of the raw milk
+ with water and sell the raw milk elsewhere.
+ Additionally, there were reports that MCC managers sometimes add water
+ to the milk tankers where milk is aggregated.
 \end_layout
 
 \begin_layout Standard
-The increase in butter fact content is due to the fact that, before the
- milk analyzers, farmers (or traders) often separate butter fat from milk
- before selling to milk collection centers.
- This milk fat is then used to make local ghee.
- There are different ways in which butter fat is extracted from raw milk.
- The most effective way is to use a machine called a separator.
- These machines have seen a remarkable increase in use during Covid-19 when
- movement restrictions affected milk collection and marketing.
- Farmers recount that some villages or trading centers are known for providing
- these services, and traders and transporters would pass by these villages
- to increase their margin.
- Other, less sophisticated ways of removing fat involves gently blowing
- the bubbles that form after milking from the milk which also contains most
- of the fat.
- This is a method that is often used by farmers.
+The increase in butter fat content is attributed to the fact that, prior
+ to the introduction of milk analyzers, farmers or traders often separated
+ butter fat from milk before selling it to milk collection centers.
+ This milk fat was then used to produce local ghee.
+ Various methods are employed to extract butter fat from raw milk.
+ The most effective method involves a machine called a separator.
+ The use of these machines increased significantly during the COVID-19 pandemic,
+ when movement restrictions impacted milk collection and marketing 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "nabwire2022impact"
+literal "false"
+
+\end_inset
+
+.
+ Farmers reported that certain villages or trading centers became known
+ for providing these services, and traders and transporters would visit
+ these areas to enhance their profit margins.
+ A less sophisticated method involves gently blowing the bubbles that form
+ on the milk after milking, which contain most of the fat.
+ This method is commonly used by farmers.
 \end_layout
 
 \begin_layout Standard
-MCCs indicate that the likelihood that processors or traders reject their
- milk has reduced due to the milk analyzers.
- In one specific case, acceptance rates went from 80 percent to 100%.
- The likelihood that suppliers to the MCC (farmers and traders) were rejected
- by the MCC increased in the first few weeks after the installation of the
- milk analyzers, but reduced rapidly once farmers and traders learned that
- from now on their milk would be systematically tested.
- MCCs indicate that most farmers and traders that scored poorly during initial
- tests were able to improve.
- However, there is also a share of farmers that was not willing or able
- to improve and stopped supplying to the MCC with the milk analyzer.
+MCCs reported that the likelihood of processors or traders rejecting their
+ milk decreased due to the implementation of milk analyzers.
+ In one specific instance, acceptance rates improved from 80 percent to
+ 100 percent.
+ Initially, the likelihood of suppliers (farmers and traders) being rejected
+ by the MCC increased in the weeks following the installation of the milk
+ analyzers.
+ However, this likelihood quickly diminished as farmers and traders realized
+ that their milk would now be systematically tested.
+ MCCs noted that most farmers and traders who scored poorly during the initial
+ tests were able to improve their milk quality.
+ Nonetheless, a portion of farmers, either unwilling or unable to improve,
+ ceased supplying milk to the MCC with the milk analyzer.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-We did some further probing on what happened to those that stopped supplying
- to the MCC.
+We did some further probing on what happened to farmers or traders that
+ stopped supplying to an MCC after the installation of the milk analyzer.
  In some cases, these farmers went out of business or started supplying
  the informal sector.
  Sometimes it was argued that these farmers turned to MCCs that did not
  have milk analyzers.
- However, the CGIAR intervention was designed in such a way that MCCs that
- were close to each other all received a milk analyzer (clustered randomization).
+ However, the CGIAR intervention was designed as a cluster randomized control
+ trial, such that MCCs that were close to each other are all in the same
+ treatment group (that is, they all received a milk analyzer, or none of
+ them received a milk analyzer).
  This seemed to have worked to some extent: in one MCC, when asked where
  rejected milk went to, the MCC manager said that 
 \begin_inset Quotes eld
@@ -1046,7 +1186,7 @@ We did some further probing on what happened to those that stopped supplying
 
 incidentally, all the other MCCs in the neighborhood also received a milk
  analyzer, so farmers or traders that add water or remove fat have nowhere
- to run to.
+ else to go.
 \begin_inset Quotes erd
 \end_inset
 
@@ -1061,84 +1201,265 @@ incidentally, all the other MCCs in the neighborhood also received a milk
 \end_layout
 
 \begin_layout Standard
-We now turn to the data to confirm some of these findings.
- We first look at rejection of farmers by milk collection centers.
- As stakeholders indicate that reductions were strongest in the first few
- weeks after installation, we compare averages in the first week after installat
-ion to averages in the last week of data collection.
+The impact on milk quality can also be seen in the submissions data.
+ As stakeholders indicate that reductions were strongest immediately after
+ installation, we compare data from submissions on the first day after installat
+ion with data from submissions from the last day (about 6 months later).
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Added-Water"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows that immediately post installation of the milk analyzers, more than
+ 14 percent of the samples were diluted to some extent.
+ This share has reduced to 8.5 percent in April 2024.
+ This reduction in water is also reflected in average added water content
+ of the milk samples, which reduced from 0.69 percent immediately after installat
+ion to 0.21 percent six months into the project.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that it is much harder to look at the impact of the milk analyzers
+ on butter fat using submissions data, as butter fat has a strong seasonal
+ component.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Added Water
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Added-Water"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& first submissions & last submissions
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Share of samples with added water (
+\backslash
+%) & 14.2 & 8.5 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Added Water (
+\backslash
+%) & 0.69 & 0.21 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 An interesting secondary effect of the milk analyzers is an increase in
- the freshness of the milk.
- This indirect effect is caused by the fact that, to skim the milk of butter
- fat, the milk has to rest for a few hours and so farmers delay transporting
- milk to the MCC where milk is chilled.
- With milk analyzers installed, farmers are discouraged to skim milk and
- so there is also no point in delaying delivery.
- As a result milk arrives earlier in the MCC.
+ milk freshness.
+ This indirect effect occurs because, to skim milk for butter fat, farmers
+ must let the milk rest for a few hours, delaying its transportation to
+ the MCC where it is chilled.
+ With the installation of milk analyzers, farmers are discouraged from skimming
+ the milk, eliminating the reason to delay delivery.
+ Consequently, milk now arrives earlier at the MCC, improving its freshness.
+ 
 \end_layout
 
 \begin_layout Standard
-Another interesting secondary effect is a reduction in milk quantities.
- MCC managers indicated that it was more difficult to fill their tanks due
- to the fact that they rejected more milk immediately after the installation,
- and the fact that they lost some suppliers that would or could not change
+Another notable secondary effect is a reduction in milk quantities.
+ MCC managers reported increased difficulty in filling their tanks immediately
+ after the installation of the milk analyzers, due to the higher rejection
+ rates of milk and the loss of some suppliers unwilling or unable to change
  their practices.
- Furthermore, now that farmers and traders can not add water to their milk
- anymore, the milk analyzer also led to a reduction of quantities on the
- intensive margin.
+ Furthermore, the inability of farmers and traders to add water to their
+ milk, as a result of the milk analyzers, also contributed to a reduction
+ in quantities on the intensive margin.
 \end_layout
 
 \begin_layout Standard
-The effect of the milk analyzers on milk quality also trickles down to transport
-ers.
- Farmers told us that transporters used to add water to the milk they transporte
-d, which allowed the to earn something extra.
- The introduction of the milk analyzers exposed this practice: farmers that
- received complaints from the MCC that they found water in their milk (but
- did not add the water themselves) now take samples at the farm gate and
- take these to the MCC for testing and then confront the transporters with
- the result.
- This was confirmed by a transporter we talked to: While he indicated at
- the beginning of the interview that they liked the milk analyzers, he also
- informally mentioned at the end that the machines are limiting trader business
- as they can now not top up with water.
+The impact of milk analyzers on milk quality also extends to transporters.
+ Farmers reported that transporters used to augment the milk they transported
+ with water, allowing them to earn additional income.
+ However, the implementation of milk analyzers brought this practice to
+ light: farmers who received complaints from the MCC regarding the presence
+ of water in their milk (despite not adding water themselves) began taking
+ samples at the farm gate.
+ They then took these samples to the MCC for parallel testing, subsequently
+ confronting the transporters with the results.
+ This was corroborated by a transporter we interviewed: While initially
+ expressing approval of the milk analyzers, he also casually remarked towards
+ the end of the interview that the machines are constraining trader business,
+ as they can no longer dilute the milk with water.
 \end_layout
 
 \begin_layout Standard
-When we asked traders how the milk analyzers had impacted his business,
- they admitted that they used to deliver bad quality milk.
- The indicated that the main problem was added water (about 4 percent).
- According to the traders, the water was added to the milk by farmers, who
- leave some water in the cans before they start milking.
- Traders indicated that about half of the farmers did this.
- They fixed this problem by becoming more serious with their lactometer.
- They now test each sample that they aggregate at the farmgate and only
- buys when the reading is 30 (while they used to buy at 26-27 before).
- This is because they learned that a reading of 26-27 can still mean there
- is water, but if it is 29-30 there is guaranteed no water.
- They told farmers that they bought from that they needed to change, and
- while most did, traders also indicate they lost a some suppliers after
- the introduction of the milk analyzers who could not or refused to change.
+Upon inquiring about the impact of milk analyzers on their business operations,
+ traders acknowledged previous practices of delivering milk of inferior
+ quality.
+ They highlighted the primary issue of adulteration with added water.
+ According to traders, this water adulteration was primarily conducted by
+ farmers, with approximately half of them engaging in this practice.
+ Traders addressed this issue by adopting a more stringent approach with
+ their lactometers.
+ They now systematically test each milk sample aggregated at the farm gate
+ and only procure those with lactometer readings above 29-30, a shift from
+ their previous acceptance threshold of 26-27.
+ This adjustment stems from their realization that readings of 26-27 may
+ still indicate water presence, whereas readings of 29-30 or above offer
+ greater assurance of milk integrity.
+ Traders communicated to their suppliers the necessity of adapting to these
+ standards, leading to compliance by the majority.
+ However, traders also noted losing some suppliers post-milk analyzer implementa
+tion, as certain suppliers were unable or unwilling to adhere to the revised
+ practices.
 \end_layout
 
 \begin_layout Standard
-A trader that links farmers to milk collection centers essentially moves
- the problem that milk analyzers solve one link upstream the value chain.
- Indeed, at the farm-gate, traders collect and aggregate raw milk without
- the capacity to test.
- Traders therefore asked if there are ways in which the parameters of importance
- can also be made visible at the farm-gate.
-\end_layout
-
-\begin_layout Standard
-The most dramatic effects on quality were reported by the processor that
- is implementing the QBMPS.
- The processor indicated that before the introduction of the QBMPS, only
- about 50% of the milk was suitable for UHT (which requires good quality
- milk).
- In the sample that uses the QBMPS, this share has gone up to 90%.
+The processor implementing the Quality-Based Milk Payment System (QBMPS)
+ reported the most significant impacts on milk quality.
+ Prior to the implementation of QBMPS, only approximately 50% of the milk
+ met the quality standards necessary for Ultra-High Temperature (UHT) processing
+, which demands high-quality milk.
+ However, within the sample utilizing QBMPS, this proportion has increased
+ to 90%.
 \end_layout
 
 \begin_layout Subsection
@@ -1146,80 +1467,111 @@ Impact on price
 \end_layout
 
 \begin_layout Standard
-Impact on price was much less evident that impact on quality.
- In general, the processor determines the price of milk, which is normally
- fixed for 15 days.
- Most MCC owners and managers indicate that processors just accept or reject
- milk based on their tests.
- They do not pay a price premium for the quality parameters that they ultimately
- deem important.
- This was also confirmed by the processor we interviewed, who indicated
- that once the minimal standards are met, every supplier receives the same
- price.
+The impact of making quality visible midstream on prices appears more subtle
+ compared to its effect on quality.
+ Generally, processors determine the price of milk, which is typically fixed
+ for a 15-day period.
+ Most Milk Collection Center (MCC) owners and managers report that processors
+ either accept or reject milk based on their tests, without offering a price
+ premium for quality parameters they ultimately consider important.
+ This observation was corroborated by a processor interviewed, who stated
+ that once the minimal standards are met and the milk is accepted, all suppliers
+ receive the same price.
  At the time of the qualitative fieldwork, the price was 600 UGX per liter.
 \end_layout
 
 \begin_layout Standard
-However, when probing further, subtle price effects can be found.
- For instance, one MCC manager indicated that since the milk analyzer was
- installed, the processor they supply to was less likely to apply deductions
- to the price of milk in cases the milk was not up to standard.
- Before the milk analyzer, these deductions would happen rather frequently
- (about twice every fortnight).
- The deductions seem to depend on the quality and how good you can negotiate.
- While one MCC manager indicated the deductions are small (1-2% of the price),
- the manager of another MCC said the deductions were more around 4 to 8
- %.
- The MCC manager indicated that this loss was borne by the MCC, but farmers
- indicate that these deductions were also reflected in the prices they received.
- However, now that there is a machine, farmers also indicated that they
- will not share in the loss anymore because now they know they are not to
- blame.
+However, probing further reveals subtle price effects.
+ For instance, one MCC manager indicated that since the installation of
+ the milk analyzer, the processor they supply to is less likely to apply
+ deductions to the price of milk when it does not meet standards.
+ Previously, these deductions occurred frequently, approximately twice every
+ fortnight.
+ The extent of the deduction seems to depend on milk quality and the negotiating
+ ability of the MCC.
+ While one MCC manager noted that the deductions were small (1-2% of the
+ price), another manager reported deductions ranging from 4 to 8%.
+ According to MCC managers and owners, losses were primarily borne by the
+ MCC, but some farmers reported that the deductions also affected the prices
+ they received (particularly if the MCC was a cooperative).
+ Now, with the milk analyzer, farmers indicated they no longer share in
+ the loss, as the machine ensures they are not to blame for substandard
+ milk quality.
 \end_layout
 
 \begin_layout Standard
-Another MCC manager initially also indicated that processors do not pay
- a price premium.
- However, this particular MCC works with a trader the picks the milk from
- them and then ships the milk to a processor.
- The MCC manager told us that some few months ago, the trader could now
- take the milk to a different processor because of the improved quality,
- and that this processor paid a higher price than the one they used to work
- with.
- The MCC manager recounted that they indeed received part of the price increase,
- and that this was also passed down to the farmers.
- The price premium was about 30 UGX or 5 percent of the going market price.
+Another MCC manager initially indicated that processors do not pay a price
+ premium.
+ However, this particular MCC collaborates with a trader who transports
+ the milk to a processor.
+ A few months ago, the trader began delivering the milk to a different processor
+ due to the improved quality, resulting in a higher price from this new
+ processor compared to the previous one.
+ The MCC manager confirmed that they received a portion of this price increase,
+ which was also passed down to the farmers.
+ The price premium amounted to approximately 30 UGX or 5% of the prevailing
+ market price.
 \end_layout
 
 \begin_layout Standard
-While there seems to be some differentiation at the MCC level, there is
- no differentiation at the farmer level.
- That is, if the MCC is paid a premium, this is shared equally among farmers.
- Many farmers seem to be fine with this.
- Especially in cooperatives, the view is that different prices within the
- same group would create conflict.
- On the one hand, they seem to understand that if the processor is not paying
- for quality, the MCC has no other choice than to follow and also does not
- need to pay for quality.
- But there also seems to be a good sense of community.
- Many farmers indicated that it is more important to improve the quality
- of all farmers, as opposed to differentiating between farmers.
+Farmers understand that if the MCC itself does not receive a premium for
+ quality, it becomes challenging for them to extend such premiums to their
+ suppliers.
+ However, if the MCC does receive a premium, farmers generally accept that
+ it should be distributed equally among them.
+ When presented with the notion that those who invest in quality should
+ receive a better price than those who do not prioritize quality, farmers
+ expressed concerns about potential conflicts, particularly within cooperatives,
+ if different prices were offered to members.
+ Many farmers emphasized the importance of collectively improving the quality
+ standards across all farmers, rather than creating differentiation among
+ them.
+ 
 \end_layout
 
 \begin_layout Standard
-The largest effect on price was observed in the Pearl MCCs.
- Price is decided on the basis of butter fat (base is 3.3 % with +UGX10 per
- .1 increase) and SNF (base is 8.5 with +UGX10 per .1 increase).
- Note that this demonstrates substantial scope for quality premia, as farmers
- in our sample get an average butter fat rate of 4% and SNF around 8.6.
- So with a base price of, say 500, the average farmer would get 580 UGX
- per liter, amounting to a 16 percent quality premium.
+The effect of milk testing on price was most evident in MCCs where Pearl
+ was rolling out its QBMPS.
+ For farmers supplying to these MCCs, price is a direct function of butter
+ fat (base is 3.3 % with +UGX10 per .1 increase) and SNF (base is 8.5 with
+ +UGX10 per .1 increase), and this information is publicized in the MCC using
+ a pricing matrix.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that this pricing scheme reveals substantial scope for earning a quality
+ premium in our sample: As farmers in our sample get an average butter fat
+ rate of 4% and SNF around 8.6, with this scheme and a base price of, say,
+ 500, the average farmer would get 580 UGX per liter, amounting to a 16
+ percent quality premium.
+\end_layout
+
+\end_inset
+
+ In Pearl MCCs, the milk analyzers are connected to tablet computers via
+ Bluetooth such that MCC managers do not have to copy results manually.
+ Every 2 weeks, this information is used to determine payment and the processor
+ directly pays the farmer.
+ As such, individual farmers have an incentive to increase butter fact content
+ and SNF.
 \end_layout
 
 \begin_layout Standard
-Farmers in one MCC indicated that the milk analyzers actually led to a reduction
- in the price that they were getting for their milk, or a reduction in the
- profits they could make from milk.
+We also found indications of general equilibrium type effects.
+ As mentioned in the previous section, a secondary effect of the milk analyzers
+ in a reduction in quantities of milk, because more milk is rejected and/or
+ volumes can not be increased by adding water.
+ Some farmers and MCC managers were of the impressions that lower volumes
+ also caused in increase in the price of raw milk.
+\end_layout
+
+\begin_layout Standard
+Finally, we also uncovered potential negative effects on the price of milk
+ at the farm level.
+ Farmers in one MCC indicated that the milk analyzers actually led to a
+ reduction in the price that they were getting for their milk, or an increase
+ in the costs associated with their business, reducing their profits.
  This is due to the fact that most farmers do not transport milk to the
  MCC themselves, but either work with traders (who buy their milk at the
  farm gate and then sell this milk to MCCs) or transporters (that charge
@@ -1234,169 +1586,12 @@ Farmers in one MCC indicated that the milk analyzers actually led to a reduction
  their fees.
 \end_layout
 
-\begin_layout Standard
-As a result, traders are now asking higher fees for transport, or they are
- offering lower prices to the farmers they buy from.
- 
+\begin_layout Subsection
+Policy impact
 \end_layout
 
 \begin_layout Standard
-One farmer said that he thinks the drop in price during wet season is not
- as large as it used to be.
-\end_layout
 
-\begin_layout Standard
-There are also indirect effects.
- Due to the fact that milk quantities are reduced, prices of milk have gone
- up.
-\end_layout
-
-\begin_layout Standard
-non-price incentives
-\end_layout
-
-\begin_layout Standard
-Even though farmers do not get a premium price, all farmers we talked to
- indicated that they were very happy with the machine.
- Among the dairy farmers, there is a certain pride that farmers in the region
- are known for their good quality.
- It is a question of honor.
- However, farmers also indicated that they want to be ready for QBP.
-\end_layout
-
-\begin_layout Standard
-It may be that we just picked out.
- Indeed one farmer commented that 
-\end_layout
-
-\begin_layout Quotation
-\begin_inset Quotes eld
-\end_inset
-
-when you bring the police to an area with thieves, do you think the thieves
- will like the police
-\begin_inset Quotes erd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Other
-\end_layout
-
-\begin_layout Standard
-Farmers indicate they are locked in a low equlibrium.
- The low price that processors offer means that farmers can not make necessary
- investments (such as supplements) to increase the quality.
- This means processors receive low quality and hence do not pay a good price.
-\end_layout
-
-\begin_layout Standard
-A QBP may also have an indirect effect on the 
-\series bold
-animals
-\series default
-.
- Higher yielding animals that give milk with higher butter fat will fetch
- a higher price.
-\end_layout
-
-\begin_layout Standard
-Similarly farmers noted that if a price premium is paid, this will have
- an important effect on 
-\series bold
-peer learning
-\series default
-.
- Farmers will want to know what the farmer that gets the higher prices is
- doing, so they can copy it and also fetch a higher price.
-\end_layout
-
-\begin_layout Section
-Analysis
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Milk-prices"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
- shows milk prices over the first six months after the milk analyzers were
- installed.
- The figure clearly shows the seasonality in milk supply, with prices falling
- below 500 UGX per liter in the main rainy season around November, and then
- gradually increasing up to 900 UGX per liter in the first few months of
- 2024 when precipitation levels are at their lowest levels.
- Smaller rains in march and april reduced prices somewhat.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename prices.png
-	scale 25
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Milk prices
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Milk-prices"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Focus group discussions with Policy makers
-\end_layout
-
-\begin_layout Standard
-Agnes Waguma director technical services, Julius.wandera@dda.go.ug senior lab
- technician
-\end_layout
-
-\begin_layout Standard
-Stephen Onyait acting principle Planning officer
-\end_layout
-
-\begin_layout Standard
-Joseph Agaba dairy development officer
 \end_layout
 
 \begin_layout Standard
@@ -1568,6 +1763,68 @@ From meeting with staff in KLA:DDA has formed a technical working group
  the technical working group.
 \end_layout
 
+\begin_layout Section
+Other
+\end_layout
+
+\begin_layout Standard
+Farmers indicate they are locked in a low equlibrium.
+ The low price that processors offer means that farmers can not make necessary
+ investments (such as supplements) to increase the quality.
+ This means processors receive low quality and hence do not pay a good price.
+\end_layout
+
+\begin_layout Standard
+non-price incentives
+\end_layout
+
+\begin_layout Standard
+Even though farmers do not get a premium price, all farmers we talked to
+ indicated that they were very happy with the machine.
+ Among the dairy farmers, there is a certain pride that farmers in the region
+ are known for their good quality.
+ It is a question of honor.
+ However, farmers also indicated that they want to be ready for QBP.
+\end_layout
+
+\begin_layout Standard
+It may be that we just picked out.
+ Indeed one farmer commented that 
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Quotes eld
+\end_inset
+
+when you bring the police to an area with thieves, do you think the thieves
+ will like the police
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A QBP may also have an indirect effect on the 
+\series bold
+animals
+\series default
+.
+ Higher yielding animals that give milk with higher butter fat will fetch
+ a higher price.
+\end_layout
+
+\begin_layout Standard
+Similarly farmers noted that if a price premium is paid, this will have
+ an important effect on 
+\series bold
+peer learning
+\series default
+.
+ Farmers will want to know what the farmer that gets the higher prices is
+ doing, so they can copy it and also fetch a higher price.
+\end_layout
+
 \begin_layout Subsection
 Problems:
 \end_layout
@@ -1664,6 +1921,17 @@ m, it seems unlikely that MCCs and traders will be willing to purchase their
  own machines.
  But even with modest quality premia, the machines become an investment
  with a decent return.
+\end_layout
+
+\begin_layout Standard
+Potential negative spilover into home consumption of dairy products.
+ For instance we see significant reductions in water added, but no impact
+ on the quanitities of milk delivered.
+ This seems to suggest that milk was replaced by water (instead of water
+ just being added).
+ This replace milk is now not available anymore.
+ This holds even more for skimming.
+ 
 \end_layout
 
 \begin_layout Section
