@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
+\begin_preamble
+\sloppy
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children false
 \language english
@@ -298,13 +301,13 @@ The remainder of this article is organized as follows.
  We start with a theoretical framework to describe the problem at hand and
  situate the study in the recent literature.
  We then describe the context and the IFPRI-CYMMIT-DDA project that we will
- draw on.
+ mostly draw on.
  Next, we discuss the sources of data and explain how the interlocutors
  for the focus group discussions and expert interviews were sampled.
  We then turn to the findings, with sub-sections for use, impact on quality,
- impact on prices, and the policy context.
- We also have a section that discusses some of the factors that may delay
- or limit the impact of the intervention.
+ impact on prices, social psychology effects, and the policy context.
+ We also have a section that discusses sustainability and scaling potential
+ of the intervention.
  A final section concludes.
 \end_layout
 
@@ -982,7 +985,7 @@ Use of equipment
 In most MCCs, the milk analyzers were actively being used when we visited
  the MCCs.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 The MCCs we selected were informed of our visit.
@@ -992,14 +995,40 @@ The MCCs we selected were informed of our visit.
 
 \end_inset
 
- Farmers indicated that they never had to insist on having their milk tested,
- and MCC managers were very transparent about the results.
+ The fact that MCC_542 stopped submitting around new year was due to the
+ fact that the MCC was shut down due to a foot and mouth desease outbreak
+ that affected the area.
  Even in the MCC from which we did not receive any records, it appeared
  the machine had been used during the initial months.
  The MCC manager reported that testing ceased due to understaffing.
  Farmers from this MCC mentioned that they were tested a few times initially,
  but when they recently requested testing, the MCC manager informed them
  that there were no cleaning reagents available.
+ Farmers indicated that they never had to insist on having their milk tested,
+ and MCC managers were very transparent about the results.
+\end_layout
+
+\begin_layout Standard
+The milk analyzers are not only used to test milk from farmers or traders
+ that is supplied to MCCs.
+ If aggregation also happens downstream of the MCC (for example because
+ a tanker truck collects milk from more than one MCC in the area) MCCs will
+ test the milk in their milk tank in the presence of the trader and quality
+ parameters are included in the delivery note.
+ Sometimes, MCCs may also ask for a sample from the milk that is already
+ in the tanker truck.
+ The transporters seem to trust the milk analyzers installed by the MCCs.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note that as we cooperate with the DDA, the milk analyzers are certified
+ by the DDA.
+\end_layout
+
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1412,6 +1441,9 @@ Another notable secondary effect is a reduction in milk quantities.
  Furthermore, the inability of farmers and traders to add water to their
  milk, as a result of the milk analyzers, also contributed to a reduction
  in quantities on the intensive margin.
+ For example, MCC_216 told us that 2 farmers left after the milk analyzer
+ was introduced (a sizable part given that this is a small MCC) and that
+ those who were able to adapt often started supplying less milk.
 \end_layout
 
 \begin_layout Standard
@@ -1558,6 +1590,374 @@ Note that this pricing scheme reveals substantial scope for earning a quality
 \end_layout
 
 \begin_layout Standard
+We can again use sample submission data to look at the correlation between
+ price and quality parameters (added water, butter fat content and SNF).
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:price_effects"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ shows coefficient estimates for a regression of the price on the quality
+ parameter of interest.
+ In the upper panel, we include MCC fixed effects in the regression to look
+ at price differentiation within MCCs (within MCC regression).
+ In the lower panel, we first calculate averages at the MCC level and then
+ run a regression on these averages (between MCC regression).
+ We run separate regressions for the first 15 days after installation of
+ the milk analyzers (first column) and the last 15 days we have data on
+ (second column) to see if the relationship between price and quality changed
+ over time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Price effects
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:price_effects"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& first submissions & last submissions
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-3} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  
+\backslash
+multicolumn{2}{c}{within MCC} 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+Added Water (
+\backslash
+%) & 0.41  & 0.74 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (1.23) & (1.23) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Butter Fat & -6.68  &  3.26 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  (4.61)  & (2.83) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SNF &  0.38  & -3.08 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (5.24) & (3.21) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  
+\backslash
+multicolumn{2}{c}{between MCCs} 
+\backslash
+
+\backslash
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Added Water (
+\backslash
+%) & -12.29   & -53.91  
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (8.04)  &  (57.32) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Butter Fat & 35.05 & 31.44 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (74.66) & (124.10) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SNF & 37.27  & 60.96 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (51.41) & (63.69) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note: Entries are slope coefficients of a regression the quality parameter
+ on price, standard errors are in paranthesis below.
+ **, *, and + denote significance at the 1, 5 and 10
+\backslash
+% levels.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We do not find significant correlations between price and quality within
+ MCCs.
+ Effect sizes are very small and often do not have the expected sign.
+ This is consistent with what was reported during focus group discussions:
+ that quality premiums obtained by the MCC are generally distributed equally
+ among suppliers.
+ In the lower panel, effect sized become more reasonable and have the expected
+ sign (a higher water content is associates with a lower price, higher butter
+ fat and SNF should lead to higher prices).
+ However, coefficients are not significant, perhaps due to the small sample
+ size.
+\end_layout
+
+\begin_layout Standard
 We also found indications of general equilibrium type effects.
  As mentioned in the previous section, a secondary effect of the milk analyzers
  in a reduction in quantities of milk, because more milk is rejected and/or
@@ -1587,168 +1987,292 @@ Finally, we also uncovered potential negative effects on the price of milk
 \end_layout
 
 \begin_layout Subsection
+Social psychology effects
+\end_layout
+
+\begin_layout Standard
+Dairy farming differs from other agricultural activities in a variety of
+ ways.
+ While farmers sell crops like maize or sorghum at only a few moments during
+ the agricultural season to itinerant traders using spot market transactions,
+ dairy farmers interact with buyers on a daily basis and get paid after
+ two weeks.
+ Furthermore, as quantities traded in each transaction are small, farmers
+ try to increase their bargaining power through aggregation.
+ As a result, MCCs often take the form of cooperatives where farmers work
+ together on a day-to-day basis.
+\end_layout
+
+\begin_layout Standard
+The nature of dairy farming thus means that social status plays an important
+ role in determining farmer behavior.
+ Focus group discussions suggest that farmers seem to compete with their
+ peers on quality even in the absence of explicit price incentives.
+ Most farmers liked the milk analyzers because it made the notion of quality
+ tangible and could be used to strengthen their relative position in the
+ social hierarchy.
+\end_layout
+
+\begin_layout Standard
+Some MCCs, and especially cooperatives, try to leverage these socio-psychologica
+l effects.
+ Instead of encouraging individual farmers to increase quality through price
+ differentiation, one MCC told us that each year they select the best farmer,
+ who then gets a price.
+ The MCC told us that the milk analyzers and the application came in very
+ handy as this data can now be used to select the winner in a fair and transpare
+nt way.
+\end_layout
+
+\begin_layout Subsection
 Policy impact
 \end_layout
 
 \begin_layout Standard
-
+We also interviewed policy makers and government officials in the dairy
+ sector, both at the regional and national level.
+ During these expert interviews, the focus was on learning how the installation
+ of milk analyzers and the deployment of an ICT mediated quality tracking
+ system may affect policy action in the future.
+ During the meeting with these officials, we also presented the online data
+ portal that allows one to visualize the evolution of key parameters such
+ as butter fat content, SNF, or milk price over time and by MCC, and inquired
+ if this data would be useful to guide policy.
 \end_layout
 
 \begin_layout Standard
-Use of data: EU wants to see the quality of raw materials, so our data potential
-ly opens up EU markets.
- When the algerians came, they wanted to know the entire value chain and
- were constantly asking questions on how the DDA is guaranteeing quality
- at each node in the value chain.
- It was argued that if this data would have been available, DDA would have
- been able to strike a better deal.
- Exporters will also be very happy with this data.
- It can also be used to influence standards and to attract investors.
- Finally, it also shows that the DDA has the capacity to set up a tracking
- system like this.
- This can be useful if additional data is needed.
- For example, more and more the EU is worried about drug residues and heavy
- metals.
- The system demonstrates that, in principle, it would be possible to add
- extra parameters to the app if equipement is installed that allows measurement.
+Policy makers and government officials agreed that a network of milk analyzers
+ in MCCs is very important for further development of the sub-sector.
+ They indicated that it can be particularly useful in the search for new
+ export markets, something that is high on the agenda of policy markers
+ after the recent ban Kenyan ban on Ugandan dairy products.
+ For instance, officials said that the European Union requires countries
+ to assess the quality of raw input materials, which becomes possible through
+ the milk analyzers and the tracking system.
+ Recently, representatives of a country that was interested in a trade agreement
+ on dairy visited Uganda.
+ They requested information on the structure of the supply chain and wanted
+ to know how the DDA could guarantee the quality at each node in the value
+ chain.
+ The data from the milk analyzers can thus be used to strengthen the bargaining
+ position of Uganda when negotiating international trade agreements.
  
 \end_layout
 
 \begin_layout Standard
+The project also establishes the groundwork for public health policies.
+ It also shows that the DDA has the capacity to set up a quality assurance
+ and tracking system like this.
+ This can be useful if additional data is needed such as food safety parameters
+ such as drug residues or heavy metals.
+ The system demonstrates that, in principle, it would be possible to add
+ extra parameters to the application if equipment is installed that allows
+ measurement of additional parameters.
+ This also means more stringent but also more lucrative markets (eg infant
+ formula exports to the European Union) come within reach.
+ 
+\end_layout
+
+\begin_layout Section
+Sustainability and scaling potential
+\end_layout
+
+\begin_layout Standard
+Given the potential impact of this project, we also discussed roles of different
+ stakeholders to sustain a quality assurance system such as the one introduced
+ by the IFPRI-CYMMIT-DDA project, and potential scalability.
+ The DDA, with its dual mission to both regulate and promote the dairy sector,
+ will be critical for sustaining and scaling initiatives like this.
+ The primary role of the DDA is to create a policy and regulatory environment
+ that leads to the sustained and increased use of milk analyzers and data
+ collection throughout the supply chain.
+ The following areas where DDA could make a difference were suggested:
+\end_layout
+
+\begin_layout Itemize
+The DDA is not planning on procuring and installing milk analyzers; This
+ is the role of the private sector.
+ For instance, cooperatives may want to invest in a technology that allows
+ them to capture a quality premium.
+ Alternatively, we already see that processors themselves start installing
+ milk analyzers in their milk collection centers to be able to directly
+ incentivize producers.
+ However, it was argued that currently it is very hard to find the milk
+ analyzers are a reasonable cost.
+ Here, the government can help in attracting investors to set up shop in
+ Mbarara, eg through tax breaks of simplifying non-tax barriers to investment.
+\end_layout
+
+\begin_layout Itemize
+Repairing defunct milk analyzers is also not something the DDA can or should
+ do.
+ However, the DDA has training centers.
+ Here, there could be some kind of training program for technicians that
+ is focused on servicing these machines.
+\end_layout
+
+\begin_layout Itemize
+MCC managers need training to properly test milk and handle the equipment.
+ High staff turnover in MCCs is a problem.
+ In addition, MCC staff can use a refresher on the use of milk analyzers
+ once in a while.
+ Here, the DDA can institute the requirement of MCC staff to demonstrate
+ the appropriate level of knowledge.
+ Now, anyone that works in a MCC needs to have a health certificate.
+ In the future, it could be that additional certificates are needed, eg
+ to demonstrate that you have attended a training session at the DDA training
+ center on proper operation of milk analyzers.
+ Refresher courses could be organized and training certificates can be limited
+ in time (eg valid for one year after which a refresher training should
+ be taken).
+\end_layout
+
+\begin_layout Itemize
+Other regulations could be put in place to make sure milk analyzers are
+ available in MCCs and kept in good conditions.
+ Currently, MCCs are required to only submit data on volumes traded.
+ In the future, this requirement can be complemented with other parameters
+ that go beyond freshness and density, in effect requiring a milk analyzer.
+ 
+\end_layout
+
+\begin_layout Itemize
+Currently, MCCs are required to have their tanks inspected on a regular
+ basis.
+ Similar regulations may make it necessary for milk analyzers to be recalibrated
+ every three months or so.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Quality assurance is a line in the budget.
  Usually not a lot was written in this line because they had not milk analyzers
- to calibrate.However, now that machines are there, there is something that
- can be monitored, so this also means that more can be allocated in the
- budget.
+ to calibrate.
+ However, now that machines are there, there is something that can be monitored,
+ so this also means that more can be allocated in the budget.
  To help with this, we were asked to provide DDA with a detailed costing
  of calibration.
 \end_layout
 
-\begin_layout Standard
-Currently, pearl is rolling this out only in their own milk collection centers.
- However, they said that in the long run, they also want to assist cooperatives
- and even traders with these machines.
- However, they also realize that an extension component may be needed.
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Pearl indicated that they wanted to pay price premia to traders and cooperatives
- as well (as opposed to directly to farmers) but they were met with resistance
- from traders.
- This is probably because traders often add water to milk and so they threatened
- to take their milk to other milk processors.
- This seems to suggest the industry is stuck in a low level equilibrium
- where processors prefer to get more low quality milk without paying a premium
- as opposed to less high quality milk at a higher cost.
- Farmers, on the other hand, had lots of questions.
- For instance, when they mention the UNBS minimal standard of 3.3 they got
- worried they would not be able to sell their milk.
- But after informing them that 3.3 is really a minimum and to get below that
- you really need to start adulterating milk (like adding water or skimming
- butter fat) they are reassused.
- Once the system is in operation, they are very happy with it because, as
- illustrated in the example above they easily get prices that are 15-20
- percent higher.
+Private aggregators and to a lesser extent cooperative MCCs indicated that
+ the found the milk analyzers really useful, but that in addition to challenges
+ in getting them, the cost is also too high.
+ For instance, a private trader that owns different milk collection centers
+ told us that he was very happy with the machines as he now receives good
+ quality milk that does not get rejected by processors anymore.
+ At the same time, when asked why he does not buy them himself now that
+ he sees the use of it, he says that the machines are very expensive and
+ taxes are high, while his margin is minimal due to high competition and
+ fuel prices.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We bought the machines at 2.4 million a piece.
+ With taxes and importation this will be closer to 3 million UGX.
+ However assuming a QBP system like the one Pearl is piloting becomes more
+ general, a cooperative with 25 members that supply 250 liters each that
+ can increase fat content to 4.1 and SNF to 8.7 will get a premium of 100
+ UGX per liter.
+ If farmers use 5 percent of this premium to invest in a milk analyzer,
+ they break even after about 100 days.
+ If they only use 1 percent of the premium, the milk analyzer is paid back
+ after 1 year and four months.
+ Clearly, as long as there is no quality premium in terms of price paid
+ downstream, it seems unlikely that MCCs and traders will be willing to
+ purchase their own machines.
+ But even with modest quality premiums, the machines become an investment
+ with a decent return.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Conclusion
 \end_layout
 
 \begin_layout Standard
-However, the person at pearl was very optimistic about the future.
- He claimed that within three months from now, there will be no way back.
- As Pearl is the largest processor, the others have no choice but to follow.
+Dairy value chains are characterized by the daily production of a high-value
+ perishable commodity by numerous farmers, with aggregation occurring early
+ in the value chain.
+ One significant constraint to quality enhancement is the challenge of observing
+ quality, as milk is typically tested only at the processing facility.
+ This limitation creates opportunities for rent-seeking behavior and diminishes
+ incentives to produce high-quality milk.
 \end_layout
 
 \begin_layout Standard
-The person at pearl also indicated that this is just the start of quality
- upgrading.
- Taking the case of India as an example, prices are determined on the basis
- of matrices comining different parameters.
- But also safety parameters are considered.
- For instance, they also test for drug residues etc.
- While this is costly, he was convinces strategies will be developed to
- deal with this challenge.
- For instance in india, they do cluster sampling to eventually identify
- the farmer who is reponsible for contamination.
- 
+In southwestern Uganda, various initiatives are experimenting with the deploymen
+t of milk analyzers capable of measuring key quality parameters, such as
+ butterfat content, proteins, carbohydrates, and minerals, using milk samples.
+ By installing these devices at strategic points in the value chain, quality
+ can be assessed before milk aggregation.
+ This paper presents mixed-methods evidence on the potential impact of these
+ initiatives on milk quality, price margins, and policy actions at different
+ levels of the value chain.
 \end_layout
 
 \begin_layout Standard
-The results of the quality bases payment system is very visible for the
- processor.
- The person at Pearl claimed that before the introduction of the QBP system,
- only about 50 percent of the milk was suitable for UHT production (which
- needs high quality milk).
- Now, this has increased to about 90 percent.
+The data suggests that making quality visible and traceable throughout the
+ value chain had the most significant impact on raw milk quality.
+ The practice of adding water to milk to increase volume has significantly
+ decreased at all levels, and butterfat content has increased due to the
+ difficulty of separating butterfat without detection.
+ The impact on prices was less evident, although some milk collection centers
+ (MCCs) reported higher incomes because processors applied fewer deductions
+ for low quality, or traders switched to higher-paying processors, passing
+ some of the premium to MCCs producing better quality milk.
+ Policymakers acknowledge that the initiative and the data it generates
+ will be extremely useful for attracting investors and finding new export
+ markets.
 \end_layout
 
 \begin_layout Standard
-Meeting at Kampe diaries (Kirihura).
- This is the MCC that started off well, but around new year submissions
- stopped.
- The MCC manager explained that this was due to Foot and mouth desease that
- led to a closure of the MCCs in the area.
- 
+Despite these positive effects, several bottlenecks prevent the emergence
+ of a true market for quality with price incentives at all levels of the
+ value chain.
+ The primary issue is that processors seem hesitant to engage in price different
+iation.
+ Even Pearl, which experiments with quality-based milk payment schemes (QBMPS)
+ in its own MCCs, recognizes the effectiveness of price incentives to improve
+ milk quality.
+ However, it maintains a uniform price for all MCCs and traders delivering
+ to the processing plant.
+ This lack of quality-based rewards trickles down to MCCs, which, if too
+ strict, risk losing milk to less stringent MCCs.
+ Farmers also indicated that low prices disincentivize investment in quality.
+ Consequently, a new equilibrium appears to be emerging where MCCs test
+ milk to meet just the minimum quality threshold to avoid rejection, but
+ real quality upgrading is not occurring.
 \end_layout
 
 \begin_layout Standard
-The manager also underscores the importance of milk analyzers.
- He says that before the milk analyzers, the processor they work with (Amos)
- would often deduct 10 UGX per liter if the quality was low.
- Since they received the machines, this has never happened (while it used
- to happen about 2 times every two weeks).
- 
-\end_layout
+There may be various reasons why processors do not compete on quality.
+ For instance, the market may be characterized by an oligopsony, facilitating
+ collusive price leadership, and investment to increase processing capacity
+ may be a solution.
+ Additionally, processors may believe that price differentiation is not
+ feasible if quality cannot be accurately measured upstream.
+ The Dairy Development Authority (DDA) may have a role in liaising with
+ processors and convincing them that there is now a critical mass of MCCs
+ capable of testing, thereby enabling the implementation of a quality-based
+ payment scheme.
+\begin_inset Note Note
+status collapsed
 
-\begin_layout Standard
-The MCC manager of Rwabigyemano also indicated that after the milk analyzers
- were introduced, the quantity collected reduced significantly.
- This was because they rejected more milk, but also because some farmers
- stopped supplying because they feared the machine.
- Some 2 farmers left after the milk analyzer was introduced, others changed
- (often supplying less).
-\end_layout
-
-\begin_layout Standard
-Rwabigyemano MCC does seem to have received a higher price in response to
- improved milk.
- According to the manager, the supplier told them two to three months ago
- that due to better quality , the price increased by about 30 shillings
- per liter.
- This was Amos dairies.
-\end_layout
-
-\begin_layout Standard
-Asked whether instances were observed where farmers take rejected milk to
- other MCCs, the manager said that this does not seem to be the case because
- all the milk collection centers in the neigbourhood received the milk analyser
- at the same time.
- This suggests that our clustered design has the desired effect of reducing
- potential spillover effects.
-\end_layout
-
-\begin_layout Standard
-Meeting with Nicolas Assimwe, a business man that has 17 MCCs, 3 of which
- are in our control group.
- 
-\end_layout
-
-\begin_layout Standard
-Other observations: transporters can now also be crosschecked.
- The transporters trust the milk analyzers.
- They will test the milk in the MCC tank and the particular will be filled
- on a delivery note.
- 
-\end_layout
-
-\begin_layout Standard
-The fact that there is a fixed price also means that farmers do not negotiate.
-\end_layout
-
-\begin_layout Standard
-Best farmer gets a price.
- This is now done based on the data in the app.
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 From meeting with staff in KLA:DDA has formed a technical working group
  of milk quality assurance.
  They want to use this group to convince processors to also start paying
@@ -1763,207 +2287,27 @@ From meeting with staff in KLA:DDA has formed a technical working group
  the technical working group.
 \end_layout
 
-\begin_layout Section
-Other
-\end_layout
-
-\begin_layout Standard
-Farmers indicate they are locked in a low equlibrium.
- The low price that processors offer means that farmers can not make necessary
- investments (such as supplements) to increase the quality.
- This means processors receive low quality and hence do not pay a good price.
-\end_layout
-
-\begin_layout Standard
-non-price incentives
-\end_layout
-
-\begin_layout Standard
-Even though farmers do not get a premium price, all farmers we talked to
- indicated that they were very happy with the machine.
- Among the dairy farmers, there is a certain pride that farmers in the region
- are known for their good quality.
- It is a question of honor.
- However, farmers also indicated that they want to be ready for QBP.
-\end_layout
-
-\begin_layout Standard
-It may be that we just picked out.
- Indeed one farmer commented that 
-\end_layout
-
-\begin_layout Quotation
-\begin_inset Quotes eld
-\end_inset
-
-when you bring the police to an area with thieves, do you think the thieves
- will like the police
-\begin_inset Quotes erd
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-A QBP may also have an indirect effect on the 
-\series bold
-animals
-\series default
-.
- Higher yielding animals that give milk with higher butter fat will fetch
- a higher price.
-\end_layout
-
-\begin_layout Standard
-Similarly farmers noted that if a price premium is paid, this will have
- an important effect on 
-\series bold
-peer learning
-\series default
-.
- Farmers will want to know what the farmer that gets the higher prices is
- doing, so they can copy it and also fetch a higher price.
-\end_layout
-
-\begin_layout Subsection
-Problems:
-\end_layout
-
-\begin_layout Standard
-We brought up the issue on how the DDA is planning to further support the
- project after we pull out, in particular in terms of sustainability.
- Julius said that this would be, as much as possible, by creating an enabling
- environment such that a private service sector can develop alongside the
- dairy value chain.
-\end_layout
-
-\begin_layout Standard
-DDA is not planning on procuring and installing milk analyzers.
- This is the role of the industry.
- For instance, cooperatives may invest in a technology that allows them
- to capture a quality premium.
- Alternatively, we already see that processors themselves start installing
- milk analyzers in their milk collection centers to be able to directly
- incentives producers.
- However, it was argued that currently it is very hard to find the milk
- analyzers are a reasonable cost.
- Here, the government can help in attracting investors to set up shop in
- Mbarara, eg through tax breaks of simplifying non-tax barriers to investment.
-\end_layout
-
-\begin_layout Standard
-In a similar fashion, repairing defunct milk analyzers is not something
- the DDA can do.
- However, the DDA has big plans with creating training centers.
- Here, there could be some kind of training program for technicians that
- is focused on servicing these machines.
-\end_layout
-
-\begin_layout Standard
-There is high staff turnover in MCCs.
- In addition, MCC staff can use a refresher once in a while.
- The question then becomes who should be responsible for this.
- One way to solve this is to require MCC staff to demonstrate the appropriate
- level of knowledge.
- Now, anyone that works in a MCC needs to have a health certificate.
- In the future, it could be that additional certificates are needed, eg
- to demonstrate that you have attended a training session at the DDA training
- center on proper operation of milk analyzers.
- Refresher courses could be organized.
-\end_layout
-
-\begin_layout Standard
-Other regulations that could be put in place to make sure milk analyzers
- are available in MCCs and kept in good conditions.
- A requirement for being recognized as an MCC that can supply the formal
- value chain, you need to be able to measure a particular set of parameters
- that go beyond freshness and density, in effect requiring a milk analyzer.
- Related, you need to be able to submit this data.
- Currently, MCCs are required to only submit data on volumes traded.
- Currently, MCCs are required to have their tanks inspected on a regular
- basis.
- Similar regulations may make it necessary for milk analyzers to be recalibrated
- every three months or so.
-\end_layout
-
-\begin_layout Standard
-Private aggregators and to a lesser extent cooperative MCCs indicated that
- the found the milk analyzers really useful, but that in addition to challenges
- in getting them, the cost is also too high.
- For instance, Nicolas, a private trader that owns different milk collection
- centers, told us that he was very happy with the machines as he now receives
- good quality milk that does not get rejected by processors anymore.
- He wants us to bring more.
- At the same time, when asked why he does not buy them himself now that
- he sees the use of it, he says that the machines are very expensive and
- taxes are high, while his margin is minimal due to high competition and
- fuel prices.
- 
-\end_layout
-
-\begin_layout Standard
-We bought the machines at 2.4 million a piece.
- With taxes and importation this will be closer to 3 million UGX.
- However assuming a QBP system like the one Pearl is piloting becomes more
- general, a cooperative with 25 members that supply 250 liters each that
- can increase fat content to 4.1 and SNF to 8.7 will get a premium of 100
- UGX per liter.
- If farmers use 5 percent of this premium to invest in a milk analyzer,
- they break even after about 100 days.
- If they only use 1 percent of the premium, the milk analyzer is paid back
- after 1 year and four months.
- 
-\end_layout
-
-\begin_layout Standard
-Clearly, as long as there is no quality premium in terms of price paid downstrea
-m, it seems unlikely that MCCs and traders will be willing to purchase their
- own machines.
- But even with modest quality premia, the machines become an investment
- with a decent return.
-\end_layout
-
-\begin_layout Standard
-Potential negative spilover into home consumption of dairy products.
- For instance we see significant reductions in water added, but no impact
- on the quanitities of milk delivered.
- This seems to suggest that milk was replaced by water (instead of water
- just being added).
- This replace milk is now not available anymore.
- This holds even more for skimming.
- 
-\end_layout
-
-\begin_layout Section
-Conclusion
-\end_layout
-
-\begin_layout Standard
-The main problem seems to be that no quality premium is paid downstream.
- As a result, MCCs can also not compete on quality, and so being strict
- means that they lose out: If they reject milk, it goes to the neighbours.
- Being strict leads to lower volumes, and since the price is fixed they
- loose out.
- This will lead to a new equilibrium where MCCs are now testing to make
- sure they just make the threshold for not being rejected, but there is
- no real competition on quality.
-\end_layout
-
-\begin_layout Standard
-Processors should realize that not providing a quality premium is to their
- disadvantage.
- All should do this.
- The DDA may have a role to play in liaising with processors and convincing
- them that there is now a critical mass of MCCs that can test such that
- a quality based payment scheme can be implemented.
-\end_layout
-
-\begin_layout Standard
-Seasonality is a big problem.
- When milk supply is low, processors become more lenient.
- At the same time, a quality premium may mean processors still get sufficient
- milk.
- 
+While it is impossible to predict the future, momentum has been created
+ and some of the bottlenecks may be addressed sooner rather than later.
+ For instance, a new processing facility is currently being constructed.
+ It will be larger than any of the existing processing plants and it will
+ specialize in infant formula which has high quality requirements.
+ Pearl, as the largest processor, is slowly expanding its QBMPS.
+ In a few months, it will be implemented in all MCCs that they own, and
+ they will start expanding to cooperative MCCs.
+ Amos, the second largest processor in the area, is also experimenting with
+ its own QBMPS in some districts.
+ Many experts believe that it is only a matter of time before quality-based
+ payments become the norm.
+ In fact, this may be one of the few virtues of the oligopsonistic market
+ structure: once these large processors subscribe to the idea of quality
+ based payments, all the others will have no other choice than to follow.
 \end_layout
 
 \begin_layout Standard
