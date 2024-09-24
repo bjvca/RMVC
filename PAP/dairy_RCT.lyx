@@ -1630,8 +1630,8 @@ name "subsec:Primary-outcomes"
 
 \begin_layout Standard
 We define six primary outcomes at each level.
- These six primary outcomes will be combined in a covariance weighted index
- to assess overall impact at that level following 
+ Some of these primary outcomes will be combined in families in a covariance
+ weighted index to assess overall impact at that level following 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1198/016214508000000841"
@@ -1640,6 +1640,8 @@ literal "false"
 \end_inset
 
 .
+ These families will be based on general categories of impact (price, quality,
+ volume).
  As dairy is a continuous activity, we need to define a time frame for measureme
 nt.
  We will use the last full week before the interview.
@@ -1651,9 +1653,10 @@ The six primary outcomes at MCC level are:
 \end_layout
 
 \begin_layout Enumerate
-Average milk quality level of milk sold.
+Average milk quality of milk sold.
  This will be done by defining a time window (eg two days) during which
  and enumerator will collect samples from the milk tanks of the MCC.
+ Quality is measured by butter fat, added water, SNF, and proteins.
 \end_layout
 
 \begin_layout Enumerate
@@ -1676,7 +1679,7 @@ Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
 \end_layout
 
 \begin_layout Enumerate
-Buyer changed since start of project
+Buyer changed since start of project? changed_buyer
 \end_layout
 
 \begin_layout Standard
@@ -1686,12 +1689,14 @@ Outcomes of interest at farmer level, measured in the last seven days:
 \begin_layout Enumerate
 Milk quality (butter fat content and SNF): This will be done by defining
  a time window (eg two days) where an enumerator will be present in the
- MCC and systematically test milk (eg every 10th sample brought in).
+ MCC and systematically test incoming milk (eg every 10th sample brought
+ in).
+ Quality is measured by butter fat, added water, SNF, and proteins.
 \end_layout
 
 \begin_layout Enumerate
-Production investment and management (based on index of five recommended
- practices to improve milk quality) 
+Production investment and management (based on index of the following five
+ recommended practices to improve milk quality) 
 \end_layout
 
 \begin_deeper
@@ -1925,11 +1930,6 @@ Information on lactoscan use (for ITT-TOT analysis).
 \end_layout
 
 \begin_layout Enumerate
-Freshness of milk (alcohol test) and when the milk was delivered (secondary
- effect of no more skimming)
-\end_layout
-
-\begin_layout Enumerate
 product differentiation: do MCCs collect milk in different takers based
  on quality (eg high protein milk is marketed separately from low protein
  milk)? - differentiate
@@ -1969,12 +1969,6 @@ Reason for selling to buyer (in particular: because they offer testing,
 \end_layout
 
 \begin_layout Enumerate
-Test if intervention leads to quality based market segmentation (with less
- rejection and more instances of lowering of price when farmer supplies
- substandard milk) - this will be investigated with submission data.
-\end_layout
-
-\begin_layout Enumerate
 Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
 \end_layout
 
@@ -1989,18 +1983,6 @@ Number of dairy animals (improved/local) - does a market for quality lead
  to technology adoption for intensification? Is this stronger for the subgroup
  of farmers that receives the training video, where we explicitly mention
  that genetics also affect quality parameters? q24-q37
-\end_layout
-
-\begin_layout Enumerate
-Feed and pasture management - a more detailed analysis than the composite
- primary outcome 2 at the farmer level.
- This includes changes in grazing system (paddocking, strip grazing, free
- range, mixed or zero grazing), over-sowing of natural pastures, restoration
- of degrading pastures, and use of different dairy feed types (hay, silage,
- improved forages, commercial feeds like (brewers) bran, salt and mineral
- blocks, multivitamin).
- We will differentiate between practices in the rainy season and the dry
- season.
 \end_layout
 
 \begin_layout Enumerate
@@ -2065,16 +2047,16 @@ Treatment uptake:
 
 \begin_deeper
 \begin_layout Enumerate
-was grass used? - grass.
- 
-\end_layout
-
-\begin_layout Enumerate
 Does the farmer remember the video treatment - recalls_video
 \end_layout
 
 \begin_layout Enumerate
-Does farmer know if this MCC has a milk analyzer? - analyzer_aware
+Does the farmer remember having received grass seed - recalls_grass
+\end_layout
+
+\begin_layout Enumerate
+was grass used? - usedgrass.
+ 
 \end_layout
 
 \end_deeper
@@ -2095,7 +2077,8 @@ Gendered labour outcomes (milking, marketing, feeding and herding or cleaning)
 \end_layout
 
 \begin_layout Enumerate
-Does the intervention affect home processing? Does this have gendered effects?
+Does the intervention affect ghee processing? q66 q68-q69 Does this have
+ gendered effects? q70-q71
 \end_layout
 
 \begin_layout Enumerate
@@ -2118,7 +2101,7 @@ literal "false"
 
 \end_inset
 
-
+ knows_price_downstream/price_downstream
 \end_layout
 
 \begin_layout Section*
