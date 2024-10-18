@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,11 +10,11 @@
 \emergencystretch 3em 
 \end_preamble
 \use_default_options true
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language english
 \language_package default
 \inputencoding utf8
-\fontencoding global
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -22,7 +22,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -66,7 +68,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -82,11 +86,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -104,19 +113,28 @@ status open
 \backslash
 author{Richard Ariong
 \backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Kampala, Uganda}, Jordan Chamberlin
+thanks{Development Strategy and Governance Division,
+ International Food Policy Research Institute,
+ Kampala,
+ Uganda},
+ Jordan Chamberlin
 \backslash
-thanks{CIMMYT, Nairobi, Kenia} , Sarah Wairimu Kariuki
+thanks{CIMMYT,
+ Nairobi,
+ Kenia} ,
+ Sarah Wairimu Kariuki
 \backslash
-footnotemark[2] , 
+footnotemark[2] ,
+ 
 \backslash
 
 \backslash
  Bjorn Van Campenhout
 \backslash
-thanks{Development Strategy and Governance Division, International Food
- Policy Research Institute, Leuven, Belgium}}
+thanks{Development Strategy and Governance Division,
+ International Food Policy Research Institute,
+ Leuven,
+ Belgium}}
 \end_layout
 
 \end_inset
@@ -126,34 +144,36 @@ thanks{Development Strategy and Governance Division, International Food
 
 \end_inset
 
-Incentivizing quality in dairy value chains - experimental evidence from
- Uganda (registered report)
+Incentivizing quality in dairy value chains - experimental evidence from Uganda (registered report)
 \end_layout
 
 \begin_layout Abstract
-In value chains where quality of the underlying commodity is hard to observe
- and track, quality upgrading my be challenging.
- We test two barriers to the development of a market for quality in Ugandan
- dairy value chains using a field experiment with treatments at different
- levels.
- At the farmer level, we conjecture that farmers are paying attention to
- the wrong quality attributes and design a video-based information campaign
- to point out the quality parameters that matter for processors.
- We also provide them with a small incentive to put what they learned into
- practice.
- Midstream, at milk collection centers where milk is bulked and chilled,
+In value chains where quality of the underlying commodity is hard to observe and track,
+ quality upgrading my be challenging.
+ We test two barriers to the development of a market for quality in Ugandan dairy value chains using a field experiment with treatments at different levels.
+ At the farmer level,
+ we conjecture that farmers are paying attention to the wrong quality attributes and design a video-based information campaign to point out the quality parameters that matter for processors.
+ We also provide them with a small incentive to put what they learned into practice.
+ Midstream,
+ at milk collection centers where milk is bulked and chilled,
  we provide technology aimed at facilitating quality discovery and tracking.
- We look at impact of both interventions at both farmer and milk collection
- center level and consider outcomes such as milk quality, prices received
- and quantities transacted.
+ We look at impact of both interventions at both farmer and milk collection center level and consider outcomes such as milk quality,
+ prices received and quantities transacted.
 \end_layout
 
 \begin_layout Standard
-JEL: O13, O17, Q13
+JEL:
+ O13,
+ O17,
+ Q13
 \end_layout
 
 \begin_layout Standard
-Keywords: value chain upgrading, dairy, quality assurance, information
+Keywords:
+ value chain upgrading,
+ dairy,
+ quality assurance,
+ information
 \end_layout
 
 \begin_layout Section*
@@ -161,21 +181,23 @@ Motivation
 \end_layout
 
 \begin_layout Standard
-Quality of products transacted within value chains, and the preservation
- of quality throughout the chain, is central to value chain development.
- Working with quality inputs often reduces production costs further down
- the value chain.
- Quality inputs and safeguarding quality while processing, storing, and
- transporting commodities is also important from a food safety perspective.
- In general, transformation of value chains often coincide with significant
- quality upgrading.
+Quality of products transacted within value chains,
+ and the preservation of quality throughout the chain,
+ is central to value chain development.
+ Working with quality inputs often reduces production costs further down the value chain.
+ Quality inputs and safeguarding quality while processing,
+ storing,
+ and transporting commodities is also important from a food safety perspective.
+ In general,
+ transformation of value chains often coincide with significant quality upgrading.
 \end_layout
 
 \begin_layout Standard
-Over the past decade, the dairy sub-sector in Uganda has changed dramatically.
- Particularly in the areas around Mbarara, commonly referred to as the southwest
-ern milk shed, an influx of foreign direct investment has created the preconditi
-ons for modern dairy value chains to emerge 
+Over the past decade,
+ the dairy sub-sector in Uganda has changed dramatically.
+ Particularly in the areas around Mbarara,
+ commonly referred to as the southwestern milk shed,
+ an influx of foreign direct investment has created the preconditions for modern dairy value chains to emerge 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/agec.12638"
@@ -184,23 +206,24 @@ literal "false"
 \end_inset
 
 .
- The area now has an extensive network of milk cooling and collection centers
- that link smallholder farmers to a cluster of processors.
- In the dairy value chain, quality is particularly important.
- Milk quality determines how much end product (eg cheese, caseine, milk
- powder,..) can be obtained from a given quantity of milk.
- Furthermore, it goes without saying that the protection of milk from dirt
- and contamination is important for food safety, as milk is very unstable.
+ The area now has an extensive network of milk cooling and collection centers that link smallholder farmers to a cluster of processors.
+ In the dairy value chain,
+ quality is particularly important.
+ Milk quality determines how much end product (eg cheese,
+ caseine,
+ milk powder,..) can be obtained from a given quantity of milk.
+ Furthermore,
+ it goes without saying that the protection of milk from dirt and contamination is important for food safety,
+ as milk is very unstable.
  
 \end_layout
 
 \begin_layout Standard
-At the same time, it is surprising that there seems to be no market for
- quality in the Ugandan dairy sub-sector (while this is generally the case
- in more developed dairy value chain where the price is not a fixed price
- per liter of milk supplied.
- Generally, payment differs per dairy farmer, depending on the protein and
- fat and lactose content of the milk supplied by the farmer
+At the same time,
+ it is surprising that there seems to be no market for quality in the Ugandan dairy sub-sector (while this is generally the case in more developed dairy value chain where the price is not a fixed price per liter of milk supplied.
+ Generally,
+ payment differs per dairy farmer,
+ depending on the protein and fat and lactose content of the milk supplied by the farmer
 \begin_inset Foot
 status collapsed
 
@@ -211,72 +234,62 @@ https://www.frieslandcampina.com/owned-by-farmers/milk-price-system/
 \end_inset
 
 ).
- For instance, using recently collected survey data, we find that of a sample
- of 200 farmers that sold to milk collection centers, only 6 percent indicated
- that they received a quality premium.
- From 114 milk collection centers that were included in that survey, we
- found that only about 18 percent (sometimes) paid a price premium to farmers.
- At the same time, expert interviews with processors indicate that their
- main challenge is related to sourcing milk of sufficient quality, pointing
- out issues related to butter fat content and solid non-fat content of the
- milk.
+ For instance,
+ using recently collected survey data,
+ we find that of a sample of 200 farmers that sold to milk collection centers,
+ only 6 percent indicated that they received a quality premium.
+ From 114 milk collection centers that were included in that survey,
+ we found that only about 18 percent (sometimes) paid a price premium to farmers.
+ At the same time,
+ expert interviews with processors indicate that their main challenge is related to sourcing milk of sufficient quality,
+ pointing out issues related to butter fat content and solid non-fat content of the milk.
  They also say that the would be willing to pay for it.
 \end_layout
 
 \begin_layout Standard
-When asked about what farmers need to do to increase quality, farmers mainly
- refer to practices that affect milk sanitation.
- Most training and extension activities in the area focus on the importance
- of using proper equipment (stainless steel milk churns as opposed to plastic
- jerry cans) and simple practices such as washing hands and udders.
- These technologies and practices do not affect the milk quality attributes
- that processors seem to care most about.
- To increase butter fat content and solid non-fat content, it is especially
- feeding practices that matter.
+When asked about what farmers need to do to increase quality,
+ farmers mainly refer to practices that affect milk sanitation.
+ Most training and extension activities in the area focus on the importance of using proper equipment (stainless steel milk churns as opposed to plastic jerry cans) and simple practices such as washing hands and udders.
+ These technologies and practices do not affect the milk quality attributes that processors seem to care most about.
+ To increase butter fat content and solid non-fat content,
+ it is especially feeding practices that matter.
 \end_layout
 
 \begin_layout Standard
-The above points to at least two problems which constrain the development
- of a market for quality milk.
- First, at a technological level, instruments necessary to make the desired
- quality attributes visible are lacking.
- Most milk collection centers only engage in rudimentary testing for adulteratio
-n (using a gravity based test with a device called a lactometer) and freshness
- (using the alcohol test).
+The above points to at least two problems which constrain the development of a market for quality milk.
+ First,
+ at a technological level,
+ instruments necessary to make the desired quality attributes visible are lacking.
+ Most milk collection centers only engage in rudimentary testing for adulteration (using a gravity based test with a device called a lactometer) and freshness (using the alcohol test).
  Farmers do not have access to testing equipment.
- Second, at the knowledge level, farmers do not seem to know what quality
- parameters are important further downstream the value chain.
+ Second,
+ at the knowledge level,
+ farmers do not seem to know what quality parameters are important further downstream the value chain.
  
 \end_layout
 
 \begin_layout Standard
-In this research, we will test various hypothesis using a randomized control
- trial with interventions at both the level of the milk collection centers
- and at the farmer level.
- At the level of the milk collection center, we work with the Uganda Dairy
- Development Authority (DDA) to scale up their Quality-Based Milk Payment
- Scheme (QBMPS) that was piloted by last year in Uganda’s SW milkshed.
- It involves installing lactoscans at milk collection centers that allows
- testing of individual milk deliveries for quality parameters desired by
- processors.
- We want to test what the impact of visualizing these quality attributes
- at this level is on both farmers and milk collection centers.
- We then use a split plot design to mix in a second intervention at the
- level of the farmers.
- Here, we provide a video-based information treatment where farmers are
- informed about what quality parameters processors deem important and how
- they can improve on these parameters.
+In this research,
+ we will test various hypothesis using a randomized control trial with interventions at both the level of the milk collection centers and at the farmer level.
+ At the level of the milk collection center,
+ we work with the Uganda Dairy Development Authority (DDA) to scale up their Quality-Based Milk Payment Scheme (QBMPS) that was piloted by last year in Uganda’s SW milkshed.
+ It involves installing lactoscans at milk collection centers that allows testing of individual milk deliveries for quality parameters desired by processors.
+ We want to test what the impact of visualizing these quality attributes at this level is on both farmers and milk collection centers.
+ We then use a split plot design to mix in a second intervention at the level of the farmers.
+ Here,
+ we provide a video-based information treatment where farmers are informed about what quality parameters processors deem important and how they can improve on these parameters.
 \end_layout
 
 \begin_layout Standard
-This document serves as a pre-analysis plan for the study that will be registere
-d in a public repository.
- It provides background information, outlines hypotheses which will be tested,
- tools that will be used in the field, power calculations and sample size
- projections on which sampling is based, outcome variables that will be
- used to assess impact, and specification that will be estimated.
- As such, it will provide a useful reference in evaluating the final results
- of the study 
+This document serves as a pre-analysis plan for the study that will be registered in a public repository.
+ It provides background information,
+ outlines hypotheses which will be tested,
+ tools that will be used in the field,
+ power calculations and sample size projections on which sampling is based,
+ outcome variables that will be used to assess impact,
+ and specification that will be estimated.
+ As such,
+ it will provide a useful reference in evaluating the final results of the study 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "humphreys_sanchezdelasierra_vanderwindt_2013,651546"
@@ -304,15 +317,13 @@ literal "false"
 
 \end_inset
 
- explore the effect of collective incentives on group production among rural
- Indian dairy cooperatives.
- In a randomized evaluation, they find village-level cooperatives can solve
- internal collective action problems to improve production quality.
- However, some village elites decline payments when they cannot control
- information disclosure.
+ explore the effect of collective incentives on group production among rural Indian dairy cooperatives.
+ In a randomized evaluation,
+ they find village-level cooperatives can solve internal collective action problems to improve production quality.
+ However,
+ some village elites decline payments when they cannot control information disclosure.
  Opting out reflects frictions in allocating surplus within a social network,
- and suggests some transparency-based efforts to limit elite capture may
- undermine policy goals.
+ and suggests some transparency-based efforts to limit elite capture may undermine policy goals.
 \end_layout
 
 \begin_layout Itemize
@@ -323,13 +334,11 @@ literal "false"
 
 \end_inset
 
- uses matching on observable farmer characteristics to study how individual
- quality incentives provided by private actors can help smallholders to
- improve milk quality.
- In the Indonesian dairy value chains they study, individual quality incentives
- increased the compositional quality of milk quickly after its introduction.
- Together with physical inputs and training, individual quality incentives
- also increased the hygienic quality of milk.
+ uses matching on observable farmer characteristics to study how individual quality incentives provided by private actors can help smallholders to improve milk quality.
+ In the Indonesian dairy value chains they study,
+ individual quality incentives increased the compositional quality of milk quickly after its introduction.
+ Together with physical inputs and training,
+ individual quality incentives also increased the hygienic quality of milk.
 \end_layout
 
 \begin_layout Itemize
@@ -340,12 +349,10 @@ literal "false"
 
 \end_inset
 
- use framed field experiment to evaluate the impact of two incentive instruments
-: a price penalty for low quality and a bonus for consistent high quality
- milk on farmers’ investment in quality-improving inputs among contract
- farmers in the Vietnamese dairy sector.
- Statistical analysis suggests that the penalty drives farmers into higher
- input use, resulting in better output quality.
+ use framed field experiment to evaluate the impact of two incentive instruments:
+ a price penalty for low quality and a bonus for consistent high quality milk on farmers’ investment in quality-improving inputs among contract farmers in the Vietnamese dairy sector.
+ Statistical analysis suggests that the penalty drives farmers into higher input use,
+ resulting in better output quality.
  The bonus payment generates even higher quality milk.
  
 \end_layout
@@ -355,97 +362,85 @@ Hypotheses and impact pathways
 \end_layout
 
 \begin_layout Standard
-One potential reason why a market for quality does not develop may be related
- to the fact that milk from individual farmers is poured together, making
- it hard to track quality.
- In general, at the start of the cold chain in milk collection centers,
- only rudimentary testing is done, and equipment to track quality parameters
- that are most relevant for the development of a market for quality is lacking.
- Only when milk reaches the processor, these quality parameters are revealed.
+One potential reason why a market for quality does not develop may be related to the fact that milk from individual farmers is poured together,
+ making it hard to track quality.
+ In general,
+ at the start of the cold chain in milk collection centers,
+ only rudimentary testing is done,
+ and equipment to track quality parameters that are most relevant for the development of a market for quality is lacking.
+ Only when milk reaches the processor,
+ these quality parameters are revealed.
 \end_layout
 
 \begin_layout Standard
-In a first hypothesis, we expect that reducing the cost of quality discovery
- at the level of the milk collection center (such that it is easy to accurately
- determine the quality of each individual supplier before it is aggregated
- in milk tanks) will increase outcomes at that level for several reasons.
- For instance, it will enable collection centers to turn down suppliers
- with low quality, which should increase the overall quality of milk aggregated.
- When milk collection centers are able to independently assess the quality
- of the milk, they may actively search for processors that are prepared
- to pay a premium for a particular quality parameter.
+In a first hypothesis,
+ we expect that reducing the cost of quality discovery at the level of the milk collection center (such that it is easy to accurately determine the quality of each individual supplier before it is aggregated in milk tanks) will increase outcomes at that level for several reasons.
+ For instance,
+ it will enable collection centers to turn down suppliers with low quality,
+ which should increase the overall quality of milk aggregated.
+ When milk collection centers are able to independently assess the quality of the milk,
+ they may actively search for processors that are prepared to pay a premium for a particular quality parameter.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-As mentioned earlier, milk quality determines what products can be produced.
- If the milk collection center discovers their milk has a particularly high
- butter fat content, it may decide to deliver to a cheese producer who is
- prepared to pay more for high fat milk than a processor that extracts caseine
- who is more interested in SNF.
+As mentioned earlier,
+ milk quality determines what products can be produced.
+ If the milk collection center discovers their milk has a particularly high butter fat content,
+ it may decide to deliver to a cheese producer who is prepared to pay more for high fat milk than a processor that extracts caseine who is more interested in SNF.
 \end_layout
 
 \end_inset
 
- In addition, accurate information about the quality of the milk may also
- strengthen the bargaining position of the milk collection center vis-a-vis
- the buyer.
- The ability to accurately monitor incoming milk may also enable milk collection
- centers to engage in product differentiation at an early stage, by for
- instance using one tank to collect high protein milk destined for casseine
- extraction and using another tank to collect milk that is high in butter
- fat, to supply to a cheese maker.
+ In addition,
+ accurate information about the quality of the milk may also strengthen the bargaining position of the milk collection center vis-a-vis the buyer.
+ The ability to accurately monitor incoming milk may also enable milk collection centers to engage in product differentiation at an early stage,
+ by for instance using one tank to collect high protein milk destined for casseine extraction and using another tank to collect milk that is high in butter fat,
+ to supply to a cheese maker.
 \end_layout
 
 \begin_layout Standard
-In a second hypothesis, we also expect that dairy farmers will benefit from
- this intervention at the level of the milk collection centers.
- Making quality visible midstream should enable milk collection centers
- to reward farmers for supplying superior milk and increase the overall
- quality of the milk that the collection center aggregates.
- If dairy farmers know that the milk collection center has the equipment
- to test milk at a reasonable cost, farmers may also demand milk collection
- centers to test their milk in case there is discussion related to the quality.
+In a second hypothesis,
+ we also expect that dairy farmers will benefit from this intervention at the level of the milk collection centers.
+ Making quality visible midstream should enable milk collection centers to reward farmers for supplying superior milk and increase the overall quality of the milk that the collection center aggregates.
+ If dairy farmers know that the milk collection center has the equipment to test milk at a reasonable cost,
+ farmers may also demand milk collection centers to test their milk in case there is discussion related to the quality.
 \end_layout
 
 \begin_layout Standard
-Another potential reason why a market for quality does not develop may be
- related to the fact that farmers do not have adequate knowledge about what
- is meant by milk quality.
- In particular, farmers seem to focus most on food safety related quality
- aspects of milk, and less on the compositional aspect.
- As a result, even when the technology to assess quality is available, farmers
- may not be able to improve without additional knowledge on what parameters
- to improve upon.
- Furthermore, it may be that farmers do not have a good understanding of
- how these compositional parameters can be affected.
+Another potential reason why a market for quality does not develop may be related to the fact that farmers do not have adequate knowledge about what is meant by milk quality.
+ In particular,
+ farmers seem to focus most on food safety related quality aspects of milk,
+ and less on the compositional aspect.
+ As a result,
+ even when the technology to assess quality is available,
+ farmers may not be able to improve without additional knowledge on what parameters to improve upon.
+ Furthermore,
+ it may be that farmers do not have a good understanding of how these compositional parameters can be affected.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Being a non-rival good, information is generally undersuplied by the private
- sector.
- Agricultural extension and advisory services are therefore often organized
- by governments or nongovernmental organizations who tend to prioritize
- food safety concerns over profitability.
- As a result, farmers are mostly trained on how to maintain milk sanitary
- standards and less on ways to improve quality in terms of butter fat and
- Solid Non-Fat.
+Being a non-rival good,
+ information is generally undersuplied by the private sector.
+ Agricultural extension and advisory services are therefore often organized by governments or nongovernmental organizations who tend to prioritize food safety concerns over profitability.
+ As a result,
+ farmers are mostly trained on how to maintain milk sanitary standards and less on ways to improve quality in terms of butter fat and Solid Non-Fat.
 \end_layout
 
 \end_inset
 
- A third hypothesis is thus that providing information on what the desired
- milk quality parameters are, and what affects these parameters, increases
- outcomes for farmers.
+ A third hypothesis is thus that providing information on what the desired milk quality parameters are,
+ and what affects these parameters,
+ increases outcomes for farmers.
 \end_layout
 
 \begin_layout Standard
-In value chains, it is not always clear whether upgrading is driven by push
- (eg a productivity increasing technological innovation at the farm level)
- or pull factors (eg in increase in demand due to opening up of export markets).
- Often, it is a combination of both, and push and pull factors endogenously
- reinforce each other in a virtuous cycle 
+In value chains,
+ it is not always clear whether upgrading is driven by push (eg a productivity increasing technological innovation at the farm level) or pull factors (eg in increase in demand due to opening up of export markets).
+ Often,
+ it is a combination of both,
+ and push and pull factors endogenously reinforce each other in a virtuous cycle 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "https://doi.org/10.1111/agec.12638"
@@ -454,10 +449,8 @@ literal "false"
 \end_inset
 
 .
- In a final hypothesis, we thus also test if making quality visible at the
- milk collection center level and at the same time providing information
- on what the desired milk quality parameters are increases outcomes for
- farmers.
+ In a final hypothesis,
+ we thus also test if making quality visible at the milk collection center level and at the same time providing information on what the desired milk quality parameters are increases outcomes for farmers.
 \end_layout
 
 \begin_layout Section*
@@ -465,8 +458,7 @@ Experimental design
 \end_layout
 
 \begin_layout Standard
-The field experiment consists of two cross-randomized interventions that
- are implemented at different levels.
+The field experiment consists of two cross-randomized interventions that are implemented at different levels.
  Outcomes may be measures at different levels.
  The design is illustrated in Figure 
 \begin_inset CommandInset ref
@@ -475,40 +467,35 @@ reference "fig:Design"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
-, which provides a stylized representation of the dairy value chain.
- We randomly allocate quality testing equipment to a random subset of milk
- collection centers (MCCs), while another random subset of milk collection
- centers functions as the control group for this treatment.
- In the catchment area of each milk collection center, we then take a sample
- of dairy farmers, stratifying the sample on whether the farmer is an active
- supplier to the milk collection center or not.
- In this sample, we then randomly assign half of the farmers to the information
- treatment (blocking on whether the farmer is an active supplier to the
- milk collection center or not).
+,
+ which provides a stylized representation of the dairy value chain.
+ We randomly allocate quality testing equipment to a random subset of milk collection centers (MCCs),
+ while another random subset of milk collection centers functions as the control group for this treatment.
+ In the catchment area of each milk collection center,
+ we then take a sample of dairy farmers,
+ stratifying the sample on whether the farmer is an active supplier to the milk collection center or not.
+ In this sample,
+ we then randomly assign half of the farmers to the information treatment (blocking on whether the farmer is an active supplier to the milk collection center or not).
 \end_layout
 
 \begin_layout Standard
-With this design, we can then test if the intervention at the milk collection
- center improved outcomes for milk collection centers.
- We can also test if the intervention at the milk collection center affects
- outcomes at the farmer level by comparing outcomes of the farmers in catchment
- areas of treated Milk Collection Centers (MCCs) to outcomes of farmers
- in catchment areas of control MCCs.
- The intervention at the farmer level can only be evaluated at the farmer
- level.
- At the level of the farmers, we can also look at the interaction between
- the two treatments by looking at outcomes of farmers that received the
- information treatment in catchment areas of milk collection centers that
- also received a lactoscan in relation to outcomes of farmers that are different
-ly exposed to the treatments.
+With this design,
+ we can then test if the intervention at the milk collection center improved outcomes for milk collection centers.
+ We can also test if the intervention at the milk collection center affects outcomes at the farmer level by comparing outcomes of the farmers in catchment areas of treated Milk Collection Centers (MCCs) to outcomes of farmers in catchment areas of control MCCs.
+ The intervention at the farmer level can only be evaluated at the farmer level.
+ At the level of the farmers,
+ we can also look at the interaction between the two treatments by looking at outcomes of farmers that received the information treatment in catchment areas of milk collection centers that also received a lactoscan in relation to outcomes of farmers that are differently exposed to the treatments.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -554,13 +541,14 @@ name "fig:Design"
 \end_layout
 
 \begin_layout Standard
-In sum, and in reference to the equation we will estimate in the next section,
+In sum,
+ and in reference to the equation we will estimate in the next section,
  the four main hypotheses that we will test with this design are:
 \end_layout
 
 \begin_layout Itemize
-Hypothesis 1: making quality visible at the MCC level increases outcomes
- for the milk collection centers 
+Hypothesis 1:
+ making quality visible at the MCC level increases outcomes for the milk collection centers 
 \begin_inset Formula $\left(\beta_{H1}>0\right)$
 \end_inset
 
@@ -569,8 +557,8 @@ Hypothesis 1: making quality visible at the MCC level increases outcomes
 \end_layout
 
 \begin_layout Itemize
-Hypothesis 2: making quality visible at the MCC level increases outcomes
- for the farmers in the catchment areas of these MCCs 
+Hypothesis 2:
+ making quality visible at the MCC level increases outcomes for the farmers in the catchment areas of these MCCs 
 \begin_inset Formula $\left(\beta_{H2}>0\right)$
 \end_inset
 
@@ -578,8 +566,8 @@ Hypothesis 2: making quality visible at the MCC level increases outcomes
 \end_layout
 
 \begin_layout Itemize
-Hypothesis 3: providing information on what the desired milk quality parameters
- are and what affects this parameter increases outcomes for farmers 
+Hypothesis 3:
+ providing information on what the desired milk quality parameters are and what affects this parameter increases outcomes for farmers 
 \begin_inset Formula $\left(\beta_{H3}>0\right)$
 \end_inset
 
@@ -587,9 +575,8 @@ Hypothesis 3: providing information on what the desired milk quality parameters
 \end_layout
 
 \begin_layout Itemize
-Hypothesis 4: making quality visible at the MCC level and providing information
- on what the desired milk quality parameters are to farmers increases outcomes
- for farmers 
+Hypothesis 4:
+ making quality visible at the MCC level and providing information on what the desired milk quality parameters are to farmers increases outcomes for farmers 
 \begin_inset Formula $\left(\beta_{H4}>0\right)$
 \end_inset
 
@@ -597,18 +584,14 @@ Hypothesis 4: making quality visible at the MCC level and providing information
 \end_layout
 
 \begin_layout Standard
-Additional research questions, based on the stratification, tests for difference
-s in average treatment effects between farmers that are connected to milk
- collection centers versus those that are not.
- Testing for this treatment heterogeneity allows us to explore if the interventi
-ons only strengthen existing value chains or whether they can also draw
- in actors from informal value chains.
+Additional research questions,
+ based on the stratification,
+ tests for differences in average treatment effects between farmers that are connected to milk collection centers versus those that are not.
+ Testing for this treatment heterogeneity allows us to explore if the interventions only strengthen existing value chains or whether they can also draw in actors from informal value chains.
 \end_layout
 
 \begin_layout Itemize
-Does the MCC level intervention affect farmers that are already connected
- to the milk collection center differently than farmers that are not already
- connected to an MCC 
+Does the MCC level intervention affect farmers that are already connected to the milk collection center differently than farmers that are not already connected to an MCC 
 \begin_inset Formula $\left(\beta_{H2C}=\beta_{H2}\right)$
 \end_inset
 
@@ -616,8 +599,7 @@ Does the MCC level intervention affect farmers that are already connected
 \end_layout
 
 \begin_layout Itemize
-Does the information treatment affect farmers that are connected to an MCC
- differently than farmers that are not connected to an MCC 
+Does the information treatment affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
 \begin_inset Formula $\left(\beta_{H3C}=\beta_{H3}\right)$
 \end_inset
 
@@ -625,10 +607,7 @@ Does the information treatment affect farmers that are connected to an MCC
 \end_layout
 
 \begin_layout Itemize
-Does the combined treatment (making quality visible at the MCC level and
- providing farmers with information on the desired quality dimension) affect
- farmers that are connected to an MCC differently than farmers that are
- not connected to an MCC 
+Does the combined treatment (making quality visible at the MCC level and providing farmers with information on the desired quality dimension) affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
 \begin_inset Formula $\left(\beta_{H4C}=\beta_{H4}\right)$
 \end_inset
 
@@ -640,18 +619,19 @@ Interventions
 \end_layout
 
 \begin_layout Standard
-To make relevant quality parameters visible at the level of the milk collection
- centers, we focus on a technology bundle.
- In close collaboration with DDA, we install milk analyzers at a random
- sample of milk collection centers.
- These can be used to test milk samples of individual farmers or traders
- that supply to the milk collection centers to establish quality of incoming
- milk, as well as to test samples from the milk tankers when milk is picked
- up by traders or processors.
- Milk analyzers show butter fat, solid non-fats, added water, temperature
- of milk, protein content, and corrected lactometer coefficient.
- Taking a sample is non-destructive and takes about 30 to 50 seconds depending
- on the temperature of the milk.
+To make relevant quality parameters visible at the level of the milk collection centers,
+ we focus on a technology bundle.
+ In close collaboration with DDA,
+ we install milk analyzers at a random sample of milk collection centers.
+ These can be used to test milk samples of individual farmers or traders that supply to the milk collection centers to establish quality of incoming milk,
+ as well as to test samples from the milk tankers when milk is picked up by traders or processors.
+ Milk analyzers show butter fat,
+ solid non-fats,
+ added water,
+ temperature of milk,
+ protein content,
+ and corrected lactometer coefficient.
+ Taking a sample is non-destructive and takes about 30 to 50 seconds depending on the temperature of the milk.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -659,6 +639,7 @@ reference "fig:Milk-analyzer"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -667,6 +648,8 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status collapsed
@@ -712,36 +695,38 @@ name "fig:Milk-analyzer"
 \end_layout
 
 \begin_layout Standard
-The milk analyzers will be delivered with clear Standard Operating Procedure
- advising MCCs and MCC staff will be trained.
- We collaborate with the DDA to set up a system to monitor the milk analyzers
- and its use.
- In particular, DDA technicians will visit treatment MCCs at set periods.
- We also set up a hotline that MCCs can contact in case of problems with
- the milk analyzers.
- We also make sure that, over the course of the project, equipment is adequately
- cleaned and calibrated.
+The milk analyzers will be delivered with clear Standard Operating Procedure advising MCCs and MCC staff will be trained.
+ We collaborate with the DDA to set up a system to monitor the milk analyzers and its use.
+ In particular,
+ DDA technicians will visit treatment MCCs at set periods.
+ We also set up a hotline that MCCs can contact in case of problems with the milk analyzers.
+ We also make sure that,
+ over the course of the project,
+ equipment is adequately cleaned and calibrated.
  
 \end_layout
 
 \begin_layout Standard
-In addition to the milk analyzers, the MCC level treatment also consists
- of a digitized system to keep track of milk quantity and quality delivered
- to the MCC.
- To do so, we developed a custom Android application that MCCs can use to
- register farmers that deliver milk.
- For these farmers, MCC managers can then record milk deliveries, including
- quantities delivered and price agreed, as well as a range of quality parameters
- that can be read from milk analyzer, such as butter fat and protein content.
- The application can also provide MCC managers with simple reports, such
- as the average butter fat (weighted by quantities supplied) over a different
- period (today, yesterday, last week, last two weeks and custom data range).
- Reports by farmer are also possible, such that MCC managers can determine
- the total sum to be paid to a farmer for milk delivered in the last 14
- days.
- The application, which is pre-installed on a Samsung galaxy tab A7 with
- sim-card for mobile internet, backs up data in the cloud, but is designed
- following an off-line first principle as some MCCs may not have coverage.
+In addition to the milk analyzers,
+ the MCC level treatment also consists of a digitized system to keep track of milk quantity and quality delivered to the MCC.
+ To do so,
+ we developed a custom Android application that MCCs can use to register farmers that deliver milk.
+ For these farmers,
+ MCC managers can then record milk deliveries,
+ including quantities delivered and price agreed,
+ as well as a range of quality parameters that can be read from milk analyzer,
+ such as butter fat and protein content.
+ The application can also provide MCC managers with simple reports,
+ such as the average butter fat (weighted by quantities supplied) over a different period (today,
+ yesterday,
+ last week,
+ last two weeks and custom data range).
+ Reports by farmer are also possible,
+ such that MCC managers can determine the total sum to be paid to a farmer for milk delivered in the last 14 days.
+ The application,
+ which is pre-installed on a Samsung galaxy tab A7 with sim-card for mobile internet,
+ backs up data in the cloud,
+ but is designed following an off-line first principle as some MCCs may not have coverage.
  A screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -749,6 +734,7 @@ reference "fig:Application"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -757,6 +743,8 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status collapsed
@@ -802,21 +790,18 @@ name "fig:Application"
 \end_layout
 
 \begin_layout Standard
-Finally, for the MCC intervention, we also developed a poster to be displayed
- at MCCs informing farmers that the MCC now has a milk analyzer that can
- determine milk quality for free.
+Finally,
+ for the MCC intervention,
+ we also developed a poster to be displayed at MCCs informing farmers that the MCC now has a milk analyzer that can determine milk quality for free.
  The poster was designed by a local artist.
  
 \end_layout
 
 \begin_layout Standard
-To provide information to dairy farmers on the parameters and characteristics
- that processors are looking for and how farmers can produce milk that adheres
- to these standards, we use a short engaging video that demonstrates the
- inputs and practices that can be used to increase milk quality.
- The use of video has been found to increase technology adoption in different
- settings, although the effectiveness also depends on a range of design
- attributes 
+To provide information to dairy farmers on the parameters and characteristics that processors are looking for and how farmers can produce milk that adheres to these standards,
+ we use a short engaging video that demonstrates the inputs and practices that can be used to increase milk quality.
+ The use of video has been found to increase technology adoption in different settings,
+ although the effectiveness also depends on a range of design attributes 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "spielman2021information"
@@ -825,10 +810,8 @@ literal "false"
 \end_inset
 
 .
- The ability to depict role models in videos seems important to increase
- both aspirations of the person targeted, as well as creating an enabling
- environment for adoption in that it may challenge world views and stereotypical
- thinking 
+ The ability to depict role models in videos seems important to increase both aspirations of the person targeted,
+ as well as creating an enabling environment for adoption in that it may challenge world views and stereotypical thinking 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "riley2019role,lecoutere2020women"
@@ -840,20 +823,19 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-To design the video based extension intervention, we first identified the
- top five practices and inputs that are known to raise butter fat and Solid
- Non Fats in milk.
+To design the video based extension intervention,
+ we first identified the top five practices and inputs that are known to raise butter fat and Solid Non Fats in milk.
  This was done through consultations of experts.
- We found the top 5 practices and inputs were: selection of breed and genetic
- potential, selection of grasses for high-quality forage, best practice
- in silage and hay making, correct mixing and dosage of feed, and feed supplemen
-ts like Methionine and Lysine.
- To make the information intervention more actionable, we also provide farmers
- with some free inputs (1 kg of Chloris Gayana also known as Rhodes grass).
- The video will be screened a first time during baseline data collection
- and a second time just before the distribution of the milk analyzers.
- We also developed an appealing handout that summarizes some of the main
- points from the video using cartoons drawn by a local artist.
+ We found the top 5 practices and inputs were:
+ selection of breed and genetic potential,
+ selection of grasses for high-quality forage,
+ best practice in silage and hay making,
+ correct mixing and dosage of feed,
+ and feed supplements like Methionine and Lysine.
+ To make the information intervention more actionable,
+ we also provide farmers with some free inputs (1 kg of Chloris Gayana also known as Rhodes grass).
+ The video will be screened a first time during baseline data collection and a second time just before the distribution of the milk analyzers.
+ We also developed an appealing handout that summarizes some of the main points from the video using cartoons drawn by a local artist.
 \end_layout
 
 \begin_layout Section*
@@ -869,8 +851,8 @@ name "sec:Estimation-and-inference"
 
 \begin_layout Standard
 We will estimate two equations using Ordinary Least Squares.
- One equation is at level of the milk collection centers, the second equation
- is at the level of the dairy farmers.
+ One equation is at level of the milk collection centers,
+ the second equation is at the level of the dairy farmers.
 \end_layout
 
 \begin_layout Standard
@@ -878,7 +860,8 @@ Denote milk collection centers by
 \emph on
 m
 \emph default
-, running from 1 to 
+,
+ running from 1 to 
 \emph on
 M
 \emph default
@@ -887,14 +870,12 @@ M
 \begin_inset Formula $T_{m}$
 \end_inset
 
- is a treatment indicator at the MCC level that is one if the MCC (in who's
- catchment area the farmer resides) was allocated to the lactoscan treatment.
+ is a treatment indicator at the MCC level that is one if the MCC (in who's catchment area the farmer resides) was allocated to the lactoscan treatment.
  
 \begin_inset Formula $y_{m}$
 \end_inset
 
- is the outcome at the level of the milk collection center you want to estimate
- the treatment effect for and 
+ is the outcome at the level of the milk collection center you want to estimate the treatment effect for and 
 \begin_inset Formula $\varepsilon_{m}$
 \end_inset
 
@@ -918,12 +899,14 @@ The parameter of interest in this equation is
 \begin_inset Formula $\beta_{H1}$
 \end_inset
 
-, which tests Hypothesis 1.
+,
+ which tests Hypothesis 1.
 \end_layout
 
 \begin_layout Standard
 The second equation is at the individual level.
- Here, 
+ Here,
+ 
 \begin_inset Formula $T_{i}$
 \end_inset
 
@@ -944,8 +927,7 @@ I
 \begin_inset Formula $C_{i,m}$
 \end_inset
 
- is an indicator variable at the farmer level that is one if the farmer
- 
+ is an indicator variable at the farmer level that is one if the farmer 
 \emph on
 i
 \emph default
@@ -958,8 +940,7 @@ m
 \begin_inset Formula $y_{i,m}$
 \end_inset
 
- is the outcome of interest at the level of the individual farmer living
- in the catchment area of milk collection center 
+ is the outcome of interest at the level of the individual farmer living in the catchment area of milk collection center 
 \emph on
 m
 \emph default
@@ -1052,22 +1033,24 @@ ref{eq:two}
 \begin_inset Formula $\beta_{H2}$
 \end_inset
 
-, which tests Hypothesis 2, 
+,
+ which tests Hypothesis 2,
+ 
 \begin_inset Formula $\beta_{H3}$
 \end_inset
 
-, which tests Hypothesis 3 and 
+,
+ which tests Hypothesis 3 and 
 \begin_inset Formula $\beta_{H4}$
 \end_inset
 
-, which tests for the interaction effect.
- We also add a full set of interactions with the connection indicator to
- look at treatment heterogeneity.
+,
+ which tests for the interaction effect.
+ We also add a full set of interactions with the connection indicator to look at treatment heterogeneity.
 \end_layout
 
 \begin_layout Standard
-Factorial designs have recently been criticized for the proliferation of
- underpowered studies and replication failure 
+Factorial designs have recently been criticized for the proliferation of underpowered studies and replication failure 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "muralidharan2019factorial"
@@ -1076,8 +1059,7 @@ literal "false"
 \end_inset
 
 .
- While in the next section we will run power calculations based on models
- with a complete set of interactions (equation 
+ While in the next section we will run power calculations based on models with a complete set of interactions (equation 
 \begin_inset ERT
 status open
 
@@ -1090,22 +1072,18 @@ ref{eq:two}
 
 \end_inset
 
-), we may still want to try boosting power by pooling observations across
- the orthogonal treatment in the event that we find a treatment effect that
- appears smaller than the minimal detectable effect size that we assumed
- during power calculations.
- To do so, we will consider the orthogonal treatment as a co-variate we
- adjust for, and interact the treatment variable with the demeaned orthogonal
- treatment.
- This give a more robust version of the treatment estimate that corresponds
- to the coefficient estimate of the treatment of interest after dropping
- the interaction with orthogonal treatment
+),
+ we may still want to try boosting power by pooling observations across the orthogonal treatment in the event that we find a treatment effect that appears smaller than the minimal detectable effect size that we assumed during power calculations.
+ To do so,
+ we will consider the orthogonal treatment as a co-variate we adjust for,
+ and interact the treatment variable with the demeaned orthogonal treatment.
+ This give a more robust version of the treatment estimate that corresponds to the coefficient estimate of the treatment of interest after dropping the interaction with orthogonal treatment
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-see: https://blogs.worldbank.org/impactevaluations/what-should-you-do-experiments-
-factorial-designs
+see:
+ https://blogs.worldbank.org/impactevaluations/what-should-you-do-experiments-factorial-designs
 \end_layout
 
 \end_inset
@@ -1114,9 +1092,9 @@ factorial-designs
 \end_layout
 
 \begin_layout Standard
-Finally, to increase precision of the estimates of the treatment effects,
- one often includes baseline outcomes as controls and estimate ANCOVA models
- 
+Finally,
+ to increase precision of the estimates of the treatment effects,
+ one often includes baseline outcomes as controls and estimate ANCOVA models 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "duflo2007using"
@@ -1125,13 +1103,12 @@ literal "false"
 \end_inset
 
 .
- However, recent research has shown that with covariate adjustment, 1) the
- conventional OLS standard error estimator is inconsistent and 2) adjustment
- can sometimes hurt precision asymptotically.
- The former can be fixed by using a sandwich estimator; we will use HC3
- sandwich estimator which performs better in small samples.
- The latter can be fixed by including baseline outcomes as deviations from
- their mean value and interacting them will the treatment variable 
+ However,
+ recent research has shown that with covariate adjustment,
+ 1) the conventional OLS standard error estimator is inconsistent and 2) adjustment can sometimes hurt precision asymptotically.
+ The former can be fixed by using a sandwich estimator;
+ we will use HC3 sandwich estimator which performs better in small samples.
+ The latter can be fixed by including baseline outcomes as deviations from their mean value and interacting them will the treatment variable 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "lin2013agnostic"
@@ -1158,16 +1135,12 @@ ref{eq:two}
 
 \begin_layout Standard
 We will use simulation to account for multiple comparisons.
- Simulation methods provide a flexible and intuitive way to think about
- multiple hypothesis testing.
- It accommodates the extent to which the multiple comparisons are correlated
- with one another and allows us to integrate design specific elements such
- as blocking and multiple arms.
- This leads to a study-specific correction that will generally be more powerful
- than other methods to control the FWER.
- In particular, to determine target p-value cutoffs, we use the family-wise
- sharp null of no effect for any unit on any dependent variable and for
- any hypothesis.
+ Simulation methods provide a flexible and intuitive way to think about multiple hypothesis testing.
+ It accommodates the extent to which the multiple comparisons are correlated with one another and allows us to integrate design specific elements such as blocking and multiple arms.
+ This leads to a study-specific correction that will generally be more powerful than other methods to control the FWER.
+ In particular,
+ to determine target p-value cutoffs,
+ we use the family-wise sharp null of no effect for any unit on any dependent variable and for any hypothesis.
  We will also combine primary outcomes into an index following 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -1176,14 +1149,15 @@ literal "false"
 
 \end_inset
 
-, which also guards against the dangers of multiple comparisons (See Section
- 
+,
+ which also guards against the dangers of multiple comparisons (See Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Primary-outcomes"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -1196,15 +1170,12 @@ Power calculations
 
 \begin_layout Standard
 We also use simulation to determine sample size.
- The primary outcome variable that we use in our statistical power calculations
- is the price of milk.
+ The primary outcome variable that we use in our statistical power calculations is the price of milk.
 \end_layout
 
 \begin_layout Standard
-We start at the level of the milk collection center and assume that at this
- level, the price at which milk collection centers sell their aggregated
- milk is normally distributed with mean 1000 UGX per liter and standard
- deviation of 50 (which is half of what we will assume at the farmer level).
+We start at the level of the milk collection center and assume that at this level,
+ the price at which milk collection centers sell their aggregated milk is normally distributed with mean 1000 UGX per liter and standard deviation of 50 (which is half of what we will assume at the farmer level).
  From these 
 \emph on
 N
@@ -1213,9 +1184,7 @@ N
 \emph on
 N
 \emph default
- denoting the number of milk collection centers recruited for our study
- and hence the first key variable to be determined by the power calculations)
- we then generate 
+ denoting the number of milk collection centers recruited for our study and hence the first key variable to be determined by the power calculations) we then generate 
 \emph on
 N
 \emph default
@@ -1233,15 +1202,18 @@ n
 N
 \emph default
  milk collection centers.
- The outcome variable at this level, prices that farmers obtain from milk
- collection centers, are generated again as random normal, but with the
- mean the value that was drawn for the MCC the 
+ The outcome variable at this level,
+ prices that farmers obtain from milk collection centers,
+ are generated again as random normal,
+ but with the mean the value that was drawn for the MCC the 
 \emph on
 n
 \emph default
- farmers are connected to, and with a slightly higher standard deviation
- (100 — since, as the milk is not aggregated yet, extreme values are not
- yet averaged out).
+ farmers are connected to,
+ and with a slightly higher standard deviation (100 —
+ since,
+ as the milk is not aggregated yet,
+ extreme values are not yet averaged out).
  This procedure gives us a total sample with 
 \emph on
 N
@@ -1250,40 +1222,45 @@ N
 \emph on
 N.n
 \emph default
- prices at the farmer level, the latter being clustered at the MCC catchment
- area level by design.
+ prices at the farmer level,
+ the latter being clustered at the MCC catchment area level by design.
 \end_layout
 
 \begin_layout Standard
-We assume that the intervention at the level of the milk collection centers
- leads to an increase in the price of UGX30 per liter.
- This seems reasonable in light of the fact that processors told that they
- either pay a 10 percent premium for quality milk, or UGX100 per liter.
- However, as we assume a pretty narrow distribution of prices, even though
- this effect is only a 3 percent increase, this is considered a medium to
- large effect according to Cohen's D.
- At the level of the farmers, for the intervention at the MCC level, we
- expect an effect size of UGX40.
- While this represents a 4.4 percent increase, the larger variance at this
- level means that according to Cohen's D, this effect is considered small
- to medium.
- Finally, at the level of the farmers, the individual level randomization
- of the information treatment intervention allows us to estimate small effects.
- For our power simulation, we assumed and effect size of UGX25, which correspond
-s to a small effect according to Cohen's D.
- For the interaction, we assume a large effect (UGX50 per liter).
+We assume that the intervention at the level of the milk collection centers leads to an increase in the price of UGX30 per liter.
+ This seems reasonable in light of the fact that processors told that they either pay a 10 percent premium for quality milk,
+ or UGX100 per liter.
+ However,
+ as we assume a pretty narrow distribution of prices,
+ even though this effect is only a 3 percent increase,
+ this is considered a medium to large effect according to Cohen's D.
+ At the level of the farmers,
+ for the intervention at the MCC level,
+ we expect an effect size of UGX40.
+ While this represents a 4.4 percent increase,
+ the larger variance at this level means that according to Cohen's D,
+ this effect is considered small to medium.
+ Finally,
+ at the level of the farmers,
+ the individual level randomization of the information treatment intervention allows us to estimate small effects.
+ For our power simulation,
+ we assumed and effect size of UGX25,
+ which corresponds to a small effect according to Cohen's D.
+ For the interaction,
+ we assume a large effect (UGX50 per liter).
 \end_layout
 
 \begin_layout Standard
-We calculate power for the joint test that the three hypotheses are true
- at the 5 percent significance level.
- To do so, we run the exact two regressions from Section 
+We calculate power for the joint test that the three hypotheses are true at the 5 percent significance level.
+ To do so,
+ we run the exact two regressions from Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Estimation-and-inference"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -1296,14 +1273,15 @@ noprefix "false"
 \emph on
 n*N
 \emph default
- combination, we calculate the share of simulations at which all coefficients
- of interest in Equations 
+ combination,
+ we calculate the share of simulations at which all coefficients of interest in Equations 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:one"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -1339,25 +1317,25 @@ reference "fig:Power-plane"
 plural "false"
 caps "false"
 noprefix "false"
+nolink "false"
 
 \end_inset
 
 .
  Instead of the usual power curves that plot power against sample size,
- we obtain a power plane as we determine both the number of clusters (between
- 100 and 130 MCCs) and the number of farmers per cluster (between 10 and
- 40 farmers).
+ we obtain a power plane as we determine both the number of clusters (between 100 and 130 MCCs) and the number of farmers per cluster (between 10 and 40 farmers).
  Power is measured on the 
 \emph on
 z
 \emph default
- axis and is the proportion of cases (out of the 1000 simulations) in which
- all three coefficients were found significant at p<0.05.
+ axis and is the proportion of cases (out of the 1000 simulations) in which all three coefficients were found significant at p<0.05.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -1399,7 +1377,8 @@ name "fig:Power-plane"
 \end_layout
 
 \begin_layout Standard
-The figure, which can be found as an interactive figure 
+The figure,
+ which can be found as an interactive figure 
 \begin_inset CommandInset href
 LatexCommand href
 name "here"
@@ -1408,19 +1387,21 @@ literal "false"
 
 \end_inset
 
-, shows the trade-off between more clusters and more individuals per cluster.
- With about 125 MCCs and 20 farmers per cluster we find power just above
- .80.
+,
+ shows the trade-off between more clusters and more individuals per cluster.
+ With about 125 MCCs and 20 farmers per cluster we find power just above .80.
  This corresponds to a sample of 2500.
- Note that the requirement to detect minimum effect sizes for all three
- hypotheses simultaneously is very strict.
- For instance, if we require only one hypothesis to be significant, we obtain
- power of .99 for a sample with 125 MCCs and 20 farmers.
- Similarly, if we consider each hypothesis separately, we get power levels
- of .87 for the MCC level intervention with outcome at the MCC level, .93
- for the MCC level intervention with outcome at the farmer level, and .94
- for the farmer level intervention with outcome at the farmer level.
- For the interaction effect, we obtain power of .99.
+ Note that the requirement to detect minimum effect sizes for all three hypotheses simultaneously is very strict.
+ For instance,
+ if we require only one hypothesis to be significant,
+ we obtain power of .99 for a sample with 125 MCCs and 20 farmers.
+ Similarly,
+ if we consider each hypothesis separately,
+ we get power levels of .87 for the MCC level intervention with outcome at the MCC level,
+ .93 for the MCC level intervention with outcome at the farmer level,
+ and .94 for the farmer level intervention with outcome at the farmer level.
+ For the interaction effect,
+ we obtain power of .99.
 \end_layout
 
 \begin_layout Section*
@@ -1429,16 +1410,16 @@ Timeline
 
 \begin_layout Standard
 We plan to collect baseline information in November-December 2022.
- During that time, we will also implement the intervention at the level
- of the farmer.
- Immediately after baseline data collection, we will also start installing
- lactoscans in the selected milk collection centers.
- This is expected to take about three months, such that all lactoscans are
- install towards the end of March 2023.
- Midline data will be collected about half a year after the last lactoscan
- was installed, so this will be in September-October 2023.
- Endline data will be collected one year after the intervention, which is
- April 2024.
+ During that time,
+ we will also implement the intervention at the level of the farmer.
+ Immediately after baseline data collection,
+ we will also start installing lactoscans in the selected milk collection centers.
+ This is expected to take about three months,
+ such that all lactoscans are install towards the end of March 2023.
+ Midline data will be collected about half a year after the last lactoscan was installed,
+ so this will be in September-October 2023.
+ Endline data will be collected one year after the intervention,
+ which is April 2024.
 \end_layout
 
 \begin_layout Section*
@@ -1450,18 +1431,14 @@ Sampling
 \end_layout
 
 \begin_layout Standard
-We start from a list of registered milk collection centers that was obtained
- from the Dairy Development Authority.
- From this list, we randomly selected 130 milk collection centers, half
- of which were assigned to the treatment group using a computer algorithm.
- We then travel to these 130 milk collection centers and use systematic
- sampling to get a sample of 10 farmers that are directly delivering to
- the MCC and 10 farmers that are delivering through a trader to the MCC.
- In particular, we will visit the MCC early in the morning and get an estimate
- of the expected number of farmers that will visit during the course of
- the day.
- This will be used to determine the interval at which farmers will be picked
- to participate in the study.
+We start from a list of registered milk collection centers that was obtained from the Dairy Development Authority.
+ From this list,
+ we randomly selected 130 milk collection centers,
+ half of which were assigned to the treatment group using a computer algorithm.
+ We then travel to these 130 milk collection centers and use systematic sampling to get a sample of 10 farmers that are directly delivering to the MCC and 10 farmers that are delivering through a trader to the MCC.
+ In particular,
+ we will visit the MCC early in the morning and get an estimate of the expected number of farmers that will visit during the course of the day.
+ This will be used to determine the interval at which farmers will be picked to participate in the study.
  These farmers will be interviewed at home the next day.
  
 \end_layout
@@ -1471,42 +1448,42 @@ Data collection protocol
 \end_layout
 
 \begin_layout Standard
-Baseline data collection will be fairly straightforward and consist of surveys
- at the MCC level and at the farmers level.
- Endline data collection will be more complex since we will not only reinterview
- the farmers and MCCs from baseline, but add farmers that are actively deliverin
-g milk to the treatment and control MCCs.
- Furthermore, during endline, we will also measure quality of milk using
- milk analyzers in a supervised way.
- In particular, we will station enumerators in MCCs for three days to supervise
- that all incoming milk is tested and entered into the system.
+Baseline data collection will be fairly straightforward and consist of surveys at the MCC level and at the farmers level.
+ Endline data collection will be more complex since we will not only reinterview the farmers and MCCs from baseline,
+ but add farmers that are actively delivering milk to the treatment and control MCCs.
+ Furthermore,
+ during endline,
+ we will also measure quality of milk using milk analyzers in a supervised way.
+ In particular,
+ we will station enumerators in MCCs for three days to supervise that all incoming milk is tested and entered into the system.
  
 \end_layout
 
 \begin_layout Standard
-During endline, milk analyzers will also be rolled out in control MCCs which
- will be used to measure milk quality at both the MCC level and at the farmer
- level.
- As effects of installing milk analyzers may be very quick, we only have
- a limited time window in which differences between treatment and control
- areas can be measured.
- Furthermore, we will also need to be mindful of anticipatory effects.
- That is, we will arrive at control MCCs unannounced.
+During endline,
+ milk analyzers will also be rolled out in control MCCs which will be used to measure milk quality at both the MCC level and at the farmer level.
+ As effects of installing milk analyzers may be very quick,
+ we only have a limited time window in which differences between treatment and control areas can be measured.
+ Furthermore,
+ we will also need to be mindful of anticipatory effects.
+ That is,
+ we will arrive at control MCCs unannounced.
 \end_layout
 
 \begin_layout Itemize
-In control MCCs, enumerators will install a milk analyzer, register the
- control MCC in the app, and make sure that all milk samples are tested
- and entered into the system for three days.
- In the control MCCs, we will also select 20 new farmers
+In control MCCs,
+ enumerators will install a milk analyzer,
+ register the control MCC in the app,
+ and make sure that all milk samples are tested and entered into the system for three days.
+ In the control MCCs,
+ we will also select 20 new farmers
 \end_layout
 
 \begin_layout Itemize
-In treatment MCCs, enumerators will also supervise entry during three days
- (how will we know during which days supervised entry took place? We can
- look at the time during which new farmers were interviewed for this MCC.
- We can then select submission data for these three days that new farmers
- were interviewed).
+In treatment MCCs,
+ enumerators will also supervise entry during three days (how will we know during which days supervised entry took place?
+ We can look at the time during which new farmers were interviewed for this MCC.
+ We can then select submission data for these three days that new farmers were interviewed).
 \end_layout
 
 \begin_layout Section*
@@ -1518,24 +1495,23 @@ Demonstrating balance
 \end_layout
 
 \begin_layout Standard
-During baseline data collection, we will collect information on the following
- 10 variables at each level to demonstrate balance (although we may only
- report a subset - indicated with a star - in the paper for space considerations
-) At the milk collection center level, we will collect the following characteris
-tics:
+During baseline data collection,
+ we will collect information on the following 10 variables at each level to demonstrate balance (although we may only report a subset - indicated with a star - in the paper for space considerations) At the milk collection center level,
+ we will collect the following characteristics:
 \end_layout
 
 \begin_layout Enumerate
-Is this milk collection center (part of a) cooperative? (yes/no)* 
+Is this milk collection center (part of a) cooperative?
+ (yes/no)* 
 \end_layout
 
 \begin_layout Enumerate
-Number of people employed (full-time) at this MCC? (number)
+Number of people employed (full-time) at this MCC?
+ (number)
 \end_layout
 
 \begin_layout Enumerate
-Number of farmers/traders that supply on an average day during the rainy
- season.
+Number of farmers/traders that supply on an average day during the rainy season.
  (number)
 \end_layout
 
@@ -1548,7 +1524,8 @@ Capacity use during dry season (percentage)
 \end_layout
 
 \begin_layout Enumerate
-Does the MCC pay a premium for quality (yes always or yes, sometimes = 1)*
+Does the MCC pay a premium for quality (yes always or yes,
+ sometimes = 1)*
 \end_layout
 
 \begin_layout Enumerate
@@ -1565,13 +1542,13 @@ Supplies credit/loans to cooperative members and regularly supplying farmers?
 \end_layout
 
 \begin_layout Enumerate
-Facilitates supply of acaracides to cooperative members and regularly supplying
- farmers? (yes=1)*
+Facilitates supply of acaracides to cooperative members and regularly supplying farmers?
+ (yes=1)*
 \end_layout
 
 \begin_layout Standard
-At the level of the farmer household, we will collect information on the
- following 10 characteristics:
+At the level of the farmer household,
+ we will collect information on the following 10 characteristics:
 \end_layout
 
 \begin_layout Enumerate
@@ -1599,22 +1576,23 @@ Liters milk sold per day (on average in the rainy season) (liters)*
 \end_layout
 
 \begin_layout Enumerate
-Normally during the rainy season sells most of its milk to a milk collection
- center? (yes=1)
+Normally during the rainy season sells most of its milk to a milk collection center?
+ (yes=1)
 \end_layout
 
 \begin_layout Enumerate
-Uses only steel can/bucket during sales transactions in the last 7 days
- before survey? (yes=1)
+Uses only steel can/bucket during sales transactions in the last 7 days before survey?
+ (yes=1)
 \end_layout
 
 \begin_layout Enumerate
-Member of dairy cooperative? (yes=1)
+Member of dairy cooperative?
+ (yes=1)
 \end_layout
 
 \begin_layout Enumerate
-What is your average monthly expense (UGX) on chemical purchases to fight
- ticks (acaracides)? (average during rainy season)*
+What is your average monthly expense (UGX) on chemical purchases to fight ticks (acaracides)?
+ (average during rainy season)*
 \end_layout
 
 \begin_layout Subsection*
@@ -1630,8 +1608,7 @@ name "subsec:Primary-outcomes"
 
 \begin_layout Standard
 We define six primary outcomes at each level.
- Some of these primary outcomes will be combined in families in a covariance
- weighted index to assess overall impact at that level following 
+ Some of these primary outcomes will be combined in families in a covariance weighted index to assess overall impact at that level following 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1198/016214508000000841"
@@ -1640,38 +1617,43 @@ literal "false"
 \end_inset
 
 .
- These families will be based on general categories of impact (price, quality,
+ These families will be based on general categories of impact (price,
+ quality,
  volume).
- As dairy is a continuous activity, we need to define a time frame for measureme
-nt.
+ As dairy is a continuous activity,
+ we need to define a time frame for measurement.
  We will use the last full week before the interview.
  
 \end_layout
 
 \begin_layout Standard
-The six primary outcomes at MCC level are: 
+The six primary outcomes at MCC level are:
+ 
 \end_layout
 
 \begin_layout Enumerate
 Average milk quality of milk sold.
- This will be done by defining a time window (eg two days) during which
- and enumerator will collect samples from the milk tanks of the MCC.
- Quality is measured by butter fat, added water, SNF, and proteins.
+ This will be done by defining a time window (eg two days) during which and enumerator will collect samples from the milk tanks of the MCC.
+ Quality is measured by butter fat,
+ added water,
+ SNF,
+ and proteins.
 \end_layout
 
 \begin_layout Enumerate
-Average prices at which milk was bought from farmers (during last 7 days)
- - q25b
+Average prices at which milk was bought from farmers (during last 7 days) - q25b
 \end_layout
 
 \begin_layout Enumerate
-Volume of milk collected on an average day in last 7 days - note that midline
- qualitative survey suggests this effect may be negative - q25c
+Volume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
 \end_layout
 
 \begin_layout Enumerate
-Sold to top 5 processors (Pearl, Amos, Lakeside, GBK, Vital tomosi) (in
- last 7 days) - q32==2 & q33!=6
+Sold to top 5 processors (Pearl,
+ Amos,
+ Lakeside,
+ GBK,
+ Vital tomosi) (in last 7 days) - q32==2 & q33!=6
 \end_layout
 
 \begin_layout Enumerate
@@ -1679,24 +1661,26 @@ Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
 \end_layout
 
 \begin_layout Enumerate
-Buyer changed since start of project? changed_buyer
+Buyer changed since start of project?
+ changed_buyer
 \end_layout
 
 \begin_layout Standard
-Outcomes of interest at farmer level, measured in the last seven days:
+Outcomes of interest at farmer level,
+ measured in the last seven days:
 \end_layout
 
 \begin_layout Enumerate
-Milk quality (butter fat content and SNF): This will be done by defining
- a time window (eg two days) where an enumerator will be present in the
- MCC and systematically test incoming milk (eg every 10th sample brought
- in).
- Quality is measured by butter fat, added water, SNF, and proteins.
+Milk quality (butter fat content and SNF):
+ This will be done by defining a time window (eg two days) where an enumerator will be present in the MCC and systematically test incoming milk (eg every 10th sample brought in).
+ Quality is measured by butter fat,
+ added water,
+ SNF,
+ and proteins.
 \end_layout
 
 \begin_layout Enumerate
-Production investment and management (based on index of the following five
- recommended practices to improve milk quality) 
+Production investment and management (based on index of the following five recommended practices to improve milk quality) 
 \end_layout
 
 \begin_deeper
@@ -1705,8 +1689,9 @@ selection of breed and genetic potential q24-q37
 \end_layout
 
 \begin_layout Enumerate
-selection of grasses for high-quality forage (q39-q39b), legume pastures
- - q39c, and multipurpose trees - q39d
+selection of grasses for high-quality forage (q39-q39b),
+ legume pastures - q39c,
+ and multipurpose trees - q39d
 \end_layout
 
 \begin_layout Enumerate
@@ -1723,38 +1708,40 @@ feed supplements like Methionine and Lysine - q43-q43b
 
 \end_deeper
 \begin_layout Enumerate
-Volumes sold during last transaction in last 7 days to buyer (liters) -
- note that midline qualitative survey suggests this effect may be negative
- as no more water can be added - q54/qx1/qx13qx25/qx37/qx49 
+Volumes sold during last transaction in last 7 days to buyer (liters) - note that midline qualitative survey suggests this effect may be negative as no more water can be added - q54/qx1/qx13qx25/qx37/qx49 
 \end_layout
 
 \begin_layout Enumerate
-Sold to milk to collection center in the week preceding the survey? (1=yes)
- - q53==2
+Sold to milk to collection center in the week preceding the survey?
+ (1=yes) - q53==2
 \end_layout
 
 \begin_layout Enumerate
-Price received for milk sold (inclusive of any quality premium that may
- have been obtained) (price per liter, average of price during last transaction
- with in last 7 days with buyer) - q55/qx2/qx14qx26/qx38/qx50
+Price received for milk sold (inclusive of any quality premium that may have been obtained) (price per liter,
+ average of price during last transaction with in last 7 days with buyer) - q55/qx2/qx14qx26/qx38/qx50
 \end_layout
 
 \begin_layout Enumerate
-Buyer changed since start of project (q51-q51_name_q51x-q51x_name)?
+Buyer changed since start of project during wet season (q51,
+ q51_prev,
+ q51_name,
+ q51_name_prev) or during dry season (q51x,
+ q51_prevx,
+ q51_namex,
+ q51_name_prevx)?
 \end_layout
 
 \begin_layout Standard
-In addition, we will use the data that is submitted through the app to assess
- impact.
- For instance we will compare the evolution of parameters of samples that
- are submitted (added water, SNF, butter fat, price) between treatment and
- control over time.
- We expect that especially immediately after the installation of the milk
- analyzers in the control MCCs, difference between treatment and control
- will be large, and that this difference will disappear over time as farmers
- and MCCs also upgrade quality as they are now also treated.
- The submitted data will also provide insights on treatment uptake (although
- it may be that MCC managers use the milk analyzer but not the app).
+In addition,
+ we will use the data that is submitted through the app to assess impact.
+ For instance we will compare the evolution of parameters of samples that are submitted (added water,
+ SNF,
+ butter fat,
+ price) between treatment and control over time.
+ We expect that especially immediately after the installation of the milk analyzers in the control MCCs,
+ difference between treatment and control will be large,
+ and that this difference will disappear over time as farmers and MCCs also upgrade quality as they are now also treated.
+ The submitted data will also provide insights on treatment uptake (although it may be that MCC managers use the milk analyzer but not the app).
 \end_layout
 
 \begin_layout Subsection*
@@ -1766,7 +1753,8 @@ Secondary outcomes at the milk collection center level include:
 \end_layout
 
 \begin_layout Enumerate
-treatment uptake: 
+treatment uptake:
+ 
 \end_layout
 
 \begin_deeper
@@ -1780,14 +1768,15 @@ use of milk analyzer - q16c and q16cc
 
 \end_deeper
 \begin_layout Enumerate
-local sales - previous research found that milk collection centers are also
- important for local milk supply, often doubling as milk shops.
- Does the intervention crowd out the local market? - q32 == 4
+local sales - previous research found that milk collection centers are also important for local milk supply,
+ often doubling as milk shops.
+ Does the intervention crowd out the local market?
+ - q32 == 4
 \end_layout
 
 \begin_layout Enumerate
-farmers may drop out: Number of farmers that supply on an average day (rainy
- vs dry season) q23-q24 and in the last week - q25a
+farmers may drop out:
+ Number of farmers that supply on an average day (rainy vs dry season) q23-q24 and in the last week - q25a
 \end_layout
 
 \begin_layout Enumerate
@@ -1795,32 +1784,44 @@ volumes collected during dry and rainy season q27-q28
 \end_layout
 
 \begin_layout Enumerate
-testing on incoming samples - q25x1, q25x2, q25x3
+testing on incoming samples - q25x1,
+ q25x2,
+ q25x3
 \end_layout
 
 \begin_layout Enumerate
-volumes sold - q35, q48, q58, q68, q78
+volumes sold - q35,
+ q48,
+ q58,
+ q68,
+ q78
 \end_layout
 
 \begin_layout Enumerate
-Impact pathway: 
+Impact pathway:
+ 
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-did MCC measure quality of aggregated milk before selling? q37/q50/q60/q70/q80
+did MCC measure quality of aggregated milk before selling?
+ q37/q50/q60/q70/q80
 \end_layout
 
 \begin_layout Enumerate
-In particular butter fat and SNF using a lactoscan? What equipment was used?
+In particular butter fat and SNF using a lactoscan?
+ What equipment was used?
  q38/q51/q61/q71/q81-q39/q52d/q62d/q72d/q82d
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Who decided on the price? 1.
- buyer made offer and MCC accepted, 2.
- MCC made offer and buyer accepted, 3.
+Who decided on the price?
+ 1.
+ buyer made offer and MCC accepted,
+ 2.
+ MCC made offer and buyer accepted,
+ 3.
  negotiation - q40/q53q63/q73/q83 == 2
 \end_layout
 
@@ -1830,21 +1831,24 @@ Quality:
 
 \begin_deeper
 \begin_layout Enumerate
-Did the buyer pay a quality premium? q44/q54/q64/q74/q84 == 1
+Did the buyer pay a quality premium?
+ q44/q54/q64/q74/q84 == 1
 \end_layout
 
 \begin_layout Enumerate
-How much was the quality premium (UGX per liter)? - q46/q56/q66/q76/q86
+How much was the quality premium (UGX per liter)?
+ - q46/q56/q66/q76/q86
 \end_layout
 
 \begin_layout Enumerate
-How much passes through to farmers? q31d - share 
+How much passes through to farmers?
+ q31d - share 
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
-This is to test the hypothesis that for these systems to work, managers
- need to be incentivized as well 
+This is to test the hypothesis that for these systems to work,
+ managers need to be incentivized as well 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RAO2023708"
@@ -1861,66 +1865,76 @@ literal "false"
 \end_layout
 
 \begin_layout Enumerate
-How is it distributed to farmers? - distribution
+How is it distributed to farmers?
+ - distribution
 \end_layout
 
 \begin_layout Enumerate
-Does the MCC pay a quality premium to suppliers? - q29
+Does the MCC pay a quality premium to suppliers?
+ - q29
 \end_layout
 
 \begin_layout Enumerate
-What was it based on? - q30
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Does market for quality lead to additional investment in quality preservation
- - milk cans, etc - q14a-n
-\end_layout
-
-\begin_layout Enumerate
-Does the development of a market for quality lead to more formalization
- (eg written contracts) 
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Between farmer and MCC? (q31) 
-\end_layout
-
-\begin_layout Enumerate
-Between MCC and buyer? q47/q57/q67/q77/q87
+What was it based on?
+ - q30
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Changes in mid-stream service provision: Does the MCC provide services related
- to 
+Does market for quality lead to additional investment in quality preservation - milk cans,
+ etc - q14a-n
+\end_layout
+
+\begin_layout Enumerate
+Does the development of a market for quality lead to more formalization (eg written contracts) 
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-credit? q17 
+Between farmer and MCC?
+ (q31) 
 \end_layout
 
 \begin_layout Enumerate
-Access to acaracides? q18
+Between MCC and buyer?
+ q47/q57/q67/q77/q87
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Changes in mid-stream service provision:
+ Does the MCC provide services related to 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+credit?
+ q17 
 \end_layout
 
 \begin_layout Enumerate
-Artificial Insemination? q19
+Access to acaracides?
+ q18
 \end_layout
 
 \begin_layout Enumerate
-transport? q20
+Artificial Insemination?
+ q19
 \end_layout
 
 \begin_layout Enumerate
-Training on milk sanitation? q21
+transport?
+ q20
 \end_layout
 
 \begin_layout Enumerate
-Training on feeding practices? q22
+Training on milk sanitation?
+ q21
+\end_layout
+
+\begin_layout Enumerate
+Training on feeding practices?
+ q22
 \end_layout
 
 \end_deeper
@@ -1930,9 +1944,9 @@ Information on lactoscan use (for ITT-TOT analysis).
 \end_layout
 
 \begin_layout Enumerate
-product differentiation: do MCCs collect milk in different takers based
- on quality (eg high protein milk is marketed separately from low protein
- milk)? - differentiate
+product differentiation:
+ do MCCs collect milk in different takers based on quality (eg high protein milk is marketed separately from low protein milk)?
+ - differentiate
 \end_layout
 
 \begin_layout Standard
@@ -1940,8 +1954,7 @@ Secondary outcomes at the farmer level include:
 \end_layout
 
 \begin_layout Enumerate
-Production (liters) on average day in last wet season - q44 and in the last
- dry season - q45 and in the last 7 days - q46
+Production (liters) on average day in last wet season - q44 and in the last dry season - q45 and in the last 7 days - q46
 \end_layout
 
 \begin_layout Enumerate
@@ -1957,15 +1970,17 @@ Average price received during rainy and dry season - q51a and q51ax
 \end_layout
 
 \begin_layout Enumerate
-Home consumption of dairy products (liters (q48), and who consumes diary
- products - children, calves (q49, q49a)) - test if the development of a
- market for quality milk crowds out animal sourced food intake within the
- family or milk as a productive factor
+Home consumption of dairy products (liters (q48),
+ and who consumes diary products - children,
+ calves (q49,
+ q49a)) - test if the development of a market for quality milk crowds out animal sourced food intake within the family or milk as a productive factor
 \end_layout
 
 \begin_layout Enumerate
-Reason for selling to buyer (in particular: because they offer testing,
- pays premium for quality, payment modalities,...) - q56/qx3/qx15/qx27/qx39/qx51
+Reason for selling to buyer (in particular:
+ because they offer testing,
+ pays premium for quality,
+ payment modalities,...) - q56/qx3/qx15/qx27/qx39/qx51
 \end_layout
 
 \begin_layout Enumerate
@@ -1973,38 +1988,37 @@ Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
 \end_layout
 
 \begin_layout Enumerate
-Buyer checks for quality during last transaction (lactoscan, lactometer,
+Buyer checks for quality during last transaction (lactoscan,
+ lactometer,
  alcohol test).
  q57/qx4/qx16/qx28/qx40/qx52 - q58/qx5/qx17/qx29/qx41/qx53
 \end_layout
 
 \begin_layout Enumerate
-Number of dairy animals (improved/local) - does a market for quality lead
- to technology adoption for intensification? Is this stronger for the subgroup
- of farmers that receives the training video, where we explicitly mention
- that genetics also affect quality parameters? q24-q37
+Number of dairy animals (improved/local) - does a market for quality lead to technology adoption for intensification?
+ Is this stronger for the subgroup of farmers that receives the training video,
+ where we explicitly mention that genetics also affect quality parameters?
+ q24-q37
 \end_layout
 
 \begin_layout Enumerate
-Price of dairy animals (improved/local) - test if the development of a market
- for quality has an impact on the price of animals.
+Price of dairy animals (improved/local) - test if the development of a market for quality has an impact on the price of animals.
  q25/q27/q29/q31/q33/q35
 \end_layout
 
 \begin_layout Enumerate
-Gendered decision making outcomes - test if the development of a market
- for milk impacts who within the household makes the decisions to sell to
- a particular buyer.
+Gendered decision making outcomes - test if the development of a market for milk impacts who within the household makes the decisions to sell to a particular buyer.
  q62/qx9/qx21/qx33/qx45/qx57
 \end_layout
 
 \begin_layout Enumerate
-Does the development of a market for quality lead to more formalization
- and less relational contracting? q63/qx10/qx22/qx34/qx46/qx58
+Does the development of a market for quality lead to more formalization and less relational contracting?
+ q63/qx10/qx22/qx34/qx46/qx58
 \end_layout
 
 \begin_layout Enumerate
-Impact pathways: is there an effect on knowledge
+Impact pathways:
+ is there an effect on knowledge
 \end_layout
 
 \begin_deeper
@@ -2013,8 +2027,7 @@ what is understood by quality (sanitation versus composition)
 \end_layout
 
 \begin_layout Enumerate
-what can be done to improve - multiple choice questions on the importance
- of :
+what can be done to improve - multiple choice questions on the importance of :
 \end_layout
 
 \begin_deeper
@@ -2023,8 +2036,9 @@ selection of breed and genetic potential
 \end_layout
 
 \begin_layout Enumerate
-selection of grasses for high-quality forage, legume pastures, multipurpose
- trees
+selection of grasses for high-quality forage,
+ legume pastures,
+ multipurpose trees
 \end_layout
 
 \begin_layout Enumerate
@@ -2042,7 +2056,8 @@ feed supplements like Methionine and Lysine
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-Treatment uptake: 
+Treatment uptake:
+ 
 \end_layout
 
 \begin_deeper
@@ -2055,7 +2070,8 @@ Does the farmer remember having received grass seed - recalls_grass
 \end_layout
 
 \begin_layout Enumerate
-was grass used? - usedgrass.
+was grass used?
+ - usedgrass.
  
 \end_layout
 
@@ -2066,19 +2082,23 @@ Does the intervention also increases milk sanitation (use of milk cans)?
 \end_layout
 
 \begin_layout Enumerate
-Does the intervention leads to changes in bargaining power? farmer made
- offer and MCC accepted, MCC made offer and farmer accepted, negotiation
- — q65/qx12/qx24/qx36/qx48/qx60
+Does the intervention leads to changes in bargaining power?
+ farmer made offer and MCC accepted,
+ MCC made offer and farmer accepted,
+ negotiation —
+ q65/qx12/qx24/qx36/qx48/qx60
 \end_layout
 
 \begin_layout Enumerate
-Gendered labour outcomes (milking, marketing, feeding and herding or cleaning)
- 
+Gendered labour outcomes (milking,
+ marketing,
+ feeding and herding or cleaning) 
 \end_layout
 
 \begin_layout Enumerate
-Does the intervention affect ghee processing? q66 q68-q69 Does this have
- gendered effects? q70-q71
+Does the intervention affect ghee processing?
+ q66 q68-q69 Does this have gendered effects?
+ q70-q71
 \end_layout
 
 \begin_layout Enumerate
@@ -2087,8 +2107,8 @@ Are farmers aware about the premium offered by buyers?
 status collapsed
 
 \begin_layout Plain Layout
-This is to test the hypothesis that for these systems to work, managers
- need to be incentivized as well 
+This is to test the hypothesis that for these systems to work,
+ managers need to be incentivized as well 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RAO2023708"
@@ -2109,11 +2129,8 @@ Ethical clearance
 \end_layout
 
 \begin_layout Standard
-This research received clearance form Makerere's School of Social Sciences
- Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI
- IRB (DSGD-22-1057).
- The research was also registered at the Ugandan National Commission for
- Science and Technology (SS1520ES).
+This research received clearance form Makerere's School of Social Sciences Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI IRB (DSGD-22-1057).
+ The research was also registered at the Ugandan National Commission for Science and Technology (SS1520ES).
 \end_layout
 
 \begin_layout Section*
@@ -2121,31 +2138,30 @@ Transparency and replicability
 \end_layout
 
 \begin_layout Standard
-To maximize transparency and allow for replicabiliy, we use the following
- strategies:
+To maximize transparency and allow for replicabiliy,
+ we use the following strategies:
 \end_layout
 
 \begin_layout Itemize
-pre-analysis plan: the current document provides an ex-ante step-by-step
- plan setting out the hypothesis we will test, the intervention we will
- implement to test these hypotheses, the data that will be collected and
- specifications we will run to bring the hypotheses to the data.
+pre-analysis plan:
+ the current document provides an ex-ante step-by-step plan setting out the hypothesis we will test,
+ the intervention we will implement to test these hypotheses,
+ the data that will be collected and specifications we will run to bring the hypotheses to the data.
  This pre-analysis plan will be pre-registered at the AEA RCT registry.
 \end_layout
 
 \begin_layout Itemize
-revision control: the entire project will be under revision control (that
- is time stamped track changes) and committed regularly to a public repository
- (github).
+revision control:
+ the entire project will be under revision control (that is time stamped track changes) and committed regularly to a public repository (github).
 \end_layout
 
 \begin_layout Itemize
-mock report: After baseline data is collected, a pre-registered report will
- be produced and added to the AEA RCT registry and GitHub.
- This report will differ from the pre-analyisis plan in that it already
- has the tables filled with simulated data (drawn from the baseline).
- The idea is that after the endline, only minimal changes are necessary
- (basically connecting a different dataset) to obtain the final result,
+mock report:
+ After baseline data is collected,
+ a pre-registered report will be produced and added to the AEA RCT registry and GitHub.
+ This report will differ from the pre-analyisis plan in that it already has the tables filled with simulated data (drawn from the baseline).
+ The idea is that after the endline,
+ only minimal changes are necessary (basically connecting a different dataset) to obtain the final result,
  further reducing the opportunity of specification search.
 \end_layout
 
@@ -2173,9 +2189,9 @@ literal "false"
 \end_inset
 
 .
- The project builds on previous work on dairy value chains in Uganda that
- was funded by the Belgian Public Service for Foreign Affairs, Foreign Trade
- and Development Cooperation, grant number 302015.002.002 (bridge funding).
+ The project builds on previous work on dairy value chains in Uganda that was funded by the Belgian Public Service for Foreign Affairs,
+ Foreign Trade and Development Cooperation,
+ grant number 302015.002.002 (bridge funding).
  This grant also funded part of the fieldwork for baseline data collection.
 \end_layout
 
