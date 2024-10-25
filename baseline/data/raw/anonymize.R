@@ -3,6 +3,7 @@ library(leaflet)
 library(reshape2)
 library(htmlwidgets)
 library(pracma) # for haversine function
+library(dplyr)
 #set.seed(20042023)  #today's date
 set.seed(26092023)  #today's date
 
@@ -305,6 +306,13 @@ m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(
 pal <- colorFactor(c("red", "green"),farmers$lactoscan)
 m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 1, color=~pal(lactoscan), popup = ~as.character(lactoscan), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
 
+###one ctrl MCC (MCC_50) was replaced during farmer level reinforcement
+###two treatmetn MCCs (MCC_356,MCC_225)  were replaced during treatment rollout
+##MCC_290 was interviewed at baseline but closed at the time of milk analyzer distribution
+###these people now all go to MCC_356
+farmers$catchment_ID[farmers$MCC_ID == "MCC_290"] <- 66
+farmers$lactoscan[farmers$MCC_ID == "MCC_290"] <- "T"
+farmers$MCC_ID[farmers$MCC_ID == "MCC_290"] <- "MCC_356"
 
 ### export for Charles
 #charles_set <- subset(farmers,check.check2.Dairy.video_shown == TRUE)
@@ -340,8 +348,6 @@ farmers <- farmers[ , !(names(farmers) %in% to_drop)]
 
 
 
-###one ctrl MCC (MCC_50) was replaced during farmer level reinforcement
-###two treatmetn MCCs (MCC_356,MCC_225)  were replaced during treatment rollout
 
 
 #replaceID <- read.csv("MCC_50_replace.csv")
@@ -355,6 +361,9 @@ MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
 MCC[MCC$MCC_ID=="MCC_356",names(replaceID)] <- replaceID[2,]
 MCC[MCC$MCC_ID=="MCC_225",names(replaceID)] <- replaceID[3,]
 MCC[MCC$MCC_ID=="MCC_363",names(replaceID)] <- replaceID[4,]
+
+#remove MCC_290
+MCC <- subset(MCC,MCC_ID!="MCC_290")
 
 ### export for wilberfoce
 
@@ -380,6 +389,7 @@ names(charles_set)[names(charles_set) == 'mcc.q1'] <- 'MCC_name'
 charles_set <- charles_set[with(charles_set, order(charles_set[,1], charles_set[,2], charles_set[,3])), ]
 
 
+
 write.csv(charles_set,file="list_endline.csv", row.names=FALSE)
 
 mcc_set <- mcc_set[c("district",	"sub","catchment_ID","mcc.q1",	 "mcc.q3b",	"mcc.q3c",  "MCC_ID","mcc.q2",	"mcc.q3",	"mcc.q3a","mcc._gps_latitude",	"mcc._gps_longitude",	"lactoscan")]
@@ -387,6 +397,7 @@ mcc_set <- mcc_set[c("district",	"sub","catchment_ID","mcc.q1",	 "mcc.q3b",	"mcc
           
 names(mcc_set) <- c("district",	"sub", "catchment_ID", "name","parish",	"village", "MCC_ID","manager",	"tel_1",	"tel_2"	,"latitude",	"longitude",		"lactoscan")          
 mcc_set <- mcc_set[with(mcc_set, order(mcc_set[,1], mcc_set[,2], mcc_set[,3], mcc_set[,4])), ]
+
 
 
 write.csv(mcc_set,file="list_endline_MCC.csv", row.names=FALSE)
