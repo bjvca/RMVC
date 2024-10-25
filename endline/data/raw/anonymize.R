@@ -29,4 +29,6 @@ farmers <- farmers[ , !(names(farmers) %in% to_drop)]
 
 names(farmers) <- sub("check.Dairy.", "",names(farmers))
 
-write.csv(farmers,"/home/bjvca/data/projects/OneCG/RMVC/endline/data/public/farmers.csv", row.names=FALSE)
+path <- strsplit(path,"/raw")[[1]]
+
+write.csv(farmers,paste(path,"public/farmers.csv", sep="/"), row.names=FALSE)
