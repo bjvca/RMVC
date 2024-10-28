@@ -249,6 +249,8 @@ farmers <- subset(farmers,X_uuid!="b5ee7c77-534f-4ebd-b993-ed18f91743c0")
 farmers <- subset(farmers,X_uuid!="d8e77d2e-83d6-45c8-9a81-2201d864374b")
 farmers <- subset(farmers,X_uuid!="71335f3f-ad2b-48d6-ab95-27c600fa5f42")
 farmers <- subset(farmers,X_uuid!="40989731-3a12-4878-ac0a-1af8696d47f7")
+farmers <- subset(farmers,X_uuid!="553f938e-5aa4-40e6-b74c-2c03d787e0fe")
+farmers <- subset(farmers,X_uuid!="04c555c4-e1d5-46f0-bb15-bfc434a7b725")
 
 farmers$q5[farmers$q5=="MCC_28"] <- "MCC_227" 
 farmers$q5[farmers$q5=="MCC_608"] <- "MCC_614" 
@@ -317,8 +319,8 @@ farmers$MCC_ID[farmers$MCC_ID == "MCC_290"] <- "MCC_356"
 ### export for Charles
 #charles_set <- subset(farmers,check.check2.Dairy.video_shown == TRUE)
 charles_set <- farmers
-charles_set <- charles_set[c("enumerator","q3","q4","mcc.q3c","MCC_ID","mcc_name", "farmer_ID", "parish","village", "check.check2.Dairy.q10","check.check2.Dairy.q11", "check.check2.Dairy.q12", "check.check2.Dairy._GPS_latitude", "check.check2.Dairy._GPS_longitude","catchment_ID","lactoscan","check.check2.Dairy.video_shown")] 
-names(charles_set) <- c("enumerator","mcc_district","mcc_sub","mcc_village","MCC_ID", "mcc_name","farmer_ID", "parish","village", "name","tel_1", "tel_2", "latitude", "longitude","catchment_ID","lacoscan", "video")
+charles_set <- charles_set[c("enumerator","q3","q4","mcc.q3c","MCC_ID","mcc_name", "farmer_ID", "parish","village", "check.check2.Dairy.q10","check.check2.Dairy.q11", "check.check2.Dairy.q12", "check.check2.Dairy.q17", "check.check2.Dairy._GPS_latitude", "check.check2.Dairy._GPS_longitude","catchment_ID","lactoscan","check.check2.Dairy.video_shown")] 
+names(charles_set) <- c("enumerator","mcc_district","mcc_sub","mcc_village","MCC_ID", "mcc_name","farmer_ID", "parish","village", "name","tel_1", "tel_2","name_head", "latitude", "longitude","catchment_ID","lacoscan", "video")
 ###remove trailing and leading spaces for names
 charles_set$name <- trimws(charles_set$name)
 
@@ -377,26 +379,38 @@ write.csv(wilber_set,file="list_wilber_gps.csv", row.names=FALSE)
 
 charles_set <- merge(charles_set,wilber_set, by.x="MCC_ID", by.y="MCC_ID")
 
+names(charles_set)[names(charles_set) == 'mcc.q1'] <- 'MCC_name'
+charles_set$district <- trimws(charles_set$district)
+charles_set$sub <- trimws(charles_set$sub)
+charles_set$MCC_name <- trimws(charles_set$MCC_name)
+charles_set$name <- trimws(charles_set$name)
+charles_set$name_head <- trimws(charles_set$name_head)
 
-mcc_set <- distinct(charles_set[c("MCC_ID","district","sub","mcc.q1","mcc.q2", "mcc.q3","mcc.q3a", "mcc.q3b","mcc.q3c", "lactoscan", "mcc._gps_latitude", "mcc._gps_longitude","catchment_ID")])
+charles_set$name <- ifelse( charles_set$name_head == "n/a", charles_set$name, paste(paste(charles_set$name, "for head:", sep = " "), charles_set$name_head, sep=" ")) 
 
 
-charles_set <-charles_set[c("district","sub","MCC_ID","mcc.q1","parish",	"village",	"name", "farmer_ID", "tel_1",	"tel_2",	"latitude",	"longitude",	"catchment_ID",	"lactoscan",	"video"
+mcc_set <- distinct(charles_set[c("MCC_ID","district","sub","MCC_name","mcc.q2", "mcc.q3","mcc.q3a", "mcc.q3b","mcc.q3c", "lactoscan", "mcc._gps_latitude", "mcc._gps_longitude","catchment_ID")])
+
+
+charles_set <-charles_set[c("district","sub","MCC_ID","MCC_name","parish",	"village",	"name", "farmer_ID", "tel_1",	"tel_2", "latitude",	"longitude",	"catchment_ID",	"lactoscan",	"video"
 )]
 
-names(charles_set)[names(charles_set) == 'mcc.q1'] <- 'MCC_name'
+
 
 charles_set <- charles_set[with(charles_set, order(charles_set[,1], charles_set[,2], charles_set[,3])), ]
 
 
+charles_set$name[duplicated(charles_set$name)]
 
 write.csv(charles_set,file="list_endline.csv", row.names=FALSE)
 
-mcc_set <- mcc_set[c("district",	"sub","catchment_ID","mcc.q1",	 "mcc.q3b",	"mcc.q3c",  "MCC_ID","mcc.q2",	"mcc.q3",	"mcc.q3a","mcc._gps_latitude",	"mcc._gps_longitude",	"lactoscan")]
+mcc_set <- mcc_set[c("district",	"sub","catchment_ID","MCC_name",	 "mcc.q3b",	"mcc.q3c",  "MCC_ID","mcc.q2",	"mcc.q3",	"mcc.q3a","mcc._gps_latitude",	"mcc._gps_longitude",	"lactoscan")]
 
           
 names(mcc_set) <- c("district",	"sub", "catchment_ID", "name","parish",	"village", "MCC_ID","manager",	"tel_1",	"tel_2"	,"latitude",	"longitude",		"lactoscan")          
 mcc_set <- mcc_set[with(mcc_set, order(mcc_set[,1], mcc_set[,2], mcc_set[,3], mcc_set[,4])), ]
+
+mcc_set$name <- trimws(mcc_set$name)
 
 
 
