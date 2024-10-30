@@ -2355,7 +2355,7 @@ Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
 
 \begin_layout Enumerate
 Buyer changed since start of project?
- changed_buyer
+ same_buyer
 \end_layout
 
 \begin_layout Standard
