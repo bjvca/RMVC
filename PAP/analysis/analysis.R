@@ -43,8 +43,8 @@ ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outco
 vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
 res <- coef_test(ols, vcov_cluster)
 conf <- conf_int(ols, vcov_cluster)
-res_farmer[i,1] <- mean(as.matrix(farmers[outcomes[i]]), na.rm=T)
-res_farmer[i,2] <- sd(as.matrix(farmers[outcomes[i]]), na.rm=T)
+res_farmer[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+res_farmer[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
 res_farmer[i,3:7] <- c(res[2,2],res[2,3],res[2,6], conf[2,5],conf[2,6])
 res_farmer[i,8:12] <- c(res[3,2],res[3,3],res[3,6], conf[3,5],conf[3,6])
 res_farmer[i,13:18] <- c(res[5,2],res[5,3],res[5,6], conf[5,5],conf[5,6], nobs(ols))
@@ -54,7 +54,7 @@ farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
  
 for (i in 1:length(outcomes)) {
-  ols <- lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
@@ -65,7 +65,7 @@ for (i in 1:length(outcomes)) {
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
-  ols <- lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
