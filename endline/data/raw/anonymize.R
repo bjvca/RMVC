@@ -111,6 +111,9 @@ to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid",
              "X_media_all_received",                         
              "X_xform_id")            
 MCCs <- MCCs[ , !(names(MCCs) %in% to_drop)]
+names(MCCs) <- sub("mcc.", "",names(MCCs))
+names(MCCs) <- sub("assets.", "",names(MCCs))
+names(MCCs) <- sub("services.", "",names(MCCs))
 
 write.csv(MCCs,paste(path,"data/public/MCCs.csv", sep="/"), row.names=FALSE)
 

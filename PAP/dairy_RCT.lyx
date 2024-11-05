@@ -249,6 +249,23 @@ F_test <- readRDS(paste(path2,"/results/F_test.RData",sep=
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+res_MCCs <- readRDS(paste(path2,"/results/res_MCCs.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
 @
 \end_layout
 
@@ -2300,37 +2317,34 @@ name "subsec:Primary-outcomes"
 \end_layout
 
 \begin_layout Standard
-We define six primary outcomes at each level.
- Some of these primary outcomes will be combined in families in a covariance weighted index to assess overall impact at that level following 
+We define six primary outcomes at the MCC level.
+ All six are outcomes are expected to change in a positive direction as a result of our intervention at this level.
+ We thus also construct an index following 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "doi:10.1198/016214508000000841"
 literal "false"
 
 \end_inset
 
-.
- These families will be based on general categories of impact (price,
- quality,
- volume).
- As dairy is a continuous activity,
- we need to define a time frame for measurement.
- We will use the last full week before the interview.
- 
+ that measures overall effect of making quality visible on the development of a market for quality.
 \end_layout
 
 \begin_layout Standard
-The six primary outcomes at MCC level are:
+The five primary outcomes at MCC level are:
  
 \end_layout
 
 \begin_layout Enumerate
-Average milk quality of milk sold.
- This will be done by defining a time window (eg two days) during which and enumerator will collect samples from the milk tanks of the MCC.
- Quality is measured by butter fat,
- added water,
- SNF,
- and proteins.
+Testing on incoming samples - q25x3
+\end_layout
+
+\begin_layout Enumerate
+Testing of outgoing samples 0-q39a/c,
+ q52a/c,
+ q62a/c,
+ q72a/c,
+ q82a/c
 \end_layout
 
 \begin_layout Enumerate
@@ -2338,24 +2352,420 @@ Average prices at which milk was bought from farmers (during last 7 days) - q25b
 \end_layout
 
 \begin_layout Enumerate
-Volume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
-\end_layout
-
-\begin_layout Enumerate
-Sold to top 5 processors (Pearl,
- Amos,
- Lakeside,
- GBK,
- Vital tomosi) (in last 7 days) - q32==2 & q33!=6
-\end_layout
-
-\begin_layout Enumerate
 Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
 \end_layout
 
 \begin_layout Enumerate
-Buyer changed since start of project?
- same_buyer
+Does the MCC pay a quality premium to suppliers?
+ - q29
+\end_layout
+
+\begin_layout Enumerate
+Did the buyer pay a quality premium?
+ q44/q54/q64/q74/q84 == 1
+\end_layout
+
+\begin_layout Standard
+Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primary outcomes at MCC level
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-MCC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Testing on incoming samples & 
+\backslash
+Sexpr{res_MCCs[1,1]} & 
+\backslash
+Sexpr{res_MCCs[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[1,5]<.01,"**",ifelse(res_MCCs[1,5]<.05,"*",ifelse(res_MCCs[1,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_MCCs[1,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[1,2]}) & (
+\backslash
+Sexpr{res_MCCs[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Testing of outgoing samples & 
+\backslash
+Sexpr{res_MCCs[2,1]} & 
+\backslash
+Sexpr{res_MCCs[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[2,5]<.01,"**",ifelse(res_MCCs[2,5]<.05,"*",ifelse(res_MCCs[2,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs[2,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[2,2]}) & (
+\backslash
+Sexpr{res_MCCs[2,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average prices at which milk was bought from farmers  & 
+\backslash
+Sexpr{res_MCCs[3,1]} & 
+\backslash
+Sexpr{res_MCCs[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[3,5]<.01,"**",ifelse(res_MCCs[3,5]<.05,"*",ifelse(res_MCCs[3,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs[3,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[3,2]}) & (
+\backslash
+Sexpr{res_MCCs[3,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Price at which milk was sold (in last 7 days) & 
+\backslash
+Sexpr{res_MCCs[4,1]} & 
+\backslash
+Sexpr{res_MCCs[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[4,5]<.01,"**",ifelse(res_MCCs[4,5]<.05,"*",ifelse(res_MCCs[4,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs[4,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[4,2]}) & (
+\backslash
+Sexpr{res_MCCs[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Does the MCC pay a quality premium to suppliers?
+ & 
+\backslash
+Sexpr{res_MCCs[5,1]} & 
+\backslash
+Sexpr{res_MCCs[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[5,5]<.01,"**",ifelse(res_MCCs[5,5]<.05,"*",ifelse(res_MCCs[5,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs[5,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[5,2]}) & (
+\backslash
+Sexpr{res_MCCs[5,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Did the buyer pay a quality premium?
+ & 
+\backslash
+Sexpr{res_MCCs[6,1]} & 
+\backslash
+Sexpr{res_MCCs[6,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[6,5]<.01,"**",ifelse(res_MCCs[6,5]<.05,"*",ifelse(res_MCCs[6,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs[6,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[6,2]}) & (
+\backslash
+Sexpr{res_MCCs[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index & 
+\backslash
+Sexpr{res_MCCs[7,1]} & 
+\backslash
+Sexpr{res_MCCs[7,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[7,5]<.01,"**",ifelse(res_MCCs[7,5]<.05,"*",ifelse(res_MCCs[7,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs[7,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[7,2]}) & (
+\backslash
+Sexpr{res_MCCs[7,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+  **,
+ * and + denote significance at the 1,
+ 5 and 10 percent levels.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2468,6 +2878,14 @@ local sales - previous research found that milk collection centers are also impo
 \end_layout
 
 \begin_layout Enumerate
+Sold to top 5 processors (Pearl,
+ Amos,
+ Lakeside,
+ GBK,
+ Vital tomosi) (in last 7 days) - q32==2 & q33!=6
+\end_layout
+
+\begin_layout Enumerate
 farmers may drop out:
  Number of farmers that supply on an average day (rainy vs dry season) q23-q24 and in the last week - q25a
 \end_layout
@@ -2477,9 +2895,12 @@ volumes collected during dry and rainy season q27-q28
 \end_layout
 
 \begin_layout Enumerate
-testing on incoming samples - q25x1,
- q25x2,
- q25x3
+Testing via other methods on incoming samples - q25x1,
+ q25x2
+\end_layout
+
+\begin_layout Enumerate
+Volume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
 \end_layout
 
 \begin_layout Enumerate
@@ -2640,6 +3061,11 @@ Information on lactoscan use (for ITT-TOT analysis).
 product differentiation:
  do MCCs collect milk in different takers based on quality (eg high protein milk is marketed separately from low protein milk)?
  - differentiate
+\end_layout
+
+\begin_layout Enumerate
+Buyer changed since start of project?
+ same_buyer
 \end_layout
 
 \begin_layout Standard

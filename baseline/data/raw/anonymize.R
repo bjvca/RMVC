@@ -440,5 +440,8 @@ MCC <- MCC[ , !(names(MCC) %in% to_drop)]
 
 names(farmers) <- sub("check.check2.Dairy.", "",names(farmers))
 names(MCC) <- sub("mcc.", "",names(MCC))
+names(MCC) <- sub("assets.", "",names(MCC))
+names(MCC) <- sub("day.", "",names(MCC))
+names(MCC) <- sub("services.", "",names(MCC))
 write.csv(farmers,"/home/bjvca/data/projects/OneCG/RMVC/baseline/data/public/farmers.csv", row.names=FALSE)
 write.csv(MCC,"/home/bjvca/data/projects/OneCG/RMVC/baseline/data/public/MCCs.csv", row.names=FALSE)
