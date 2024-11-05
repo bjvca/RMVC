@@ -11,7 +11,7 @@ farmers_end <- read.csv(paste(path, "endline/data/public/farmers.csv", sep = "/"
 ### read in baseline farmer data 
 farmers_base <- read.csv(paste(path, "baseline/data/public/farmers.csv", sep = "/"))
 
-###catch 
+###catchment area for clustering
 farmers_end$catch_ID <- as.factor(farmers_end$catchment)
 
 ##treat is MCC level treatment; vid is farmer level treatment
@@ -25,16 +25,72 @@ names(farmers_end)[names(farmers_end) == 'farmer_type'] <- 'farmer_type_end'
 
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","farmer_type")], by="farmer_ID", all.x=T)
 farmers_end$trader <- farmers_end$farmer_type == 2
-#six primary outcomes at the farmer level
+
+#primary outcomes at the farmer level
+
+#q39 == "Yes" ##oversowing
+#q39c == "Yes" ##legume pastures
+#q39d == "Yes" ##trees
+#q40 in c(1,3) #controlled/zero grazing in dry seaon
+#q41 in c(1,3) #controlled/zero grazing in wet seaon
+#q42 == "Yes" #pasture conservation
+#q43 == "Yes" ##supplements
+
+farmers_base$b_improve_index <- anderson_index(cbind(farmers_base$q39 == "Yes",farmers_base$q39c  == "Yes", farmers_base$q40 %in% c(1,3), farmers_base$q41 %in% c(1,3), farmers_base$q42  == "Yes", farmers_base$q43  == "Yes"))$index
+farmers_end$improve_index <- anderson_index(cbind(farmers_end$q39 == "Yes",farmers_end$q39c  == "Yes", farmers_end$q40 %in% c(1,3), farmers_end$q41 %in% c(1,3), farmers_end$q42  == "Yes", farmers_end$q43  == "Yes"))$index
+farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_improve_index")], by="farmer_ID", all.x=T)
+
+##buyer checks using milk analyzer
+farmers_end$check_MA <- farmers_end$q58.4 == "True" | farmers_end$qx5.4 == "True" | farmers_end$qx17.4 == "True" | farmers_end$qx29.4 == "True" | farmers_end$qx41.4 == "True" | farmers_end$qx53.4 == "True"
+farmers_base$b_check_MA <-farmers_base$q58== "4" | farmers_base$qx5.4 == "True" | farmers_base$qx17.4 == "True" | farmers_base$qx29.4 == "True" | farmers_base$qx41.4 == "True" | farmers_base$qx53.4 == "True"
+farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_check_MA")], by="farmer_ID", all.x=T)
+
+##Price received for milk sold (inclusive of any quality premium that may have been obtained) (price per liter, average of price during last transaction with in last 7 days with buyer) - q55/qx2/qx14qx26/qx38/qx50
+
+columns <- c("q55","qx2","qx14","qx26","qx38","qx50")
+
+# Replace "n/a" and "999" with NA in each specified column
+farmers_end[columns] <- lapply(farmers_end[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+farmers_base[columns] <- lapply(farmers_base[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+farmers_end$avg_sales_p <- rowMeans(farmers_end[columns], na.rm=T)
+farmers_end$avg_sales_p[is.nan(farmers_end$avg_sales_p)] <- NA
+
+farmers_base$b_avg_sales_p <- rowMeans(farmers_base[columns], na.rm=T)
+farmers_base$b_avg_sales_p[is.nan(farmers_base$b_avg_sales_p)] <- NA
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_avg_sales_p")], by="farmer_ID", all.x=T)
+
+## Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
+
+farmers_base$b_gets_q_bonus <- farmers_base$q61 == "Yes" | farmers_base$qx8 == "Yes" | farmers_base$qx20 == "Yes" | farmers_base$qx32 == "Yes" | farmers_base$qx44 == "Yes" | farmers_base$qx56 == "Yes"
+farmers_end$gets_q_bonus <- farmers_end$q61 == "Yes" | farmers_end$qx8 == "Yes" | farmers_end$qx20 == "Yes" | farmers_end$qx32 == "Yes" | farmers_end$qx44 == "Yes" | farmers_end$qx56 == "Yes"
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_gets_q_bonus")], by="farmer_ID", all.x=T)
 
 
-###merge in corresponding baseline variable
-farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","q53.2")],by="farmer_ID",all.x=T)
-farmers_end$MMC_delivery <- farmers_end$q53.2.x == "True"
-farmers_end$b_MMC_delivery <- farmers_end$q53.2.y == "True"
+### farmers improve bargaining power
 
-outcomes <- c("MMC_delivery")
-b_outcomes <- c("b_MMC_delivery")
+farmers_end$bargain_power <- farmers_end$q65 %in% c(1,3) | farmers_end$qx12 %in% c(1,3) | farmers_end$qx24 %in% c(1,3)  | farmers_end$qx36 %in% c(1,3) | farmers_end$qx48 %in% c(1,3) | farmers_end$qx60 %in% c(1,3)
+farmers_base$b_bargain_power <- farmers_base$q65 %in% c(1,3) | farmers_base$qx12 %in% c(1,3) | farmers_base$qx24 %in% c(1,3)  | farmers_base$qx36 %in% c(1,3) | farmers_base$qx48 %in% c(1,3) | farmers_base$qx60 %in% c(1,3)
+farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_bargain_power")], by="farmer_ID", all.x=T)
+
+outcomes <- c("improve_index","check_MA","avg_sales_p","gets_q_bonus","bargain_power")
+b_outcomes <- c("b_improve_index","b_check_MA","b_avg_sales_p","b_gets_q_bonus","b_bargain_power")
+
+###Make anderson index
+farmers_end$primary_farmer_index <- anderson_index(farmers_end[outcomes])$index
+farmers_end$b_primary_farmer_index <- anderson_index(farmers_end[b_outcomes])$index
+
+outcomes <- c(outcomes, "primary_farmer_index")
+b_outcomes <- c(b_outcomes, "b_primary_farmer_index")
 
 ##Sold to milk to collection center in the week preceding the survey
 ###fully interacted model

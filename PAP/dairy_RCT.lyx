@@ -2386,7 +2386,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -2774,49 +2774,40 @@ Outcomes of interest at farmer level,
 \end_layout
 
 \begin_layout Enumerate
-Milk quality (butter fat content and SNF):
- This will be done by defining a time window (eg two days) where an enumerator will be present in the MCC and systematically test incoming milk (eg every 10th sample brought in).
- Quality is measured by butter fat,
- added water,
- SNF,
- and proteins.
-\end_layout
-
-\begin_layout Enumerate
-Production investment and management (based on index of the following five recommended practices to improve milk quality) 
+Production investment and management (based on an anderson index of the following six recommended practices to improve milk quality) 
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-selection of breed and genetic potential q24-q37 
+q39 == "Yes" ##oversowing
 \end_layout
 
 \begin_layout Enumerate
-selection of grasses for high-quality forage (q39-q39b),
- legume pastures - q39c,
- and multipurpose trees - q39d
+q39c == "Yes" ##legume pastures
 \end_layout
 
 \begin_layout Enumerate
-best practice in silage and hay making (q42-q42b)
+q40 in c(1,3) #controlled/zero grazing in dry seaon
 \end_layout
 
 \begin_layout Enumerate
-controlled grazing (q40-q41)
+q41 in c(1,3) #controlled/zero grazing in wet seaon
 \end_layout
 
 \begin_layout Enumerate
-feed supplements like Methionine and Lysine - q43-q43b 
+q42 == "Yes" #pasture conservation
+\end_layout
+
+\begin_layout Enumerate
+q43 == "Yes" ##supplements
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-Volumes sold during last transaction in last 7 days to buyer (liters) - note that midline qualitative survey suggests this effect may be negative as no more water can be added - q54/qx1/qx13qx25/qx37/qx49 
-\end_layout
-
-\begin_layout Enumerate
-Sold to milk to collection center in the week preceding the survey?
- (1=yes) - q53==2
+Buyer checks for quality during last transaction (lactoscan,
+ lactometer,
+ alcohol test).
+ q58/qx5/qx17/qx29/qx41/qx53 == 4
 \end_layout
 
 \begin_layout Enumerate
@@ -2825,26 +2816,29 @@ Price received for milk sold (inclusive of any quality premium that may have bee
 \end_layout
 
 \begin_layout Enumerate
-Buyer changed since start of project during wet season (q51,
- q51_prev,
- q51_name,
- q51_name_prev) or during dry season (q51x,
- q51_prevx,
- q51_namex,
- q51_name_prevx)?
+Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
+\end_layout
+
+\begin_layout Enumerate
+Bargaining power - q65,
+ qx12qx24,
+ qx36,
+ qx48,
+ qx60 ==1 or 3 
 \end_layout
 
 \begin_layout Standard
-In addition,
- we will use the data that is submitted through the app to assess impact.
- For instance we will compare the evolution of parameters of samples that are submitted (added water,
- SNF,
+Finally,
+ we will use data from supervised testing of incoming samples in treatment and control MCCs.
+ In particular,
+ we will test all incoming samples during an entire day.
+ Parameters of interest are the ones that are collected in the app (and can be measured through the milk analyzers):
+ added water,
  butter fat,
- price) between treatment and control over time.
- We expect that especially immediately after the installation of the milk analyzers in the control MCCs,
- difference between treatment and control will be large,
- and that this difference will disappear over time as farmers and MCCs also upgrade quality as they are now also treated.
- The submitted data will also provide insights on treatment uptake (although it may be that MCC managers use the milk analyzer but not the app).
+ SNF,
+ protein,
+ price and quantity.
+ 
 \end_layout
 
 \begin_layout Subsection*
@@ -3085,6 +3079,15 @@ Buyer type sold to on average day in rainy and dry season - q51 and q51x
 \end_layout
 
 \begin_layout Enumerate
+Sold to milk to collection center in the week preceding the survey?
+ (1=yes) - q53==2
+\end_layout
+
+\begin_layout Enumerate
+Volumes sold during last transaction in last 7 days to buyer (liters) - note that midline qualitative survey suggests this effect may be negative as no more water can be added - q54/qx1/qx13qx25/qx37/qx49 
+\end_layout
+
+\begin_layout Enumerate
 Average price received during rainy and dry season - q51a and q51ax
 \end_layout
 
@@ -3100,17 +3103,6 @@ Main reason for selling to buyer (in particular:
  because they offer testing,
  pays premium for quality,
  payment modalities,...) - q56/qx3/qx15/qx27/qx39/qx51
-\end_layout
-
-\begin_layout Enumerate
-Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
-\end_layout
-
-\begin_layout Enumerate
-Buyer checks for quality during last transaction (lactoscan,
- lactometer,
- alcohol test).
- q57/qx4/qx16/qx28/qx40/qx52 - q58/qx5/qx17/qx29/qx41/qx53
 \end_layout
 
 \begin_layout Enumerate
@@ -3241,6 +3233,22 @@ literal "false"
 \end_inset
 
  knows_price_downstream/price_downstream
+\end_layout
+
+\begin_layout Enumerate
+Buyer changed since start of project during wet season (q51,
+ q51_prev,
+ q51_name,
+ q51_name_prev) or during dry season (q51x,
+ q51_prevx,
+ q51_namex,
+ q51_name_prevx)?
+\end_layout
+
+\begin_layout Enumerate
+Knowledge of what is important for compositional quality - test_know_1,
+ test_know_2,
+ test_know_3
 \end_layout
 
 \begin_layout Section*
