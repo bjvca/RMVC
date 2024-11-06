@@ -2,6 +2,7 @@ rm(list=ls())
 
 library(clubSandwich)
 library(andersonTools)
+library(car)
 
 path <- getwd()
 path <- strsplit(path,"/PAP/analysis")[[1]]
@@ -94,7 +95,7 @@ b_outcomes <- c(b_outcomes, "b_primary_farmer_index")
 
 ##Sold to milk to collection center in the week preceding the survey
 ###fully interacted model
-res_farmers <-   array(NA,dim=c(length(outcomes),18))
+res_farmers <-   array(NA,dim=c(length(outcomes),26))
 for (i in 1:length(outcomes)) {
 ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
 vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
@@ -102,10 +103,20 @@ res <- coef_test(ols, vcov_cluster)
 conf <- conf_int(ols, vcov_cluster)
 res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
 res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-res_farmers[i,3:7] <- c(res[2,2],res[2,3],res[2,6], conf[2,5],conf[2,6])
-res_farmers[i,8:12] <- c(res[3,2],res[3,3],res[3,6], conf[3,5],conf[3,6])
-res_farmers[i,13:18] <- c(res[5,2],res[5,3],res[5,6], conf[5,5],conf[5,6], nobs(ols))
+res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
+res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+
+res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
 }
+
+res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
+res_farmers[1:length(outcomes)-1,17] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,8])
+res_farmers[1:length(outcomes)-1,18] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,11])
+
+
 ###model with demeaned orthogonal treatment - milk analyzer
 farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na.rm=T)
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
@@ -115,7 +126,7 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,3:7] <- c(res[2,2],res[2,3],res[2,6], conf[2,5],conf[2,6])
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
 
 }
 ###model with demeaned orthogonal treatment - video tratment
@@ -126,9 +137,16 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,3:7] <- c(res[2,2],res[2,3],res[2,6], conf[2,5],conf[2,6])
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
   
 }
+res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
+res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
+
+
+res_farmers <- round(res_farmers,digits=3)
+
+saveRDS(res_farmers, file= paste(path,"PAP/results/res_farmers.RData", sep="/"))
 
 
 
@@ -245,7 +263,7 @@ for (i in 1:length(outcomes)) {
   res_MCCs[i,7] <- nobs(ols)
 }
 
-res_MCCs <- round(res_MCCs,digits=2)
+res_MCCs <- round(res_MCCs,digits=3)
 res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,5])
 
 ## collects results: ctrl mean, ctrl sd, effect, sd effect, p-val, q-val, nobs
