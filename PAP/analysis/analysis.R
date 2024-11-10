@@ -3,6 +3,8 @@ rm(list=ls())
 library(clubSandwich)
 library(andersonTools)
 library(car)
+library(lubridate)
+library(ggplot2)
 
 path <- getwd()
 path <- strsplit(path,"/PAP/analysis")[[1]]
@@ -20,8 +22,6 @@ farmers_end$treat <- farmers_end$treat == "T"
 
 ##merge in relevant data from baseline
 # farmer type (direct of via trader)
-farmers_end$farmer_type
-
 names(farmers_end)[names(farmers_end) == 'farmer_type'] <- 'farmer_type_end'
 
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","farmer_type")], by="farmer_ID", all.x=T)
@@ -147,7 +147,127 @@ res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(ou
 res_farmers <- round(res_farmers,digits=3)
 
 saveRDS(res_farmers, file= paste(path,"PAP/results/res_farmers.RData", sep="/"))
+ 
+##secondary outcomes - sales
+#q52 sold in last week
+farmers_end$sold_last_week <- farmers_end$q52 == "Yes"
+farmers_base$b_sold_last_week <- farmers_base$q52 == "Yes"
+farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_sold_last_week")], by="farmer_ID", all.x=T)
 
+
+columns <- c("q50","q50x") ## vols sold dry and rainy season
+
+# Replace "n/a" and "999" with NA in each specified column
+farmers_end[columns] <- lapply(farmers_end[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+farmers_base[columns] <- lapply(farmers_base[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+farmers_end$q_sold_dry  <- farmers_end$q50 
+farmers_base$b_q_sold_dry  <- farmers_base$q50
+farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_q_sold_dry")], by="farmer_ID", all.x=T)
+
+farmers_end$q_sold_wet  <- farmers_end$q50x 
+farmers_base$b_q_sold_wet  <- farmers_base$q50x
+farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_q_sold_wet")], by="farmer_ID", all.x=T)
+
+
+columns <- c("q54","qx1","qx13","qx25","qx37","qx49")
+# Replace "n/a" and "999" with NA in each specified column
+farmers_end[columns] <- lapply(farmers_end[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+farmers_base[columns] <- lapply(farmers_base[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+farmers_end$avg_sales_q <- rowMeans(farmers_end[columns], na.rm=T)
+farmers_end$avg_sales_q[is.nan(farmers_end$avg_sales_q)] <- NA
+farmers_end$avg_sales_q[is.na(farmers_end$avg_sales_q)] <- 0
+
+
+farmers_base$b_avg_sales_q <- rowMeans(farmers_base[columns], na.rm=T)
+farmers_base$b_avg_sales_q[is.nan(farmers_base$b_avg_sales_q)] <- NA
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_avg_sales_q")], by="farmer_ID", all.x=T)
+
+outcomes <- c("q_sold_dry", "q_sold_wet", "sold_last_week", "avg_sales_q")
+b_outcomes <- c("b_q_sold_dry", "b_q_sold_wet", "b_sold_last_week", "b_avg_sales_q")
+
+###Make anderson index
+farmers_end$secondary_farmer_quant_index  <- anderson_index(farmers_end[outcomes])$index
+farmers_end$b_secondary_farmer_quant_index <- anderson_index(farmers_end[b_outcomes])$index
+
+outcomes <- c(outcomes, "secondary_farmer_quant_index")
+b_outcomes <- c(b_outcomes, "b_secondary_farmer_quant_index")
+
+##Sold to milk to collection center in the week preceding the survey
+###fully interacted model
+res_farmers <-   array(NA,dim=c(length(outcomes),26))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+}
+
+res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
+res_farmers[1:length(outcomes)-1,17] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,8])
+res_farmers[1:length(outcomes)-1,18] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,11])
+
+
+###model with demeaned orthogonal treatment - milk analyzer
+farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na.rm=T)
+farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
+
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
+  
+}
+###model with demeaned orthogonal treatment - video tratment
+
+farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
+  
+}
+res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
+res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
+
+
+res_farmers_sec_quant <- round(res_farmers,digits=3)
+
+saveRDS(res_farmers_sec_quant, file= paste(path,"PAP/results/res_farmers_sec_quant.RData", sep="/"))
+
+##secondary outcomes - production
 
 
 ######################## analysis at the MCC level ############################################
@@ -270,5 +390,139 @@ res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)
 ## last line is index
 
 saveRDS(res_MCCs, file= paste(path,"PAP/results/res_MCCs.RData", sep="/"))
+
+#### analysis for samples
+samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+
+###iterate over outcomes in this family
+outcomes <- c("Fat","SNF", "Added.Water","Protein", "Corrected.Lactometer.Reading")
+
+###Make anderson index - revers outcome 3 (added water as less is better)
+samples$samples_index <- anderson_index(samples[outcomes], revcols = 3)$index
+
+outcomes <- c(outcomes, "samples_index")
+
+
+
+res_samples <-   array(NA,dim=c(length(outcomes),7))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(outcomes[i],"treat",sep="~")), data=samples)
+  res_samples[i,1] <- mean(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
+  res_samples[i,2] <- sd(as.matrix(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
+  vcov_cluster <- vcovCR(ols,cluster=samples$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  res_samples[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+  res_samples[i,7] <- nobs(ols)
+}
+
+res_samples <- round(res_samples,digits=3)
+res_samples[1:length(outcomes)-1,6] <- anderson_sharp_q(res_samples[1:length(outcomes)-1,5])
+
+## collects results: ctrl mean, ctrl sd, effect, sd effect, p-val, q-val, nobs
+## last line is index
+
+res_samples <- round(res_samples,digits=3)
+
+
+saveRDS(res_samples, file= paste(path,"PAP/results/res_samples.RData", sep="/"))
+
+
+# Sample data
+
+# Convert to POSIXct format with timezone "Africa/Kampala"
+samples$timestamps <- ymd_hms(samples$start, tz = "Africa/Kampala")
+
+# Remove the date part by setting all times to a common reference date
+# e.g., "2024-01-01" so we can still handle it as a datetime object
+samples$timestamps <- as.POSIXct(format(samples$timestamps, format = "2024-01-01 %H:%M:%S"), tz = "Africa/Kampala")
+
+# Filter data to keep only timestamps between 7:00 and 14:00
+samples <- samples %>%
+  filter(hour(timestamps) >= 7 & hour(timestamps) < 14)
+
+##redefine outcome as time since 7 am
+samples$reference_time <-  floor_date(samples$timestamps, unit = "day") + hours(7)
+samples$time_elapsed <- as.numeric(difftime(samples$timestamps, samples$reference_time, units = "mins"))
+
+# Calculate cumulative percentage
+samples <- samples %>%
+  arrange(time_elapsed) %>%
+  group_by(treat) %>%
+  mutate(cumulative_count = row_number(),
+         cumulative_percentage = (cumulative_count / n()) * 100) %>%
+  ungroup()
+
+# Plot the cumulative distributions for each group
+cum_dist <- ggplot(samples, aes(x = time_elapsed, y = cumulative_percentage, color = treat)) +
+  geom_line() +
+  labs(title = "Cumulative Distribution of Milk Deliveries for Groups T and C Between 7:00 and 14:00",
+       x = "Time",
+       y = "Cumulative Percentage of Events") +
+  scale_color_manual(values = c("T" = "blue", "C" = "red")) +
+  theme_minimal()
+
+ggsave(paste(path,"PAP/results/test.png",sep="/"))
+
+##KS test for difference in distributions
+
+group_T <- samples$cumulative_percentage[samples$treat == "T"]
+group_C <- samples$cumulative_percentage[samples$treat == "C"]
+
+ks_test_result <- ks.test(group_T, group_C)
+print(ks_test_result)
+
+# Perform a two-sample t-test to compare means of cumulative times for T and C
+group_T_times <- as.numeric(samples$timestamps[samples$treat == "T"])
+group_C_times <- as.numeric(samples$timestamps[samples$treat == "C"])
+
+t_test_result <- t.test(group_T_times, group_C_times)
+
+# Print the result of the t-test
+print(t_test_result)
+
+
+wilcox_test_result <- wilcox.test(group_T_times, group_C_times)
+
+# Print the result of the Mann-Whitney U test
+print(wilcox_test_result)
+
+##first order stochastic dominance
+
+# Sort the times for each group
+sorted_T <- sort(samples$timestamps[samples$treat == "T"])
+sorted_C <- sort(samples$timestamps[samples$treat == "C"])
+
+# Compute CDFs by calculating the cumulative sum
+cdf_T <- cumsum(rep(1, length(sorted_T))) / length(sorted_T)
+cdf_C <- cumsum(rep(1, length(sorted_C))) / length(sorted_C)
+
+# Check if the CDF of T is always less than or equal to the CDF of C
+cdf_diff <- cdf_T - cdf_C
+
+# Test for first-order stochastic dominance
+if (all(cdf_diff <= 0) && any(cdf_diff < 0)) {
+  cat("Group T first-order stochastically dominates Group C.\n")
+} else if (all(cdf_diff >= 0) && any(cdf_diff > 0)) {
+  cat("Group C first-order stochastically dominates Group T.\n")
+} else {
+  cat("No first-order stochastic dominance between the two groups.\n")
+}
+
+
+#second order stochstic dominance
+# Check if the cumulative area under the CDF of T is always less than or equal to the cumulative area under C
+cdf_diff_area <- cumsum(cdf_T) - cumsum(cdf_C)
+
+# Test for second-order stochastic dominance
+if (all(cdf_diff_area <= 0) && any(cdf_diff_area < 0)) {
+  cat("Group T second-order stochastically dominates Group C.\n")
+} else if (all(cdf_diff_area >= 0) && any(cdf_diff_area > 0)) {
+  cat("Group C second-order stochastically dominates Group T.\n")
+} else {
+  cat("No second-order stochastic dominance between the two groups.\n")
+}
+
+
+
 
 

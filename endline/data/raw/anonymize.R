@@ -117,3 +117,28 @@ names(MCCs) <- sub("services.", "",names(MCCs))
 
 write.csv(MCCs,paste(path,"data/public/MCCs.csv", sep="/"), row.names=FALSE)
 
+
+#### now for samples
+samples <- read.csv("latest_samples.csv")
+
+to_drop <- c("deviceid","simserial","phonenumber", "subscriberid","form_name","enumerator","sub","Village","mcc_name",
+             "meta.instanceID",                              
+             "X_id",                                         
+             "X_uuid",                                       
+             "X_submission_time" ,                           
+             "X_date_modified",                              
+             "X_tags",                                      
+             "X_notes",                                      
+             "X_version",                                    
+             "X_duration",                                   
+             "X_submitted_by",                               
+             "X_total_media",                                
+             "X_media_count",                                
+             "X_media_all_received",                         
+             "X_xform_id")     
+
+samples <- samples[ , !(names(samples) %in% to_drop)]
+
+names(samples) <- sub("mcc.", "",names(samples))
+write.csv(samples,paste(path,"data/public/samples.csv", sep="/"), row.names=FALSE)
+
