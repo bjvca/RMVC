@@ -292,6 +292,23 @@ res_MCCs_sec_uptake <- readRDS(paste(path2,"/results/res_MCCs_sec_uptake.RData",
 
 \begin_layout Plain Layout
 
+res_MCCs_sec_sales <- readRDS(paste(path2,"/results/res_MCCs_sec_sales.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 res_farmers <- readRDS(paste(path2,"/results/res_farmers.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -340,6 +357,10 @@ res_farmers_sec_sold <- readRDS(paste(path2,"/results/res_farmers_sec_sold.RData
 \end_inset
 
 ))
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4048,7 +4069,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Secondary outcomes at MCC level - qantities
+Secondary outcomes at MCC level - quantities collected
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Primary-outcomes-MCC-1"
@@ -4427,31 +4448,46 @@ Note:
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Enumerator:
  Do you see the poster advertizing the milk analyzer?
+ - poster
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Enumerator:
  Do you see a milk analyzer?
+ - machine
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Enumerator:
  Is this the machine that was provided through the project?
- Make ESSAE.
+ Make ESSAE - machine_project
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 Enumerator:
- ask the manager to demonstrate the use of the milk analyzer on the fly and indicate what best maches what transpired
+ ask the manager to demonstrate the use of the milk analyzer on the fly and indicate what best maches what transpired machine_in_use==1 or 2
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 How do you keep track of the milk delivered by farmers?
+ record_keeping
 \end_layout
 
+\begin_layout Enumerate
+treatment uptake:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+use of milk analyzer - q16c and q16cc - Information on lactoscan use (for ITT-TOT analysis).
+ - q16
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Float table
 placement document
@@ -4672,9 +4708,9 @@ Sexpr{res_MCCs_sec_uptake[4,4]})
 
 \begin_layout Plain Layout
 
-MCC uses App & 
+Milk Analyzer used for almost all incoming samples & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[5,1]} & 
+Sexpr{res_MCCs_sec_uptake[5,1]}  & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[5,3]}$^{
 \backslash
@@ -4706,26 +4742,13 @@ Sexpr{res_MCCs_sec_uptake[5,4]})
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Index of MCC uptake & 
+MCC uses App & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[6,1]} & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[6,3]}$^{
 \backslash
-Sexpr{ifelse(res_MCCs_sec_uptake[6,5]<.01,"**",ifelse(res_MCCs_sec_uptake[6,5]<.05,"*",ifelse(res_MCCs_sec_uptake[6,5]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_MCCs_sec_uptake[6,6]<.01,"**",ifelse(res_MCCs_sec_uptake[6,6]<.05,"*",ifelse(res_MCCs_sec_uptake[6,6]<.1,"+","")))}}$  & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[6,7]} 
 \backslash
@@ -4741,6 +4764,422 @@ Sexpr{res_MCCs_sec_uptake[6,7]}
 Sexpr{res_MCCs_sec_uptake[6,2]}) & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of MCC uptake & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[7,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[7,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[7,5]<.01,"**",ifelse(res_MCCs_sec_uptake[7,5]<.05,"*",ifelse(res_MCCs_sec_uptake[7,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[7,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[7,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[7,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ Second column shows average treatment effect of the MCC level intervention (and standard error of coefficient estimate below);
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+c("tot_sales_q","test_MA","MCC_decides","MCC_got_premium","avg_prem_received")
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at MCC level - sales
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-MCC-uptake-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Quantity sold & 
+\backslash
+Sexpr{res_MCCs_sec_sales[1,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_sales[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_sales[1,6]<.01,"**",ifelse(res_MCCs_sec_sales[1,6]<.05,"*",ifelse(res_MCCs_sec_sales[1,6]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_MCCs_sec_sales[1,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_sales[1,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_sales[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Tested Fat and SNF using MA & 
+\backslash
+Sexpr{res_MCCs_sec_sales[2,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_sales[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_sales[2,6]<.01,"**",ifelse(res_MCCs_sec_sales[2,6]<.05,"*",ifelse(res_MCCs_sec_sales[2,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[2,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_sales[2,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_sales[2,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MCC decides  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[3,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_sales[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_sales[3,6]<.01,"**",ifelse(res_MCCs_sec_sales[3,6]<.05,"*",ifelse(res_MCCs_sec_sales[3,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[3,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_sales[3,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_sales[3,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MCC got premium & 
+\backslash
+Sexpr{res_MCCs_sec_sales[4,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_sales[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_sales[4,6]<.01,"**",ifelse(res_MCCs_sec_sales[4,6]<.05,"*",ifelse(res_MCCs_sec_sales[4,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[4,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_sales[4,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_sales[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average premium received & 
+\backslash
+Sexpr{res_MCCs_sec_sales[5,1]}  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_sales[5,6]<.01,"**",ifelse(res_MCCs_sec_sales[5,6]<.05,"*",ifelse(res_MCCs_sec_sales[5,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[5,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_sales[5,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_sales[5,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of MCC sales & 
+\backslash
+Sexpr{res_MCCs_sec_sales[6,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_sales[6,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_sales[6,5]<.01,"**",ifelse(res_MCCs_sec_sales[6,5]<.05,"*",ifelse(res_MCCs_sec_sales[6,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_sales[6,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_sales[6,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_sales[6,4]}) 
 \backslash
 
 \backslash
@@ -4810,17 +5249,6 @@ Note:
 \end_layout
 
 \begin_layout Enumerate
-treatment uptake:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-use of milk analyzer - q16c and q16cc
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
 local sales - previous research found that milk collection centers are also important for local milk supply,
  often doubling as milk shops.
  Does the intervention crowd out the local market?
@@ -4832,12 +5260,7 @@ local sales - previous research found that milk collection centers are also impo
 \end_layout
 
 \begin_layout Enumerate
-Testing via other methods on incoming samples - q25x1,
- q25x2
-\end_layout
-
-\begin_layout Enumerate
-volumes sold - q35,
+Xvolumes sold - q35,
  q48,
  q58,
  q68,
@@ -4856,7 +5279,7 @@ did MCC measure quality of aggregated milk before selling?
 \end_layout
 
 \begin_layout Enumerate
-In particular butter fat and SNF using a lactoscan?
+XIn particular butter fat and SNF using a lactoscan?
  What equipment was used?
  q38/q51/q61/q71/q81-q39/q52d/q62d/q72d/q82d
 \end_layout
@@ -4878,7 +5301,7 @@ Quality:
 
 \begin_deeper
 \begin_layout Enumerate
-Did the buyer pay a quality premium?
+XDid the buyer pay a quality premium?
  q44/q54/q64/q74/q84 == 1
 \end_layout
 
@@ -4985,11 +5408,6 @@ Training on feeding practices?
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
-Information on lactoscan use (for ITT-TOT analysis).
- - q16
-\end_layout
-
 \begin_layout Enumerate
 product differentiation:
  do MCCs collect milk in different takers based on quality (eg high protein milk is marketed separately from low protein milk)?

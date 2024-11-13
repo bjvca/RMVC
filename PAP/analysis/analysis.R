@@ -607,6 +607,7 @@ MCCs_end$poster <- MCCs_end$poster == 1
 MCCs_end$machine <- MCCs_end$machine ==1
 MCCs_end$machine_project <- MCCs_end$machine_project == 1
 MCCs_end$machine_in_use <- MCCs_end$machine_in_use == 1 | MCCs_end$machine_in_use == 2
+MCCs_end$test_samples <- MCCs_end$q16c == "1"
 MCCs_end$uses_app <- MCCs_end$record_keeping.4 == "True"
 
 
@@ -616,7 +617,7 @@ MCCs_end$uses_app <- MCCs_end$record_keeping.4 == "True"
 # Enumerator: ask the manager to demonstrate the use of the milk analyzer on the fly and indicate what best maches what transpired
 # How do you keep track of the milk delivered by farmers?
   
-outcomes <- c("poster","machine","machine_project","machine_in_use","uses_app")
+outcomes <- c("poster","machine","machine_project","machine_in_use","test_samples","uses_app")
 
 ###Make anderson index
 MCCs_end$secondary_MCC_index <- anderson_index(MCCs_end[outcomes])$index
@@ -640,6 +641,115 @@ res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)
 res_MCCs_sec_uptake <- round(res_MCCs,digits=3)
 
 saveRDS(res_MCCs_sec_uptake, file= paste(path,"PAP/results/res_MCCs_sec_uptake.RData", sep="/"))
+##secondary: MCC sales
+
+#2. volumes sold - q35, q48, q58, q68, q78
+
+#Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
+columns <- c("q35", "q48", "q58", "q68", "q78")
+
+# Replace "n/a" and "999" with NA in each specified column
+MCCs_end[columns] <- lapply(MCCs_end[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+MCCs_base[columns] <- lapply(MCCs_base[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+MCCs_end$tot_sales_q <- rowSums(MCCs_end[columns], na.rm=T)
+
+MCCs_base$b_tot_sales_q <- rowSums(MCCs_base[columns], na.rm=T)
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_tot_sales_q")], by="MCC_ID", all.x=T)
+
+
+#measured SNF/butter fat using MA
+
+MCCs_end$test_MA <- (MCCs_end$q39a == 2 | MCCs_end$q39c == 2) |
+(MCCs_end$q52a == 2 | MCCs_end$q52c == 2) |
+(MCCs_end$q62a == 2 | MCCs_end$q62c == 2) |
+(MCCs_end$q72a == 2 | MCCs_end$q72c == 2) |
+(MCCs_end$q82a == 2 | MCCs_end$q82c == 2)
+
+MCCs_base$b_test_MA <- (MCCs_base$q39a == 2 | MCCs_base$q39c == 2) |
+  (MCCs_base$q52a == 2 | MCCs_base$q52c == 2) |
+  (MCCs_base$q62a == 2 | MCCs_base$q62c == 2) |
+  (MCCs_base$q72a == 2 | MCCs_base$q72c == 2) |
+  (MCCs_base$q82a == 2 | MCCs_base$q82c == 2)
+
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_test_MA")], by="MCC_ID", all.x=T)
+
+
+#4. Who decided on the price? 1. buyer made offer and MCC accepted, 
+#2. MCC made offer and buyer accepted, 3. negotiation - q40/q53q63/q73/q83 == 2
+
+MCCs_end$MCC_decides <- MCCs_end$q40 == "2" | MCCs_end$q53 == "2" | MCCs_end$q63 == "2" | MCCs_end$q73 == "2" | MCCs_end$q83 == "2"
+MCCs_base$b_MCC_decides <- MCCs_base$q40 == "2" | MCCs_base$q53 == "2" | MCCs_base$q63 == "2" | MCCs_base$q73 == "2" | MCCs_base$q83 == "2"
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_MCC_decides")], by="MCC_ID", all.x=T)
+
+
+#Did the buyer pay a quality premium? q44/q54/q64/q74/q84 == 1
+
+MCCs_end$MCC_got_premium <- MCCs_end$q44 == "1" | MCCs_end$q54 == "1" | MCCs_end$q64 == "1" | MCCs_end$q74 == "1" | MCCs_end$q84 == "1"
+MCCs_base$b_MCC_got_premium <- MCCs_base$q44 == "1" | MCCs_base$q54 == "1" | MCCs_base$q64 == "1" | MCCs_base$q74 == "1" | MCCs_base$q84 == "1"
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_MCC_got_premium")], by="MCC_ID", all.x=T)
+
+#(b) How much was the quality premium (UGX per liter - average)? - q46/q56/q66/q76/q86
+
+columns <- c("q46", "q56", "q66", "q76", "q86")
+
+# Replace "n/a" and "999" with NA in each specified column
+MCCs_end[columns] <- lapply(MCCs_end[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+MCCs_base[columns] <- lapply(MCCs_base[columns], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  return(x)
+})
+
+MCCs_end$avg_prem_received <- rowMeans(MCCs_end[columns], na.rm=T)
+MCCs_end$avg_prem_received[is.nan(MCCs_end$avg_prem_received)] <- NA
+
+MCCs_base$b_avg_prem_received <- rowMeans(MCCs_base[columns], na.rm=T)
+MCCs_base$b_avg_prem_received[is.nan(MCCs_base$b_avg_prem_received)] <- NA
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_avg_prem_received")], by="MCC_ID", all.x=T)
+
+
+###iterate over outcomes in this family
+outcomes <- c("tot_sales_q","test_MA","MCC_decides","MCC_got_premium","avg_prem_received")
+b_outcomes <- c("b_tot_sales_q","b_test_MA","b_MCC_decides","b_MCC_got_premium","b_avg_prem_received")
+
+###Make anderson index
+MCCs_end$primary_MCC_index <- anderson_index(MCCs_end[outcomes])$index
+MCCs_end$b_primary_MCC_index <- anderson_index(MCCs_end[b_outcomes])$index
+
+outcomes <- c(outcomes, "primary_MCC_index")
+b_outcomes <- c(b_outcomes, "b_primary_MCC_index")
+
+
+res_MCCs <-   array(NA,dim=c(length(outcomes),7))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat",sep="~"),b_outcomes[i],sep="+")), data=MCCs_end)
+  res_MCCs[i,1] <- mean(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
+  res_MCCs[i,2] <- sd(as.matrix(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
+  res_MCCs[i,3:5] <- summary(ols)$coefficients[2,c(1:2,4)]
+  res_MCCs[i,7] <- nobs(ols)
+}
+
+res_MCCs <- round(res_MCCs,digits=3)
+res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,5])
+
+res_MCCs_sec_sales <- round(res_MCCs,digits=3)
+
+saveRDS(res_MCCs_sec_sales, file= paste(path,"PAP/results/res_MCCs_sec_sales.RData", sep="/"))
 
 
 ##sold to top 5 processors
