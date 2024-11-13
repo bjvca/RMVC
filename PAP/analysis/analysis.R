@@ -311,22 +311,6 @@ MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","q25b")], by="MCC_ID", all.x=T
 
 names(MCCs_end)[names(MCCs_end) == 'q25b'] <- 'b_price_bought'
 
-#Volume of milk collected on an average day in last 7 days
-
-MCCs_end$q25c[MCCs_end$q25c %in% c("n/a","999") ] <- NA
-MCCs_end$q25c <- as.numeric(as.character(MCCs_end$q25c))
-names(MCCs_end)[names(MCCs_end) == 'q25c'] <- 'quantity_bought'
-
-#merge in baseline outcome
-MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","q25c")], by="MCC_ID", all.x=T)
-
-names(MCCs_end)[names(MCCs_end) == 'q25c'] <- 'b_quantity_bought'
-
-##sold to top 5 processors
-MCCs_end$top_proc <- MCCs_end$q32.2=="True" & MCCs_end$q33.6!="True"
-#merge in baseline outcome
-MCCs_base$b_top_proc <- MCCs_base$q32.2=="True" & MCCs_base$q33.6!="True"
-MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_top_proc")], by="MCC_ID", all.x=T)
 
 #Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
 columns <- c("q36", "q49", "q59", "q69", "q79")
@@ -391,6 +375,78 @@ res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)
 
 saveRDS(res_MCCs, file= paste(path,"PAP/results/res_MCCs.RData", sep="/"))
 
+###secondary outcomes at MCC level
+
+### volumes
+#4. farmers may drop out: Number of farmers that supply on an average day (rainy vs dry season) q23-q24 and in the last week - q25a
+
+MCCs_end$nr_farmers_wet <- as.numeric(MCCs_end$Q23)
+MCCs_base$b_nr_farmers_wet <- as.numeric(MCCs_base$Q23)
+MCCs_base$b_nr_farmers_wet[MCCs_base$b_nr_farmers_wet>=1000] <- NA
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_nr_farmers_wet")], by="MCC_ID", all.x=T)
+
+MCCs_end$nr_farmers_dry <- as.numeric(MCCs_end$Q24)
+MCCs_base$b_nr_farmers_dry <- as.numeric(MCCs_base$Q24)
+MCCs_base$b_nr_farmers_dry[MCCs_base$b_nr_farmers_dry>=1000] <- NA
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_nr_farmers_dry")], by="MCC_ID", all.x=T)
+
+MCCs_end$nr_farmers_last_week <- as.numeric(MCCs_end$q25a)
+MCCs_base$b_nr_farmers_last_week <- as.numeric(MCCs_base$q25a)
+MCCs_base$b_nr_farmers_last_week[MCCs_base$b_nr_farmers_last_week >= 1000 ] <- NA
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_nr_farmers_last_week")], by="MCC_ID", all.x=T)
+
+
+## volumes collected during dry and rainy season q27-q28
+#Volume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
+MCCs_end$vol_dry <- as.numeric(MCCs_end$q27)
+MCCs_base$b_vol_dry <- as.numeric(MCCs_base$qual.q27)
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_vol_dry")], by="MCC_ID", all.x=T)
+
+MCCs_end$vol_wet <- as.numeric(MCCs_end$q28)
+MCCs_base$b_vol_wet <- as.numeric(MCCs_base$qual.q28)
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_vol_wet")], by="MCC_ID", all.x=T)
+
+MCCs_end$vol_last_week <- as.numeric(MCCs_end$q25c)
+MCCs_base$b_vol_last_week <- as.numeric(MCCs_base$q25c)
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_vol_last_week")], by="MCC_ID", all.x=T)
+
+
+#2. local sales - previous research found that milk collection centers are also important for local milk supply, often doubling as milk shops. Does the intervention crowd out the local market? - q32 == 4
+###iterate over outcomes in this family
+outcomes <- c("nr_farmers_wet","nr_farmers_dry","nr_farmers_last_week","vol_dry","vol_wet","vol_last_week")
+b_outcomes <- c("b_nr_farmers_wet","b_nr_farmers_dry","b_nr_farmers_last_week","b_vol_dry","b_vol_wet","b_vol_last_week")
+
+###Make anderson index
+MCCs_end$primary_MCC_index <- anderson_index(MCCs_end[outcomes])$index
+MCCs_end$b_primary_MCC_index <- anderson_index(MCCs_end[b_outcomes])$index
+
+outcomes <- c(outcomes, "primary_MCC_index")
+b_outcomes <- c(b_outcomes, "b_primary_MCC_index")
+
+
+res_MCCs <-   array(NA,dim=c(length(outcomes),7))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat",sep="~"),b_outcomes[i],sep="+")), data=MCCs_end)
+  res_MCCs[i,1] <- mean(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
+  res_MCCs[i,2] <- sd(as.matrix(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
+  res_MCCs[i,3:5] <- summary(ols)$coefficients[2,c(1:2,4)]
+  res_MCCs[i,7] <- nobs(ols)
+}
+
+res_MCCs <- round(res_MCCs,digits=3)
+res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,5])
+
+res_MCCs_sec_quant <- round(res_MCCs,digits=3)
+
+saveRDS(res_MCCs_sec_quant, file= paste(path,"PAP/results/res_MCCs_sec_quant.RData", sep="/"))
+
+
+##sold to top 5 processors
+MCCs_end$top_proc <- MCCs_end$q32.2=="True" & MCCs_end$q33.6!="True"
+#merge in baseline outcome
+MCCs_base$b_top_proc <- MCCs_base$q32.2=="True" & MCCs_base$q33.6!="True"
+MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_top_proc")], by="MCC_ID", all.x=T)
+
 #### analysis for samples
 samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
 
@@ -440,9 +496,9 @@ samples$timestamps <- as.POSIXct(format(samples$timestamps, format = "2024-01-01
 samples <- samples %>%
   filter(hour(timestamps) >= 7 & hour(timestamps) < 14)
 
-##redefine outcome as time since 7 am
-samples$reference_time <-  floor_date(samples$timestamps, unit = "day") + hours(7)
-samples$time_elapsed <- as.numeric(difftime(samples$timestamps, samples$reference_time, units = "mins"))
+##redefine outcome as time before closure (14:00)
+samples$reference_time <-  floor_date(samples$timestamps, unit = "day") + hours(14)
+samples$time_elapsed <- as.numeric(difftime(samples$reference_time,samples$timestamps, units = "mins"))
 
 # Calculate cumulative percentage
 samples <- samples %>%
@@ -464,12 +520,13 @@ cum_dist <- ggplot(samples, aes(x = time_elapsed, y = cumulative_percentage, col
 ggsave(paste(path,"PAP/results/test.png",sep="/"))
 
 ##KS test for difference in distributions
+assorted_tests <-   array(NA,dim=c(4,2))
 
 group_T <- samples$cumulative_percentage[samples$treat == "T"]
 group_C <- samples$cumulative_percentage[samples$treat == "C"]
 
 ks_test_result <- ks.test(group_T, group_C)
-print(ks_test_result)
+assorted_tests[1,1:2] <- as.numeric(print(ks_test_result)[1:2])
 
 # Perform a two-sample t-test to compare means of cumulative times for T and C
 group_T_times <- as.numeric(samples$timestamps[samples$treat == "T"])
@@ -478,13 +535,14 @@ group_C_times <- as.numeric(samples$timestamps[samples$treat == "C"])
 t_test_result <- t.test(group_T_times, group_C_times)
 
 # Print the result of the t-test
-print(t_test_result)
+assorted_tests[2,1:2] <- as.numeric(t_test_result[c(1,3)])
 
 
-wilcox_test_result <- wilcox.test(group_T_times, group_C_times)
+
+ wilcox_test_result <- wilcox.test(group_T_times, group_C_times)
 
 # Print the result of the Mann-Whitney U test
-print(wilcox_test_result)
+assorted_tests[3,1:2] <- as.numeric(wilcox_test_result[c(1,3)])
 
 ##first order stochastic dominance
 
@@ -496,7 +554,7 @@ sorted_C <- sort(samples$timestamps[samples$treat == "C"])
 cdf_T <- cumsum(rep(1, length(sorted_T))) / length(sorted_T)
 cdf_C <- cumsum(rep(1, length(sorted_C))) / length(sorted_C)
 
-# Check if the CDF of T is always less than or equal to the CDF of C
+# Check if the CDF of T is always less than or equal to the CDF of C  --- !!!this does not work with vectors of different length, for endline report this needs to be brought to same length in some way
 cdf_diff <- cdf_T - cdf_C
 
 # Test for first-order stochastic dominance
@@ -521,6 +579,8 @@ if (all(cdf_diff_area <= 0) && any(cdf_diff_area < 0)) {
 } else {
   cat("No second-order stochastic dominance between the two groups.\n")
 }
+
+saveRDS(assorted_tests, file= paste(path,"PAP/results/assorted_tests.RData", sep="/"))
 
 
 

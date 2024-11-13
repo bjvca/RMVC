@@ -266,6 +266,19 @@ res_MCCs <- readRDS(paste(path2,"/results/res_MCCs.RData",sep=
 
 \begin_layout Plain Layout
 
+res_MCCs_sec_quant <- readRDS(paste(path2,"/results/res_MCCs_sec_quant.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
 res_farmers <- readRDS(paste(path2,"/results/res_farmers.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -293,6 +306,19 @@ res_farmers_sec_quant <- readRDS(paste(path2,"/results/res_farmers_sec_quant.RDa
 \begin_layout Plain Layout
 
 res_samples <- readRDS(paste(path2,"/results/res_samples.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
+assorted_tests <- readRDS(paste(path2,"/results/assorted_tests.RData",sep=
 \begin_inset Quotes erd
 \end_inset
 
@@ -1503,7 +1529,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3429,8 +3455,20 @@ Finally,
  butter fat,
  SNF,
  protein,
- crrected lactometer reading.
- We also look at prices received and rejection rates
+ corrected lactometer reading.
+ Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-milk-quality"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The data obtained from supervised testing also enables and alternative measure for price effects (as price is also collected during supervised sampling) as well as rejection rates.
 \end_layout
 
 \begin_layout Standard
@@ -3783,19 +3821,138 @@ Note:
 \end_layout
 
 \begin_layout Standard
-One potential side effect of introducing milk analyzers is that also freshness increases.
+Qualitative explorations during the course of the project suggests an interesting side effect of introducing milk analyzers:
+ an increase in freshness.
  This is because skimming of milk becomes easier to detect and so farmers will abolish this.
- A second way in which we will look at freshness is by the alcohol.
+ To fat from milk,
+ milk has to rest a bit after milking as the fat floats on top.
+ If skimming is discouraged,
+ farmers are likely to take milk to MCCs faster,
+ leading to fresher milk.
+ 
+\end_layout
+
+\begin_layout Standard
+We test this hypothesis by looking at the distribution of the time at which samples are brought in.
+ We expect that in treatment MCCs,
+ milk is brought in earlier than in control MCCs.
+ In other words,
+ the difference between the time when a sample is brought in and the closing time of the MCC (fixed at 14:00 in our analysis) is likely to increase as a result of the treatment.
+ We investigate this graphically (Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Timing-of-deliveries"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) but also test if distributions are different using a KS-test (test statistic:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{assorted_tests[1,1]}
+\end_layout
+
+\end_inset
+
+,
+ p-value:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{assorted_tests[1,2]}
+\end_layout
+
+\end_inset
+
+) as well as tests for a shift in the distribution using a t-test (test statistic:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{assorted_tests[2,1]}
+\end_layout
+
+\end_inset
+
+,
+ p-value:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{assorted_tests[2,2]}
+\end_layout
+
+\end_inset
+
+) and a Mann-Whitney test (test statistic:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{assorted_tests[3,1]}
+\end_layout
+
+\end_inset
+
+,
+ p-value:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{assorted_tests[3,2]}
+\end_layout
+
+\end_inset
+
+).
+ Finally,
+ we test for first and second order stochastic dominance by 
+\end_layout
+
+\begin_layout Standard
+A second way in which we will look at freshness is by the alcohol.
  
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement document
-alignment document
+alignment center
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -3813,6 +3970,13 @@ status open
 
 \begin_layout Plain Layout
 Timing of deliveries
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Timing-of-deliveries"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3837,6 +4001,397 @@ Secondary outcomes
 Secondary outcomes at the milk collection center level include:
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at MCC level - qantities
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-MCC-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Customers wet season & 
+\backslash
+Sexpr{res_MCCs_sec_quant[1,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[1,6]<.01,"**",ifelse(res_MCCs_sec_quant[1,6]<.05,"*",ifelse(res_MCCs_sec_quant[1,6]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_MCCs_sec_quant[1,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[1,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Customers dry season & 
+\backslash
+Sexpr{res_MCCs_sec_quant[2,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[2,6]<.01,"**",ifelse(res_MCCs_sec_quant[2,6]<.05,"*",ifelse(res_MCCs_sec_quant[2,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[2,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[2,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[2,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Customers last week  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[3,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[3,6]<.01,"**",ifelse(res_MCCs_sec_quant[3,6]<.05,"*",ifelse(res_MCCs_sec_quant[3,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[3,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[3,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[3,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Volumes dry season & 
+\backslash
+Sexpr{res_MCCs_sec_quant[4,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[4,6]<.01,"**",ifelse(res_MCCs_sec_quant[4,6]<.05,"*",ifelse(res_MCCs_sec_quant[4,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[4,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[4,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Volumes wet season & 
+\backslash
+Sexpr{res_MCCs_sec_quant[5,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[5,6]<.01,"**",ifelse(res_MCCs_sec_quant[5,6]<.05,"*",ifelse(res_MCCs_sec_quant[5,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[5,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[5,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[5,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Volumes last week & 
+\backslash
+Sexpr{res_MCCs_sec_quant[6,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[6,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[6,6]<.01,"**",ifelse(res_MCCs_sec_quant[6,6]<.05,"*",ifelse(res_MCCs_sec_quant[6,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[6,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[6,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of secondary MCC outcomes & 
+\backslash
+Sexpr{res_MCCs_sec_quant[7,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_quant[7,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_quant[7,5]<.01,"**",ifelse(res_MCCs_sec_quant[7,5]<.05,"*",ifelse(res_MCCs_sec_quant[7,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_quant[7,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_quant[7,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_quant[7,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ Second column shows average treatment effect of the MCC level intervention (and standard error of coefficient estimate below);
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Enumerate
 treatment uptake:
  
@@ -3856,11 +4411,7 @@ use of milk analyzer - q16c and q16cc
 local sales - previous research found that milk collection centers are also important for local milk supply,
  often doubling as milk shops.
  Does the intervention crowd out the local market?
- - q32 == 4
-\end_layout
-
-\begin_layout Enumerate
-Sold to top 5 processors (Pearl,
+ - q32 == 4X Sold to top 5 processors (Pearl,
  Amos,
  Lakeside,
  GBK,
@@ -3868,12 +4419,12 @@ Sold to top 5 processors (Pearl,
 \end_layout
 
 \begin_layout Enumerate
-farmers may drop out:
+Xfarmers may drop out:
  Number of farmers that supply on an average day (rainy vs dry season) q23-q24 and in the last week - q25a
 \end_layout
 
 \begin_layout Enumerate
-volumes collected during dry and rainy season q27-q28
+Xvolumes collected during dry and rainy season q27-q28
 \end_layout
 
 \begin_layout Enumerate
@@ -3882,7 +4433,7 @@ Testing via other methods on incoming samples - q25x1,
 \end_layout
 
 \begin_layout Enumerate
-Volume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
+XVolume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
 \end_layout
 
 \begin_layout Enumerate
@@ -5760,7 +6311,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
