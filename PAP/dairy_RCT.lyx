@@ -279,6 +279,19 @@ res_MCCs_sec_quant <- readRDS(paste(path2,"/results/res_MCCs_sec_quant.RData",se
 
 \begin_layout Plain Layout
 
+res_MCCs_sec_uptake <- readRDS(paste(path2,"/results/res_MCCs_sec_uptake.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
 res_farmers <- readRDS(paste(path2,"/results/res_farmers.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -4401,16 +4414,394 @@ Note:
 
 \end_layout
 
+\begin_layout Standard
+Enumerator:
+ Do you see the poster advertizing the milk analyzer?
+\end_layout
+
+\begin_layout Standard
+Enumerator:
+ Do you see a milk analyzer?
+\end_layout
+
+\begin_layout Standard
+Enumerator:
+ Is this the machine that was provided through the project?
+ Make ESSAE.
+\end_layout
+
+\begin_layout Standard
+Enumerator:
+ ask the manager to demonstrate the use of the milk analyzer on the fly and indicate what best maches what transpired
+\end_layout
+
+\begin_layout Standard
+How do you keep track of the milk delivered by farmers?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at MCC level - uptake
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-MCC-uptake"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Poster is visible & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[1,6]<.01,"**",ifelse(res_MCCs_sec_uptake[1,6]<.05,"*",ifelse(res_MCCs_sec_uptake[1,6]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Milk Analyzer present & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[2,6]<.01,"**",ifelse(res_MCCs_sec_uptake[2,6]<.05,"*",ifelse(res_MCCs_sec_uptake[2,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Project Milk Analyzer is present  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[3,6]<.01,"**",ifelse(res_MCCs_sec_uptake[3,6]<.05,"*",ifelse(res_MCCs_sec_uptake[3,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Milk analyzer works & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[4,6]<.01,"**",ifelse(res_MCCs_sec_uptake[4,6]<.05,"*",ifelse(res_MCCs_sec_uptake[4,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MCC uses App & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[5,6]<.01,"**",ifelse(res_MCCs_sec_uptake[5,6]<.05,"*",ifelse(res_MCCs_sec_uptake[5,6]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of MCC uptake & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[6,5]<.01,"**",ifelse(res_MCCs_sec_uptake[6,5]<.05,"*",ifelse(res_MCCs_sec_uptake[6,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ Second column shows average treatment effect of the MCC level intervention (and standard error of coefficient estimate below);
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Enumerate
 treatment uptake:
  
 \end_layout
 
 \begin_deeper
-\begin_layout Enumerate
-Poster is visible - poster
-\end_layout
-
 \begin_layout Enumerate
 use of milk analyzer - q16c and q16cc
 \end_layout

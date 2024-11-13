@@ -516,6 +516,46 @@ res_MCCs_sec_quant <- round(res_MCCs,digits=3)
 
 saveRDS(res_MCCs_sec_quant, file= paste(path,"PAP/results/res_MCCs_sec_quant.RData", sep="/"))
 
+#secondary outcomes - uptake at MCC level
+
+MCCs_end$poster <- MCCs_end$poster == 1
+MCCs_end$machine <- MCCs_end$machine ==1
+MCCs_end$machine_project <- MCCs_end$machine_project == 1
+MCCs_end$machine_in_use <- MCCs_end$machine_in_use == 1 | MCCs_end$machine_in_use == 2
+MCCs_end$uses_app <- MCCs_end$record_keeping.4 == "True"
+
+
+# Enumerator: Do you see the poster advertizing the milk analyzer?
+# Enumerator: Do you see a milk analyzer?
+# Enumerator: Is this the machine that was provided through the project? Make ESSAE.
+# Enumerator: ask the manager to demonstrate the use of the milk analyzer on the fly and indicate what best maches what transpired
+# How do you keep track of the milk delivered by farmers?
+  
+outcomes <- c("poster","machine","machine_project","machine_in_use","uses_app")
+
+###Make anderson index
+MCCs_end$secondary_MCC_index <- anderson_index(MCCs_end[outcomes])$index
+
+outcomes <- c(outcomes, "secondary_MCC_index")
+
+
+
+res_MCCs <-   array(NA,dim=c(length(outcomes),7))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(outcomes[i],"treat",sep="~")), data=MCCs_end)
+  res_MCCs[i,1] <- mean(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
+  res_MCCs[i,2] <- sd(as.matrix(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
+  res_MCCs[i,3:5] <- summary(ols)$coefficients[2,c(1:2,4)]
+  res_MCCs[i,7] <- nobs(ols)
+}
+
+res_MCCs <- round(res_MCCs,digits=3)
+res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,5])
+
+res_MCCs_sec_uptake <- round(res_MCCs,digits=3)
+
+saveRDS(res_MCCs_sec_uptake, file= paste(path,"PAP/results/res_MCCs_sec_uptake.RData", sep="/"))
+
 
 ##sold to top 5 processors
 MCCs_end$top_proc <- MCCs_end$q32.2=="True" & MCCs_end$q33.6!="True"
