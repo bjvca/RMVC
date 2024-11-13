@@ -345,6 +345,91 @@ res_farmers_sec_uptake <- round(res_farmers,digits=3)
 
 saveRDS(res_farmers_sec_uptake, file= paste(path,"PAP/results/res_farmers_sec_uptake.RData", sep="/"))
 
+###secondary sales
+farmers_end$mcc_wet <- farmers_end$q51=="2"
+farmers_base$b_mcc_wet <- farmers_base$q51=="2"
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_mcc_wet")], by="farmer_ID", all.x=T)
+
+
+farmers_end$mcc_dry <- farmers_end$q51x=="2"
+farmers_base$b_mcc_dry <- farmers_base$q51x=="2"
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_mcc_dry")], by="farmer_ID", all.x=T)
+
+farmers_end$mcc_last_seek <- farmers_end$q53.2 == "True"
+farmers_base$b_mcc_last_seek <-farmers_base$q53.2 == "True"
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_mcc_last_seek")], by="farmer_ID", all.x=T)
+
+farmers_end$price_wet <- as.numeric(as.character(farmers_end$q51a))
+farmers_base$b_price_wet <- as.numeric(as.character(farmers_base$q51a))
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_price_wet")], by="farmer_ID", all.x=T)
+
+farmers_end$price_dry <- as.numeric(as.character(farmers_end$q51ax))
+farmers_base$b_price_dry <- as.numeric(as.character(farmers_base$q51ax))
+farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_price_dry")], by="farmer_ID", all.x=T)
+
+outcomes <- c("mcc_wet", "mcc_dry", "mcc_last_seek", "price_wet", "price_dry")
+b_outcomes <- c("b_mcc_wet", "b_mcc_dry", "b_mcc_last_seek", "b_price_wet", "b_price_dry")
+
+###Make anderson index
+farmers_end$secondary_farmer_quant_index  <- anderson_index(farmers_end[outcomes])$index
+farmers_end$b_secondary_farmer_quant_index <- anderson_index(farmers_end[b_outcomes])$index
+
+outcomes <- c(outcomes, "secondary_farmer_quant_index")
+b_outcomes <- c(b_outcomes, "b_secondary_farmer_quant_index")
+
+##Sold to milk to collection center in the week preceding the survey
+###fully interacted model
+res_farmers <-   array(NA,dim=c(length(outcomes),26))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+}
+
+res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
+res_farmers[1:length(outcomes)-1,17] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,8])
+res_farmers[1:length(outcomes)-1,18] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,11])
+
+
+###model with demeaned orthogonal treatment - milk analyzer
+farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na.rm=T)
+farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
+
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
+  
+}
+###model with demeaned orthogonal treatment - video tratment
+
+farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
+  
+}
+res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
+res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
+
+
+res_farmers_sec_sold <- round(res_farmers,digits=3)
+saveRDS(res_farmers_sec_sold, file= paste(path,"PAP/results/res_farmers_sec_sold.RData", sep="/"))
 
 ######################## analysis at the MCC level ############################################
 ### read in clean endline MCC data

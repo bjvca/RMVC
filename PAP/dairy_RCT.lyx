@@ -331,6 +331,19 @@ res_farmers_sec_uptake <- readRDS(paste(path2,"/results/res_farmers_sec_uptake.R
 
 \begin_layout Plain Layout
 
+res_farmers_sec_sold <- readRDS(paste(path2,"/results/res_farmers_sec_sold.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
 res_samples <- readRDS(paste(path2,"/results/res_samples.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -4445,7 +4458,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5024,7 +5037,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Secondary outcomes at farmer level - Sales
+Secondary outcomes at farmer level - Quantities
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Secondary-outcomes-farmer-quantity-sold"
@@ -5390,6 +5403,532 @@ Sexpr{res_farmers_sec_quant[5,13]}] & [
 Sexpr{res_farmers_sec_quant[5,14]}] & [
 \backslash
 Sexpr{res_farmers_sec_quant[5,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+  the third column shows average treatment effect of the interaction of the MCC level and farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Additional family of outcomes looks at choice of buyer:
+\end_layout
+
+\begin_layout Enumerate
+Buyer type sold to on average day in rainy and dry season - q51 and q51x
+\end_layout
+
+\begin_layout Enumerate
+Sold to milk to collection center in the week preceding the survey?
+ (1=yes) - q53==2
+\end_layout
+
+\begin_layout Enumerate
+While we already looked at price received during during transactions is the 7 days prior to endline interview,
+ we also collected data on prices received during the dry and rainy seasons - q51a and q51ax
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level - Sales
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-farmer-sales"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & analyzer & video & bundle & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold to MCC in wet season & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[1,16]<.01,"**",ifelse(res_farmers_sec_sold[1,16]<.05,"*",ifelse(res_farmers_sec_sold[1,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[1,17]<.01,"**",ifelse(res_farmers_sec_sold[1,17]<.05,"*",ifelse(res_farmers_sec_sold[1,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[1,18]<.01,"**",ifelse(res_farmers_sec_sold[1,18]<.05,"*",ifelse(res_farmers_sec_sold[1,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[1,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[1,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[1,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_sold[1,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[1,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[1,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold to MCC in wet season  & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[2,16]<.01,"**",ifelse(res_farmers_sec_sold[2,16]<.05,"*",ifelse(res_farmers_sec_sold[2,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[2,17]<.01,"**",ifelse(res_farmers_sec_sold[2,17]<.05,"*",ifelse(res_farmers_sec_sold[2,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[2,18]<.01,"**",ifelse(res_farmers_sec_sold[2,18]<.05,"*",ifelse(res_farmers_sec_sold[2,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[2,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[2,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[2,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_sold[2,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[2,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[2,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Sold to MCC in last week  & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[3,16]<.01,"**",ifelse(res_farmers_sec_sold[3,16]<.05,"*",ifelse(res_farmers_sec_sold[3,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[3,17]<.01,"**",ifelse(res_farmers_sec_sold[3,17]<.05,"*",ifelse(res_farmers_sec_sold[3,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[3,18]<.01,"**",ifelse(res_farmers_sec_sold[3,18]<.05,"*",ifelse(res_farmers_sec_sold[3,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[3,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[3,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[3,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_sold[3,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[3,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[3,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Price received in wet season & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[4,16]<.01,"**",ifelse(res_farmers_sec_sold[4,16]<.05,"*",ifelse(res_farmers_sec_sold[4,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[4,17]<.01,"**",ifelse(res_farmers_sec_sold[4,17]<.05,"*",ifelse(res_farmers_sec_sold[4,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[4,18]<.01,"**",ifelse(res_farmers_sec_sold[4,18]<.05,"*",ifelse(res_farmers_sec_sold[4,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[4,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[4,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[4,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_sold[4,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[4,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[4,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Price received in dry season & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[5,16]<.01,"**",ifelse(res_farmers_sec_sold[5,16]<.05,"*",ifelse(res_farmers_sec_sold[5,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[5,17]<.01,"**",ifelse(res_farmers_sec_sold[5,17]<.05,"*",ifelse(res_farmers_sec_sold[5,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[5,18]<.01,"**",ifelse(res_farmers_sec_sold[5,18]<.05,"*",ifelse(res_farmers_sec_sold[5,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[5,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[5,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[5,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[5,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_sold[5,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[5,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[1,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of farmer sales & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[6,5]<.01,"**",ifelse(res_farmers_sec_sold[6,5]<.05,"*",ifelse(res_farmers_sec_sold[6,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[6,8]<.01,"**",ifelse(res_farmers_sec_sold[6,8]<.05,"*",ifelse(res_farmers_sec_sold[6,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[6,11]<.01,"**",ifelse(res_farmers_sec_sold[6,11]<.05,"*",ifelse(res_farmers_sec_sold[6,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[6,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[6,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[6,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[6,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_sold[6,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[6,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_sold[6,15]}]
 \backslash
 
 \backslash
@@ -5930,21 +6469,13 @@ Note:
 
 \end_layout
 
+\begin_layout Standard
+A third family of outcomes looks at production,
+ starting with
+\end_layout
+
 \begin_layout Enumerate
 Production (liters) on average day in last wet season - q44 and in the last dry season - q45 and in the last 7 days - q46
-\end_layout
-
-\begin_layout Enumerate
-Buyer type sold to on average day in rainy and dry season - q51 and q51x
-\end_layout
-
-\begin_layout Enumerate
-Sold to milk to collection center in the week preceding the survey?
- (1=yes) - q53==2
-\end_layout
-
-\begin_layout Enumerate
-Average price received during rainy and dry season - q51a and q51ax
 \end_layout
 
 \begin_layout Enumerate
@@ -5952,6 +6483,12 @@ Home consumption of dairy products (liters (q48),
  and who consumes diary products - children,
  calves (q49,
  q49a)) - test if the development of a market for quality milk crowds out animal sourced food intake within the family or milk as a productive factor
+\end_layout
+
+\begin_layout Enumerate
+Does the intervention affect ghee processing?
+ q66 q68-q69 Does this have gendered effects?
+ q70-q71
 \end_layout
 
 \begin_layout Enumerate
@@ -5989,23 +6526,9 @@ Does the intervention also increases milk sanitation (use of milk cans)?
 \end_layout
 
 \begin_layout Enumerate
-Does the intervention leads to changes in bargaining power?
- farmer made offer and MCC accepted,
- MCC made offer and farmer accepted,
- negotiation —
- q65/qx12/qx24/qx36/qx48/qx60
-\end_layout
-
-\begin_layout Enumerate
 Gendered labour outcomes (milking,
  marketing,
  feeding and herding or cleaning) 
-\end_layout
-
-\begin_layout Enumerate
-Does the intervention affect ghee processing?
- q66 q68-q69 Does this have gendered effects?
- q70-q71
 \end_layout
 
 \begin_layout Enumerate
@@ -6780,7 +7303,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7161,13 +7684,13 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Secondary outcomes at farmer level (pooled) - Sales
+Secondary outcomes at farmer level (pooled) - Quantities
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Secondary-outcomes-farmer-pooled-sales"
@@ -7428,6 +7951,387 @@ Sexpr{res_farmers_sec_quant[5,2]}) & (
 Sexpr{res_farmers_sec_quant[5,23]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[5,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below);
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below);
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level (pooled) - Sales
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-farmer-pooled-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & analyzer & video &  nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}
+\end_layout
+
+\begin_layout Plain Layout
+
+Production investment and management & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[1,25]<.01,"**",ifelse(res_farmers_sec_sold[1,25]<.05,"*",ifelse(res_farmers_sec_sold[1,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[1,26]<.01,"**",ifelse(res_farmers_sec_sold[1,26]<.05,"*",ifelse(res_farmers_sec_sold[1,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[1,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[1,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Buyer checks for quality  & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[2,25]<.01,"**",ifelse(res_farmers_sec_sold[2,25]<.05,"*",ifelse(res_farmers_sec_sold[2,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[2,26]<.01,"**",ifelse(res_farmers_sec_sold[2,26]<.05,"*",ifelse(res_farmers_sec_sold[2,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[2,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[2,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Price received for milk sold  & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[3,25]<.01,"**",ifelse(res_farmers_sec_sold[3,25]<.05,"*",ifelse(res_farmers_sec_sold[3,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[3,26]<.01,"**",ifelse(res_farmers_sec_sold[3,26]<.05,"*",ifelse(res_farmers_sec_sold[3,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[3,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[3,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Get quality premium  & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[4,25]<.01,"**",ifelse(res_farmers_sec_sold[4,25]<.05,"*",ifelse(res_farmers_sec_sold[4,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[4,26]<.01,"**",ifelse(res_farmers_sec_sold[4,26]<.05,"*",ifelse(res_farmers_sec_sold[4,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[4,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[4,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Has bargaining power  & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[5,25]<.01,"**",ifelse(res_farmers_sec_sold[5,25]<.05,"*",ifelse(res_farmers_sec_sold[5,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[5,26]<.01,"**",ifelse(res_farmers_sec_sold[5,26]<.05,"*",ifelse(res_farmers_sec_sold[5,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[5,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[5,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[5,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[5,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of primary farmer outcomes  & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,1]} & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[6,21]<.01,"**",ifelse(res_farmers_sec_sold[6,21]<.05,"*",ifelse(res_farmers_sec_sold[6,21]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_sold[6,24]<.01,"**",ifelse(res_farmers_sec_sold[6,24]<.05,"*",ifelse(res_farmers_sec_sold[6,24]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_sold[6,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_sold[6,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[6,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_sold[6,23]})
 \backslash
 
 \backslash
