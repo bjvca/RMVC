@@ -305,6 +305,19 @@ res_farmers_sec_quant <- readRDS(paste(path2,"/results/res_farmers_sec_quant.RDa
 
 \begin_layout Plain Layout
 
+res_farmers_sec_uptake <- readRDS(paste(path2,"/results/res_farmers_sec_uptake.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
 res_samples <- readRDS(paste(path2,"/results/res_samples.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -3938,12 +3951,8 @@ Sexpr{assorted_tests[3,2]}
 
 ).
  Finally,
- we test for first and second order stochastic dominance by 
-\end_layout
-
-\begin_layout Standard
-A second way in which we will look at freshness is by the alcohol.
- 
+ we test for first and second order stochastic dominance.
+ A second way in which we will look at freshness is by the alcohol test.
 \end_layout
 
 \begin_layout Standard
@@ -4007,7 +4016,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4419,21 +4428,8 @@ local sales - previous research found that milk collection centers are also impo
 \end_layout
 
 \begin_layout Enumerate
-Xfarmers may drop out:
- Number of farmers that supply on an average day (rainy vs dry season) q23-q24 and in the last week - q25a
-\end_layout
-
-\begin_layout Enumerate
-Xvolumes collected during dry and rainy season q27-q28
-\end_layout
-
-\begin_layout Enumerate
 Testing via other methods on incoming samples - q25x1,
  q25x2
-\end_layout
-
-\begin_layout Enumerate
-XVolume of milk collected on an average day in last 7 days - note that midline qualitative survey suggests this effect may be negative - q25c
 \end_layout
 
 \begin_layout Enumerate
@@ -4606,12 +4602,32 @@ Secondary outcomes at the farmer level:
 \end_layout
 
 \begin_layout Standard
+A first family of secondary outcomes we consider are related to sales by farmers.
+ Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Secondary-outcomes-farmer-quantity-sold"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ We asked out average quantities sold on a typical day during the last dry season and during the last rainy season.
+ We also have a binary variable indicating if they sold at any point in the last week.
+ To assess changes at the intensive margin,
+ we also ask about quantities sold during the last sales transactions with each buyer.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5053,6 +5069,476 @@ Note:
 
 \end_layout
 
+\begin_layout Standard
+To assess treatment take-up and compliance,
+ a second family asks weather farmers remember having been shown a video.
+ We also ask if they remember having been given pasture seed and if they do,
+ whether they used it.
+ Finally,
+ we also test of the interventions changed if farmers now start seeing the importance of compositional quality.
+ To do so,
+ we present farmers with three sets of options by asking 
+\begin_inset Quotes eld
+\end_inset
+
+If an MCC or processor complains about poor quality milk,
+ which of the 2 options is most important to increase milk quality?
+\begin_inset Quotes erd
+\end_inset
+
+ and present two options,
+ one option that focuses on improving milk sanitation (eg washing hands and using milk cans) and one that focuses on compositional quality.
+ (eg using controlled grazing or using feed supplements).
+ The 3 sets of options are then combined and get scored one if the farmer indicates the practice that focuses on compositional quality for all three sets.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level - uptake
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-farmer-uptake"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & analyzer & video & bundle & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}
+\end_layout
+
+\begin_layout Plain Layout
+
+Remembers video & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,16]<.01,"**",ifelse(res_farmers_sec_uptake[1,16]<.05,"*",ifelse(res_farmers_sec_uptake[1,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,17]<.01,"**",ifelse(res_farmers_sec_uptake[1,17]<.05,"*",ifelse(res_farmers_sec_uptake[1,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,18]<.01,"**",ifelse(res_farmers_sec_uptake[1,18]<.05,"*",ifelse(res_farmers_sec_uptake[1,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[1,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[1,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[1,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Remembers receiving seed & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,16]<.01,"**",ifelse(res_farmers_sec_uptake[2,16]<.05,"*",ifelse(res_farmers_sec_uptake[2,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,17]<.01,"**",ifelse(res_farmers_sec_uptake[2,17]<.05,"*",ifelse(res_farmers_sec_uptake[2,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,18]<.01,"**",ifelse(res_farmers_sec_uptake[2,18]<.05,"*",ifelse(res_farmers_sec_uptake[2,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[2,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[2,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[2,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used seed  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,16]<.01,"**",ifelse(res_farmers_sec_uptake[3,16]<.05,"*",ifelse(res_farmers_sec_uptake[3,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,17]<.01,"**",ifelse(res_farmers_sec_uptake[3,17]<.05,"*",ifelse(res_farmers_sec_uptake[3,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,18]<.01,"**",ifelse(res_farmers_sec_uptake[3,18]<.05,"*",ifelse(res_farmers_sec_uptake[3,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[3,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[3,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[3,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows compositional qualiity matters & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,16]<.01,"**",ifelse(res_farmers_sec_uptake[4,16]<.05,"*",ifelse(res_farmers_sec_uptake[4,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,17]<.01,"**",ifelse(res_farmers_sec_uptake[4,17]<.05,"*",ifelse(res_farmers_sec_uptake[4,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,18]<.01,"**",ifelse(res_farmers_sec_uptake[4,18]<.05,"*",ifelse(res_farmers_sec_uptake[4,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[4,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[4,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[4,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of uptake & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,5]<.01,"**",ifelse(res_farmers_sec_uptake[5,5]<.05,"*",ifelse(res_farmers_sec_uptake[5,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,8]<.01,"**",ifelse(res_farmers_sec_uptake[5,8]<.05,"*",ifelse(res_farmers_sec_uptake[5,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,11]<.01,"**",ifelse(res_farmers_sec_uptake[5,11]<.05,"*",ifelse(res_farmers_sec_uptake[5,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[5,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[5,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[5,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+  the third column shows average treatment effect of the interaction of the MCC level and farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Enumerate
 Production (liters) on average day in last wet season - q44 and in the last dry season - q45 and in the last 7 days - q46
 \end_layout
@@ -5106,27 +5592,6 @@ Does the development of a market for quality lead to more formalization and less
  q63/qx10/qx22/qx34/qx46/qx58
 \end_layout
 
-\begin_layout Enumerate
-Treatment uptake:
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Does the farmer remember the video treatment - recalls_video
-\end_layout
-
-\begin_layout Enumerate
-Does the farmer remember having received grass seed - recalls_grass
-\end_layout
-
-\begin_layout Enumerate
-was grass used?
- - usedgrass.
- 
-\end_layout
-
-\end_deeper
 \begin_layout Enumerate
 Does the intervention also increases milk sanitation (use of milk cans)?
  q60/qx7/qx19/qx31/qx43/qx55
@@ -5183,12 +5648,6 @@ Buyer changed since start of project during wet season (q51,
  q51_prevx,
  q51_namex,
  q51_name_prevx)?
-\end_layout
-
-\begin_layout Enumerate
-Knowledge of what is important for compositional quality - test_know_1,
- test_know_2,
- test_know_3
 \end_layout
 
 \begin_layout Section*
@@ -5930,7 +6389,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6311,7 +6770,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6320,7 +6779,7 @@ status collapsed
 Secondary outcomes at farmer level (pooled) - Sales
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Primary-outcomes-farmer-pooled-1"
+name "tab:Secondary-outcomes-farmer-pooled-sales"
 
 \end_inset
 
@@ -6578,6 +7037,347 @@ Sexpr{res_farmers_sec_quant[5,2]}) & (
 Sexpr{res_farmers_sec_quant[5,23]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[5,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below);
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below);
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level (pooled) - Uptake
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-farmer-pooled-uptake"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & analyzer & video &  nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}
+\end_layout
+
+\begin_layout Plain Layout
+
+Remembers video & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,25]<.01,"**",ifelse(res_farmers_sec_uptake[1,25]<.05,"*",ifelse(res_farmers_sec_uptake[1,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,26]<.01,"**",ifelse(res_farmers_sec_uptake[1,26]<.05,"*",ifelse(res_farmers_sec_uptake[1,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Remembers seed & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,25]<.01,"**",ifelse(res_farmers_sec_uptake[2,25]<.05,"*",ifelse(res_farmers_sec_uptake[2,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,26]<.01,"**",ifelse(res_farmers_sec_uptake[2,26]<.05,"*",ifelse(res_farmers_sec_uptake[2,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Used seed & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,25]<.01,"**",ifelse(res_farmers_sec_uptake[3,25]<.05,"*",ifelse(res_farmers_sec_uptake[3,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,26]<.01,"**",ifelse(res_farmers_sec_uptake[3,26]<.05,"*",ifelse(res_farmers_sec_uptake[3,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Knows compositional quality matters & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,25]<.01,"**",ifelse(res_farmers_sec_uptake[4,25]<.05,"*",ifelse(res_farmers_sec_uptake[4,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,26]<.01,"**",ifelse(res_farmers_sec_uptake[4,26]<.05,"*",ifelse(res_farmers_sec_uptake[4,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of uptake  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,21]<.01,"**",ifelse(res_farmers_sec_uptake[5,21]<.05,"*",ifelse(res_farmers_sec_uptake[5,21]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,24]<.01,"**",ifelse(res_farmers_sec_uptake[5,24]<.05,"*",ifelse(res_farmers_sec_uptake[5,24]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,23]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,23]})
 \backslash
 
 \backslash
