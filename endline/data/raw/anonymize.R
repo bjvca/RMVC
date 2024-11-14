@@ -13,7 +13,7 @@ farmers <- read.csv("latest_farmers.csv")
 
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid","enumerator","mcc_cas","sub","village","farmer_name","farm_mcc","lat","long","phone1",
-             "phone2","map_link","check.Dairy.GPS","check.Dairy._GPS_latitude","check.Dairy._GPS_longitude","check.Dairy._GPS_altitude","check.Dairy._GPS_precision",              
+             "phone2","map_link","check.Dairy.name_in_app","reas_loc","check.sign","check.Dairy.GPS","check.Dairy._GPS_latitude","check.Dairy._GPS_longitude","check.Dairy._GPS_altitude","check.Dairy._GPS_precision",              
              "meta.instanceID",                              
              "X_id",                                         
              "X_uuid",                                       
@@ -95,7 +95,7 @@ write.csv(farmers,paste(path,"data/public/farmers.csv", sep="/"), row.names=FALS
 MCCs <- read.csv("latest_MCCs.csv")
 
 ## drop location, names and contact details
-to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid","form_name","enumerator","sub","Village","mcc_name","mcc.gps","mcc._gps_latitude","mcc._gps_longitude","mcc._gps_altitude","mcc._gps_precision",              
+to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid","form_name","enumerator","sub","Village","mcc_name","mcc.sign","mcc.gps","mcc._gps_latitude","mcc._gps_longitude","mcc._gps_altitude","mcc._gps_precision",              
              "meta.instanceID",                              
              "X_id",                                         
              "X_uuid",                                       
