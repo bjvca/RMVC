@@ -8,7 +8,12 @@ path <- strsplit(path,"/data/raw")[[1]]
 
 set.seed(15112024)  #date of creation of this script as random seed
 
+
 farmers <- read.csv("latest_farmers.csv")
+
+##duplicates
+dups <- subset(farmers, duplicated(farmers$farmer_ID))
+write.csv(dups[c("district","enumerator","farmer_name","farm_mcc")], file="dups.csv")
 
 
 ## drop location, names and contact details

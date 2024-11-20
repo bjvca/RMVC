@@ -1700,43 +1700,19 @@ Data collection protocol
 
 \begin_layout Standard
 Baseline data collection will be fairly straightforward and consist of surveys at the MCC level and at the farmers level.
- Endline data collection will consist of reinterviewing the farmers and MCCs from baseline.
- Furthermore,
- during endline,
- we will also measure quality of milk using milk analyzers in a supervised way.
- In particular,
- we will station enumerators in MCCs for two days to supervise that all incoming milk is tested and entered into the system.
- 
-\end_layout
-
-\begin_layout Standard
-During endline,
- milk analyzers will also be rolled out in control MCCs which will be used to measure milk quality at both the MCC level and at the farmer level.
+ Endline data collection will proceed in two stages.
+ In a first stage,
+ we will reinterview the farmers and MCCs from baseline.
+ In a second stage,
+ we will also measure quality of milk using milk analyzers in both treatment and control.
+ This will be done by stationing an enumerators in MCCs for one day to test and record all samples that are brought in from the time the MCC opens (usually at 7:00) until it closes for morning receptions (usually around noon).
+ Note that this means that we will also have to install milk analyzers in control MCCs.
  As effects of installing milk analyzers may be very quick,
  we only have a limited time window in which differences between treatment and control areas can be measured.
  Furthermore,
  we will also need to be mindful of anticipatory effects.
  That is,
- we will arrive at control MCCs unannounced.
-\end_layout
-
-\begin_layout Itemize
-In control MCCs,
- enumerators start by interviewing all farmers that are connected to the control MCC.
- Next,
- we will install a milk analyzer,
- register the control MCC in the app,
- and make sure that all milk samples are tested and entered into the system for two days.
- At the start of the first day,
- the MCC level survey will be implemented.
-\end_layout
-
-\begin_layout Itemize
-In treatment MCCs,
- enumerators will also supervise entry during two days.
- The same order of interviewing will be followed.
- In this way,
- we can identify the entries in the Android application that were subjected to supervised entry (two days starting from the MCC level interview).
+ we will arrive at MCCs unannounced.
 \end_layout
 
 \begin_layout Section*
@@ -4889,7 +4865,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -6054,7 +6030,7 @@ Sexpr{res_farmers_sec_sold[1,15]}]
 
 \begin_layout Plain Layout
 
-Sold to MCC in wet season  & 
+Sold to MCC in dry season  & 
 \backslash
 Sexpr{res_farmers_sec_sold[2,1]} & 
 \backslash
@@ -7721,7 +7697,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8024,7 +8000,7 @@ Sexpr{res_farmers[6,12]}
 \backslash
 Sexpr{res_farmers[6,2]}) & (
 \backslash
-Sexpr{res_farmers[6,23]}) & (
+Sexpr{res_farmers[6,21]}) & (
 \backslash
 Sexpr{res_farmers[6,23]})
 \backslash
@@ -8444,7 +8420,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8522,7 +8498,7 @@ cline{2-5}
 
 \begin_layout Plain Layout
 
-Production investment and management & 
+Sold to MCC in wet season & 
 \backslash
 Sexpr{res_farmers_sec_sold[1,1]} & 
 \backslash
@@ -8562,7 +8538,7 @@ Sexpr{res_farmers_sec_sold[1,23]})
 
 \begin_layout Plain Layout
 
-Buyer checks for quality  & 
+Sold to MCC in dry season & 
 \backslash
 Sexpr{res_farmers_sec_sold[2,1]} & 
 \backslash
@@ -8602,7 +8578,7 @@ Sexpr{res_farmers_sec_sold[2,23]})
 
 \begin_layout Plain Layout
 
-Price received for milk sold  & 
+Sold to MCC in last week  & 
 \backslash
 Sexpr{res_farmers_sec_sold[3,1]} & 
 \backslash
@@ -8642,7 +8618,7 @@ Sexpr{res_farmers_sec_sold[3,23]})
 
 \begin_layout Plain Layout
 
-Get quality premium  & 
+Price received in wet season & 
 \backslash
 Sexpr{res_farmers_sec_sold[4,1]} & 
 \backslash
@@ -8682,7 +8658,7 @@ Sexpr{res_farmers_sec_sold[4,23]})
 
 \begin_layout Plain Layout
 
-Has bargaining power  & 
+Price received in dry season & 
 \backslash
 Sexpr{res_farmers_sec_sold[5,1]} & 
 \backslash
@@ -8722,7 +8698,7 @@ Sexpr{res_farmers_sec_sold[5,23]})
 
 \begin_layout Plain Layout
 
-Index of primary farmer outcomes  & 
+Index of sales outcomes  & 
 \backslash
 Sexpr{res_farmers_sec_sold[6,1]} & 
 \backslash
@@ -8825,7 +8801,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
