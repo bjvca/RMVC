@@ -1,6 +1,7 @@
 rm(list=ls())
 dta <-read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv") 
-
+library(ggplot2)
+library(patchwork)
 set.seed(18112024)
 
 dta$one <- 1
@@ -141,31 +142,174 @@ mean(baseline_farmers$qual_prem[baseline_farmers$type != "NA"]=="Yes")
 prop.table(table(baseline_farmers$qx8[baseline_farmers$qx8 %in% c("No","Yes")]))
 
 library(arm)
-baseline_MCCs <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/baseline/data/public/MCCs.csv")
 table(baseline_MCCs$q29)
 table(baseline_MCCs$q54)
 
 baseline_MCCs[baseline_MCCs$MCC_ID == "MCC_18",]
 baseline_MCCs[baseline_MCCs$MCC_ID == "MCC_29",]
 
-baseline_MCCs$use_MA <- baseline_MCCs$MCC_ID %in% names(table(dta$MCC_ID))[table(dta$MCC_ID)>100]
+baseline_MCCs$use_MA <- baseline_MCCs$submission_rate > .1
 
 baseline_MCCs <- subset(baseline_MCCs,lactoscan == "T")
 
 ###analysis of the determinants of analyzer use
+### Is cooperative
 baseline_MCCs$coop <- baseline_MCCs$secC_group.q8 ==2
+###number of full time employees
 baseline_MCCs$labour <- baseline_MCCs$q14m
-
-
+###total capacity of milk tanks
 baseline_MCCs$capacity <- baseline_MCCs$qual.q26
-baseline_MCCs$premium <- baseline_MCCs$q29 =="1" 
+### pays quality premium to suppliers
+baseline_MCCs$premium_buy <- baseline_MCCs$q29 =="1" 
+### delivers to top 5 processors
 baseline_MCCs$top_5 <- baseline_MCCs$q33.6=="False"
+### gets quality premium from buyer
+baseline_MCCs$premium_sell <- baseline_MCCs$q54 =="1" | baseline_MCCs$q64 =="1" | baseline_MCCs$q74 =="1"  | baseline_MCCs$q84 =="1"  
+baseline_MCCs$years_op <- baseline_MCCs$secC_group.q6a
+baseline_MCCs$years_op[baseline_MCCs$years_op == 999] <- NA
+library(stargazer)
+
+mod1 <- lm(use_MA~coop+labour+capacity+premium_buy+premium_sell+top_5+years_op,data=baseline_MCCs)
+mod2 <- lm(submission_rate~coop+labour+capacity+premium_buy+premium_sell+top_5,data=baseline_MCCs)
+summary(mod1)
+summary(mod2)
+mod3 <- glm(use_MA~coop+labour+capacity+premium_buy+premium_sell+top_5,data=baseline_MCCs,family = binomial(link = "probit"))
+summary(mod3)
+
+### 
+baseline_MCCs <- subset(baseline_MCCs, !is.na(use_MA))
+# Horizontal Boxplot for capacity with truncated right side using coord_cartesian
+boxplot_capacity <- ggplot(baseline_MCCs, aes(y = factor(use_MA), x = capacity, fill = factor(use_MA))) +
+  geom_boxplot() +
+  labs(x = "Capacity", 
+       y = "Use of Milk Analyzers", 
+       title = "Boxplot: Capacity vs Use of Milk Analyzers") +
+  scale_y_discrete(labels = c("No", "Yes")) +
+  theme_minimal() +
+  theme(legend.position = "none") +  # Remove the legend
+  coord_cartesian(xlim = c(0, 10000))  # Adjust the upper limit here to truncate (e.g., 300)
+
+# Horizontal Boxplot for labour with truncated right side using coord_cartesian
+boxplot_labour <- ggplot(baseline_MCCs, aes(y = factor(use_MA), x = labour, fill = factor(use_MA))) +
+  geom_boxplot() +
+  labs(x = "Labour", 
+       y = "Use of Milk Analyzers", 
+       title = "Boxplot: Labour vs Use of Milk Analyzers") +
+  scale_y_discrete(labels = c("No", "Yes")) +
+  theme_minimal() +
+  theme(legend.position = "none") +  # Remove the legend
+  coord_cartesian(xlim = c(0, 7.5))  # Adjust the upper limit here to truncate (e.g., 50)
+
+# Arrange the boxplots vertically
+boxplot_capacity / boxplot_labour
+
+t_test_capacity <- t.test(capacity ~ use_MA, data = baseline_MCCs)
+t_test_labour <- t.test(labour ~ use_MA, data = baseline_MCCs)
+
+ggsave("/home/bjvca/data/projects/OneCG/RMVC/midline/paper/analysis/boxplots_combined.png", 
+       plot = boxplot_capacity / boxplot_labour, 
+       width = 10, height = 5, dpi = 300)
+
+baseline_MCCs$q5_cat <- factor(
+  baseline_MCCs$q5,
+  levels = c(2, 3, 4, 5, 6),
+  labels = c("Did not finish primary", 
+             "Finished primary", 
+             "Finished secondary", 
+             "Finished secondary", 
+             "More than primary")
+) 
 
 
+baseline_MCCs$q5_cat <- factor(
+  baseline_MCCs$q5_cat,
+  levels = c("Did not finish primary", "Finished primary", "More than primary","Finished secondary" )
+)
 
-summary(lm(use_MA~coop+labour+nr_ppl+capacity+premium+top_5,data=baseline_MCCs))
 
+# Plotting the reordered proportional stacked bar chart
+ggplot(baseline_MCCs, aes(x = q5_cat, fill = factor(use_MA))) +
+  geom_bar(position = "fill") +
+  labs(title = "Proportion of MA Use by Education Level",
+       x = "Education Level",
+       y = "Proportion",
+       fill = "Use Milk Analyzer") +  # Automatically labels the legend
+  coord_flip() +  # Flips the axes for horizontal bars
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0),  # Keeps labels horizontal
+        axis.text.y = element_text(size = 10))  # Adjust y-axis text size
 
+ggsave("/home/bjvca/data/projects/OneCG/RMVC/midline/paper/analysis/edu_use.png", 
+       width = 10, height = 3, dpi = 300)
+
+contingency_table <- table(baseline_MCCs$q5_cat, baseline_MCCs$use_MA)
+
+# Run the Chi-squared test
+chi_squared_test <- chisq.test(contingency_table)
+
+# Display the result
+chi_squared_test
+
+library(dplyr)
+
+# Create a contingency table for coop and use_MA
+contingency_table_coop <- table(baseline_MCCs$coop, baseline_MCCs$use_MA)
+
+# Convert contingency table to a data frame for plotting
+df_coop <- as.data.frame(contingency_table_coop)
+
+# Calculate row-wise proportions for proportional bar plot
+df_coop <- df_coop %>%
+  group_by(Var1) %>%
+  mutate(Proportion = Freq / sum(Freq)) %>%
+  ungroup()
+
+# Create horizontal proportional stacked bar plot using ggplot
+ggplot(df_coop, aes(x = Proportion, y = Var1, fill = as.factor(Var2))) +
+  geom_bar(stat = "identity") +
+  labs(x = "Proportion", 
+       y = "Cooperative Ownership Type", 
+       fill = "Use of Milk Analyzers", 
+       title = "Proportional Stacked Barplot: Coop vs Use of Milk Analyzers") +
+  scale_x_continuous(labels = scales::percent) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(angle = 0))  # Keeps y-axis labels horizontal
+ggsave("/home/bjvca/data/projects/OneCG/RMVC/midline/paper/analysis/coop.png", 
+       width = 10, height = 3, dpi = 300)
+
+### cooperative membership
+contingency_table_coop <- table(baseline_MCCs$coop, baseline_MCCs$use_MA)
+
+# Run the Chi-squared test
+chi_squared_test_coop <- chisq.test(contingency_table_coop)
+
+# Display the result
+chi_squared_test_coop
+
+# Proportional bar plot showing the proportion of MA use by manager gender using default ggplot colors, horizontal version
+ggplot(baseline_MCCs, aes(x = factor(q4), fill = factor(use_MA))) +
+  geom_bar(position = "fill") +  # 'fill' will normalize the height of bars to represent proportions
+  labs(title = "Proportion of Milk Analyzer Use by Manager Gender",
+       x = "Manager Gender",
+       y = "Proportion",
+       fill = "Use Milk Analyzer") +
+  coord_flip() +  # Flips the axes for horizontal bars
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 0),  # Keeps x-axis labels horizontal
+        axis.text.y = element_text(size = 10))  # Adjust y-axis text size
+
+# Save the plot as a PNG with specified dimensions
+ggsave("/home/bjvca/data/projects/OneCG/RMVC/midline/paper/analysis/manager_gender_ma_use.png", 
+       width = 10, height = 3, dpi = 300)
+
+# Create contingency table for manager gender (q4) and MA use (use_MA)
+contingency_table_gender_ma <- table(baseline_MCCs$q4, baseline_MCCs$use_MA)
+
+# Perform Chi-squared test
+chi_squared_test_gender_ma <- chisq.test(contingency_table_gender_ma)
+
+# Display the result of the test
+chi_squared_test_gender_ma
 
 sample_list <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/baseline/data/raw/list_wilber_gps.csv")
 setdiff(sample_list$MCC_ID, dta$MCC_ID)
