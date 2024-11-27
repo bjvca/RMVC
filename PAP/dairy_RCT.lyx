@@ -361,6 +361,19 @@ res_farmers_sec_sold <- readRDS(paste(path2,"/results/res_farmers_sec_sold.RData
 
 \begin_layout Plain Layout
 
+res_farmers_sec_switching <- readRDS(paste(path2,"/results/res_farmers_sec_switching.RData",sep=
+\begin_inset Quotes erd
+\end_inset
+
+/
+\begin_inset Quotes erd
+\end_inset
+
+))
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -6949,13 +6962,402 @@ literal "false"
 \end_layout
 
 \begin_layout Enumerate
-Buyer changed since start of project during wet season (q51,
+Buyer switching behavior.
+ (still_connected==1,
+ q51,
  q51_prev,
  q51_name,
  q51_name_prev) or during dry season (q51x,
  q51_prevx,
  q51_namex,
  q51_name_prevx)?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level - switching
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-farmer-uptake-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & analyzer & video & bundle & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}
+\end_layout
+
+\begin_layout Plain Layout
+
+Buyer still connected to baseline MCC?
+ & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[1,16]<.01,"**",ifelse(res_farmers_sec_switching[1,16]<.05,"*",ifelse(res_farmers_sec_switching[1,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[1,17]<.01,"**",ifelse(res_farmers_sec_switching[1,17]<.05,"*",ifelse(res_farmers_sec_switching[1,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[1,18]<.01,"**",ifelse(res_farmers_sec_switching[1,18]<.05,"*",ifelse(res_farmers_sec_switching[1,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[1,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[1,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[1,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_switching[1,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[1,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[1,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Still supplying wet & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[2,16]<.01,"**",ifelse(res_farmers_sec_switching[2,16]<.05,"*",ifelse(res_farmers_sec_switching[2,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[2,17]<.01,"**",ifelse(res_farmers_sec_switching[2,17]<.05,"*",ifelse(res_farmers_sec_switching[2,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[2,18]<.01,"**",ifelse(res_farmers_sec_switching[2,18]<.05,"*",ifelse(res_farmers_sec_switching[2,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[2,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[2,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[2,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_switching[2,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[2,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[2,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Still supplying dry  & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[3,16]<.01,"**",ifelse(res_farmers_sec_switching[3,16]<.05,"*",ifelse(res_farmers_sec_switching[3,16]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[3,17]<.01,"**",ifelse(res_farmers_sec_switching[3,17]<.05,"*",ifelse(res_farmers_sec_switching[3,17]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[3,18]<.01,"**",ifelse(res_farmers_sec_switching[3,18]<.05,"*",ifelse(res_farmers_sec_switching[3,18]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[3,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[3,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[3,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_switching[3,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[3,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[3,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of switching & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[4,5]<.01,"**",ifelse(res_farmers_sec_switching[4,5]<.05,"*",ifelse(res_farmers_sec_switching[4,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[4,8]<.01,"**",ifelse(res_farmers_sec_switching[4,8]<.05,"*",ifelse(res_farmers_sec_switching[4,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[4,11]<.01,"**",ifelse(res_farmers_sec_switching[4,11]<.05,"*",ifelse(res_farmers_sec_switching[4,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[4,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[4,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[4,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{res_farmers_sec_switching[4,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[4,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_switching[4,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+  the third column shows average treatment effect of the interaction of the MCC level and farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -7039,7 +7441,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7800,7 +8202,7 @@ Sexpr{res_farmers[1,12]}
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,23]}) & (
+Sexpr{res_farmers[1,20]}) & (
 \backslash
 Sexpr{res_farmers[1,23]})
 \backslash
@@ -7840,7 +8242,7 @@ Sexpr{res_farmers[2,12]}
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,23]}) & (
+Sexpr{res_farmers[2,20]}) & (
 \backslash
 Sexpr{res_farmers[2,23]})
 \backslash
@@ -7880,7 +8282,7 @@ Sexpr{res_farmers[3,12]}
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,23]}) & (
+Sexpr{res_farmers[3,20]}) & (
 \backslash
 Sexpr{res_farmers[3,23]})
 \backslash
@@ -7920,7 +8322,7 @@ Sexpr{res_farmers[4,12]}
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,23]}) & (
+Sexpr{res_farmers[4,20]}) & (
 \backslash
 Sexpr{res_farmers[4,23]})
 \backslash
@@ -7960,7 +8362,7 @@ Sexpr{res_farmers[5,12]}
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,23]}) & (
+Sexpr{res_farmers[5,20]}) & (
 \backslash
 Sexpr{res_farmers[5,23]})
 \backslash
@@ -8000,7 +8402,7 @@ Sexpr{res_farmers[6,12]}
 \backslash
 Sexpr{res_farmers[6,2]}) & (
 \backslash
-Sexpr{res_farmers[6,21]}) & (
+Sexpr{res_farmers[6,20]}) & (
 \backslash
 Sexpr{res_farmers[6,23]})
 \backslash
@@ -8078,7 +8480,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8181,7 +8583,7 @@ Sexpr{res_farmers_sec_quant[1,12]}
 \backslash
 Sexpr{res_farmers_sec_quant[1,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_quant[1,23]}) & (
+Sexpr{res_farmers_sec_quant[1,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[1,23]})
 \backslash
@@ -8221,7 +8623,7 @@ Sexpr{res_farmers_sec_quant[2,12]}
 \backslash
 Sexpr{res_farmers_sec_quant[2,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_quant[2,23]}) & (
+Sexpr{res_farmers_sec_quant[2,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[2,23]})
 \backslash
@@ -8262,7 +8664,7 @@ Sexpr{res_farmers_sec_quant[3,12]}
 \backslash
 Sexpr{res_farmers_sec_quant[3,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_quant[3,23]}) & (
+Sexpr{res_farmers_sec_quant[3,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[3,23]})
 \backslash
@@ -8302,7 +8704,7 @@ Sexpr{res_farmers_sec_quant[4,12]}
 \backslash
 Sexpr{res_farmers_sec_quant[4,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_quant[4,23]}) & (
+Sexpr{res_farmers_sec_quant[4,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[4,23]})
 \backslash
@@ -8342,7 +8744,7 @@ Sexpr{res_farmers_sec_quant[5,12]}
 \backslash
 Sexpr{res_farmers_sec_quant[5,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_quant[5,23]}) & (
+Sexpr{res_farmers_sec_quant[5,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_quant[5,23]})
 \backslash
@@ -8420,7 +8822,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8523,7 +8925,7 @@ Sexpr{res_farmers_sec_sold[1,12]}
 \backslash
 Sexpr{res_farmers_sec_sold[1,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_sold[1,23]}) & (
+Sexpr{res_farmers_sec_sold[1,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_sold[1,23]})
 \backslash
@@ -8563,7 +8965,7 @@ Sexpr{res_farmers_sec_sold[2,12]}
 \backslash
 Sexpr{res_farmers_sec_sold[2,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_sold[2,23]}) & (
+Sexpr{res_farmers_sec_sold[2,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_sold[2,23]})
 \backslash
@@ -8603,7 +9005,7 @@ Sexpr{res_farmers_sec_sold[3,12]}
 \backslash
 Sexpr{res_farmers_sec_sold[3,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_sold[3,23]}) & (
+Sexpr{res_farmers_sec_sold[3,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_sold[3,23]})
 \backslash
@@ -8643,7 +9045,7 @@ Sexpr{res_farmers_sec_sold[4,12]}
 \backslash
 Sexpr{res_farmers_sec_sold[4,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_sold[4,23]}) & (
+Sexpr{res_farmers_sec_sold[4,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_sold[4,23]})
 \backslash
@@ -8683,7 +9085,7 @@ Sexpr{res_farmers_sec_sold[5,12]}
 \backslash
 Sexpr{res_farmers_sec_sold[5,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_sold[5,23]}) & (
+Sexpr{res_farmers_sec_sold[5,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_sold[5,23]})
 \backslash
@@ -8723,7 +9125,7 @@ Sexpr{res_farmers_sec_sold[6,12]}
 \backslash
 Sexpr{res_farmers_sec_sold[6,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_sold[6,23]}) & (
+Sexpr{res_farmers_sec_sold[6,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_sold[6,23]})
 \backslash
@@ -8801,7 +9203,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8904,7 +9306,7 @@ Sexpr{res_farmers_sec_uptake[1,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[1,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[1,23]}) & (
+Sexpr{res_farmers_sec_uptake[1,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_uptake[1,23]})
 \backslash
@@ -8944,7 +9346,7 @@ Sexpr{res_farmers_sec_uptake[2,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[2,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[2,23]}) & (
+Sexpr{res_farmers_sec_uptake[2,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_uptake[2,23]})
 \backslash
@@ -8984,7 +9386,7 @@ Sexpr{res_farmers_sec_uptake[3,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[3,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[3,23]}) & (
+Sexpr{res_farmers_sec_uptake[3,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_uptake[3,23]})
 \backslash
@@ -9024,7 +9426,7 @@ Sexpr{res_farmers_sec_uptake[4,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[4,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[4,23]}) & (
+Sexpr{res_farmers_sec_uptake[4,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_uptake[4,23]})
 \backslash
@@ -9064,7 +9466,7 @@ Sexpr{res_farmers_sec_uptake[5,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[5,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[5,23]}) & (
+Sexpr{res_farmers_sec_uptake[5,20]}) & (
 \backslash
 Sexpr{res_farmers_sec_uptake[5,23]})
 \backslash
@@ -9074,6 +9476,303 @@ Sexpr{res_farmers_sec_uptake[5,23]})
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below);
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below);
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level (pooled) - Switching
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-farmer-pooled-switching"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean & analyzer & video &  nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-5}
+\end_layout
+
+\begin_layout Plain Layout
+
+Buyer still connected to baseline MCC & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[1,25]<.01,"**",ifelse(res_farmers_sec_switching[1,25]<.05,"*",ifelse(res_farmers_sec_switching[1,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[1,26]<.01,"**",ifelse(res_farmers_sec_switching[1,26]<.05,"*",ifelse(res_farmers_sec_switching[1,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[1,20]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[1,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Still supplying wet & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[2,25]<.01,"**",ifelse(res_farmers_sec_switching[2,25]<.05,"*",ifelse(res_farmers_sec_switching[2,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[2,26]<.01,"**",ifelse(res_farmers_sec_switching[2,26]<.05,"*",ifelse(res_farmers_sec_switching[2,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[2,20]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[2,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Still supplying dry & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[3,25]<.01,"**",ifelse(res_farmers_sec_switching[3,25]<.05,"*",ifelse(res_farmers_sec_switching[3,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[3,26]<.01,"**",ifelse(res_farmers_sec_switching[3,26]<.05,"*",ifelse(res_farmers_sec_switching[3,26]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[3,20]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[3,23]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Index of switching & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[4,21]<.01,"**",ifelse(res_farmers_sec_switching[4,21]<.05,"*",ifelse(res_farmers_sec_switching[4,21]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,22]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_switching[4,24]<.01,"**",ifelse(res_farmers_sec_switching[4,24]<.05,"*",ifelse(res_farmers_sec_switching[4,24]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_switching[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_farmers_sec_switching[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[4,20]}) & (
+\backslash
+Sexpr{res_farmers_sec_switching[4,23]})
+\backslash
+
+\backslash
 
 \end_layout
 

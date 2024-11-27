@@ -11,6 +11,10 @@ path <- strsplit(path,"/PAP/analysis")[[1]]
 
 ### read in endline farmer data
 farmers_end <- read.csv(paste(path, "endline/data/public/farmers.csv", sep = "/"))
+
+### switching - stopt supplying to MCC
+prop.test(table(farmers_end$still_connected==1,farmers_end$treat))
+#farmers_end <- subset(farmers_end, still_connected == 1)
 ### read in baseline farmer data 
 farmers_base <- read.csv(paste(path, "baseline/data/public/farmers.csv", sep = "/"))
 
@@ -430,6 +434,188 @@ res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(ou
 
 res_farmers_sec_sold <- round(res_farmers,digits=3)
 saveRDS(res_farmers_sec_sold, file= paste(path,"PAP/results/res_farmers_sec_sold.RData", sep="/"))
+
+###switching - no control for baseline outcomes
+
+### still supplying to the MCC farmer was connected to during baseline
+farmers_end$still_connected_yes <- farmers_end$still_connected==1
+farmers_end$still_connected_yes[farmers_end$still_connected=="n/a"] <- NA
+
+###still supplying wet season
+farmers_end$q51_name[is.na(farmers_end$q51_name)] <- "NA"
+farmers_end$still_supplying_wet <- as.character(farmers_end$q51_name_prev) ==  as.character(farmers_end$q51_name)
+
+farmers_end$q51_namex[is.na(farmers_end$q51_namex)] <- "NA"
+farmers_end$still_supplying_dry <- as.character(farmers_end$q51_name_prevx) ==  as.character(farmers_end$q51_namex)
+                                                                                             
+outcomes <- c("still_connected_yes","still_supplying_wet","still_supplying_dry")
+
+###Make anderson index
+farmers_end$secondary_farmer_switch_index  <- anderson_index(farmers_end[outcomes])$index
+
+outcomes <- c(outcomes, "secondary_farmer_switch_index")
+
+##Sold to milk to collection center in the week preceding the survey
+###fully interacted model
+res_farmers <-   array(NA,dim=c(length(outcomes),26))
+for (i in 1:length(outcomes)) {
+  ols <- lm(as.formula(paste(outcomes[i],"treat*vid*trader",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
+  res_farmers[i,9:12] <- c(res[5,2],res[5,3],res[5,6], nobs(ols))
+  
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+}
+
+res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
+res_farmers[1:length(outcomes)-1,17] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,8])
+res_farmers[1:length(outcomes)-1,18] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,11])
+
+
+###model with demeaned orthogonal treatment - milk analyzer
+farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na.rm=T)
+farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
+
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
+  
+}
+###model with demeaned orthogonal treatment - video tratment
+
+farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
+  
+}
+res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
+res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
+
+
+res_farmers_sec_switching <- round(res_farmers,digits=3)
+saveRDS(res_farmers_sec_switching, file= paste(path,"PAP/results/res_farmers_sec_switching.RData", sep="/"))
+
+# Load necessary libraries
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# Convert the res_farmers matrix to a data frame
+res_farmers_df <- as.data.frame(res_farmers)
+colnames(res_farmers_df) <- c(
+  "Mean", "SD", 
+  "Coef1", "SE1", "Pval1", 
+  "Coef2", "SE2", "Pval2", 
+  "Coef3", "SE3", "Pval3", "N", 
+  "LinearHyp1", "LinearHyp2", "LinearHyp3",
+  "ASQ5", "ASQ8", "ASQ11", 
+  "Coef_Demeaned1", "SE_Demeaned1", "Pval_Demeaned1", 
+  "Coef_Demeaned2", "SE_Demeaned2", "Pval_Demeaned2", 
+  "ASQ18", "ASQ21"
+)
+
+# Add outcome labels (assuming outcomes vector is available)
+res_farmers_df$Outcome <- outcomes
+
+# Reshape data to include all coefficients and linear hypothesis p-values
+forest_data_long <- res_farmers_df %>%
+  select(
+    Outcome,
+    Coef1, SE1, LinearHyp1,
+    Coef2, SE2, LinearHyp2,
+    Coef3, SE3, LinearHyp3
+  ) %>%
+  pivot_longer(
+    cols = starts_with("Coef"),
+    names_to = "Coefficient",
+    values_to = "Estimate"
+  ) %>%
+  mutate(
+    SE = case_when(
+      Coefficient == "Coef1" ~ SE1,
+      Coefficient == "Coef2" ~ SE2,
+      Coefficient == "Coef3" ~ SE3
+    ),
+    LinearHypothesis = case_when(
+      Coefficient == "Coef1" ~ LinearHyp1,
+      Coefficient == "Coef2" ~ LinearHyp2,
+      Coefficient == "Coef3" ~ LinearHyp3,
+      TRUE ~ NA_real_ # No LinearHypothesis values for demeaned models
+    ),
+    CI_Lower = Estimate - 1.96 * SE,
+    CI_Upper = Estimate + 1.96 * SE,
+    Coefficient = recode(
+      Coefficient,
+      "Coef1" = "milk analyzer",
+      "Coef2" = "video",
+      "Coef3" = "interaction"
+    )
+  )
+
+# Remove rows with NA in Coefficient column
+forest_data_long <- forest_data_long %>%
+  filter(!is.na(Coefficient))
+
+# Set the order of the coefficients for the legend (placing "interaction" last)
+forest_data_long$Coefficient <- factor(forest_data_long$Coefficient, levels = c("milk analyzer", "video", "interaction"))
+
+# Define custom colors for grouping (without pooled models)
+custom_colors <- c(
+  "milk analyzer" = "#1f77b4",  # Blue
+  "video" = "#ff7f0e",          # Orange
+  "interaction" = "#2ca02c"     # Green
+)
+
+# Create the forest plot
+forest_plot <- ggplot(forest_data_long, aes(x = Estimate, y = reorder(Outcome, Estimate), color = Coefficient)) +
+  geom_point(size = 3, position = position_dodge(width = 0.7)) + # Points for coefficients
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), height = 0.2, position = position_dodge(width = 0.7)) + # CI lines
+  geom_vline(xintercept = 0, linetype = "dashed", color = "red") + # No-effect line
+  geom_text(
+    aes(label = ifelse(!is.na(LinearHypothesis), paste0("p = ", round(LinearHypothesis, 3)), "")),
+    position = position_dodge(width = 0.7),
+    vjust = -1, size = 3.5,
+    show.legend = FALSE # Suppress legend for text layer
+  ) + 
+  scale_color_manual(values = custom_colors) + # Apply custom colors
+  labs(
+    title = "Farmer Switching MCCs",
+    x = "Coefficient (95% CI)",
+    y = "Outcomes",
+    color = "Model"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title.y = element_text(size = 12),
+    axis.title.x = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    legend.position = "top",
+    legend.title = element_text(size = 12),    # Increase legend title size if needed
+    legend.text = element_text(size = 10)      # Increase legend item text size if needed
+  ) +
+  guides(color = guide_legend(override.aes = list(shape = 16)))  # Ensure color legend uses correct shape
+
+# Print the plot
+print(forest_plot)
+
+ggsave( file= paste(path,"PAP/results/forest_plot.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
+
 
 ######################## analysis at the MCC level ############################################
 ### read in clean endline MCC data
