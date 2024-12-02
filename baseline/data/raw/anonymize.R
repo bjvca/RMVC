@@ -1,4 +1,4 @@
-
+###anonymize baseline data
 library(leaflet)
 library(reshape2)
 library(htmlwidgets)
@@ -308,7 +308,7 @@ m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(
 pal <- colorFactor(c("red", "green"),farmers$lactoscan)
 m <- leaflet() %>% setView(lat = -0.6072, lng = 30.654, zoom=11)  %>%  addTiles(group="OSM") %>% addTiles(urlTemplate = "https://mts1.google.com/vt/lyrs=s&hl=en&src=app&x={x}&y={y}&z={z}&s=G",  group="Google", attribution = 'Google')  %>% addProviderTiles(providers$OpenTopoMap, group="Topography") %>% addCircleMarkers(data=farmers, lng=~as.numeric(check.check2.Dairy._GPS_longitude), lat=~as.numeric(check.check2.Dairy._GPS_latitude),radius= 1, color=~pal(lactoscan), popup = ~as.character(lactoscan), group = "X_uuid")   %>%  addLayersControl(baseGroups=c('OSM','Google','Topography')) 
 
-###one ctrl MCC (MCC_50) was replaced during farmer level reinforcement
+###one ctrl MCC (MCC_50 - Ibaare) was replaced during farmer level reinforcement with Nicos, but at endline we found Ibaare open again so we interviewed both but kept Ibaare
 ###two treatmetn MCCs (MCC_356,MCC_225)  were replaced during treatment rollout
 ##MCC_290 was interviewed at baseline but closed at the time of milk analyzer distribution
 ###these people now all go to MCC_356
@@ -357,9 +357,9 @@ farmers <- farmers[ , !(names(farmers) %in% to_drop)]
 #MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
 
 replaceID <- read.csv("MCCS_replace.csv")
-replaceID$MCC_ID[1] <- "MCC_50"
+#replaceID$MCC_ID[1] <- "MCC_50"
 
-MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
+#MCC[MCC$MCC_ID=="MCC_50",names(replaceID)] <- replaceID[1,]
 MCC[MCC$MCC_ID=="MCC_356",names(replaceID)] <- replaceID[2,]
 MCC[MCC$MCC_ID=="MCC_225",names(replaceID)] <- replaceID[3,]
 MCC[MCC$MCC_ID=="MCC_363",names(replaceID)] <- replaceID[4,]

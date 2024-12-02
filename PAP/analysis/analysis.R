@@ -558,13 +558,13 @@ forest_data_long <- res_farmers_df %>%
     ),
     CI_Lower = Estimate - 1.96 * SE,
     CI_Upper = Estimate + 1.96 * SE,
-    Coefficient = recode(
-      Coefficient,
-      "Coef1" = "milk analyzer",
-      "Coef2" = "video",
-      "Coef3" = "interaction"
+    Coefficient = case_when(
+      Coefficient == "Coef1" ~ "milk analyzer",
+      Coefficient == "Coef2" ~ "video",
+      Coefficient == "Coef3" ~ "interaction"
     )
   )
+
 
 # Remove rows with NA in Coefficient column
 forest_data_long <- forest_data_long %>%
@@ -624,11 +624,16 @@ MCCs_end <- read.csv(paste(path, "endline/data/public/MCCs.csv", sep = "/"))
 library(dplyr)
 MCCs_end <- MCCs_end %>%
   distinct(MCC_ID, .keep_all = TRUE)
+### drop empty (non-consent)
+MCCs_end <- subset(MCCs_end,consent == 1)
+
 ### read in clean baseline farmer data 
 MCCs_base <- read.csv(paste(path, "baseline/data/public/MCCs.csv", sep = "/"))
 
 ### testing of quality on incoming samples
 MCCs_end$test_MA_in <-  MCCs_end$q25x3 == 1 | MCCs_end$q25x3 == 2
+MCCs_end$test_MA_in[MCCs_end$q25x3 == "n/a"] <- NA
+
 MCCs_base$b_test_MA_in <-  MCCs_base$q25x3 == 1 | MCCs_base$q25x3 == 2
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_test_MA_in")], by="MCC_ID", all.x=T)
 
@@ -651,6 +656,7 @@ MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_test_MA_out")], by="MCC_ID"
 
 MCCs_end$q25b[MCCs_end$q25b %in% c("n/a","999") ] <- NA
 MCCs_end$q25b <- as.numeric(as.character(MCCs_end$q25b))
+
 names(MCCs_end)[names(MCCs_end) == 'q25b'] <- 'price_bought'
 
 #merge in baseline outcome
@@ -672,25 +678,38 @@ MCCs_end[columns] <- lapply(MCCs_end[columns], function(x) {
 MCCs_base[columns] <- lapply(MCCs_base[columns], function(x) {
   x[x %in% c("n/a", "999")] <- NA
   x <- as.numeric(as.character(x))
+  x[x>10000] <- NA
   return(x)
 })
 
 MCCs_end$avg_sales_p <- rowMeans(MCCs_end[columns], na.rm=T)
 MCCs_end$avg_sales_p[is.nan(MCCs_end$avg_sales_p)] <- NA
 
+
 MCCs_base$b_avg_sales_p <- rowMeans(MCCs_base[columns], na.rm=T)
 MCCs_base$b_avg_sales_p[is.nan(MCCs_base$b_avg_sales_p)] <- NA
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_avg_sales_p")], by="MCC_ID", all.x=T)
 
 ### quality paid to bonus to farmers
+MCCs_end$q29[MCCs_end$q29 == "n/a"] <- NA
 MCCs_end$gives_q_bonus <- MCCs_end$q29 == 1
+
 MCCs_base$b_gives_q_bonus <- MCCs_base$q29 == 1
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_gives_q_bonus")], by="MCC_ID", all.x=T)
 
+### if all are "n/a" this is missing
+MCCs_end$gets_q_bonus <- ifelse(
+  rowSums(MCCs_end[, c("q44", "q54", "q64", "q74", "q84")] == "n/a") == 5, 
+  NA, 
+  MCCs_end$q44 == 1 | MCCs_end$q54 == 1 | MCCs_end$q64 == 1 | MCCs_end$q74 == 1 | MCCs_end$q84 == 1
+)
 
- 
-MCCs_end$gets_q_bonus <- MCCs_end$q44==1 | MCCs_end$q54 ==1 | MCCs_end$q64 ==1 |  MCCs_end$q74 ==1 |  MCCs_end$q84 ==1
-MCCs_base$b_gets_q_bonus <- MCCs_base$q44==1 | MCCs_base$q54 ==1 | MCCs_base$q64 ==1 |  MCCs_base$q74 ==1 |  MCCs_base$q84 ==1
+MCCs_base$b_gets_q_bonus <- ifelse(
+  rowSums(MCCs_base[, c("q44", "q54", "q64", "q74", "q84")] == "n/a") == ncol(MCCs_base[, c("q44", "q54", "q64", "q74", "q84")]), 
+  NA, 
+  MCCs_base$q44 == 1 | MCCs_base$q54 == 1 | MCCs_base$q64 == 1 | MCCs_base$q74 == 1 | MCCs_base$q84 == 1
+)
+
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_gets_q_bonus")], by="MCC_ID", all.x=T)
 
 ###iterate over outcomes in this family
