@@ -1,4 +1,6 @@
-### this scipt loads raw data from MCCs and dairy farmers, anonymizes and puts in public folder
+### this script loads raw data from MCCs, dairy farmers, and samples collected at MCCs, fixes duplicates, anonymizes and puts in public folder
+### b.vancampenhout@cgiar.org
+
 rm(list=ls())
 library(leaflet)
 library(dplyr)
@@ -8,11 +10,11 @@ path <- strsplit(path,"/data/raw")[[1]]
 
 set.seed(15112024)  #date of creation of this script as random seed
 
-
+### read in raw farmer data
 farmers <- read.csv("latest_farmers.csv")
 
 ##duplicates corrections
-##pull in baseline 
+##pull in baseline to fix duplicates based on gps location
 bse <- read.csv("~/data/projects/OneCG/RMVC/endline/questionnaire/list_endline.csv")
 
 dups <- subset(farmers, duplicated(farmers$farmer_ID))
@@ -24,7 +26,6 @@ farmers$farmer_ID[farmers$X_uuid == "1e98ff1f-a6a2-4905-b319-08b818c0951d"] <- "
 #anything pre_filled should also be replaced (by info from baseline)
 farmers[farmers$farmer_ID=="F_12379_T",c("district","sub","MCC_ID","farm_mcc","farmer_name", "farmer_ID", "phone1", "phone2", "lat", "long" , "catchment", "treat", "vid" )] <- bse[bse$farmer_ID == "F_12379_T",c("district", "sub", "MCC_ID","MCC_name" ,"name","farmer_ID","tel_1","tel_2","latitude","longitude", "catchment_ID", "lactoscan", "video")]
 
-### corrections for duplicates go here
 ##for "F_12363_D" 
 farmers$farmer_ID[farmers$X_uuid == "68947581-289b-40c1-993e-ee72a0042eb1"] <- "F_12370_D"
 #anything pre_filled should also be replaced (by info from baseline)
@@ -42,8 +43,7 @@ farmers[farmers$farmer_ID=="F_1271_D",c("district","sub","MCC_ID","farm_mcc","fa
 farmers$farmer_ID[farmers$X_uuid == "670e2a92-528e-4be1-bdbc-a4c838ed7af6"] <- " F_20_T"
 farmers[farmers$farmer_ID=="F_20_T",c("district","sub","MCC_ID","farm_mcc","farmer_name", "farmer_ID", "phone1", "phone2", "lat", "long" , "catchment", "treat", "vid" )] <- bse[bse$farmer_ID == "F_20_T",c("district", "sub", "MCC_ID","MCC_name" ,"name","farmer_ID","tel_1","tel_2","latitude","longitude", "catchment_ID", "lactoscan", "video")]
 
-
-## this one can not be found:
+## these could not be identfied or fixed so just drop:
 farmers <- subset(farmers, X_uuid != "f14f0c86-f5ac-4cc4-9a14-0a27bfad9f19")
 farmers <- subset(farmers, X_uuid != "aec1cce1-0cee-4a9d-aab9-2767138444d5")
 farmers <- subset(farmers, X_uuid != "3d0a2b25-b1d8-4e2b-a424-5877ab9231b9")
@@ -65,7 +65,7 @@ farmers <- subset(farmers, X_uuid != "84f3ff2e-c887-43d9-a978-d2a286cb8375")
 farmers <- subset(farmers, X_uuid != "0459651f-f53b-4b60-b233-dd45a3c1e625")
 farmers <- subset(farmers, X_uuid != "ced2d819-11bf-4252-b935-928770c7044b")
 
-farmers$farmer_ID[duplicated(farmers$farmer_ID)]
+farmers$farmer_ID[duplicated(farmers$farmer_ID)] #none left
 
 #### this is to investigate duplicated - can be deleted
 # vil <- farmers$MCC_ID[farmers$farmer_ID ==  "F_2_T" ][1]
@@ -121,16 +121,6 @@ farmers$farmer_ID[duplicated(farmers$farmer_ID)]
 # 
 # 
 
-
-
-###get sample list
-
-smpl <- read.csv("~/data/projects/OneCG/RMVC/endline/questionnaire/list_endline.csv")
-
-missed <- setdiff(smpl$farmer_ID,farmers$farmer_ID)
-
-write.csv(smpl[smpl$farmer_ID %in% missed,], file = "missed.csv")
-
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid","enumerator","mcc_cas","sub","village","farmer_name","farm_mcc","lat","long","phone1",
              "phone2","map_link","check.Dairy.name_in_app","reas_loc","check.sign","check.Dairy.GPS","check.Dairy._GPS_latitude","check.Dairy._GPS_longitude","check.Dairy._GPS_altitude","check.Dairy._GPS_precision",              
@@ -154,12 +144,11 @@ names(farmers) <- sub("check.Dairy.", "",names(farmers))
 
 ### merge in MCC_IDs from listing file
 ### first rename MCC_ID
-
 names(farmers)[names(farmers) == 'MCC_ID'] <- 'MCC_ID_linked'
 
 MCC_list <- read.csv(paste(path,"questionnaire/list_endline_MCC.csv", sep="/"))[c("name","MCC_ID")]
 
-### replace M
+### replace MCC names with IDs
 
 farmers <- merge(farmers,MCC_list,by.x=  "q51_name", by.y="name", all.x=T) 
 
@@ -222,7 +211,11 @@ missed <- setdiff(smpl$MCC_ID,MCCs$MCC_ID)
 
 write.csv(smpl[smpl$MCC_ID %in% missed,], file = "missed_MCC.csv")
 
-duplicated(MCCs$MCC_ID)
+MCCs$MCC_ID[duplicated(MCCs$MCC_ID)] ### MCC 50 is duplicated by design
+## this is Nicos MCC that was a replacement for Ibaare (Ntungamo Rubaare_8) that closed at some point, but it opened again so let us keep the last one (and drop nikos)
+MCCs <- subset(MCCs, X_uuid != "a342f13a-ca7f-4815-a0c2-06687ffc8a8b")
+
+### we also need to change the district   sub 
 
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid","form_name","enumerator","sub","Village","mcc_name","mcc.sign","mcc.gps","mcc._gps_latitude","mcc._gps_longitude","mcc._gps_altitude","mcc._gps_precision",              

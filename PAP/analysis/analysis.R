@@ -12,25 +12,25 @@ path <- strsplit(path,"/PAP/analysis")[[1]]
 ### read in endline farmer data
 farmers_end <- read.csv(paste(path, "endline/data/public/farmers.csv", sep = "/"))
 
-### switching - stopt supplying to MCC
-prop.test(table(farmers_end$still_connected==1,farmers_end$treat))
-#farmers_end <- subset(farmers_end, still_connected == 1)
-### read in baseline farmer data 
+### read in baseline farmer data to control for baseline outcomes
 farmers_base <- read.csv(paste(path, "baseline/data/public/farmers.csv", sep = "/"))
 
 ###catchment area for clustering
 farmers_end$catch_ID <- as.factor(farmers_end$catchment)
 
 ##treat is MCC level treatment; vid is farmer level treatment
-farmers_end$treat <- farmers_end$treat == "T" 
+farmers_end$treat <- farmers_end$treat == "T"
+
+table(farmers_end$treat,farmers_end$vid)
 
 ##merge in relevant data from baseline
-# farmer type (direct of via trader)
+# farmer type (direct of via trader) for treatment heterogeiety
 names(farmers_end)[names(farmers_end) == 'farmer_type'] <- 'farmer_type_end'
 
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","farmer_type")], by="farmer_ID", all.x=T)
 farmers_end$trader <- farmers_end$farmer_type == 2
 
+table(farmers_end$trader) # this did not really work that well - only 600 are linked via a trader and 1610 are direct
 #primary outcomes at the farmer level
 
 #q39 == "Yes" ##oversowing
@@ -40,14 +40,23 @@ farmers_end$trader <- farmers_end$farmer_type == 2
 #q41 in c(1,3) #controlled/zero grazing in wet seaon
 #q42 == "Yes" #pasture conservation
 #q43 == "Yes" ##supplements
+farmers_end$q39[farmers_end$q39 == "n/a"] <- NA
+farmers_end$q39c[farmers_end$q39c == "n/a" | farmers_end$q39c == "98"] <- NA
+farmers_end$q39d[farmers_end$q39d == "n/a" | farmers_end$q39d == "98"] <- NA
+farmers_end$q42[farmers_end$q42 == "n/a" | farmers_end$q42 == "98"] <- NA
+farmers_end$q40[farmers_end$q40 == "n/a" | farmers_end$q40 == "96"] <- NA
+farmers_end$q41[farmers_end$q41 == "n/a" | farmers_end$q41 == "96"] <- NA
+farmers_end$q43[farmers_end$q43 == "n/a"] <- NA
 
 farmers_base$b_improve_index <- anderson_index(cbind(farmers_base$q39 == "Yes",farmers_base$q39c  == "Yes", farmers_base$q40 %in% c(1,3), farmers_base$q41 %in% c(1,3), farmers_base$q42  == "Yes", farmers_base$q43  == "Yes"))$index
 farmers_end$improve_index <- anderson_index(cbind(farmers_end$q39 == "Yes",farmers_end$q39c  == "Yes", farmers_end$q40 %in% c(1,3), farmers_end$q41 %in% c(1,3), farmers_end$q42  == "Yes", farmers_end$q43  == "Yes"))$index
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_improve_index")], by="farmer_ID", all.x=T)
 
-##buyer checks using milk analyzer
+##buyer checks using milk analyzer - needs more work - only for those who actually sold
 farmers_end$check_MA <- farmers_end$q58.4 == "True" | farmers_end$qx5.4 == "True" | farmers_end$qx17.4 == "True" | farmers_end$qx29.4 == "True" | farmers_end$qx41.4 == "True" | farmers_end$qx53.4 == "True"
-farmers_base$b_check_MA <-farmers_base$q58== "4" | farmers_base$qx5.4 == "True" | farmers_base$qx17.4 == "True" | farmers_base$qx29.4 == "True" | farmers_base$qx41.4 == "True" | farmers_base$qx53.4 == "True"
+farmers_end$check_MA[farmers_end$q52 == "n/a" | farmers_end$q52 == "No"] <- NA
+farmers_base$b_check_MA <- farmers_base$q58== "4" | farmers_base$qx5.4 == "True" | farmers_base$qx17.4 == "True" | farmers_base$qx29.4 == "True" | farmers_base$qx41.4 == "True" | farmers_base$qx53.4 == "True"
+farmers_base$b_check_MA[farmers_base$q52 == "No"] <- NA
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_check_MA")], by="farmer_ID", all.x=T)
 
 ##Price received for milk sold (inclusive of any quality premium that may have been obtained) (price per liter, average of price during last transaction with in last 7 days with buyer) - q55/qx2/qx14qx26/qx38/qx50
@@ -72,21 +81,31 @@ farmers_end$avg_sales_p[is.nan(farmers_end$avg_sales_p)] <- NA
 
 farmers_base$b_avg_sales_p <- rowMeans(farmers_base[columns], na.rm=T)
 farmers_base$b_avg_sales_p[is.nan(farmers_base$b_avg_sales_p)] <- NA
+##remove outliers
+farmers_base$b_avg_sales_p[farmers_base$b_avg_sales_p >= 1200] <- NA
+
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_avg_sales_p")], by="farmer_ID", all.x=T)
 
 ## Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
+farmers_end$gets_q_bonus <- farmers_end$q61 == "Yes" | farmers_end$qx8 == "Yes" | farmers_end$qx20 == "Yes" | farmers_end$qx32 == "Yes" | farmers_end$qx44 == "Yes" | farmers_end$qx56 == "Yes"
+farmers_end$gets_q_bonus[farmers_end$q52 == "n/a" | farmers_end$q52 == "No"] <- NA
 
 farmers_base$b_gets_q_bonus <- farmers_base$q61 == "Yes" | farmers_base$qx8 == "Yes" | farmers_base$qx20 == "Yes" | farmers_base$qx32 == "Yes" | farmers_base$qx44 == "Yes" | farmers_base$qx56 == "Yes"
-farmers_end$gets_q_bonus <- farmers_end$q61 == "Yes" | farmers_end$qx8 == "Yes" | farmers_end$qx20 == "Yes" | farmers_end$qx32 == "Yes" | farmers_end$qx44 == "Yes" | farmers_end$qx56 == "Yes"
+farmers_base$b_gets_q_bonus[farmers_base$q52 == "No"] <- NA
+
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_gets_q_bonus")], by="farmer_ID", all.x=T)
 
 
 ### farmers improve bargaining power
-
 farmers_end$bargain_power <- farmers_end$q65 %in% c(1,3) | farmers_end$qx12 %in% c(1,3) | farmers_end$qx24 %in% c(1,3)  | farmers_end$qx36 %in% c(1,3) | farmers_end$qx48 %in% c(1,3) | farmers_end$qx60 %in% c(1,3)
+farmers_end$bargain_power[farmers_end$q52 == "n/a" | farmers_end$q52 == "No"] <- NA
+
 farmers_base$b_bargain_power <- farmers_base$q65 %in% c(1,3) | farmers_base$qx12 %in% c(1,3) | farmers_base$qx24 %in% c(1,3)  | farmers_base$qx36 %in% c(1,3) | farmers_base$qx48 %in% c(1,3) | farmers_base$qx60 %in% c(1,3)
+farmers_base$b_bargain_power[farmers_base$q52 == "No"] <- NA
+
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_bargain_power")], by="farmer_ID", all.x=T)
 
+##### put outcomes in an array to loop over (and make anderson index)
 outcomes <- c("improve_index","check_MA","avg_sales_p","gets_q_bonus","bargain_power")
 b_outcomes <- c("b_improve_index","b_check_MA","b_avg_sales_p","b_gets_q_bonus","b_bargain_power")
 
@@ -96,24 +115,31 @@ farmers_end$b_primary_farmer_index <- anderson_index(farmers_end[b_outcomes])$in
 
 outcomes <- c(outcomes, "primary_farmer_index")
 b_outcomes <- c(b_outcomes, "b_primary_farmer_index")
-
-##Sold to milk to collection center in the week preceding the survey
+###dataset for comparing treatment to interaction directly
+farmers_end_int <-  farmers_end[(farmers_end$vid==TRUE & farmers_end$treat==TRUE) | (farmers_end$vid==FALSE & farmers_end$treat==FALSE),]
 ###fully interacted model
-res_farmers <-   array(NA,dim=c(length(outcomes),26))
+res_farmers <-   array(NA,dim=c(length(outcomes),32))
 for (i in 1:length(outcomes)) {
-ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
-res <- coef_test(ols, vcov_cluster)
-conf <- conf_int(ols, vcov_cluster)
-res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
-res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
-res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
-
-res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,30] <- res[5,6] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -126,29 +152,31 @@ farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
  
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-
+  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
 }
+
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
 
 
 res_farmers <- round(res_farmers,digits=3)
+res_farmers_prim <- round(res_farmers,digits=3) ## save for graphs later
 
 saveRDS(res_farmers, file= paste(path,"PAP/results/res_farmers.RData", sep="/"))
  
@@ -217,11 +245,13 @@ outcomes <- c(outcomes, "secondary_farmer_quant_index")
 b_outcomes <- c(b_outcomes, "b_secondary_farmer_quant_index")
 
 ##Sold to milk to collection center in the week preceding the survey
+farmers_end_int <-  farmers_end[(farmers_end$vid==TRUE & farmers_end$treat==TRUE) | (farmers_end$vid==FALSE & farmers_end$treat==FALSE),]
+
 ###fully interacted model
-res_farmers <-   array(NA,dim=c(length(outcomes),26))
+res_farmers <-   array(NA,dim=c(length(outcomes),32))
 for (i in 1:length(outcomes)) {
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
@@ -233,6 +263,13 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,30] <- res[5,6] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -245,23 +282,23 @@ farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
 
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
 }
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
@@ -283,6 +320,7 @@ saveRDS(res_farmers_sec_quant, file= paste(path,"PAP/results/res_farmers_sec_qua
 farmers_end$recalls_video <- farmers_end$recalls_video == "Yes"
 farmers_end$recalls_grass <- farmers_end$recalls_grass == "Yes"
 farmers_end$used_grass <- farmers_end$used_grass == "Yes"
+farmers_end$used_video <- farmers_end$used_video == "Yes"
 
 farmers_end$knows_comp <- farmers_end$test_know_1 == 1 & farmers_end$test_know_2 == 2  & farmers_end$test_know_3 == 1
 
@@ -293,13 +331,14 @@ outcomes <- c("recalls_video", "recalls_grass", "used_grass", "knows_comp")
 farmers_end$secondary_farmer_quant_index  <- anderson_index(farmers_end[outcomes])$index
 
 outcomes <- c(outcomes, "secondary_farmer_quant_index")
+farmers_end_int <-  farmers_end[(farmers_end$vid==TRUE & farmers_end$treat==TRUE) | (farmers_end$vid==FALSE & farmers_end$treat==FALSE),]
 
 ##Sold to milk to collection center in the week preceding the survey
 ###fully interacted model
-res_farmers <-   array(NA,dim=c(length(outcomes),26))
+res_farmers <-   array(NA,dim=c(length(outcomes),32))
 for (i in 1:length(outcomes)) {
   ols <- lm(as.formula(paste(outcomes[i],"treat*vid*trader",sep="~")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
@@ -311,6 +350,13 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,30] <- res[5,6] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -324,22 +370,22 @@ farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
 
 for (i in 1:length(outcomes)) {
   ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
   ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
 }
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
@@ -364,11 +410,15 @@ farmers_base$b_mcc_last_seek <-farmers_base$q53.2 == "True"
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_mcc_last_seek")], by="farmer_ID", all.x=T)
 
 farmers_end$price_wet <- as.numeric(as.character(farmers_end$q51a))
+farmers_end$price_wet[farmers_end$price_wet == 999] <- NA
 farmers_base$b_price_wet <- as.numeric(as.character(farmers_base$q51a))
+farmers_base$b_price_wet[farmers_base$b_price_wet == 999 ] <- NA
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_price_wet")], by="farmer_ID", all.x=T)
 
 farmers_end$price_dry <- as.numeric(as.character(farmers_end$q51ax))
+farmers_end$price_dry[farmers_end$price_dry == 999] <- NA
 farmers_base$b_price_dry <- as.numeric(as.character(farmers_base$q51ax))
+farmers_base$b_price_dry[farmers_base$b_price_dry == 999] <- NA
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_price_dry")], by="farmer_ID", all.x=T)
 
 outcomes <- c("mcc_wet", "mcc_dry", "mcc_last_seek", "price_wet", "price_dry")
@@ -380,13 +430,14 @@ farmers_end$b_secondary_farmer_quant_index <- anderson_index(farmers_end[b_outco
 
 outcomes <- c(outcomes, "secondary_farmer_quant_index")
 b_outcomes <- c(b_outcomes, "b_secondary_farmer_quant_index")
+farmers_end_int <-  farmers_end[(farmers_end$vid==TRUE & farmers_end$treat==TRUE) | (farmers_end$vid==FALSE & farmers_end$treat==FALSE),]
 
 ##Sold to milk to collection center in the week preceding the survey
 ###fully interacted model
-res_farmers <-   array(NA,dim=c(length(outcomes),26))
+res_farmers <-   array(NA,dim=c(length(outcomes),32))
 for (i in 1:length(outcomes)) {
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*vid*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
@@ -398,6 +449,13 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,30] <- res[5,6] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -410,24 +468,25 @@ farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
 
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"),b_outcomes[i],sep="+")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
 }
+
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
 
@@ -454,13 +513,14 @@ outcomes <- c("still_connected_yes","still_supplying_wet","still_supplying_dry")
 farmers_end$secondary_farmer_switch_index  <- anderson_index(farmers_end[outcomes])$index
 
 outcomes <- c(outcomes, "secondary_farmer_switch_index")
+farmers_end_int <-  farmers_end[(farmers_end$vid==TRUE & farmers_end$treat==TRUE) | (farmers_end$vid==FALSE & farmers_end$treat==FALSE),]
 
 ##Sold to milk to collection center in the week preceding the survey
 ###fully interacted model
-res_farmers <-   array(NA,dim=c(length(outcomes),26))
+res_farmers <-   array(NA,dim=c(length(outcomes),32))
 for (i in 1:length(outcomes)) {
   ols <- lm(as.formula(paste(outcomes[i],"treat*vid*trader",sep="~")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
@@ -472,6 +532,13 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
+  ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
+  res_farmers[i,30] <- res[5,6] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -485,22 +552,22 @@ farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
 
 for (i in 1:length(outcomes)) {
   ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
   ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
-  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  
+  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
 }
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
@@ -509,13 +576,14 @@ res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(ou
 res_farmers_sec_switching <- round(res_farmers,digits=3)
 saveRDS(res_farmers_sec_switching, file= paste(path,"PAP/results/res_farmers_sec_switching.RData", sep="/"))
 
+####### some graphs for presentattions
 # Load necessary libraries
 library(ggplot2)
 library(dplyr)
 library(tidyr)
 
 # Convert the res_farmers matrix to a data frame
-res_farmers_df <- as.data.frame(res_farmers)
+res_farmers_df <- as.data.frame(res_farmers_sec_switching[1:3,])
 colnames(res_farmers_df) <- c(
   "Mean", "SD", 
   "Coef1", "SE1", "Pval1", 
@@ -525,11 +593,11 @@ colnames(res_farmers_df) <- c(
   "ASQ5", "ASQ8", "ASQ11", 
   "Coef_Demeaned1", "SE_Demeaned1", "Pval_Demeaned1", 
   "Coef_Demeaned2", "SE_Demeaned2", "Pval_Demeaned2", 
-  "ASQ18", "ASQ21"
+  "ASQ18", "ASQ21","Coef4", "SE4", "Pval4", "LinearHyp4", "LinearHyp1_demeaned", "LinearHyp2_demeaned"
 )
 
 # Add outcome labels (assuming outcomes vector is available)
-res_farmers_df$Outcome <- outcomes
+res_farmers_df$Outcome <- outcomes[1:3]
 
 # Reshape data to include all coefficients and linear hypothesis p-values
 forest_data_long <- res_farmers_df %>%
@@ -537,7 +605,7 @@ forest_data_long <- res_farmers_df %>%
     Outcome,
     Coef1, SE1, LinearHyp1,
     Coef2, SE2, LinearHyp2,
-    Coef3, SE3, LinearHyp3
+    Coef4, SE4, LinearHyp4
   ) %>%
   pivot_longer(
     cols = starts_with("Coef"),
@@ -548,12 +616,12 @@ forest_data_long <- res_farmers_df %>%
     SE = case_when(
       Coefficient == "Coef1" ~ SE1,
       Coefficient == "Coef2" ~ SE2,
-      Coefficient == "Coef3" ~ SE3
+      Coefficient == "Coef4" ~ SE4
     ),
     LinearHypothesis = case_when(
       Coefficient == "Coef1" ~ LinearHyp1,
       Coefficient == "Coef2" ~ LinearHyp2,
-      Coefficient == "Coef3" ~ LinearHyp3,
+      Coefficient == "Coef4" ~ LinearHyp4,
       TRUE ~ NA_real_ # No LinearHypothesis values for demeaned models
     ),
     CI_Lower = Estimate - 1.96 * SE,
@@ -561,7 +629,7 @@ forest_data_long <- res_farmers_df %>%
     Coefficient = case_when(
       Coefficient == "Coef1" ~ "milk analyzer",
       Coefficient == "Coef2" ~ "video",
-      Coefficient == "Coef3" ~ "interaction"
+      Coefficient == "Coef4" ~ "bundle"
     )
   )
 
@@ -571,13 +639,13 @@ forest_data_long <- forest_data_long %>%
   filter(!is.na(Coefficient))
 
 # Set the order of the coefficients for the legend (placing "interaction" last)
-forest_data_long$Coefficient <- factor(forest_data_long$Coefficient, levels = c("milk analyzer", "video", "interaction"))
+forest_data_long$Coefficient <- factor(forest_data_long$Coefficient, levels = c("milk analyzer", "video", "bundle"))
 
 # Define custom colors for grouping (without pooled models)
 custom_colors <- c(
   "milk analyzer" = "#1f77b4",  # Blue
   "video" = "#ff7f0e",          # Orange
-  "interaction" = "#2ca02c"     # Green
+  "bundle" = "#2ca02c"     # Green
 )
 
 # Create the forest plot
@@ -614,6 +682,359 @@ forest_plot <- ggplot(forest_data_long, aes(x = Estimate, y = reorder(Outcome, E
 print(forest_plot)
 
 ggsave( file= paste(path,"PAP/results/forest_plot.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
+
+
+#### forest plot for prices - assemble from 
+#### forest plot for prices - assemble from 
+
+# Convert the res_farmers matrix to a data frame
+
+res_farmers_df <- as.data.frame(rbind(res_farmers_prim[3,],res_farmers_sec_sold[4:5,]))
+
+# Add outcome labels (assuming outcomes vector is available)
+
+colnames(res_farmers_df) <- c(
+  "Mean", "SD", 
+  "Coef1", "SE1", "Pval1", 
+  "Coef2", "SE2", "Pval2", 
+  "Coef3", "SE3", "Pval3", "N", 
+  "LinearHyp1", "LinearHyp2", "LinearHyp3",
+  "ASQ5", "ASQ8", "ASQ11", 
+  "Coef_Demeaned1", "SE_Demeaned1", "Pval_Demeaned1", 
+  "Coef_Demeaned2", "SE_Demeaned2", "Pval_Demeaned2", 
+  "ASQ18", "ASQ21","Coef4", "SE4", "Pval4", "LinearHyp4", "LinearHyp1_demeaned", "LinearHyp2_demeaned"
+)
+
+res_farmers_df$Outcome <- c("price last week","price in wet season","price in dry season")
+
+# Reshape data to include all coefficients and linear hypothesis p-values
+forest_data_long <- res_farmers_df %>%
+  select(
+    Outcome,
+    Coef_Demeaned1, SE_Demeaned1, LinearHyp1_demeaned,
+    Coef_Demeaned2, SE_Demeaned2, LinearHyp2_demeaned,
+    Coef4, SE4, LinearHyp4
+  ) %>%
+  pivot_longer(
+    cols = starts_with("Coef"),
+    names_to = "Coefficient",
+    values_to = "Estimate"
+  ) %>%
+  mutate(
+    SE = case_when(
+      Coefficient == "Coef_Demeaned1" ~ SE_Demeaned1,
+      Coefficient == "Coef_Demeaned2" ~ SE_Demeaned2,
+      Coefficient == "Coef4" ~ SE4
+    ),
+    LinearHypothesis = case_when(
+      Coefficient == "Coef_Demeaned1" ~ LinearHyp1_demeaned,
+      Coefficient == "Coef_Demeaned2" ~ LinearHyp2_demeaned,
+      Coefficient == "Coef4" ~ LinearHyp4,
+      TRUE ~ NA_real_ # No LinearHypothesis values for demeaned models
+    ),
+    CI_Lower = Estimate - 1.96 * SE,
+    CI_Upper = Estimate + 1.96 * SE,
+    Coefficient = case_when(
+      Coefficient == "Coef_Demeaned1" ~ "milk analyzer",
+      Coefficient == "Coef_Demeaned2" ~ "video",
+      Coefficient == "Coef4" ~ "bundle"
+    )
+  )
+
+
+# Remove rows with NA in Coefficient column
+forest_data_long <- forest_data_long %>%
+  filter(!is.na(Coefficient))
+
+# Set the order of the coefficients for the legend (placing "bundle" last)
+forest_data_long$Coefficient <- factor(forest_data_long$Coefficient, levels = c("milk analyzer", "video", "bundle"))
+
+# Define custom colors for grouping (without pooled models)
+custom_colors <- c(
+  "milk analyzer" = "#1f77b4",  # Blue
+  "video" = "#ff7f0e",          # Orange
+  "bundle" = "#2ca02c"     # Green
+)
+
+# Create the forest plot
+forest_plot <- ggplot(forest_data_long, aes(x = Estimate, y = reorder(Outcome, Estimate), color = Coefficient)) +
+  geom_point(size = 3, position = position_dodge(width = 0.7)) + # Points for coefficients
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), height = 0.2, position = position_dodge(width = 0.7)) + # CI lines
+  geom_vline(xintercept = 0, linetype = "dashed", color = "red") + # No-effect line
+  geom_text(
+    aes(label = ifelse(!is.na(LinearHypothesis), paste0("p = ", round(LinearHypothesis, 3)), "")),
+    position = position_dodge(width = 0.7),
+    vjust = -1, size = 3.5,
+    show.legend = FALSE # Suppress legend for text layer
+  ) + 
+  scale_color_manual(values = custom_colors) + # Apply custom colors
+  labs(
+    title = "Milk Prices received by farmers",
+    x = "Coefficient (95% CI)",
+    y = "Outcomes",
+    color = "Model"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.title.y = element_text(size = 12),
+    axis.title.x = element_text(size = 12),
+    axis.text = element_text(size = 10),
+    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
+    legend.position = "top",
+    legend.title = element_text(size = 12),    # Increase legend title size if needed
+    legend.text = element_text(size = 10)      # Increase legend item text size if needed
+  ) +
+  guides(color = guide_legend(override.aes = list(shape = 16)))  # Ensure color legend uses correct shape
+
+# Print the plot
+print(forest_plot)
+
+ggsave( file= paste(path,"PAP/results/forest_plot_price.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
+### simplest models
+########################## bundle use ##############################################
+# Outcomes to analyze and their corresponding y-axis labels
+farmers_end$any_true <- with(farmers_end, 
+                 q39 == "Yes" | 
+                   q39c == "Yes" | 
+                   q40 %in% c(1, 3) | 
+                   q41 %in% c(1, 3) | 
+                   q42 == "Yes" | 
+                   q43 == "Yes")
+outcomes <- c("check_MA",  "knows_comp","any_true")
+outcome_labels <- c("milk was checked at MCC", "knows imporance of quality","invested in quality")
+
+# Initialize an empty data frame to store results
+results <- data.frame(
+  Outcome = character(),
+  Treatment = character(),
+  Estimate = numeric(),
+  StdError = numeric(),
+  CI_Lower = numeric(),
+  CI_Upper = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Loop through outcomes to run regressions and extract estimates
+for (i in 1:length(outcomes)) {
+  # Run regressions for each intervention
+  ols_MA <- lm(as.formula(paste(outcomes[i], "treat", sep = "~")), data = farmers_end)
+  ols_vid <- lm(as.formula(paste(outcomes[i], "vid", sep = "~")), data = farmers_end)
+  ols_bundle <- lm(as.formula(paste(outcomes[i], "vid", sep = "~")),
+                   data = farmers_end[
+                     (farmers_end$vid == TRUE & farmers_end$treat == TRUE) |
+                       (farmers_end$vid == FALSE & farmers_end$treat == FALSE), ])
+  
+  # Extract coefficients, standard errors, and confidence intervals
+  interventions <- list(MA = ols_MA, Video = ols_vid, Bundle = ols_bundle)
+  for (name in names(interventions)) {
+    model <- interventions[[name]]
+    coef_est <- summary(model)$coefficients[2, 1] # Treatment effect estimate
+    std_err <- summary(model)$coefficients[2, 2] # Standard error
+    ci <- confint(model)[2, ]                    # Confidence interval
+    
+    # Append results to the data frame
+    results <- rbind(results, data.frame(
+      Outcome = outcomes[i],
+      Treatment = name,
+      Estimate = coef_est,
+      StdError = std_err,
+      CI_Lower = ci[1],
+      CI_Upper = ci[2]
+    ))
+  }
+}
+
+
+# Reorganize results for a single forest plot with reversed y-axis order
+results$Outcome <- factor(
+  results$Outcome,
+  levels = rev(outcomes), # Reverse the order of outcomes
+  labels = rev(outcome_labels) # Reverse the corresponding labels
+)
+results$Treatment <- factor(results$Treatment, levels = c("MA", "Video", "Bundle")) # Maintain order
+
+# Create the forest plot with reversed y-axis
+forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
+  geom_point(position = position_dodge(width = 0.6), size = 4) +
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), position = position_dodge(width = 0.6), height = 0.3, size = 1) +
+  geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
+  theme_minimal(base_size = 16) + # Base font size for better readability
+  labs(
+    title = "Farmer level use",
+    x = "Treatment Effect Estimate",
+    y = "",
+    color = "Treatment"
+  ) +
+  scale_color_manual(values = c("MA" = "#1b9e77", "Video" = "#d95f02", "Bundle" = "#7570b3")) + # Distinct color palette
+  theme(
+    axis.text.y = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(size = 14),
+    axis.title.y = element_text(size = 16, face = "bold"),
+    axis.title.x = element_text(size = 16, face = "bold"),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5)
+  )
+
+# Print the forest plot
+print(forest_plot)
+ggsave( file= paste(path,"PAP/results/forest_plot_farmer_use_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
+
+########################## prices ##############################################
+# Outcomes to analyze and their corresponding y-axis labels
+outcomes <- c("avg_sales_p", "price_wet", "price_dry")
+outcome_labels <- c("price in last week", "price in wet season", "price in dry season")
+
+# Initialize an empty data frame to store results
+results <- data.frame(
+  Outcome = character(),
+  Treatment = character(),
+  Estimate = numeric(),
+  StdError = numeric(),
+  CI_Lower = numeric(),
+  CI_Upper = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Loop through outcomes to run regressions and extract estimates
+for (i in 1:length(outcomes)) {
+  # Run regressions for each intervention
+  ols_MA <- lm(as.formula(paste(outcomes[i], "treat", sep = "~")), data = farmers_end)
+  ols_vid <- lm(as.formula(paste(outcomes[i], "vid", sep = "~")), data = farmers_end)
+  ols_bundle <- lm(as.formula(paste(outcomes[i], "vid", sep = "~")),
+                   data = farmers_end[
+                     (farmers_end$vid == TRUE & farmers_end$treat == TRUE) |
+                       (farmers_end$vid == FALSE & farmers_end$treat == FALSE), ])
+  
+  # Extract coefficients, standard errors, and confidence intervals
+  interventions <- list(MA = ols_MA, Video = ols_vid, Bundle = ols_bundle)
+  for (name in names(interventions)) {
+    model <- interventions[[name]]
+    coef_est <- summary(model)$coefficients[2, 1] # Treatment effect estimate
+    std_err <- summary(model)$coefficients[2, 2] # Standard error
+    ci <- confint(model)[2, ]                    # Confidence interval
+    
+    # Append results to the data frame
+    results <- rbind(results, data.frame(
+      Outcome = outcomes[i],
+      Treatment = name,
+      Estimate = coef_est,
+      StdError = std_err,
+      CI_Lower = ci[1],
+      CI_Upper = ci[2]
+    ))
+  }
+}
+
+# Reorganize results for a single forest plot
+results$Outcome <- factor(results$Outcome, levels = outcomes, labels = outcome_labels) # Apply new labels
+results$Treatment <- factor(results$Treatment, levels = c("MA", "Video", "Bundle")) # Maintain order
+
+# Create the forest plot
+forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
+  geom_point(position = position_dodge(width = 0.6), size = 4) +
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), position = position_dodge(width = 0.6), height = 0.3, size = 1) +
+  geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
+  theme_minimal(base_size = 16) + # Base font size for better readability
+  labs(
+    title = "Farmer level impact on prices",
+    x = "Treatment Effect Estimate",
+    y = "",
+    color = "Treatment"
+  ) +
+  scale_color_manual(values = c("MA" = "#1b9e77", "Video" = "#d95f02", "Bundle" = "#7570b3")) + # Distinct color palette
+  theme(
+    axis.text.y = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(size = 14),
+    axis.title.y = element_text(size = 16, face = "bold"),
+    axis.title.x = element_text(size = 16, face = "bold"),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5)
+  )
+
+# Print the forest plot
+print(forest_plot)
+ggsave( file= paste(path,"PAP/results/forest_plot_price_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+#####switching
+
+outcomes <- c("still_connected_yes","still_supplying_wet","still_supplying_dry")
+outcome_labels <- c("still connected to the same MCC", "still supplying to same in wet season", "still supplying to same in dry season")
+
+# Initialize an empty data frame to store results
+results <- data.frame(
+  Outcome = character(),
+  Treatment = character(),
+  Estimate = numeric(),
+  StdError = numeric(),
+  CI_Lower = numeric(),
+  CI_Upper = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Loop through outcomes to run regressions and extract estimates
+for (i in 1:length(outcomes)) {
+  # Run regressions for each intervention
+  ols_MA <- lm(as.formula(paste(outcomes[i], "treat", sep = "~")), data = farmers_end)
+  ols_vid <- lm(as.formula(paste(outcomes[i], "vid", sep = "~")), data = farmers_end)
+  ols_bundle <- lm(as.formula(paste(outcomes[i], "vid", sep = "~")),
+                   data = farmers_end[
+                     (farmers_end$vid == TRUE & farmers_end$treat == TRUE) |
+                       (farmers_end$vid == FALSE & farmers_end$treat == FALSE), ])
+  
+  # Extract coefficients, standard errors, and confidence intervals
+  interventions <- list(MA = ols_MA, Video = ols_vid, Bundle = ols_bundle)
+  for (name in names(interventions)) {
+    model <- interventions[[name]]
+    coef_est <- summary(model)$coefficients[2, 1] # Treatment effect estimate
+    std_err <- summary(model)$coefficients[2, 2] # Standard error
+    ci <- confint(model)[2, ]                    # Confidence interval
+    
+    # Append results to the data frame
+    results <- rbind(results, data.frame(
+      Outcome = outcomes[i],
+      Treatment = name,
+      Estimate = coef_est,
+      StdError = std_err,
+      CI_Lower = ci[1],
+      CI_Upper = ci[2]
+    ))
+  }
+}
+
+# Reorganize results for a single forest plot
+results$Outcome <- factor(results$Outcome, levels = outcomes, labels = outcome_labels) # Apply new labels
+results$Treatment <- factor(results$Treatment, levels = c("MA", "Video", "Bundle")) # Maintain order
+
+# Create the forest plot
+forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
+  geom_point(position = position_dodge(width = 0.6), size = 4) +
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), position = position_dodge(width = 0.6), height = 0.3, size = 1) +
+  geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
+  theme_minimal(base_size = 16) + # Base font size for better readability
+  labs(
+    title = "Impact on switching",
+    x = "Treatment Effect Estimate",
+    y = "",
+    color = "Treatment"
+  ) +
+  scale_color_manual(values = c("MA" = "#1b9e77", "Video" = "#d95f02", "Bundle" = "#7570b3")) + # Distinct color palette
+  theme(
+    axis.text.y = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(size = 14),
+    axis.title.y = element_text(size = 16, face = "bold"),
+    axis.title.x = element_text(size = 16, face = "bold"),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5)
+  )
+
+# Print the forest plot
+print(forest_plot)
+ggsave( file= paste(path,"PAP/results/forest_plot_swithing_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
 
 
 
@@ -813,7 +1234,7 @@ MCCs_end$machine <- MCCs_end$machine ==1
 MCCs_end$machine_project <- MCCs_end$machine_project == 1
 MCCs_end$machine_in_use <- MCCs_end$machine_in_use == 1 | MCCs_end$machine_in_use == 2
 MCCs_end$test_samples <- MCCs_end$q16c == "1"
-MCCs_end$uses_app <- MCCs_end$record_keeping.4 == "True"
+MCCs_end$uses_app <- MCCs_end$record_keeping.4 == "True" | MCCs_end$record_keeping.5 == "True"
 
 
 # Enumerator: Do you see the poster advertizing the milk analyzer?
@@ -963,6 +1384,157 @@ MCCs_end$top_proc <- MCCs_end$q32.2=="True" & MCCs_end$q33.6!="True"
 MCCs_base$b_top_proc <- MCCs_base$q32.2=="True" & MCCs_base$q33.6!="True"
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_top_proc")], by="MCC_ID", all.x=T)
 
+#### generate simple forest plots for presentations
+####use
+# Define outcomes and their corresponding labels
+outcomes <- c("test_MA_in", "test_MA_out", "uses_app")
+outcome_labels <- c("used MA to test incoming samples", 
+                    "used MA to test outgoing samples", 
+                    "digital quality tracking")
+
+# Initialize an empty data frame to store results
+results <- data.frame(
+  Outcome = character(),
+  Estimate = numeric(),
+  StdError = numeric(),
+  CI_Lower = numeric(),
+  CI_Upper = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Loop through outcomes to run regressions and extract estimates
+for (i in 1:length(outcomes)) {
+  # Run regression for the single treatment
+  ols_MA <- lm(as.formula(paste(outcomes[i], "treat", sep = "~")), data = MCCs_end)
+  
+  # Extract coefficients, standard errors, and confidence intervals
+  coef_est <- summary(ols_MA)$coefficients[2, 1] # Treatment effect estimate
+  std_err <- summary(ols_MA)$coefficients[2, 2] # Standard error
+  ci <- confint(ols_MA)[2, ]                    # Confidence interval
+  
+  # Append results to the data frame
+  results <- rbind(results, data.frame(
+    Outcome = outcomes[i],
+    Estimate = coef_est,
+    StdError = std_err,
+    CI_Lower = ci[1],
+    CI_Upper = ci[2]
+  ))
+}
+
+# Reorganize results for a forest plot
+results$Outcome <- factor(
+  results$Outcome, 
+  levels = outcomes, 
+  labels = outcome_labels # Use descriptive labels
+)
+
+# Add a treatment label for the legend
+results$Treatment <- "MA" # Label the treatment as MA
+
+# Create the forest plot
+forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
+  geom_point(size = 4) + # Points for estimates
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), height = 0.3, size = 1) + # Error bars
+  geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
+  theme_minimal(base_size = 16) + # Base font size for better readability
+  labs(
+    title = "Innovation bundle use",
+    x = "Treatment Effect Estimate",
+    y = "",
+    color = "Treatment"
+  ) +
+  scale_color_manual(values = c("MA" = "#1b9e77")) + # Same color for MA as in previous plots
+  theme(
+    axis.text.y = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(size = 14),
+    axis.title.x = element_text(size = 16, face = "bold"),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16),
+    legend.position = "right" # Move legend to the right
+  )
+
+# Print the forest plot
+print(forest_plot)
+ggsave( file= paste(path,"PAP/results/forest_plot_MCC_use_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
+##### prices
+
+# Define outcomes and their corresponding labels
+outcomes <- c("price_bought", "avg_sales_p")
+outcome_labels <- c("price at which milk was bought", 
+                    "price at which milk was sold")
+
+# Initialize an empty data frame to store results
+results <- data.frame(
+  Outcome = character(),
+  Estimate = numeric(),
+  StdError = numeric(),
+  CI_Lower = numeric(),
+  CI_Upper = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Loop through outcomes to run regressions and extract estimates
+for (i in 1:length(outcomes)) {
+  # Run regression for the single treatment
+  ols_MA <- lm(as.formula(paste(outcomes[i], "treat", sep = "~")), data = MCCs_end)
+  
+  # Extract coefficients, standard errors, and confidence intervals
+  coef_est <- summary(ols_MA)$coefficients[2, 1] # Treatment effect estimate
+  std_err <- summary(ols_MA)$coefficients[2, 2] # Standard error
+  ci <- confint(ols_MA)[2, ]                    # Confidence interval
+  
+  # Append results to the data frame
+  results <- rbind(results, data.frame(
+    Outcome = outcomes[i],
+    Estimate = coef_est,
+    StdError = std_err,
+    CI_Lower = ci[1],
+    CI_Upper = ci[2]
+  ))
+}
+
+# Reorganize results for a forest plot
+results$Outcome <- factor(
+  results$Outcome, 
+  levels = outcomes, 
+  labels = outcome_labels # Use descriptive labels
+)
+
+# Add a treatment label for the legend
+results$Treatment <- "MA" # Label the treatment as MA
+
+# Create the forest plot
+forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
+  geom_point(size = 4) + # Points for estimates
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), height = 0.3, size = 1) + # Error bars
+  geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
+  theme_minimal(base_size = 16) + # Base font size for better readability
+  labs(
+    title = "Impact on prices",
+    x = "Treatment Effect Estimate",
+    y = "",
+    color = "Treatment"
+  ) +
+  scale_color_manual(values = c("MA" = "#1b9e77")) + # Same color for MA as in previous plots
+  theme(
+    axis.text.y = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(size = 14),
+    axis.title.x = element_text(size = 16, face = "bold"),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16),
+    legend.position = "right" # Move legend to the right
+  )
+
+# Print the forest plot
+print(forest_plot)
+ggsave( file= paste(path,"PAP/results/forest_plot_MCC_prices_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
+
+
 #### analysis for samples
 samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
 
@@ -981,7 +1553,7 @@ for (i in 1:length(outcomes)) {
   ols <- lm(as.formula(paste(outcomes[i],"treat",sep="~")), data=samples)
   res_samples[i,1] <- mean(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
   res_samples[i,2] <- sd(as.matrix(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
-  vcov_cluster <- vcovCR(ols,cluster=samples$catch_ID,type="CR3")
+  vcov_cluster <- vcovCR(ols,cluster=samples$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   res_samples[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
   res_samples[i,7] <- nobs(ols)
@@ -998,6 +1570,89 @@ res_samples <- round(res_samples,digits=3)
 
 saveRDS(res_samples, file= paste(path,"PAP/results/res_samples.RData", sep="/"))
 
+#### simple graph for presentations
+
+# Define outcomes and their corresponding labels
+outcomes <- c("Fat", "SNF", "Added.Water", "Protein")
+outcome_labels <- c("Fat", "SNF", "Added Water", "Protein")
+
+# Initialize an empty data frame to store results
+results <- data.frame(
+  Outcome = character(),
+  Estimate = numeric(),
+  StdError = numeric(),
+  CI_Lower = numeric(),
+  CI_Upper = numeric(),
+  stringsAsFactors = FALSE
+)
+
+# Standardize the outcomes (Z-scores)
+for (outcome in outcomes) {
+  # Standardize the outcome variable
+  samples[[paste(outcome, "_standardized", sep = "")]] <- scale(samples[[outcome]])
+}
+
+# Loop through outcomes to run regressions and extract estimates
+for (i in 1:length(outcomes)) {
+  # Use the standardized outcome for the regression
+  standardized_outcome <- paste(outcomes[i], "_standardized", sep = "")
+  
+  # Run regression for the standardized outcome
+  ols <- lm(as.formula(paste(standardized_outcome, "treat", sep = "~")), data = samples)
+  
+  # Extract coefficients, standard errors, and confidence intervals
+  coef_est <- summary(ols)$coefficients[2, 1] # Treatment effect estimate
+  std_err <- summary(ols)$coefficients[2, 2] # Standard error
+  ci <- confint(ols)[2, ]                    # Confidence interval
+  
+  # Append results to the data frame
+  results <- rbind(results, data.frame(
+    Outcome = outcomes[i],
+    Estimate = coef_est,
+    StdError = std_err,
+    CI_Lower = ci[1],
+    CI_Upper = ci[2]
+  ))
+}
+
+
+# Reorganize results for a forest plot with reversed Y-axis order
+results$Outcome <- factor(
+  results$Outcome, 
+  levels = rev(outcomes), # Reverse the order of outcomes
+  labels = rev(outcome_labels) # Reverse the order of outcome labels
+)
+
+# Add a treatment label for the legend
+results$Treatment <- "MA" # Label the treatment as MA
+
+# Create the forest plot
+forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
+  geom_point(size = 4) + # Points for estimates
+  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), height = 0.3, size = 1) + # Error bars
+  geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
+  theme_minimal(base_size = 16) + # Base font size for better readability
+  labs(
+    title = "Impact on quality",
+    x = "Treatment Effect Estimate (Standardized)",
+    y = "",
+    color = "Treatment"
+  ) +
+  scale_color_manual(values = c("MA" = "#1b9e77")) + # Same color for MA as in previous plots
+  theme(
+    axis.text.y = element_text(size = 14, face = "bold"),
+    axis.text.x = element_text(size = 14),
+    axis.title.x = element_text(size = 16, face = "bold"),
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    legend.text = element_text(size = 14),
+    legend.title = element_text(size = 16),
+    legend.position = "right" # Place legend on the right
+  )
+
+# Print the forest plot
+print(forest_plot)
+ggsave( file= paste(path,"PAP/results/forest_plot_samples_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+
 
 # Sample data
 
@@ -1012,28 +1667,41 @@ samples$timestamps <- as.POSIXct(format(samples$timestamps, format = "2024-01-01
 samples <- samples %>%
   filter(hour(timestamps) >= 7 & hour(timestamps) < 14)
 
-##redefine outcome as time before closure (14:00)
-samples$reference_time <-  floor_date(samples$timestamps, unit = "day") + hours(14)
-samples$time_elapsed <- as.numeric(difftime(samples$reference_time,samples$timestamps, units = "mins"))
-
 # Calculate cumulative percentage
 samples <- samples %>%
-  arrange(time_elapsed) %>%
+  arrange(timestamps) %>%
   group_by(treat) %>%
   mutate(cumulative_count = row_number(),
          cumulative_percentage = (cumulative_count / n()) * 100) %>%
   ungroup()
 
-# Plot the cumulative distributions for each group
-cum_dist <- ggplot(samples, aes(x = time_elapsed, y = cumulative_percentage, color = treat)) +
-  geom_line() +
-  labs(title = "Cumulative Distribution of Milk Deliveries for Groups T and C Between 7:00 and 14:00",
-       x = "Time",
-       y = "Cumulative Percentage of Events") +
+cum_dist <- ggplot(samples, aes(x = timestamps, y = cumulative_percentage, color = treat)) +
+  geom_line(size = 1.5) +
+  labs(
+    title = "Cumulative Distribution of Milk Deliveries",
+    x = "Time of Delivery",
+    y = "Cumulative Percentage of Events"
+  ) +
   scale_color_manual(values = c("T" = "blue", "C" = "red")) +
-  theme_minimal()
+  scale_x_datetime(
+    labels = scales::date_format("%I:%M %p"),
+    breaks = scales::date_breaks("2 hours")  # Show every 2nd hour
+  ) +
+  theme_minimal(base_size = 16) +
+  theme(
+    legend.title = element_blank(),
+    legend.position = c(0.85, 0.2),
+    legend.text = element_text(size = 14),
+    axis.title = element_text(size = 16),
+    axis.text = element_text(size = 14),
+    plot.title = element_text(size = 18, face = "bold"),
+    panel.grid.major = element_line(size = 0.5, color = "grey80"),
+    panel.grid.minor = element_blank()
+  )
 
-ggsave(paste(path,"PAP/results/test.png",sep="/"))
+# Print the plot
+plot(cum_dist)
+ggsave(paste(path,"PAP/results/distribution_of_delivery.png",sep="/"))
 
 ##KS test for difference in distributions
 assorted_tests <-   array(NA,dim=c(4,2))
