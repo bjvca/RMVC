@@ -327,8 +327,13 @@ charles_set$name <- trimws(charles_set$name)
 #merge in MCC names from MCC sampling list
 
 
+to_exp_farmers <- farmers[c("farmer_ID","q3","q4","parish","village","check.check2.Dairy._GPS_latitude","check.check2.Dairy._GPS_longitude")]
 
+names(to_exp_farmers) <- c("farmer_ID","district", "subcounty", "parish","village" ,"latitude","longitude")
 
+write.csv(to_exp,"farmer_ID_base_RFM.csv", row.names = FALSE) 
+
+  
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid", "enumerator","q3","q4","parish","village","mcc_name","check.check2.Dairy.q10",
              "check.check2.Dairy.q11", "check.check2.Dairy.q12","check.check2.Dairy.q17","check.check2.Dairy.GPS","check.check2.Dairy._GPS_latitude","check.check2.Dairy._GPS_longitude","check.check2.Dairy._GPS_altitude","check.check2.Dairy._GPS_precision",              
@@ -416,7 +421,10 @@ mcc_set$name <- trimws(mcc_set$name)
 
 write.csv(mcc_set,file="list_endline_MCC.csv", row.names=FALSE)
  
+to_exp <- MCC[c("MCC_ID", "district", "sub","mcc.q3b","mcc.q3c" ,"mcc._gps_latitude","mcc._gps_longitude")]
+names(to_exp) <- c("MCC_ID","district", "subcounty", "parish","village" ,"latitude","longitude")
 
+write.csv(to_exp,"MCC_ID_base_RFM.csv", row.names = FALSE) 
 
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid", "enumerator","district","sub","consent", "mcc.q1","mcc.q2","mcc.q3",

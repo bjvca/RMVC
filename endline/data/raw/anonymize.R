@@ -243,6 +243,10 @@ write.csv(MCCs,paste(path,"data/public/MCCs.csv", sep="/"), row.names=FALSE)
 
 #### now for samples
 samples <- read.csv("latest_samples.csv")
+#Ibaare in Ntungamo came up as n/a.Fix here
+samples$treat[samples$mcc_name == "Ibaare DAIRY Farmers Cooperative Society"] <- "C"
+samples$MCC_ID[samples$mcc_name == "Ibaare DAIRY Farmers Cooperative Society"] <- "MCC_50"
+samples$catch_ID[samples$mcc_name == "Ibaare DAIRY Farmers Cooperative Society"] <- 85
 
 to_drop <- c("deviceid","simserial","phonenumber", "subscriberid","form_name","enumerator","sub","Village","mcc_name",
              "meta.instanceID",                              
@@ -261,6 +265,9 @@ to_drop <- c("deviceid","simserial","phonenumber", "subscriberid","form_name","e
              "X_xform_id")     
 
 samples <- samples[ , !(names(samples) %in% to_drop)]
+
+
+
 
 names(samples) <- sub("mcc.", "",names(samples))
 write.csv(samples,paste(path,"data/public/samples.csv", sep="/"), row.names=FALSE)

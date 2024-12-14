@@ -6,6 +6,12 @@ library(car)
 library(lubridate)
 library(ggplot2)
 
+
+### function definition for inverse hyperbolic sine transform
+ihs <- function(x) {
+  y <- log(x + sqrt(x ^ 2 + 1))
+  return(y)}
+
 path <- getwd()
 path <- strsplit(path,"/PAP/analysis")[[1]]
 
@@ -152,7 +158,7 @@ farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
  
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"), b_outcomes[i], sep = "+")), data=farmers_end)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
@@ -163,7 +169,7 @@ for (i in 1:length(outcomes)) {
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~")), data=farmers_end)
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"), b_outcomes[i], sep = "+")), data=farmers_end)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
@@ -182,6 +188,7 @@ saveRDS(res_farmers, file= paste(path,"PAP/results/res_farmers.RData", sep="/"))
  
 ##secondary outcomes - sales
 #q52 sold in last week
+farmers_end$q52[farmers_end$q52 == "n/a"] <- NA
 farmers_end$sold_last_week <- farmers_end$q52 == "Yes"
 farmers_base$b_sold_last_week <- farmers_base$q52 == "Yes"
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_sold_last_week")], by="farmer_ID", all.x=T)
@@ -228,14 +235,31 @@ farmers_base[columns] <- lapply(farmers_base[columns], function(x) {
 farmers_end$avg_sales_q <- rowMeans(farmers_end[columns], na.rm=T)
 farmers_end$avg_sales_q[is.nan(farmers_end$avg_sales_q)] <- NA
 farmers_end$avg_sales_q[is.na(farmers_end$avg_sales_q)] <- 0
-
+farmers_end$avg_sales_q[is.na(farmers_end$q52)] <- NA
 
 farmers_base$b_avg_sales_q <- rowMeans(farmers_base[columns], na.rm=T)
 farmers_base$b_avg_sales_q[is.nan(farmers_base$b_avg_sales_q)] <- NA
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_avg_sales_q")], by="farmer_ID", all.x=T)
 
-outcomes <- c("q_sold_dry", "q_sold_wet", "sold_last_week", "avg_sales_q")
-b_outcomes <- c("b_q_sold_dry", "b_q_sold_wet", "b_sold_last_week", "b_avg_sales_q")
+farmers_end$q_sold_dry[farmers_end$q_sold_dry > 500] <- NA
+farmers_end$q_sold_wet[farmers_end$q_sold_wet > 500] <- NA
+farmers_end$avg_sales_q[farmers_end$avg_sales_q > 500] <- NA
+
+farmers_end$b_q_sold_dry[farmers_end$b_q_sold_dry > 500] <- NA
+farmers_end$b_q_sold_wet[farmers_end$b_q_sold_wet > 500] <- NA
+farmers_end$b_avg_sales_q[farmers_end$b_avg_sales_q > 500] <- NA
+
+farmers_end$ihs_q_sold_dry <- ihs(farmers_end$q_sold_dry)
+farmers_end$ihs_q_sold_wet <- ihs(farmers_end$q_sold_wet)
+farmers_end$ihs_avg_sales_q <- ihs(farmers_end$avg_sales_q)
+
+
+farmers_end$ihs_b_q_sold_dry <- ihs(farmers_end$b_q_sold_dry)
+farmers_end$ihs_b_q_sold_wet <- ihs(farmers_end$b_q_sold_wet)
+farmers_end$ihs_b_avg_sales_q <- ihs(farmers_end$b_avg_sales_q)
+
+outcomes <- c("ihs_q_sold_dry", "ihs_q_sold_wet", "sold_last_week", "ihs_avg_sales_q")
+b_outcomes <- c("ihs_b_q_sold_dry", "ihs_b_q_sold_wet", "b_sold_last_week", "ihs_b_avg_sales_q")
 
 ###Make anderson index
 farmers_end$secondary_farmer_quant_index  <- anderson_index(farmers_end[outcomes])$index
@@ -1537,6 +1561,7 @@ ggsave( file= paste(path,"PAP/results/forest_plot_MCC_prices_simple.png", sep="/
 
 #### analysis for samples
 samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+samples <- samples[(samples$today >= as.Date("2024-12-04") & (samples$district== "Kazo" | samples$district== "Mbarara")) | samples$today >= as.Date("2024-12-05") , ] 
 
 ###iterate over outcomes in this family
 outcomes <- c("Fat","SNF", "Added.Water","Protein", "Corrected.Lactometer.Reading")
@@ -1550,7 +1575,8 @@ outcomes <- c(outcomes, "samples_index")
 
 res_samples <-   array(NA,dim=c(length(outcomes),7))
 for (i in 1:length(outcomes)) {
-  ols <- lm(as.formula(paste(outcomes[i],"treat",sep="~")), data=samples)
+  ###weight by quantity supplied
+  ols <- lm(as.formula(paste(outcomes[i],"treat",sep="~")), data=samples, weights= samples$Qty)
   res_samples[i,1] <- mean(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
   res_samples[i,2] <- sd(as.matrix(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
   vcov_cluster <- vcovCR(ols,cluster=samples$catch_ID,type="CR2")
@@ -1571,24 +1597,51 @@ res_samples <- round(res_samples,digits=3)
 saveRDS(res_samples, file= paste(path,"PAP/results/res_samples.RData", sep="/"))
 
 #### simple graph for presentations
+samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+samples <- samples[(samples$today >= as.Date("2024-12-04") & (samples$district== "Kazo" | samples$district== "Mbarara")) | samples$today >= as.Date("2024-12-05") , ] 
+
+## also load samples from the android app
+android_dta <- read.csv(paste(path, "sample_submissions/dta_reports.csv", sep="/"))
+android_dta <- android_dta[android_dta$date >= as.Date("2024-12-01"),]
+## stack this data to sample and add a treatment TA
+android_dta$treat <- "TA"
+## rename treatment in sample data to TM
+common_cols <- intersect(names(samples), names(android_dta))
+
+samples <- rbind(samples[common_cols],android_dta[common_cols])
+
+samples$Rejected <- samples$Rejected == 1
+samples$Price <- as.numeric(samples$Price)
+samples$Qty <- as.numeric(samples$Qty)
+samples$Analogue.Lactometer.Test <- as.numeric(samples$Analogue.Lactometer.Test)
+#samples$Added.Water <- samples$Added.Water > 5
+
+# Remove rows where 'Fat' is NA in the 'TA' treatment group
+samples_clean <- samples %>%
+  filter(!(treat == "TA" & is.na(Fat)))
+
 
 # Define outcomes and their corresponding labels
-outcomes <- c("Fat", "SNF", "Added.Water", "Protein")
-outcome_labels <- c("Fat", "SNF", "Added Water", "Protein")
+outcomes <- c("Fat", "Added.Water", "Rejected", "SNF", "Corrected.Lactometer.Reading")
+outcome_labels <- c("Fat", "Added Water", "Rejected", "SNF", "Corrected.Lactometer.Reading")
 
 # Initialize an empty data frame to store results
 results <- data.frame(
   Outcome = character(),
-  Estimate = numeric(),
-  StdError = numeric(),
-  CI_Lower = numeric(),
-  CI_Upper = numeric(),
+  Estimate_T = numeric(),
+  Estimate_TA = numeric(),
+  StdError_T = numeric(),
+  StdError_TA = numeric(),
+  CI_Lower_T = numeric(),
+  CI_Upper_T = numeric(),
+  CI_Lower_TA = numeric(),
+  CI_Upper_TA = numeric(),
+  p_value = numeric(),
   stringsAsFactors = FALSE
 )
 
 # Standardize the outcomes (Z-scores)
 for (outcome in outcomes) {
-  # Standardize the outcome variable
   samples[[paste(outcome, "_standardized", sep = "")]] <- scale(samples[[outcome]])
 }
 
@@ -1597,24 +1650,35 @@ for (i in 1:length(outcomes)) {
   # Use the standardized outcome for the regression
   standardized_outcome <- paste(outcomes[i], "_standardized", sep = "")
   
-  # Run regression for the standardized outcome
-  ols <- lm(as.formula(paste(standardized_outcome, "treat", sep = "~")), data = samples)
+  # Run regression for the standardized outcome with two dummies (T and TA)
+  ols <- lm(as.formula(paste(standardized_outcome, "~ treat")), data = samples, weights = samples$Qty)
   
-  # Extract coefficients, standard errors, and confidence intervals
-  coef_est <- summary(ols)$coefficients[2, 1] # Treatment effect estimate
-  std_err <- summary(ols)$coefficients[2, 2] # Standard error
-  ci <- confint(ols)[2, ]                    # Confidence interval
+  # Extract coefficients, standard errors, and confidence intervals for T and TA
+  coef_T <- summary(ols)$coefficients["treatT", 1]  # Estimate for T
+  coef_TA <- summary(ols)$coefficients["treatTA", 1]  # Estimate for TA
+  std_err_T <- summary(ols)$coefficients["treatT", 2]  # Standard error for T
+  std_err_TA <- summary(ols)$coefficients["treatTA", 2]  # Standard error for TA
+  ci_T <- confint(ols)["treatT", ]  # Confidence interval for T
+  ci_TA <- confint(ols)["treatTA", ]  # Confidence interval for TA
+  
+  # Perform linearHypothesis to test if the coefficients of T and TA are equal
+  hyp_test <- linearHypothesis(ols, c("treatT = treatTA"))
+  p_value <- hyp_test$`Pr(>F)`[2]  # Extract p-value for equality test
   
   # Append results to the data frame
   results <- rbind(results, data.frame(
     Outcome = outcomes[i],
-    Estimate = coef_est,
-    StdError = std_err,
-    CI_Lower = ci[1],
-    CI_Upper = ci[2]
+    Estimate_T = coef_T,
+    Estimate_TA = coef_TA,
+    StdError_T = std_err_T,
+    StdError_TA = std_err_TA,
+    CI_Lower_T = ci_T[1],
+    CI_Upper_T = ci_T[2],
+    CI_Lower_TA = ci_TA[1],
+    CI_Upper_TA = ci_TA[2],
+    p_value = p_value
   ))
 }
-
 
 # Reorganize results for a forest plot with reversed Y-axis order
 results$Outcome <- factor(
@@ -1622,39 +1686,43 @@ results$Outcome <- factor(
   levels = rev(outcomes), # Reverse the order of outcomes
   labels = rev(outcome_labels) # Reverse the order of outcome labels
 )
-
-# Add a treatment label for the legend
-results$Treatment <- "MA" # Label the treatment as MA
+pd <- position_dodge(width = 0.4)
 
 # Create the forest plot
-forest_plot <- ggplot(results, aes(x = Estimate, y = Outcome, color = Treatment)) +
-  geom_point(size = 4) + # Points for estimates
-  geom_errorbarh(aes(xmin = CI_Lower, xmax = CI_Upper), height = 0.3, size = 1) + # Error bars
+forest_plot <- ggplot(results, aes(x = Estimate_T, y = Outcome)) +
+  geom_point(aes(color = "T"), size = 4, position =position_nudge(y=0.2)) + # Points for estimates of T
+  geom_point(aes(x = Estimate_TA, color = "TA"), size = 4, , position =position_nudge(y=-0.2)) + # Points for estimates of TA
+  geom_errorbarh(aes(xmin = CI_Lower_T, xmax = CI_Upper_T), height = 0.3, size = 1, color = "#1b9e77", position =position_nudge(y=0.2)) + # Error bars for T
+  geom_errorbarh(aes(xmin = CI_Lower_TA, xmax = CI_Upper_TA), height = 0.3, size = 1, color = "#85d1b0", position =position_nudge(y=-0.2)) + # Error bars for TA
   geom_vline(xintercept = 0, linetype = "solid", color = "black", size = 1.2) + # Bold vertical line at 0
   theme_minimal(base_size = 16) + # Base font size for better readability
   labs(
-    title = "Impact on quality",
+    title = "Impact on Quality by Treatment",
     x = "Treatment Effect Estimate (Standardized)",
     y = "",
     color = "Treatment"
   ) +
-  scale_color_manual(values = c("MA" = "#1b9e77")) + # Same color for MA as in previous plots
   theme(
     axis.text.y = element_text(size = 14, face = "bold"),
     axis.text.x = element_text(size = 14),
     axis.title.x = element_text(size = 16, face = "bold"),
-    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
-    legend.text = element_text(size = 14),
-    legend.title = element_text(size = 16),
-    legend.position = "right" # Place legend on the right
-  )
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5)
+  ) +
+  scale_color_manual(values = c("T" = "#1b9e77", "TA" = "#85d1b0")) + # Colors for T and TA
+  # Add p-values for each outcome to the right of the bars
+  geom_text(aes(x=Inf,label = sprintf("p = %.3f", p_value), hjust=1), 
+             size = 4, hjust="right")
 
 # Print the forest plot
 print(forest_plot)
 ggsave( file= paste(path,"PAP/results/forest_plot_samples_simple.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
 
 
+
+#####################cum dist#################################33
 # Sample data
+samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+samples <- samples[(samples$today >= as.Date("2024-12-04") & (samples$district== "Kazo" | samples$district== "Mbarara")) | samples$today >= as.Date("2024-12-05") , ] 
 
 # Convert to POSIXct format with timezone "Africa/Kampala"
 samples$timestamps <- ymd_hms(samples$start, tz = "Africa/Kampala")
@@ -1682,7 +1750,7 @@ cum_dist <- ggplot(samples, aes(x = timestamps, y = cumulative_percentage, color
     x = "Time of Delivery",
     y = "Cumulative Percentage of Events"
   ) +
-  scale_color_manual(values = c("T" = "blue", "C" = "red")) +
+  scale_color_manual(values = c("T" = "#1b9e77", "C" = "red")) +
   scale_x_datetime(
     labels = scales::date_format("%I:%M %p"),
     breaks = scales::date_breaks("2 hours")  # Show every 2nd hour
