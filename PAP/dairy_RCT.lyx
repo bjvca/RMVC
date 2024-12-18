@@ -119,7 +119,7 @@ status open
 \backslash
 author{Richard Ariong
 \backslash
-thanks{Development Strategy and Governance Division,
+thanks{Innovation Policy and Scaling Unit,
  International Food Policy Research Institute,
  Kampala,
  Uganda},
@@ -137,7 +137,7 @@ footnotemark[2] ,
 \backslash
  Bjorn Van Campenhout
 \backslash
-thanks{Development Strategy and Governance Division,
+thanks{Innovation Policy and Scaling Unit,
  International Food Policy Research Institute,
  Leuven,
  Belgium}}
@@ -3504,7 +3504,7 @@ Finally,
  butter fat,
  SNF,
  protein,
- corrected lactometer reading.
+ and density (corrected lactometer reading).
  Results are in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3521,12 +3521,19 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+Prior to this exercise,
+ the all milk analyzers were verified to determine their accuracy before being used to analyze milk during the supervised endline data collection exercise.
+ The verification was done using a reference milk analyzer calibrated using ISO 2442 approved method.
+ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3740,7 +3747,7 @@ Sexpr{res_samples[4,4]})
 
 \begin_layout Plain Layout
 
-Corrected lactometer reading & 
+Density (CLR) & 
 \backslash
 Sexpr{res_samples[5,1]} & 
 \backslash
@@ -3997,11 +4004,11 @@ placement document
 alignment center
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename results/test.png
+	filename results/distribution_of_delivery.png
 	lyxscale 20
 	scale 50
 
