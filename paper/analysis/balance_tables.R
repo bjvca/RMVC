@@ -1,12 +1,11 @@
 path <- getwd()
 library(clubSandwich)
-library(car)
 
-path <- strsplit(path, "/PAP/analysis")[[1]]
+path <- strsplit(path, "/paper/analysis")[[1]]
 MCC <- read.csv(paste(path,"baseline/data/public/MCCs.csv", sep="/"))
 
 MCC$is_coop <- MCC$secC_group.q8==2
-MCC$full_timers <-  as.numeric(as.character(MCC$q14m)) 
+MCC$full_timers <-  as.numeric(as.character(MCC$assets.q14m)) 
 MCC$clients_rainy <-  as.numeric(as.character(MCC$Q23))  
 MCC$clients_rainy[MCC$clients_rainy>1000] <- NA 
 MCC$clients_rainy[MCC$clients_rainy<5] <- NA 
@@ -17,10 +16,10 @@ MCC$capacity_use_dry[MCC$capacity_use_dry>100] <- NA
 MCC$years_in_operation <-  as.numeric(as.character(MCC$secC_group.q6a))  
 MCC$quality_premium <-  as.numeric(as.character(MCC$q29)) == 1 
 MCC$years_in_operation[MCC$years_in_operation >50] <- NA 
-MCC$nr_milk_cans <-  as.numeric(as.character(MCC$q14i)) 
+MCC$nr_milk_cans <-  as.numeric(as.character(MCC$assets.q14i)) 
 
-MCC$supply_credit <-  as.numeric(as.character(MCC$q17)) %in% c(1,2)   
-MCC$supply_accaracides <-  as.numeric(as.character(MCC$q18))   %in% c(1,2)
+MCC$supply_credit <-  as.numeric(as.character(MCC$services.q17)) %in% c(1,2)   
+MCC$supply_accaracides <-  as.numeric(as.character(MCC$services.q18))   %in% c(1,2)
 
 
 

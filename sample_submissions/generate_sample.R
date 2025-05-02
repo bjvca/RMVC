@@ -40,9 +40,9 @@ dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID"
 #cat(paste(shQuote(names(dta_reports), type="cmd"), collapse=", "))
 
 ###merge in sample list
-sample <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/list_wilber.csv")
+sample <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/list_endline_MCC.csv")
 
-dta_MCCs <- merge(dta_MCCs, sample, by.x="manager", by.y="mcc.q2") 
+dta_MCCs <- merge(dta_MCCs, sample, by.x="manager", by.y="manager") 
 
 ### merge to farmer data
 

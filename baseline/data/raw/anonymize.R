@@ -331,7 +331,7 @@ to_exp_farmers <- farmers[c("farmer_ID","q3","q4","parish","village","check.chec
 
 names(to_exp_farmers) <- c("farmer_ID","district", "subcounty", "parish","village" ,"latitude","longitude")
 
-write.csv(to_exp,"farmer_ID_base_RFM.csv", row.names = FALSE) 
+write.csv(to_exp_farmers,"farmer_ID_base_RFM.csv", row.names = FALSE) 
 
   
 ## drop location, names and contact details
