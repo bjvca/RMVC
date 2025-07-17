@@ -158,12 +158,11 @@ In value chains where quality of the underlying commodity is hard to observe and
  quality upgrading my be challenging.
  We test two barriers to the development of a market for quality in Ugandan dairy value chains using a field experiment with treatments at different levels.
  At the farmer level,
- we conjecture that farmers are paying attention to the wrong quality attributes and design a video-based information campaign to point out the quality parameters that matter for processors.
- We also provide them with a small incentive to put what they learned into practice.
+ we conjecture that farmers are paying attention to the wrong quality attributes and design a light touch information treatment to point out the quality parameters that are most relevant downstream at the processor level.
  Midstream,
  at milk collection centers where milk is bulked and chilled,
- we provide technology aimed at facilitating quality discovery and tracking.
- We look at impact of both interventions at both farmer and milk collection center level and consider outcomes such as milk quality,
+ we provide a socio-technological innovation bundle that consists of a technology aimed at facilitating quality discovery and digital record keeping infrastructure.
+ We look at impact of both interventions at farmer and milk collection center level and consider outcomes such as milk quality,
  prices received and quantities transacted.
 \end_layout
 
@@ -427,20 +426,36 @@ assorted_tests <- readRDS(paste(path2,"results/assorted_tests.RData",sep=
 
 \end_layout
 
-\begin_layout Section*
-Motivation
+\begin_layout Section
+Introduction
 \end_layout
 
 \begin_layout Standard
 Quality of products transacted within value chains,
  and the preservation of quality throughout the chain,
  is central to value chain development.
- Working with quality inputs often reduces production costs further down the value chain.
- Quality inputs and safeguarding quality while processing,
+ Working with quality inputs often increases productivity further down the value chain at the processor level.
+ Quality inputs and safeguarding quality while handling,
  storing,
- and transporting commodities is also important from a food safety perspective.
+ transporting and processing commodities is also important from a food safety perspective.
  In general,
  transformation of value chains often coincide with significant quality upgrading.
+\end_layout
+
+\begin_layout Standard
+Commodities typically differ in how easy it is to assess quality.
+ Sometimes,
+ important quality dimensions can readily be observed.
+ At the other extreme,
+ complex and expensive measurement equipment may be needed.
+ 
+\end_layout
+
+\begin_layout Standard
+In most value chains,
+ and particularly in agricultural value chains where commodities are sourced from a heterogeneous sources,
+ commodities are aggregated at different nodes of the chain.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -470,31 +485,13 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-At the same time,
- it is surprising that there seems to be no market for quality in the Ugandan dairy sub-sector (while this is generally the case in more developed dairy value chain where the price is not a fixed price per liter of milk supplied.
- Generally,
- payment differs per dairy farmer,
- depending on the protein and fat and lactose content of the milk supplied by the farmer
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-https://www.frieslandcampina.com/owned-by-farmers/milk-price-system/
-\end_layout
-
-\end_inset
-
-).
- For instance,
- using recently collected survey data,
- we find that of a sample of 200 farmers that sold to milk collection centers,
- only 6 percent indicated that they received a quality premium.
- From 114 milk collection centers that were included in that survey,
- we found that only about 18 percent (sometimes) paid a price premium to farmers.
- At the same time,
- expert interviews with processors indicate that their main challenge is related to sourcing milk of sufficient quality,
- pointing out issues related to butter fat content and solid non-fat content of the milk.
- They also say that the would be willing to pay for it.
+Despite this growth,
+ Uganda’s dairy sector faces persistent challenges in milk quality,
+ particularly low butterfat and solids-not-fat (SNF) levels.
+ Despite efforts from DDA to both educated value chain actors and more repressive strategies such as destruction of milk,
+ diluting milk with water is fairly common and happens at both farmer,
+ trader and MCC levels.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -552,7 +549,117 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
+Background:
+ dairy value chains in Uganda
+\end_layout
+
+\begin_layout Standard
+The Ugandan dairy subsector is a dynamic and rapidly growing sector,
+ with its development closely linked to significant policy reforms.
+ Notably,
+ the privatization of the National Dairy Corporation and the enactment of the Dairy Industry Act of 1998 marked critical turning points for the industry.
+ These reforms also led to the establishment of the Dairy Development Authority (DDA),
+ a statutory body under the Ministry of Agriculture,
+ Animal Industry,
+ and Fisheries.
+ The DDA has a dual mandate to regulate and promote the dairy sector,
+ ensuring compliance with quality standards while supporting farmers and stakeholders through training,
+ improved technologies,
+ and market development initiatives.
+\end_layout
+
+\begin_layout Standard
+The policy changes spurred an influx of foreign direct investment,
+ particularly in Mbarara,
+ a key town in southwestern Uganda often referred to as the country’s 
+\begin_inset Quotes eld
+\end_inset
+
+milk shed” 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
+ This investment fostered the emergence of a cluster of milk processors in the region,
+ enhancing value addition and market access.
+ Additionally,
+ productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
+ such as Holstein Friesians and Jersey cows,
+ significantly increasing milk yields and overall sector efficiency.
+ Today,
+ the dairy subsector is one of the main export earners of the country.
+\end_layout
+
+\begin_layout Standard
+Dairy value chains in Uganda are diverse and can take various organizational forms,
+ ranging from fully vertically integrated systems involving large processing companies to more fragmented structures dominated by small cooperatives and farmer groups.
+ Despite these variations,
+ a generic value chain,
+ illustrated in Figure [fig:A-generic-dairy],
+ consists of five main actors,
+ each playing a distinct role in the production,
+ transportation,
+ and processing of milk.
+\end_layout
+
+\begin_layout Standard
+1.
+ Smallholder Farmers:
+ At the upstream end of the chain are smallholder farmers,
+ who are the primary producers of milk.
+ These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
+\end_layout
+
+\begin_layout Standard
+2.
+ Transporters and Traders:
+ Transporters collect milk directly from farms and deliver it to MCCs for a fee.
+ Unlike transporters,
+ traders purchase milk from farmers with the intent to sell it at MCCs or to other traders for profit,
+ thus functioning as commercial intermediaries within the chain.
+\end_layout
+
+\begin_layout Standard
+3.
+ Milk Collection Centers (MCCs):
+ MCCs are critical nodes in the value chain.
+ Their primary role is to bulk and chill milk,
+ marking the start of the cold chain essential for maintaining milk quality.
+ These centers are strategically distributed across rural areas,
+ facilitating access for smallholder farmers.
+\end_layout
+
+\begin_layout Standard
+4.
+ Large Traders:
+ Once milk is chilled and bulked at MCCs,
+ large traders transport it to processing facilities.
+ This step often involves the use of specialized milk tankers to preserve quality during transit.
+\end_layout
+
+\begin_layout Standard
+5.
+ Processors:
+ Processors,
+ concentrated in key towns such as Mbarara—
+Uganda’s dairy hub—
+convert raw milk into value-added products with extended shelf lives,
+ such as ultra-heat-treated (UHT) milk,
+ powdered milk,
+ and infant formula.
+ These processors play a pivotal role in integrating Uganda’s dairy sector into both domestic and export markets.
+\end_layout
+
+\begin_layout Standard
+This layered and dynamic structure enables the participation of diverse stakeholders while presenting opportunities for efficiency improvements at various points along the chain.
+\end_layout
+
+\begin_layout Section
 Related Literature
 \end_layout
 
@@ -609,7 +716,7 @@ literal "false"
  
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Hypotheses and impact pathways
 \end_layout
 
@@ -705,13 +812,13 @@ literal "false"
  we thus also test if making quality visible at the milk collection center level and at the same time providing information on what the desired milk quality parameters are increases outcomes for farmers.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Experimental design
 \end_layout
 
 \begin_layout Standard
-The field experiment consists of two cross-randomized interventions that are implemented at different levels.
- Outcomes may be measures at different levels.
+We use a field experiment to test the effectiveness of the innovation bundle.
+ In particular we use a split plot trial design with interventions at two levels of the value chain.
  The design is illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -723,15 +830,24 @@ nolink "false"
 
 \end_inset
 
-,
- which provides a stylized representation of the dairy value chain.
- We randomly allocate quality testing equipment to a random subset of milk collection centers (MCCs),
- while another random subset of milk collection centers functions as the control group for this treatment.
- In the catchment area of each milk collection center,
- we then take a sample of dairy farmers,
- stratifying the sample on whether the farmer is an active supplier to the milk collection center or not.
- In this sample,
- we then randomly assign half of the farmers to the information treatment (blocking on whether the farmer is an active supplier to the milk collection center or not).
+.
+\end_layout
+
+\begin_layout Standard
+The design follows the value chain structure previously outlined,
+ where the first treatment (T1) is implemented at the MCC level.
+ Within each MCC,
+ the second treatment (T2) is randomized at the individual farmer level.
+ Specifically,
+ half of the farmers are assigned to receive the video treatment,
+ while the other half are randomized into the control group.
+ Additionally,
+ within each milk collection center,
+ half of the farmers connected to that MCC receive the video treatment,
+ while the other half are in the control group.
+ To explore heterogeneity in treatment effects,
+ we also stratify by the manner in which farmers are connected to the MCC—
+either directly or via a trader.
 \end_layout
 
 \begin_layout Standard
@@ -750,7 +866,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -768,7 +884,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Design
+Experimental Design
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Design"
@@ -866,8 +982,220 @@ Does the combined treatment (making quality visible at the MCC level and providi
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
 Interventions
+\end_layout
+
+\begin_layout Standard
+In response to the challenge of unobservable milk quality in the Ugandan dairy value chain,
+ we designed an innovation bundle targeting Milk Collection Centers (MCCs).
+ This bundle aims to enhance transparency,
+ improve record-keeping,
+ and empower both MCC managers and farmers by making milk quality measurable and visible.
+ The bundle was developed after extensive consultations with stakeholders and implemented together with the DDA.
+ 
+\end_layout
+
+\begin_layout Standard
+The bundle consists of three key components.
+ A central component of the innovation bundle is the installation of a milk analyzer at MCCs.
+ This machine,
+ pictured in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Milk-analyzer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ assesses milk quality based on a set of compositional parameters,
+ such as butterfat content and solids-not-fat.
+ The testing process is non-destructive and takes less than one minute per sample,
+ enabling rapid and accurate quality evaluation of each batch of milk that is brought in by farmers.
+ By providing immediate feedback,
+ the milk analyzer helps ensure that quality standards are met and maintained.
+ More information on the milk analyzer can be obtained from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "manufacturer's website"
+target "https://www.essae.com/milk-fat-analyzer-machine.php"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The milk analyzers were delivered with clear Standard Operating Procedures.
+ Two separate trainings were organized.
+ One training targetted MCC managers,
+ where the focus was mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality.
+ A second training was geared toward MCC managers and focused more on use and maintanance of the milk analyzers ans 
+\end_layout
+
+\begin_layout Standard
+We collaborate with the DDA to set up a system to monitor the milk analyzers and its use.
+ In particular,
+ DDA technicians will visit treatment MCCs at set periods.
+ We also set up a hotline that MCCs can contact in case of problems with the milk analyzers.
+ We also make sure that,
+ over the course of the project,
+ equipment is adequately cleaned and calibrated.
+ 
+\end_layout
+
+\begin_layout Standard
+A second key component was an IT-Mediated Record-Keeping System.
+ This involved the development of an Android application for MCC managers to facilitate digital record-keeping.
+ The app replaces the traditional paper notebooks used for tracking milk deliveries and payments.
+ It allows MCC managers to register farmers.
+ Each time a farmer delivers milk,
+ the farmer is selected from the list of registered farmers and data is entered.
+ In addition to recording quantities and prices,
+ the app allows MCC managers to store and monitor quality parameters obtained from the milk analyzer.
+ Farmers can ask if a receipt is sent by sms to their mobile phones of each milk delivery that was registered.
+ The app can also be used to generate simple reports,
+ such as average quality delivered during a specific period and/or by a specific farmer.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Farmers are typically paid after 14 days of milk delivery.
+ The app makes these payments easy by allowing MCC managers to select a farmer name,
+ select the last two weeks as the time frame and then select total milk delivered as statistic.
+\end_layout
+
+\end_inset
+
+ This digital system enhances efficiency and transparency,
+ providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
+ The android app can be downloaded for free from 
+\begin_inset CommandInset href
+LatexCommand href
+name "Google Play"
+target "https://play.google.com/store/search?q=cgiar%20milk&c=apps&hl=en"
+literal "false"
+
+\end_inset
+
+.
+ A screenshot of the application can be found in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Application"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+We also provided MCCs with Android tablet computers,
+ preloaded with the android app.
+ The tablets had sim cards the be able to connect to mobile internet.
+ We put a prepaid data bundle on the tablets to make sure that data from the tablets was uploaded to the could.
+\end_layout
+
+\begin_layout Standard
+The bundle also included an information treatment.
+ To address potential power imbalances emerging from the installation of milk analyzers and ensure farmers are equally informed,
+ we introduced a poster campaign at MCCs.
+ The poster,
+ designed by a local artist,
+ advertises the availability of free milk quality testing for farmers.
+ By making this service widely known,
+ the campaign aims to empower farmers with knowledge about their product quality,
+ fostering trust and collaboration between farmers and MCC managers.
+\end_layout
+
+\begin_layout Standard
+Together,
+ these three components form a comprehensive strategy to make milk quality observable and actionable,
+ creating incentives for improved practices throughout the dairy value chain.
+ This first package will constitute the first treatment in the field experiment below and will be referred to as T1.
+\end_layout
+
+\begin_layout Standard
+To bridge the gap in how milk quality is understood between farmers and processors,
+ we designed an intervention aimed at improving farmers’ knowledge of compositional quality and its importance in the dairy value chain.
+ This treatment combines information dissemination,
+ practical advice,
+ and tangible support to drive behavioral changes.
+ It consists of three components:
+\end_layout
+
+\begin_layout Standard
+First,
+ a short,
+ engaging video was developed to explain the concept of compositional milk quality—
+parameters such as butterfat and protein content—
+and why it matters for both farmers and processors.
+ The video also highlights practical management practices and inputs that farmers can adopt to improve milk quality,
+ such as better feeding strategies,
+ enhanced herd health,
+ and proper milking hygiene.
+ The video is designed to be accessible and appealing,
+ ensuring key messages resonate with the target audience.
+ The use of video has been found to increase technology adoption in different settings,
+ although the effectiveness also depends on a range of design attributes 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "spielman2021information"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+To design the video based extension intervention,
+ we first identified the top five practices and inputs that are known to raise butter fat and Solid Non Fats in milk.
+ This was done through consultations of experts.
+ We found the top 5 practices and inputs were:
+ selection of breed and genetic potential,
+ selection of grasses for high-quality forage,
+ best practice in silage and hay making,
+ correct mixing and dosage of feed,
+ and feed supplements like Methionine and Lysine.
+ To make the information intervention more actionable,
+ we also provide farmers with some free inputs (1 kg of Chloris Gayana also known as Rhodes grass).
+ The video was screened a first time just after baseline data collection and a second time just before the distribution of the milk analyzers.
+\end_layout
+
+\begin_layout Standard
+To reinforce the information provided in the video,
+ we also created a handout in the form of a cartoon summary.
+ The cartoons provide a visual,
+ easy-to-understand recap of the key points,
+ serving as a quick reference for farmers after watching the video.
+ This format ensures the information remains accessible even to farmers with limited literacy.
+\end_layout
+
+\begin_layout Standard
+Finally,
+ to make the knowledge actionable,
+ each participating farmer received a bag of improved pasture seeds.
+ By planting these seeds,
+ farmers can enhance the nutritional value of their pastures,
+ a critical factor in increasing the compositional quality of milk.
+ This practical input complements the educational components,
+ enabling farmers to directly apply the recommendations provided.
+\end_layout
+
+\begin_layout Standard
+This treatment,
+ henceforth referred to as T2,
+ aims to align the understanding of milk quality between farmers and processors while equipping farmers with the tools and knowledge to improve milk quality in a sustainable manner.
 \end_layout
 
 \begin_layout Standard
@@ -944,18 +1272,6 @@ name "fig:Milk-analyzer"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-The milk analyzers will be delivered with clear Standard Operating Procedure advising MCCs and MCC staff will be trained.
- We collaborate with the DDA to set up a system to monitor the milk analyzers and its use.
- In particular,
- DDA technicians will visit treatment MCCs at set periods.
- We also set up a hotline that MCCs can contact in case of problems with the milk analyzers.
- We also make sure that,
- over the course of the project,
- equipment is adequately cleaned and calibrated.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1039,55 +1355,6 @@ name "fig:Application"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Finally,
- for the MCC intervention,
- we also developed a poster to be displayed at MCCs informing farmers that the MCC now has a milk analyzer that can determine milk quality for free.
- The poster was designed by a local artist.
- 
-\end_layout
-
-\begin_layout Standard
-To provide information to dairy farmers on the parameters and characteristics that processors are looking for and how farmers can produce milk that adheres to these standards,
- we use a short engaging video that demonstrates the inputs and practices that can be used to increase milk quality.
- The use of video has been found to increase technology adoption in different settings,
- although the effectiveness also depends on a range of design attributes 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "spielman2021information"
-literal "false"
-
-\end_inset
-
-.
- The ability to depict role models in videos seems important to increase both aspirations of the person targeted,
- as well as creating an enabling environment for adoption in that it may challenge world views and stereotypical thinking 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "riley2019role,lecoutere2023empowering"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-To design the video based extension intervention,
- we first identified the top five practices and inputs that are known to raise butter fat and Solid Non Fats in milk.
- This was done through consultations of experts.
- We found the top 5 practices and inputs were:
- selection of breed and genetic potential,
- selection of grasses for high-quality forage,
- best practice in silage and hay making,
- correct mixing and dosage of feed,
- and feed supplements like Methionine and Lysine.
- To make the information intervention more actionable,
- we also provide farmers with some free inputs (1 kg of Chloris Gayana also known as Rhodes grass).
- The video will be screened a first time during baseline data collection and a second time just before the distribution of the milk analyzers.
- We also developed an appealing handout that summarizes some of the main points from the video using cartoons drawn by a local artist.
 \end_layout
 
 \begin_layout Section*
@@ -1501,6 +1768,55 @@ Baseline data collection will be fairly straightforward and consist of surveys a
  we will also need to be mindful of anticipatory effects.
  That is,
  we will arrive at MCCs unannounced.
+\end_layout
+
+\begin_layout Section
+Sample and timeline
+\end_layout
+
+\begin_layout Standard
+The field experiment was conducted in four districts of Southwestern Uganda:
+ Ntungamo,
+ Mbarara,
+ Kazo,
+ and Kirihura.
+ The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
+ which yielded a total of about 130 MCCs.
+ Half of these were randomly selected to receive T1,
+ while the other half served as the control.
+ In each of the 130 MCCs,
+ we then randomly selected 20 farmers who deliver milk to the center.
+ Of these 20 farmers,
+ 10 were randomly assigned to the video treatment (T2),
+ while the remaining 10 served as the control group.
+\end_layout
+
+\begin_layout Standard
+Figure [fig:Sampling-at-MCC] shows randomization in three of the four districts for T1 and T2 at both the MCC and farmer level.
+ The first map to the left of the figure shows the locations of the MCCs and their treatment status for T1.
+ The second panel shows the treatment status for T1 for the farmers that are connected to the MCCs,
+ which is clustered at the MCC level as T1 is implemented at that level.
+ The third panel shows treatment allocation of T2 among farmers linked to MCCs,
+ which is at the individual level.
+\end_layout
+
+\begin_layout Standard
+Figure [fig:Timeline] shows the timeline of the project.
+ We started with a scoping study,
+ which informed they research questions and formulation of hypotheses in August 2022.
+ This let to the design of the innovation bundle in September.
+ Baseline data was collected towards the end of 2022.
+ At this time,
+ the intervention at the farmer level (T2) was implemented a first time.
+\end_layout
+
+\begin_layout Standard
+The intervention at the MCC level was more complex than the information treatment and so we linked up with DDA before rolling out T1 in October 2023.
+ From this point onward,
+ we monitored project implementation (which included analysis of data that was coming in through the Android app) and also did a qualitative midline in March 2024.
+ Roughly one year after T1,
+ we collected endline information.
+ We also organized a scaling preparedness workshop in October 2024.
 \end_layout
 
 \begin_layout Section*

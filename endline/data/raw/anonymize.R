@@ -67,6 +67,9 @@ farmers <- subset(farmers, X_uuid != "ced2d819-11bf-4252-b935-928770c7044b")
 
 farmers$farmer_ID[duplicated(farmers$farmer_ID)] #none left
 
+
+
+
 #### this is to investigate duplicated - can be deleted
 # vil <- farmers$MCC_ID[farmers$farmer_ID ==  "F_2_T" ][1]
 # 
@@ -120,6 +123,8 @@ farmers$farmer_ID[duplicated(farmers$farmer_ID)] #none left
 #   addLayersControl(baseGroups = c('OSM', 'Google', 'Topography'))
 # 
 # 
+
+### export data fir 
 
 ## drop location, names and contact details
 to_drop <- c("start","end","deviceid","simserial","phonenumber", "subscriberid","enumerator","mcc_cas","sub","village","farmer_name","farm_mcc","lat","long","phone1",
