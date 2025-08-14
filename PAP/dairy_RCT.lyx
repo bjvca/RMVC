@@ -150,28 +150,34 @@ thanks{Innovation Policy and Scaling Unit,
 
 \end_inset
 
-Incentivizing quality in dairy value chains - experimental evidence from Uganda (registered report)
+Incentivizing quality in dairy value chains - experimental evidence from Uganda
 \end_layout
 
 \begin_layout Abstract
-In value chains where quality of the underlying commodity is hard to observe and track,
- quality upgrading my be challenging.
- We test two barriers to the development of a market for quality in Ugandan dairy value chains using a field experiment with treatments at different levels.
+In value chains where quality is hard to observe,
+ upgrading can be challenging.
+ We test two barriers in Uganda’s dairy sector through a field experiment.
  At the farmer level,
- we conjecture that farmers are paying attention to the wrong quality attributes and design a video-based information campaign to point out the quality parameters that matter for processors.
- We also provide them with a small incentive to put what they learned into practice.
- Midstream,
- at milk collection centers where milk is bulked and chilled,
- we provide technology aimed at facilitating quality discovery and tracking.
- We look at impact of both interventions at both farmer and milk collection center level and consider outcomes such as milk quality,
- prices received and quantities transacted.
+ a video campaign targets misconceptions about quality attributes,
+ paired with small incentives to apply new practices.
+ At milk collection centers,
+ we introduce technology to enable quality testing and tracking.
+ We assess both interventions at farmer and center levels,
+ examining effects on milk quality,
+ prices,
+ and volumes.
+ Results shed light on how information,
+ incentives,
+ and technology can stimulate market development for quality.
 \end_layout
 
 \begin_layout Standard
 JEL:
- O13,
- O17,
- Q13
+ O12,
+ O14,
+ Q13,
+ D82,
+ L15
 \end_layout
 
 \begin_layout Standard
@@ -422,123 +428,166 @@ Motivation
 
 \begin_layout Standard
 Quality of products transacted within value chains,
- and the preservation of quality throughout the chain,
+ and the preservation of that quality throughout the chain,
  is central to value chain development.
- Working with quality inputs often reduces production costs further down the value chain.
- Quality inputs and safeguarding quality while processing,
- storing,
- and transporting commodities is also important from a food safety perspective.
- In general,
- transformation of value chains often coincide with significant quality upgrading.
+ High-quality inputs can lower production costs downstream by improving yields,
+ reducing waste,
+ and enhancing processing efficiency.
+ Maintaining quality during processing,
+ storage,
+ and transport is also critical for food safety and consumer health.
+ Beyond these direct effects,
+ consistent quality fosters trust and reputation,
+ supports compliance with domestic and export standards,
+ and facilitates access to higher-value markets.
+ As a result,
+ the transformation of value chains is often accompanied by substantial quality upgrading,
+ reshaping incentives and market structures.
 \end_layout
 
 \begin_layout Standard
-Over the past decade,
- the dairy sub-sector in Uganda has changed dramatically.
- Particularly in the areas around Mbarara,
- commonly referred to as the southwestern milk shed,
- an influx of foreign direct investment has created the preconditions for modern dairy value chains to emerge 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "https://doi.org/10.1111/agec.12638"
-literal "false"
-
-\end_inset
-
-.
- The area now has an extensive network of milk cooling and collection centers that link smallholder farmers to a cluster of processors.
- In the dairy value chain,
- quality is particularly important.
- Milk quality determines how much end product (eg cheese,
- caseine,
- milk powder,..) can be obtained from a given quantity of milk.
- Furthermore,
- it goes without saying that the protection of milk from dirt and contamination is important for food safety,
- as milk is very unstable.
- 
+For quality to become an important driver of behavior,
+ actors must be properly incentivized to produce and preserve it.
+ In many markets,
+ such incentives take the form of price premiums for higher-quality products,
+ which reward the additional effort or investment required to meet quality standards.
+ When buyers are willing and able to pay more for quality,
+ producers have stronger incentives to adopt better inputs and practices,
+ while intermediaries are more likely to safeguard quality during aggregation,
+ storage,
+ and transport.
+ In the absence of such premiums,
+ quality improvements may not be financially viable,
+ and actors may instead prioritize volume over quality,
+ perpetuating low-quality equilibria.
 \end_layout
 
 \begin_layout Standard
-At the same time,
- it is surprising that there seems to be no market for quality in the Ugandan dairy sub-sector (while this is generally the case in more developed dairy value chain where the price is not a fixed price per liter of milk supplied.
- Generally,
- payment differs per dairy farmer,
- depending on the protein and fat and lactose content of the milk supplied by the farmer
-\begin_inset Foot
-status collapsed
+A central barrier to the emergence of quality premia is the difficulty of observing and verifying quality at the point of transaction.
+ When quality attributes are not directly visible and are costly to test—
+such as bacterial counts or butterfat content in raw milk—
+buyers face a classic problem of asymmetric information.
+ Without credible verification mechanisms,
+ high- and low-quality products trade at similar prices,
+ eroding incentives to invest in quality and potentially leading to adverse selection equilibria.
+ This problem is compounded when products from multiple suppliers are pooled before sale,
+ diluting the quality of individual outputs and breaking the link between individual effort and reward.
+ Even when buyers wish to pay for quality,
+ the absence of traceability prevents quality-enhancing investments from translating into higher returns.
+ Further constraints arise from the coordination and investment required to establish quality-based payment systems,
+ including grading,
+ certification,
+ and monitoring infrastructure.
+\end_layout
+
+\begin_layout Standard
+Compounding these challenges is the poor transmission of information about what constitutes quality from the perspective of downstream actors.
+ Producers may hold a different conception of quality than processors,
+ emphasizing attributes visible to them but less relevant to processing outcomes,
+ while overlooking characteristics buyers value most.
+ This misalignment means that effort and resources may be directed toward attributes with little impact on price or marketability,
+ leaving critical quality dimensions unaddressed.
+ Clearly identifying and communicating the specific quality parameters that matter for processors—
+and providing the means to measure them—
+can be a high-return investment,
+ enabling price premia to emerge and strengthening incentives for quality upgrading.
+\end_layout
+
+\begin_layout Standard
+These challenges are particularly salient in Uganda’s emerging dairy sub-sector.
+ Over the past decade,
+ the industry has undergone rapid transformation,
+ especially in the southwestern milk shed around Mbarara,
+ where foreign direct investment has spurred the development of modern value chains (Van Campenhout et al.,
+ 2021).
+ A dense network of milk cooling and collection centers now connects smallholder farmers to a growing cluster of processors.
+ In dairy,
+ quality is central:
+ it determines processing yields for products such as cheese,
+ casein,
+ and milk powder,
+ and maintaining sanitary conditions is essential given the perishability of raw milk.
+ Yet,
+ unlike in more developed dairy markets,
+ there is no functioning market for quality in Uganda.
+ Prices are typically fixed per liter,
+ irrespective of butterfat,
+ solids-not-fat,
+ or protein content.
+ Survey data show that only 6 percent of farmers selling to milk collection centers report receiving a quality premium,
+ and only 18 percent of centers sometimes pay one—
+even though processors cite insufficient compositional quality as their primary supply constraint and express willingness to pay for improvement.
+\end_layout
+
+\begin_layout Standard
+Part of the problem lies in divergent understandings of quality.
+ Farmers often associate quality with hygiene—
+clean containers,
+ washed udders—
+while processors prioritize compositional parameters,
+ which are driven largely by feeding practices.
+ Another part lies in the lack of technological capacity to measure and communicate compositional quality at the point of aggregation:
+ most milk collection centers test only for freshness and adulteration,
+ and farmers rarely have access to test results.
+ Together,
+ these factors weaken the link between effort and reward,
+ suppressing incentives for quality upgrading.
+\end_layout
+
+\begin_layout Standard
+We use this context to test whether the absence of quality premia in Uganda’s dairy sector is driven by two constraints:
+ unobservable quality and misaligned perceptions of what constitutes quality.
+ Our experimental design targets these constraints at different points in the value chain.
+ At the midstream level,
+ we work with milk collection centers to make quality observable and recordable in real time through compositional milk testing,
+ digital record-keeping,
+ and farmer-facing information campaigns.
+ At the upstream level,
+ we work with farmers to align their understanding of quality with processor priorities through targeted information,
+ visual reinforcement,
+ and provision of improved pasture seeds to enable quality-enhancing practices.
+\end_layout
+
+\begin_layout Standard
+By implementing these interventions both upstream and midstream,
+ the experiment tests whether reducing information frictions and making quality visible can shift behavior,
+ improve milk quality,
+ and ultimately foster the conditions for a functioning market for quality in the Ugandan dairy value chain.
+ We find that
+\begin_inset Note Note
+status open
 
 \begin_layout Plain Layout
-https://www.frieslandcampina.com/owned-by-farmers/milk-price-system/
+[MAIN RESULT TO BE INSERTED].
 \end_layout
 
 \end_inset
 
-).
- For instance,
- using recently collected survey data,
- we find that of a sample of 200 farmers that sold to milk collection centers,
- only 6 percent indicated that they received a quality premium.
- From 114 milk collection centers that were included in that survey,
- we found that only about 18 percent (sometimes) paid a price premium to farmers.
- At the same time,
- expert interviews with processors indicate that their main challenge is related to sourcing milk of sufficient quality,
- pointing out issues related to butter fat content and solid non-fat content of the milk.
- They also say that the would be willing to pay for it.
+
 \end_layout
 
 \begin_layout Standard
-When asked about what farmers need to do to increase quality,
- farmers mainly refer to practices that affect milk sanitation.
- Most training and extension activities in the area focus on the importance of using proper equipment (stainless steel milk churns as opposed to plastic jerry cans) and simple practices such as washing hands and udders.
- These technologies and practices do not affect the milk quality attributes that processors seem to care most about.
- To increase butter fat content and solid non-fat content,
- it is especially feeding practices that matter.
-\end_layout
-
-\begin_layout Standard
-The above points to at least two problems which constrain the development of a market for quality milk.
+This paper makes three contributions.
  First,
- at a technological level,
- instruments necessary to make the desired quality attributes visible are lacking.
- Most milk collection centers only engage in rudimentary testing for adulteration (using a gravity based test with a device called a lactometer) and freshness (using the alcohol test).
- Farmers do not have access to testing equipment.
+ it provides causal evidence on the role of measurement and information transmission in enabling quality-based incentives in agricultural value chains.
  Second,
- at the knowledge level,
- farmers do not seem to know what quality parameters are important further downstream the value chain.
- 
+ it compares interventions targeted at different stages of the chain,
+ offering insight into whether upgrading is best catalyzed through midstream technology adoption or upstream behavioral change.
+ Third,
+ by studying these mechanisms in a rapidly transforming but still fragmented dairy sector,
+ the paper speaks to broader questions of how markets for quality emerge,
+ and how technology,
+ incentives,
+ and knowledge interact to drive value chain development.
+ While our setting is Uganda’s dairy industry,
+ the mechanisms we study are relevant to many agri-food and manufacturing sectors where quality is difficult to observe,
+ measure,
+ and reward.
 \end_layout
 
 \begin_layout Standard
-In this research,
- we will test various hypothesis using a randomized control trial with interventions at both the level of the milk collection centers and at the farmer level.
- At the level of the milk collection center,
- we work with the Uganda Dairy Development Authority (DDA) to scale up their Quality-Based Milk Payment Scheme (QBMPS) that was piloted by last year in Uganda’s SW milkshed.
- It involves installing lactoscans at milk collection centers that allows testing of individual milk deliveries for quality parameters desired by processors.
- We want to test what the impact of visualizing these quality attributes at this level is on both farmers and milk collection centers.
- We then use a split plot design to mix in a second intervention at the level of the farmers.
- Here,
- we provide a video-based information treatment where farmers are informed about what quality parameters processors deem important and how they can improve on these parameters,
- and incentivize them by giving a bag of pasture seed.
-\end_layout
-
-\begin_layout Standard
-This document serves as a pre-analysis plan for the study that will be registered in a public repository.
- It provides background information,
- outlines hypotheses which will be tested,
- tools that will be used in the field,
- power calculations and sample size projections on which sampling is based,
- outcome variables that will be used to assess impact,
- and specification that will be estimated.
- As such,
- it will provide a useful reference in evaluating the final results of the study 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "humphreys_sanchezdelasierra_vanderwindt_2013,651546"
-literal "false"
-
-\end_inset
-
-.
+The remainder of this article is organized as follows.
+ We start with an overview of the relevant literature.
 \end_layout
 
 \begin_layout Section*
