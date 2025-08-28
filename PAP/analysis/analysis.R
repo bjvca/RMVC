@@ -24,7 +24,7 @@ farmers_base <- read.csv(paste(path, "baseline/data/public/farmers.csv", sep = "
 ###catchment area for clustering
 farmers_end$catch_ID <- as.factor(farmers_end$catchment)
 
-##treat is MCC level treatment; vid is farmer level treatment
+##treat is MCC level treatment; video is farmer level treatment
 farmers_end$treat <- farmers_end$treat == "T"
 
 table(farmers_end$treat,farmers_end$vid)
@@ -35,6 +35,8 @@ names(farmers_end)[names(farmers_end) == 'farmer_type'] <- 'farmer_type_end'
 
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","farmer_type")], by="farmer_ID", all.x=T)
 farmers_end$trader <- farmers_end$farmer_type == 2
+
+farmers_end$farmer_type_assgned <- substr(farmers_end$farmer_ID, nchar(farmers_end$farmer_ID), nchar(farmers_end$farmer_ID))
 
 table(farmers_end$trader) # this did not really work that well - only 600 are linked via a trader and 1610 are direct
 #primary outcomes at the farmer level
@@ -705,7 +707,7 @@ forest_plot <- ggplot(forest_data_long, aes(x = Estimate, y = reorder(Outcome, E
 # Print the plot
 print(forest_plot)
 
-ggsave( file= paste(path,"PAP/results/forest_plot.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300)
+ggsave( file= paste(path,"PAP/results/forest_plot.png", sep="/"), plot = forest_plot, width = 10, height = 6, dpi = 300,device = "png")
 
 
 
@@ -1139,6 +1141,7 @@ MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_avg_sales_p")], by="MCC_ID"
 MCCs_end$q29[MCCs_end$q29 == "n/a"] <- NA
 MCCs_end$gives_q_bonus <- MCCs_end$q29 == 1
 
+MCCs_base$q29[MCCs_base$q29 == 98] <- NA
 MCCs_base$b_gives_q_bonus <- MCCs_base$q29 == 1
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_gives_q_bonus")], by="MCC_ID", all.x=T)
 

@@ -155,20 +155,20 @@ Incentivizing quality in dairy value chains - experimental evidence from Uganda
 
 \begin_layout Abstract
 In value chains where quality is hard to observe,
- upgrading can be challenging.
- We test two barriers in Uganda’s dairy sector through a field experiment.
+ upgrading is challenging.
+ We test two barriers in Uganda’s dairy sector using a field experiment.
  At the farmer level,
- a video campaign targets misconceptions about quality attributes,
- paired with small incentives to apply new practices.
+ a video campaign addresses misconceptions about quality attributes,
+ paired with small incentives to adopt new practices.
  At milk collection centers,
- we introduce technology to enable quality testing and tracking.
- We assess both interventions at farmer and center levels,
- examining effects on milk quality,
+ we introduce technology for testing and tracking.
+ We evaluate both interventions at farmer and center levels,
+ examining impacts on milk quality,
  prices,
  and volumes.
- Results shed light on how information,
+ The results provide evidence on how information,
  incentives,
- and technology can stimulate market development for quality.
+ and technology interact to stimulate the emergence of markets for quality.
 \end_layout
 
 \begin_layout Standard
@@ -422,8 +422,8 @@ assorted_tests <- readRDS(paste(path2,"/results/assorted_tests.RData",sep=
 
 \end_layout
 
-\begin_layout Section*
-Motivation
+\begin_layout Section
+Introduction
 \end_layout
 
 \begin_layout Standard
@@ -464,9 +464,7 @@ For quality to become an important driver of behavior,
 
 \begin_layout Standard
 A central barrier to the emergence of quality premia is the difficulty of observing and verifying quality at the point of transaction.
- When quality attributes are not directly visible and are costly to test—
-such as bacterial counts or butterfat content in raw milk—
-buyers face a classic problem of asymmetric information.
+ When quality attributes are not directly visible and are costly to test buyers face a classic problem of asymmetric information.
  Without credible verification mechanisms,
  high- and low-quality products trade at similar prices,
  eroding incentives to invest in quality and potentially leading to adverse selection equilibria.
@@ -482,7 +480,8 @@ buyers face a classic problem of asymmetric information.
 
 \begin_layout Standard
 Compounding these challenges is the poor transmission of information about what constitutes quality from the perspective of downstream actors.
- Producers may hold a different conception of quality than processors,
+ Absent standards and clear product specifications,
+ producers may hold a different conception of quality than processors,
  emphasizing attributes visible to them but less relevant to processing outcomes,
  while overlooking characteristics buyers value most.
  This misalignment means that effort and resources may be directed toward attributes with little impact on price or marketability,
@@ -491,6 +490,32 @@ Compounding these challenges is the poor transmission of information about what 
 and providing the means to measure them—
 can be a high-return investment,
  enabling price premia to emerge and strengthening incentives for quality upgrading.
+\end_layout
+
+\begin_layout Standard
+The structure of the value chain itself can exacerbate these challenges.
+ When producers and processors are linked only indirectly through layers of traders or informal intermediaries,
+ the likelihood of traceability breaking down increases substantially.
+ At the same time,
+ intermediated chains limit information flows:
+ traders may not transmit,
+ or may even distort,
+ processors’ signals about which quality attributes matter most,
+ leaving producers with little guidance for aligning practices with downstream demand 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "bray2019supply"
+literal "false"
+
+\end_inset
+
+.
+ By contrast,
+ in chains where producers are more directly connected to processors,
+ opportunities for credible testing,
+ traceability,
+ and clearer communication of standards are greater,
+ increasing the scope for effective quality-based incentives to emerge.
 \end_layout
 
 \begin_layout Standard
@@ -567,39 +592,8 @@ status open
 \end_layout
 
 \begin_layout Standard
-This paper makes three contributions.
- First,
- it provides causal evidence on the role of measurement and information transmission in enabling quality-based incentives in agricultural value chains.
- Second,
- it compares interventions targeted at different stages of the chain,
- offering insight into whether upgrading is best catalyzed through midstream technology adoption or upstream behavioral change.
- Third,
- by studying these mechanisms in a rapidly transforming but still fragmented dairy sector,
- the paper speaks to broader questions of how markets for quality emerge,
- and how technology,
- incentives,
- and knowledge interact to drive value chain development.
- While our setting is Uganda’s dairy industry,
- the mechanisms we study are relevant to many agri-food and manufacturing sectors where quality is difficult to observe,
- measure,
- and reward.
-\end_layout
-
-\begin_layout Standard
-The remainder of this article is organized as follows.
- We start with an overview of the relevant literature.
-\end_layout
-
-\begin_layout Section*
-Related Literature
-\end_layout
-
-\begin_layout Standard
-Our study is related to a large literature.
- Some of the most recent articles include:
-\end_layout
-
-\begin_layout Itemize
+The paper builds on a large literature that studies how incentives and organizational structures shape quality upgrading in value chains.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "RAO2023708"
@@ -607,16 +601,9 @@ literal "false"
 
 \end_inset
 
- explore the effect of collective incentives on group production among rural Indian dairy cooperatives.
- In a randomized evaluation,
- they find village-level cooperatives can solve internal collective action problems to improve production quality.
- However,
- some village elites decline payments when they cannot control information disclosure.
- Opting out reflects frictions in allocating surplus within a social network,
- and suggests some transparency-based efforts to limit elite capture may undermine policy goals.
-\end_layout
-
-\begin_layout Itemize
+ demonstrate that group-level incentives in Indian dairy cooperatives can overcome free-rider problems and improve cleanliness,
+ though distributional frictions emerge when elites resist transparency.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "https://doi.org/10.1111/ajae.12176"
@@ -624,14 +611,10 @@ literal "false"
 
 \end_inset
 
- uses matching on observable farmer characteristics to study how individual quality incentives provided by private actors can help smallholders to improve milk quality.
- In the Indonesian dairy value chains they study,
- individual quality incentives increased the compositional quality of milk quickly after its introduction.
- Together with physical inputs and training,
- individual quality incentives also increased the hygienic quality of milk.
-\end_layout
-
-\begin_layout Itemize
+ provides complementary evidence from Indonesia,
+ where individual incentives introduced by processors quickly improved both compositional and hygienic quality of milk,
+ particularly when paired with inputs and training.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "https://doi.org/10.1111/agec.12012"
@@ -639,12 +622,165 @@ literal "false"
 
 \end_inset
 
- use framed field experiment to evaluate the impact of two incentive instruments:
- a price penalty for low quality and a bonus for consistent high quality milk on farmers’ investment in quality-improving inputs among contract farmers in the Vietnamese dairy sector.
- Statistical analysis suggests that the penalty drives farmers into higher input use,
- resulting in better output quality.
- The bonus payment generates even higher quality milk.
+ show in the Vietnamese dairy sector that both penalties for low quality and bonuses for high quality increase farmers’ investment in quality-enhancing inputs,
+ with bonuses inducing the strongest improvements.
+ Together,
+ these studies highlight the importance of incentive design,
+ the complementarities between price signals and capacity-building,
+ and the risks that organizational frictions pose for sustainability.
+\end_layout
+
+\begin_layout Standard
+This micro-level evidence connects to a broader literature on value chain transformation and quality upgrading in low- and middle-income countries.
  
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bold2022market"
+literal "false"
+
+\end_inset
+
+ show across four field experiments that easing smallholder access to high-quality inputs can promote upgrading,
+ though adoption depends critically on downstream incentives.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "fieler2018trade"
+literal "false"
+
+\end_inset
+
+ highlight theoretically and empirically that input-output linkages shape quality upgrading decisions,
+ while 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "antras2013organizing"
+literal "false"
+
+\end_inset
+
+ emphasizes how the organization of global value chains determines incentives for suppliers to invest in quality.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "barrett2022agri"
+literal "false"
+
+\end_inset
+
+ situate these findings within the “agrifood value chain revolution,” arguing that the spread of modern procurement systems in developing countries fundamentally reorders incentives,
+ contracting arrangements,
+ and standards.
+\end_layout
+
+\begin_layout Standard
+Our study contributes by examining how technology-enabled monitoring alters the feasibility and credibility of incentive schemes in smallholder-dominated value chains.
+ Whereas Rao and Shenoy focus on the ability of social networks to enforce group incentives,
+ we test whether digital feedback mechanisms can substitute for or complement such informal enforcement.
+ Unlike Treurniet and Saenger et al.,
+ who study incentive contracts designed and implemented by processors,
+ we evaluate how introducing quality analyzers at the level of milk collection centers reshapes the space of possible contracts and accountability structures.
+ In doing so,
+ we highlight how technological innovations interact with organizational frictions and market power in ways that may unlock sustained quality upgrading where traditional incentive schemes have struggled.
+\end_layout
+
+\begin_layout Section
+Background:
+ dairy value chains in Uganda
+\end_layout
+
+\begin_layout Standard
+The Ugandan dairy subsector is a dynamic and rapidly growing sector,
+ with its development closely linked to significant policy reforms.
+ Notably,
+ the privatization of the National Dairy Corporation and the enactment of the Dairy Industry Act of 1998 marked critical turning points for the industry.
+ These reforms also led to the establishment of the Dairy Development Authority (DDA),
+ a statutory body under the Ministry of Agriculture,
+ Animal Industry,
+ and Fisheries.
+ The DDA has a dual mandate to regulate and promote the dairy sector,
+ ensuring compliance with quality standards while supporting farmers and stakeholders through training,
+ improved technologies,
+ and market development initiatives.
+\end_layout
+
+\begin_layout Standard
+The policy changes spurred an influx of foreign direct investment,
+ particularly in Mbarara,
+ a key town in southwestern Uganda often referred to as the country’s "milk shed” 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
+ This investment fostered the emergence of a cluster of milk processors in the region,
+ enhancing value addition and market access.
+ Additionally,
+ productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
+ such as Holstein Friesians and Jersey cows,
+ significantly increasing milk yields and overall sector efficiency.
+ Today,
+ the dairy subsector is one of the main export earners of the country.
+\end_layout
+
+\begin_layout Standard
+Dairy value chains in Uganda are diverse and can take various organizational forms,
+ ranging from fully vertically integrated systems involving large processing companies to more fragmented structures dominated by small cooperatives and farmer groups.
+ Despite these variations,
+ a generic value chain consists of five main actors,
+ each playing a distinct role in the production,
+ transportation,
+ and processing of milk.
+\end_layout
+
+\begin_layout Enumerate
+Smallholder Farmers:
+ At the upstream end of the chain are smallholder farmers,
+ who are the primary producers of milk.
+ These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
+\end_layout
+
+\begin_layout Enumerate
+Transporters and Traders:
+ Transporters collect milk directly from farms and deliver it to MCCs for a fee.
+ Unlike transporters,
+ traders purchase milk from farmers with the intent to sell it at MCCs or to other traders for profit,
+ thus functioning as commercial intermediaries within the chain.
+\end_layout
+
+\begin_layout Enumerate
+Milk Collection Centers (MCCs):
+ MCCs are critical nodes in the value chain.
+ Their primary role is to bulk and chill milk,
+ marking the start of the cold chain essential for maintaining milk quality.
+ These centers are strategically distributed across rural areas,
+ facilitating access for smallholder farmers.
+\end_layout
+
+\begin_layout Enumerate
+Large Traders:
+ Once milk is chilled and bulked at MCCs,
+ large traders transport it to processing facilities.
+ This step often involves the use of specialized milk tankers to preserve quality during transit.
+\end_layout
+
+\begin_layout Enumerate
+Processors:
+ Processors,
+ concentrated in key towns such as Mbarara—
+Uganda’s dairy hub—
+convert raw milk into value-added products with extended shelf lives,
+ such as ultra-heat-treated (UHT) milk,
+ powdered milk,
+ and infant formula.
+ These processors play a pivotal role in integrating Uganda’s dairy sector into both domestic and export markets.
+\end_layout
+
+\begin_layout Standard
+This layered and dynamic structure enables the participation of diverse stakeholders while presenting opportunities for efficiency improvements at various points along the chain.
 \end_layout
 
 \begin_layout Section*
@@ -743,13 +879,749 @@ literal "false"
  we thus also test if making quality visible at the milk collection center level and at the same time providing information on what the desired milk quality parameters are increases outcomes for farmers.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
+Conceptual framework and simple model
+\end_layout
+
+\begin_layout Subsection
+Environment and timing
+\end_layout
+
+\begin_layout Standard
+There is one processor,
+ many milk collection centers 
+\emph on
+m
+\emph default
+,
+ and farmers 
+\emph on
+i
+\emph default
+ in each MCC catchment.
+ Quantity per farmer is 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ (treated as given for simplicity),
+ and milk quality is 
+\begin_inset Formula $q_{i}\in\left[0,1\right]$
+\end_inset
+
+.
+ Processors pay MCCs a premium for quality when it is verifiable.
+ Two experimental treatments alter information and incentives:
+\end_layout
+
+\begin_layout Itemize
+T1 (MCC level):
+ a measurement-and-transparency bundle at the MCC that makes quality observable at intake and recordable.
+ This raises the premium the processor is willing to pay per unit of quality,
+ and it facilitates pass-through to farmers.
+\end_layout
+
+\begin_layout Itemize
+T2 (farmer level):
+ an information-and-input bundle that improves farmers’ knowledge about compositional quality and lowers the cost of taking actions that raise quality.
+\end_layout
+
+\begin_layout Standard
+Within each MCC there are two types of suppliers:
+ those connected directly to the MCC and those who supply via a trader.
+ Traders can capture part of the quality premium.
+\end_layout
+
+\begin_layout Subsection
+Technology and costs at the farmer level
+\end_layout
+
+\begin_layout Standard
+Farmer 
+\emph on
+i
+\emph default
+ chooses effort 
+\begin_inset Formula $e_{i}\geq0$
+\end_inset
+
+ that increases quality:
+\begin_inset Formula 
+\[
+q_{i}=\theta_{i}e_{i}+\varepsilon_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $\theta_{i}\geq0$
+\end_inset
+
+ the productivity of effort and 
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+ a mean-zero shock.
+ Effort cost is convex:
+ 
+\begin_inset Formula $c(e_{i}​)=\frac{k_{i}}{2}​​e_{i}^{2}​$
+\end_inset
+
+ with 
+\begin_inset Formula $k_{i}\geq0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Treatment T2 affects the farmer problem in two ways:
+\end_layout
+
+\begin_layout Standard
+it improves knowledge about how actions map into quality,
+ which we capture as an increase in effective 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+it provides inputs that reduce the marginal cost of effort,
+ captured as a decrease in 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Prices,
+ pass-through,
+ and trader intermediation
+\end_layout
+
+\begin_layout Standard
+Let the processor pay the MCC a unit price 
+\begin_inset Formula 
+\begin{equation}
+P^{\text{proc}}=\bar{p}+\alpha\,\bar{q}_{m},
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ is average quality in MCC 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha\geq0$
+\end_inset
+
+ is the per-unit premium slope for verifiable quality.
+ Without verifiable measurement,
+ 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+.
+ Under 
+\begin_inset Formula $T1$
+\end_inset
+
+,
+ measurement and record-keeping make quality contractible,
+ so 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The MCC offers farmer 
+\begin_inset Formula $i$
+\end_inset
+
+ a price schedule 
+\begin_inset Formula 
+\begin{equation}
+p_{i}=p_{0}+\lambda_{i}\alpha q_{i},
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $0\leq\lambda_{i}\leq1$
+\end_inset
+
+ is the pass-through rate of the premium to farmer 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ Pass-through depends on local contracting frictions and transparency.
+ We assume 
+\begin_inset Formula $\lambda_{i}=\lambda_{C}$
+\end_inset
+
+ if the farmer is directly connected to the MCC and 
+\begin_inset Formula $\lambda_{i}=\lambda_{T}$
+\end_inset
+
+ if the farmer sells via a trader,
+ with 
+\begin_inset Formula $0\leq\lambda_{T}\leq\lambda_{C}\leq1$
+\end_inset
+
+.
+ Elements of 
+\begin_inset Formula $T1$
+\end_inset
+
+ that advertise free testing and create digital records plausibly increase 
+\begin_inset Formula $\lambda_{C}$
+\end_inset
+
+ and may also raise 
+\begin_inset Formula $\lambda_{T}$
+\end_inset
+
+,
+ but 
+\begin_inset Formula $\lambda_{T}$
+\end_inset
+
+ remains lower because the trader can extract rents.
+\end_layout
+
+\begin_layout Subsection
+Farmer problem and comparative statics
+\end_layout
+
+\begin_layout Standard
+Farmer 
+\begin_inset Formula $i$
+\end_inset
+
+ chooses effort to maximize 
+\begin_inset Formula 
+\begin{equation}
+\pi_{i}=\big(p_{0}+\lambda_{i}\alpha q_{i}\big)y_{i}-\tfrac{k_{i}}{2}e_{i}^{2},
+\end{equation}
+
+\end_inset
+
+taking 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ and the price schedule as given.
+ Substituting 
+\begin_inset Formula $q_{i}=\theta_{i}e_{i}$
+\end_inset
+
+ and ignoring 
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+ for the choice,
+ the first-order condition yields 
+\begin_inset Formula 
+\begin{align}
+e_{i}^{*} & =\frac{\lambda_{i}\alpha\theta_{i}y_{i}}{k_{i}},\\
+q_{i}^{*} & =\theta_{i}e_{i}^{*}=\frac{\lambda_{i}\alpha\theta_{i}^{2}y_{i}}{k_{i}}.
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Comparative statics.
+\end_layout
+
+\begin_layout Standard
+For any farmer,
+ 
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial e_{i}^{*}}{\partial\alpha}>0,\qquad\frac{\partial e_{i}^{*}}{\partial\lambda_{i}}>0,\qquad\frac{\partial e_{i}^{*}}{\partial\theta_{i}}>0,\qquad\frac{\partial e_{i}^{*}}{\partial k_{i}}<0.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence:
+ 
+\end_layout
+
+\begin_layout Itemize
+Turning on 
+\begin_inset Formula $T1$
+\end_inset
+
+ increases 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and,
+ via transparency,
+ can increase 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+.
+ Both raise effort,
+ quality,
+ and farmer outcomes that are increasing in 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ or in the quality-linked component of price.
+ 
+\end_layout
+
+\begin_layout Itemize
+Turning on 
+\begin_inset Formula $T2$
+\end_inset
+
+ increases 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ and lowers 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+.
+ Both raise effort and quality.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Complementarity:
+
+\series default
+ 
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}e_{i}^{*}}{\partial\alpha\,\partial\theta_{i}}=\frac{\lambda_{i}y_{i}}{k_{i}}>0.
+\end{equation}
+
+\end_inset
+
+The impact of 
+\begin_inset Formula $T2$
+\end_inset
+
+ is larger when 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ due to 
+\begin_inset Formula $T1$
+\end_inset
+
+,
+ and vice versa.
+ The same holds for a decrease in 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Heterogeneity by connection comes from 
+\begin_inset Formula $\lambda_{C}>\lambda_{T}$
+\end_inset
+
+.
+ For given 
+\begin_inset Formula $\alpha,\theta_{i},k_{i},y_{i}$
+\end_inset
+
+,
+ 
+\begin_inset Formula 
+\begin{equation}
+e_{i,C}^{*}-e_{i,T}^{*}=\frac{(\lambda_{C}-\lambda_{T})\alpha\theta_{i}y_{i}}{k_{i}}\geq0,
+\end{equation}
+
+\end_inset
+
+so treatment effects that operate through 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and pass-through are larger for directly connected farmers.
+ 
+\end_layout
+
+\begin_layout Subsection
+MCC behavior and outcomes
+\end_layout
+
+\begin_layout Standard
+The MCC aggregates milk and sells to the processor.
+ Its per-unit margin is 
+\begin_inset Formula 
+\begin{equation}
+\underbrace{\bar{p}+\alpha\bar{q}_{m}}_{\text{revenue from processor}}-\underbrace{\big(p_{0}+\lambda_{i}\alpha q_{i}\big)}_{\text{payment to farmer}}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Averaging over suppliers,
+ the expected margin per liter is 
+\begin_inset Formula 
+\begin{equation}
+\text{Margin}_{m}=\bar{p}-p_{0}+\alpha(1-\bar{\lambda}_{m})\,\bar{q}_{m},
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\bar{\lambda}_{m}$
+\end_inset
+
+ is the average pass-through in the catchment.
+\end_layout
+
+\begin_layout Standard
+Treatment 
+\begin_inset Formula $T1$
+\end_inset
+
+ raises 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and,
+ through farmer responses,
+ raises 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+.
+ MCC outcomes such as average quality,
+ share of premium contracts,
+ and profits therefore increase under 
+\begin_inset Formula $T1$
+\end_inset
+
+.
+ If transparency also increases 
+\begin_inset Formula $\bar{\lambda}_{m}$
+\end_inset
+
+,
+ the MCC retains a smaller share per unit but benefits from higher volumes of quality and reduced disputes.
+ Net effects on MCC outcomes remain non-negative under mild conditions because both 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ rise.
+ 
+\end_layout
+
+\begin_layout Subsection
+Mapping to hypotheses
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 1 (MCC outcomes).
+\end_layout
+
+\begin_layout Standard
+Turning on 
+\begin_inset Formula $T1$
+\end_inset
+
+ increases 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and induces higher 
+\begin_inset Formula $q_{i}^{*}$
+\end_inset
+
+,
+ which raises 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ and MCC outcomes that are increasing in realized quality or quality-linked revenue.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H1}>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 2 (farmer outcomes from 
+\begin_inset Formula $T1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\lambda_{i}>0$
+\end_inset
+
+,
+ the increase in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ from 
+\begin_inset Formula $T1$
+\end_inset
+
+ raises 
+\begin_inset Formula $e_{i}^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{i}^{*}$
+\end_inset
+
+,
+ and also raises the quality-linked component of the price received.
+ Farmer outcomes that are increasing in quality or in the quality premium rise.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H2}>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 3 (farmer outcomes from 
+\begin_inset Formula $T2$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Treatment 
+\begin_inset Formula $T2$
+\end_inset
+
+ raises 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ and lowers 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+,
+ which raises 
+\begin_inset Formula $e_{i}^{*}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $q_{i}^{*}$
+\end_inset
+
+,
+ and quality-linked revenues.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H3}>0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 4 (combined effect and complementarity).
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $e_{i}^{*}$
+\end_inset
+
+ is multiplicative in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{i}/k_{i}$
+\end_inset
+
+,
+ the cross-partial is positive.
+ The effect of 
+\begin_inset Formula $T2$
+\end_inset
+
+ is larger when 
+\begin_inset Formula $T1$
+\end_inset
+
+ is in place and vice versa.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H4}>0\quad\text{for the interaction}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Heterogeneity by connection (C vs.
+\begin_inset space \space{}
+\end_inset
+
+not C).
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\lambda_{C}>\lambda_{T}$
+\end_inset
+
+,
+ any treatment that works through 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ has a larger impact for directly connected farmers.
+ Formally,
+ 
+\begin_inset Formula 
+\[
+\Delta e_{T1|C}^{*}>\Delta e_{T1|T}^{*},
+\]
+
+\end_inset
+
+and similarly for the combined treatments.
+ This delivers the tests 
+\begin_inset Formula $\beta_{H2C}=\beta_{H2}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta_{H3C}=\beta_{H3}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\beta_{H4C}=\beta_{H4}$
+\end_inset
+
+ as equality checks when pass-through is complete within connection type,
+ and suggests treatment effects are larger for connected farmers when 
+\begin_inset Formula $\lambda_{C}>\lambda_{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Additional testable implications
+\end_layout
+
+\begin_layout Standard
+Beyond the four main hypotheses,
+ the model generates several further predictions:
+\end_layout
+
+\begin_layout Itemize
+Effects scale with baseline volume 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Effects are stronger for farmers with lower baseline 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ or higher baseline 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ (or for those who learn the most under 
+\begin_inset Formula $T2$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Itemize
+If posters and free testing increase 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+,
+ treated MCCs should exhibit higher pass-through proxies:
+ more price differentiation by measured quality,
+ fewer disputes,
+ and more frequent test usage.
+ 
+\end_layout
+
+\begin_layout Section
 Experimental design
 \end_layout
 
 \begin_layout Standard
-The field experiment consists of two cross-randomized interventions that are implemented at different levels.
- Outcomes may be measures at different levels.
+We use a field experiment to test the effectiveness of the innovation bundle.
+ In particular we use a split plot trial design with interventions at two levels of the value chain.
  The design is illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -761,25 +1633,36 @@ nolink "false"
 
 \end_inset
 
-,
- which provides a stylized representation of the dairy value chain.
- We randomly allocate quality testing equipment to a random subset of milk collection centers (MCCs),
- while another random subset of milk collection centers functions as the control group for this treatment.
- In the catchment area of each milk collection center,
- we then take a sample of dairy farmers,
- stratifying the sample on whether the farmer is an active supplier to the milk collection center or not.
- In this sample,
- we then randomly assign half of the farmers to the information treatment (blocking on whether the farmer is an active supplier to the milk collection center or not).
+.
+ 
 \end_layout
 
 \begin_layout Standard
-With this design,
- we can then test if the intervention at the milk collection center improved outcomes for milk collection centers.
- We can also test if the intervention at the milk collection center affects outcomes at the farmer level by comparing outcomes of the farmers in catchment areas of treated Milk Collection Centers (MCCs) to outcomes of farmers in catchment areas of control MCCs.
- The intervention at the farmer level can only be evaluated at the farmer level.
- At the level of the farmers,
- we can also look at the interaction between the two treatments by looking at outcomes of farmers that received the information treatment in catchment areas of milk collection centers that also received a lactoscan in relation to outcomes of farmers that are differently exposed to the treatments.
- 
+The design follows the value chain structure previously outlined,
+ where the first treatment (T1) is implemented at the MCC level.
+ Within each MCC,
+ the second treatment (T2) is randomized at the individual farmer level.
+ Specifically,
+ half of the farmers are assigned to receive the video treatment,
+ while the other half are randomized into the control group.
+ Additionally,
+ within each milk collection center,
+ half of the farmers connected to that MCC receive the video treatment,
+ while the other half are in the control group.
+ To explore heterogeneity in treatment effects,
+ we also stratify by the manner in which farmers are connected to the MCC—
+either directly or via a trader.
+\end_layout
+
+\begin_layout Standard
+This design allows us to examine outcomes at different levels of the value chain.
+ At the MCC level,
+ we can assess the impact of the T1 intervention on MCC-level outcomes.
+ Furthermore,
+ we can analyze the effect of the second treatment (T2) on farmers connected to the MCC,
+ either directly or through a trader.
+ However,
+ the impact of the farmer-level treatment (T2) can only be evaluated by examining outcomes at the individual farmer level.
 \end_layout
 
 \begin_layout Standard
@@ -795,7 +1678,7 @@ status open
 \begin_inset Graphics
 	filename figures/design.png
 	lyxscale 20
-	scale 30
+	scale 20
 
 \end_inset
 
@@ -882,7 +1765,7 @@ Additional research questions,
 
 \begin_layout Itemize
 Does the MCC level intervention affect farmers that are already connected to the milk collection center differently than farmers that are not already connected to an MCC 
-\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2}\right)$
+\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2T}\right)$
 \end_inset
 
 .
@@ -890,7 +1773,7 @@ Does the MCC level intervention affect farmers that are already connected to the
 
 \begin_layout Itemize
 Does the information treatment affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3}\right)$
+\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3T}\right)$
 \end_inset
 
 
@@ -898,30 +1781,48 @@ Does the information treatment affect farmers that are connected to an MCC diffe
 
 \begin_layout Itemize
 Does the combined treatment (making quality visible at the MCC level and providing farmers with information on the desired quality dimension) affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4}\right)$
+\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4T}\right)$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section*
-Interventions
+\begin_layout Section
+Treatments:
+ Innovation Bundles for Addressing Milk Quality Challenges
 \end_layout
 
 \begin_layout Standard
-To make relevant quality parameters visible at the level of the milk collection centers,
- we focus on a technology bundle.
- In close collaboration with DDA,
- we install milk analyzers at a random sample of milk collection centers.
- These can be used to test milk samples of individual farmers or traders that supply to the milk collection centers to establish quality of incoming milk,
- as well as to test samples from the milk tankers when milk is picked up by traders or processors.
- Milk analyzers show butter fat,
- solid non-fats,
- added water,
- temperature of milk,
- protein content,
- and corrected lactometer coefficient.
- Taking a sample is non-destructive and takes about 30 to 50 seconds depending on the temperature of the milk.
+In response to the challenge of unobservable milk quality in the Ugandan dairy value chain,
+ we designed an innovation bundle targeting Milk Collection Centers (MCCs).
+ This bundle aims to enhance transparency,
+ improve record-keeping,
+ and empower both MCC managers and farmers by making milk quality measurable and visible.
+ The bundle,
+ developed after extensive consultations with stakeholders and implemented together with the DDA,
+ consists of three key components:
+\end_layout
+
+\begin_layout Standard
+1.
+ Milk Analyzer:
+ A central component of the innovation bundle is the installation of a milk analyzer at MCCs.
+ This machine assesses milk quality based on a set of compositional parameters,
+ such as butterfat content and solids-not-fat.
+ The testing process is non-destructive and takes less than one minute per sample,
+ enabling rapid and accurate quality evaluation of all milk collected.
+ By providing immediate feedback,
+ the milk analyzer helps ensure that quality standards are met and maintained.
+ More information on the milk analyzer can be obtained from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "manufacturer's website"
+target "https://www.essae.com/milk-fat-analyzer-machine.php"
+literal "false"
+
+\end_inset
+
+.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -942,7 +1843,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -975,18 +1876,21 @@ name "fig:Milk-analyzer"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-The milk analyzers will be delivered with clear Standard Operating Procedure advising MCCs and MCC staff will be trained.
- We collaborate with the DDA to set up a system to monitor the milk analyzers and its use.
+The milk analyzers were delivered with clear Standard Operating Procedures.
+ Two separate trainings were organized.
+ One training targetted MCC managers,
+ where the focus was mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality.
+ A second training was geared toward MCC managers and focused more on use and maintanance of the milk analyzers ans 
+\end_layout
+
+\begin_layout Standard
+We collaborate with the DDA to set up a system to monitor the milk analyzers and its use.
  In particular,
  DDA technicians will visit treatment MCCs at set periods.
  We also set up a hotline that MCCs can contact in case of problems with the milk analyzers.
@@ -997,26 +1901,68 @@ The milk analyzers will be delivered with clear Standard Operating Procedure adv
 \end_layout
 
 \begin_layout Standard
-In addition to the milk analyzers,
- the MCC level treatment also consists of a digitized system to keep track of milk quantity and quality delivered to the MCC.
- To do so,
- we developed a custom Android application that MCCs can use to register farmers that deliver milk.
- For these farmers,
- MCC managers can then record milk deliveries,
- including quantities delivered and price agreed,
- as well as a range of quality parameters that can be read from milk analyzer,
- such as butter fat and protein content.
- The application can also provide MCC managers with simple reports,
+2.
+ IT-Mediated Record-Keeping System:
+ We developed an Android application for MCC managers to facilitate digital record-keeping.
+ The app replaces the traditional paper notebooks used for tracking milk deliveries and payments.
+ In addition to recording quantities and prices,
+ the app allows MCC managers to store and monitor quality parameters obtained from the milk analyzer.
+ It can provide MCC managers with simple reports,
  such as the average butter fat (weighted by quantities supplied) over a different period (today,
  yesterday,
  last week,
  last two weeks and custom data range).
  Reports by farmer are also possible,
- such that MCC managers can determine the total sum to be paid to a farmer for milk delivered in the last 14 days.
- The application,
- which is pre-installed on a Samsung galaxy tab A7 with sim-card for mobile internet,
- backs up data in the cloud,
- but is designed following an off-line first principle as some MCCs may not have coverage.
+ such that MCC managers can determine the total sum to be paid to a farmer for milk delivered over a particular time frame,
+ such as in the last 14 days.
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Farmers are typically paid after 14 days of milk delivery.
+\end_layout
+
+\end_inset
+
+ In addition to the app,
+ we also developed different online portals that can be used to obtain data for different stakeholders.
+ For instance,
+ one portal was geared towards MCC owners,
+ such that they can always monitor key parameters in the MCCs.
+ Another portal aggregated information from all MCCs,
+ enabling government officials such as the DDA to monitor quality parameters,
+ prices and quantities in real time.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The portal can be found 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://bjvca.shinyapps.io/sample_submission_viewer_public/"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ This digital system enhances efficiency and transparency,
+ providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
+ The android app can be downloaded from 
+\begin_inset CommandInset href
+LatexCommand href
+name "google play store"
+target "https://play.google.com/store/search?q=cgiar%20milk&c=apps&hl=en"
+literal "false"
+
+\end_inset
+
+;
  A screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1037,7 +1983,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1070,26 +2016,51 @@ name "fig:Application"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Finally,
- for the MCC intervention,
- we also developed a poster to be displayed at MCCs informing farmers that the MCC now has a milk analyzer that can determine milk quality for free.
- The poster was designed by a local artist.
- 
+Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet computers on which the application was pre-installed.
+ Each tablet contained a SIM card with a prepaid data bundle to enable cloud-based synchronization of records.
+ The application was developed following offline-first design principles,
+ ensuring that all core functionalities remained accessible without an active internet connection and that data were uploaded automatically once connectivity was restored.
+ Data bundles were topped up by us on a monthly basis throughout the course of the project.
 \end_layout
 
 \begin_layout Standard
-To provide information to dairy farmers on the parameters and characteristics that processors are looking for and how farmers can produce milk that adheres to these standards,
- we use a short engaging video that demonstrates the inputs and practices that can be used to increase milk quality.
+3.
+ Farmer Engagement through Advertisements:
+ To address potential power imbalances emerging from the installation of milk analyzers and ensure farmers are equally informed,
+ we introduced a poster campaign at MCCs.
+ The poster,
+ designed by a local artist,
+ advertises the availability of free milk quality testing for farmers.
+ By making this service widely known,
+ the campaign aims to empower farmers with knowledge about their product quality,
+ fostering trust and collaboration between farmers and MCC managers.
+\end_layout
+
+\begin_layout Standard
+Together,
+ these three components form a comprehensive strategy to make milk quality observable and actionable,
+ creating incentives for improved practices throughout the dairy value chain.
+ This first package will constitute our first treatment in the field experiment below and will be referred to as T1.
+\end_layout
+
+\begin_layout Standard
+To bridge the gap in how milk quality is understood between farmers and processors,
+ we designed an intervention aimed at improving farmers’ knowledge of compositional quality and its importance in the dairy value chain.
+ This treatment combines information dissemination,
+ practical advice,
+ and tangible support to drive behavioral changes.
+ It consists of three components:
+\end_layout
+
+\begin_layout Standard
+1.
+ Educational Video:
  The use of video has been found to increase technology adoption in different settings,
  although the effectiveness also depends on a range of design attributes 
 \begin_inset CommandInset citation
@@ -1110,10 +2081,16 @@ literal "false"
 \end_inset
 
 .
-\end_layout
+ As such,
+ a short,
+ engaging video was developed to explain the concept of compositional milk quality (parameters such as butterfat and protein content) and why it matters for both farmers and processors.
+ The video also highlights practical management practices and inputs that farmers can adopt to improve milk quality,
+ mostly focusing on feeding strategies.
+\begin_inset Foot
+status collapsed
 
-\begin_layout Standard
-To design the video based extension intervention,
+\begin_layout Plain Layout
+To determine the content of the video,
  we first identified the top five practices and inputs that are known to raise butter fat and Solid Non Fats in milk.
  This was done through consultations of experts.
  We found the top 5 practices and inputs were:
@@ -1122,10 +2099,50 @@ To design the video based extension intervention,
  best practice in silage and hay making,
  correct mixing and dosage of feed,
  and feed supplements like Methionine and Lysine.
- To make the information intervention more actionable,
- we also provide farmers with some free inputs (1 kg of Chloris Gayana also known as Rhodes grass).
- The video will be screened a first time during baseline data collection and a second time just before the distribution of the milk analyzers.
- We also developed an appealing handout that summarizes some of the main points from the video using cartoons drawn by a local artist.
+ As selection of breed and genetic potential is unlikely to change sufficiently fast give the length of our research project,
+ we decided to focus on feeding practices.
+\end_layout
+
+\end_inset
+
+ The video is designed to be accessible and appealing,
+ ensuring key messages resonate with the target audience.
+ The video was shown to treatment farmers twice:
+ once during baseline data collection in December 2022 and once at the time of installation of the milk analyzers in October 2023.
+\end_layout
+
+\begin_layout Standard
+2.
+ Cartoon Handout:
+ To reinforce the information provided in the video,
+ we created a handout in the form of a cartoon summary.
+ The cartoons provide a visual,
+ easy-to-understand recap of the key points,
+ serving as a quick reference for farmers after watching the video.
+ This format ensures the information remains accessible even to farmers with limited literacy.
+\end_layout
+
+\begin_layout Standard
+3.
+ Improved Pasture Seeds:
+ To make the knowledge actionable,
+ each participating farmer received a free bag of improved pasture seeds (1 kg of 
+\emph on
+Chloris Gayana
+\emph default
+,
+ also known as Rhodes grass).
+ By planting these seeds,
+ farmers can enhance the nutritional value of their pastures,
+ a critical factor in increasing the compositional quality of milk.
+ This practical input complements the educational components,
+ enabling farmers to directly apply the recommendations provided.
+\end_layout
+
+\begin_layout Standard
+This treatment,
+ henceforth referred to as T2,
+ aims to align the understanding of milk quality between farmers and processors while equipping farmers with the tools and knowledge to improve milk quality in a sustainable manner.
 \end_layout
 
 \begin_layout Section*
@@ -1158,10 +2175,10 @@ M
 \emph default
 .
  
-\begin_inset Formula $T_{m}$
+\begin_inset Formula $T_{m}^{T}$
 \end_inset
 
- is a treatment indicator at the MCC level that is one if the MCC was allocated to the lactoscan treatment.
+ is a treatment indicator at the MCC level that is one if the MCC was allocated to the test and tracing treatment.
  
 \begin_inset Formula $y_{m}$
 \end_inset
@@ -1219,7 +2236,7 @@ literal "false"
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{m}=\alpha+\beta_{H1}.T_{m}+\beta_{b}.y_{m}^{b}+\varepsilon_{m}\label{eq:one}
+y_{m}=\alpha+\beta_{H1}.T_{m}^{T}+\beta_{b}.y_{m}^{b}+\varepsilon_{m}\label{eq:one}
 \end{equation}
 
 \end_inset
@@ -1240,7 +2257,7 @@ The parameter of interest in this equation is
 The second equation is at the individual level.
  Here,
  
-\begin_inset Formula $T_{i}$
+\begin_inset Formula $T_{i}^{I}$
 \end_inset
 
  is a treatment indicator at the farmer level that is one
@@ -1257,19 +2274,20 @@ I
 \emph default
 ).
  
-\begin_inset Formula $C_{i,m}$
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{i,m}=\alpha+\beta_{H2}.T_{m}^{T}+\beta_{H3}.T_{i,m}^{I}+\beta_{H4}.T_{m}^{T}.T_{i,m}^{I}+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:one-1}
+\end{equation}
+
 \end_inset
 
- is an indicator variable at the farmer level that is one if the farmer 
-\emph on
-i
-\emph default
- is directly connected to MCC 
-\emph on
-m
-\emph default
- (and zero if the farmer is connected through a trader).
- 
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $y_{i,m}$
 \end_inset
 
@@ -1284,14 +2302,54 @@ m
  is an error term (which may be correlated within catchment area).
  As above,
  
-\begin_inset Formula $T_{m}$
+\begin_inset Formula $T_{m}^{T}$
 \end_inset
 
- is a treatment indicator at the MCC level that is one if the MCC (in who's catchment area the farmer resides) was allocated to the lactoscan treatment and we also control for the lagged baseline outcome 
+ is a treatment indicator at the MCC level that is one if the MCC (in who's catchment area the farmer resides) was allocated to the milk analyzer treatment and we also control for the lagged baseline outcome 
 \begin_inset Formula $y_{i,m}^{b},$
 \end_inset
 
 again in deviations from its mean.
+ The parameter of interest in this equation is 
+\begin_inset Formula $\beta_{H2}$
+\end_inset
+
+,
+ which tests Hypothesis 2,
+ 
+\begin_inset Formula $\beta_{H3}$
+\end_inset
+
+,
+ which tests Hypothesis 3 and 
+\begin_inset Formula $\beta_{H4}$
+\end_inset
+
+,
+ which tests for the interaction effect.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally,
+ we will also look at treatment heterogeneity,
+ exploiting the fact that we stratified farmers on their link to the MCC.
+ In particular,
+ 
+\begin_inset Formula $C_{i,m}$
+\end_inset
+
+ is an indicator variable at the farmer level that is one if the farmer 
+\emph on
+i
+\emph default
+ is directly connected to MCC 
+\emph on
+m
+\emph default
+ (and zero if the farmer is connected through a trader).
+ We also add a full set of interactions with this connection indicator and run the following model:
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1313,11 +2371,11 @@ alpha+
 \backslash
 alpha{}_{C}C_{i,m}+
 \backslash
-beta_{H2}.T_{m}+
+beta_{H2T}.T_{m}^{T}+
 \backslash
-beta_{H3}T_{i}+
+beta_{H3T}T_{i}^{I}+
 \backslash
-beta_{H4}T_{i}.T_{m} 
+beta_{H4T}T_{i}^{I}.T_{m}^{T} 
 \backslash
 
 \backslash
@@ -1328,11 +2386,11 @@ beta_{H4}T_{i}.T_{m}
 
 & +
 \backslash
-beta_{H2C}.T_{m}.C_{i,m}+
+beta_{H2C}.T_{m}^{T}.C_{i,m}+
 \backslash
-beta_{H3C}T_{i}.C_{i,m}+
+beta_{H3C}T_{i}^{I}.C_{i,m}+
 \backslash
-beta_{H4C}T_{i}.T_{m}.C_{i,m}+
+beta_{H4C}T_{i}^{I}.T_{m}^{T}.C_{i,m}+
 \backslash
 beta_{b}.y_{i,m}^{b}+
 \backslash
@@ -1359,21 +2417,7 @@ end{multline}
 \end_layout
 
 \begin_layout Standard
-Standard errors in equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
- are clustered at the milk collection level.
- The parameter of interest in this equation is 
+The parameter of interest in this equation is 
 \begin_inset Formula $\beta_{H2}$
 \end_inset
 
@@ -1390,7 +2434,17 @@ ref{eq:two}
 
 ,
  which tests for the interaction effect.
- We also add a full set of interactions with the connection indicator to look at treatment heterogeneity.
+ In all regressions,
+ we apply a cluster-robust variance estimator with the bias-reduced linearization (CR2) small-sample correction 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "10.1162/REST_a_00552"
+literal "false"
+
+\end_inset
+
+,
+ with standard errors clustered at the level of randomization (MCC catchment area level).
 \end_layout
 
 \begin_layout Standard
@@ -1403,7 +2457,7 @@ literal "false"
 \end_inset
 
 .
- While in the next section we will run power calculations based on models with a complete set of interactions (equation 
+ While power calculations were based on models with a complete set of interactions (equation 
 \begin_inset ERT
 status open
 
@@ -1477,172 +2531,43 @@ nolink "false"
 ).
 \end_layout
 
-\begin_layout Section*
-Power calculations
+\begin_layout Section
+Sample and Timeline
 \end_layout
 
 \begin_layout Standard
-We also use simulation to determine sample size.
- The primary outcome variable that we use in our statistical power calculations is the price of milk.
+Sample size was determined using a series of power simulations detailed in the pre-analysis plan.
+ The primary outcome for these calculations was the price of milk,
+ modeled at both the milk collection center (MCC) and farmer level.
+ At the MCC level,
+ prices were assumed normally distributed with mean 1000 UGX/liter and standard deviation 50,
+ while farmer-level prices were drawn with the MCC mean and a higher variance (SD = 100) to capture greater dispersion.
+ We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size),
+ translate into a 40 UGX/liter increase for farmers (small to medium effect),
+ and that the individual-level information treatment would generate a 25 UGX/liter increase (small effect),
+ with a large interaction effect of 50 UGX/liter.
+ Power was calculated for the joint test of all hypotheses at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100–130 MCCs) and farmers per cluster (10–40).
+ Results showed that with 125 MCCs and 20 farmers per MCC (total sample of 2,500 farmers),
+ power was just above 0.80 for the joint test,
+ while power for individual hypotheses was substantially higher,
+ ranging from 0.87 to 0.99.
 \end_layout
 
 \begin_layout Standard
-We start at the level of the milk collection center and assume that at this level,
- the price at which milk collection centers sell their aggregated milk is normally distributed with mean 1000 UGX per liter and standard deviation of 50 (which is half of what we will assume at the farmer level).
- From these 
-\emph on
-N
-\emph default
- observations (with 
-\emph on
-N
-\emph default
- denoting the number of milk collection centers recruited for our study and hence the first key variable to be determined by the power calculations) we then generate 
-\emph on
-N
-\emph default
- times 
-\emph on
-n
-\emph default
- observations.
- These are the 
-\emph on
-n
-\emph default
- dairy farmers that are located in the catchment areas of the 
-\emph on
-N
-\emph default
- milk collection centers.
- The outcome variable at this level,
- prices that farmers obtain from milk collection centers,
- are generated again as random normal,
- but with the mean the value that was drawn for the MCC the 
-\emph on
-n
-\emph default
- farmers are connected to,
- and with a slightly higher standard deviation (100 —
- since,
- as the milk is not aggregated yet,
- extreme values are not yet averaged out).
- This procedure gives us a total sample with 
-\emph on
-N
-\emph default
- prices at the MCC level and 
-\emph on
-N.n
-\emph default
- prices at the farmer level,
- the latter being clustered at the MCC catchment area level by design.
-\end_layout
-
-\begin_layout Standard
-We assume that the intervention at the level of the milk collection centers leads to an increase in the price of UGX30 per liter.
- This seems reasonable in light of the fact that processors told that they either pay a 10 percent premium for quality milk,
- or UGX100 per liter.
- However,
- as we assume a pretty narrow distribution of prices,
- even though this effect is only a 3 percent increase,
- this is considered a medium to large effect according to Cohen's D.
- At the level of the farmers,
- for the intervention at the MCC level,
- we expect an effect size of UGX40.
- While this represents a 4.4 percent increase,
- the larger variance at this level means that according to Cohen's D,
- this effect is considered small to medium.
- Finally,
- at the level of the farmers,
- the individual level randomization of the information treatment intervention allows us to estimate small effects.
- For our power simulation,
- we assumed and effect size of UGX25,
- which corresponds to a small effect according to Cohen's D.
- For the interaction,
- we assume a large effect (UGX50 per liter).
-\end_layout
-
-\begin_layout Standard
-We calculate power for the joint test that the three hypotheses are true at the 5 percent significance level.
- To do so,
- we run the exact two regressions from Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Estimation-and-inference"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and run 1000 simulations for each
-\emph on
- n*N
-\emph default
- combination.
- For each 
-\emph on
-n*N
-\emph default
- combination,
- we calculate the share of simulations at which all coefficients of interest in Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
- (
-\begin_inset Formula $\beta_{H1}$
-\end_inset
-
- to 
-\begin_inset Formula $\beta_{H4}$
-\end_inset
-
-) are significant at the 5 percent level to determine power.
-\end_layout
-
-\begin_layout Standard
-Results of the simulation are summarized in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Power-plane"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- Instead of the usual power curves that plot power against sample size,
- we obtain a power plane as we determine both the number of clusters (between 100 and 130 MCCs) and the number of farmers per cluster (between 10 and 40 farmers).
- Power is measured on the 
-\emph on
-z
-\emph default
- axis and is the proportion of cases (out of the 1000 simulations) in which all three coefficients were found significant at p<0.05.
- 
+The field experiment was conducted in four districts of Southwestern Uganda:
+ Ntungamo,
+ Mbarara,
+ Kazo,
+ and Kirihura.
+ The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
+ which yielded a total of about 130 MCCs.
+ Half of these were randomly selected to receive T1,
+ while the other half served as the control.
+ In each of the 130 MCCs,
+ we then randomly selected 20 farmers who deliver milk to the center.
+ Of these 20 farmers,
+ 10 were randomly assigned to the video treatment (T2),
+ while the remaining 10 served as the control group.
 \end_layout
 
 \begin_layout Standard
@@ -1651,24 +2576,28 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename figures/power.png
-	scale 50
+	filename figures/sampling.png
+	lyxscale 50
+	scale 30
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Power plane
+Sampling
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Power-plane"
+name "fig:Sampling"
 
 \end_inset
 
@@ -1690,110 +2619,79 @@ name "fig:Power-plane"
 \end_layout
 
 \begin_layout Standard
-The figure,
- which can be found as an interactive figure 
-\begin_inset CommandInset href
-LatexCommand href
-name "here"
-target "https://bjornvancampenhout.com/wp-content/uploads/2022/09/power_3D.html"
-literal "false"
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampling"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-,
- shows the trade-off between more clusters and more individuals per cluster.
- With about 125 MCCs and 20 farmers per cluster we find power just above .80.
- This corresponds to a sample of 2500.
- Note that the requirement to detect minimum effect sizes for all three hypotheses simultaneously is very strict.
- For instance,
- if we require only one hypothesis to be significant,
- we obtain power of .99 for a sample with 125 MCCs and 20 farmers.
- Similarly,
- if we consider each hypothesis separately,
- we get power levels of .87 for the MCC level intervention with outcome at the MCC level,
- .93 for the MCC level intervention with outcome at the farmer level,
- and .94 for the farmer level intervention with outcome at the farmer level.
- For the interaction effect,
- we obtain power of .99.
-\end_layout
-
-\begin_layout Section*
-Timeline
+ shows randomization in three of the four districts for T1 and T2 at both the MCC and farmer level.
+ The first map to the left of the figure shows the locations of the MCCs and their treatment status for T1.
+ The second panel shows the treatment status for T1 for the farmers that are connected to the MCCs,
+ which is clustered at the MCC level as T1 is implemented at that level.
+ The third panel shows treatment allocation of T2 among farmers linked to MCCs,
+ which is at the individual level.
 \end_layout
 
 \begin_layout Standard
-We plan to collect baseline information in November-December 2022.
- During that time,
- we will also implement the intervention at the level of the farmer.
- Immediately after baseline data collection,
- we will also start installing lactoscans in the selected milk collection centers.
- This is expected to take about three months,
- such that all lactoscans are install towards the end of March 2023.
- Midline data will be collected about half a year after the last lactoscan was installed,
- so this will be in September-October 2023.
- Endline data will be collected one year after the intervention,
- which is April 2024.
+Baseline data from both MCCs and associated farmers was collected towards the end of 2022 using in person surveys.
+ At this time,
+ the intervention at the farmer level (T2) was implemented.
+ In the second half of 2023 milk analyzers were installed and MCC managers were trained on the use of the analyzers and the digital record-keeping system.
+ Towards the end of this project,
+ in October 2023,
+ we reinforced T2 by showing the video again to T2 farmers.
+ Next,
+ during the course of one year,
+ together with the DDA we supported T1 MCCs with regular visits to make sure the equipment was operational,
+ including recalibration after 6 months.
+ In december 2024,
+ endline data was collected.
+ This involded in-person surveys at the MCC level and at the farmer level.
+ In addition,
+ during endline we also measured quality of incoming milk.
+ To do so,
+ an enumerator equipped with a milk analyzer paid an unannounced visit to each MCC enrolled in the study and measures all incoming milk samples over the course of one full day.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This exercise posed logistical challenges,
+ as MCCs opened early (usually at 7:00 am) and were often in remote areas.
+ Enumerators frequently stayed overnight nearby to set up equipment before deliveries and carried generators for use where power was unavailable.
+ To limit information spillovers,
+ the testing was conducted over a short period with as many enumerators deployed simultaneously as possible.
 \end_layout
 
-\begin_layout Section*
-Data collection
+\end_inset
+
+ After all data was collected,
+ all equipment was donated to the MCCs.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The milk analyzers used by enumerators for supervised testing were donated to control MCCs,
+ which also received tablets and training after the project to ensure fairness.
 \end_layout
 
-\begin_layout Subsection*
-Sampling
+\end_inset
+
+
 \end_layout
 
-\begin_layout Standard
-We start from a list of registered milk collection centers that was obtained from the Dairy Development Authority.
- From this list,
- we randomly selected 130 milk collection centers,
- half of which were assigned to the treatment group using a computer algorithm.
- We then travel to these 130 milk collection centers and use systematic sampling to get a sample of 10 farmers that are directly delivering to the MCC and 10 farmers that are delivering through a trader to the MCC.
- In particular,
- we will visit the MCC early in the morning and get an estimate of the expected number of farmers that will visit during the course of the day.
- This will be used to determine the interval at which farmers will be picked to participate in the study.
- These farmers will be interviewed at home the next day.
- 
-\end_layout
-
-\begin_layout Subsection*
-Data collection protocol
-\end_layout
-
-\begin_layout Standard
-Baseline data collection will be fairly straightforward and consist of surveys at the MCC level and at the farmers level.
- Endline data collection will proceed in two stages.
- In a first stage,
- we will reinterview the farmers and MCCs from baseline.
- In a second stage,
- we will also measure quality of milk using milk analyzers in both treatment and control.
- This will be done by stationing an enumerators in MCCs for one day to test and record all samples that are brought in from the time the MCC opens (usually at 7:00) until it closes for morning receptions (usually around noon).
- Note that this means that we will also have to install milk analyzers in control MCCs.
- As effects of installing milk analyzers may be very quick,
- we only have a limited time window in which differences between treatment and control areas can be measured.
- Furthermore,
- we will also need to be mindful of anticipatory effects.
- That is,
- we will arrive at MCCs unannounced.
-\end_layout
-
-\begin_layout Section*
-Outcomes of interest
-\end_layout
-
-\begin_layout Subsection*
-Demonstrating balance
+\begin_layout Section
+Descriptive Statistics and Baseline Balance
 \end_layout
 
 \begin_layout Standard
 We pre-registered 10 variables at each level to demonstrate balance.
- Part of these—
-indicated with a star in the original pre-analysis plan—
-will be reported in the final paper,
- the rest will be reported in an online appendix for space considerations.
- At this stage when we prepare a pre-registered report,
- we can already estimate balance.
- Results are in Table 
+ Results for five variables measured at each level (MCC and farmer) are in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance_main"
@@ -1804,8 +2702,8 @@ nolink "false"
 
 \end_inset
 
- for the starred variables;
- the rest of the results are in Appendix Table 
+;
+ five more variables for each level are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance_appendix"
@@ -1816,8 +2714,136 @@ nolink "false"
 
 \end_inset
 
-.
- We also include F-tests for joint orthogonality.
+ to conserve space (this was also pre-registered).
+ The top panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_main"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows that among MCCs in the control group (i.e.,
+ those that did not receive a milk analyzer),
+ 63 percent are organized as cooperatives,
+ reflecting how collective institutions continue to play a central role in the organization of Uganda’s dairy value chain.
+ Their average total storage capacity is about 4000 liters,
+ and 27 percent reported paying a premium for higher quality milk.
+ The average MCCs has been in operation for just under 10 years,
+ and 58 percent facilitated the supply of acaracides to their farmer members.
+ The top panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ further shows that among MCCs in the control group,
+ the average number of full-time employees is about three,
+ and a typical MCC receives milk from about 56 farmers or traders on an average day during the rainy season.
+ On average,
+ MCCs use 38 percent of their processing or cooling capacity during the dry season,
+ which is indicative of significant seasonality affecting the sector.
+ MCCs report they own 21 milk cans and the vast majority indicate that they provide credit or loans to cooperative members and regular suppliers.
+\end_layout
+
+\begin_layout Standard
+Both tables further show treatment–control differences for each baseline variable for T1 in the second column.
+ Only one of the individual differences is statistically significant at the 5 percent level (capacity).
+ At the bottom of the top panels of both tables we report results from an omnibus Wald test of joint balance across all covariates (F-statistic and p-values below).
+ These tests do not reject the null of joint equality,
+ indicating that treatment assignment is not systematically predicted by observed baseline characteristics.
+ Overall,
+ the tables suggest that randomization achieved reasonably balanced treatment and control groups along key baseline characteristics of MCCs for the treatment at that level.
+\end_layout
+
+\begin_layout Standard
+The bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_main"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ reports baseline characteristics of dairy farmers across treatment groups.
+ In the control group (corresponding to farmers that did no see the video and are connected to an MCC that did not receive the milk analyzer),
+ household heads are on average 54 years old,
+ with herds of about 62 animals,
+ of which more than 90 percent are improved breeds.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+To calculate herd,
+ we did not simply ask total numbers but asked 6 separate questions:
+ we ask how many local cows;
+ local heifers;
+ and local calves the farmer has,
+ and ask the same 3 categories for improved animals.
+ Farmers were allowed to indicate that they did not know for a particular category,
+ which were treated as missing in our analysis leading to the reduction in the number of observations.
+\end_layout
+
+\end_inset
+
+ Farmers sell roughly 60 liters of milk per day during the rainy season,
+ and they spend on average USD 66 per month on chemical purchases—
+primarily acaracides.
+ Further characteristics in the bottom panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season.
+ Roughly 79 percent of farmers sell most of their milk to a collection center,
+ three-quarters report using only steel containers when transacting,
+ and a similarly high share are members of a dairy cooperative.
+\end_layout
+
+\begin_layout Standard
+The farmer-level balance tables report three different sets of comparisons.
+ First,
+ we test for pre-treatment differences between farmers connected to MCCs that received a milk analyzer and those connected to control MCCs.
+ With the exception of a modest difference in cooperative membership (significant at the 10 percent level in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ no systematic imbalance is observed.
+ Second,
+ we examine differences between farmers who received the video-and-seed intervention and those who did not.
+ Here we find some evidence of higher milk production (p < 0.1),
+ higher sales volumes (p < 0.05),
+ and slightly higher acaracide expenditures among treated farmers.
+ Third,
+ we report the interaction effects at baseline,
+ where two variables are significant at the 5 percent level and one at the 1 percent level.
+ While these individual differences suggest some imbalance across treatment arms,
+ the omnibus F-tests are consistently insignificant.
 \end_layout
 
 \begin_layout Standard
@@ -1925,7 +2951,7 @@ cline{2-6}
 \begin_layout Plain Layout
 
 Is this milk collection center (part of a) cooperative?
- (yes/no)  & 
+ (1=yes)  & 
 \backslash
 Sexpr{balance[1,1]} & 
 \backslash
@@ -1959,7 +2985,7 @@ Sexpr{balance[1,4]})
 
 \begin_layout Plain Layout
 
-Total Capacity of MCC (in liters)  & 
+Total Capacity of milk tanks (in liters)  & 
 \backslash
 Sexpr{balance[4,1]} & 
 \backslash
@@ -1993,7 +3019,7 @@ Sexpr{balance[4,4]})
 
 \begin_layout Plain Layout
 
-Does the MCC pay a premium for quality (yes=1) & 
+Does the MCC pay a premium for quality (1=yes) & 
 \backslash
 Sexpr{balance[6,1]} & 
 \backslash
@@ -2027,7 +3053,7 @@ Sexpr{balance[6,4]})
 
 \begin_layout Plain Layout
 
-Years Experience in MCC  & 
+MCC age in years of operation  & 
 \backslash
 Sexpr{balance[7,1]} & 
 \backslash
@@ -2062,7 +3088,7 @@ Sexpr{balance[7,4]})
 \begin_layout Plain Layout
 
 Facilitates supply of acaracides?
- (yes=1) & 
+ (1=yes) & 
 \backslash
 Sexpr{balance[10,1]} & 
 \backslash
@@ -2243,21 +3269,21 @@ Sexpr{balance_farmer[3,14]})
 
 Number of improved animals in total herd (share)  & 
 \backslash
-Sexpr{balance_farmer[5,1]} & 
+Sexpr{balance_farmer[4,1]} & 
 \backslash
-Sexpr{balance_farmer[5,3]}$^{
+Sexpr{balance_farmer[4,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[5,5]<.01,"**",ifelse(balance_farmer[5,5]<.05,"*",ifelse(balance_farmer[5,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[4,5]<.01,"**",ifelse(balance_farmer[4,5]<.05,"*",ifelse(balance_farmer[4,5]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[5,8]}$^{
+Sexpr{balance_farmer[4,8]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[5,10]<.01,"**",ifelse(balance_farmer[5,10]<.05,"*",ifelse(balance_farmer[5,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[4,10]<.01,"**",ifelse(balance_farmer[4,10]<.05,"*",ifelse(balance_farmer[4,10]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[5,13]}$^{
+Sexpr{balance_farmer[4,13]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[5,15]<.01,"**",ifelse(balance_farmer[5,15]<.05,"*",ifelse(balance_farmer[5,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[4,15]<.01,"**",ifelse(balance_farmer[4,15]<.05,"*",ifelse(balance_farmer[4,15]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[5,18]} 
+Sexpr{balance_farmer[4,18]} 
 \backslash
 
 \backslash
@@ -2268,13 +3294,13 @@ Sexpr{balance_farmer[5,18]}
 
 & (
 \backslash
-Sexpr{balance_farmer[5,2]}) & (
+Sexpr{balance_farmer[4,2]}) & (
 \backslash
-Sexpr{balance_farmer[5,4]}) & (
+Sexpr{balance_farmer[4,4]}) & (
 \backslash
-Sexpr{balance_farmer[5,9]}) & (
+Sexpr{balance_farmer[4,9]}) & (
 \backslash
-Sexpr{balance_farmer[5,14]})
+Sexpr{balance_farmer[4,14]})
 \backslash
 
 \backslash
@@ -2468,7 +3494,30 @@ Note:
 
 \end_layout
 
-\begin_layout Subsection*
+\begin_layout Section
+Attrition
+\end_layout
+
+\begin_layout Standard
+Already at baseline,
+ it proved challenging to meet sample size target with the budget.
+ This was primarily due to the extensive nature of dairy farming,
+ resulting in household that are spread over large areas.
+ As a result,
+ we only managed to interview 2,261 farmers connected to 124 MCCs.
+ 
+\end_layout
+
+\begin_layout Standard
+By endline,
+ we managed to re-contact 2,218 farmers in 120 MCCs.
+\end_layout
+
+\begin_layout Section
+Results
+\end_layout
+
+\begin_layout Subsection
 Primary outcomes
 \begin_inset CommandInset label
 LatexCommand label
@@ -2479,10 +3528,16 @@ name "subsec:Primary-outcomes"
 
 \end_layout
 
+\begin_layout Subsubsection
+MCC level
+\end_layout
+
 \begin_layout Standard
-We define six primary outcomes at the MCC level.
- All six are outcomes are expected to change in a positive direction as a result of our intervention at this level.
- We thus also construct an index following 
+We define six primary outcomes at the level of the MCC.
+ All six are hypothesized to move in a positive direction in response to our intervention,
+ which was designed to make milk quality more transparent and salient in transactions.
+ To capture the aggregate effect across these outcomes,
+ we also construct a summary index following 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1198/016214508000000841"
@@ -2490,57 +3545,33 @@ literal "false"
 
 \end_inset
 
- that measures overall effect of making quality visible on the development of a market for quality.
+.
+ This index provides a single measure of how the intervention influenced the overall development of a market for quality at the MCC level.
 \end_layout
 
 \begin_layout Standard
-The five primary outcomes at MCC level are:
- 
-\end_layout
-
-\begin_layout Enumerate
-Testing on incoming samples - q25x3
-\end_layout
-
-\begin_layout Enumerate
-Testing of outgoing samples 0-q39a/c,
- q52a/c,
- q62a/c,
- q72a/c,
- q82a/c
-\end_layout
-
-\begin_layout Enumerate
-Average prices at which milk was bought from farmers (during last 7 days) - q25b
-\end_layout
-
-\begin_layout Enumerate
-Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
-\end_layout
-
-\begin_layout Enumerate
-Does the MCC pay a quality premium to suppliers?
- - q29
-\end_layout
-
-\begin_layout Enumerate
-Did the buyer pay a quality premium?
- q44/q54/q64/q74/q84 == 1
+Our first two outcomes measure the extent to which quality testing becomes embedded in routine operations at the MCC.
+ Specifically,
+ we record whether MCCs test incoming milk deliveries from farmers and whether they test outgoing milk deliveries destined for buyers.
+ These indicators capture the degree to which the analyzers are used as intended,
+ and whether testing shapes quality assurance both upstream and downstream.
 \end_layout
 
 \begin_layout Standard
-Results are in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-MCC"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
+The next two outcomes reflect how increased transparency affects pricing behavior.
+ We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey,
+ and the average price at which MCCs sell aggregated milk to buyers over the same period.
+ These outcomes allow us to assess whether improved quality monitoring translates into higher farm-gate prices and whether MCCs are able to pass on quality improvements through higher sales prices.
+\end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Finally,
+ two outcomes directly capture whether price differentiation by quality emerges.
+ We ask whether the MCC pays explicit quality premiums to its suppliers,
+ and whether downstream buyers pay a premium for higher-quality milk.
+ Together,
+ these indicators provide evidence on whether the intervention helped overcome the central coordination problem in quality upgrading:
+ aligning incentives on both sides of the market so that producers and intermediaries are rewarded for investing in quality.
 \end_layout
 
 \begin_layout Standard
@@ -2927,13 +3958,66 @@ Note:
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The results provide evidence that the intervention successfully shifted MCC practices toward greater transparency in milk quality.
+ In particular,
+ MCCs in the treatment group were substantially more likely to test incoming deliveries:
+ the probability of testing rose by 53 percentage points relative to a control group mean of 29 percent,
+ a large and highly significant increase.
+ We also observe an increase in the probability of testing outgoing deliveries to buyers,
+ although the magnitude of this effect is smaller (34 percentage points) and only marginally significant.
+ These results suggest that the analyzers were primarily used to monitor milk supplied by farmers,
+ with somewhat less uptake for assuring quality toward downstream buyers.
+\end_layout
+
+\begin_layout Standard
+Turning to prices,
+ we find little evidence that the intervention directly affected the level of prices at which MCCs transacted.
+ The average farm-gate price paid to suppliers and the average sales price obtained from buyers remain statistically indistinguishable between treatment and control groups.
+ These null effects are consistent with a setting in which overall market prices are largely determined by downstream demand and supply conditions,
+ and may not respond quickly to localized changes in quality monitoring.
+\end_layout
+
+\begin_layout Standard
+Finally,
+ we examine whether MCCs and their buyers adopted explicit price differentiation by quality.
+ The results here are also modest.
+ We find no effect on whether MCCs paid a premium to suppliers,
+ and only a small and statistically insignificant effect on whether buyers rewarded MCCs with a premium.
+ Although suggestive of limited pass-through at this early stage,
+ these outcomes are measured with relatively few observations,
+ leaving open the possibility that effects may emerge more clearly over a longer horizon.
+\end_layout
+
+\begin_layout Standard
+Taken together,
+ the intervention led to a strong and consistent increase in testing behavior,
+ but limited short-run evidence of quality-based price differentiation.
+ Nonetheless,
+ the composite index of all primary outcomes indicates a positive and statistically significant overall effect of the intervention,
+ highlighting that even in the absence of immediate price effects,
+ making quality visible can shift MCC practices in ways that may lay the foundation for a functioning market for quality.
+\end_layout
+
+\begin_layout Subsubsection
+Farmer level
 \end_layout
 
 \begin_layout Standard
@@ -2950,8 +4034,8 @@ ref{eq:two}
 
 \end_inset
 
-.
- Results are in table 
+,
+ with results reported in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer"
@@ -2963,7 +4047,7 @@ nolink "false"
 \end_inset
 
 .
- In appendix table 
+ In Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer-pooled"
@@ -2975,64 +4059,52 @@ nolink "false"
 \end_inset
 
 ,
- we estimate the equation where we consider the orthogonal treatment as a co-variate we adjust for,
- and interact the treatment variable with the demeaned orthogonal treatment.
- This give a more robust version of the treatment estimate.
- The primary outcome variables we include are:
+ we present a robustness specification where the orthogonal treatment is included as a covariate and interacted with the demeaned treatment indicator.
+ This specification provides a more conservative estimate of the treatment effect.
 \end_layout
 
-\begin_layout Enumerate
-Production investment and management (based on an anderson index of the following six recommended practices to improve milk quality) 
+\begin_layout Standard
+The first outcome measures production investment and management practices that are expected to improve milk quality.
+ We construct an 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1198/016214508000000841"
+literal "false"
+
+\end_inset
+
+ index based on six recommended practices:
+ oversowing pastures,
+ planting legume pastures,
+ adopting controlled or zero grazing in both the dry and wet seasons,
+ conserving pastures,
+ and providing feed supplements.
+ This index provides a summary measure of whether farmers adjusted their production strategies in response to the intervention.
 \end_layout
 
-\begin_deeper
-\begin_layout Enumerate
-q39 == "Yes" ##oversowing
-\end_layout
-
-\begin_layout Enumerate
-q39c == "Yes" ##legume pastures
-\end_layout
-
-\begin_layout Enumerate
-q40 in c(1,3) #controlled/zero grazing in dry seaon
-\end_layout
-
-\begin_layout Enumerate
-q41 in c(1,3) #controlled/zero grazing in wet seaon
-\end_layout
-
-\begin_layout Enumerate
-q42 == "Yes" #pasture conservation
-\end_layout
-
-\begin_layout Enumerate
-q43 == "Yes" ##supplements
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Buyer checks for quality during last transaction (lactoscan,
+\begin_layout Standard
+The second outcome captures whether buyers actively checked milk quality at the point of transaction.
+ We combine indicators of whether the buyer used a milk analyzer,
  lactometer,
- alcohol test).
- q58/qx5/qx17/qx29/qx41/qx53 == 4
+ or alcohol test during the most recent purchase.
+ This variable reflects the extent to which farmers were exposed to quality verification in their direct sales.
 \end_layout
 
-\begin_layout Enumerate
-Price received for milk sold (inclusive of any quality premium that may have been obtained) (price per liter,
- average of price during last transaction with in last 7 days with buyer) - q55/qx2/qx14qx26/qx38/qx50
+\begin_layout Standard
+The third and fourth outcomes focus on prices received.
+ We measure the average price per liter obtained by farmers in their most recent sale within the past seven days,
+ inclusive of any quality premium that may have been awarded.
+ We also directly ask whether the buyer paid more for higher-quality milk.
+ These outcomes allow us to assess whether quality improvements translate into tangible financial benefits for farmers.
 \end_layout
 
-\begin_layout Enumerate
-Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
-\end_layout
-
-\begin_layout Enumerate
-Bargaining power - q65,
- qx12qx24,
- qx36,
- qx48,
- qx60 ==1 or 3 
+\begin_layout Standard
+Finally,
+ we include an indicator of farmers’ bargaining power in transactions with buyers.
+ This measure captures whether the farmer reported being able to negotiate on either price or quality terms,
+ or otherwise exert influence in the transaction.
+ Taken together,
+ these five outcomes allow us to test whether the intervention affected both the upstream adoption of quality-enhancing practices and the downstream rewards farmers received for their efforts.
 \end_layout
 
 \begin_layout Standard
@@ -3544,20 +4616,10 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Finally,
- we will use data from supervised testing of incoming samples in treatment and control MCCs.
- In particular,
- we will test all incoming samples during an entire day.
- Parameters of interest are the ones that are collected in the app (and can be measured through the milk analyzers):
- added water,
- butter fat,
- SNF,
- protein,
- and density (corrected lactometer reading).
- Results are in Table 
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Primary-outcomes-milk-quality"
+reference "tab:Primary-outcomes-MCC"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3565,15 +4627,82 @@ nolink "false"
 
 \end_inset
 
-.
- The data obtained from supervised testing also enables and alternative measure for price effects (as price is also collected during supervised sampling) as well as rejection rates.
+ reports treatment effects on our five primary outcomes at the farmer level.
+ Unlike the MCC-level results,
+ where the analyzer intervention led to clear increases in testing (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ the farmer-level results show much weaker impacts.
+ The index of production investments and management practices designed to improve milk quality is slightly positive for both interventions,
+ but neither estimate is statistically significant.
+ This suggests that farmers did not systematically adjust their production strategies in response to either the analyzer at the MCC or the farmer-focused intervention bundle.
 \end_layout
 
 \begin_layout Standard
-Prior to this exercise,
- the all milk analyzers were verified to determine their accuracy before being used to analyze milk during the supervised endline data collection exercise.
- The verification was done using a reference milk analyzer calibrated using ISO 2442 approved method.
- 
+Turning to outcomes linked directly to market incentives,
+ we find similarly muted effects.
+ The likelihood that buyers conducted a quality test at the point of sale is unaffected by either intervention.
+ Likewise,
+ farmers in both treatment arms received prices per liter that were statistically indistinguishable from those obtained by control farmers,
+ and they were no more likely to obtain explicit quality premiums.
+ Finally,
+ there is no evidence that either intervention improved farmers’ bargaining power in negotiations with buyers.
+ The summary index of all farmer-level outcomes remains close to zero and insignificant across specifications.
+\end_layout
+
+\begin_layout Standard
+Taken together,
+ these findings highlight an important disconnect between the two levels of intervention.
+ At the MCC level,
+ analyzers clearly changed practices by embedding quality testing into transactions.
+ However,
+ these changes did not translate into stronger incentives or rewards for farmers,
+ even when accompanied by a targeted farmer-level intervention.
+ The absence of measurable improvements upstream underscores the difficulty of transmitting quality incentives through the chain:
+ MCCs may increase testing,
+ but without consistent buyer-side demand for quality and corresponding price differentiation,
+ farmers face little reason to adopt quality-enhancing practices.
+ This pattern points to the central coordination challenge in value chains—
+quality upgrading requires complementary changes across both intermediaries and producers for incentives to align.
+\end_layout
+
+\begin_layout Subsubsection
+Milk samples
+\end_layout
+
+\begin_layout Standard
+To obtain objective measures of compositional quality,
+ enumerators conducted a supervised testing exercise at both treatment and control MCCs.
+ During a full day of collection,
+ all incoming milk was analyzed on-site using milk analyzers.
+ While logistically demanding,
+ this exercise generated high-quality data on several key parameters that are routinely recorded in the app and can be measured with the analyzers:
+ added water,
+ butterfat,
+ solids-not-fat (SNF),
+ protein,
+ and density (corrected lactometer reading).
+ The supervised testing also allows us to construct alternative outcome measures.
+ Since prices were collected alongside the quality tests,
+ we are able to examine the relationship between compositional quality and farm-gate prices.
+ In addition,
+ we can directly measure rejection rates,
+ providing another indicator of whether quality standards were enforced.
+\end_layout
+
+\begin_layout Standard
+Before the supervised data collection began,
+ all analyzers were verified against a reference device calibrated using the ISO 2442 approved method.
+ This verification ensured that the analyzers produced accurate readings across MCCs and that any observed differences in milk quality reflected underlying variation rather than measurement error.
 \end_layout
 
 \begin_layout Standard
@@ -3582,7 +4711,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3923,6 +5052,53 @@ Note:
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-milk-quality"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ presents treatment effects on objective measures of milk compositional quality obtained from the supervised testing exercise.
+ Across several key parameters,
+ we observe consistent improvements in the quality of milk delivered to MCCs in the treatment group.
+\end_layout
+
+\begin_layout Standard
+Milk from treatment MCCs contained significantly higher levels of butterfat and solids-not-fat (SNF),
+ with increases of 0.11 and 0.08 percentage points respectively relative to control group means of 3.88 and 8.58.
+ Protein content also rose by 0.03 percentage points.
+ While these magnitudes are small in absolute terms,
+ they are meaningful given the tight variation in compositional parameters and the importance of butterfat and protein in determining milk value.
+\end_layout
+
+\begin_layout Standard
+At the same time,
+ the prevalence of adulteration declined.
+ Milk in the treatment group contained significantly less added water,
+ with a reduction of nearly half a percentage point relative to the control mean of 1.63.
+ Density (CLR) increased by 0.44,
+ consistent with lower dilution and higher compositional integrity.
+\end_layout
+
+\begin_layout Standard
+The composite index aggregating all five parameters confirms these patterns:
+ overall milk quality improved significantly in the treatment group,
+ with an index effect of 0.21 standard deviations.
+ Taken together,
+ these results suggest that the introduction of milk analyzers not only increased testing behavior at MCCs but also translated into measurable improvements in the quality of milk supplied,
+ reducing adulteration and enhancing key compositional traits.
+\end_layout
+
+\begin_layout Subsection
+Impact on Freshness
 \end_layout
 
 \begin_layout Standard
@@ -4528,7 +5704,7 @@ treatment uptake:
 
 \begin_deeper
 \begin_layout Enumerate
-use of milk analyzer - q16c and q16cc - Information on lactoscan use (for ITT-TOT analysis).
+use of milk analyzer - q16c and q16cc - Information on milk analyzer use (for ITT-TOT analysis).
  - q16
 \end_layout
 
@@ -5324,7 +6500,7 @@ did MCC measure quality of aggregated milk before selling?
 \end_layout
 
 \begin_layout Enumerate
-XIn particular butter fat and SNF using a lactoscan?
+XIn particular butter fat and SNF using a milk analyzer?
  What equipment was used?
  q38/q51/q61/q71/q81-q39/q52d/q62d/q72d/q82d
 \end_layout
@@ -7035,7 +8211,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7416,6 +8592,127 @@ Note:
 
 \end_layout
 
+\begin_layout Section
+Heterogeneity with respect to chain length
+\end_layout
+
+\begin_layout Standard
+Our model predicts potential differences in the treatment effect depending on how farmers are connected to MCCs.
+ To test this,
+ we stratified our farmer sample on how they are connected to MCCs:
+ within each MCC,
+ half of the farmers are directly connected,
+ while the other half is connected through an intermediary (see also Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Design"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+To do so,
+ enumerators were required to obtain the list of farmers that actively deliver to the MCC.
+ The list is then split into those that deliver directly,
+ and those that deliver through a trader (either against a fee or a trader working for his/her own account).
+ Systematic sampling was then used to select 10 farmers in each of these two groups:
+ each 
+\emph on
+n
+\emph default
+-th farmer on the list within each group was interviewed with 
+\emph on
+n
+\emph default
+ being the total number of farmers in the group divided by 10.
+ 
+\end_layout
+
+\begin_layout Standard
+Unfortunately,
+ this procedure did not always work in practice.
+ Particularly in MCCs that take a coopertive form,
+ it was often difficult to find sufficient traders,
+ and so proportionally more directly collected farmers were selected.
+ In particular,
+ 
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Standard
+This study explored the potential of targeted interventions to accelerate quality upgrading in Uganda’s dairy value chain.
+ Using a field experiment,
+ we introduced innovations at the MCC and farmer levels,
+ including milk analyzers,
+ digital record-keeping tools,
+ and farmer training.
+ The interventions aimed to address persistent challenges related to milk quality by making it observable,
+ actionable,
+ and incentivized.
+ This comprehensive design allowed us to assess impacts at multiple levels of the value chain,
+ providing robust insights into what drives—
+or limits—
+quality improvements.
+\end_layout
+
+\begin_layout Standard
+The findings largely confirm insights gathered during the qualitative midline assessment (Ariong et al.,
+ 2024).
+ The milk analyzer (MA) innovations were well-received and widely used,
+ with stakeholders appreciating their ability to enhance transparency and enforce quality standards.
+ As a result,
+ compositional milk quality improved significantly,
+ particularly in treatment MCCs,
+ which recorded higher butterfat and solids-not-fat (SNF) levels and lower adulteration rates.
+ Despite these gains,
+ price effects remain limited and lagging,
+ reflecting the broader structural issue of uniform pricing by processors that fails to reward quality improvements.
+\end_layout
+
+\begin_layout Standard
+The training intervention (T2),
+ focused on raising awareness and promoting quality-enhancing practices at the farmer level,
+ showed no significant impact.
+ While farmers’ awareness of compositional quality increased modestly,
+ there was little evidence of behavioral changes,
+ such as investment in better feeding or grazing practices.
+ This suggests that information alone is insufficient to drive change without stronger economic incentives or additional support mechanisms.
+\end_layout
+
+\begin_layout Standard
+The current price-setting mechanism is a critical bottleneck.
+ Processors continue to publish uniform prices for milk,
+ undermining the alignment of quality improvements with financial rewards.
+ However,
+ recent developments indicate potential shifts in the market.
+ Two of Uganda’s largest processors are piloting quality-based payment systems,
+ directly rewarding farmers for higher-quality milk.
+ One MCC SUMPCArecently started selling milk to one of the large processors through their quality based milk payment system.
+ Additionally,
+ a large new processor specializing in infant formula production that is entering the market has already started contacting MCCs to gauge their interest in supplying milk under a quality based payment system.
+\end_layout
+
+\begin_layout Standard
+These findings highlight both the progress made and the challenges that remain.
+ While the interventions successfully improved milk quality and increased transparency,
+ systemic changes—
+particularly in pricing mechanisms—
+are essential to sustain and scale these improvements.
+ Future efforts should focus on supporting emerging market trends,
+ addressing adoption barriers,
+ and ensuring that economic incentives align with quality-based practices,
+ ultimately benefiting all stakeholders across the dairy value chain.
+\end_layout
+
 \begin_layout Section*
 Ethical clearance
 \end_layout
@@ -7423,6 +8720,7 @@ Ethical clearance
 \begin_layout Standard
 This research received clearance form Makerere's School of Social Sciences Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI IRB (DSGD-22-1057).
  The research was also registered at the Ugandan National Commission for Science and Technology (SS1520ES).
+ 
 \end_layout
 
 \begin_layout Section*
@@ -7457,38 +8755,59 @@ mock report:
  further reducing the opportunity of specification search.
 \end_layout
 
+\begin_layout Section
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+During the preparation of this work the author(s) used OpenAI's chatGPT in order to obtain editorial suggestions to improve clarity and readability and explore alternative phrasing for technical terms.
+ After using this tool/service,
+ the author(s) reviewed and edited the content as needed and take(s) full responsibility for the content of the published article.
+ We would like to thank all funders who supported this research through their contributions to the CGIAR Trust Fund:
+ https://www.cgiar.org/funders/.
+ In particular,
+ funding from the CGIAR Rethinking Food Markets Initiative and the CGIAR Science program on Better Diets and Nutrition is greatly appreciated.
+ We want to thank Leocardia Nabwire,
+ Wilberfoce Walukano and Marc Charles Wanume for field support.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "rmvc"
+options "IFPRI_Style"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
-Funding
-\end_layout
-
-\begin_layout Standard
-This research is part of the 
-\begin_inset CommandInset href
-LatexCommand href
-name "OneCG initiative on Rethinking Food Markets"
-target "https://www.cgiar.org/initiative/29-rethinking-food-markets-and-value-chains-for-inclusion-and-sustainability/"
-literal "false"
-
-\end_inset
-
- which is funded by a 
-\begin_inset CommandInset href
-LatexCommand href
-name "consortium of donors"
-target "https://www.cgiar.org/funders/"
-literal "false"
-
-\end_inset
-
-.
- The project builds on previous work on dairy value chains in Uganda that was funded by the Belgian Public Service for Foreign Affairs,
- Foreign Trade and Development Cooperation,
- grant number 302015.002.002 (bridge funding).
- This grant also funded part of the fieldwork for baseline data collection.
-\end_layout
-
-\begin_layout Standard
-Appendix
+Online Appendix
 \end_layout
 
 \begin_layout Standard
@@ -7630,8 +8949,7 @@ Sexpr{balance[2,4]})
 
 \begin_layout Plain Layout
 
-Number of farmers/traders that supply on an average day during the rainy season.
- (number)   & 
+Number of farmers/traders that supply on an average day during the rainy season (number)   & 
 \backslash
 Sexpr{balance[3,1]} & 
 \backslash
@@ -7733,7 +9051,8 @@ Sexpr{balance[8,4]})
 
 \begin_layout Plain Layout
 
-Supplies credit/loans to cooperative members and regularly supplying farmers?(yes=1) & 
+Supplies credit/loans to cooperative members and regularly supplying farmers?
+ (1=yes) & 
 \backslash
 Sexpr{balance[9,1]} & 
 \backslash
@@ -7765,9 +9084,7 @@ Sexpr{balance[9,4]})
 
 
 \backslash
-
-\backslash
-
+cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7786,15 +9103,6 @@ Sexpr{F_test[1,2]}
 p-value & & 
 \backslash
 Sexpr{F_test[2,2]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
 \backslash
 
 \backslash
@@ -7920,7 +9228,7 @@ Sexpr{balance_farmer[5,14]})
 \begin_layout Plain Layout
 
 Normally during the rainy season sells most of its milk to a milk collection center?
- (yes=1) & 
+ (1=yes) & 
 \backslash
 Sexpr{balance_farmer[7,1]} & 
 \backslash
@@ -7967,7 +9275,7 @@ Sexpr{balance_farmer[7,14]})
 \begin_layout Plain Layout
 
 Uses only steel can/bucket during sales transactions in the last 7 days before survey?
- (yes=1) & 
+ (1=yes) & 
 \backslash
 Sexpr{balance_farmer[8,1]} & 
 \backslash
@@ -8018,7 +9326,7 @@ Sexpr{balance_farmer[8,14]})
 \begin_layout Plain Layout
 
 Member of dairy cooperative?
- (yes=1) & 
+ (1=yes) & 
 \backslash
 Sexpr{balance_farmer[9,1]} & 
 \backslash
@@ -8155,7 +9463,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8536,7 +9844,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8878,7 +10186,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9259,7 +10567,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9600,7 +10908,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9885,18 +11193,6 @@ Note:
 
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset bibtex
-LatexCommand bibtex
-btprint "btPrintCited"
-bibfiles "rmvc"
-options "IFPRI_Style"
 
 \end_inset
 
