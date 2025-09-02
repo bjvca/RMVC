@@ -18,6 +18,8 @@ path <- strsplit(path,"/PAP/analysis")[[1]]
 ### read in endline farmer data
 farmers_end <- read.csv(paste(path, "endline/data/public/farmers.csv", sep = "/"))
 
+farmers_end <- subset(farmers_end, check.consent == "Yes")
+
 ### read in baseline farmer data to control for baseline outcomes
 farmers_base <- read.csv(paste(path, "baseline/data/public/farmers.csv", sep = "/"))
 
@@ -28,6 +30,17 @@ farmers_end$catch_ID <- as.factor(farmers_end$catchment)
 farmers_end$treat <- farmers_end$treat == "T"
 
 table(farmers_end$treat,farmers_end$vid)
+
+### read in clean endline MCC data
+MCCs_end <- read.csv(paste(path, "endline/data/public/MCCs.csv", sep = "/"))
+### drop empty (non-consent)
+MCCs_end <- subset(MCCs_end,consent == 1)
+
+### read in clean baseline farmer data 
+MCCs_base <- read.csv(paste(path, "baseline/data/public/MCCs.csv", sep = "/"))
+
+###
+farmers_end <- subset(farmers_end, MCC_ID_linked %in% MCCs_end$MCC_ID)
 
 ##merge in relevant data from baseline
 # farmer type (direct of via trader) for treatment heterogeiety
@@ -48,21 +61,22 @@ table(farmers_end$trader) # this did not really work that well - only 600 are li
 #q41 in c(1,3) #controlled/zero grazing in wet seaon
 #q42 == "Yes" #pasture conservation
 #q43 == "Yes" ##supplements
-farmers_end$q39[farmers_end$q39 == "n/a"] <- NA
-farmers_end$q39c[farmers_end$q39c == "n/a" | farmers_end$q39c == "98"] <- NA
-farmers_end$q39d[farmers_end$q39d == "n/a" | farmers_end$q39d == "98"] <- NA
-farmers_end$q42[farmers_end$q42 == "n/a" | farmers_end$q42 == "98"] <- NA
-farmers_end$q40[farmers_end$q40 == "n/a" | farmers_end$q40 == "96"] <- NA
-farmers_end$q41[farmers_end$q41 == "n/a" | farmers_end$q41 == "96"] <- NA
-farmers_end$q43[farmers_end$q43 == "n/a"] <- NA
+
+farmers_end$q39c[farmers_end$q39c == "98"] <- NA
+farmers_end$q39d[ farmers_end$q39d == "98"] <- NA
+farmers_end$q42[ farmers_end$q42 == "98"] <- NA
+farmers_end$q40[ farmers_end$q40 == "96"] <- NA
+farmers_end$q41[farmers_end$q41 == "99" | farmers_end$q41 == "96"] <- NA
 
 farmers_base$b_improve_index <- anderson_index(cbind(farmers_base$q39 == "Yes",farmers_base$q39c  == "Yes", farmers_base$q40 %in% c(1,3), farmers_base$q41 %in% c(1,3), farmers_base$q42  == "Yes", farmers_base$q43  == "Yes"))$index
 farmers_end$improve_index <- anderson_index(cbind(farmers_end$q39 == "Yes",farmers_end$q39c  == "Yes", farmers_end$q40 %in% c(1,3), farmers_end$q41 %in% c(1,3), farmers_end$q42  == "Yes", farmers_end$q43  == "Yes"))$index
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_improve_index")], by="farmer_ID", all.x=T)
 
+
 ##buyer checks using milk analyzer - needs more work - only for those who actually sold
 farmers_end$check_MA <- farmers_end$q58.4 == "True" | farmers_end$qx5.4 == "True" | farmers_end$qx17.4 == "True" | farmers_end$qx29.4 == "True" | farmers_end$qx41.4 == "True" | farmers_end$qx53.4 == "True"
-farmers_end$check_MA[farmers_end$q52 == "n/a" | farmers_end$q52 == "No"] <- NA
+farmers_end$check_MA[farmers_end$q52 == "n/a"] <- NA
+farmers_end$check_MA[farmers_end$q52 == "No"] <- NA
 farmers_base$b_check_MA <- farmers_base$q58== "4" | farmers_base$qx5.4 == "True" | farmers_base$qx17.4 == "True" | farmers_base$qx29.4 == "True" | farmers_base$qx41.4 == "True" | farmers_base$qx53.4 == "True"
 farmers_base$b_check_MA[farmers_base$q52 == "No"] <- NA
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_check_MA")], by="farmer_ID", all.x=T)
@@ -84,13 +98,26 @@ farmers_base[columns] <- lapply(farmers_base[columns], function(x) {
   return(x)
 })
 
-farmers_end$avg_sales_p <- rowMeans(farmers_end[columns], na.rm=T)
+###weigh by quantituies
+columns_q <- c("q54","qx1","qx13","qx25","qx37","qx49")
+
+farmers_end[columns_q] <- lapply(farmers_end[columns_q], function(x) as.numeric(as.character(x)))
+
+farmers_base[columns_q] <- lapply(farmers_base[columns_q], function(x) as.numeric(as.character(x)))
+
+
+farmers_end$avg_sales_p <- rowSums(farmers_end[columns] * farmers_end[columns_q], na.rm = TRUE) /
+  rowSums(farmers_end[columns_q], na.rm = TRUE)
 farmers_end$avg_sales_p[is.nan(farmers_end$avg_sales_p)] <- NA
 
-farmers_base$b_avg_sales_p <- rowMeans(farmers_base[columns], na.rm=T)
+farmers_base$b_avg_sales_p <- rowSums(farmers_base[columns] * farmers_base[columns_q], na.rm = TRUE) /
+  rowSums(farmers_base[columns_q], na.rm = TRUE)
 farmers_base$b_avg_sales_p[is.nan(farmers_base$b_avg_sales_p)] <- NA
 ##remove outliers
-farmers_base$b_avg_sales_p[farmers_base$b_avg_sales_p >= 1200] <- NA
+farmers_base$b_avg_sales_p[farmers_base$b_avg_sales_p >= 1500] <- NA
+farmers_base$b_avg_sales_p[farmers_base$b_avg_sales_p <= 600] <- NA
+farmers_end$avg_sales_p[farmers_end$avg_sales_p >= 1500] <- NA
+farmers_end$avg_sales_p[farmers_end$avg_sales_p  <= 600] <- NA
 
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_avg_sales_p")], by="farmer_ID", all.x=T)
 
@@ -114,8 +141,8 @@ farmers_base$b_bargain_power[farmers_base$q52 == "No"] <- NA
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","b_bargain_power")], by="farmer_ID", all.x=T)
 
 ##### put outcomes in an array to loop over (and make anderson index)
-outcomes <- c("improve_index","check_MA","avg_sales_p","gets_q_bonus","bargain_power")
-b_outcomes <- c("b_improve_index","b_check_MA","b_avg_sales_p","b_gets_q_bonus","b_bargain_power")
+outcomes <- c("improve_index","check_MA","avg_sales_p","gets_q_bonus")
+b_outcomes <- c("b_improve_index","b_check_MA","b_avg_sales_p","b_gets_q_bonus")
 
 ###Make anderson index
 farmers_end$primary_farmer_index <- anderson_index(farmers_end[outcomes])$index
@@ -134,25 +161,26 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
   res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
-  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+ 
   ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,30] <- res[5,6] ###interaction with trader
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,30] <- res[5,7] ###interaction with trader
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
 res_farmers[1:length(outcomes)-1,17] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,8])
-res_farmers[1:length(outcomes)-1,18] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,11])
+res_farmers[1:length(outcomes)-1,18] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,29])
 
 
 ###model with demeaned orthogonal treatment - milk analyzer
@@ -160,27 +188,25 @@ farmers_end$trader_demeaned  <- farmers_end$trader - mean(farmers_end$trader, na
 farmers_end$vid_demeaned <- farmers_end$vid - mean(farmers_end$vid, na.rm=T)
  
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned*trader_demeaned",sep="~"), b_outcomes[i], sep = "+")), data=farmers_end)
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"treat*vid_demeaned",sep="~"), b_outcomes[i], sep = "+")), data=farmers_end)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
 }
 ###model with demeaned orthogonal treatment - video tratment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
-  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned*trader_demeaned",sep="~"), b_outcomes[i], sep = "+")), data=farmers_end)
+  ols <-  lm(as.formula(paste(paste(outcomes[i],"vid*treat_demeaned",sep="~"), b_outcomes[i], sep = "+")), data=farmers_end)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
-}
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,7])
+  }
 
-res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
-res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
+res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
+res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,24])
 
 
 res_farmers <- round(res_farmers,digits=3)
@@ -282,9 +308,9 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
   res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
-  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
@@ -294,8 +320,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,30] <- res[5,6] ###interaction with trader
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,30] <- res[5,7] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -312,8 +338,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,31] <- res[6,7] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
@@ -323,8 +349,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,32] <- res[6,7] ###interaction with trader demeaned  
 }
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
@@ -369,9 +395,9 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
   res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
-  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
@@ -381,8 +407,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,30] <- res[5,6] ###interaction with trader
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,30] <- res[5,7] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -399,8 +425,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,31] <- res[6,7] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
@@ -410,8 +436,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,32] <- res[6,7] ###interaction with trader demeaned  
 }
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
@@ -468,9 +494,9 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
   res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
-  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,6], nobs(ols))
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
+  res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
@@ -480,8 +506,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,30] <- res[5,6] ###interaction with trader
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,30] <- res[5,7] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -498,8 +524,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,31] <- res[6,7] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
@@ -509,8 +535,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,32] <- res[6,7] ###interaction with trader demeaned  
 }
 
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
@@ -551,9 +577,9 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,1] <- mean(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
   res_farmers[i,2] <- sd(as.matrix(farmers_end[outcomes[i]]), na.rm=T)
-  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,6])
-  res_farmers[i,9:12] <- c(res[5,2],res[5,3],res[5,6], nobs(ols))
+  res_farmers[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
+  res_farmers[i,9:12] <- c(res[5,2],res[5,3],res[5,7], nobs(ols))
   
   res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
   res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
@@ -563,8 +589,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,30] <- res[5,6] ###interaction with trader
+  res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,30] <- res[5,7] ###interaction with trader
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -581,8 +607,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,31] <- res[6,6] ###interaction with trader demeaned
+  res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,31] <- res[6,7] ###interaction with trader demeaned
 }
 ###model with demeaned orthogonal treatment - video tratment
 
@@ -592,8 +618,8 @@ for (i in 1:length(outcomes)) {
   vcov_cluster <- vcovCR(ols,cluster=farmers_end$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
-  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,6])
-  res_farmers[i,32] <- res[6,6] ###interaction with trader demeaned  
+  res_farmers[i,22:24] <- c(res[2,2],res[2,3],res[2,7])
+  res_farmers[i,32] <- res[6,7] ###interaction with trader demeaned  
 }
 res_farmers[1:length(outcomes)-1,25] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,18])
 res_farmers[1:length(outcomes)-1,26] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,21])
@@ -1065,38 +1091,29 @@ ggsave( file= paste(path,"PAP/results/forest_plot_swithing_simple.png", sep="/")
 
 
 ######################## analysis at the MCC level ############################################
-### read in clean endline MCC data
-MCCs_end <- read.csv(paste(path, "endline/data/public/MCCs.csv", sep = "/"))
-### drop duplicates - this was for dummy data but this will not do anything with eventual clean endline data
-library(dplyr)
-MCCs_end <- MCCs_end %>%
-  distinct(MCC_ID, .keep_all = TRUE)
-### drop empty (non-consent)
-MCCs_end <- subset(MCCs_end,consent == 1)
 
-### read in clean baseline farmer data 
-MCCs_base <- read.csv(paste(path, "baseline/data/public/MCCs.csv", sep = "/"))
 
 ### testing of quality on incoming samples
-MCCs_end$test_MA_in <-  MCCs_end$q25x3 == 1 | MCCs_end$q25x3 == 2
+### Q25x3. Did you test the milk using a milk analyzer (butter fat and solid-non-fat content)?
+MCCs_end$test_MA_in <-  MCCs_end$q25x3 == 1
 MCCs_end$test_MA_in[MCCs_end$q25x3 == "n/a"] <- NA
 
-MCCs_base$b_test_MA_in <-  MCCs_base$q25x3 == 1 | MCCs_base$q25x3 == 2
+MCCs_base$b_test_MA_in <-  MCCs_base$q25x3 == 1 
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_test_MA_in")], by="MCC_ID", all.x=T)
 
-### testing of quality on outgoing milk
-MCCs_end$test_MA_out <- (MCCs_end$q39a == 2 | MCCs_end$q39c == 2) |
-  (MCCs_end$q52a == 2 | MCCs_end$q52c == 2) |
-  (MCCs_end$q62a == 2 | MCCs_end$q62c == 2) |
-  (MCCs_end$q72a == 2 | MCCs_end$q72c == 2) |
-  (MCCs_end$q82a == 2 | MCCs_end$q82c == 2)
+### testing of quality on outgoing milk - was snf & fat tested for any of the sales done in the last 7 days
+MCCs_end$test_MA_out <- (MCCs_end$q39a == 2 & MCCs_end$q39c == 2) |
+  (MCCs_end$q52a == 2 & MCCs_end$q52c == 2) |
+  (MCCs_end$q62a == 2 & MCCs_end$q62c == 2) |
+  (MCCs_end$q72a == 2 & MCCs_end$q72c == 2) |
+  (MCCs_end$q82a == 2 & MCCs_end$q82c == 2)
 
  
-MCCs_base$b_test_MA_out <- (MCCs_base$q39a %in% c(1, 3) | MCCs_base$q39c %in% c(1, 3)) |
-  (MCCs_base$q52a %in% c(1, 3) | MCCs_base$q52c %in% c(1, 3)) |
-  (MCCs_base$q62a %in% c(1, 3) | MCCs_base$q62c %in% c(1, 3)) |
-  (MCCs_base$q72a %in% c(1, 3) | MCCs_base$q72c %in% c(1, 3)) |
-  (MCCs_base$q82a %in% c(1, 3) | MCCs_base$q82c %in% c(1, 3))
+MCCs_base$b_test_MA_out <- (MCCs_base$q39a == 1 | MCCs_base$q39c == 1) |
+  (MCCs_base$q52a == 1  | MCCs_base$q52c == 1) |
+  (MCCs_base$q62a == 1  | MCCs_base$q62c == 1) |
+  (MCCs_base$q72a == 1 | MCCs_base$q72c == 1) |
+  (MCCs_base$q82a == 1 | MCCs_base$q82c == 1)
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_test_MA_out")], by="MCC_ID", all.x=T)
 
 #average prices at which milk was bought from farmers (during last 7 days)
@@ -1105,15 +1122,21 @@ MCCs_end$q25b[MCCs_end$q25b %in% c("n/a","999") ] <- NA
 MCCs_end$q25b <- as.numeric(as.character(MCCs_end$q25b))
 
 names(MCCs_end)[names(MCCs_end) == 'q25b'] <- 'price_bought'
+#delete one outlier
+MCCs_end$price_bought[MCCs_end$price_bought<= 600] <- NA
+
 
 #merge in baseline outcome
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","q25b")], by="MCC_ID", all.x=T)
 
 names(MCCs_end)[names(MCCs_end) == 'q25b'] <- 'b_price_bought'
 
+MCCs_end$b_price_bought[MCCs_end$b_price_bought< 500] <- NA
+MCCs_end$b_price_bought[MCCs_end$b_price_bought>1250] <- NA
 
 #Price at which milk was sold (in last 7 days) - q36/q49/q59/q69/q79
 columns <- c("q36", "q49", "q59", "q69", "q79")
+#Quantity of milk was sold (in last 7 days) - q35/q48/q58/q68/q78
 
 # Replace "n/a" and "999" with NA in each specified column
 MCCs_end[columns] <- lapply(MCCs_end[columns], function(x) {
@@ -1129,12 +1152,37 @@ MCCs_base[columns] <- lapply(MCCs_base[columns], function(x) {
   return(x)
 })
 
-MCCs_end$avg_sales_p <- rowMeans(MCCs_end[columns], na.rm=T)
+columns_2 <- c("q35", "q48", "q58", "q68", "q78")
+# Replace "n/a" and "999" with NA in each specified column
+MCCs_end[columns_2] <- lapply(MCCs_end[columns_2], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  x[is.na(x)] <- 0
+  return(x)
+})
+
+MCCs_base[columns_2] <- lapply(MCCs_base[columns_2], function(x) {
+  x[x %in% c("n/a", "999")] <- NA
+  x <- as.numeric(as.character(x))
+  x[is.na(x)] <- 0
+  return(x)
+})
+
+
+
+MCCs_end$avg_sales_p <- rowSums(MCCs_end[columns] * MCCs_end[columns_2], na.rm = TRUE) /
+  rowSums(MCCs_end[columns_2], na.rm = TRUE)
+
+
 MCCs_end$avg_sales_p[is.nan(MCCs_end$avg_sales_p)] <- NA
+MCCs_end$avg_sales_p[MCCs_end$avg_sales_p==0] <- NA
 
+MCCs_base$b_avg_sales_p <- rowSums(MCCs_base[columns] * MCCs_base[columns_2], na.rm = TRUE) /
+  rowSums(MCCs_base[columns_2], na.rm = TRUE)
 
-MCCs_base$b_avg_sales_p <- rowMeans(MCCs_base[columns], na.rm=T)
 MCCs_base$b_avg_sales_p[is.nan(MCCs_base$b_avg_sales_p)] <- NA
+MCCs_base$b_avg_sales_p[MCCs_base$b_avg_sales_p==0] <- NA
+MCCs_base$b_avg_sales_p[MCCs_base$b_avg_sales_p>2000] <- NA
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_avg_sales_p")], by="MCC_ID", all.x=T)
 
 ### quality paid to bonus to farmers
@@ -1145,7 +1193,7 @@ MCCs_base$q29[MCCs_base$q29 == 98] <- NA
 MCCs_base$b_gives_q_bonus <- MCCs_base$q29 == 1
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_gives_q_bonus")], by="MCC_ID", all.x=T)
 
-### if all are "n/a" this is missing
+### if all are "n/a" this is missing,else if one gives bonus then true
 MCCs_end$gets_q_bonus <- ifelse(
   rowSums(MCCs_end[, c("q44", "q54", "q64", "q74", "q84")] == "n/a") == 5, 
   NA, 
@@ -1584,7 +1632,7 @@ for (i in 1:length(outcomes)) {
   res_samples[i,2] <- sd(as.matrix(samples[samples[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
   vcov_cluster <- vcovCR(ols,cluster=samples$catch_ID,type="CR2")
   res <- coef_test(ols, vcov_cluster)
-  res_samples[i,3:5] <- c(res[2,2],res[2,3],res[2,6])
+  res_samples[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
   res_samples[i,7] <- nobs(ols)
 }
 

@@ -1749,7 +1749,7 @@ Hypothesis 3:
 
 \begin_layout Itemize
 Hypothesis 4:
- making quality visible at the MCC level and providing information on what the desired milk quality parameters are to farmers increases outcomes for farmers 
+ making quality visible at the MCC level and providing information on what the desired milk quality parameters to farmers increases outcomes for farmers 
 \begin_inset Formula $\left(\beta_{H4}>0\right)$
 \end_inset
 
@@ -1765,7 +1765,7 @@ Additional research questions,
 
 \begin_layout Itemize
 Does the MCC level intervention affect farmers that are already connected to the milk collection center differently than farmers that are not already connected to an MCC 
-\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2T}\right)$
+\begin_inset Formula $\left(\beta_{H2C}\neq\beta_{H2T}\right)$
 \end_inset
 
 .
@@ -1773,7 +1773,7 @@ Does the MCC level intervention affect farmers that are already connected to the
 
 \begin_layout Itemize
 Does the information treatment affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3T}\right)$
+\begin_inset Formula $\left(\beta_{H3C}\neq\beta_{H3T}\right)$
 \end_inset
 
 
@@ -1781,7 +1781,7 @@ Does the information treatment affect farmers that are connected to an MCC diffe
 
 \begin_layout Itemize
 Does the combined treatment (making quality visible at the MCC level and providing farmers with information on the desired quality dimension) affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4T}\right)$
+\begin_inset Formula $\left(\beta_{H4C}\neq\beta_{H4T}\right)$
 \end_inset
 
 
@@ -2204,7 +2204,7 @@ M
 \noun off
 \color none
 
-\begin_inset Formula $y_{m}^{b}$
+\begin_inset Formula $\left(y_{m}^{b}\right)$
 \end_inset
 
 
@@ -2221,15 +2221,6 @@ M
 \uwave default
 \noun default
 \color inherit
-,
- which will be included in deviations from its mean 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "lin2013agnostic"
-literal "false"
-
-\end_inset
-
 .
 \end_layout
 
@@ -2254,7 +2245,22 @@ The parameter of interest in this equation is
 \end_layout
 
 \begin_layout Standard
-The second equation is at the individual level.
+All other equations use farmer level data.
+ We start by estimating the main treatment effect for T1,
+ the installation of a milk analyzer,
+ on farmers that are associated to the MCC where the milk analyzer was installed.
+ One way to do this is to estimate a fully interacted model such as the one given in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
  Here,
  
 \begin_inset Formula $T_{i}^{I}$
@@ -2279,7 +2285,7 @@ I
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{i,m}=\alpha+\beta_{H2}.T_{m}^{T}+\beta_{H3}.T_{i,m}^{I}+\beta_{H4}.T_{m}^{T}.T_{i,m}^{I}+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:one-1}
+y_{i,m}=\alpha+\beta_{H2}^{*}.T_{i,m}^{T}+\beta_{H3}^{*}.T_{i,m}^{I}+\beta_{H4}^{*}.T_{i,m}^{T}.T_{i,m}^{I}+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:one-1}
 \end{equation}
 
 \end_inset
@@ -2302,32 +2308,152 @@ m
  is an error term (which may be correlated within catchment area).
  As above,
  
-\begin_inset Formula $T_{m}^{T}$
+\begin_inset Formula $T_{i,m}^{T}$
 \end_inset
 
- is a treatment indicator at the MCC level that is one if the MCC (in who's catchment area the farmer resides) was allocated to the milk analyzer treatment and we also control for the lagged baseline outcome 
+ is a treatment indicator that is one if the MCC (in who's catchment area farmer 
+\emph on
+i
+\emph default
+ resides) was allocated to the milk analyzer treatment and we also control for the lagged baseline outcome 
 \begin_inset Formula $y_{i,m}^{b},$
 \end_inset
 
 again in deviations from its mean.
- The parameter of interest in this equation is 
-\begin_inset Formula $\beta_{H2}$
+ The parameter of interest in this equation would be 
+\begin_inset Formula $\beta_{H2}^{*}$
 \end_inset
 
 ,
  which tests Hypothesis 2,
  
-\begin_inset Formula $\beta_{H3}$
+\begin_inset Formula $\beta_{H3}^{*}$
 \end_inset
 
 ,
  which tests Hypothesis 3 and 
-\begin_inset Formula $\beta_{H4}$
+\begin_inset Formula $\beta_{H4}^{*}$
 \end_inset
 
 ,
  which tests for the interaction effect.
- 
+\end_layout
+
+\begin_layout Standard
+While our power calculations relied on models that include the full set of interactions (and we will likewise estimate such a fully interacted specification in Equation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+),
+ an important feature of split-plot (factorial) designs is that power can be increased by pooling observations across the orthogonal treatment.
+ In our case,
+ this means that the effect of the farmer-level intervention can be estimated by pooling across MCC-level treatment arms,
+ and conversely the effect of the MCC-level intervention can be estimated by pooling across farmer-level treatment arms.
+ At the same time,
+ a recent article points out the dangers of pooling treatment cells if there are potential interaction effects between the treatments 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "muralidharan2019factorial"
+literal "false"
+
+\end_inset
+
+.
+ One way to recover the pooled main treatment effect is to consider the orthogonal treatment as a co-variate and adjust for it,
+ entering it in the regression demeanded and fully intereacted as in equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ This give a more robust version of the treatment estimate that corresponds to the coefficient estimate of the treatment of interest after dropping the interaction with orthogonal treatment.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{i,m}=\alpha+\beta_{H2}T_{i,m}^{T}+\beta_{H3}^{I}\left(T_{i,m}^{I}-\bar{T^{I}}\right)+\beta_{H4}^{I}T_{i,m}^{T}\left(T_{i,m}^{I}-\bar{T^{I}}\right)+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:pooled-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{i,m}=\alpha+\beta_{H3}T_{i,m}^{I}+\beta_{H2}^{T}\left(T_{i,m}^{T}-\bar{T^{T}}\right)+\beta_{H4}^{T}T_{i,m}^{I}\left(T_{i,m}^{T}-\bar{T^{T}}\right)+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:pooled-1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next,
+ note that 
+\begin_inset Formula $\beta_{H4}^{*}$
+\end_inset
+
+ in equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is estimated as an incremental effect on top of the main effects.
+ In our analysis,
+ we will test hypothesis 4 by directly comparing farmers that received the training and are connected to an MCC that received a milk analyzer to farmers that did not get the training and are connected to a control MCC.
+ In other words,
+ we will estimate:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+y_{i,m}=\alpha+\beta_{H4}.T_{i,m}^{T}.T_{i,m}^{I}+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:one-1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+after dropping from our data farmers that were exposed to only a single treatment.
 \end_layout
 
 \begin_layout Standard
@@ -2448,48 +2574,6 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Factorial designs have recently been criticized for the proliferation of underpowered studies and replication failure 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "muralidharan2019factorial"
-literal "false"
-
-\end_inset
-
-.
- While power calculations were based on models with a complete set of interactions (equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-),
- we may still want to try boosting power by pooling observations across the orthogonal treatment in the event that we find a treatment effect that appears smaller than the minimal detectable effect size that we assumed during power calculations.
- To do so,
- we will consider the orthogonal treatment as a co-variate we adjust for,
- and interact the treatment variable with the demeaned orthogonal treatment.
- This give a more robust version of the treatment estimate that corresponds to the coefficient estimate of the treatment of interest after dropping the interaction with orthogonal treatment
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-see:
- https://blogs.worldbank.org/impactevaluations/what-should-you-do-experiments-factorial-designs
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
 To account for multiple comparisons,
  we will us the two methods illustrated in 
 \begin_inset CommandInset citation
@@ -2547,10 +2631,12 @@ Sample size was determined using a series of power simulations detailed in the p
  and that the individual-level information treatment would generate a 25 UGX/liter increase (small effect),
  with a large interaction effect of 50 UGX/liter.
  Power was calculated for the joint test of all hypotheses at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100–130 MCCs) and farmers per cluster (10–40).
- Results showed that with 125 MCCs and 20 farmers per MCC (total sample of 2,500 farmers),
- power was just above 0.80 for the joint test,
+ Results showed that with about 125 MCCs and 20 farmers per MCC (total sample of about 2,500 farmers),
+ power was just above 0.80 for a joint significance test,
  while power for individual hypotheses was substantially higher,
  ranging from 0.87 to 0.99.
+ At the design stage,
+ we decided to target 130 MCCs to account for attrition.
 \end_layout
 
 \begin_layout Standard
@@ -2560,7 +2646,7 @@ The field experiment was conducted in four districts of Southwestern Uganda:
  Kazo,
  and Kirihura.
  The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
- which yielded a total of about 130 MCCs.
+ from which we sampled 130 MCCs.
  Half of these were randomly selected to receive T1,
  while the other half served as the control.
  In each of the 130 MCCs,
@@ -2752,98 +2838,6 @@ nolink "false"
  MCCs use 38 percent of their processing or cooling capacity during the dry season,
  which is indicative of significant seasonality affecting the sector.
  MCCs report they own 21 milk cans and the vast majority indicate that they provide credit or loans to cooperative members and regular suppliers.
-\end_layout
-
-\begin_layout Standard
-Both tables further show treatment–control differences for each baseline variable for T1 in the second column.
- Only one of the individual differences is statistically significant at the 5 percent level (capacity).
- At the bottom of the top panels of both tables we report results from an omnibus Wald test of joint balance across all covariates (F-statistic and p-values below).
- These tests do not reject the null of joint equality,
- indicating that treatment assignment is not systematically predicted by observed baseline characteristics.
- Overall,
- the tables suggest that randomization achieved reasonably balanced treatment and control groups along key baseline characteristics of MCCs for the treatment at that level.
-\end_layout
-
-\begin_layout Standard
-The bottom panel of Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_main"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- reports baseline characteristics of dairy farmers across treatment groups.
- In the control group (corresponding to farmers that did no see the video and are connected to an MCC that did not receive the milk analyzer),
- household heads are on average 54 years old,
- with herds of about 62 animals,
- of which more than 90 percent are improved breeds.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-To calculate herd,
- we did not simply ask total numbers but asked 6 separate questions:
- we ask how many local cows;
- local heifers;
- and local calves the farmer has,
- and ask the same 3 categories for improved animals.
- Farmers were allowed to indicate that they did not know for a particular category,
- which were treated as missing in our analysis leading to the reduction in the number of observations.
-\end_layout
-
-\end_inset
-
- Farmers sell roughly 60 liters of milk per day during the rainy season,
- and they spend on average USD 66 per month on chemical purchases—
-primarily acaracides.
- Further characteristics in the bottom panel of Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_appendix"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season.
- Roughly 79 percent of farmers sell most of their milk to a collection center,
- three-quarters report using only steel containers when transacting,
- and a similarly high share are members of a dairy cooperative.
-\end_layout
-
-\begin_layout Standard
-The farmer-level balance tables report three different sets of comparisons.
- First,
- we test for pre-treatment differences between farmers connected to MCCs that received a milk analyzer and those connected to control MCCs.
- With the exception of a modest difference in cooperative membership (significant at the 10 percent level in Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_appendix"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-),
- no systematic imbalance is observed.
- Second,
- we examine differences between farmers who received the video-and-seed intervention and those who did not.
- Here we find some evidence of higher milk production (p < 0.1),
- higher sales volumes (p < 0.05),
- and slightly higher acaracide expenditures among treated farmers.
- Third,
- we report the interaction effects at baseline,
- where two variables are significant at the 5 percent level and one at the 1 percent level.
- While these individual differences suggest some imbalance across treatment arms,
- the omnibus F-tests are consistently insignificant.
 \end_layout
 
 \begin_layout Standard
@@ -3494,23 +3488,123 @@ Note:
 
 \end_layout
 
+\begin_layout Standard
+Both tables further show treatment–control differences for each baseline variable for T1 in the second column.
+ Only one of the individual differences is statistically significant at the 5 percent level (capacity).
+ At the bottom of the top panels of both tables we report results from an omnibus Wald test of joint balance across all covariates (F-statistic and p-values below).
+ These tests do not reject the null of joint equality,
+ indicating that treatment assignment is not systematically predicted by observed baseline characteristics.
+ Overall,
+ the tables suggest that randomization achieved reasonably balanced treatment and control groups along key baseline characteristics of MCCs for the treatment at that level.
+\end_layout
+
+\begin_layout Standard
+The bottom panel of Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_main"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ reports baseline characteristics of dairy farmers across treatment groups.
+ In the control group (corresponding to farmers that did no see the video and are connected to an MCC that did not receive the milk analyzer),
+ household heads are on average 54 years old,
+ with herds of about 62 animals,
+ of which more than 90 percent are improved breeds.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+To calculate herd,
+ we did not simply ask total numbers but asked 6 separate questions:
+ we ask how many local cows;
+ local heifers;
+ and local calves the farmer has,
+ and ask the same 3 categories for improved animals.
+ Farmers were allowed to indicate that they did not know for a particular category,
+ which were treated as missing in our analysis leading to the reduction in the number of observations.
+\end_layout
+
+\end_inset
+
+ Farmers sell roughly 60 liters of milk per day during the rainy season,
+ and they spend on average USD 66 per month on chemical purchases—
+primarily acaracides.
+ Further characteristics in the bottom panel of Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season.
+ Roughly 79 percent of farmers sell most of their milk to a collection center,
+ three-quarters report using only steel containers when transacting,
+ and a similarly high share are members of a dairy cooperative.
+\end_layout
+
+\begin_layout Standard
+The farmer-level balance tables report three different sets of comparisons.
+ First,
+ we test for pre-treatment differences between farmers connected to MCCs that received a milk analyzer and those connected to control MCCs.
+ With the exception of a modest difference in cooperative membership (significant at the 10 percent level in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ no systematic imbalance is observed.
+ Second,
+ we examine differences between farmers who received the video-and-seed intervention and those who did not.
+ Here we find some evidence of higher milk production (p < 0.1),
+ higher sales volumes (p < 0.05),
+ and slightly higher acaracide expenditures among treated farmers.
+ Third,
+ we report the interaction effects at baseline,
+ where two variables are significant at the 5 percent level and one at the 1 percent level.
+ While these individual differences suggest some imbalance across treatment arms,
+ the omnibus F-tests are consistently insignificant.
+\end_layout
+
 \begin_layout Section
 Attrition
 \end_layout
 
 \begin_layout Standard
-Already at baseline,
- it proved challenging to meet sample size target with the budget.
- This was primarily due to the extensive nature of dairy farming,
- resulting in household that are spread over large areas.
- As a result,
- we only managed to interview 2,261 farmers connected to 124 MCCs.
- 
+Meeting sample size targets within the available budget proved challenging at baseline,
+ largely because dairy farmers are geographically dispersed.
+ In the end,
+ we surveyed 2,261 farmers across 124 MCCs,
+ corresponding to 87 and 95 percent of our planned farmer and MCC samples,
+ and 90 and 99 percent of the required sizes from the power calculations.
+ Of these 124 MCCs,
+ 60 were assigned to control condition and 64 to treatment condition of T1.
 \end_layout
 
 \begin_layout Standard
 By endline,
- we managed to re-contact 2,218 farmers in 120 MCCs.
+ we managed to re-contact 122 MCCs,
+ of which 2 MCCs refused to cooperate,
+ leaving us with data for 120 MCCs.
+ We further managed to contact 2,139,
+ from which 6 refused to be interviewed,
+ leading to an effective sample of 2,133.
+ Further restricting farmers to the subset of farmers connected to an MCC that we were able to interview at endline,
+ we get 2,059.
 \end_layout
 
 \begin_layout Section
@@ -3533,7 +3627,7 @@ MCC level
 \end_layout
 
 \begin_layout Standard
-We define six primary outcomes at the level of the MCC.
+We pre-registered six primary outcomes at the level of the MCC.
  All six are hypothesized to move in a positive direction in response to our intervention,
  which was designed to make milk quality more transparent and salient in transactions.
  To capture the aggregate effect across these outcomes,
@@ -3552,16 +3646,25 @@ literal "false"
 \begin_layout Standard
 Our first two outcomes measure the extent to which quality testing becomes embedded in routine operations at the MCC.
  Specifically,
- we record whether MCCs test incoming milk deliveries from farmers and whether they test outgoing milk deliveries destined for buyers.
- These indicators capture the degree to which the analyzers are used as intended,
+ we record whether MCCs used a milk analyzer to measure butter fat and solid-non-fat content of incoming milk samples in the last 7 days.
+ In addition,
+ we asked whether MCCs test outgoing milk deliveries destined for buyers.
+ This measure is based on more detailed sales transaction data,
+ and is true if for any buyer (eg processor,
+ other trader,
+ etc) butter fat or SNF was tested using a milk analyzer.
+ Together,
+ these indicators capture the degree to which the analyzers are used as intended,
  and whether testing shapes quality assurance both upstream and downstream.
+ 
 \end_layout
 
 \begin_layout Standard
 The next two outcomes reflect how increased transparency affects pricing behavior.
- We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey,
- and the average price at which MCCs sell aggregated milk to buyers over the same period.
- These outcomes allow us to assess whether improved quality monitoring translates into higher farm-gate prices and whether MCCs are able to pass on quality improvements through higher sales prices.
+ We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey.
+ We then ask the average price MCCs received for sales to various buyers during the last transaction in the previous week,
+ and take a (weighted) average of these.
+ These outcomes allow us to assess whether improved quality monitoring translates into higher farm-gate prices and whether MCCs are able to cash in on quality improvements through higher sales prices.
 \end_layout
 
 \begin_layout Standard
@@ -3658,7 +3761,7 @@ cline{2-4}
 
 \begin_layout Plain Layout
 
-Testing on incoming samples & 
+Tested incoming milk using MA (1=yes) & 
 \backslash
 Sexpr{res_MCCs[1,1]} & 
 \backslash
@@ -3692,7 +3795,7 @@ Sexpr{res_MCCs[1,4]})
 
 \begin_layout Plain Layout
 
-Testing of outgoing samples & 
+Testing outgoing milk using MA (1=yes) & 
 \backslash
 Sexpr{res_MCCs[2,1]} & 
 \backslash
@@ -3726,7 +3829,7 @@ Sexpr{res_MCCs[2,4]})
 
 \begin_layout Plain Layout
 
-Average prices at which milk was bought from farmers  & 
+Price at which milk was bought from farmers (UGX) & 
 \backslash
 Sexpr{res_MCCs[3,1]} & 
 \backslash
@@ -3760,7 +3863,7 @@ Sexpr{res_MCCs[3,4]})
 
 \begin_layout Plain Layout
 
-Price at which milk was sold (in last 7 days) & 
+Price at which milk was sold (UGX) & 
 \backslash
 Sexpr{res_MCCs[4,1]} & 
 \backslash
@@ -3976,44 +4079,66 @@ nolink "false"
 \end_inset
 
 .
- The results provide evidence that the intervention successfully shifted MCC practices toward greater transparency in milk quality.
+ The results show that many MCCs saw the merits of milk analyzers.
  In particular,
  MCCs in the treatment group were substantially more likely to test incoming deliveries:
- the probability of testing rose by 53 percentage points relative to a control group mean of 29 percent,
+ the probability of testing rose by 34 percentage points relative to a control group mean of 20 percent,
  a large and highly significant increase.
- We also observe an increase in the probability of testing outgoing deliveries to buyers,
- although the magnitude of this effect is smaller (34 percentage points) and only marginally significant.
- These results suggest that the analyzers were primarily used to monitor milk supplied by farmers,
- with somewhat less uptake for assuring quality toward downstream buyers.
+ We also observe a large and significant increase in the probability of testing outgoing deliveries to buyers.
+ These results suggest that the analyzers were effectively used for monitoring both milk supplied by farmers and deliveries to downstream buyers.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+These self-reported outcomes may raise concerns about bias.
+ However,
+ as shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Secondary-outcomes-MCC-uptake"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we obtain similar results when using direct enumerator observations of analyzer use.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Turning to prices,
- we find little evidence that the intervention directly affected the level of prices at which MCCs transacted.
- The average farm-gate price paid to suppliers and the average sales price obtained from buyers remain statistically indistinguishable between treatment and control groups.
- These null effects are consistent with a setting in which overall market prices are largely determined by downstream demand and supply conditions,
- and may not respond quickly to localized changes in quality monitoring.
+ we find little evidence that the intervention affected transaction terms at MCCs.
+ In the control group,
+ the average farm-gate price paid to suppliers was about UGX 1,075 per liter,
+ and we detect no significant increase in the treatment group.
+ Similarly,
+ the average price MCCs received from buyers was about UGX 2,000 per liter in the control group,
+ with no evidence that treatment raised buyer offers.
+ These results suggest that while the intervention influenced testing practices,
+ it did not translate into higher prices on either side of the market.
 \end_layout
 
 \begin_layout Standard
-Finally,
- we examine whether MCCs and their buyers adopted explicit price differentiation by quality.
- The results here are also modest.
- We find no effect on whether MCCs paid a premium to suppliers,
- and only a small and statistically insignificant effect on whether buyers rewarded MCCs with a premium.
- Although suggestive of limited pass-through at this early stage,
- these outcomes are measured with relatively few observations,
- leaving open the possibility that effects may emerge more clearly over a longer horizon.
+In addition,
+ about 20 percent of MCCs in the control group reported paying a quality premium to suppliers,
+ and the same share (11 out of 59) reported receiving a premium from buyers.
+ Consistent with the price outcomes,
+ we do not find that making quality more visible in the value chain increased the likelihood of such premiums being paid.
 \end_layout
 
 \begin_layout Standard
 Taken together,
- the intervention led to a strong and consistent increase in testing behavior,
- but limited short-run evidence of quality-based price differentiation.
- Nonetheless,
- the composite index of all primary outcomes indicates a positive and statistically significant overall effect of the intervention,
- highlighting that even in the absence of immediate price effects,
- making quality visible can shift MCC practices in ways that may lay the foundation for a functioning market for quality.
+ data recorded at the MCC level suggests that the intervention led to a substantial and consistent increase in testing behavior,
+ but no evidence of quality-based price differentiation.
+ Judged by the composite index of pre-registered MCC-level outcomes,
+ we conclude that T1 had no effect.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4021,7 +4146,7 @@ Farmer level
 \end_layout
 
 \begin_layout Standard
-We also define five primary outcomes at the farmer level and estimate equation 
+We also define four primary outcomes at the farmer level and estimate equation 
 \begin_inset ERT
 status open
 
@@ -4113,7 +4238,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4191,19 +4316,19 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-Production investment and management & 
+Production investment and management (Index) & 
 \backslash
 Sexpr{res_farmers[1,1]} & 
 \backslash
-Sexpr{res_farmers[1,3]}$^{
+Sexpr{res_farmers[1,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[1,16]<.01,"**",ifelse(res_farmers[1,16]<.05,"*",ifelse(res_farmers[1,16]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[1,25]<.01,"**",ifelse(res_farmers[1,25]<.05,"*",ifelse(res_farmers[1,25]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{res_farmers[1,6]}$^{
+Sexpr{res_farmers[1,22]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[1,17]<.01,"**",ifelse(res_farmers[1,17]<.05,"*",ifelse(res_farmers[1,17]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_farmers[1,26]<.01,"**",ifelse(res_farmers[1,26]<.05,"*",ifelse(res_farmers[1,26]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{res_farmers[1,9]}$^{
+Sexpr{res_farmers[1,27]}$^{
 \backslash
 Sexpr{ifelse(res_farmers[1,18]<.01,"**",ifelse(res_farmers[1,18]<.05,"*",ifelse(res_farmers[1,18]<.1,"+","")))}}$  & 
 \backslash
@@ -4220,11 +4345,11 @@ Sexpr{res_farmers[1,12]}
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,4]}) & (
+Sexpr{res_farmers[1,20]}) & (
 \backslash
-Sexpr{res_farmers[1,7]}) & (
+Sexpr{res_farmers[1,23]}) & (
 \backslash
-Sexpr{res_farmers[1,10]})
+Sexpr{res_farmers[1,28]})
 \backslash
 
 \backslash
@@ -4252,19 +4377,19 @@ Sexpr{res_farmers[1,15]}]
 
 \begin_layout Plain Layout
 
-Buyer checks for quality  & 
+Buyer checked for quality (1=yes)  & 
 \backslash
 Sexpr{res_farmers[2,1]} & 
 \backslash
-Sexpr{res_farmers[2,3]}$^{
+Sexpr{res_farmers[2,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[2,16]<.01,"**",ifelse(res_farmers[2,16]<.05,"*",ifelse(res_farmers[2,16]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[2,25]<.01,"**",ifelse(res_farmers[2,25]<.05,"*",ifelse(res_farmers[2,25]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{res_farmers[2,6]}$^{
+Sexpr{res_farmers[2,22]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[2,17]<.01,"**",ifelse(res_farmers[2,17]<.05,"*",ifelse(res_farmers[2,17]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_farmers[2,26]<.01,"**",ifelse(res_farmers[2,26]<.05,"*",ifelse(res_farmers[2,26]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{res_farmers[2,9]}$^{
+Sexpr{res_farmers[2,27]}$^{
 \backslash
 Sexpr{ifelse(res_farmers[2,18]<.01,"**",ifelse(res_farmers[2,18]<.05,"*",ifelse(res_farmers[2,18]<.1,"+","")))}}$  & 
 \backslash
@@ -4281,11 +4406,11 @@ Sexpr{res_farmers[2,12]}
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,4]}) & (
+Sexpr{res_farmers[2,20]}) & (
 \backslash
-Sexpr{res_farmers[2,7]}) & (
+Sexpr{res_farmers[2,23]}) & (
 \backslash
-Sexpr{res_farmers[2,10]})
+Sexpr{res_farmers[2,28]})
 \backslash
 
 \backslash
@@ -4317,15 +4442,15 @@ Price received for milk sold  &
 \backslash
 Sexpr{res_farmers[3,1]} & 
 \backslash
-Sexpr{res_farmers[3,3]}$^{
+Sexpr{res_farmers[3,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[3,16]<.01,"**",ifelse(res_farmers[3,16]<.05,"*",ifelse(res_farmers[3,16]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[3,25]<.01,"**",ifelse(res_farmers[3,25]<.05,"*",ifelse(res_farmers[3,25]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{res_farmers[3,6]}$^{
+Sexpr{res_farmers[3,22]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[3,17]<.01,"**",ifelse(res_farmers[3,17]<.05,"*",ifelse(res_farmers[3,17]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_farmers[3,26]<.01,"**",ifelse(res_farmers[3,26]<.05,"*",ifelse(res_farmers[3,26]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{res_farmers[3,9]}$^{
+Sexpr{res_farmers[3,27]}$^{
 \backslash
 Sexpr{ifelse(res_farmers[3,18]<.01,"**",ifelse(res_farmers[3,18]<.05,"*",ifelse(res_farmers[3,18]<.1,"+","")))}}$  & 
 \backslash
@@ -4342,11 +4467,11 @@ Sexpr{res_farmers[3,12]}
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,4]}) & (
+Sexpr{res_farmers[3,20]}) & (
 \backslash
-Sexpr{res_farmers[3,7]}) & (
+Sexpr{res_farmers[3,23]}) & (
 \backslash
-Sexpr{res_farmers[3,10]})
+Sexpr{res_farmers[3,28]})
 \backslash
 
 \backslash
@@ -4378,15 +4503,15 @@ Get quality premium  &
 \backslash
 Sexpr{res_farmers[4,1]} & 
 \backslash
-Sexpr{res_farmers[4,3]}$^{
+Sexpr{res_farmers[4,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[4,16]<.01,"**",ifelse(res_farmers[4,16]<.05,"*",ifelse(res_farmers[4,16]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[4,25]<.01,"**",ifelse(res_farmers[4,25]<.05,"*",ifelse(res_farmers[4,25]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{res_farmers[4,6]}$^{
+Sexpr{res_farmers[4,22]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[4,17]<.01,"**",ifelse(res_farmers[4,17]<.05,"*",ifelse(res_farmers[4,17]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_farmers[4,26]<.01,"**",ifelse(res_farmers[4,26]<.05,"*",ifelse(res_farmers[4,26]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{res_farmers[4,9]}$^{
+Sexpr{res_farmers[4,27]}$^{
 \backslash
 Sexpr{ifelse(res_farmers[4,18]<.01,"**",ifelse(res_farmers[4,18]<.05,"*",ifelse(res_farmers[4,18]<.1,"+","")))}}$  & 
 \backslash
@@ -4403,11 +4528,11 @@ Sexpr{res_farmers[4,12]}
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,4]}) & (
+Sexpr{res_farmers[4,20]}) & (
 \backslash
-Sexpr{res_farmers[4,7]}) & (
+Sexpr{res_farmers[4,23]}) & (
 \backslash
-Sexpr{res_farmers[4,10]})
+Sexpr{res_farmers[4,28]})
 \backslash
 
 \backslash
@@ -4431,25 +4556,30 @@ Sexpr{res_farmers[4,15]}]
 
 \begin_layout Plain Layout
 
+
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
 
-Has bargaining power  & 
+Index of primary farmer outcomes & 
 \backslash
 Sexpr{res_farmers[5,1]} & 
 \backslash
-Sexpr{res_farmers[5,3]}$^{
+Sexpr{res_farmers[5,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[5,16]<.01,"**",ifelse(res_farmers[5,16]<.05,"*",ifelse(res_farmers[5,16]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[5,21]<.01,"**",ifelse(res_farmers[5,21]<.05,"*",ifelse(res_farmers[5,21]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{res_farmers[5,6]}$^{
+Sexpr{res_farmers[5,22]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[5,17]<.01,"**",ifelse(res_farmers[5,17]<.05,"*",ifelse(res_farmers[5,17]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_farmers[5,24]<.01,"**",ifelse(res_farmers[5,24]<.05,"*",ifelse(res_farmers[5,24]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{res_farmers[5,9]}$^{
+Sexpr{res_farmers[5,27]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[5,18]<.01,"**",ifelse(res_farmers[5,18]<.05,"*",ifelse(res_farmers[5,18]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_farmers[5,29]<.01,"**",ifelse(res_farmers[5,29]<.05,"*",ifelse(res_farmers[5,29]<.1,"+","")))}}$  & 
 \backslash
 Sexpr{res_farmers[5,12]} 
 \backslash
@@ -4464,11 +4594,11 @@ Sexpr{res_farmers[5,12]}
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,4]}) & (
+Sexpr{res_farmers[5,20]}) & (
 \backslash
-Sexpr{res_farmers[5,7]}) & (
+Sexpr{res_farmers[5,23]}) & (
 \backslash
-Sexpr{res_farmers[5,10]})
+Sexpr{res_farmers[5,28]})
 \backslash
 
 \backslash
@@ -4483,7 +4613,7 @@ Sexpr{res_farmers[5,13]}] & [
 \backslash
 Sexpr{res_farmers[5,14]}] & [
 \backslash
-Sexpr{res_farmers[1,15]}]
+Sexpr{res_farmers[5,15]}]
 \backslash
 
 \backslash
@@ -4491,63 +4621,6 @@ Sexpr{res_farmers[1,15]}]
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Index of primary farmer outcomes & 
-\backslash
-Sexpr{res_farmers[6,1]} & 
-\backslash
-Sexpr{res_farmers[6,3]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[6,5]<.01,"**",ifelse(res_farmers[6,5]<.05,"*",ifelse(res_farmers[6,5]<.1,"+","")))}}$ & 
-\backslash
-Sexpr{res_farmers[6,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[6,8]<.01,"**",ifelse(res_farmers[6,8]<.05,"*",ifelse(res_farmers[6,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[6,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[6,11]<.01,"**",ifelse(res_farmers[6,11]<.05,"*",ifelse(res_farmers[6,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[6,12]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{res_farmers[6,2]}) & (
-\backslash
-Sexpr{res_farmers[6,4]}) & (
-\backslash
-Sexpr{res_farmers[6,7]}) & (
-\backslash
-Sexpr{res_farmers[6,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-&  & [
-\backslash
-Sexpr{res_farmers[6,13]}] & [
-\backslash
-Sexpr{res_farmers[6,14]}] & [
-\backslash
-Sexpr{res_farmers[6,15]}]
-\backslash
-
-\backslash
 
 \end_layout
 
@@ -4711,7 +4784,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8592,6 +8665,14 @@ Note:
 
 \end_layout
 
+\begin_layout Subsection*
+Secondary outcomes at the transaction level:
+\end_layout
+
+\begin_layout Standard
+We should also look at prices here!
+\end_layout
+
 \begin_layout Section
 Heterogeneity with respect to chain length
 \end_layout
@@ -8665,29 +8746,69 @@ quality improvements.
 \end_layout
 
 \begin_layout Standard
-The findings largely confirm insights gathered during the qualitative midline assessment (Ariong et al.,
- 2024).
- The milk analyzer (MA) innovations were well-received and widely used,
- with stakeholders appreciating their ability to enhance transparency and enforce quality standards.
- As a result,
- compositional milk quality improved significantly,
- particularly in treatment MCCs,
- which recorded higher butterfat and solids-not-fat (SNF) levels and lower adulteration rates.
- Despite these gains,
- price effects remain limited and lagging,
- reflecting the broader structural issue of uniform pricing by processors that fails to reward quality improvements.
+Findings:
 \end_layout
 
-\begin_layout Standard
-The training intervention (T2),
- focused on raising awareness and promoting quality-enhancing practices at the farmer level,
- showed no significant impact.
- While farmers’ awareness of compositional quality increased modestly,
- there was little evidence of behavioral changes,
- such as investment in better feeding or grazing practices.
- This suggests that information alone is insufficient to drive change without stronger economic incentives or additional support mechanisms.
+\begin_layout Itemize
+analyzers were effectively used for monitoring both milk supplied by farmers and deliveries to downstream buyers - at least that is what MCCs told us - secondary outcomes also suggest MAs are used,
+ a good share of MAs also put up the posters and used the app.
 \end_layout
 
+\begin_layout Itemize
+No clear price effects - which of the following explanations are most plausible
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Thin margins at MCCs:
+ MCCs typically operate on tight margins,
+ with their sales price closely tied to what processors or other downstream buyers pay them.
+ If buyers did not pay more for higher quality milk,
+ MCCs had little scope to pass quality information through prices.
+ - this seems consistent with the 
+\end_layout
+
+\begin_layout Itemize
+Contracts and price stickiness:
+ Prices may be set in advance or negotiated infrequently (daily/weekly/monthly),
+ making them less responsive to changes in quality testing over the study period.
+ - this is also plausible in the context,
+ where prices are typically fixed for 14 days
+\end_layout
+
+\begin_layout Itemize
+Market structure:
+ If competition among MCCs is limited,
+ or if buyers wield monopsony power,
+ MCCs may be unable to raise prices for farmers even if quality improves.
+\end_layout
+
+\begin_layout Itemize
+Heterogeneous effects masked in averages:
+ Rather than raising the average price,
+ quality testing may have led to more price differentiation:
+ better-quality suppliers receiving a premium,
+ but lower-quality suppliers being rejected or paid less.
+ This could leave the mean unchanged even if underlying incentives shifted.
+ - this does not seem to be the reason but we can investigate this using the testing data.
+ 
+\end_layout
+
+\begin_layout Itemize
+Adjustment margins other than price:
+ MCCs may have used testing results to enforce non-price mechanisms such as rejecting adulterated milk,
+ reducing disputes,
+ or strengthening supplier relationships.
+\end_layout
+
+\begin_layout Itemize
+Short time horizon:
+ It may take time for buyers to recognize and reward systematic improvements in quality.
+ The intervention might influence quality assurance practices first,
+ with price effects emerging later.
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 The current price-setting mechanism is a critical bottleneck.
  Processors continue to publish uniform prices for milk,
@@ -8816,7 +8937,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9463,7 +9584,7 @@ placement document
 alignment document
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9701,7 +9822,7 @@ Sexpr{res_farmers[4,23]})
 
 \begin_layout Plain Layout
 
-Has bargaining power  & 
+Index of primary farmer outcomes   & 
 \backslash
 Sexpr{res_farmers[5,1]} & 
 \backslash
@@ -9729,46 +9850,6 @@ Sexpr{res_farmers[5,2]}) & (
 Sexpr{res_farmers[5,20]}) & (
 \backslash
 Sexpr{res_farmers[5,23]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Index of primary farmer outcomes  & 
-\backslash
-Sexpr{res_farmers[6,1]} & 
-\backslash
-Sexpr{res_farmers[6,19]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[6,21]<.01,"**",ifelse(res_farmers[6,21]<.05,"*",ifelse(res_farmers[6,21]<.1,"+","")))}}$ & 
-\backslash
-Sexpr{res_farmers[6,22]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[6,24]<.01,"**",ifelse(res_farmers[6,24]<.05,"*",ifelse(res_farmers[6,24]<.1,"+","")))}}$ & 
-\backslash
-Sexpr{res_farmers[6,12]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{res_farmers[6,2]}) & (
-\backslash
-Sexpr{res_farmers[6,20]}) & (
-\backslash
-Sexpr{res_farmers[6,23]})
 \backslash
 
 \backslash
