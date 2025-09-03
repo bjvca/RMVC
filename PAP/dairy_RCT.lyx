@@ -1759,29 +1759,29 @@ Hypothesis 4:
 \begin_layout Standard
 Additional research questions,
  based on the stratification,
- tests for differences in average treatment effects between farmers that are connected to milk collection centers versus those that are not.
+ tests for equality in average treatment effects between farmers that are connected to milk collection centers versus those that are not.
  Testing for this treatment heterogeneity allows us to explore if the interventions only strengthen existing value chains or whether they can also draw in actors from informal value chains.
 \end_layout
 
 \begin_layout Itemize
-Does the MCC level intervention affect farmers that are already connected to the milk collection center differently than farmers that are not already connected to an MCC 
-\begin_inset Formula $\left(\beta_{H2C}\neq\beta_{H2T}\right)$
+Does the MCC level intervention affect farmers that are already connected to the milk collection center similarly than farmers that are not already connected to an MCC 
+\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2T}\right)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Itemize
-Does the information treatment affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H3C}\neq\beta_{H3T}\right)$
+Does the information treatment affect farmers that are connected to an MCC similarly than farmers that are not connected to an MCC 
+\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3T}\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Itemize
-Does the combined treatment (making quality visible at the MCC level and providing farmers with information on the desired quality dimension) affect farmers that are connected to an MCC differently than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H4C}\neq\beta_{H4T}\right)$
+Does the combined treatment (making quality visible at the MCC level and providing farmers with information on the desired quality dimension) affect farmers that are connected to an MCC similarly than farmers that are not connected to an MCC 
+\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4T}\right)$
 \end_inset
 
 
@@ -2497,11 +2497,11 @@ alpha+
 \backslash
 alpha{}_{C}C_{i,m}+
 \backslash
-beta_{H2T}.T_{m}^{T}+
+beta_{H2T}.T_{i,m}^{T}+
 \backslash
-beta_{H3T}T_{i}^{I}+
+beta_{H3T}T_{i,m}^{I}+
 \backslash
-beta_{H4T}T_{i}^{I}.T_{m}^{T} 
+beta_{H4T}T_{i.m}^{I}.T_{i,m}^{T} 
 \backslash
 
 \backslash
@@ -2512,11 +2512,11 @@ beta_{H4T}T_{i}^{I}.T_{m}^{T}
 
 & +
 \backslash
-beta_{H2C}.T_{m}^{T}.C_{i,m}+
+beta_{H2C}.T_{i,m}^{T}.C_{i,m}+
 \backslash
 beta_{H3C}T_{i}^{I}.C_{i,m}+
 \backslash
-beta_{H4C}T_{i}^{I}.T_{m}^{T}.C_{i,m}+
+beta_{H4C}T_{i}^{I}.T_{i,m}^{T}.C_{i,m}+
 \backslash
 beta_{b}.y_{i,m}^{b}+
 \backslash
@@ -4146,46 +4146,8 @@ Farmer level
 \end_layout
 
 \begin_layout Standard
-We also define four primary outcomes at the farmer level and estimate equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-,
- with results reported in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- In Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- we present a robustness specification where the orthogonal treatment is included as a covariate and interacted with the demeaned treatment indicator.
- This specification provides a more conservative estimate of the treatment effect.
+We also define four primary outcomes at the farmer level and combine them into an index to assess overall impact of the interventions on farmers level outcomes.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4198,38 +4160,94 @@ literal "false"
 
 \end_inset
 
- index based on six recommended practices:
- oversowing pastures,
- planting legume pastures,
- adopting controlled or zero grazing in both the dry and wet seasons,
- conserving pastures,
- and providing feed supplements.
- This index provides a summary measure of whether farmers adjusted their production strategies in response to the intervention.
+ index from farmer reports on six recommended practices undertaken in the past year:
+ (i) over-sowing new fields with improved forage grasses such as 
+\emph on
+Napier
+\emph default
+,
+ 
+\emph on
+Brachiaria
+\emph default
+,
+ or 
+\emph on
+Rhodes
+\emph default
+ grasses;
+ (ii) using legume pastures such as 
+\emph on
+Centro
+\emph default
+,
+ 
+\emph on
+Siratro
+\emph default
+,
+ or 
+\emph on
+Desmodium
+\emph default
+;
+ (iii) adopting controlled or zero grazing during both the last dry and wet season;
+ (iv) practicing pasture conservation through hay,
+ silage,
+ or haylage;
+ and (v) using feed supplements such as maize bran,
+ crop residues (for example banana peelings),
+ or mineral licks.
+ This index summarizes the extent to which farmers adjusted production strategies,
+ particularly in response to the farmer-level information treatment.
 \end_layout
 
 \begin_layout Standard
 The second outcome captures whether buyers actively checked milk quality at the point of transaction.
- We combine indicators of whether the buyer used a milk analyzer,
- lactometer,
- or alcohol test during the most recent purchase.
- This variable reflects the extent to which farmers were exposed to quality verification in their direct sales.
+ Here,
+ we distinguish between different categories of buyers (eg.
+ MCCs,
+ processor,
+ trader,
+ etc.) and ask if milk was tested using a milk analyzer if the farmer sold milk to this particular buyer in the 7 days prior to the survey.
+ The indicator is true if milk sold in the last 7 days was tested by at least one buyer.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We restrict this outcome to farmers who reported selling milk in the last seven days.
+ Roughly 20 percent did not sell during this period.
+ While such a restriction could introduce selection bias if treatments also affected market participation,
+ Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Secondary-outcomes-farmer-quantity-sold"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows no evidence of differential participation across treatment groups.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The third and fourth outcomes focus on prices received.
- We measure the average price per liter obtained by farmers in their most recent sale within the past seven days,
- inclusive of any quality premium that may have been awarded.
- We also directly ask whether the buyer paid more for higher-quality milk.
- These outcomes allow us to assess whether quality improvements translate into tangible financial benefits for farmers.
-\end_layout
-
-\begin_layout Standard
-Finally,
- we include an indicator of farmers’ bargaining power in transactions with buyers.
- This measure captures whether the farmer reported being able to negotiate on either price or quality terms,
- or otherwise exert influence in the transaction.
- Taken together,
- these five outcomes allow us to test whether the intervention affected both the upstream adoption of quality-enhancing practices and the downstream rewards farmers received for their efforts.
+The third outcome is the price received for milk sold.
+ Specifically,
+ we record the average price per liter obtained in the farmer’s most recent sale during the past seven days,
+ inclusive of any quality premiums.
+ Farmers reported prices by buyer category,
+ and we construct a weighted average across categories using transaction volumes as weights.
+ We also directly ask whether the buyer pays a higher price for higher-quality milk.
+ This question was posed in general terms,
+ without reference to a specific time frame.
+ These outcomes capture whether quality improvements translate into tangible financial benefits for farmers.
 \end_layout
 
 \begin_layout Standard
@@ -4238,7 +4256,7 @@ placement document
 alignment document
 wide false
 sideways true
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -4700,12 +4718,12 @@ nolink "false"
 
 \end_inset
 
- reports treatment effects on our five primary outcomes at the farmer level.
- Unlike the MCC-level results,
- where the analyzer intervention led to clear increases in testing (Table 
+ reports treatment effects on our four primary outcomes at the farmer level,
+ as well as the index.
+ The table combines parameter estimates from the different equations discussed in section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Primary-outcomes-farmer"
+reference "sec:Estimation-and-inference"
 plural "false"
 caps "false"
 noprefix "false"
@@ -4713,39 +4731,197 @@ nolink "false"
 
 \end_inset
 
-),
- the farmer-level results show much weaker impacts.
- The index of production investments and management practices designed to improve milk quality is slightly positive for both interventions,
- but neither estimate is statistically significant.
+.
+ In the first column,
+ we show mean outcome for pure control farmers (that did not get the information treatment and are connected to control MCCs);
+ standard deviations are in parenthesis below.
+ In the second column,
+ we provide an estimate of the farmer level pooled main treatment effect of T1 (corresponding to 
+\begin_inset Formula $\beta_{H2}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ standard errors in parenthesis below) and in the third column,
+ we provide an estimate of the farmer level pooled main treatment effect of T2 (corresponding to 
+\begin_inset Formula $\beta_{H3}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ standard errors in parenthesis below).
+ The fourth column provides an estimate of the difference in outcomes between farmers that are exposed to both treatments and pure control farmers (corresponding to 
+\begin_inset Formula $\beta_{H4}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ standard errors in parenthesis below).
+ Finally,
+ below the standard errors,
+ we also provide p-values for the hypothesis that there is no different in the estimated effect depending on how the farmer is connected to the MCC (directly or through a small trader).
+ More in particular,
+ the number in square brackets in column two is the p-value for the hypothesis 
+\begin_inset Formula $\beta_{H2C}=\beta_{H2T}$
+\end_inset
+
+ obtained from equation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+.
+ Similar tests are reported for 
+\begin_inset Formula $\beta_{H3C}=\beta_{H3T}$
+\end_inset
+
+ in column three and 
+\begin_inset Formula $\beta_{H4C}=\beta_{H4T}$
+\end_inset
+
+ in column four.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+In Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we present results for the fully interacted model.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The index of production investments and management practices designed to improve milk quality shows a positive treatment effect for the farmer level information treatment,
+ but after controlling for multiple hypothesis testing,
+ the difference is not significant.
  This suggests that farmers did not systematically adjust their production strategies in response to either the analyzer at the MCC or the farmer-focused intervention bundle.
 \end_layout
 
 \begin_layout Standard
-Turning to outcomes linked directly to market incentives,
- we find similarly muted effects.
- The likelihood that buyers conducted a quality test at the point of sale is unaffected by either intervention.
- Likewise,
- farmers in both treatment arms received prices per liter that were statistically indistinguishable from those obtained by control farmers,
- and they were no more likely to obtain explicit quality premiums.
- Finally,
- there is no evidence that either intervention improved farmers’ bargaining power in negotiations with buyers.
- The summary index of all farmer-level outcomes remains close to zero and insignificant across specifications.
+We find that among pure control farmers,
+ about 19 percent report that their milk was tested using a milk analyzer.
+ This is about 7 percentage points higher when the farmer was connected to a treatment MCC.
+ However,
+ the coefficient is not significantly different from zero.
+ We find no impact video,
+ but we again find a substantial (though insignificant) difference in being tested between control farmers and farmers that were exposed to both treatments.
+ Interestingly,
+ for the bundle,
+ we also reject the null that that the effects are equal irrespective of how farmers are connected to the MCC.
+ This is because,
+ in line with expectations,
+ while the interaction effect 
+\begin_inset Formula $\beta_{H3C}$
+\end_inset
+
+ in 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+ is positive,
+ the additional interaction with the trader indicator 
+\begin_inset Formula $\beta_{H3T}$
+\end_inset
+
+ is negative.
 \end_layout
 
 \begin_layout Standard
-Taken together,
- these findings highlight an important disconnect between the two levels of intervention.
- At the MCC level,
- analyzers clearly changed practices by embedding quality testing into transactions.
- However,
- these changes did not translate into stronger incentives or rewards for farmers,
- even when accompanied by a targeted farmer-level intervention.
- The absence of measurable improvements upstream underscores the difficulty of transmitting quality incentives through the chain:
- MCCs may increase testing,
- but without consistent buyer-side demand for quality and corresponding price differentiation,
- farmers face little reason to adopt quality-enhancing practices.
- This pattern points to the central coordination challenge in value chains—
-quality upgrading requires complementary changes across both intermediaries and producers for incentives to align.
+Farmers report receiving on average UGX 1,022 per liter,
+ which is consistent with MCC-level data in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Some farmers sell to alternative buyers such as traders or directly to consumers,
+ typically at slightly lower prices than those offered by MCCs.
+ Prices received by farmers in both treatment arms are statistically indistinguishable from those obtained by control farmers,
+ and the likelihood of receiving an explicit quality premium does not differ across groups.
+ Farmers exposed to both treatments received about 20 shillings more per liter,
+ but this effect is small and statistically insignificant.
+ We also find evidence of heterogeneity by farmers’ mode of connection to the MCC,
+ with results suggesting that traders capture part of the price increase.
+\end_layout
+
+\begin_layout Standard
+Overall,
+ the index suggests that the analyzer,
+ particularly when combined with the video treatment,
+ did improve farmer-level outcomes.
+ While individual coefficients rarely attain conventional significance,
+ the consistent direction of effects across multiple indicators points to meaningful gains for treated farmers.
+ This pattern is unlikely to arise by chance alone and is suggestive of broad though modest improvements in milk marketing conditions.
+ The evidence indicates that making quality information more visible and understandable helped farmers secure outcomes more in line with the potential benefits of quality upgrading,
+ even if the impact on any single dimension is difficult to isolate with precision.
+ The coherence of the results across outcomes therefore provides encouraging evidence that the intervention bundle generated tangible though diffuse benefits at the farmer level.
 \end_layout
 
 \begin_layout Subsubsection
@@ -8752,6 +8928,11 @@ Findings:
 \begin_layout Itemize
 analyzers were effectively used for monitoring both milk supplied by farmers and deliveries to downstream buyers - at least that is what MCCs told us - secondary outcomes also suggest MAs are used,
  a good share of MAs also put up the posters and used the app.
+\end_layout
+
+\begin_layout Itemize
+very weak effects at farmer levels - farmers do not only sell to MCCs.
+ Is the result different if we only consider sales to MCCs
 \end_layout
 
 \begin_layout Itemize

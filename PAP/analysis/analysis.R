@@ -122,11 +122,18 @@ farmers_end$avg_sales_p[farmers_end$avg_sales_p  <= 600] <- NA
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_avg_sales_p")], by="farmer_ID", all.x=T)
 
 ## Does the buyer pay for higher quality milk - q61/qx8/qx20/qx32/qx44/qx56
+farmers_end$qx8[farmers_end$qx8 == "98"] <- NA
+farmers_end$qx8[farmers_end$qx44 == "98"] <- NA
+
 farmers_end$gets_q_bonus <- farmers_end$q61 == "Yes" | farmers_end$qx8 == "Yes" | farmers_end$qx20 == "Yes" | farmers_end$qx32 == "Yes" | farmers_end$qx44 == "Yes" | farmers_end$qx56 == "Yes"
 farmers_end$gets_q_bonus[farmers_end$q52 == "n/a" | farmers_end$q52 == "No"] <- NA
+farmers_base$q61[farmers_base$q61 == "98"] <- NA
+farmers_base$qx8[farmers_base$qx8 == "98"] <- NA
+farmers_base$qx44[farmers_base$qx44 == "98"] <- NA
 
 farmers_base$b_gets_q_bonus <- farmers_base$q61 == "Yes" | farmers_base$qx8 == "Yes" | farmers_base$qx20 == "Yes" | farmers_base$qx32 == "Yes" | farmers_base$qx44 == "Yes" | farmers_base$qx56 == "Yes"
 farmers_base$b_gets_q_bonus[farmers_base$q52 == "No"] <- NA
+
 
 farmers_end <- merge( farmers_end, farmers_base[c("farmer_ID","b_gets_q_bonus")], by="farmer_ID", all.x=T)
 
