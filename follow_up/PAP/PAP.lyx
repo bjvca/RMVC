@@ -1,0 +1,699 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle true
+\pdf_quoted_options "linkcolor=black, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\lang english
+\begin_inset Preview
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Richard Ariong
+\backslash
+thanks{Innovation Policy and Scaling Unit,
+ International Food Policy Research Institute,
+ Kampala,
+ Uganda},
+ Bennon Byarugaba
+\backslash
+thanks{MAAIF,
+ Kampala,
+ Uganda},
+ Jordan Chamberlin
+\backslash
+thanks{CIMMYT,
+ Nairobi,
+ Kenia} 
+\backslash
+
+\backslash
+ Sarah Wairimu Kariuki
+\backslash
+footnotemark[2] ,
+  Bjorn Van Campenhout
+\backslash
+thanks{Innovation Policy and Scaling Unit,
+ International Food Policy Research Institute,
+ Leuven,
+ Belgium}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\lang american
+Pre-analysis plan for:
+ Quality premium transmission and quality upgrading – evidence from Ugandan dairy value chains
+\end_layout
+
+\begin_layout Abstract
+We study whether quality premiums at milk collection centers can transmit incentives upstream and upgrade compositional milk quality in Ugandan dairy value chains.
+ Building on prior work that installed approximately 150 milk analyzers and raised testing without consistent quality-based price differentiation,
+ we partner with MCCs and small processors to randomize trader eligibility for a per-liter quality premium tied to butterfat and solids-non-fat (SNF).
+ Randomization occurs at the trader level with blocking by MCC.
+ The primary trader outcome is compositional quality (fat and SNF) measured by analyzers and submitted during the entire project duration,
+ and particularly during the final study week.
+ The primary farmer outcome is the volume-weighted farmgate price from the last three sales,
+ used to assess pass-through.
+ Secondary trader outcomes cover prices trader prices paid to farmers,
+ sourcing practices,
+ and trading intensity and allocations.
+ Secondary farmer outcomes include production investment and management practices,
+ post-milking handling and cooling,
+ and marketing allocation and payment terms.
+\end_layout
+
+\begin_layout Standard
+keywords:
+ Uganda,
+ dairy value chains,
+ quality-based price premium,
+ price pass-through,
+ value chain upgrading
+\end_layout
+
+\begin_layout Standard
+JEL-codes:
+ O13,
+ Q13,
+ L15,
+ D82,
+ C93
+\end_layout
+
+\begin_layout Section
+Background
+\end_layout
+
+\begin_layout Standard
+To support the development of a market that rewards higher-quality milk,
+ we deployed approximately 150 milk analyzers as part of the Rethinking Markets Initiative's Work Package 2 (WP2).
+ These devices were strategically placed at key points in the midstream of dairy value chains—
+at milk collection centers (MCC)—
+to measure essential quality indicators such as butterfat content,
+ protein levels,
+ and water adulteration.
+\end_layout
+
+\begin_layout Standard
+The core research hypothesis was that the inability to track milk quality at the source (before it is aggregated from multiple smallholders) acts as a major barrier to sector growth 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
+ By making milk quality visible and traceable throughout the value chain,
+ the project aimed to enhance food quality assurance and improve the efficiency of dairy markets,
+ ultimately contributing to the accessibility and affordability of high-quality milk for consumers.
+ Ensuring that small traders and SMEs are integrated into emerging quality-based pricing systems helps prevent market exclusion,
+ fostering a more inclusive and competitive dairy sector.
+ Additionally,
+ the project supported higher-quality milk production,
+ which can reduce processing costs and potentially lead to lower prices for consumers.
+ Strengthening these market mechanisms ensures that value chain improvements translate into tangible benefits for both producers and consumers,
+ aligning with the broader goal of promoting sustainable,
+ healthy diets.
+\end_layout
+
+\begin_layout Section
+Problem Statement
+\end_layout
+
+\begin_layout Standard
+Our previous work,
+ summarized in 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "ariong2025accelerating"
+literal "false"
+
+\end_inset
+
+,
+ revealed a significant improvement in milk quality following the introduction of milk analyzers in MCCs.
+ However,
+ the anticipated price effects appeared slower to materialize:
+ While the analyzers helped reduce the risk of milk rejection at the processor level,
+ they did not drive full product differentiation based on quality.
+ This suggests that the full potential of milk analyzers will only be realized once downstream actors begin competing on quality,
+ ensuring that price incentives extend to traders and farmers,
+ ultimately shaping a more responsive and value-driven dairy market.
+\end_layout
+
+\begin_layout Section
+Research Question
+\end_layout
+
+\begin_layout Standard
+How does increased competition for quality downstream influence the behavior and outcomes of value chain actors upstream?
+ To explore this,
+ we collaborate with milk collection centers,
+ and (randomly) introduce a quality premium that directly incentivizes actors one step upstream in the value chain (that is,
+ small milk traders that buy milk from dairy farmers and sell milk to milk collection centers).
+ By doing so,
+ we aim to understand how downstream price signals drive changes in sourcing practices and rent distribution,
+ quality and investment therein,
+ and overall market dynamics.
+\end_layout
+
+\begin_layout Section
+Field Experiment
+\end_layout
+
+\begin_layout Standard
+Small dairy traders who buy raw milk from smallholder dairy farmers at the farmgate and deliver this to MCCs using bicycles or motorcycles are key to efficient and inclusive value chains 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "SITKO201456"
+literal "false"
+
+\end_inset
+
+.
+ Findings from the Rethinking Food Markets (RFM) study indicate that small dairy traders,
+ who serve as intermediaries between smallholder farmers and Milk Collection Centers (MCCs),
+ continue to supply low-quality milk 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ariong2024quality"
+literal "false"
+
+\end_inset
+
+.
+ This is largely driven by the lack of a quality premium at the MCC level,
+ which incentivizes traders to prioritize volume over quality,
+ often leading to practices such as milk adulteration with water.
+ Given this,
+ our field experiment will specifically target this subgroup.
+\end_layout
+
+\begin_layout Standard
+We will collaborate about 20 MCCs where milk analyzers have been installed and sample from the small traders that collect milk at the farmgate and deliver this milk to these MCCs.
+ These traders will be randomly assigned to treatment and control groups (blocked on MCC with a 0.5 assignment probability within each block and a minimum of 4 traders per block).
+ In the treatment group,
+ traders will receive a quality premium,
+ following a pricing scheme that rewards both butter fat and SNF.
+ Under this system,
+ a baseline quality level is set,
+ and traders receive an additional UGX 10 per liter for every 0.1 percentage point increase in butter fat and/or SNF above East African standards of 3.3% butter fat and 8.5% SNF.
+ For example,
+ if a trader delivers milk with 3.7 percent fat and 8.7 percent SNF,
+ this is 0.4 percentage points above the fat base and 0.2 above the SNF base.
+ The trader would therefore earn 40 shillings extra for fat and 20 shillings extra for SNF,
+ making a total premium of 60 shillings per liter.
+ Delivering 100 liters of such milk would result in a total bonus of 6,000 shillings,
+ paid the same evening in addition to the regular milk price paid by the MCC every two weeks.
+ We will consider outcomes at both the trader level and farmer level—
+see Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Outcomes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The experiment is scheduled to run for about 30 days,
+ starting on the 1st of November 2025.
+ After 15 days—
+after which traders have gained trust in the research—
+the rules of the game will be changed.
+ In particular,
+ the threshold for fat will be increased from 3.3 to the median butter fat in the day before the change (which will probably closer to 4 since the rainy season will be in full swing).
+ Through this change,
+ we want to make the quality aspect in our experiment more salient.
+ That is,
+ from that moment on,
+ traders can not simply continue to increase volumes to make money;
+ they now will have to put extra effort in searching for quality milk.
+ In a sense,
+ this change is expected to mimic a situation where quality milk is much less readily available,
+ such as during the dry season,
+\end_layout
+
+\begin_layout Standard
+Finally,
+ and budget permitting,
+ in the final week of the project (but after endline data was collected from both traders and farmer),
+ we will flip the treatment status.
+ The primary reason is ethical,
+ as we also want to provide the opportunity to make some money to control traders.
+ However,
+ the data can also be used to test for symmetry in response from traders once the quality premium is abolished.
+ 
+\end_layout
+
+\begin_layout Section
+Statistical Power and Sample Size
+\end_layout
+
+\begin_layout Standard
+To estimate the sample size,
+ we used DeclareDesign with parameters informed by the RFM study 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "blair2019declaring"
+literal "false"
+
+\end_inset
+
+.
+ We use butter fat,
+ a measure of compositional quality as the primary outcome at the trader level,
+ and assume it is normally distributed with a mean of just under 4% and a standard deviation of 0.18.
+ At the farmer level,
+ we focus on quality premium transmission,
+ using milk price as the primary outcome,
+ modeled as a normal variable with a mean price of just over UGX 1,000 per liter and a standard deviation of UGX 117.
+ Given the likelihood of price correlation within traders,
+ we assume an intra-cluster correlation (ICC) of 11%.
+\end_layout
+
+\begin_layout Standard
+We model an expected increase in butterfat content of 0.5 percentage points.
+ At the farmer level,
+ we assume a 70% price pass-through rate.
+ Using these parameters in DeclareDesign (code can be found 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://github.com/bjvca/RMVC/blob/master/follow_up/design.R"
+literal "false"
+
+\end_inset
+
+),
+ we estimate that 100 traders and a sample of 5 farmers per trader would be required to achieve conventional power levels.
+ While we did not model this during power simulations,
+ we expect blocking at MCC level will further increase statistical power.
+\end_layout
+
+\begin_layout Section
+Estimation and inference
+\end_layout
+
+\begin_layout Standard
+We will use a simple differences in means comparison in an OLS framework and include block (MCC) fixed effects at the trader level.
+ At the farmer level,
+ we will mirror DeclareDesign's 
+\emph on
+lm_robust
+\emph default
+ estimation methods and use cluster-robust standard errors (clustered at the trader level) with the Bell–McCaffrey small-sample correction (CR2) variance estimator,
+ plus a small-sample degrees of freedom correction for the t-statistic (using a Satterthwaite approximation).
+\end_layout
+
+\begin_layout Standard
+The primary estimand is intent-to-treat among all sampled units.
+ Price,
+ qantity etc.
+ is undefined for non-sellers;
+ we report ITT with IPW for response and Lee bounds when attrition or non-selling differs by treatment.
+ 
+\end_layout
+
+\begin_layout Standard
+To explore the causal impact,
+ chain,
+ we will also look at the evolution of quality over time.
+ We will start collecting data on both treatment and control traders a few days before we switch on the quality payment system and keep collecting data throughout the project.
+ Daily averages of the two key quality parameters (Fat and SNF,
+ weighted by volumes delivered) will then be plotted on a time series.
+ Furthermore,
+ we will look at the evolution of average quantities brought in.
+ We will also compare the average premium received by treatment traders to the (shadow) premium that control traders would have gotten for the quantities and quality delivered.
+ These time series plots will allow us to test how fast trader behavior changes in response to the interventions.
+ In addition to the time series plots,
+ we will also run ols regressions:
+ We will first calculate daily averages per farmer,
+ and in the regressions cluster at the trader level - see also the pre-registered analysis 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://github.com/bjvca/RMVC/blob/master/follow_up/analysis/initial_analysis.R"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Implementation
+\end_layout
+
+\begin_layout Standard
+We first selected,
+ from the list of MCCs that received a milk analyzer,
+ MCCs that grouped a sufficient number of traders (at least 4).
+ This was done through phone calls with traders.
+ These mccs where then visited and each trader was told what the research was about.
+ We clearly indicated that only half of the traders would be in the treatment group,
+ and that for others,
+ business would remain as usual.
+ We than formally asked if they wanted to participate and some details were collected that was used in the final list (such as how much they deliver on an average day,
+ how many farmers they source from on a typical day,
+ etc).
+\end_layout
+
+\begin_layout Standard
+We also recruited the mcc managers for our research.
+ MCC managers were instrumental as they needed to test the incoming milk of both treatment and control traders and enter this information in ODK collect on their mobile phone.
+ For this,
+ we told managers that they would be able to earn up to 10,000 per day depending on how many of the trader that were registered under their mcc we received data for.
+\end_layout
+
+\begin_layout Standard
+Just before the start of the experiment,
+ we also,
+ with the help of MAAIF/DDA,
+ calibrate all the milk analyzers.
+\end_layout
+
+\begin_layout Standard
+We set up two servers in the cloud.
+ One was an ODK server that was used to receive the data from the mcc managers on with the milk quality parameters and quantities delivered by the traders (both treatment and control).
+ Another server was scheduled (using a simple R script that ran at 20:00 as a cron job) to get the data from the ODK server,
+ calculate the primia for each trader and send out the payment through and API via a Ugandan mobile money aggregator (Yo!
+ Uganda).
+ The script also sent out the payments to the managers.
+ Furthermore,
+ the script sent out sms messages to all traders that received the payment with some extra info:
+ 
+\begin_inset Quotes eld
+\end_inset
+
+Hi!
+ You have received UGX 69330 as a milk quality bonus for 503 L delivered on 2025-11-07.
+ Your average fat was 4.3 and SNF 8.9.
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Outcomes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Primary Outcomes
+\end_layout
+
+\begin_layout Standard
+The primary 
+\series bold
+trader-level
+\series default
+ outcomes is compositional quality of milk delivered to the MCC.
+ This will be measured with the milk analyzers at the MCC on deliveries that traders make to the MCC.
+ For each trader,
+ we construct an 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1198/016214508000000841"
+literal "false"
+
+\end_inset
+
+ index based on the five milk quality components reported by the analyzers (butter fat,
+ SNF,
+ added water,
+ protein,
+ and density (CLR)).
+ We will focus on the last week (7 days) prior to the end of the study and calculate volume weighted means (resulting in a single observation per trader to stay aligned with the randomized unit).
+ However,
+ for robustness,
+ we will also estimate regressions at the transaction level.
+ This tests the hypothesis that traders in the treatment group (eligible for a quality premium) will deliver milk with higher butterfat content compared to control traders.
+\end_layout
+
+\begin_layout Standard
+The primary 
+\series bold
+farmer-Level 
+\series default
+outcome is the milk price received (UGX/liter).
+ This is collected during the farmer survey at the end of the project,
+ where we ask detailed questions on the last 3 sales transactions of the farmer prior to the interview.
+ For each farmer,
+ we compute the volume-weighted average price received for milk sold during the last 3 transactions with the trader.
+ However,
+ for robustness,
+ we will also estimate regressions at the transaction level.
+ This tests if farmers supplying traders in the treatment group will receive higher prices for milk,
+ reflecting (partial) pass-through of the quality premium.
+\end_layout
+
+\begin_layout Subsection
+Secondary Outcomes
+\end_layout
+
+\begin_layout Standard
+A first suite of secondary 
+\series bold
+trader-level
+\series default
+ outcomes include prices received from the MCC as well as prices paid to farmers (as reported by the trader to triangulate the primary outcome at the farmer level).
+ To measure prices received from the MCC,
+ we rely on both prices as recorded during actual transactions in the app (again with a focus on the last week of the study period) as well as on trader level survey data,
+ where we ask detailed questions on the last 3 transactions between the MCC and the trader prior to the interview.
+ To measure prices paid to farmers,
+ we similarly ask detailed questions on the last 3 transactions between the farmers and the trader.
+ We again aggregate at the trader level using volume weighted averages,
+ and present transaction level regressions as robustness checks.
+ We hypothesize that eligibility for the quality premium raises the price per liter that treated traders receive from the MCC and that a positive share of this increase is passed through to farmers as higher farmgate prices.
+\end_layout
+
+\begin_layout Standard
+A second set outcomes at the trader level considers sourcing practices.
+ These include the incidence of traders rejecting milk from farmers in the last week.
+ Furthermore,
+ we test if traders change the use of simple field tests at pickup (alcohol test,
+ lactometer) before loading and/or adapt their minimum acceptable quality threshold (eg what is the minimum lactometer reading for a trader to accept).
+ All this information will be collected during a trader level survey.
+ We hypothesize that treated traders will tighten sourcing by using simple field tests more frequently,
+ raising minimum acceptable quality thresholds,
+ and rejecting more substandard milk at pickup.
+\end_layout
+
+\begin_layout Standard
+A third family of secondary outcomes at the trader level is trading intensity and allocations.
+ This includes volumes transacted (both obtained from the app during the last 7 days) as well as measures of seller concentration (the sum of volumes of the last three transactions with farmers as a share of volume delivered to the MCC in the last transaction).
+ We do not know ex-ante what the effect of a quality premium will be on delivery frequency and volumes to the MCC,
+ as the higher prices may increase volumes but stricter quality requirements may also reduce volumes transacted.
+ We do expect that traders may concentrate sourcing among a smaller set of higher-quality farmers,
+ raising seller concentration.
+\end_layout
+
+\begin_layout Standard
+A secondary outcome at the
+\series bold
+ farmer
+\series default
+ 
+\series bold
+level
+\series default
+ measures production investment and management practices that are expected to improve compositional milk quality in the short run.
+ In particular,
+ we construct an Anderson index from farmer reports on using feed supplements such as maize bran,
+ crop residues (for example banana peelings),
+ and mineral licks.
+ This tests if farmers exposed to higher price incentives will increase use of practices that improve milk quality.
+\end_layout
+
+\begin_layout Standard
+We can also look at sourcing practices,
+ by checking if traders tested the milk they bought from the farmer,
+ what thresholds were used and how often milk was rejected.
+ We again hypothesize that traders eligible for the premium will test milk more frequently at pickup,
+ apply stricter acceptance thresholds,
+ and reject substandard milk more often.
+\end_layout
+
+\begin_layout Standard
+At this level,
+ we similarly look at trading intensity and allocations.
+ In particular,
+ we first ask if the farmer is still selling to the trader.
+ We also ask about quantities and the share of milk sales to the trader in total milk sales and in total milk production.
+ Again,
+ ex ante the net effect is ambiguous,
+ with compliant farmers reallocating more milk to treated traders and non-compliant farmers reducing volumes or exiting.
+\end_layout
+
+\begin_layout Section
+Ethical clearance
+\end_layout
+
+\begin_layout Standard
+This research received clearance form Makerere's School of Social Sciences Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI IRB (DSGD-22-1057).
+ The research was also registered at the Ugandan National Commission for Science and Technology (SS1520ES).
+\end_layout
+
+\begin_layout Section
+Transparency and replicability
+\end_layout
+
+\begin_layout Standard
+To maximize transparency and allow for replicabiliy,
+ we use the following strategies:
+\end_layout
+
+\begin_layout Itemize
+pre-analysis plan:
+ the current document provides an ex-ante step-by-step plan setting out the hypothesis we will test,
+ the intervention we will implement to test these hypotheses,
+ the data that will be collected and specifications we will run to bring the hypotheses to the data.
+ This pre-analysis plan will be pre-registered at the AEA RCT registry.
+\end_layout
+
+\begin_layout Itemize
+revision control:
+ the entire project is under revision control (that is time stamped track changes) and committed regularly to a public repository (github).
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+btprint "btPrintCited"
+bibfiles "rmvc"
+options "/home/bjvca/data/projects/OneCG/RMVC/PAP/IFPRI_Style"
+encoding "default"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
