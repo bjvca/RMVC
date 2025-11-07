@@ -119,11 +119,13 @@ thanks{Innovation Policy and Scaling Unit,
  International Food Policy Research Institute,
  Kampala,
  Uganda},
- Bennon Byarugaba
+ Denis Atuha
 \backslash
 thanks{MAAIF,
  Kampala,
- Uganda},
+ Uganda} Benon Byarugaba
+\backslash
+footnotemark[2],
  Jordan Chamberlin
 \backslash
 thanks{CIMMYT,
@@ -134,7 +136,7 @@ thanks{CIMMYT,
 \backslash
  Sarah Wairimu Kariuki
 \backslash
-footnotemark[2] ,
+footnotemark[3] ,
   Bjorn Van Campenhout
 \backslash
 thanks{Innovation Policy and Scaling Unit,
