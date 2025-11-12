@@ -150,25 +150,43 @@ thanks{Innovation Policy and Scaling Unit,
 
 \end_inset
 
-Incentivizing quality in dairy value chains - experimental evidence from Uganda
+Technology,
+ Transparency,
+ and the Emergence of Markets for Quality:
+ Evidence from Ugandan Dairy Supply Chains
 \end_layout
 
 \begin_layout Abstract
-In value chains where quality is hard to observe,
- upgrading is challenging.
- We test two barriers in Uganda’s dairy sector using a field experiment.
+In many agri-food supply chains,
+ products from multiple suppliers are aggregated at several stages,
+ breaking the link between individual effort and product quality.
+ This problem is compounded when assessing quality is costly and occurs only downstream,
+ after aggregation has already taken place.
+ A further challenge arises when actors along the chain hold different conceptions of what constitutes quality,
+ such that producers’ efforts may not focus on quality attributes buyers value most.
+ We use a multi-level randomized controlled trial to test a coordinated intervention that aligns perceptions of quality and makes quality visible and traceable at key points in Uganda’s dairy supply chains:
  At the farmer level,
- a video campaign addresses misconceptions about quality attributes,
- paired with small incentives to adopt new practices.
+ an information campaign paired with small incentives addresses the misalignment between producers’ and processors’ perceptions of milk quality,
+ shifting attention from hygiene to compositional attributes such as butterfat and solids-not-fat.
  At milk collection centers,
- we introduce technology for testing and tracking.
- We evaluate both interventions at farmer and center levels,
- examining impacts on milk quality,
+ we install digital milk analyzers and introduce digital record-keeping tools.
+ We evaluate both interventions at the farmer and milk collection center levels,
+ examining effects on milk quality,
  prices,
  and volumes.
- The results provide evidence on how information,
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The results show how information,
  incentives,
- and technology interact to stimulate the emergence of markets for quality.
+ and technology can jointly enable the emergence of markets that reward quality.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -427,15 +445,13 @@ Introduction
 \end_layout
 
 \begin_layout Standard
-Quality of products transacted within value chains,
+Quality of commodities transacted within value chains,
  and the preservation of that quality throughout the chain,
  is central to value chain development.
- High-quality inputs can lower production costs downstream by improving yields,
- reducing waste,
- and enhancing processing efficiency.
- Maintaining quality during processing,
+ Higher-quality inputs improve efficiency by yielding more output per unit of input and reducing waste.
+ Maintaining quality during aggregation,
  storage,
- and transport is also critical for food safety and consumer health.
+ transport and processing is also critical for food safety and consumer health.
  Beyond these direct effects,
  consistent quality fosters trust and reputation,
  supports compliance with domestic and export standards,
@@ -450,26 +466,50 @@ For quality to become an important driver of behavior,
  actors must be properly incentivized to produce and preserve it.
  In many markets,
  such incentives take the form of price premiums for higher-quality products,
- which reward the additional effort or investment required to meet quality standards.
+ which reward the additional effort or investment required to meet quality standards 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/j.1574-0862.2007.00237.x"
+literal "false"
+
+\end_inset
+
+.
  When buyers are willing and able to pay more for quality,
  producers have stronger incentives to adopt better inputs and practices,
  while intermediaries are more likely to safeguard quality during aggregation,
  storage,
- and transport.
+ and transport 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "REARDON2000195,MINTEN20091728"
+literal "false"
+
+\end_inset
+
+.
  In the absence of such premiums,
  quality improvements may not be financially viable,
- and actors may instead prioritize volume over quality,
- perpetuating low-quality equilibria.
+ and actors may instead prioritize volume over quality.
 \end_layout
 
 \begin_layout Standard
-A central barrier to the emergence of quality premia is the difficulty of observing and verifying quality at the point of transaction.
- When quality attributes are not directly visible and are costly to test buyers face a classic problem of asymmetric information.
- Without credible verification mechanisms,
+The emergence of quality premia is often hindered by difficulties in observing and verifying quality at the point of transaction.
+ When quality attributes are not directly visible and are costly to discover,
+ buyers face a classic problem of asymmetric information.
+ Without a credible verification mechanisms,
  high- and low-quality products trade at similar prices,
- eroding incentives to invest in quality and potentially leading to adverse selection equilibria.
- This problem is compounded when products from multiple suppliers are pooled before sale,
- diluting the quality of individual outputs and breaking the link between individual effort and reward.
+ eroding incentives to invest in quality and potentially leading to adverse selection equilibria 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "2b080e07-2197-39e6-8e29-cfa83db9de24"
+literal "false"
+
+\end_inset
+
+.
+ Aggregation across suppliers further weakens the connection between individual performance and observed quality,
+ undermining incentives for improvement:
  Even when buyers wish to pay for quality,
  the absence of traceability prevents quality-enhancing investments from translating into higher returns.
  Further constraints arise from the coordination and investment required to establish quality-based payment systems,
@@ -479,17 +519,33 @@ A central barrier to the emergence of quality premia is the difficulty of observ
 \end_layout
 
 \begin_layout Standard
-Compounding these challenges is the poor transmission of information about what constitutes quality from the perspective of downstream actors.
- Absent standards and clear product specifications,
- producers may hold a different conception of quality than processors,
- emphasizing attributes visible to them but less relevant to processing outcomes,
- while overlooking characteristics buyers value most.
- This misalignment means that effort and resources may be directed toward attributes with little impact on price or marketability,
- leaving critical quality dimensions unaddressed.
- Clearly identifying and communicating the specific quality parameters that matter for processors—
-and providing the means to measure them—
-can be a high-return investment,
- enabling price premia to emerge and strengthening incentives for quality upgrading.
+Another fundamental constraint to value chain upgrading lies in the imperfect transmission of information across chain nodes,
+ with the quality signal attenuating as the distance between actors increases 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12731"
+literal "false"
+
+\end_inset
+
+.
+ In the absence of shared standards or explicit product specifications,
+ upstream producers and downstream processors often develop divergent conceptions of quality.
+ Producers tend to focus on easily observable attributes—
+such as cleanliness or appearance—
+that are only weakly correlated with processing outcomes,
+ while overlooking compositional traits that buyers value more highly.
+ This misalignment of quality perceptions leads to inefficient allocation of effort and investment toward attributes that have limited influence on market returns.
+ Establishing common reference points for quality and mechanisms to credibly measure and communicate these attributes can help align incentives along the chain,
+ thereby facilitating the emergence of quality premia and promoting sustained upgrading 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Ponte01022005,Gereffi01022005"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -497,19 +553,11 @@ The structure of the value chain itself can exacerbate these challenges.
  When producers and processors are linked only indirectly through layers of traders or informal intermediaries,
  the likelihood of traceability breaking down increases substantially.
  At the same time,
- intermediated chains limit information flows:
+ intermediated chains may further limit information flows:
  traders may not transmit,
  or may even distort,
  processors’ signals about which quality attributes matter most,
- leaving producers with little guidance for aligning practices with downstream demand 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "bray2019supply"
-literal "false"
-
-\end_inset
-
-.
+ leaving producers with little guidance for aligning practices with downstream demand.
  By contrast,
  in chains where producers are more directly connected to processors,
  opportunities for credible testing,
@@ -522,10 +570,17 @@ literal "false"
 These challenges are particularly salient in Uganda’s emerging dairy sub-sector.
  Over the past decade,
  the industry has undergone rapid transformation,
- especially in the southwestern milk shed around Mbarara,
- where foreign direct investment has spurred the development of modern value chains (Van Campenhout et al.,
- 2021).
- A dense network of milk cooling and collection centers now connects smallholder farmers to a growing cluster of processors.
+ especially in the southwestern milk shed around the city of Mbarara,
+ where foreign direct investment has spurred the development of modern value chains 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "https://doi.org/10.1111/agec.12638"
+literal "false"
+
+\end_inset
+
+.
+ A dense network of milk cooling and collection centers (mccs) now connects smallholder farmers to a growing cluster of processors.
  In dairy,
  quality is central:
  it determines processing yields for products such as cheese,
@@ -534,25 +589,23 @@ These challenges are particularly salient in Uganda’s emerging dairy sub-secto
  and maintaining sanitary conditions is essential given the perishability of raw milk.
  Yet,
  unlike in more developed dairy markets,
- there is no functioning market for quality in Uganda.
+ there is generally no functioning market for quality in Uganda;
  Prices are typically fixed per liter,
  irrespective of butterfat,
  solids-not-fat,
  or protein content.
- Survey data show that only 6 percent of farmers selling to milk collection centers report receiving a quality premium,
- and only 18 percent of centers sometimes pay one—
-even though processors cite insufficient compositional quality as their primary supply constraint and express willingness to pay for improvement.
 \end_layout
 
 \begin_layout Standard
 Part of the problem lies in divergent understandings of quality.
- Farmers often associate quality with hygiene—
+ Dairy farmers often associate quality with hygiene—
 clean containers,
  washed udders—
 while processors prioritize compositional parameters,
- which are driven largely by feeding practices.
+ which are driven largely by feeding practices and breed.
  Another part lies in the lack of technological capacity to measure and communicate compositional quality at the point of aggregation:
- most milk collection centers test only for freshness and adulteration,
+ Most mccs limit testing to freshness and basic adulteration checks,
+ primarily for added water,
  and farmers rarely have access to test results.
  Together,
  these factors weaken the link between effort and reward,
@@ -560,25 +613,25 @@ while processors prioritize compositional parameters,
 \end_layout
 
 \begin_layout Standard
-We use this context to test whether the absence of quality premia in Uganda’s dairy sector is driven by two constraints:
- unobservable quality and misaligned perceptions of what constitutes quality.
- Our experimental design targets these constraints at different points in the value chain.
+We use this setting to test whether strengthening quality observability and aligning perceptions of what constitutes quality can enable the emergence of quality premia in Uganda’s dairy sector.
+ Our experimental design addresses these mechanisms at different points along the value chain.
  At the midstream level,
- we work with milk collection centers to make quality observable and recordable in real time through compositional milk testing,
+ we work with 130 mccs to make quality observable and recordable in real time through compositional milk testing,
  digital record-keeping,
  and farmer-facing information campaigns.
  At the upstream level,
- we work with farmers to align their understanding of quality with processor priorities through targeted information,
+ we work with 2,600 farmers to align their understanding of quality with processor priorities through targeted information,
  visual reinforcement,
  and provision of improved pasture seeds to enable quality-enhancing practices.
-\end_layout
-
-\begin_layout Standard
-By implementing these interventions both upstream and midstream,
+ By implementing these interventions both upstream and midstream,
  the experiment tests whether reducing information frictions and making quality visible can shift behavior,
  improve milk quality,
  and ultimately foster the conditions for a functioning market for quality in the Ugandan dairy value chain.
- We find that
+ 
+\end_layout
+
+\begin_layout Standard
+We find that
 \begin_inset Note Note
 status open
 
@@ -675,18 +728,55 @@ literal "false"
 
 \begin_layout Standard
 Our study contributes by examining how technology-enabled monitoring alters the feasibility and credibility of incentive schemes in smallholder-dominated value chains.
- Whereas Rao and Shenoy focus on the ability of social networks to enforce group incentives,
+ Whereas 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "RAO2023708"
+literal "false"
+
+\end_inset
+
+ focus on the ability of social networks to enforce group incentives,
  we test whether digital feedback mechanisms can substitute for or complement such informal enforcement.
- Unlike Treurniet and Saenger et al.,
+ Unlike 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "https://doi.org/10.1111/ajae.12176"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "https://doi.org/10.1111/agec.12012"
+literal "false"
+
+\end_inset
+
+,
  who study incentive contracts designed and implemented by processors,
- we evaluate how introducing quality analyzers at the level of milk collection centers reshapes the space of possible contracts and accountability structures.
+ we evaluate how introducing quality analyzers at the level of mccs reshapes the space of possible contracts and accountability structures.
  In doing so,
  we highlight how technological innovations interact with organizational frictions and market power in ways that may unlock sustained quality upgrading where traditional incentive schemes have struggled.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The rest of this paper is organized as follows:
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Background:
- dairy value chains in Uganda
+ dairy supply chains in Uganda
 \end_layout
 
 \begin_layout Standard
@@ -727,42 +817,42 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Dairy value chains in Uganda are diverse and can take various organizational forms,
- ranging from fully vertically integrated systems involving large processing companies to more fragmented structures dominated by small cooperatives and farmer groups.
- Despite these variations,
- a generic value chain consists of five main actors,
- each playing a distinct role in the production,
- transportation,
- and processing of milk.
+Although dairy value chains in Uganda differ in their organizational form—
+from fully integrated systems led by large processors to fragmented structures of small cooperatives—
+a typical chain comprises five main actors,
+ each with a distinct role in milk production,
+ transport,
+ and processing:
 \end_layout
 
 \begin_layout Enumerate
-Smallholder Farmers:
- At the upstream end of the chain are smallholder farmers,
+Dairy farmers:
+ At the upstream end of the chain are farmer households,
  who are the primary producers of milk.
  These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
 \end_layout
 
 \begin_layout Enumerate
 Transporters and Traders:
- Transporters collect milk directly from farms and deliver it to MCCs for a fee.
- Unlike transporters,
- traders purchase milk from farmers with the intent to sell it at MCCs or to other traders for profit,
+ Transporters collect milk directly from farms and deliver it to MCCs for a fee,
+ thus providing a service.
+ Traders purchase milk from farmers with the intent to sell it at MCCs or to other traders for profit,
  thus functioning as commercial intermediaries within the chain.
 \end_layout
 
 \begin_layout Enumerate
-Milk Collection Centers (MCCs):
- MCCs are critical nodes in the value chain.
+Milk Collection Centers (mccs):
+ Mccs are critical nodes in the value chain.
  Their primary role is to bulk and chill milk,
  marking the start of the cold chain essential for maintaining milk quality.
  These centers are strategically distributed across rural areas,
- facilitating access for smallholder farmers.
+ facilitating access for farmers,
+ traders and transporters.
 \end_layout
 
 \begin_layout Enumerate
 Large Traders:
- Once milk is chilled and bulked at MCCs,
+ Once milk is chilled and bulked at mccs,
  large traders transport it to processing facilities.
  This step often involves the use of specialized milk tankers to preserve quality during transit.
 \end_layout
@@ -788,49 +878,66 @@ Hypotheses and impact pathways
 \end_layout
 
 \begin_layout Standard
-One potential reason why a market for quality does not develop may be related to the fact that milk from individual farmers is poured together,
- making it hard to track quality.
- In general,
- at the start of the cold chain in milk collection centers,
- only rudimentary testing is done,
- and equipment to track quality parameters that are most relevant for the development of a market for quality is lacking.
- Only when milk reaches the processor,
- these quality parameters are revealed.
+A key reason a market for quality fails to emerge is that raw milk of unknown quality from many farmers is aggregated at various points in the supply chain,
+ making it impossible to trace quality back to individual suppliers.
+ At the start of the cold chain,
+ milk collection centers (MCCs) typically conduct only basic tests for freshness or adulteration,
+ while equipment to measure compositional attributes—
+such as butterfat and solids-not-fat—
+is often unavailable.
+ As a result,
+ quality is only revealed downstream at the processor level,
+ long after aggregation has taken place.
+ This makes it impossible to use incentives like quality premia to reward individual effort and transmit market signals upstream to producers.
+ We hypothesize that introducing milk testing and digital record-keeping at MCCs can make quality observable earlier in the chain,
+ strengthening the link between effort and reward.
 \end_layout
 
 \begin_layout Standard
 In a first hypothesis,
- we expect that reducing the cost of quality discovery at the level of the milk collection center (such that it is easy to accurately determine the quality of each individual supplier before it is aggregated in milk tanks) will increase outcomes at that level for several reasons.
- For instance,
- it will enable collection centers to turn down suppliers with low quality,
- which should increase the overall quality of milk aggregated.
- When milk collection centers are able to independently assess the quality of the milk,
- they may actively search for processors that are prepared to pay a premium for a particular quality parameter.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-As mentioned earlier,
- milk quality determines what products can be produced.
- If the milk collection center discovers their milk has a particularly high butter fat content,
- it may decide to deliver to a cheese producer who is prepared to pay more for high fat milk than a processor that extracts caseine who is more interested in SNF.
-\end_layout
-
-\end_inset
-
- In addition,
- accurate information about the quality of the milk may also strengthen the bargaining position of the milk collection center vis-a-vis the buyer.
- The ability to accurately monitor incoming milk may also enable milk collection centers to engage in product differentiation at an early stage,
- by for instance using one tank to collect high protein milk destined for casseine extraction and using another tank to collect milk that is high in butter fat,
- to supply to a cheese maker.
+ we expect that reducing the cost of quality discovery at the collection stage will improve outcomes at this level for several reasons.
+ First,
+ it enables MCCs to identify and selectively purchase higher-quality milk,
+ thereby increasing the average quality of aggregated milk in their tanks.
+ Second,
+ with verifiable quality data,
+ MCCs can more effectively match supply to processor demand—
+for example,
+ channeling high-fat milk to cheese producers and high-SNF milk to processors focusing on casein extraction.
+ Such early market segmentation within the supply chain can improve overall efficiency by ensuring that milk is allocated to its most value-appropriate use.
+ Third,
+ better information strengthens MCCs’ bargaining power with buyers.
+ Collectively,
+ these mechanisms are expected to enhance efficiency and value transmission along the chain,
+ aligning incentives for quality upgrading among all actors.
 \end_layout
 
 \begin_layout Standard
 In a second hypothesis,
- we also expect that dairy farmers will benefit from this intervention at the level of the milk collection centers.
- Making quality visible midstream should enable milk collection centers to reward farmers for supplying superior milk and increase the overall quality of the milk that the collection center aggregates.
- If dairy farmers know that the milk collection center has the equipment to test milk at a reasonable cost,
- farmers may also demand milk collection centers to test their milk in case there is discussion related to the quality.
+ we expect that farmers will also benefit indirectly from improved quality measurement at the milk collection center.
+ Making quality visible at this midstream level enables MCCs to reward farmers for supplying higher-quality milk,
+ thereby strengthening incentives for quality-enhancing practices at the farm level.
+ When farmers are aware that their milk can be tested accurately and transparently,
+ they are more likely to invest in better feeding and handling practices,
+ knowing that superior quality will be recognized and compensated.
+ Moreover,
+ the availability of reliable testing equipment may empower farmers to request verification in cases of disagreement over quality,
+ promoting greater trust and accountability in farmer–MCC transactions.
+ Indeed,
+ as is the case for mccs,
+ if farmers know the quality of the milk they receive,
+ they may also strengthen their bargaining power vis-a-vis the cooperative.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+As will be explained below,
+ this is the reason why we paired the milk analyzer with an information intervention raising awareness with farmers that the mcc is now able to test milk quality if each incoming sample for free at the simple request of the farmer.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -876,7 +983,7 @@ literal "false"
 
 .
  In a final hypothesis,
- we thus also test if making quality visible at the milk collection center level and at the same time providing information on what the desired milk quality parameters are increases outcomes for farmers.
+ we thus also test if making quality visible at the milk collection center level (a pull factor) and at the same time providing information on what the desired milk quality parameters are (a push factor) increases outcomes for farmers.
 \end_layout
 
 \begin_layout Section
@@ -899,36 +1006,24 @@ m
 i
 \emph default
  in each MCC catchment.
- Quantity per farmer is 
+ The quantity of milk supplied by farmer i,
+ denoted 
 \begin_inset Formula $y_{i}$
 \end_inset
 
- (treated as given for simplicity),
- and milk quality is 
+,
+ is assumed to be fixed in the short run,
+ as it primarily depends on the farmer’s herd size,
+ which does not adjust quickly.
+ Milk quality is 
 \begin_inset Formula $q_{i}\in\left[0,1\right]$
 \end_inset
 
-.
- Processors pay MCCs a premium for quality when it is verifiable.
- Two experimental treatments alter information and incentives:
-\end_layout
-
-\begin_layout Itemize
-T1 (MCC level):
- a measurement-and-transparency bundle at the MCC that makes quality observable at intake and recordable.
- This raises the premium the processor is willing to pay per unit of quality,
- and it facilitates pass-through to farmers.
-\end_layout
-
-\begin_layout Itemize
-T2 (farmer level):
- an information-and-input bundle that improves farmers’ knowledge about compositional quality and lowers the cost of taking actions that raise quality.
-\end_layout
-
-\begin_layout Standard
-Within each MCC there are two types of suppliers:
- those connected directly to the MCC and those who supply via a trader.
- Traders can capture part of the quality premium.
+ and processors pay MCCs a premium for quality when it is verifiable.
+ Our model also distinguishes between short and long value chains.
+ Some farmers within the MCC are directly connected to the MCC as they bring the milk themselves.
+ Other farmers use traders,
+ who may capture part of the quality premium.
 \end_layout
 
 \begin_layout Subsection
@@ -971,29 +1066,7 @@ with
 \end_inset
 
  with 
-\begin_inset Formula $k_{i}\geq0$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Treatment T2 affects the farmer problem in two ways:
-\end_layout
-
-\begin_layout Standard
-it improves knowledge about how actions map into quality,
- which we capture as an increase in effective 
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
-;
-\end_layout
-
-\begin_layout Standard
-it provides inputs that reduce the marginal cost of effort,
- captured as a decrease in 
-\begin_inset Formula $k_{i}$
+\begin_inset Formula $k_{i}>0$
 \end_inset
 
 .
@@ -1009,7 +1082,7 @@ Prices,
 Let the processor pay the MCC a unit price 
 \begin_inset Formula 
 \begin{equation}
-P^{\text{proc}}=\bar{p}+\alpha\,\bar{q}_{m},
+p_{m}=\bar{p}+\alpha\,\bar{q}_{m}
 \end{equation}
 
 \end_inset
@@ -1032,14 +1105,9 @@ where
 \begin_inset Formula $\alpha=0$
 \end_inset
 
-.
- Under 
-\begin_inset Formula $T1$
-\end_inset
-
 ,
- measurement and record-keeping make quality contractible,
- so 
+ when quality becomes observable,
+ we assume that 
 \begin_inset Formula $\alpha>0$
 \end_inset
 
@@ -1054,7 +1122,7 @@ The MCC offers farmer
  a price schedule 
 \begin_inset Formula 
 \begin{equation}
-p_{i}=p_{0}+\lambda_{i}\alpha q_{i},
+p_{i}=p_{0}+\lambda_{i}\alpha\,q_{i}
 \end{equation}
 
 \end_inset
@@ -1083,24 +1151,6 @@ where
 \end_inset
 
 .
- Elements of 
-\begin_inset Formula $T1$
-\end_inset
-
- that advertise free testing and create digital records plausibly increase 
-\begin_inset Formula $\lambda_{C}$
-\end_inset
-
- and may also raise 
-\begin_inset Formula $\lambda_{T}$
-\end_inset
-
-,
- but 
-\begin_inset Formula $\lambda_{T}$
-\end_inset
-
- remains lower because the trader can extract rents.
 \end_layout
 
 \begin_layout Subsection
@@ -1112,20 +1162,16 @@ Farmer
 \begin_inset Formula $i$
 \end_inset
 
- chooses effort to maximize 
+ chooses effort to maximize:
+ 
 \begin_inset Formula 
 \begin{equation}
-\pi_{i}=\big(p_{0}+\lambda_{i}\alpha q_{i}\big)y_{i}-\tfrac{k_{i}}{2}e_{i}^{2},
+\pi_{i}=\big(p_{0}+\lambda_{i}\alpha q_{i}\big)y_{i}-\tfrac{k_{i}}{2}e_{i}^{2}
 \end{equation}
 
 \end_inset
 
-taking 
-\begin_inset Formula $y_{i}$
-\end_inset
-
- and the price schedule as given.
- Substituting 
+Substituting 
 \begin_inset Formula $q_{i}=\theta_{i}e_{i}$
 \end_inset
 
@@ -1134,11 +1180,11 @@ taking
 \end_inset
 
  for the choice,
- the first-order condition yields 
+ the first-order condition yields optimal farmer effort and associated quality:
 \begin_inset Formula 
 \begin{align}
-e_{i}^{*} & =\frac{\lambda_{i}\alpha\theta_{i}y_{i}}{k_{i}},\\
-q_{i}^{*} & =\theta_{i}e_{i}^{*}=\frac{\lambda_{i}\alpha\theta_{i}^{2}y_{i}}{k_{i}}.
+e_{i}^{*} & =\frac{\lambda_{i}\alpha\theta_{i}y_{i}}{k_{i}}\\
+q_{i}^{*} & =\theta_{i}e_{i}^{*}=\frac{\lambda_{i}\alpha\theta_{i}^{2}y_{i}}{k_{i}}
 \end{align}
 
 \end_inset
@@ -1146,16 +1192,15 @@ q_{i}^{*} & =\theta_{i}e_{i}^{*}=\frac{\lambda_{i}\alpha\theta_{i}^{2}y_{i}}{k_{
 
 \end_layout
 
-\begin_layout Paragraph
-Comparative statics.
-\end_layout
-
 \begin_layout Standard
-For any farmer,
- 
+A stronger link between price and quality 
+\begin_inset Formula $\left(\alpha\right)$
+\end_inset
+
+ leads to more effort:
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial e_{i}^{*}}{\partial\alpha}>0,\qquad\frac{\partial e_{i}^{*}}{\partial\lambda_{i}}>0,\qquad\frac{\partial e_{i}^{*}}{\partial\theta_{i}}>0,\qquad\frac{\partial e_{i}^{*}}{\partial k_{i}}<0.
+\frac{\partial e_{i}^{*}}{\partial\alpha}=\frac{\lambda_{i}\theta_{i}y_{i}}{k_{i}}>0\label{eq:comp_stat_trans}
 \end{equation}
 
 \end_inset
@@ -1164,88 +1209,110 @@ For any farmer,
 \end_layout
 
 \begin_layout Standard
-Hence:
- 
+Stronger responsiveness of price schedule to quality in the form of a higher pass-through 
+\begin_inset Formula $\left(\lambda_{i}\right)$
+\end_inset
+
+ also leads to more effort:
 \end_layout
 
-\begin_layout Itemize
-Turning on 
-\begin_inset Formula $T1$
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial e_{i}^{*}}{\partial\lambda_{i}}=\frac{\alpha\theta_{i}y_{i}}{k_{i}}>0
+\end{equation}
+
 \end_inset
 
- increases 
-\begin_inset Formula $\alpha$
-\end_inset
 
- and,
- via transparency,
- can increase 
-\begin_inset Formula $\lambda_{i}$
-\end_inset
-
-.
- Both raise effort,
- quality,
- and farmer outcomes that are increasing in 
-\begin_inset Formula $q_{i}$
-\end_inset
-
- or in the quality-linked component of price.
- 
 \end_layout
 
-\begin_layout Itemize
-Turning on 
-\begin_inset Formula $T2$
+\begin_layout Standard
+The farmer’s ability to translate effort in into quality also positively affects effort levels:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial e_{i}^{*}}{\partial\theta_{i}}=\frac{\lambda_{i}\alpha y_{i}}{k_{i}}>0
+\end{equation}
+
 \end_inset
 
- increases 
+
+\end_layout
+
+\begin_layout Standard
+Finally,
+ a higher marginal cost of effort leads to less effort:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial e_{i}^{*}}{\partial k_{i}}=-\frac{\lambda_{i}\alpha\theta_{i}^{2}y_{i}}{k_{i}^{2}}<0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The model also predicts positive complementarities:
+ making quality visible increases the return to effort for high 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
 \begin_inset Formula $\theta_{i}$
 \end_inset
 
- and lowers 
-\begin_inset Formula $k_{i}$
-\end_inset
-
-.
- Both raise effort and quality.
- 
+ farmers more,
+ leading them to respond mores strongly.
+ Or,
+ it becomes easier to translate effort at the farmer level into quality,
+ the returns to testing become higher (irrespective of pass-through).
 \end_layout
 
-\begin_layout Itemize
-
-\series bold
-Complementarity:
-
-\series default
- 
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial^{2}e_{i}^{*}}{\partial\alpha\,\partial\theta_{i}}=\frac{\lambda_{i}y_{i}}{k_{i}}>0.
+\frac{\partial^{2}e_{i}^{*}}{\partial\alpha\,\partial\theta_{i}}=\frac{\lambda_{i}y_{i}}{k_{i}}>0\label{eq:cross1}
 \end{equation}
 
 \end_inset
 
-The impact of 
-\begin_inset Formula $T2$
-\end_inset
 
- is larger when 
-\begin_inset Formula $\alpha>0$
-\end_inset
+\end_layout
 
- due to 
-\begin_inset Formula $T1$
-\end_inset
-
-,
- and vice versa.
- The same holds for a decrease in 
+\begin_layout Standard
+The reverse holds for an increase in 
 \begin_inset Formula $k_{i}$
 \end_inset
 
 .
- 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}e_{i}^{*}}{\partial\alpha\,\partial k_{i}}=-\frac{\lambda_{i}\theta_{i}y_{i}}{k_{i}^{2}}>0
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1253,38 +1320,35 @@ Heterogeneity by connection comes from
 \begin_inset Formula $\lambda_{C}>\lambda_{T}$
 \end_inset
 
-.
- For given 
-\begin_inset Formula $\alpha,\theta_{i},k_{i},y_{i}$
-\end_inset
-
-,
+:
  
 \begin_inset Formula 
 \begin{equation}
-e_{i,C}^{*}-e_{i,T}^{*}=\frac{(\lambda_{C}-\lambda_{T})\alpha\theta_{i}y_{i}}{k_{i}}\geq0,
+e_{i,C}^{*}-e_{i,T}^{*}=\frac{(\lambda_{C}-\lambda_{T})\alpha\theta_{i}y_{i}}{k_{i}}\geq0
 \end{equation}
 
 \end_inset
 
-so treatment effects that operate through 
-\begin_inset Formula $\alpha$
+so for any given 
+\begin_inset Formula $\alpha,\theta_{i},k_{i},y_{i}$
 \end_inset
 
- and pass-through are larger for directly connected farmers.
+,
+ optimal effort level will be larger for directly connected farmers.
  
 \end_layout
 
 \begin_layout Subsection
-MCC behavior and outcomes
+MCC level outcomes
 \end_layout
 
 \begin_layout Standard
-The MCC aggregates milk and sells to the processor.
- Its per-unit margin is 
+The MCCs aggregate milk and sell to the processor.
+ Its per-unit margin per farmer is:
+ 
 \begin_inset Formula 
 \begin{equation}
-\underbrace{\bar{p}+\alpha\bar{q}_{m}}_{\text{revenue from processor}}-\underbrace{\big(p_{0}+\lambda_{i}\alpha q_{i}\big)}_{\text{payment to farmer}}.
+\underbrace{\bar{p}+\alpha\bar{q}_{m}}_{\text{revenue from processor}}-\underbrace{\big(p_{0}+\lambda_{i}\alpha q_{i}\big)}_{\text{payment to farmer}}
 \end{equation}
 
 \end_inset
@@ -1294,10 +1358,11 @@ The MCC aggregates milk and sells to the processor.
 
 \begin_layout Standard
 Averaging over suppliers,
- the expected margin per liter is 
+ the expected margin per liter becomes:
+ 
 \begin_inset Formula 
 \begin{equation}
-\text{Margin}_{m}=\bar{p}-p_{0}+\alpha(1-\bar{\lambda}_{m})\,\bar{q}_{m},
+\text{\ensuremath{\mu}}_{m}=\bar{p}-p_{0}+\alpha(1-\bar{\lambda}_{m})\,\bar{q}_{m}
 \end{equation}
 
 \end_inset
@@ -1310,28 +1375,27 @@ where
 \end_layout
 
 \begin_layout Standard
-Treatment 
-\begin_inset Formula $T1$
-\end_inset
-
- raises 
+An increase in 
 \begin_inset Formula $\alpha$
 \end_inset
 
- and,
- through farmer responses,
  raises 
 \begin_inset Formula $\bar{q}_{m}$
 \end_inset
 
-.
- MCC outcomes such as average quality,
- share of premium contracts,
- and profits therefore increase under 
-\begin_inset Formula $T1$
+ through increased farmer effort (Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:comp_stat_trans"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
-.
+),
+ increasing margins at the mcc level.
  If transparency also increases 
 \begin_inset Formula $\bar{\lambda}_{m}$
 \end_inset
@@ -1350,277 +1414,23 @@ Treatment
  
 \end_layout
 
-\begin_layout Subsection
-Mapping to hypotheses
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 1 (MCC outcomes).
-\end_layout
-
-\begin_layout Standard
-Turning on 
-\begin_inset Formula $T1$
-\end_inset
-
- increases 
-\begin_inset Formula $\alpha$
-\end_inset
-
- and induces higher 
-\begin_inset Formula $q_{i}^{*}$
-\end_inset
-
-,
- which raises 
-\begin_inset Formula $\bar{q}_{m}$
-\end_inset
-
- and MCC outcomes that are increasing in realized quality or quality-linked revenue.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H1}>0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 2 (farmer outcomes from 
-\begin_inset Formula $T1$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-With 
-\begin_inset Formula $\lambda_{i}>0$
-\end_inset
-
-,
- the increase in 
-\begin_inset Formula $\alpha$
-\end_inset
-
- from 
-\begin_inset Formula $T1$
-\end_inset
-
- raises 
-\begin_inset Formula $e_{i}^{*}$
-\end_inset
-
- and 
-\begin_inset Formula $q_{i}^{*}$
-\end_inset
-
-,
- and also raises the quality-linked component of the price received.
- Farmer outcomes that are increasing in quality or in the quality premium rise.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H2}>0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 3 (farmer outcomes from 
-\begin_inset Formula $T2$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-Treatment 
-\begin_inset Formula $T2$
-\end_inset
-
- raises 
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
- and lowers 
-\begin_inset Formula $k_{i}$
-\end_inset
-
-,
- which raises 
-\begin_inset Formula $e_{i}^{*}$
-\end_inset
-
-,
- 
-\begin_inset Formula $q_{i}^{*}$
-\end_inset
-
-,
- and quality-linked revenues.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H3}>0.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 4 (combined effect and complementarity).
-\end_layout
-
-\begin_layout Standard
-Because 
-\begin_inset Formula $e_{i}^{*}$
-\end_inset
-
- is multiplicative in 
-\begin_inset Formula $\alpha$
-\end_inset
-
- and 
-\begin_inset Formula $\theta_{i}/k_{i}$
-\end_inset
-
-,
- the cross-partial is positive.
- The effect of 
-\begin_inset Formula $T2$
-\end_inset
-
- is larger when 
-\begin_inset Formula $T1$
-\end_inset
-
- is in place and vice versa.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H4}>0\quad\text{for the interaction}.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Heterogeneity by connection (C vs.
-\begin_inset space \space{}
-\end_inset
-
-not C).
-\end_layout
-
-\begin_layout Standard
-Since 
-\begin_inset Formula $\lambda_{C}>\lambda_{T}$
-\end_inset
-
-,
- any treatment that works through 
-\begin_inset Formula $\alpha$
-\end_inset
-
- has a larger impact for directly connected farmers.
- Formally,
- 
-\begin_inset Formula 
-\[
-\Delta e_{T1|C}^{*}>\Delta e_{T1|T}^{*},
-\]
-
-\end_inset
-
-and similarly for the combined treatments.
- This delivers the tests 
-\begin_inset Formula $\beta_{H2C}=\beta_{H2}$
-\end_inset
-
-,
- 
-\begin_inset Formula $\beta_{H3C}=\beta_{H3}$
-\end_inset
-
-,
- and 
-\begin_inset Formula $\beta_{H4C}=\beta_{H4}$
-\end_inset
-
- as equality checks when pass-through is complete within connection type,
- and suggests treatment effects are larger for connected farmers when 
-\begin_inset Formula $\lambda_{C}>\lambda_{T}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Subsection
-Additional testable implications
-\end_layout
-
-\begin_layout Standard
-Beyond the four main hypotheses,
- the model generates several further predictions:
-\end_layout
-
-\begin_layout Itemize
-Effects scale with baseline volume 
-\begin_inset Formula $y_{i}$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Effects are stronger for farmers with lower baseline 
-\begin_inset Formula $k_{i}$
-\end_inset
-
- or higher baseline 
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
- (or for those who learn the most under 
-\begin_inset Formula $T2$
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Itemize
-If posters and free testing increase 
-\begin_inset Formula $\lambda_{i}$
-\end_inset
-
-,
- treated MCCs should exhibit higher pass-through proxies:
- more price differentiation by measured quality,
- fewer disputes,
- and more frequent test usage.
- 
-\end_layout
-
 \begin_layout Section
 Experimental design
 \end_layout
 
 \begin_layout Standard
-We use a field experiment to test the effectiveness of the innovation bundle.
+We use a field experiment to test the predictions in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Mapping-to-hypotheses"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
  In particular we use a split plot trial design with interventions at two levels of the value chain.
  The design is illustrated in Figure 
 \begin_inset CommandInset ref
@@ -2145,7 +1955,296 @@ This treatment,
  aims to align the understanding of milk quality between farmers and processors while equipping farmers with the tools and knowledge to improve milk quality in a sustainable manner.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
+Mapping to hypotheses
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Mapping-to-hypotheses"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 1 (T1 at MCC level).
+\end_layout
+
+\begin_layout Standard
+We expect that 
+\emph on
+T1
+\emph default
+ increases 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and induces higher 
+\begin_inset Formula $q_{i}^{*}$
+\end_inset
+
+,
+ which raises 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ and MCC outcomes that are increasing in realized quality or quality-linked revenue.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H1}>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 2 (T1 at farmer level).
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\lambda_{i}>0$
+\end_inset
+
+,
+ the increase in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ from 
+\emph on
+T1
+\emph default
+ raises 
+\begin_inset Formula $e_{i}^{*}$
+\end_inset
+
+ and 
+\begin_inset Formula $q_{i}^{*}$
+\end_inset
+
+,
+ and also raises the quality-linked component of the price received.
+ Farmer outcomes that are increasing in quality or in the quality premium rise.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H2}>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 3 (T2 at farmer level).
+\end_layout
+
+\begin_layout Standard
+Treatment T2 affects the farmer problem in two ways.
+ First,
+ it improves knowledge about how actions map into quality,
+ which we capture as an increase in effective 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+.
+ Second,
+ it provides inputs that reduce the marginal cost of effort,
+ captured as a decrease in 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+.
+ In short,
+ treatment T2 raises 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ and lowers 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+,
+ which raises 
+\begin_inset Formula $e_{i}^{*}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $q_{i}^{*}$
+\end_inset
+
+,
+ and quality-linked revenues.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H3}>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Hypothesis 4 (T1 x T2 at farmer level).
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $e_{i}^{*}$
+\end_inset
+
+ is multiplicative in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{i}/k_{i}$
+\end_inset
+
+,
+ the cross-partial is positive (Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:cross1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ The effect of 
+\emph on
+T2
+\emph default
+ is larger when 
+\emph on
+T1
+\emph default
+ is in place and vice versa.
+ 
+\begin_inset Formula 
+\[
+\text{Prediction: }\beta_{H4}>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Heterogeneity by connection (C vs.
+\begin_inset space \space{}
+\end_inset
+
+not C).
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\lambda_{C}>\lambda_{T}$
+\end_inset
+
+,
+ any treatment that works through 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ has a larger impact for directly connected farmers.
+ Formally,
+ P
+\begin_inset Formula 
+\[
+\text{Prediction: }\Delta e_{T1|C}^{*}>\Delta e_{T1|T}^{*}
+\]
+
+\end_inset
+
+and similarly for the combined treatments.
+ This delivers the tests 
+\begin_inset Formula $\beta_{H2C}=\beta_{H2}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\beta_{H3C}=\beta_{H3}$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\beta_{H4C}=\beta_{H4}$
+\end_inset
+
+ as equality checks when pass-through is complete within connection type,
+ and suggests treatment effects are larger for connected farmers when 
+\begin_inset Formula $\lambda_{C}>\lambda_{T}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The model actually generates some more predictions that we could test
+\end_layout
+
+\begin_layout Itemize
+Effects scale with baseline volume 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ - test hetereogenity by baseline farmer volumes;
+ bigger treatment gains for higher-volume farmers would be consistent with the model’s prediction
+\end_layout
+
+\begin_layout Itemize
+Effects are stronger for farmers with lower baseline 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ (eg located closer to mcc,
+ lots of labour,
+ already good equipment,
+ no cash constraints) or higher baseline 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ (eg did we test knowledge at baseline?) - again look at heterogeneity
+\end_layout
+
+\begin_layout Itemize
+If posters and free testing increase 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+,
+ treated MCCs should exhibit higher pass-through proxies:
+ more price differentiation by measured quality,
+ fewer disputes,
+ and more frequent test usage.
+ (dif in dif)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
 Estimation and inference
 \begin_inset CommandInset label
 LatexCommand label
