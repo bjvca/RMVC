@@ -776,7 +776,7 @@ The rest of this paper is organized as follows:
 
 \begin_layout Section
 Background:
- dairy supply chains in Uganda
+ Dairy Supply Chains in Uganda
 \end_layout
 
 \begin_layout Standard
@@ -873,8 +873,15 @@ convert raw milk into value-added products with extended shelf lives,
 This layered and dynamic structure enables the participation of diverse stakeholders while presenting opportunities for efficiency improvements at various points along the chain.
 \end_layout
 
-\begin_layout Section*
-Hypotheses and impact pathways
+\begin_layout Section
+Problem Statement and Research Hypotheses
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Problem-Statement-and"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -987,7 +994,14 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-Conceptual Framework
+Conceptual Framework and Testable Predictions
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conceptual-Framework-and"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1045,7 +1059,7 @@ Farmers differ in how they are connected to the MCC:
 \end_layout
 
 \begin_layout Subsection
-Production of quality at the farmer level
+Production of Quality at the Farm
 \end_layout
 
 \begin_layout Standard
@@ -1728,9 +1742,9 @@ The model therefore implies that stronger quality-based incentives at the MCC le
 \end_layout
 
 \begin_layout Subsection
-MCC pricing,
- screening,
- and outcomes
+MCC Pricing,
+ Screening,
+ and Outcomes
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:MCC-pricing,-screening,"
@@ -1879,10 +1893,17 @@ of the farmer.
 
 \begin_layout Subsection
 Model predictions
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Model-predictions"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
-Stronger quality-based incentives at the aggregation stage
+Stronger Quality-based Incentives at the Aggregation Stage
 \end_layout
 
 \begin_layout Standard
@@ -1932,8 +1953,7 @@ A higher
 \end_layout
 
 \begin_layout Subsubsection
-Prediction 2:
- Farmer responses to stronger downstream incentives
+Farmer Responses to Stronger Downstream Incentives
 \end_layout
 
 \begin_layout Standard
@@ -1968,8 +1988,7 @@ With
 \end_layout
 
 \begin_layout Subsubsection
-Prediction 3:
- efficiency and cost-effectiveness of producing quality
+Efficiency and Cost-effectiveness of Producing Quality
 \end_layout
 
 \begin_layout Standard
@@ -2054,8 +2073,7 @@ An increase in the ability to translate effort into quality
 \end_layout
 
 \begin_layout Subsubsection
-Hypothesis 4:
- Interaction effects
+Interaction
 \end_layout
 
 \begin_layout Standard
@@ -2157,8 +2175,7 @@ Hence,
 \end_layout
 
 \begin_layout Subsubsection
-Hypothesis 5:
- Intermedation
+Intermedation
 \end_layout
 
 \begin_layout Standard
@@ -2233,196 +2250,12 @@ If posters and free testing increase
 \end_layout
 
 \begin_layout Section
-Experimental design
-\end_layout
-
-\begin_layout Standard
-We use a field experiment to test the predictions in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Mapping-to-hypotheses"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- In particular we use a split plot trial design with interventions at two levels of the value chain.
- The design is illustrated in Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Design"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-The design follows the value chain structure previously outlined,
- where the first treatment (T1) is implemented at the MCC level.
- Within each MCC,
- the second treatment (T2) is randomized at the individual farmer level.
- Specifically,
- half of the farmers are assigned to receive the video treatment,
- while the other half are randomized into the control group.
- Additionally,
- within each milk collection center,
- half of the farmers connected to that MCC receive the video treatment,
- while the other half are in the control group.
- To explore heterogeneity in treatment effects,
- we also stratify by the manner in which farmers are connected to the MCC—
-either directly or via a trader.
-\end_layout
-
-\begin_layout Standard
-This design allows us to examine outcomes at different levels of the value chain.
- At the MCC level,
- we can assess the impact of the T1 intervention on MCC-level outcomes.
- Furthermore,
- we can analyze the effect of the second treatment (T2) on farmers connected to the MCC,
- either directly or through a trader.
- However,
- the impact of the farmer-level treatment (T2) can only be evaluated by examining outcomes at the individual farmer level.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/design.png
-	lyxscale 20
-	scale 20
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Design
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Design"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In sum,
- and in reference to the equation we will estimate in the next section,
- the four main hypotheses that we will test with this design are:
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 1:
- making quality visible at the MCC level increases outcomes for the milk collection centers 
-\begin_inset Formula $\left(\beta_{H1}>0\right)$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 2:
- making quality visible at the MCC level increases outcomes for the farmers in the catchment areas of these MCCs 
-\begin_inset Formula $\left(\beta_{H2}>0\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 3:
- providing information on what the desired milk quality parameters are and what affects this parameter increases outcomes for farmers 
-\begin_inset Formula $\left(\beta_{H3}>0\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 4:
- making quality visible at the MCC level and providing information on what the desired milk quality parameters to farmers increases outcomes for farmers 
-\begin_inset Formula $\left(\beta_{H4}>0\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Additional research questions,
- based on the stratification,
- tests for equality in average treatment effects between farmers that are connected to milk collection centers versus those that are not.
- Testing for this treatment heterogeneity allows us to explore if the interventions only strengthen existing value chains or whether they can also draw in actors from informal value chains.
-\end_layout
-
-\begin_layout Itemize
-Does the MCC level intervention affect farmers that are already connected to the milk collection center similarly than farmers that are not already connected to an MCC 
-\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2T}\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Does the information treatment affect farmers that are connected to an MCC similarly than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3T}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Does the combined treatment (making quality visible at the MCC level and providing farmers with information on the desired quality dimension) affect farmers that are connected to an MCC similarly than farmers that are not connected to an MCC 
-\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4T}\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Treatments:
- Innovation Bundles for Addressing Milk Quality Challenges
+Innovation Bundles for Addressing Milk Quality Challenges
 \end_layout
 
 \begin_layout Standard
 In response to the challenge of unobservable milk quality in the Ugandan dairy value chain,
- we designed an innovation bundle targeting Milk Collection Centers (MCCs).
+ we designed a first socio-technical innovation bundle targeting Milk Collection Centers (MCCs).
  This bundle aims to enhance transparency,
  improve record-keeping,
  and empower both MCC managers and farmers by making milk quality measurable and visible.
@@ -2437,10 +2270,12 @@ In response to the challenge of unobservable milk quality in the Ugandan dairy v
  A central component of the innovation bundle is the installation of a milk analyzer at MCCs.
  This machine assesses milk quality based on a set of compositional parameters,
  such as butterfat content and solids-not-fat.
+ Another important parameter is the amount of added water,
+ providing a more accurate assessment of what MCC managers usually test using gravity based methods.
  The testing process is non-destructive and takes less than one minute per sample,
- enabling rapid and accurate quality evaluation of all milk collected.
+ enabling rapid and accurate quality evaluation of each milk can that is delivered.
  By providing immediate feedback,
- the milk analyzer helps ensure that quality standards are met and maintained.
+ the milk analyzer helps ensuring that quality standards are met and maintained.
  More information on the milk analyzer can be obtained from the 
 \begin_inset CommandInset href
 LatexCommand href
@@ -2512,19 +2347,24 @@ name "fig:Milk-analyzer"
 \begin_layout Standard
 The milk analyzers were delivered with clear Standard Operating Procedures.
  Two separate trainings were organized.
- One training targetted MCC managers,
+ One training targeted MCC managers,
  where the focus was mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality.
- A second training was geared toward MCC managers and focused more on use and maintanance of the milk analyzers ans 
+ A second training was geared toward MCC managers and focused more on use and maintenance of the milk analyzers.
+ 
 \end_layout
 
 \begin_layout Standard
-We collaborate with the DDA to set up a system to monitor the milk analyzers and its use.
+We collaborated with the DDA to set up a system to monitor the milk analyzers and its use.
  In particular,
- DDA technicians will visit treatment MCCs at set periods.
- We also set up a hotline that MCCs can contact in case of problems with the milk analyzers.
+ DDA technicians visited treatment MCCs at set periods.
+ We also provided various ways in which MCC managers could request assistance if needed,
+ including a WhatAapp group and a telephone hotline.
  We also make sure that,
  over the course of the project,
- equipment is adequately cleaned and calibrated.
+ equipment is adequately calibrated.
+ We also made sure MCC managers had access to cleaning reagents.
+ If milk analyzers malfunctioned,
+ we fixed or replaced the machine.
  
 \end_layout
 
@@ -2536,19 +2376,19 @@ We collaborate with the DDA to set up a system to monitor the milk analyzers and
  In addition to recording quantities and prices,
  the app allows MCC managers to store and monitor quality parameters obtained from the milk analyzer.
  It can provide MCC managers with simple reports,
- such as the average butter fat (weighted by quantities supplied) over a different period (today,
+ such as the average butter fat (weighted by quantities supplied) over a certain period (today,
  yesterday,
  last week,
- last two weeks and custom data range).
+ last two weeks,
+ and custom data range).
  Reports by farmer are also possible,
  such that MCC managers can determine the total sum to be paid to a farmer for milk delivered over a particular time frame,
  such as in the last 14 days.
- 
 \begin_inset Foot
 status open
 
 \begin_layout Plain Layout
-Farmers are typically paid after 14 days of milk delivery.
+Farmers are typically paid on the 1st and the 15th of the month.
 \end_layout
 
 \end_inset
@@ -2556,8 +2396,8 @@ Farmers are typically paid after 14 days of milk delivery.
  In addition to the app,
  we also developed different online portals that can be used to obtain data for different stakeholders.
  For instance,
- one portal was geared towards MCC owners,
- such that they can always monitor key parameters in the MCCs.
+ one portal targeted MCC owners,
+ such that they can monitor key parameters in the MCCs they own.
  Another portal aggregated information from all MCCs,
  enabling government officials such as the DDA to monitor quality parameters,
  prices and quantities in real time.
@@ -2629,7 +2469,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Application
+Dairy record keeping application
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Application"
@@ -2659,58 +2499,35 @@ Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet 
 
 \begin_layout Standard
 3.
- Farmer Engagement through Advertisements:
- To address potential power imbalances emerging from the installation of milk analyzers and ensure farmers are equally informed,
- we introduced a poster campaign at MCCs.
- The poster,
- designed by a local artist,
- advertises the availability of free milk quality testing for farmers.
- By making this service widely known,
- the campaign aims to empower farmers with knowledge about their product quality,
- fostering trust and collaboration between farmers and MCC managers.
+ Increasing Farmer Awareness of Midstream Testing Capacity:
+ To mitigate potential power imbalances that could arise once MCCs adopt milk analyzers and to ensure farmers are equally informed,
+ we implemented a farmer-facing information campaign using posters displayed at MCCs.
+ Designed by a local artist,
+ the posters publicized the new testing capacity and encouraged farmers to request free quality tests for their milk.
+ By making this service visible and widely known,
+ the campaign aimed to equip farmers with accurate information about their product quality and strengthen trust and cooperation between farmers and MCC managers.
 \end_layout
 
 \begin_layout Standard
 Together,
- these three components form a comprehensive strategy to make milk quality observable and actionable,
- creating incentives for improved practices throughout the dairy value chain.
- This first package will constitute our first treatment in the field experiment below and will be referred to as T1.
+ these three components form an integrated strategy to make milk quality observable and actionable,
+ improving information flows and incentive structures throughout the dairy value chain.
+ This bundle constitutes the first treatment arm in the field experiment and is referred to as T1.
 \end_layout
 
 \begin_layout Standard
-To bridge the gap in how milk quality is understood between farmers and processors,
- we designed an intervention aimed at improving farmers’ knowledge of compositional quality and its importance in the dairy value chain.
- This treatment combines information dissemination,
- practical advice,
- and tangible support to drive behavioral changes.
+To address the mismatch between how farmers and processors perceive milk quality,
+ we designed an intervention to improve farmers’ understanding of compositional quality and its role in the dairy value chain.
+ The treatment combines targeted information,
+ practical guidance,
+ and modest material support.
  It consists of three components:
 \end_layout
 
 \begin_layout Standard
 1.
  Educational Video:
- The use of video has been found to increase technology adoption in different settings,
- although the effectiveness also depends on a range of design attributes 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "spielman2021information"
-literal "false"
-
-\end_inset
-
-.
- The ability to depict role models in videos seems important to increase both aspirations of the person targeted,
- as well as creating an enabling environment for adoption in that it may challenge world views and stereotypical thinking 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "riley2019role,lecoutere2023empowering"
-literal "false"
-
-\end_inset
-
-.
- As such,
- a short,
+ A short,
  engaging video was developed to explain the concept of compositional milk quality (parameters such as butterfat and protein content) and why it matters for both farmers and processors.
  The video also highlights practical management practices and inputs that farmers can adopt to improve milk quality,
  mostly focusing on feeding strategies.
@@ -2737,6 +2554,15 @@ To determine the content of the video,
  ensuring key messages resonate with the target audience.
  The video was shown to treatment farmers twice:
  once during baseline data collection in December 2022 and once at the time of installation of the milk analyzers in October 2023.
+ The use of video has been found to increase technology adoption in different settings 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "spielman2021information"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2745,7 +2571,7 @@ To determine the content of the video,
  To reinforce the information provided in the video,
  we created a handout in the form of a cartoon summary.
  The cartoons provide a visual,
- easy-to-understand recap of the key points,
+ easy-to-understand recap of the key points from the video,
  serving as a quick reference for farmers after watching the video.
  This format ensures the information remains accessible even to farmers with limited literacy.
 \end_layout
@@ -2768,170 +2594,20 @@ Chloris Gayana
 \end_layout
 
 \begin_layout Standard
-This treatment,
- henceforth referred to as T2,
- aims to align the understanding of milk quality between farmers and processors while equipping farmers with the tools and knowledge to improve milk quality in a sustainable manner.
+This socio-technical innovation bundle,
+ referred to as T2,
+ seeks to narrow perception gaps around milk quality and strengthen farmers’ capacity to supply higher compositional quality on a sustained basis.
 \end_layout
 
 \begin_layout Section
-Mapping to hypotheses
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Mapping-to-hypotheses"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 1 (T1 at MCC level).
+Experiment
 \end_layout
 
 \begin_layout Standard
-We expect that 
-\emph on
-T1
-\emph default
- increases 
-\begin_inset Formula $\alpha$
-\end_inset
-
- and induces higher 
-\begin_inset Formula $q_{i}^{*}$
-\end_inset
-
-,
- which raises 
-\begin_inset Formula $\bar{q}_{m}$
-\end_inset
-
- and MCC outcomes that are increasing in realized quality or quality-linked revenue.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H1}>0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 2 (T1 at farmer level).
-\end_layout
-
-\begin_layout Standard
-With 
-\begin_inset Formula $\lambda_{i}>0$
-\end_inset
-
-,
- the increase in 
-\begin_inset Formula $\alpha$
-\end_inset
-
- from 
-\emph on
-T1
-\emph default
- raises 
-\begin_inset Formula $e_{i}^{*}$
-\end_inset
-
- and 
-\begin_inset Formula $q_{i}^{*}$
-\end_inset
-
-,
- and also raises the quality-linked component of the price received.
- Farmer outcomes that are increasing in quality or in the quality premium rise.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H2}>0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 3 (T2 at farmer level).
-\end_layout
-
-\begin_layout Standard
-Treatment T2 affects the farmer problem in two ways.
- First,
- it improves knowledge about how actions map into quality,
- which we capture as an increase in effective 
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
-.
- Second,
- it provides inputs that reduce the marginal cost of effort,
- captured as a decrease in 
-\begin_inset Formula $k_{i}$
-\end_inset
-
-.
- In short,
- treatment T2 raises 
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
- and lowers 
-\begin_inset Formula $k_{i}$
-\end_inset
-
-,
- which raises 
-\begin_inset Formula $e_{i}^{*}$
-\end_inset
-
-,
- 
-\begin_inset Formula $q_{i}^{*}$
-\end_inset
-
-,
- and quality-linked revenues.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H3}>0
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Hypothesis 4 (T1 x T2 at farmer level).
-\end_layout
-
-\begin_layout Standard
-Because 
-\begin_inset Formula $e_{i}^{*}$
-\end_inset
-
- is multiplicative in 
-\begin_inset Formula $\alpha$
-\end_inset
-
- and 
-\begin_inset Formula $\theta_{i}/k_{i}$
-\end_inset
-
-,
- the cross-partial is positive (Equation 
+We use a field experiment to test the predictions in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:cross1"
+reference "subsec:Model-predictions"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2939,73 +2615,17 @@ nolink "false"
 
 \end_inset
 
-).
- The effect of 
-\emph on
-T2
-\emph default
- is larger when 
-\emph on
-T1
-\emph default
- is in place and vice versa.
- 
-\begin_inset Formula 
-\[
-\text{Prediction: }\beta_{H4}>0
-\]
+.
+ In particular we use a split-plot design with interventions at two levels of the value chain.
+ The design is illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Design"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph
-Heterogeneity by connection (C vs.
-\begin_inset space \space{}
-\end_inset
-
-not C).
-\end_layout
-
-\begin_layout Standard
-Since 
-\begin_inset Formula $\lambda_{C}>\lambda_{T}$
-\end_inset
-
-,
- any treatment that works through 
-\begin_inset Formula $\alpha$
-\end_inset
-
- has a larger impact for directly connected farmers.
- Formally,
- P
-\begin_inset Formula 
-\[
-\text{Prediction: }\Delta e_{T1|C}^{*}>\Delta e_{T1|T}^{*}
-\]
-
-\end_inset
-
-and similarly for the combined treatments.
- This delivers the tests 
-\begin_inset Formula $\beta_{H2C}=\beta_{H2}$
-\end_inset
-
-,
- 
-\begin_inset Formula $\beta_{H3C}=\beta_{H3}$
-\end_inset
-
-,
- and 
-\begin_inset Formula $\beta_{H4C}=\beta_{H4}$
-\end_inset
-
- as equality checks when pass-through is complete within connection type,
- and suggests treatment effects are larger for connected farmers when 
-\begin_inset Formula $\lambda_{C}>\lambda_{T}$
 \end_inset
 
 .
@@ -3013,57 +2633,196 @@ and similarly for the combined treatments.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
+The experimental design mirrors the structure of the dairy value chain and involves randomization at two levels.
+ First,
+ at the MCC level,
+ we assign half of the MCCs to receive the first socio-technical innovation bundle (T1),
+ with the remaining MCCs serving as controls.
+ Second,
+ within each MCC—
+regardless of its assignment to T1—
+we randomize the second innovation bundle (T2) at the farmer level.
+ For each MCC,
+ half of its supplying farmers are assigned to T2 and the remainder to the farmer-level control.
+ This yields a nested,
+ multi-level design in which T1 varies across MCCs and T2 varies within MCCs.
+ To examine heterogeneous effects,
+ we further stratify the farmer-level randomization by the nature of the farmer’s linkage to the MCC (direct delivery versus delivery through a trader).
+\end_layout
+
+\begin_layout Standard
+This multi-level design enables us to estimate impacts at different nodes of the value chain.
+ At the MCC level,
+ we can assess the effect of the T1 intervention on outcomes aggregated at the MCC.
+ Because T1 is assigned upstream,
+ we can also evaluate its downstream effects on farmers linked to those MCCs,
+ whether they supply directly or through traders.
+ In contrast,
+ the farmer-level treatment T2 varies only within MCCs,
+ so its effects can be identified exclusively from farmer-level outcomes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
-The model actually generates some more predictions that we could test
-\end_layout
+\align center
+\begin_inset Graphics
+	filename figures/design.png
+	lyxscale 20
+	scale 20
 
-\begin_layout Itemize
-Effects scale with baseline volume 
-\begin_inset Formula $y_{i}$
 \end_inset
 
- - test hetereogenity by baseline farmer volumes;
- bigger treatment gains for higher-volume farmers would be consistent with the model’s prediction
+
 \end_layout
 
-\begin_layout Itemize
-Effects are stronger for farmers with lower baseline 
-\begin_inset Formula $k_{i}$
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Design
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Design"
+
 \end_inset
 
- (eg located closer to mcc,
- lots of labour,
- already good equipment,
- no cash constraints) or higher baseline 
-\begin_inset Formula $\theta_{i}$
-\end_inset
 
- (eg did we test knowledge at baseline?) - again look at heterogeneity
 \end_layout
 
-\begin_layout Itemize
-If posters and free testing increase 
-\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In sum,
+ and in reference to the equation we will estimate in the next section (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Estimation-and-inference"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ the research questions posed in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Problem-Statement-and"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
 ,
- treated MCCs should exhibit higher pass-through proxies:
- more price differentiation by measured quality,
- fewer disputes,
- and more frequent test usage.
- (dif in dif)
-\end_layout
+ and the predictions made in Subsection 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Model-predictions"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
+,
+ the four main hypotheses that we will test with this design are:
+\end_layout
 
+\begin_layout Itemize
+Hypothesis 1:
+ making quality visible at the MCC level increases outcomes for the milk collection centers 
+\begin_inset Formula $\left(\beta_{H1}>0\right)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 2:
+ making quality visible at the MCC level increases outcomes for the farmers in the catchment areas of these MCCs 
+\begin_inset Formula $\left(\beta_{H2}>0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 3:
+ providing information on what the desired milk quality parameters are and what affects these parameter increases outcomes for farmers 
+\begin_inset Formula $\left(\beta_{H3}>0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 4:
+ making quality visible at the MCC level and providing information on what the desired milk quality parameters to farmers increases outcomes for farmers 
+\begin_inset Formula $\left(\beta_{H4}>0\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Additional hypotheses,
+ based on the stratification,
+ tests for equality in average treatment effects between farmers that are directly connected to mccs and that are using traders.
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 5:
+ The average treatment effect of the MCC-level intervention (T1) is equal for farmers directly connected to an MCC and those supplying through traders 
+\begin_inset Formula $\left(\beta_{H2C}=\beta_{H2T}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 6:
+ The average treatment effect of the farmer-level information intervention (T2) is the same for farmers directly connected to an MCC and those supplying through traders 
+\begin_inset Formula $\left(\beta_{H3C}=\beta_{H3T}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Hypothesis 7:
+ The average treatment effect of the combined intervention (T1 × T2) is the same for farmers directly connected to an MCC and those supplying through traders 
+\begin_inset Formula $\left(\beta_{H4C}=\beta_{H4T}\right)$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
-Estimation and inference
+Estimation and Inference
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Estimation-and-inference"
