@@ -1,5 +1,7 @@
+rm(list=ls())
 path <- getwd()
 library(clubSandwich)
+library(andersonTools)
 library(car)
 
 path <- strsplit(path, "/PAP/analysis")[[1]]
@@ -98,22 +100,86 @@ farmers$use_steel <- (farmers$q60 %in% c("4","6") | farmers$qx7 %in% c("4","6") 
 farmers$coop_member <- farmers$q22 == "Yes"
 farmers$acaracide_exp <- as.numeric(as.character(farmers$Tick3.q74))/3700
 
+farmers$trader <- ifelse(sub("^[^0-9]*[0-9]+", "", farmers$farmer_ID) %in% c("_T", "_T_R"), 1, 0)
+
+
 outcomes <- c("hh_size", "age_head","herd_size","improved_share","liter_day_wet","liter_sold_day_wet","sell_MCC_wet", "use_steel", "coop_member", "acaracide_exp")
 
 
+###dataset for comparing treatment to interaction directly
+farmers_int <-  farmers[(farmers$video_shown==TRUE & farmers$lactoscan=="T") | (farmers$video_shown==FALSE & farmers$lactoscan=="C"),]
+
+
+
 ##balance is matrix that collects outcomes - ctrl mean, ctrl sd, TE, se(TE), p-val,-lim,+lim,nobs
-balance_farmer <-   array(NA,dim=c(length(outcomes),18))
+balance_farmer <-   array(NA,dim=c(length(outcomes),32))
 for (i in 1:length(outcomes)) {
-  ols <- lm(as.formula(paste(outcomes[i],"lactoscan*video_shown",sep="~")), data=farmers) 
+  ols <- lm(as.formula(paste(outcomes[i],"lactoscan*video_shown*trader",sep="~")), data=farmers) 
   vcov_cluster <- vcovCR(ols, cluster = farmers$catchment_ID, type = "CR2")
   res <- coef_test(ols, vcov_cluster)
   conf <- conf_int(ols, vcov_cluster)
   balance_farmer[i,1] <- mean(as.matrix(farmers[(farmers$lactoscan == "C" & farmers$video_shown == FALSE), outcomes[i]]), na.rm=T)
   balance_farmer[i,2] <- sd(as.matrix(farmers[(farmers$lactoscan == "C" & farmers$video_shown == FALSE),outcomes[i]]), na.rm=T)
-  balance_farmer[i,3:7] <- c(res[2,2],res[2,3],res[2,7], conf[2,5],conf[2,6])
-  balance_farmer[i,8:12] <- c(res[3,2],res[3,3],res[3,7], conf[3,5],conf[3,6])
-  balance_farmer[i,13:18] <- c(res[4,2],res[4,3],res[4,7], conf[4,5],conf[4,6], nobs(ols))
+
+  
+  
+  
+  balance_farmer[i,3:5] <- c(res[2,2],res[2,3],res[2,7])
+  balance_farmer[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
+  balance_farmer[i,9:12] <- c(res[5,2],res[5,3],res[5,7], nobs(ols))
+  
+  balance_farmer[i,13] <- linearHypothesis(ols, c("lactoscanT = lactoscanT:trader") , vcov. = vcov_cluster)[[4]][2]
+  balance_farmer[i,14] <- linearHypothesis(ols, c("video_shownTRUE = video_shownTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  balance_farmer[i,15] <- linearHypothesis(ols, c("lactoscanT:video_shownTRUE = lactoscanT:video_shownTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  
+  ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
+  ols <- lm(as.formula(paste(outcomes[i],"lactoscan*trader",sep="~")), data=farmers_int) 
+  vcov_cluster <- vcovCR(ols,cluster=farmers_int$catchment_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  balance_farmer[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
+  balance_farmer[i,30] <- res[5,7] ###interaction with trader
+ 
+  
 }
+
+balance_farmer[1:length(outcomes),16] <- anderson_sharp_q(balance_farmer[1:length(outcomes),5])
+balance_farmer[1:length(outcomes),17] <- anderson_sharp_q(balance_farmer[1:length(outcomes),8])
+balance_farmer[1:length(outcomes),18] <- anderson_sharp_q(balance_farmer[1:length(outcomes),11])
+balance_farmer[1:length(outcomes),31] <- anderson_sharp_q(balance_farmer[1:length(outcomes),29])
+
+###model with demeaned orthogonal treatment - milk analyzer
+farmers$trader_demeaned  <- farmers$trader - mean(farmers$trader, na.rm=T)
+farmers$vid_demeaned <- farmers$video_shown - mean(farmers$video_shown, na.rm=T)
+
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(outcomes[i],"lactoscan*vid_demeaned",sep="~")), data=farmers)
+  vcov_cluster <- vcovCR(ols,cluster=farmers$catchment_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  balance_farmer[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
+}
+###model with demeaned orthogonal treatment - video treatment
+
+
+
+farmers$lactoscan_demeaned <- (farmers$lactoscan == "T") - mean(farmers$lactoscan =="T", na.rm=T)
+for (i in 1:length(outcomes)) {
+  ols <-  lm(as.formula(paste(outcomes[i],"video_shown*lactoscan_demeaned",sep="~")), data=farmers)
+  vcov_cluster <- vcovCR(ols,cluster=farmers$catchment_ID,type="CR2")
+  res <- coef_test(ols, vcov_cluster)
+  conf <- conf_int(ols, vcov_cluster)
+  balance_farmer[i,22:24] <- c(res[2,2],res[2,3],res[2,7])
+}
+
+balance_farmer[1:length(outcomes),25] <- anderson_sharp_q(balance_farmer[1:length(outcomes),21])
+balance_farmer[1:length(outcomes),26] <- anderson_sharp_q(balance_farmer[1:length(outcomes),24])
+
+
+balance_farmer <- round(balance_farmer,digits=3)
+
+
+
 
 balance_farmer[,1:17] <- round(balance_farmer[,1:17],digits=3)
 

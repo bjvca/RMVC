@@ -42,6 +42,65 @@ MCCs_base <- read.csv(paste(path, "baseline/data/public/MCCs.csv", sep = "/"))
 ###
 farmers_end <- subset(farmers_end, MCC_ID_linked %in% MCCs_end$MCC_ID)
 
+farmers_base$trader <- ifelse(sub("^[^0-9]*[0-9]+", "", farmers_base$farmer_ID) %in% c("_T", "_T_R"), 1, 0)
+
+table(farmers_end$trader) # this did not really work that well - only 600 are linked via a trader and 1610 are direct
+#primary outcomes at the farmer level
+
+### check attrition and if this is related to treatment
+
+attrit <- merge(MCCs_base, MCCs_end , by="MCC_ID", all.x=T )
+chisq.test(table(attrit$lactoscan, is.na(attrit$treat)))
+
+### attrition at farmer level
+
+attrit_farmers <- merge(farmers_base, farmers_end , by="farmer_ID", all.x=T )
+
+attrit_farmers$attrited <- is.na(attrit_farmers$treat)
+
+
+
+ols <- lm(attrited~lactoscan, data= attrit_farmers)
+vcov_cluster <- vcovCR(ols,cluster=attrit_farmers$catchment_ID,type="CR2")
+res <- coef_test(ols, vcov_cluster)
+
+##ri just for fun
+# T_obs   <- coef(ols)[["lactoscanT"]]   # observed treatment coefficient
+# 
+# # 2. Cluster-level info
+# cluster_var <- attrit_farmers$catchment_ID             # level of randomization
+# clusters    <- unique(cluster_var)
+# 
+# 
+# # 3. Set up RI
+# set.seed(123)
+# B <- 5000  # number of permutations
+# 
+# T_perm <- numeric(B)
+# 
+# for (b in 1:B) {
+#   # permute treatment *across clusters*
+#   # keep number of treated clusters fixed
+#   cluster_treat <- tapply(attrit_farmers$lactoscan, attrit_farmers$catchment_ID, unique)
+#   perm_cluster_treat <- sample(cluster_treat)  # shuffle labels
+#   
+#   # assign permuted treatment back to each observation
+#   treat_perm <- perm_cluster_treat[ match(attrit_farmers$catchment_ID, names(cluster_treat)) ]
+#   
+#   # run the same regression, but with permuted treatment
+#   mod_b <- lm(attrited~treat_perm, data= attrit_farmers)
+#   T_perm[b] <- coef(mod_b)[["treat_permT"]]    # coefficient on permuted treatment
+# }
+# 
+# # 4. Randomization p-value (two-sided)
+# p_ri <- mean(abs(T_perm) >= abs(T_obs))
+# p_ri
+
+###########
+ols <- lm(attrited~lactoscan*video_shown*trader, data= attrit_farmers)
+vcov_cluster <- vcovCR(ols,cluster=attrit_farmers$catchment_ID,type="CR2")
+res <- coef_test(ols, vcov_cluster)
+
 ##merge in relevant data from baseline
 # farmer type (direct of via trader) for treatment heterogeiety
 names(farmers_end)[names(farmers_end) == 'farmer_type'] <- 'farmer_type_end'
@@ -49,10 +108,11 @@ names(farmers_end)[names(farmers_end) == 'farmer_type'] <- 'farmer_type_end'
 farmers_end <- merge(farmers_end,farmers_base[c("farmer_ID","farmer_type")], by="farmer_ID", all.x=T)
 farmers_end$trader <- farmers_end$farmer_type == 2
 
-farmers_end$farmer_type_assgned <- substr(farmers_end$farmer_ID, nchar(farmers_end$farmer_ID), nchar(farmers_end$farmer_ID))
+### base farmer type on farmer_ID
 
-table(farmers_end$trader) # this did not really work that well - only 600 are linked via a trader and 1610 are direct
-#primary outcomes at the farmer level
+farmers_end$trader <- ifelse(sub("^[^0-9]*[0-9]+", "", farmers_end$farmer_ID) %in% c("_T", "_T_R"), 1, 0)
+
+
 
 #q39 == "Yes" ##oversowing
 #q39c == "Yes" ##legume pastures
@@ -172,8 +232,8 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
   res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
-  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
  
   ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
@@ -182,7 +242,7 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,27:29] <- c(res[2,2],res[2,3],res[2,7])
   res_farmers[i,30] <- res[5,7] ###interaction with trader
-  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
 }
 
 res_farmers[1:length(outcomes)-1,16] <- anderson_sharp_q(res_farmers[1:length(outcomes)-1,5])
@@ -201,7 +261,7 @@ for (i in 1:length(outcomes)) {
   conf <- conf_int(ols, vcov_cluster)
   res_farmers[i,19:21] <- c(res[2,2],res[2,3],res[2,7])
 }
-###model with demeaned orthogonal treatment - video tratment
+###model with demeaned orthogonal treatment - video treatment
 
 farmers_end$treat_demeaned <- farmers_end$treat - mean(farmers_end$treat, na.rm=T)
 for (i in 1:length(outcomes)) {
@@ -319,9 +379,9 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
   res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
-  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
   ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
@@ -406,9 +466,9 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
   res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
-  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
   ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
@@ -505,9 +565,9 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
   res_farmers[i,9:12] <- c(res[6,2],res[6,3],res[6,7], nobs(ols))
   
-  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
   ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
@@ -588,9 +648,9 @@ for (i in 1:length(outcomes)) {
   res_farmers[i,6:8] <- c(res[3,2],res[3,3],res[3,7])
   res_farmers[i,9:12] <- c(res[5,2],res[5,3],res[5,7], nobs(ols))
   
-  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
-  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:traderTRUE") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,13] <- linearHypothesis(ols, c("treatTRUE = treatTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,14] <- linearHypothesis(ols, c("vidTRUE = vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
+  res_farmers[i,15] <- linearHypothesis(ols, c("treatTRUE:vidTRUE = treatTRUE:vidTRUE:trader") , vcov. = vcov_cluster)[[4]][2]
   ###directly compare control to interaction - we can use treat as indicator as this automatically also has vid
   ols <- lm(as.formula(paste(paste(outcomes[i],"treat*trader",sep="~"),b_outcomes[i],sep="+")), data=farmers_end_int)
   vcov_cluster <- vcovCR(ols,cluster=farmers_end_int$catch_ID,type="CR2")
@@ -1099,13 +1159,19 @@ ggsave( file= paste(path,"PAP/results/forest_plot_swithing_simple.png", sep="/")
 
 ######################## analysis at the MCC level ############################################
 
+###ITT vs TOT
+table(MCCs_end$machine, MCCs_end$treat)
+table(MCCs_end$machine_project, MCCs_end$treat)
+table(MCCs_end$machine_in_use, MCCs_end$treat)
+
+MCCs_end$treat_TOT <- MCCs_end$machine_in_use %in% 1:2
 
 ### testing of quality on incoming samples
 ### Q25x3. Did you test the milk using a milk analyzer (butter fat and solid-non-fat content)?
-MCCs_end$test_MA_in <-  MCCs_end$q25x3 == 1
+MCCs_end$test_MA_in <-  MCCs_end$q25x3 != 3
 MCCs_end$test_MA_in[MCCs_end$q25x3 == "n/a"] <- NA
 
-MCCs_base$b_test_MA_in <-  MCCs_base$q25x3 == 1 
+MCCs_base$b_test_MA_in <-  MCCs_base$q25x3 != 1 
 MCCs_end <- merge( MCCs_end, MCCs_base[c("MCC_ID","b_test_MA_in")], by="MCC_ID", all.x=T)
 
 ### testing of quality on outgoing milk - was snf & fat tested for any of the sales done in the last 7 days
@@ -1226,18 +1292,58 @@ MCCs_end$b_primary_MCC_index <- anderson_index(MCCs_end[b_outcomes])$index
 outcomes <- c(outcomes, "primary_MCC_index")
 b_outcomes <- c(b_outcomes, "b_primary_MCC_index")
 
+library(AER)
 
-res_MCCs <-   array(NA,dim=c(length(outcomes),7))
+res_MCCs <- array(NA, dim = c(length(outcomes), 12))
+
 for (i in 1:length(outcomes)) {
-  ols <- lm(as.formula(paste(paste(outcomes[i],"treat",sep="~"),b_outcomes[i],sep="+")), data=MCCs_end)
-  res_MCCs[i,1] <- mean(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]], na.rm=T)
-  res_MCCs[i,2] <- sd(as.matrix(MCCs_end[MCCs_end[c(outcomes[i],"treat")]$treat =="C", outcomes[i]]), na.rm=T)
-  res_MCCs[i,3:5] <- summary(ols)$coefficients[2,c(1:2,4)]
-  res_MCCs[i,7] <- nobs(ols)
+  
+  ## ---------- OLS ----------
+  ols_formula <- as.formula(
+    paste(paste(outcomes[i], "treat", sep = "~"),
+          b_outcomes[i], sep = "+")
+  )
+  
+  ols <- lm(ols_formula, data = MCCs_end)
+  
+  # mean and sd in control group
+  res_MCCs[i, 1] <- mean(MCCs_end[MCCs_end$treat == "C", outcomes[i]], na.rm = TRUE)
+  res_MCCs[i, 2] <- sd(MCCs_end[MCCs_end$treat == "C", outcomes[i]], na.rm = TRUE)
+  
+  # OLS coef, se, p-value for treat (2nd row)
+  res_MCCs[i, 3:5] <- summary(ols)$coefficients[2, c(1, 2, 4)]
+  
+  # number of obs (OLS)
+  res_MCCs[i, 9] <- nobs(ols)
+  
+  
+  ## ---------- 2SLS (treat_TOT instrumented by treate) ----------
+  # outcome ~ treat_TOT + controls | treate + controls
+  iv_formula <- as.formula(
+    paste0(
+      outcomes[i], " ~ treat_TOT + ", b_outcomes[i],
+      " | treat + ", b_outcomes[i]
+    )
+  )
+  
+  iv_mod <- ivreg(iv_formula, data = MCCs_end)
+  summ_iv <- summary(iv_mod)
+  
+  # pull coef, se, p for treat_TOT by name (safer than using row 2)
+  res_MCCs[i, 6] <- summ_iv$coefficients["treat_TOTTRUE", "Estimate"]
+  res_MCCs[i, 7] <- summ_iv$coefficients["treat_TOTTRUE", "Std. Error"]
+  res_MCCs[i, 8] <- summ_iv$coefficients["treat_TOTTRUE", "Pr(>|t|)"]
+  
+  # n obs (2SLS)
+  res_MCCs[i, 10] <- nobs(iv_mod)
+  
+  # (optional) first-stage F-statistic could go in col 11 if you want
+  # res_MCCs[i, 11] <- summ_iv$diagnostics["Weak instruments", "statistic"]
 }
 
 res_MCCs <- round(res_MCCs,digits=3)
-res_MCCs[1:length(outcomes)-1,6] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,5])
+res_MCCs[1:length(outcomes)-1,11] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,5])
+res_MCCs[1:length(outcomes)-1,12] <- anderson_sharp_q(res_MCCs[1:length(outcomes)-1,8])
 
 ## collects results: ctrl mean, ctrl sd, effect, sd effect, p-val, q-val, nobs
 ## last line is index

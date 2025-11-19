@@ -2469,7 +2469,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Dairy record keeping application
+Dairy record keeping app
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Application"
@@ -2601,6 +2601,13 @@ This socio-technical innovation bundle,
 
 \begin_layout Section
 Experiment
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Experiment"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2833,14 +2840,9 @@ name "sec:Estimation-and-inference"
 \end_layout
 
 \begin_layout Standard
-We will estimate two equations using Ordinary Least Squares.
- One equation is at level of the milk collection centers,
- the second equation is at the level of the dairy farmers.
-\end_layout
-
-\begin_layout Standard
-For the equation that measures impact at the MCC level,
- denote milk collection centers by 
+To assess impact of the treatments,
+ we estimate various specifications using Ordinary Least Squares.
+ A first specification is at the level of the milk collection centers Denote milk collection centers by 
 \emph on
 m
 \emph default
@@ -2859,12 +2861,11 @@ M
 \begin_inset Formula $y_{m}$
 \end_inset
 
- is the outcome at the level of the milk collection center you want to estimate the treatment effect for and 
+ is the outcome of interest at the level of the milk collection center you want to estimate the treatment effect for and 
 \begin_inset Formula $\varepsilon_{m}$
 \end_inset
 
  is an error term.
- We then estimate the following equation using Ordinary Least Squares.
  In all equations we also control for baseline outcome if information was collected at that time 
 \family roman
 \series medium
@@ -2883,21 +2884,7 @@ M
 \begin_inset Formula $\left(y_{m}^{b}\right)$
 \end_inset
 
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-.
+:
 \end_layout
 
 \begin_layout Standard
@@ -2917,14 +2904,25 @@ The parameter of interest in this equation is
 \end_inset
 
 ,
- which tests Hypothesis 1.
+ which tests Hypothesis 1 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experiment"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 All other equations use farmer level data.
  We start by estimating the main treatment effect for T1,
  the installation of a milk analyzer,
- on farmers that are associated to the MCC where the milk analyzer was installed.
+ on farmers that are associated to that MCC.
  One way to do this is to estimate a fully interacted model such as the one given in Equation 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2946,7 +2944,7 @@ nolink "false"
 \emph on
  
 \emph default
-if the farmer was allocated to the information treatment that informs farmers about what quality parameters are important for processors (with 
+if the farmer was allocated to the information treatment that informs farmers about what quality parameters are important for processors (T2) with 
 \emph on
 i
 \emph default
@@ -2954,7 +2952,7 @@ i
 \emph on
 I
 \emph default
-).
+:
  
 \end_layout
 
@@ -2991,61 +2989,129 @@ m
 \emph on
 i
 \emph default
- resides) was allocated to the milk analyzer treatment and we also control for the lagged baseline outcome 
-\begin_inset Formula $y_{i,m}^{b},$
+ resides) was allocated to the milk analyzer treatment,
+ and zero otherwise.
+ We also control for the lagged baseline outcome 
+\begin_inset Formula $y_{i,m}^{b}$
 \end_inset
 
-again in deviations from its mean.
- The parameter of interest in this equation would be 
+.
+ The parameter of interest in this equation is 
 \begin_inset Formula $\beta_{H2}^{*}$
 \end_inset
 
 ,
- which tests Hypothesis 2,
+ which tests the impact of T1 om farmers,
+ corresponding to Hypothesis 2 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experiment"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ can also be used to test 2 other hypothesis.
+ First,
  
 \begin_inset Formula $\beta_{H3}^{*}$
 \end_inset
 
 ,
- which tests Hypothesis 3 and 
-\begin_inset Formula $\beta_{H4}^{*}$
+ provides and estimate of the farmer level impact of T2,
+ which tests Hypothesis 3 from Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experiment"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ Second,
+ in a fully saturated model such as the one in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
 ,
- which tests for the interaction effect.
-\end_layout
+ 
+\begin_inset Formula $\beta_{H4}^{*}$
+\end_inset
 
-\begin_layout Standard
-While our power calculations relied on models that include the full set of interactions (and we will likewise estimate such a fully interacted specification in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{eq:two}
-\end_layout
+ also allows us to tests for the interaction effect,
+ corresponding to Hypothesis 4 in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experiment"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-),
- an important feature of split-plot (factorial) designs is that power can be increased by pooling observations across the orthogonal treatment.
- In our case,
- this means that the effect of the farmer-level intervention can be estimated by pooling across MCC-level treatment arms,
- and conversely the effect of the MCC-level intervention can be estimated by pooling across farmer-level treatment arms.
- At the same time,
- a recent article points out the dangers of pooling treatment cells if there are potential interaction effects between the treatments 
+.
+\end_layout
+
+\begin_layout Standard
+While our power calculations relied on models that include the full set of interactions,
+ an important feature of split-plot (factorial) designs is that power can be increased by pooling observations across the orthogonal treatment 
 \begin_inset CommandInset citation
-LatexCommand citep
-key "muralidharan2019factorial"
+LatexCommand citet
+key "list2011so"
 literal "false"
 
 \end_inset
 
 .
- One way to recover the pooled main treatment effect is to consider the orthogonal treatment as a co-variate and adjust for it,
- entering it in the regression demeanded and fully intereacted as in equations 
+ In our case,
+ this means that the effect of the farmer-level intervention can be estimated by pooling across MCC-level treatment arms,
+ and conversely the effect of the MCC-level intervention can be estimated by pooling across farmer-level treatment arms.
+ At the same time,
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "muralidharan2019factorial"
+literal "false"
+
+\end_inset
+
+ cautions against indiscriminate pooling of treatment cells when the underlying interventions may exhibit interaction effects.
+ The authors note that,
+ in the presence of even modest complementarities or antagonisms between treatment components,
+ pooling can lead to biased or misleading estimates of marginal treatment effects.
+ Consequently,
+ they argue that a more rigorous and defensible approach is to estimate fully interacted specifications,
+ which allow each treatment combination to have its own effect and thereby avoid imposing potentially unwarranted additivity assumptions.
+ One way to recover an unbiased estimate of the pooled main treatment effect is to consider the orthogonal treatment as a co-variate and adjust for it,
+ entering it in the regression demeaned and fully interacted as in equations 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:pooled-1"
@@ -3068,7 +3134,63 @@ nolink "false"
 \end_inset
 
 .
- This give a more robust version of the treatment estimate that corresponds to the coefficient estimate of the treatment of interest after dropping the interaction with orthogonal treatment.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+It is important to note that the estimand of the respective treatments in Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ changes.
+ For instance,
+ while the estimand for the MCC-level treatment (T1) in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is the effect of the treatment in and of itself,
+ the estimand in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ is a weighted average of the pure effect of the MCC-level treatment (T1) and the effect of the T1 in the presence of T2.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3110,9 +3232,9 @@ nolink "false"
 
 \end_inset
 
- is estimated as an incremental effect on top of the main effects.
+ is estimated as an incremental effect to the main effects.
  In our analysis,
- we will test hypothesis 4 by directly comparing farmers that received the training and are connected to an MCC that received a milk analyzer to farmers that did not get the training and are connected to a control MCC.
+ we will test Hypothesis 4 by directly comparing farmers that received the training and are connected to an MCC that received a milk analyzer to farmers that did not get the training and are connected to a control MCC.
  In other words,
  we will estimate:
 \end_layout
@@ -3130,6 +3252,7 @@ y_{i,m}=\alpha+\beta_{H4}.T_{i,m}^{T}.T_{i,m}^{I}+\beta_{b}.y_{i,m}^{b}+\varepsi
 
 \begin_layout Standard
 after dropping from our data farmers that were exposed to only a single treatment.
+ This specification recovers the effect of the intervention as an integrated package that addresses quality upgrading through both supply-side (push) and demand-side (pull) channels.
 \end_layout
 
 \begin_layout Standard
@@ -3149,8 +3272,9 @@ i
 \emph on
 m
 \emph default
- (and zero if the farmer is connected through a trader).
- We also add a full set of interactions with this connection indicator and run the following model:
+ (and zero if the farmer is connected through an intermediary).
+ We also add a full set of interactions with this connection indicator,
+ resulting in the the following model:
  
 \end_layout
 
@@ -3219,24 +3343,46 @@ end{multline}
 \end_layout
 
 \begin_layout Standard
-The parameter of interest in this equation is 
-\begin_inset Formula $\beta_{H2}$
+This specification is used to test Hypotheses 5-7 outlined in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Experiment"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
-,
- which tests Hypothesis 2,
+.
+\end_layout
+
+\begin_layout Standard
+In all farmer level regressions (Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
  
-\begin_inset Formula $\beta_{H3}$
+\backslash
+ref{eq:two}
+\end_layout
+
 \end_inset
 
-,
- which tests Hypothesis 3 and 
-\begin_inset Formula $\beta_{H4}$
-\end_inset
-
-,
- which tests for the interaction effect.
- In all regressions,
+),
  we apply a cluster-robust variance estimator with the bias-reduced linearization (CR2) small-sample correction 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -3247,11 +3393,8 @@ literal "false"
 
 ,
  with standard errors clustered at the level of randomization (MCC catchment area level).
-\end_layout
-
-\begin_layout Standard
-To account for multiple comparisons,
- we will us the two methods illustrated in 
+ To account for multiple comparisons,
+ we use the two methods illustrated in 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1198/016214508000000841"
@@ -3277,18 +3420,7 @@ literal "false"
 \end_inset
 
 ,
- which also guards against the dangers of multiple comparisons (See Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Primary-outcomes"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-).
+ which also guards against the dangers of multiple comparisons.
 \end_layout
 
 \begin_layout Section
@@ -3301,7 +3433,17 @@ Sample size was determined using a series of power simulations detailed in the p
  modeled at both the milk collection center (MCC) and farmer level.
  At the MCC level,
  prices were assumed normally distributed with mean 1000 UGX/liter and standard deviation 50,
- while farmer-level prices were drawn with the MCC mean and a higher variance (SD = 100) to capture greater dispersion.
+ while farmer-level prices were drawn with the MCC mean and a higher variance (SD = 100) to capture greater dispersion at that level.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Processors set fairly stable procurement prices and MCCs adjust tightly around those.
+ The nested nature of the sampling and variance parameters imply an intra-cluster correlation of approximately ρ≈0.20.
+\end_layout
+
+\end_inset
+
  We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size),
  translate into a 40 UGX/liter increase for farmers (small to medium effect),
  and that the individual-level information treatment would generate a 25 UGX/liter increase (small effect),
@@ -3325,11 +3467,39 @@ The field experiment was conducted in four districts of Southwestern Uganda:
  from which we sampled 130 MCCs.
  Half of these were randomly selected to receive T1,
  while the other half served as the control.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In some cases,
+ more than one MCC were in particular location (eg.
+ in a trading center).
+ In such cases,
+ MCCs were pooled in the same treatment group,
+ as a result,
+ the number of clusters was slightly lower than the number of MCCs.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Maybe we should estimate how big the difference was and see if results are sensitive to the degree of clustering.
+\end_layout
+
+\end_inset
+
  In each of the 130 MCCs,
- we then randomly selected 20 farmers who deliver milk to the center.
+ we then randomly selected 20 farmers who deliver milk to the center,
+ half of which were taking the milk themselves and the other half using a trader or transported to get the milk to the MCC.
  Of these 20 farmers,
  10 were randomly assigned to the video treatment (T2),
  while the remaining 10 served as the control group.
+ With again in each group half directly connected and the other half connected through a mediator.
 \end_layout
 
 \begin_layout Standard
@@ -3345,7 +3515,7 @@ status open
 \begin_inset Graphics
 	filename figures/sampling.png
 	lyxscale 50
-	scale 30
+	scale 35
 
 \end_inset
 
@@ -3356,7 +3526,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sampling
+Sampling and Randomization
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Sampling"
@@ -3392,20 +3562,20 @@ nolink "false"
 
 \end_inset
 
- shows randomization in three of the four districts for T1 and T2 at both the MCC and farmer level.
- The first map to the left of the figure shows the locations of the MCCs and their treatment status for T1.
- The second panel shows the treatment status for T1 for the farmers that are connected to the MCCs,
- which is clustered at the MCC level as T1 is implemented at that level.
- The third panel shows treatment allocation of T2 among farmers linked to MCCs,
- which is at the individual level.
+ illustrates the randomization of T1 and T2 in three of the four study districts at both the MCC and farmer levels.
+ The leftmost panel displays the spatial distribution of MCCs and their assigned T1 status.
+ The middle panel shows the corresponding T1 assignment for farmers connected to those MCCs,
+ reflecting the fact that T1 was clustered at the MCC level.
+ The rightmost panel depicts the allocation of T2 among farmers linked to MCCs,
+ which was randomized at the individual level.
 \end_layout
 
 \begin_layout Standard
 Baseline data from both MCCs and associated farmers was collected towards the end of 2022 using in person surveys.
- At this time,
+ At that time,
  the intervention at the farmer level (T2) was implemented.
  In the second half of 2023 milk analyzers were installed and MCC managers were trained on the use of the analyzers and the digital record-keeping system.
- Towards the end of this project,
+ Towards the end of the installation of the analyzers,
  in October 2023,
  we reinforced T2 by showing the video again to T2 farmers.
  Next,
@@ -3424,7 +3594,7 @@ status collapsed
 
 \begin_layout Plain Layout
 This exercise posed logistical challenges,
- as MCCs opened early (usually at 7:00 am) and were often in remote areas.
+ as MCCs opened early (usually at 8:00 am) and were often in remote areas.
  Enumerators frequently stayed overnight nearby to set up equipment before deliveries and carried generators for use where power was unavailable.
  To limit information spillovers,
  the testing was conducted over a short period with as many enumerators deployed simultaneously as possible.
@@ -3453,7 +3623,7 @@ Descriptive Statistics and Baseline Balance
 
 \begin_layout Standard
 We pre-registered 10 variables at each level to demonstrate balance.
- Results for five variables measured at each level (MCC and farmer) are in Table 
+ Results for five variables measured at the MCC level are in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance_main"
@@ -3465,10 +3635,10 @@ nolink "false"
 \end_inset
 
 ;
- five more variables for each level are in Appendix Table 
+ five more variables are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_appendix"
+reference "tab:Balance_appendix-mcc"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3476,8 +3646,8 @@ nolink "false"
 
 \end_inset
 
- to conserve space (this was also pre-registered).
- The top panel of Table 
+ to conserve space.
+ Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance_main"
@@ -3488,18 +3658,20 @@ nolink "false"
 
 \end_inset
 
- shows that among MCCs in the control group (i.e.,
- those that did not receive a milk analyzer),
+ shows that among MCCs in the control group,
  63 percent are organized as cooperatives,
  reflecting how collective institutions continue to play a central role in the organization of Uganda’s dairy value chain.
  Their average total storage capacity is about 4000 liters,
  and 27 percent reported paying a premium for higher quality milk.
  The average MCCs has been in operation for just under 10 years,
  and 58 percent facilitated the supply of acaracides to their farmer members.
- The top panel of Appendix Table 
+\end_layout
+
+\begin_layout Standard
+Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_appendix"
+reference "tab:Balance_appendix-mcc"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3521,6 +3693,407 @@ nolink "false"
 placement document
 alignment document
 wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance table:
+ MCC level
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_main"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer  & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MCC is cooperative?
+ (1=yes)  & 
+\backslash
+Sexpr{balance[1,1]} & 
+\backslash
+Sexpr{balance[1,3]}$^{
+\backslash
+Sexpr{ifelse(balance[1,5]<.01,"**",ifelse(balance[1,5]<.05,"*",ifelse(balance[1,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[1,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[1,2]}) & (
+\backslash
+Sexpr{balance[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Total Capacity of milk tanks (in liters)  & 
+\backslash
+Sexpr{balance[4,1]} & 
+\backslash
+Sexpr{balance[4,3]}$^{
+\backslash
+Sexpr{ifelse(balance[4,5]<.01,"**",ifelse(balance[4,5]<.05,"*",ifelse(balance[4,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[4,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[4,2]}) & (
+\backslash
+Sexpr{balance[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MCC pays quality premium (1=yes) & 
+\backslash
+Sexpr{balance[6,1]} & 
+\backslash
+Sexpr{balance[6,3]}$^{
+\backslash
+Sexpr{ifelse(balance[6,5]<.01,"**",ifelse(balance[6,5]<.05,"*",ifelse(balance[6,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[6,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[6,2]}) & (
+\backslash
+Sexpr{balance[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MCC age in years of operation  & 
+\backslash
+Sexpr{balance[7,1]} & 
+\backslash
+Sexpr{balance[7,3]}$^{
+\backslash
+Sexpr{ifelse(balance[7,5]<.01,"**",ifelse(balance[7,5]<.05,"*",ifelse(balance[7,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[7,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[7,2]}) & (
+\backslash
+Sexpr{balance[7,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Facilitates supply of acaracides?
+ (1=yes) & 
+\backslash
+Sexpr{balance[10,1]} & 
+\backslash
+Sexpr{balance[10,3]}$^{
+\backslash
+Sexpr{ifelse(balance[10,5]<.01,"**",ifelse(balance[10,5]<.05,"*",ifelse(balance[10,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[10,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[10,2]}) & (
+\backslash
+Sexpr{balance[10,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+F-statistic & & 
+\backslash
+Sexpr{F_test[1,1]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p-value & & 
+\backslash
+Sexpr{F_test[2,1]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+  **,
+ * and + denote significance at the 1,
+ 5 and 10 percent levels.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Both tables further show treatment–control differences for each baseline variable for T1 in the second column.
+ Only one of the individual differences is statistically significant at the 5 percent level (capacity).
+ At the bottom of the top panels of both tables we report results from an omnibus Wald test of joint balance across all covariates (F-statistic and p-values below).
+ These tests do not reject the null of joint equality,
+ indicating that treatment assignment is not systematically predicted by observed baseline characteristics.
+ Overall,
+ the tables suggest that randomization achieved balanced treatment and control groups along key baseline characteristics of MCCs for the treatment at that level.
+\end_layout
+
+\begin_layout Standard
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ reports baseline characteristics of dairy farmers across treatment groups.
+ In the control group (corresponding to farmers that did not get the information what quality parameters are important and are connected to an MCC that did not receive the milk testing and tracing infrastructure),
+ household heads are on average 54 years old,
+ with herds of about 62 animals,
+ of which more than 90 percent are improved breeds.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+To calculate herd,
+ we did not simply ask total numbers but asked 6 separate questions:
+ we ask how many local cows;
+ local heifers;
+ and local calves the farmer has,
+ and ask the same 3 categories for improved animals.
+ Farmers were allowed to indicate that they did not know for a particular category,
+ which were treated as missing in our analysis leading to the reduction in the number of observations.
+\end_layout
+
+\end_inset
+
+ Farmers sell roughly 60 liters of milk per day during the rainy season,
+ and they spend on average USD 66 per month on chemical purchases—
+primarily acaracides.
+ Further characteristics are in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix-farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season.
+ Roughly 79 percent of farmers sell most of their milk to a collection center,
+ three-quarters report using only steel containers when transacting,
+ and a similarly high share are members of a dairy cooperative.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
 sideways true
 status collapsed
 
@@ -3528,10 +4101,11 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Balance table
+Balance table:
+ farmer level
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Balance_main"
+name "tab:Balance_farmer"
 
 \end_inset
 
@@ -3596,251 +4170,6 @@ cline{2-6}
 
 \begin_layout Plain Layout
 
-& 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{milk collection centers}}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Is this milk collection center (part of a) cooperative?
- (1=yes)  & 
-\backslash
-Sexpr{balance[1,1]} & 
-\backslash
-Sexpr{balance[1,3]}$^{
-\backslash
-Sexpr{ifelse(balance[1,5]<.01,"**",ifelse(balance[1,5]<.05,"*",ifelse(balance[1,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[1,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[1,2]}) & (
-\backslash
-Sexpr{balance[1,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Total Capacity of milk tanks (in liters)  & 
-\backslash
-Sexpr{balance[4,1]} & 
-\backslash
-Sexpr{balance[4,3]}$^{
-\backslash
-Sexpr{ifelse(balance[4,5]<.01,"**",ifelse(balance[4,5]<.05,"*",ifelse(balance[4,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[4,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[4,2]}) & (
-\backslash
-Sexpr{balance[4,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Does the MCC pay a premium for quality (1=yes) & 
-\backslash
-Sexpr{balance[6,1]} & 
-\backslash
-Sexpr{balance[6,3]}$^{
-\backslash
-Sexpr{ifelse(balance[6,5]<.01,"**",ifelse(balance[6,5]<.05,"*",ifelse(balance[6,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[6,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[6,2]}) & (
-\backslash
-Sexpr{balance[6,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-MCC age in years of operation  & 
-\backslash
-Sexpr{balance[7,1]} & 
-\backslash
-Sexpr{balance[7,3]}$^{
-\backslash
-Sexpr{ifelse(balance[7,5]<.01,"**",ifelse(balance[7,5]<.05,"*",ifelse(balance[7,5]<.1,"+","")))}}$ & & &  
-\backslash
-Sexpr{balance[7,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[7,2]}) & (
-\backslash
-Sexpr{balance[7,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Facilitates supply of acaracides?
- (1=yes) & 
-\backslash
-Sexpr{balance[10,1]} & 
-\backslash
-Sexpr{balance[10,3]}$^{
-\backslash
-Sexpr{ifelse(balance[10,5]<.01,"**",ifelse(balance[10,5]<.05,"*",ifelse(balance[10,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[10,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[10,2]}) & (
-\backslash
-Sexpr{balance[10,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-F-statistic & & 
-\backslash
-Sexpr{F_test[1,1]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p-value & & 
-\backslash
-Sexpr{F_test[2,1]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{dairy farmers}}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3851,17 +4180,17 @@ Sexpr{balance_farmer[2,1]} &
 \backslash
 Sexpr{balance_farmer[2,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[2,5]<.01,"**",ifelse(balance_farmer[2,5]<.05,"*",ifelse(balance_farmer[2,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[2,16]<.01,"**",ifelse(balance_farmer[2,16]<.05,"*",ifelse(balance_farmer[2,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[2,8]}$^{
+Sexpr{balance_farmer[2,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[2,10]<.01,"**",ifelse(balance_farmer[2,10]<.05,"*",ifelse(balance_farmer[2,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[2,17]<.01,"**",ifelse(balance_farmer[2,17]<.05,"*",ifelse(balance_farmer[2,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[2,13]}$^{
+Sexpr{balance_farmer[2,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[2,15]<.01,"**",ifelse(balance_farmer[2,15]<.05,"*",ifelse(balance_farmer[2,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[2,18]<.01,"**",ifelse(balance_farmer[2,18]<.05,"*",ifelse(balance_farmer[2,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[2,18]} 
+Sexpr{balance_farmer[2,12]} 
 \backslash
 
 \backslash
@@ -3876,12 +4205,31 @@ Sexpr{balance_farmer[2,2]}) & (
 \backslash
 Sexpr{balance_farmer[2,4]}) & (
 \backslash
-Sexpr{balance_farmer[2,9]}) & (
+Sexpr{balance_farmer[2,7]}) & (
 \backslash
-Sexpr{balance_farmer[2,14]})
+Sexpr{balance_farmer[2,10]})
 \backslash
 
 \backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[2,13]}] & [
+\backslash
+Sexpr{balance_farmer[2,14]}] & [
+\backslash
+Sexpr{balance_farmer[2,15]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -3897,17 +4245,17 @@ Sexpr{balance_farmer[3,1]} &
 \backslash
 Sexpr{balance_farmer[3,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[3,5]<.01,"**",ifelse(balance_farmer[3,5]<.05,"*",ifelse(balance_farmer[3,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[3,16]<.01,"**",ifelse(balance_farmer[3,16]<.05,"*",ifelse(balance_farmer[3,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[3,8]}$^{
+Sexpr{balance_farmer[3,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[3,10]<.01,"**",ifelse(balance_farmer[3,10]<.05,"*",ifelse(balance_farmer[3,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[3,17]<.01,"**",ifelse(balance_farmer[3,17]<.05,"*",ifelse(balance_farmer[3,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[3,13]}$^{
+Sexpr{balance_farmer[3,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[3,15]<.01,"**",ifelse(balance_farmer[3,15]<.05,"*",ifelse(balance_farmer[3,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[3,18]<.01,"**",ifelse(balance_farmer[3,18]<.05,"*",ifelse(balance_farmer[3,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[3,18]} 
+Sexpr{balance_farmer[3,12]} 
 \backslash
 
 \backslash
@@ -3922,13 +4270,28 @@ Sexpr{balance_farmer[3,2]}) & (
 \backslash
 Sexpr{balance_farmer[3,4]}) & (
 \backslash
-Sexpr{balance_farmer[3,9]}) & (
+Sexpr{balance_farmer[3,7]}) & (
 \backslash
-Sexpr{balance_farmer[3,14]})
+Sexpr{balance_farmer[3,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[3,13]}] & [
+\backslash
+Sexpr{balance_farmer[3,14]}] & [
+\backslash
+Sexpr{balance_farmer[3,15]}]
 \backslash
 
 \backslash
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -3943,17 +4306,17 @@ Sexpr{balance_farmer[4,1]} &
 \backslash
 Sexpr{balance_farmer[4,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[4,5]<.01,"**",ifelse(balance_farmer[4,5]<.05,"*",ifelse(balance_farmer[4,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[4,16]<.01,"**",ifelse(balance_farmer[4,16]<.05,"*",ifelse(balance_farmer[4,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[4,8]}$^{
+Sexpr{balance_farmer[4,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[4,10]<.01,"**",ifelse(balance_farmer[4,10]<.05,"*",ifelse(balance_farmer[4,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[4,17]<.01,"**",ifelse(balance_farmer[4,17]<.05,"*",ifelse(balance_farmer[4,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[4,13]}$^{
+Sexpr{balance_farmer[4,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[4,15]<.01,"**",ifelse(balance_farmer[4,15]<.05,"*",ifelse(balance_farmer[4,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[4,18]<.01,"**",ifelse(balance_farmer[4,18]<.05,"*",ifelse(balance_farmer[4,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[4,18]} 
+Sexpr{balance_farmer[4,12]} 
 \backslash
 
 \backslash
@@ -3968,9 +4331,24 @@ Sexpr{balance_farmer[4,2]}) & (
 \backslash
 Sexpr{balance_farmer[4,4]}) & (
 \backslash
-Sexpr{balance_farmer[4,9]}) & (
+Sexpr{balance_farmer[4,7]}) & (
 \backslash
-Sexpr{balance_farmer[4,14]})
+Sexpr{balance_farmer[4,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[4,13]}] & [
+\backslash
+Sexpr{balance_farmer[4,14]}] & [
+\backslash
+Sexpr{balance_farmer[4,15]}]
 \backslash
 
 \backslash
@@ -3983,23 +4361,23 @@ Sexpr{balance_farmer[4,14]})
 
 \begin_layout Plain Layout
 
-Liters milk sold per day (on average in the rainy season) (liters) & 
+Liters milk sold per day (on average in the rainy season) (liters)  & 
 \backslash
 Sexpr{balance_farmer[6,1]} & 
 \backslash
 Sexpr{balance_farmer[6,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[6,5]<.01,"**",ifelse(balance_farmer[6,5]<.05,"*",ifelse(balance_farmer[6,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[6,16]<.01,"**",ifelse(balance_farmer[6,16]<.05,"*",ifelse(balance_farmer[6,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[6,8]}$^{
+Sexpr{balance_farmer[6,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[6,10]<.01,"**",ifelse(balance_farmer[6,10]<.05,"*",ifelse(balance_farmer[6,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[6,17]<.01,"**",ifelse(balance_farmer[6,17]<.05,"*",ifelse(balance_farmer[6,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[6,13]}$^{
+Sexpr{balance_farmer[6,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[6,15]<.01,"**",ifelse(balance_farmer[6,15]<.05,"*",ifelse(balance_farmer[6,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[6,18]<.01,"**",ifelse(balance_farmer[6,18]<.05,"*",ifelse(balance_farmer[6,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[6,18]} 
+Sexpr{balance_farmer[6,12]} 
 \backslash
 
 \backslash
@@ -4014,9 +4392,24 @@ Sexpr{balance_farmer[6,2]}) & (
 \backslash
 Sexpr{balance_farmer[6,4]}) & (
 \backslash
-Sexpr{balance_farmer[6,9]}) & (
+Sexpr{balance_farmer[6,7]}) & (
 \backslash
-Sexpr{balance_farmer[6,14]})
+Sexpr{balance_farmer[6,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[6,13]}] & [
+\backslash
+Sexpr{balance_farmer[6,14]}] & [
+\backslash
+Sexpr{balance_farmer[6,15]}]
 \backslash
 
 \backslash
@@ -4039,17 +4432,17 @@ Sexpr{balance_farmer[10,1]} &
 \backslash
 Sexpr{balance_farmer[10,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[10,5]<.01,"**",ifelse(balance_farmer[10,5]<.05,"*",ifelse(balance_farmer[10,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[10,16]<.01,"**",ifelse(balance_farmer[10,16]<.05,"*",ifelse(balance_farmer[10,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[10,8]}$^{
+Sexpr{balance_farmer[10,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[10,10]<.01,"**",ifelse(balance_farmer[10,10]<.05,"*",ifelse(balance_farmer[10,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[10,17]<.01,"**",ifelse(balance_farmer[10,17]<.05,"*",ifelse(balance_farmer[10,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[10,13]}$^{
+Sexpr{balance_farmer[10,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[10,15]<.01,"**",ifelse(balance_farmer[10,15]<.05,"*",ifelse(balance_farmer[10,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[10,18]<.01,"**",ifelse(balance_farmer[10,18]<.05,"*",ifelse(balance_farmer[10,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[10,18]} 
+Sexpr{balance_farmer[10,12]} 
 \backslash
 
 \backslash
@@ -4064,9 +4457,24 @@ Sexpr{balance_farmer[10,2]}) & (
 \backslash
 Sexpr{balance_farmer[10,4]}) & (
 \backslash
-Sexpr{balance_farmer[10,9]}) & (
+Sexpr{balance_farmer[10,7]}) & (
 \backslash
-Sexpr{balance_farmer[10,14]})
+Sexpr{balance_farmer[10,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[10,13]}] & [
+\backslash
+Sexpr{balance_farmer[10,14]}] & [
+\backslash
+Sexpr{balance_farmer[10,15]}]
 \backslash
 
 \backslash
@@ -4165,20 +4573,10 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Both tables further show treatment–control differences for each baseline variable for T1 in the second column.
- Only one of the individual differences is statistically significant at the 5 percent level (capacity).
- At the bottom of the top panels of both tables we report results from an omnibus Wald test of joint balance across all covariates (F-statistic and p-values below).
- These tests do not reject the null of joint equality,
- indicating that treatment assignment is not systematically predicted by observed baseline characteristics.
- Overall,
- the tables suggest that randomization achieved reasonably balanced treatment and control groups along key baseline characteristics of MCCs for the treatment at that level.
-\end_layout
-
-\begin_layout Standard
-The bottom panel of Table 
+The farmer-level balance tables (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_main"
+reference "tab:Balance_farmer"
 plural "false"
 caps "false"
 noprefix "false"
@@ -4186,78 +4584,191 @@ nolink "false"
 
 \end_inset
 
- reports baseline characteristics of dairy farmers across treatment groups.
- In the control group (corresponding to farmers that did no see the video and are connected to an MCC that did not receive the milk analyzer),
- household heads are on average 54 years old,
- with herds of about 62 animals,
- of which more than 90 percent are improved breeds.
-\begin_inset Foot
-status collapsed
+ and Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix-farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) report six different sets of comparisons (corresponding to the six 
+\begin_inset Formula $\beta_{H.}$
+\end_inset
+
+ coefficients in Equation 
+\begin_inset ERT
+status open
 
 \begin_layout Plain Layout
-To calculate herd,
- we did not simply ask total numbers but asked 6 separate questions:
- we ask how many local cows;
- local heifers;
- and local calves the farmer has,
- and ask the same 3 categories for improved animals.
- Farmers were allowed to indicate that they did not know for a particular category,
- which were treated as missing in our analysis leading to the reduction in the number of observations.
+
+ 
+\backslash
+ref{eq:two}
 \end_layout
 
 \end_inset
 
- Farmers sell roughly 60 liters of milk per day during the rainy season,
- and they spend on average USD 66 per month on chemical purchases—
-primarily acaracides.
- Further characteristics in the bottom panel of Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_appendix"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season.
- Roughly 79 percent of farmers sell most of their milk to a collection center,
- three-quarters report using only steel containers when transacting,
- and a similarly high share are members of a dairy cooperative.
-\end_layout
-
-\begin_layout Standard
-The farmer-level balance tables report three different sets of comparisons.
+).
  First,
- we test for pre-treatment differences between farmers connected to MCCs that received a milk analyzer and those connected to control MCCs.
- With the exception of a modest difference in cooperative membership (significant at the 10 percent level in Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Balance_appendix"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
+ we test for pre-treatment differences between farmers connected to MCCs that received a milk analyzer and those connected to control MCCs (corresponding to 
+\begin_inset Formula $\beta_{H2T}$
+\end_inset
 
+ and indicated as 
+\emph on
+analyzer
+\emph default
+ in the table heading).
+ No systematic imbalance is observed.
+ Second,
+ we examine differences between farmers who received the video-and-seed intervention and those who did not (corresponding to 
+\begin_inset Formula $\beta_{H3T}$
+\end_inset
+
+;
+ see column with header 
+\emph on
+video
+\emph default
+).
+ Again,
+ no significant difference is found between the two groups.
+ Third,
+ we report the interaction effects at baseline (denoted as 
+\emph on
+bundle
+\emph default
+ in the table and corresponding to 
+\begin_inset Formula $\beta_{H4T}$
 \end_inset
 
 ),
- no systematic imbalance is observed.
- Second,
- we examine differences between farmers who received the video-and-seed intervention and those who did not.
- Here we find some evidence of higher milk production (p < 0.1),
- higher sales volumes (p < 0.05),
- and slightly higher acaracide expenditures among treated farmers.
- Third,
- we report the interaction effects at baseline,
- where two variables are significant at the 5 percent level and one at the 1 percent level.
- While these individual differences suggest some imbalance across treatment arms,
- the omnibus F-tests are consistently insignificant.
+ where again there is not evidence of pre-treatment imbalance.
+ The tables also report p-values (in square brackets) that test whether each treatment effect differs between farmers connected to an MCC and those not connected.
+ For example,
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ the heterogeneity test for herd size shows a statistically significant difference in treatment effects across the two groups (p = 0.043).
+ Additional pre-treatment differences in analyzer-treatment effects are observed for expenditures on chemicals (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) and the use of steel cans or buckets (Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Balance_appendix-farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ Finally,
+ the omnibus F-tests confirm overall balance.
+ 
+\end_layout
+
+\begin_layout Standard
+In the appendix,
+ partly for consistency with results reporting below,
+ we add a few more comparisons.
+ In particular,
+ in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Baseline-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ we report on pre-treatment differences based on the pooled models (with the column named 
+\emph on
+analyzer
+\emph default
+ corresponding to 
+\begin_inset Formula $\beta_{H2}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and the column named 
+\emph on
+video
+\emph default
+ corresponding to 
+\begin_inset Formula $\beta_{H3}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ) for the 10 preregistered farmer level characteristics.
+ In the last column,
+ we test pre-treatment differences for the bundled intervention by directly comparing pure control farmers to those that we exposed to both T1 and T2,
+ corresponding to 
+\begin_inset Formula $\beta_{H4}$
+\end_inset
+
+ in Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ These additional models confirm good overall balance.
 \end_layout
 
 \begin_layout Section
-Attrition
+Attrition and Compliance
 \end_layout
 
 \begin_layout Standard
@@ -4276,11 +4787,46 @@ By endline,
  we managed to re-contact 122 MCCs,
  of which 2 MCCs refused to cooperate,
  leaving us with data for 120 MCCs.
+ One of the 4 attrited MCCs was originally assigned to the control arm of the mcc level treatment;
+ 3 were from the treatment group.
+ A chi-square test confirms that attrition was unrelated to the treatment.
  We further managed to contact 2,139,
  from which 6 refused to be interviewed,
  leading to an effective sample of 2,133.
  Further restricting farmers to the subset of farmers connected to an MCC that we were able to interview at endline,
  we get 2,059.
+ Also at the farmer level,
+ attrition is unrelated to the treatments and any interaction thereof.
+\end_layout
+
+\begin_layout Standard
+We also documented several compliance challenges.
+ In some cases,
+ analyzers were moved to control MCCs,
+ and in others,
+ treatment MCCs did not use or retain the machines.
+ At endline,
+ we observed that 14 of the 59 control MCCs had a milk analyzer on site,
+ and 14 of the 61 treatment MCCs did not have a machine readily available.
+ Among the 14 analyzers found in control MCCs,
+ five were devices originally provided through the project.
+ In the treatment group,
+ we identified 47 analyzers across MCCs,
+ but only 37 were operational or could be used for immediate testing at the time of the visit;
+ the remaining units were non-functional or lacked an available operator.
+\end_layout
+
+\begin_layout Standard
+Similar compliance concerns arise at the farmer level.
+ Although the information treatment was delivered in a controlled manner and the video was shown twice,
+ only 54 percent of farmers in the control group reported having been shown a video,
+ suggesting substantial recall error.
+ At the same time,
+ more than one in five control-group farmers stated that they had seen a video explaining how to improve compositional quality,
+ indicating potential contamination.
+ Among treated farmers,
+ only 42 percent reported using the seed provided by the project,
+ a rate that is plausibly affected by drought conditions during the season.
 \end_layout
 
 \begin_layout Section
@@ -4304,8 +4850,7 @@ MCC level
 
 \begin_layout Standard
 We pre-registered six primary outcomes at the level of the MCC.
- All six are hypothesized to move in a positive direction in response to our intervention,
- which was designed to make milk quality more transparent and salient in transactions.
+ All six are hypothesized to move in a positive direction in response to our intervention designed to make milk quality more transparent and traceable.
  To capture the aggregate effect across these outcomes,
  we also construct a summary index following 
 \begin_inset CommandInset citation
@@ -4336,7 +4881,7 @@ Our first two outcomes measure the extent to which quality testing becomes embed
 \end_layout
 
 \begin_layout Standard
-The next two outcomes reflect how increased transparency affects pricing behavior.
+The next two outcomes reflect how increased transparency affects prices.
  We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey.
  We then ask the average price MCCs received for sales to various buyers during the last transaction in the previous week,
  and take a (weighted) average of these.
@@ -4796,7 +5341,7 @@ Turning to prices,
  and we detect no significant increase in the treatment group.
  Similarly,
  the average price MCCs received from buyers was about UGX 2,000 per liter in the control group,
- with no evidence that treatment raised buyer offers.
+ with no evidence that the mcc level treatment raised buyer offers.
  These results suggest that while the intervention influenced testing practices,
  it did not translate into higher prices on either side of the market.
 \end_layout
@@ -4810,11 +5355,15 @@ In addition,
 \end_layout
 
 \begin_layout Standard
-Taken together,
- data recorded at the MCC level suggests that the intervention led to a substantial and consistent increase in testing behavior,
- but no evidence of quality-based price differentiation.
- Judged by the composite index of pre-registered MCC-level outcomes,
- we conclude that T1 had no effect.
+In light of the compliance issues discussed in the previous section,
+ we also estimated local average treatment effects,
+ instrumenting the actual availability of a functioning milk analyzer with the randomized treatment assignment.
+ The conclusions remained largely unchanged.
+ Overall,
+ MCC-level data indicate that the intervention produced a sizable and consistent increase in testing activity,
+ yet we find no evidence that it generated quality-based price differentiation.
+ When we consider the composite index of pre-registered MCC-level outcomes,
+ the data indicate that T1 did not lead to measurable improvements at the MCC level.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5636,7 +6185,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9789,21 +10338,439 @@ Online Appendix
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thetable}{A
+\backslash
+arabic{table}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thefigure}{A
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thesubsection}{A
+\backslash
+arabic{subsection}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
-placement document
+placement H
 alignment document
 wide false
-sideways true
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Balance table
+Balance table:
+ MCC level
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Balance_appendix"
+name "tab:Balance_appendix-mcc"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer &  nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of people employed at MCC?
+  & 
+\backslash
+Sexpr{balance[2,1]} & 
+\backslash
+Sexpr{balance[2,3]}$^{
+\backslash
+Sexpr{ifelse(balance[2,5]<.01,"**",ifelse(balance[2,5]<.05,"*",ifelse(balance[2,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[2,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[2,2]}) & (
+\backslash
+Sexpr{balance[2,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Nr farmers that supply to MCC   & 
+\backslash
+Sexpr{balance[3,1]} & 
+\backslash
+Sexpr{balance[3,3]}$^{
+\backslash
+Sexpr{ifelse(balance[3,5]<.01,"**",ifelse(balance[3,5]<.05,"*",ifelse(balance[3,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[3,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[3,2]}) & (
+\backslash
+Sexpr{balance[3,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Capacity use during dry season (
+\backslash
+%) & 
+\backslash
+Sexpr{balance[5,1]} & 
+\backslash
+Sexpr{balance[5,3]}$^{
+\backslash
+Sexpr{ifelse(balance[5,5]<.01,"**",ifelse(balance[5,5]<.05,"*",ifelse(balance[5,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[5,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[5,2]}) & (
+\backslash
+Sexpr{balance[5,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of milk cans owned by MCC   & 
+\backslash
+Sexpr{balance[8,1]} & 
+\backslash
+Sexpr{balance[8,3]}$^{
+\backslash
+Sexpr{ifelse(balance[8,5]<.01,"**",ifelse(balance[8,5]<.05,"*",ifelse(balance[8,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[8,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[8,2]}) & (
+\backslash
+Sexpr{balance[8,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Supplies credit/loans (1=yes) & 
+\backslash
+Sexpr{balance[9,1]} & 
+\backslash
+Sexpr{balance[9,3]}$^{
+\backslash
+Sexpr{ifelse(balance[9,5]<.01,"**",ifelse(balance[9,5]<.05,"*",ifelse(balance[9,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[9,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance[9,2]}) & (
+\backslash
+Sexpr{balance[9,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+F-statistic & & 
+\backslash
+Sexpr{F_test[1,2]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+p-value & & 
+\backslash
+Sexpr{F_test[2,2]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+  **,
+ * and + denote significance at the 1,
+ 5 and 10 percent levels.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance table:
+ farmer level
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_appendix-farmer"
 
 \end_inset
 
@@ -9861,247 +10828,6 @@ hline
 
 \begin_layout Plain Layout
 
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{milk collection centers}}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of people employed (full-time) at this MCC?
- (number)  & 
-\backslash
-Sexpr{balance[2,1]} & 
-\backslash
-Sexpr{balance[2,3]}$^{
-\backslash
-Sexpr{ifelse(balance[2,5]<.01,"**",ifelse(balance[2,5]<.05,"*",ifelse(balance[2,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[2,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[2,2]}) & (
-\backslash
-Sexpr{balance[2,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of farmers/traders that supply on an average day during the rainy season (number)   & 
-\backslash
-Sexpr{balance[3,1]} & 
-\backslash
-Sexpr{balance[3,3]}$^{
-\backslash
-Sexpr{ifelse(balance[3,5]<.01,"**",ifelse(balance[3,5]<.05,"*",ifelse(balance[3,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[3,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[3,2]}) & (
-\backslash
-Sexpr{balance[3,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Capacity use during dry season (share) & 
-\backslash
-Sexpr{balance[5,1]} & 
-\backslash
-Sexpr{balance[5,3]}$^{
-\backslash
-Sexpr{ifelse(balance[5,5]<.01,"**",ifelse(balance[5,5]<.05,"*",ifelse(balance[5,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[5,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[5,2]}) & (
-\backslash
-Sexpr{balance[5,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Number of milk cans owned by the MCC   & 
-\backslash
-Sexpr{balance[8,1]} & 
-\backslash
-Sexpr{balance[8,3]}$^{
-\backslash
-Sexpr{ifelse(balance[8,5]<.01,"**",ifelse(balance[8,5]<.05,"*",ifelse(balance[8,5]<.1,"+","")))}}$ & & &  
-\backslash
-Sexpr{balance[8,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[8,2]}) & (
-\backslash
-Sexpr{balance[8,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-Supplies credit/loans to cooperative members and regularly supplying farmers?
- (1=yes) & 
-\backslash
-Sexpr{balance[9,1]} & 
-\backslash
-Sexpr{balance[9,3]}$^{
-\backslash
-Sexpr{ifelse(balance[9,5]<.01,"**",ifelse(balance[9,5]<.05,"*",ifelse(balance[9,5]<.1,"+","")))}}$ & & & 
-\backslash
-Sexpr{balance[9,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& (
-\backslash
-Sexpr{balance[9,2]}) & (
-\backslash
-Sexpr{balance[9,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-
-F-statistic & & 
-\backslash
-Sexpr{F_test[1,2]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-p-value & & 
-\backslash
-Sexpr{F_test[2,2]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-& 
-\backslash
-multicolumn{5}{c}{
-\backslash
-textit{dairy farmers}}
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -10119,17 +10845,17 @@ Sexpr{balance_farmer[1,1]} &
 \backslash
 Sexpr{balance_farmer[1,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[1,5]<.01,"**",ifelse(balance_farmer[1,5]<.05,"*",ifelse(balance_farmer[1,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[1,16]<.01,"**",ifelse(balance_farmer[1,16]<.05,"*",ifelse(balance_farmer[1,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[1,8]}$^{
+Sexpr{balance_farmer[1,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[1,10]<.01,"**",ifelse(balance_farmer[1,10]<.05,"*",ifelse(balance_farmer[1,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[1,17]<.01,"**",ifelse(balance_farmer[1,17]<.05,"*",ifelse(balance_farmer[1,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[1,13]}$^{
+Sexpr{balance_farmer[1,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[1,15]<.01,"**",ifelse(balance_farmer[1,15]<.05,"*",ifelse(balance_farmer[1,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[1,18]<.01,"**",ifelse(balance_farmer[1,18]<.05,"*",ifelse(balance_farmer[1,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[1,18]} 
+Sexpr{balance_farmer[1,12]} 
 \backslash
 
 \backslash
@@ -10144,9 +10870,24 @@ Sexpr{balance_farmer[1,2]}) & (
 \backslash
 Sexpr{balance_farmer[1,4]}) & (
 \backslash
-Sexpr{balance_farmer[1,9]}) & (
+Sexpr{balance_farmer[1,7]}) & (
 \backslash
-Sexpr{balance_farmer[1,14]})
+Sexpr{balance_farmer[1,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[1,13]}] & [
+\backslash
+Sexpr{balance_farmer[1,14]}] & [
+\backslash
+Sexpr{balance_farmer[1,15]}]
 \backslash
 
 \backslash
@@ -10159,23 +10900,23 @@ Sexpr{balance_farmer[1,14]})
 
 \begin_layout Plain Layout
 
-Liters Produced Total Per Day (average during rainy season) (liters) & 
+Liters Produced Total Per Day (average during rainy season) (liters)  & 
 \backslash
 Sexpr{balance_farmer[5,1]} & 
 \backslash
 Sexpr{balance_farmer[5,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[5,5]<.01,"**",ifelse(balance_farmer[5,5]<.05,"*",ifelse(balance_farmer[5,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[5,16]<.01,"**",ifelse(balance_farmer[5,16]<.05,"*",ifelse(balance_farmer[5,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[5,8]}$^{
+Sexpr{balance_farmer[5,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[5,10]<.01,"**",ifelse(balance_farmer[5,10]<.05,"*",ifelse(balance_farmer[5,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[5,17]<.01,"**",ifelse(balance_farmer[5,17]<.05,"*",ifelse(balance_farmer[5,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[5,13]}$^{
+Sexpr{balance_farmer[5,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[5,15]<.01,"**",ifelse(balance_farmer[5,15]<.05,"*",ifelse(balance_farmer[5,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[5,18]<.01,"**",ifelse(balance_farmer[5,18]<.05,"*",ifelse(balance_farmer[5,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[5,18]} 
+Sexpr{balance_farmer[5,12]} 
 \backslash
 
 \backslash
@@ -10190,9 +10931,24 @@ Sexpr{balance_farmer[5,2]}) & (
 \backslash
 Sexpr{balance_farmer[5,4]}) & (
 \backslash
-Sexpr{balance_farmer[5,9]}) & (
+Sexpr{balance_farmer[5,7]}) & (
 \backslash
-Sexpr{balance_farmer[5,14]})
+Sexpr{balance_farmer[5,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[5,13]}] & [
+\backslash
+Sexpr{balance_farmer[5,14]}] & [
+\backslash
+Sexpr{balance_farmer[5,15]}]
 \backslash
 
 \backslash
@@ -10212,17 +10968,17 @@ Sexpr{balance_farmer[7,1]} &
 \backslash
 Sexpr{balance_farmer[7,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[7,5]<.01,"**",ifelse(balance_farmer[7,5]<.05,"*",ifelse(balance_farmer[7,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[7,16]<.01,"**",ifelse(balance_farmer[7,16]<.05,"*",ifelse(balance_farmer[7,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[7,8]}$^{
+Sexpr{balance_farmer[7,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[7,10]<.01,"**",ifelse(balance_farmer[7,10]<.05,"*",ifelse(balance_farmer[7,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[7,17]<.01,"**",ifelse(balance_farmer[7,17]<.05,"*",ifelse(balance_farmer[7,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[7,13]}$^{
+Sexpr{balance_farmer[7,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[7,15]<.01,"**",ifelse(balance_farmer[7,15]<.05,"*",ifelse(balance_farmer[7,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[7,18]<.01,"**",ifelse(balance_farmer[7,18]<.05,"*",ifelse(balance_farmer[7,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[7,18]} 
+Sexpr{balance_farmer[7,12]} 
 \backslash
 
 \backslash
@@ -10237,9 +10993,24 @@ Sexpr{balance_farmer[7,2]}) & (
 \backslash
 Sexpr{balance_farmer[7,4]}) & (
 \backslash
-Sexpr{balance_farmer[7,9]}) & (
+Sexpr{balance_farmer[7,7]}) & (
 \backslash
-Sexpr{balance_farmer[7,14]})
+Sexpr{balance_farmer[7,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[7,13]}] & [
+\backslash
+Sexpr{balance_farmer[7,14]}] & [
+\backslash
+Sexpr{balance_farmer[7,15]}]
 \backslash
 
 \backslash
@@ -10253,23 +11024,23 @@ Sexpr{balance_farmer[7,14]})
 \begin_layout Plain Layout
 
 Uses only steel can/bucket during sales transactions in the last 7 days before survey?
- (1=yes) & 
+ (1=yes)  & 
 \backslash
 Sexpr{balance_farmer[8,1]} & 
 \backslash
 Sexpr{balance_farmer[8,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[8,5]<.01,"**",ifelse(balance_farmer[8,5]<.05,"*",ifelse(balance_farmer[8,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[8,16]<.01,"**",ifelse(balance_farmer[8,16]<.05,"*",ifelse(balance_farmer[8,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[8,8]}$^{
+Sexpr{balance_farmer[8,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[8,10]<.01,"**",ifelse(balance_farmer[8,10]<.05,"*",ifelse(balance_farmer[8,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[8,17]<.01,"**",ifelse(balance_farmer[8,17]<.05,"*",ifelse(balance_farmer[8,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[8,13]}$^{
+Sexpr{balance_farmer[8,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[8,15]<.01,"**",ifelse(balance_farmer[8,15]<.05,"*",ifelse(balance_farmer[8,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[8,18]<.01,"**",ifelse(balance_farmer[8,18]<.05,"*",ifelse(balance_farmer[8,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[8,18]} 
+Sexpr{balance_farmer[8,12]} 
 \backslash
 
 \backslash
@@ -10284,9 +11055,24 @@ Sexpr{balance_farmer[8,2]}) & (
 \backslash
 Sexpr{balance_farmer[8,4]}) & (
 \backslash
-Sexpr{balance_farmer[8,9]}) & (
+Sexpr{balance_farmer[8,7]}) & (
 \backslash
-Sexpr{balance_farmer[8,14]})
+Sexpr{balance_farmer[8,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[8,13]}] & [
+\backslash
+Sexpr{balance_farmer[8,14]}] & [
+\backslash
+Sexpr{balance_farmer[8,15]}]
 \backslash
 
 \backslash
@@ -10310,17 +11096,17 @@ Sexpr{balance_farmer[9,1]} &
 \backslash
 Sexpr{balance_farmer[9,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[9,5]<.01,"**",ifelse(balance_farmer[9,5]<.05,"*",ifelse(balance_farmer[9,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[9,16]<.01,"**",ifelse(balance_farmer[9,16]<.05,"*",ifelse(balance_farmer[9,16]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{balance_farmer[9,8]}$^{
+Sexpr{balance_farmer[9,6]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[9,10]<.01,"**",ifelse(balance_farmer[9,10]<.05,"*",ifelse(balance_farmer[9,10]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[9,17]<.01,"**",ifelse(balance_farmer[9,17]<.05,"*",ifelse(balance_farmer[9,17]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[9,13]}$^{
+Sexpr{balance_farmer[9,9]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[9,15]<.01,"**",ifelse(balance_farmer[9,15]<.05,"*",ifelse(balance_farmer[9,15]<.1,"+","")))}}$  & 
+Sexpr{ifelse(balance_farmer[9,18]<.01,"**",ifelse(balance_farmer[9,18]<.05,"*",ifelse(balance_farmer[9,18]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{balance_farmer[9,18]} 
+Sexpr{balance_farmer[9,12]} 
 \backslash
 
 \backslash
@@ -10335,13 +11121,28 @@ Sexpr{balance_farmer[9,2]}) & (
 \backslash
 Sexpr{balance_farmer[9,4]}) & (
 \backslash
-Sexpr{balance_farmer[9,9]}) & (
+Sexpr{balance_farmer[9,7]}) & (
 \backslash
-Sexpr{balance_farmer[9,14]})
+Sexpr{balance_farmer[9,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+&  & [
+\backslash
+Sexpr{balance_farmer[9,13]}] & [
+\backslash
+Sexpr{balance_farmer[9,14]}] & [
+\backslash
+Sexpr{balance_farmer[9,15]}]
 \backslash
 
 \backslash
-
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -10441,7 +11242,620 @@ placement document
 alignment document
 wide false
 sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Baseline balance (pooled)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Baseline-pooled"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
 status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{rccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& mean ctrl & analyzer & video & bundle & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+cline{2-6}
+\end_layout
+
+\begin_layout Plain Layout
+
+Household Head Age (years) & 
+\backslash
+Sexpr{balance_farmer[2,1]} & 
+\backslash
+Sexpr{balance_farmer[2,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[2,25]<.01,"**",ifelse(balance_farmer[2,25]<.05,"*",ifelse(balance_farmer[2,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[2,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[2,26]<.01,"**",ifelse(balance_farmer[2,26]<.05,"*",ifelse(balance_farmer[2,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[2,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[2,31]<.01,"**",ifelse(balance_farmer[2,31]<.05,"*",ifelse(balance_farmer[2,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[2,2]}) & (
+\backslash
+Sexpr{balance_farmer[2,20]}) & (
+\backslash
+Sexpr{balance_farmer[2,23]}) & (
+\backslash
+Sexpr{balance_farmer[2,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Current Total herd size (number) & 
+\backslash
+Sexpr{balance_farmer[3,1]} & 
+\backslash
+Sexpr{balance_farmer[3,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[3,25]<.01,"**",ifelse(balance_farmer[3,25]<.05,"*",ifelse(balance_farmer[3,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[3,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[3,26]<.01,"**",ifelse(balance_farmer[3,26]<.05,"*",ifelse(balance_farmer[3,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[3,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[3,31]<.01,"**",ifelse(balance_farmer[3,31]<.05,"*",ifelse(balance_farmer[3,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[3,2]}) & (
+\backslash
+Sexpr{balance_farmer[3,20]}) & (
+\backslash
+Sexpr{balance_farmer[3,23]}) & (
+\backslash
+Sexpr{balance_farmer[3,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Number of improved animals in total herd (share)  & 
+\backslash
+Sexpr{balance_farmer[4,1]} & 
+\backslash
+Sexpr{balance_farmer[4,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[4,25]<.01,"**",ifelse(balance_farmer[4,25]<.05,"*",ifelse(balance_farmer[4,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[4,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[4,26]<.01,"**",ifelse(balance_farmer[4,26]<.05,"*",ifelse(balance_farmer[4,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[4,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[4,31]<.01,"**",ifelse(balance_farmer[4,31]<.05,"*",ifelse(balance_farmer[4,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[4,2]}) & (
+\backslash
+Sexpr{balance_farmer[4,20]}) & (
+\backslash
+Sexpr{balance_farmer[4,23]}) & (
+\backslash
+Sexpr{balance_farmer[4,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Liters milk sold per day (on average in the rainy season) (liters) & 
+\backslash
+Sexpr{balance_farmer[6,1]} & 
+\backslash
+Sexpr{balance_farmer[6,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[6,25]<.01,"**",ifelse(balance_farmer[6,25]<.05,"*",ifelse(balance_farmer[6,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[6,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[6,26]<.01,"**",ifelse(balance_farmer[6,26]<.05,"*",ifelse(balance_farmer[6,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[6,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[6,31]<.01,"**",ifelse(balance_farmer[6,31]<.05,"*",ifelse(balance_farmer[6,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[6,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[6,2]}) & (
+\backslash
+Sexpr{balance_farmer[6,20]}) & (
+\backslash
+Sexpr{balance_farmer[6,23]}) & (
+\backslash
+Sexpr{balance_farmer[6,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average monthly expense (USD) on chemical purchases  & 
+\backslash
+Sexpr{balance_farmer[10,1]} & 
+\backslash
+Sexpr{balance_farmer[10,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[10,25]<.01,"**",ifelse(balance_farmer[10,25]<.05,"*",ifelse(balance_farmer[10,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[10,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[10,26]<.01,"**",ifelse(balance_farmer[10,26]<.05,"*",ifelse(balance_farmer[10,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[10,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[10,31]<.01,"**",ifelse(balance_farmer[10,31]<.05,"*",ifelse(balance_farmer[10,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[10,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[10,2]}) & (
+\backslash
+Sexpr{balance_farmer[10,20]}) & (
+\backslash
+Sexpr{balance_farmer[10,23]}) & (
+\backslash
+Sexpr{balance_farmer[10,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Household Members (number) & 
+\backslash
+Sexpr{balance_farmer[1,1]} & 
+\backslash
+Sexpr{balance_farmer[1,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[1,25]<.01,"**",ifelse(balance_farmer[1,25]<.05,"*",ifelse(balance_farmer[1,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[1,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[1,26]<.01,"**",ifelse(balance_farmer[1,26]<.05,"*",ifelse(balance_farmer[1,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[1,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[1,31]<.01,"**",ifelse(balance_farmer[1,31]<.05,"*",ifelse(balance_farmer[1,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[1,2]}) & (
+\backslash
+Sexpr{balance_farmer[1,20]}) & (
+\backslash
+Sexpr{balance_farmer[1,23]}) & (
+\backslash
+Sexpr{balance_farmer[1,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Liters Produced Total Per Day (average during rainy season) (liters)  & 
+\backslash
+Sexpr{balance_farmer[5,1]} & 
+\backslash
+Sexpr{balance_farmer[5,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[5,25]<.01,"**",ifelse(balance_farmer[5,25]<.05,"*",ifelse(balance_farmer[5,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[5,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[5,26]<.01,"**",ifelse(balance_farmer[5,26]<.05,"*",ifelse(balance_farmer[5,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[5,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[5,31]<.01,"**",ifelse(balance_farmer[5,31]<.05,"*",ifelse(balance_farmer[5,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[5,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[5,2]}) & (
+\backslash
+Sexpr{balance_farmer[5,20]}) & (
+\backslash
+Sexpr{balance_farmer[5,23]}) & (
+\backslash
+Sexpr{balance_farmer[5,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Normally during the rainy season sells most of its milk to a milk collection center?
+ (1=yes)  & 
+\backslash
+Sexpr{balance_farmer[7,1]} & 
+\backslash
+Sexpr{balance_farmer[7,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[7,25]<.01,"**",ifelse(balance_farmer[7,25]<.05,"*",ifelse(balance_farmer[7,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[7,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[7,26]<.01,"**",ifelse(balance_farmer[7,26]<.05,"*",ifelse(balance_farmer[7,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[7,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[7,31]<.01,"**",ifelse(balance_farmer[7,31]<.05,"*",ifelse(balance_farmer[7,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[7,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[7,2]}) & (
+\backslash
+Sexpr{balance_farmer[7,20]}) & (
+\backslash
+Sexpr{balance_farmer[7,23]}) & (
+\backslash
+Sexpr{balance_farmer[7,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Uses only steel can/bucket during sales transactions in the last 7 days before survey?
+ (1=yes)   & 
+\backslash
+Sexpr{balance_farmer[8,1]} & 
+\backslash
+Sexpr{balance_farmer[8,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[8,25]<.01,"**",ifelse(balance_farmer[8,25]<.05,"*",ifelse(balance_farmer[8,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[8,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[8,26]<.01,"**",ifelse(balance_farmer[8,26]<.05,"*",ifelse(balance_farmer[8,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[8,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[8,31]<.01,"**",ifelse(balance_farmer[8,31]<.05,"*",ifelse(balance_farmer[8,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[8,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[8,2]}) & (
+\backslash
+Sexpr{balance_farmer[8,20]}) & (
+\backslash
+Sexpr{balance_farmer[8,23]}) & (
+\backslash
+Sexpr{balance_farmer[8,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Member of dairy cooperative?
+ (1=yes)& 
+\backslash
+Sexpr{balance_farmer[9,1]} & 
+\backslash
+Sexpr{balance_farmer[9,19]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[9,25]<.01,"**",ifelse(balance_farmer[9,25]<.05,"*",ifelse(balance_farmer[9,25]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance_farmer[9,22]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[9,26]<.01,"**",ifelse(balance_farmer[9,26]<.05,"*",ifelse(balance_farmer[9,26]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[9,27]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[9,31]<.01,"**",ifelse(balance_farmer[9,31]<.05,"*",ifelse(balance_farmer[9,31]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{balance_farmer[9,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{balance_farmer[9,2]}) & (
+\backslash
+Sexpr{balance_farmer[9,20]}) & (
+\backslash
+Sexpr{balance_farmer[9,23]}) & (
+\backslash
+Sexpr{balance_farmer[9,28]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below);
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below);
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
