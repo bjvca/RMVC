@@ -6,14 +6,16 @@ rm(list=ls())
 
 #write.csv(dta_reports,"/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv", row.names =  FALSE) 
 
-dta_reports <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv") 
+dta_reports <- read.csv("/Users/B.VanCampenhout/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv") 
 
 ###update
 
-#url <- "https://milk.ug/export/report?from=2023-08-01&to=2024-04-29"
+#url <- "https://milk.ug/export/report?from=2025-08-01&to=2026-01-14"
+
+
 url <- paste(paste("https://milk.ug/export/report",Sys.Date()-7,sep="?from="),Sys.Date(), sep="&to=")
-#dta_reports <- read.csv(url)
 dta_reports_update <- read.csv(url)
+
 dta_reports_update$delivery_date <- as.character(as.Date(dta_reports_update$Report.Date))
 dta_reports_update$delivery_time <- as.character(format(as.POSIXct(dta_reports_update$Report.Date), format = '%H:%M'))
 
@@ -27,7 +29,7 @@ dta_reports$delivery_time <- as.character(format(as.POSIXct(dta_reports$Report.D
 ### remove duplicate records from dta_reports
 dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID", "Milk.Center", "Farmer_ID", "Farmer", "Alcohol.Test", "Qty", "Price", "Fat", "SNF", "Protein", "Added.Water", "Rejected", "Corrected.Lactometer.Reading", "Analogue.Lactometer.Test", "Analogue.Test.Done", "Milk.Analyzer.Test.Done", "delivery_date")]),]
 
-write.csv(dta_reports, "/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv",row.names = FALSE) 
+write.csv(dta_reports, "/Users/B.VanCampenhout/data/projects/OneCG/RMVC/sample_submissions/latest_raw.csv",row.names = FALSE) 
 
 
 dta_farmers <- read.csv("https://milk.ug/export/farmers")
@@ -40,7 +42,7 @@ dta_reports <- dta_reports[!duplicated(dta_reports[c("User.ID", "Milk.Center.ID"
 #cat(paste(shQuote(names(dta_reports), type="cmd"), collapse=", "))
 
 ###merge in sample list
-sample <- read.csv("/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/list_endline_MCC.csv")
+sample <- read.csv("/Users/B.VanCampenhout/data/projects/OneCG/RMVC/sample_submissions/list_endline_MCC.csv")
 
 dta_MCCs <- merge(dta_MCCs, sample, by.x="manager", by.y="manager") 
 
@@ -157,10 +159,10 @@ library(ggplot2)
 #   coord_flip() +
 #   xlab("") +
 #   theme_bw()
-write.csv(dta_reports, "/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/dta_reports.csv",row.names = FALSE) 
+write.csv(dta_reports, "/Users/B.VanCampenhout/data/projects/OneCG/RMVC/sample_submissions/dta_reports.csv",row.names = FALSE) 
 ### additional layer of anonymization for public release
 dta_reports$MCC_ID <- as.factor(dta_reports$MCC_ID)
 levels(dta_reports$MCC_ID) <- paste("MA", 1:length(levels(dta_reports$MCC_ID)),sep="_")
-write.csv(dta_reports, "/home/bjvca/data/projects/OneCG/RMVC/sample_submissions/dta_reports_masked.csv",row.names = FALSE) 
+write.csv(dta_reports, "/Users/B.VanCampenhout/data/projects/OneCG/RMVC/sample_submissions/dta_reports_masked.csv",row.names = FALSE) 
 
 #ggplot(data=dta_reports, aes(x=date, y=Qty, group=MCC_ID, color=MCC_ID)) + stat_summary(fun = sum, geom = "line")
