@@ -3631,7 +3631,7 @@ status open
 
 
 \backslash
-begin{multline}      
+begin{multline}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3642,28 +3642,28 @@ alpha+
 \backslash
 alpha{}_{C}C_{i,m}+
 \backslash
-beta_{H2T}.T1_{i,m}+
+beta_{H2T}T1_{i,m}+
 \backslash
 beta_{H3T}T2_{i,m}+
 \backslash
-beta_{H4T}T2_{i.m}.T1_{i,m} 
+beta_{H4T}T2_{i,m}T1_{i,m}
 \backslash
 
 \backslash
-         
+
 \end_layout
 
 \begin_layout Plain Layout
 
-& +
++
 \backslash
-beta_{H2C}.T1_{i,m}.C_{i,m}+
+beta_{H2C}T1_{i,m}C_{i,m}+
 \backslash
-beta_{H3C}T2_{i}.C_{i,m}+
+beta_{H3C}T2_{i}C_{i,m}+
 \backslash
-beta_{H4C}T2_{i}.T1_{i,m}.C_{i,m}+
+beta_{H4C}T2_{i}T1_{i,m}C_{i,m}+
 \backslash
-beta_{b}.y_{i,m}^{b}+
+beta_{b}y_{i,m}^{b}+
 \backslash
 varepsilon_{i,m}
 \end_layout
@@ -3672,7 +3672,7 @@ varepsilon_{i,m}
 
 
 \backslash
-label{eq:two}    
+label{eq:two}
 \end_layout
 
 \begin_layout Plain Layout
