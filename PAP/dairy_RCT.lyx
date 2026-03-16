@@ -444,7 +444,7 @@ In many agricultural value chains in developing countries,
  When buyers cannot distinguish high- from low-quality supply,
  the classic adverse selection problem arises:
  producers who invest in quality are not rewarded,
- while those who adulterate their output face no penalty
+ while those who adulterate their output face no penalty 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "2b080e07-2197-39e6-8e29-cfa83db9de24"
@@ -455,7 +455,7 @@ literal "false"
 .
  The resulting equilibrium is characterized by low quality,
  widespread adulteration,
- and uniform pricing that reflects the pooled average rather than individual supply
+ and uniform pricing that reflects the pooled average rather than individual supply 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "swinnen2007globalization,barrett2022agri"
@@ -470,7 +470,7 @@ literal "false"
 The conventional policy response follows a clear logic:
  make quality observable,
  enable quality-differentiated pricing,
- and let price premia incentivize quality investment
+ and let price premia incentivize quality investment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "shapiro1983premiums,leland1979quacks"
@@ -487,7 +487,7 @@ carrot
 \begin_inset Quotes erd
 \end_inset
 
- channel---measurement enables markets for quality---underpins much of the literature on value chain upgrading
+ channel---measurement enables markets for quality---underpins much of the literature on value chain upgrading 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "REARDON2000195,MINTEN20091728,Ponte01022005"
@@ -498,7 +498,7 @@ literal "false"
 .
  If buyers can verify compositional attributes and pay accordingly,
  producers have incentives to invest in better inputs and practices,
- and intermediaries have incentives to preserve quality during aggregation and transport
+ and intermediaries have incentives to preserve quality during aggregation and transport 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "hansman2020vertical,bold2022market"
@@ -508,7 +508,7 @@ literal "false"
 
 .
  Empirical evidence from dairy supply chains broadly supports this view:
- quality-differentiated pricing has been shown to improve milk composition in Indonesia
+ quality-differentiated pricing has been shown to improve milk composition in Indonesia 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "treurniet2021potency"
@@ -516,7 +516,7 @@ literal "false"
 
 \end_inset
 
- and Vietnam
+ and Vietnam 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "saenger2013contract"
@@ -525,7 +525,7 @@ literal "false"
 \end_inset
 
 ,
- and group-level incentives can sustain quality improvements in Indian dairy cooperatives
+ and group-level incentives can sustain quality improvements in Indian dairy cooperatives 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RAO2023708"
@@ -541,7 +541,7 @@ Yet in many settings,
  the institutional preconditions for quality-differentiated pricing are absent.
  Cooperatives maintain uniform prices to preserve solidarity among members.
  Concentrated processing sectors face little competitive pressure to differentiate on quality.
- Biweekly payment cycles lock in prices for fixed periods
+ Biweekly payment cycles lock in prices for fixed periods 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "casaburi2019infrequent"
@@ -558,7 +558,7 @@ literal "false"
 
 \begin_layout Standard
 This paper provides evidence that it can---through a different mechanism.
- Drawing on the economics of enforcement and deterrence
+ Drawing on the economics of enforcement and deterrence 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "becker1968crime"
@@ -567,7 +567,7 @@ literal "false"
 \end_inset
 
 ,
- we show that measurement technology improves quality through an
+ we show that measurement technology improves quality through an 
 \emph on
 enforcement
 \emph default
@@ -592,7 +592,7 @@ carrot
 \end_inset
 
  of price premia.
- This mechanism parallels evidence from other contexts where increased monitoring reduces malfeasance
+ This mechanism parallels evidence from other contexts where increased monitoring reduces malfeasance 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "olken2007monitoring,duflo2012incentives"
@@ -600,7 +600,7 @@ literal "false"
 
 \end_inset
 
- and where third-party verification disciplines behavior even without explicit incentive contracts
+ and where third-party verification disciplines behavior even without explicit incentive contracts 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "duflo2013truth"
@@ -615,7 +615,7 @@ literal "false"
 We study this mechanism in Uganda’s dairy sector,
  where milk collection centers (MCCs) aggregate supply from thousands of smallholder farmers and sell to downstream processors.
  MCCs pay a flat price per liter regardless of compositional quality,
- and their existing testing capacity is limited to crude checks for freshness and gross adulteration
+ and their existing testing capacity is limited to crude checks for freshness and gross adulteration 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "vancampenhout2021leading"
@@ -671,7 +671,7 @@ The paper makes three contributions.
  First,
  we provide a model that nests enforcement and price-incentive channels and use the experimental variation to identify which dominates.
  The existing literature on quality upgrading in agricultural value chains emphasizes the price channel---measurement enables price differentiation,
- which incentivizes quality investment
+ which incentivizes quality investment 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "treurniet2021potency,saenger2013contract,bold2022market"
@@ -699,7 +699,7 @@ Second,
 
 \begin_layout Standard
 Third,
- the study contributes to a growing literature on the role of information and communication technologies in agricultural value chains
+ the study contributes to a growing literature on the role of information and communication technologies in agricultural value chains 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "vancampenhout2022icts,jensen2007digital"
@@ -740,7 +740,7 @@ Background:
 
 \begin_layout Standard
 Uganda’s dairy subsector has undergone rapid transformation over the past two decades.
- The privatization of the National Dairy Corporation and the enactment of the Dairy Industry Act of 1998 opened the sector to private investment and established the Dairy Development Authority (DDA) as the statutory regulator
+ The privatization of the National Dairy Corporation and the enactment of the Dairy Industry Act of 1998 opened the sector to private investment and established the Dairy Development Authority (DDA) as the statutory regulator 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "vancampenhout2021leading"
@@ -759,19 +759,19 @@ literal "false"
 \begin_layout Standard
 A typical dairy value chain connects five actors.
  At the upstream end,
- smallholder
+ smallholder 
 \emph on
  dairy farmers
 \emph default
- produce milk and deliver it---either directly or through intermediaries---to
+ produce milk and deliver it---either directly or through intermediaries---to 
 \emph on
  milk collection centers
 \emph default
- (MCCs).
+ (MCCs). 
 \emph on
  Transporters
 \emph default
- collect milk from farms and deliver it to MCCs for a fee;
+ collect milk from farms and deliver it to MCCs for a fee; 
 \emph on
  traders
 \emph default
@@ -780,11 +780,11 @@ A typical dairy value chain connects five actors.
  MCCs bulk and chill milk,
  initiating the cold chain,
  and are distributed across rural areas to facilitate access.
- Once chilled,
+ Once chilled, 
 \emph on
  large traders
 \emph default
- transport milk in tankers to
+ transport milk in tankers to 
 \emph on
  processors
 \emph default
@@ -793,12 +793,12 @@ A typical dairy value chain connects five actors.
 
 \begin_layout Standard
 Three features of this chain are critical to our study.
- First,
+ First, 
 \emph on
  adulteration is endemic
 \emph default
 .
- The most common form is the addition of water to milk
+ The most common form is the addition of water to milk 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "rustagi2022measuring"
@@ -819,7 +819,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Second,
+Second, 
 \emph on
  pricing is flat
 \emph default
@@ -829,7 +829,7 @@ Second,
  SNF,
  or protein content.
  This flat-price regime is sustained by several institutional features.
- Many MCCs are organized as cooperatives whose members resist price differentiation on grounds of solidarity and equity
+ Many MCCs are organized as cooperatives whose members resist price differentiation on grounds of solidarity and equity 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "winfree2005collective,bonroy2019freeriding"
@@ -838,7 +838,7 @@ literal "false"
 \end_inset
 
 .
- Prices are set on biweekly cycles that lock in a fixed rate for all deliveries within each period
+ Prices are set on biweekly cycles that lock in a fixed rate for all deliveries within each period 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "casaburi2019infrequent"
@@ -854,7 +854,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Third,
+Third, 
 \emph on
  MCCs are the natural enforcement node
 \emph default
@@ -907,7 +907,7 @@ Two competing channels
 \end_layout
 
 \begin_layout Standard
-The
+The 
 \emph on
  price channel
 \emph default
@@ -916,7 +916,7 @@ The
  buyers can condition payments on measured attributes,
  and quality premia emerge.
  These premia reward quality-enhancing investments and penalize low-quality supply,
- aligning incentives throughout the chain
+ aligning incentives throughout the chain 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "swinnen2007globalization,REARDON2000195"
@@ -940,14 +940,14 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-The
+The 
 \emph on
  enforcement channel
 \emph default
  offers an alternative mechanism.
  Even when prices remain flat,
  measurement technology improves the precision of the accept/reject decision at the aggregation point.
- By raising the probability that substandard milk is detected---much as third-party verification constrains self-reported behavior in other settings
+ By raising the probability that substandard milk is detected---much as third-party verification constrains self-reported behavior in other settings 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "kleven2011unwilling"
@@ -1080,7 +1080,7 @@ The fourth hypothesis concerns the role of intermediation.
  Farmers who sell through traders rather than delivering directly to MCCs face a weaker enforcement link:
  traders pool milk from multiple farmers before delivery,
  diluting the traceability of individual quality to its source.
- The enforcement channel therefore predicts that directly connected farmers should respond more strongly to analyzer installation than trader-connected farmers
+ The enforcement channel therefore predicts that directly connected farmers should respond more strongly to analyzer installation than trader-connected farmers 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "RAO2023708,mitra2018asymmetric"
@@ -1149,13 +1149,13 @@ Environment and Timing
 \end_layout
 
 \begin_layout Standard
-There are multiple MCCs indexed by
+There are multiple MCCs indexed by 
 \emph on
 m
 \emph default
 ,
  and within each MCC catchment,
- multiple farmers indexed by
+ multiple farmers indexed by 
 \emph on
 i
 \emph default
@@ -1204,7 +1204,7 @@ In practice,
 \begin_layout Standard
 More generally,
  the MCC may also pay a quality premium for milk above the floor.
- We model the price received by farmer
+ We model the price received by farmer 
 \emph on
 i
 \emph default
@@ -1251,7 +1251,7 @@ where
 ,
  the price channel is active:
  the MCC translates its measurement capability into quality premia.
- Note that the price channel requires
+ Note that the price channel requires 
 \emph on
 both
 \emph default
@@ -1284,7 +1284,7 @@ Farmer Actions:
 \end_layout
 
 \begin_layout Standard
-Each farmer
+Each farmer 
 \emph on
 i
 \emph default
@@ -1390,11 +1390,11 @@ The MCC maintains a minimum quality threshold
 \end_layout
 
 \begin_layout Standard
-The probability that farmer
+The probability that farmer 
 \emph on
 i
 \emph default
-'s milk is rejected is:
+ 's milk is rejected is:
 \begin_inset Formula
 \begin{equation}
 \rho_{i}(e_{i},w_{i};\delta)=\delta\cdot\Pr\left(q_{i}<\underline{q}\right)
@@ -1819,7 +1819,7 @@ nolink "false"
 \end_inset
 
  becomes small and effort plateaus.
- The predicted improvement is therefore
+ The predicted improvement is therefore 
 \emph on
 modest
 \emph default
@@ -1835,7 +1835,7 @@ modest
 \end_inset
 
  persists above the floor,
- so effort is
+ so effort is 
 \emph on
 larger
 \emph default
@@ -2015,7 +2015,7 @@ Under
 \end_inset
 
 :
- training has
+ training has 
 \emph on
 no main effect
 \emph default
@@ -2035,7 +2035,7 @@ no main effect
 \end_inset
 
 :
- training has a
+ training has a 
 \emph on
 positive main effect
 \emph default
@@ -2831,7 +2831,7 @@ Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet 
 Together,
  these three components form an integrated strategy to make milk quality observable and actionable,
  improving information flows and enforcement capacity throughout the dairy value chain.
- This bundle constitutes the first treatment arm in the field experiment and is referred to as T1 (or sometimes also as the
+ This bundle constitutes the first treatment arm in the field experiment and is referred to as T1 (or sometimes also as the 
 \emph on
 analyzer
 \emph default
@@ -3298,11 +3298,11 @@ Here,
 \begin_inset Formula $T2_{i}$
 \end_inset
 
- is a treatment indicator at the farmer level that is one
+ is a treatment indicator at the farmer level that is one 
 \emph on
  
 \emph default
-if the farmer was allocated to T2,
+ if the farmer was allocated to T2,
  with 
 \emph on
 i
@@ -3728,7 +3728,7 @@ ref{eq:two}
 \end_inset
 
 ),
- we report CR2 cluster-robust standard errors
+ we report CR2 cluster-robust standard errors 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1162/REST_a_00552"
@@ -3739,7 +3739,7 @@ literal "false"
  clustered at the level of randomization (MCC catchment area level) for descriptive purposes.
  However,
  because this is a randomized experiment with a known assignment mechanism,
- our primary inference is based on
+ our primary inference is based on 
 \emph on
  Fisher randomization inference
 \emph default
@@ -3760,7 +3760,7 @@ To address multiple hypothesis testing within outcome families,
  For each permutation under the sharp null,
  we compute the test statistic for every outcome in the family simultaneously and count how many cross the conventional significance threshold.
  The omnibus p-value is the fraction of permutations that produce at least as many individually significant results as we observe in the actual data.
- This directly tests whether the observed
+ This directly tests whether the observed 
 \emph on
  pattern
 \emph default
@@ -3771,7 +3771,7 @@ To address multiple hypothesis testing within outcome families,
  This approach eliminates the need for parametric multiple testing corrections (such as Bonferroni or Benjamini-Hochberg),
  as it controls the probability of falsely detecting a pattern of significance at any desired level.
  In addition,
- we combine primary outcomes into an Anderson (2008) summary index
+ we combine primary outcomes into an Anderson (2008) summary index 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "doi:10.1198/016214508000000841"
@@ -5190,7 +5190,7 @@ nolink "false"
  MCCs should adopt and use the analyzers to enforce quality thresholds (Prediction 5),
  but prices and quality premia need not change under the flat-price regime (Prediction 3).
  To capture the aggregate effect across these outcomes (and simultaneously consider multiple hypothesis testing concerns),
- we also construct a summary index following
+ we also construct a summary index following 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1198/016214508000000841"
@@ -5745,7 +5745,7 @@ We also define four primary outcomes at the farmer level and combine them into a
 \begin_layout Standard
 The first outcome is a composite in itself,
  and measures production investment and management practices that are expected to improve milk quality.
- We construct an
+ We construct an 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1198/016214508000000841"
@@ -5754,7 +5754,7 @@ literal "false"
 \end_inset
 
  index from farmer reports on five recommended practices undertaken in the past year:
- (i) over-sowing new fields with improved forage grasses such as
+ (i) over-sowing new fields with improved forage grasses such as 
 \emph on
 Napier
 \emph default
@@ -5764,12 +5764,12 @@ Napier
 Brachiaria
 \emph default
 ,
- or
+ or 
 \emph on
 Rhodes
 \emph default
  grasses;
- (ii) using legume pastures such as
+ (ii) using legume pastures such as 
 \emph on
 Centro
 \emph default
@@ -5779,7 +5779,7 @@ Centro
 Siratro
 \emph default
 ,
- or
+ or 
 \emph on
 Desmodium
 \emph default
@@ -6713,7 +6713,7 @@ Interpreting the null pre-registered primary outcomes.
  buyer checks) respond positively.
  A version of the index that excludes price and quality bonus---retaining only the two outcomes for which the enforcement model predicts positive effects---is significant.
  We nevertheless report the pre-registered specification exactly as planned,
- consistent with best practice for the use of pre-analysis plans
+ consistent with best practice for the use of pre-analysis plans 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "651546"
@@ -7172,7 +7172,7 @@ nolink "false"
  reports the results obtained from the analysis of supervised testing data.
  The headline finding is a large and significant reduction in added water:
  milk delivered to treated MCCs contains nearly half a percentage point less added water relative to the control mean of 1.63 percent.
- This result provides strong support for Prediction 1---the extensive-margin deterrence effect---and is consistent with evidence that detection threats operate primarily on the extensive margin
+ This result provides strong support for Prediction 1---the extensive-margin deterrence effect---and is consistent with evidence that detection threats operate primarily on the extensive margin 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bott2020got"
@@ -8557,7 +8557,7 @@ The absence of quality premia also reflects deeper institutional features of thi
  In principle,
  cooperatives could respond to downstream quality premia at the collective level,
  even without differentiating prices internally,
- provided they establish credible mechanisms for managing the common-pool quality problem
+ provided they establish credible mechanisms for managing the common-pool quality problem 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "winfree2005collective,bonroy2019freeriding"
@@ -8568,7 +8568,7 @@ literal "false"
 .
  In practice,
  the combination of cooperative governance norms,
- biweekly price-setting cycles that lock in prices for 14-day periods
+ biweekly price-setting cycles that lock in prices for 14-day periods 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "casaburi2019infrequent,swinnen2010marketpower"
@@ -8597,7 +8597,7 @@ The central contribution of this paper is to show that enforcement through detec
 This finding has implications beyond the Ugandan dairy sector.
  Many agricultural value chains in developing countries share the same basic structure:
  quality is difficult to observe at the point of aggregation,
- institutional constraints prevent quality-differentiated pricing
+ institutional constraints prevent quality-differentiated pricing 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "hansman2020vertical"
