@@ -631,11 +631,11 @@ farmers_balance[herd_cols] <- lapply(farmers_balance[herd_cols], function(x) {
 
 ## Outlier thresholds (applied after 999 removal)
 farmers_balance$q24[farmers_balance$q24 > 500] <- NA
-farmers_balance$q24[farmers_balance$q26 > 200] <- NA
-farmers_balance$q24[farmers_balance$q28 > 200] <- NA
-farmers_balance$q24[farmers_balance$q30 > 500] <- NA
-farmers_balance$q24[farmers_balance$q32 > 200] <- NA
-farmers_balance$q24[farmers_balance$q34 > 200] <- NA
+farmers_balance$q26[farmers_balance$q26 > 200] <- NA
+farmers_balance$q28[farmers_balance$q28 > 200] <- NA
+farmers_balance$q30[farmers_balance$q30 > 500] <- NA
+farmers_balance$q32[farmers_balance$q32 > 200] <- NA
+farmers_balance$q34[farmers_balance$q34 > 200] <- NA
 
 farmers_balance$herd_size      <- rowSums(farmers_balance[herd_cols])
 farmers_balance$improved_share <- rowSums(farmers_balance[c("q30", "q32", "q34")]) / farmers_balance$herd_size

@@ -301,6 +301,7 @@ cat("===========================================================\n\n")
 
 ## Load samples from raw CSV (not in prepped data)
 samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+samples$today <- as.Date(samples$today)
 
 ## Calibration fix: exclude Ntungamo samples before Dec 5
 samples <- samples[

@@ -564,6 +564,7 @@ saveRDS(res_MCCs, file = paste(path, "paper/results/res_MCCs.rds", sep = "/"))
 ##  12:    q-value for 2SLS p
 
 samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+samples$today <- as.Date(samples$today)
 
 ## Calibration fix: Ntungamo samples before Dec 5 are excluded
 samples <- samples[
