@@ -576,6 +576,40 @@ Experiment 1 produces three sets of results.
 \end_layout
 
 \begin_layout Standard
+Why does quality measurement fail to generate quality-differentiated pricing?
+ Several institutional features of this value chain work against the emergence
+ of price premiums.
+ Payments from MCCs to farmers are typically made on a biweekly cycle, creating
+ a wedge between the moment of quality observation and the moment of payment
+ that makes it difficult to link compensation to specific deliveries
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{casaburi2019infrequent}
+\end_layout
+
+\end_inset
+
+.
+ Processors---the ultimate buyers of quality---face limited competition in
+ the downstream market, weakening the pressure to bid up prices for higher-quality
+ raw milk.
+ MCCs themselves have little incentive to differentiate on price when they
+ can simply reject substandard milk at no cost.
+ And in a chain where traders aggregate milk from multiple farmers before
+ delivering to the MCC, the traceability that measurement technology provides
+ at the MCC level does not extend upstream to the individual farmer.
+ Enforcement---the binary accept-or-reject decision---requires only that
+ quality be measurable at the point of delivery, while pricing requires that
+ quality be traceable and attributable to the individual supplier.
+ The measurement system provides the former but not the latter.
+\end_layout
+
+\begin_layout Standard
 To rationalize these findings, we develop a simple model of MCC behavior
  in which a parameter
 \begin_inset Formula $\alpha\in[0,1]$
@@ -674,6 +708,54 @@ The results reveal strikingly different trader responses across the two
  with fixed-effect demeaning), but trader endline outcomes are null across
  all five measures---effects visible in the daily digital data do not survive
  into the endline survey, likely reflecting timing and power limitations.
+\end_layout
+
+\begin_layout Standard
+The negative price pass-through deserves particular attention.
+ One plausible mechanism is that treated traders, facing stronger incentives
+ to deliver high-quality milk, expand their sourcing network---collecting
+ from more farmers to increase the probability of meeting quality thresholds---and
+ the increased supply of potential sellers shifts bargaining power toward
+ the trader.
+ Alternatively, traders who receive quality bonuses may substitute away from
+ price-based competition for suppliers toward quality-based screening, spending
+ more effort on testing and selection and less on offering attractive prices.
+ Whatever the mechanism, the result underscores a key finding: even when
+ price incentives are injected into the chain, the structure of intermediation
+ prevents them from reaching the actors whose behavior ultimately determines
+ quality at the source.
+\end_layout
+
+\begin_layout Standard
+Our identification rests on the random assignment embedded in both experiments.
+ In Experiment 1, MCC-level treatment was randomized at the catchment-area
+ level; we verify balance on 10 MCC and 10 farmer characteristics and find
+ no significant imbalance.
+ Differential attrition is not a concern: a chi-squared test of MCC attrition
+ by treatment yields
+\begin_inset Formula $p=0.66$
+\end_inset
+
+.
+ We report Fisher randomization inference p-values as the primary inferential
+ framework, with 5,000 permutations respecting the stratified design, and
+ address multiple testing through an omnibus count test following the EGAP
+ framework.
+ The null price result is not a power failure: in the same sample and specification,
+ we detect significant quality effects with p-values below 0.01, and the
+ omnibus test for quality outcomes rejects decisively (
+\begin_inset Formula $p=0.022$
+\end_inset
+
+) while the omnibus for prices does not (
+\begin_inset Formula $p=1.0$
+\end_inset
+
+).
+ In Experiment 2, trader-level treatment was randomized within MCC blocks;
+ pre-treatment balance on daily submission data confirms no differential
+ quality or quantity prior to treatment onset.
+ Both experiments were pre-registered.
 \end_layout
 
 \begin_layout Standard
@@ -833,6 +915,26 @@ citep{KEMBRO201777,Ponte01022005,Gereffi01022005}
  pricing that reaches producers---requires separate policy attention to
  the institutional and organizational conditions that govern how price signals
  are formed and transmitted through intermediated chains.
+ Three distinct policy problems emerge from our analysis.
+ First, the institutional conditions for quality-differentiated pricing at
+ MCCs---payment frequency, grading infrastructure, competitive pressure from
+ processors---are separate from the measurement technology itself and require
+ targeted reform.
+ Second, the competitive structure of the downstream market matters: when
+ processors do not compete on quality, there is no demand-side pull for
+ quality premiums to emerge.
+ Third, and perhaps most importantly, intermediary behavior constitutes a
+ binding constraint on price transmission.
+ Even when quality premiums are explicitly provided, traders absorb rather
+ than transmit them.
+ Policy interventions aimed at quality upgrading through price incentives
+ must grapple with the fact that price signals attenuate---or reverse direction---as
+ they pass through intermediated chains.
+ The enforcement channel, by contrast, operates at the point of delivery and
+ does not require price transmission.
+ This makes it a more robust, if less efficient, tool for quality improvement
+ in settings where institutional conditions for price-based incentives are
+ not yet in place.
 \end_layout
 
 \begin_layout Standard
