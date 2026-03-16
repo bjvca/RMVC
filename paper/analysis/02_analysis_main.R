@@ -549,7 +549,76 @@ saveRDS(res_MCCs, file = paste(path, "paper/results/res_MCCs.rds", sep = "/"))
 
 
 ###############################################################################
-## F. ATTRITION TESTS
+## F. MILK SAMPLE ANALYSIS (supervised quality testing)
+###############################################################################
+## Supervised milk quality testing at MCCs using project Lactoscans.
+## Samples collected at endline with calibration correction for Ntungamo district.
+##
+## Result array: 6 outcomes x 12 columns
+##  1-2:   control mean, SD
+##  3-5:   OLS coef, SE, p (WLS weighted by Qty, CR2 clustered by catch_ID)
+##  6-8:   2SLS coef, SE, p (instrument: treat for treat_TOT)
+##  9:     N (OLS)
+##  10:    N (2SLS)
+##  11:    q-value for OLS p
+##  12:    q-value for 2SLS p
+
+samples <- read.csv(paste(path, "endline/data/public/samples.csv", sep = "/"))
+
+## Calibration fix: Ntungamo samples before Dec 5 are excluded
+samples <- samples[
+  (samples$today >= as.Date("2024-12-04") &
+   (samples$district == "Kazo" | samples$district == "Mbarara")) |
+  samples$today >= as.Date("2024-12-05"), ]
+
+## Merge treatment indicators (actual machine use for LATE)
+samples <- merge(samples, MCCs_end[c("MCC_ID", "treat_TOT")], all.x = TRUE)
+
+sample_outcomes <- c("Fat", "SNF", "Added.Water", "Protein",
+                     "Corrected.Lactometer.Reading")
+samples$samples_index <- anderson_index(samples[sample_outcomes], revcols = 3)$index
+sample_outcomes <- c(sample_outcomes, "samples_index")
+
+res_samples <- array(NA, dim = c(length(sample_outcomes), 12),
+                     dimnames = list(sample_outcomes,
+                       c("ctrl_mean", "ctrl_sd", "ols_coef", "ols_se", "ols_p",
+                         "iv_coef", "iv_se", "iv_p", "n_ols", "n_iv",
+                         "q_ols", "q_iv")))
+
+for (i in seq_along(sample_outcomes)) {
+  ## OLS: outcome ~ treat (weighted by quantity)
+  ols <- lm(as.formula(paste(sample_outcomes[i], "~ treat")),
+            data = samples, weights = samples$Qty)
+
+  y_ctrl <- samples[samples$treat == "C", sample_outcomes[i]]
+  res_samples[i, 1] <- mean(y_ctrl, na.rm = TRUE)
+  res_samples[i, 2] <- sd(y_ctrl, na.rm = TRUE)
+
+  vcov_ols <- vcovCR(ols, cluster = samples$catch_ID, type = "CR2")
+  res <- coef_test(ols, vcov_ols)
+  res_samples[i, 3:5] <- c(res[2, 2], res[2, 3], res[2, 7])
+  res_samples[i, 9]   <- nobs(ols)
+
+  ## 2SLS: outcome ~ treat_TOT | treat (weighted)
+  iv_mod <- ivreg(as.formula(paste0(sample_outcomes[i], " ~ treat_TOT | treat")),
+                  data = samples, weights = samples$Qty)
+  vcov_iv <- vcovCR(iv_mod, cluster = samples$catch_ID, type = "CR2")
+  res_iv  <- coef_test(iv_mod, vcov_iv)
+  res_samples[i, 6:8] <- c(res_iv[2, 2], res_iv[2, 3], res_iv[2, 7])
+  res_samples[i, 10]  <- nobs(iv_mod)
+}
+
+## Anderson-Sharp q-values (exclude index row)
+idx <- 1:(length(sample_outcomes) - 1)
+res_samples[idx, 11] <- anderson_sharp_q(res_samples[idx, 5])
+res_samples[idx, 12] <- anderson_sharp_q(res_samples[idx, 8])
+res_samples <- round(res_samples, digits = 3)
+
+saveRDS(res_samples, file = paste(path, "paper/results/res_samples.rds", sep = "/"))
+
+
+###############################################################################
+## G. ATTRITION TESTS
 ###############################################################################
 
 attrition <- list()

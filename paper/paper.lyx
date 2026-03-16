@@ -260,6 +260,11 @@ res_MCCs <- readRDS(paste0(path, "/results/res_MCCs.rds"))
 
 \begin_layout Plain Layout
 
+res_samples <- readRDS(paste0(path, "/results/res_samples.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+
 attrition <- readRDS(paste0(path, "/results/attrition.rds"))
 \end_layout
 
@@ -1013,6 +1018,451 @@ Results: Experiment 1
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:results-exp1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Milk Quality
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:milk-quality"
+
+\end_inset
+
+We begin with the most direct evidence: supervised milk quality measurements collected at MCCs using the project's Lactoscan analyzers.
+ Table\InsetSpace ~
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:samples"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ reports ITT estimates from quantity-weighted regressions of milk composition on treatment assignment, with standard errors clustered at the catchment level.
+ The measurement and monitoring system significantly increased fat content by
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{res_samples[1,3]}
+\end_layout
+
+\end_inset
+
+ percentage points (RI
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$p =
+\backslash
+Sexpr{ri$samples$ri_p[1]}$
+\end_layout
+
+\end_inset
+
+) and reduced added water by
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{abs(res_samples[3,3])}
+\end_layout
+
+\end_inset
+
+ percentage points.
+ The Anderson index combining all five quality indicators shows an improvement of
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{res_samples[6,3]}
+\end_layout
+
+\end_inset
+
+ standard deviations (RI
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$p =
+\backslash
+Sexpr{ri$samples$ri_p[6]}$
+\end_layout
+
+\end_inset
+
+).
+ The omnibus randomization inference test confirms that the overall pattern of quality improvements is unlikely under the null (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$p =
+\backslash
+Sexpr{round(ri$omnibus$samples$omnibus_p, 3)}$
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[h]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Effect of Measurement and Monitoring System on Milk Quality}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{tab:samples}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& Control Mean & System Effect & RI $p$ & N
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (SD) & (SE) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Fat (
+\backslash
+%) &
+\backslash
+Sexpr{res_samples[1,1]} &
+\backslash
+Sexpr{res_samples[1,3]}$^{
+\backslash
+Sexpr{stars(ri$samples$ri_p[1])}}$ &
+\backslash
+Sexpr{round(ri$samples$ri_p[1],3)} &
+\backslash
+Sexpr{res_samples[1,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_samples[1,2]}) & (
+\backslash
+Sexpr{res_samples[1,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SNF (
+\backslash
+%) &
+\backslash
+Sexpr{res_samples[2,1]} &
+\backslash
+Sexpr{res_samples[2,3]}$^{
+\backslash
+Sexpr{stars(ri$samples$ri_p[2])}}$ &
+\backslash
+Sexpr{round(ri$samples$ri_p[2],3)} &
+\backslash
+Sexpr{res_samples[2,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_samples[2,2]}) & (
+\backslash
+Sexpr{res_samples[2,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Added water (
+\backslash
+%) &
+\backslash
+Sexpr{res_samples[3,1]} &
+\backslash
+Sexpr{res_samples[3,3]}$^{
+\backslash
+Sexpr{stars(ri$samples$ri_p[3])}}$ &
+\backslash
+Sexpr{round(ri$samples$ri_p[3],3)} &
+\backslash
+Sexpr{res_samples[3,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_samples[3,2]}) & (
+\backslash
+Sexpr{res_samples[3,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Protein (
+\backslash
+%) &
+\backslash
+Sexpr{res_samples[4,1]} &
+\backslash
+Sexpr{res_samples[4,3]}$^{
+\backslash
+Sexpr{stars(ri$samples$ri_p[4])}}$ &
+\backslash
+Sexpr{round(ri$samples$ri_p[4],3)} &
+\backslash
+Sexpr{res_samples[4,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_samples[4,2]}) & (
+\backslash
+Sexpr{res_samples[4,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Lactometer reading &
+\backslash
+Sexpr{res_samples[5,1]} &
+\backslash
+Sexpr{res_samples[5,3]}$^{
+\backslash
+Sexpr{stars(ri$samples$ri_p[5])}}$ &
+\backslash
+Sexpr{round(ri$samples$ri_p[5],3)} &
+\backslash
+Sexpr{res_samples[5,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_samples[5,2]}) & (
+\backslash
+Sexpr{res_samples[5,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Anderson index &
+\backslash
+Sexpr{res_samples[6,1]} &
+\backslash
+Sexpr{res_samples[6,3]}$^{
+\backslash
+Sexpr{stars(ri$samples$ri_p[6])}}$ &
+\backslash
+Sexpr{round(ri$samples$ri_p[6],3)} &
+\backslash
+Sexpr{res_samples[6,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_samples[6,2]}) & (
+\backslash
+Sexpr{res_samples[6,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{flushleft}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+small
+\backslash
+textit{Notes:} WLS regressions weighted by quantity delivered.
+ CR2 cluster-robust SEs in parentheses.
+ RI $p$-values from Fisher randomization inference (5,000 permutations).
+ * $p<0.1$, ** $p<0.05$, *** $p<0.01$ (RI).
+ Omnibus RI test:
+\backslash
+Sexpr{ri$omnibus$samples$obs_count} of 5 outcomes significant at 5
+\backslash
+% (omnibus $p =
+\backslash
+Sexpr{round(ri$omnibus$samples$omnibus_p, 3)}$).
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{flushleft}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
 
 \end_inset
 
