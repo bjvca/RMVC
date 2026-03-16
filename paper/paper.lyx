@@ -157,18 +157,19 @@ International Food Policy Research Institute (IFPRI)
 \end_layout
 
 \begin_layout Abstract
-[Placeholder abstract.
- This paper follows a three-act structure.
- Act 1 (Experiment 1): We deploy a quality measurement and digital monitoring
- system---milk analyzers coupled with digitalized bookkeeping---at dairy
- collection centers in Uganda and show that this quality infrastructure
- improves milk quality practices but does not generate quality-differentiated
- pricing---an enforcement equilibrium rather than a market for quality.
- Act 2 (Model): We develop a simple model with parameter alpha governing
- the strength of the price channel to rationalize these findings.
- Act 3 (Experiment 2): We directly activate the price channel through quality
- bonuses and show that explicit price incentives elicit further quality improvements,
- confirming that the missing ingredient was price differentiation, not information.]
+Quality measurement is necessary but insufficient for creating markets
+ for quality in agricultural value chains.
+ We conduct two experiments in Ugandan dairy supply chains.
+ First, a cluster-randomized trial deploying milk analyzers at 120 collection
+ centers improves milk quality by 0.21 SD but generates no price premiums---gains
+ arise entirely through enforcement, not pricing.
+ Second, a trader-level experiment exogenously providing quality-based premiums
+ increases quality when thresholds bind, yet premiums do not pass through
+ to farmers.
+ We develop a model nesting enforcement and pricing channels to rationalize
+ both findings.
+ Quality upgrading and price transmission require fundamentally separate
+ policy interventions.
 \end_layout
 
 \begin_layout Standard
@@ -342,44 +343,290 @@ name "sec:introduction"
 
 \end_inset
 
-[Placeholder introduction.
- This section lays out the narrative arc of the paper.
- Markets for quality require that quality be observable to both buyers and
- sellers.
- In many agricultural value chains in developing countries, quality is difficult
- to measure, leading to classic lemons problems where high-quality producers
- are not rewarded and have little incentive to invest in quality.
- We study whether introducing a quality measurement and digital monitoring
- system---milk analyzers that objectively assess fat content and solids-not-fat,
- combined with digitalized bookkeeping that tracks quality across deliveries
- and over time---can catalyze the emergence of quality-differentiated pricing
- in Ugandan dairy supply chains.
+In many agricultural value chains in developing countries, product quality
+ is difficult to observe at the point of first sale, and early aggregation
+ of output from multiple suppliers makes it nearly impossible to trace quality
+ back to individual producers.
+ These features give rise to a classic lemons problem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{2b080e07-2197-39e6-8e29-cfa83db9de24}
+\end_layout
+
+\end_inset
+
+: upstream actors---farmers and traders---cannot be rewarded for supplying
+ higher-quality output, so they underinvest in quality-enhancing practices.
+ A natural hypothesis, prominent in both the industrial-organization literature
+ and in policy discussions around value chain development, is that making
+ quality measurable and traceable should trigger the endogenous emergence
+ of quality-differentiated pricing---in short, a
+\begin_inset Quotes eld
+\end_inset
+
+market for quality.
+\begin_inset Quotes erd
+\end_inset
+
+ If buyers can verify what they are purchasing, the argument goes, price
+ premiums for quality will follow, realigning incentives throughout the chain
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{bold2022market,10.1093/qje/qjaa048,macchiavello2015value}
+\end_layout
+
+\end_inset
+
+.
+ Yet the conditions under which quality observability actually translates
+ into quality-based pricing remain poorly understood, particularly in the
+ smallholder-dominated supply chains where the information frictions are
+ most severe.
 \end_layout
 
 \begin_layout Standard
-Experiment 1 deploys a quality measurement and digital monitoring system---milk
- analyzers paired with digitalized quality tracking---at randomly selected
- Milk Collection Centers (MCCs), and provides an information video to randomly
- selected farmers, in a 2x2 factorial design.
- We find that this quality infrastructure improves milk quality practices
- and reduces adulteration, but does not lead to quality-differentiated pricing.
- This is an enforcement equilibrium, not a market for quality.
+This paper tests the measurement-to-pricing hypothesis using two sequential
+ field experiments in Ugandan dairy supply chains.
+ In Experiment 1, we deploy milk analyzers and a digitalized quality monitoring
+ system at approximately 120 randomly selected Milk Collection Centers (MCCs)---the
+ nodes where smallholder milk is first aggregated---in a cluster-randomized
+ design cross-randomized with a farmer-level information treatment.
+ Quality measurement infrastructure substantially increases testing at treatment
+ MCCs and produces significant improvements in milk quality: butterfat rises
+ by 0.11 percentage points, added water falls by 0.49 percentage points,
+ and an Anderson summary index of quality improves by 0.21 standard deviations.
+ Crucially, however, these gains arise entirely through an enforcement channel---the
+ system enables MCCs to detect and reject adulterated milk---rather than
+ through pricing.
+ Prices are completely unresponsive to the intervention.
+ No quality premiums emerge at any stage of the chain.
+ The market for quality does not materialize.
 \end_layout
 
 \begin_layout Standard
-To rationalize these findings, we develop a simple model in which a parameter
- alpha governs the extent to which the quality monitoring system is used
- for price differentiation versus enforcement.
- When alpha equals zero, the system is used purely for enforcement; when
- alpha is positive, prices are differentiated by quality.
+To rationalize these findings, we develop a simple model of MCC behavior
+ in which a parameter
+\begin_inset Formula $\alpha\in[0,1]$
+\end_inset
+
+ governs whether quality measurement is translated into quality-differentiated
+ pricing (
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+) or used solely for enforcement through acceptance thresholds (
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+).
+ Our Experiment 1 results are consistent with
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+: quality improves because the measurement technology raises the credibility
+ of rejection threats, but the downstream price schedule remains flat.
+ The model generates a clear testable prediction: if quality-based pricing
+ were activated exogenously---that is, if
+\begin_inset Formula $\alpha$
+\end_inset
+
+ were switched on from outside---additional quality gains and behavioral
+ responses should follow.
+ Experiment 2 tests exactly this prediction.
+ Working with 19 MCCs that already have the quality measurement system in
+ place, we randomly assign quality-based bonus payments to milk traders---the
+ intermediaries linking farmers to MCCs.
+ In a first stage, when quality is abundant, treated traders respond by scaling
+ up the volume of milk they deliver.
+ In a second stage, after we raise the quality threshold to simulate scarcity
+ conditions, traders shift to sourcing higher-quality milk, with butterfat
+ increasing by 0.17 percentage points.
+ Yet even with explicit, exogenous quality premiums, prices do not pass through
+ to the farmers from whom traders source their milk.
+ The value chain fails to transmit price signals upstream.
 \end_layout
 
 \begin_layout Standard
-Experiment 2 directly tests the price channel by introducing quality bonuses
- at MCCs that already have the measurement and monitoring system.
- We find that activating the price channel through explicit bonuses elicits
- further quality improvements, confirming that the missing ingredient was
- not information but price incentives.]
+These results contribute to several literatures.
+ First, we provide a mechanism decomposition for the effects of quality
+ measurement technology in agricultural value chains.
+ A growing body of work studies quality problems in developing-country markets
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{bold2022market,saenger2013contract,RAO2023708}
+\end_layout
+
+\end_inset
+
+, and recent contributions have examined how measurement and monitoring
+ technologies can improve market outcomes
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{jensen2007digital,rustagi2022measuring,duflo2013truth}
+\end_layout
+
+\end_inset
+
+.
+ Our contribution is to show that quality measurement operates through enforcement
+ rather than pricing, a distinction that existing work has not drawn.
+ This matters for policy: a system that improves quality through the threat
+ of rejection has very different welfare and distributional implications
+ than one that rewards quality through higher prices.
+ Second, we provide direct experimental evidence on the price channel by
+ exogenously activating quality-based pricing, complementing the observational
+ evidence in
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citet{saenger2013contract}
+\end_layout
+
+\end_inset
+
+ on quality grading in Vietnamese dairy and the structural analysis of relational
+ contracting in
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citet{macchiavello2015value}
+\end_layout
+
+\end_inset
+
+ and
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citet{10.1093/qje/qjaa048}
+\end_layout
+
+\end_inset
+
+.
+ Third, we document a striking failure of price transmission: quality premiums
+ paid to traders do not reach the farmers who ultimately determine raw milk
+ quality, highlighting that the institutional conditions for transmitting
+ price signals along the chain constitute a separate and binding constraint
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{swinnen2007globalization,casaburi2019infrequent}
+\end_layout
+
+\end_inset
+
+.
+ Together, these findings imply that quality measurement technology is necessary
+ but not sufficient for creating markets for quality; the emergence of quality-differentiated
+ pricing requires separate policy attention to the institutional and organizational
+ conditions that govern how price signals are formed and transmitted.
+\end_layout
+
+\begin_layout Standard
+The remainder of the paper is organized as follows.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:context"
+nolink "false"
+
+\end_inset
+
+ describes Uganda's dairy value chain and the institutional constraints
+ that motivate the study.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:model"
+nolink "false"
+
+\end_inset
+
+ develops the conceptual framework.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:experiment1"
+nolink "false"
+
+\end_inset
+
+ presents the design, data, and results of Experiment 1.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:experiment2"
+nolink "false"
+
+\end_inset
+
+ presents Experiment 2.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:conclusion"
+nolink "false"
+
+\end_inset
+
+ concludes.
 \end_layout
 
 \begin_layout Section
