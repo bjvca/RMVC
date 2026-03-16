@@ -466,12 +466,31 @@ stage2     <- trader_day[trader_day$date >= as.Date("2025-11-15"), ]
 sub_outcomes <- c("avg_fat", "avg_snf", "total_qty", "bonus")
 periods <- list(full = post_treat, s1 = stage1, s2 = stage2)
 
-## Observed coefficients: 4 outcomes x 3 periods
+## Demean outcomes within MCC to match the feols FE specification
+## This ensures the RI test statistic corresponds to the within-MCC estimator
+for (y in sub_outcomes) {
+  for (period_name in names(periods)) {
+    dat <- periods[[period_name]]
+    mcc_means <- tapply(dat[[y]], dat$MCC_ID, mean, na.rm = TRUE)
+    dat[[paste0(y, "_dm")]] <- dat[[y]] - as.numeric(mcc_means[as.character(dat$MCC_ID)])
+    periods[[period_name]] <- dat
+  }
+  mcc_m <- tapply(trader_day[[y]], trader_day$MCC_ID, mean, na.rm = TRUE)
+  trader_day[[paste0(y, "_dm")]] <- trader_day[[y]] - as.numeric(mcc_m[as.character(trader_day$MCC_ID)])
+}
+## Also demean the full subsets
+post_treat <- periods$full
+stage1 <- periods$s1
+stage2 <- periods$s2
+
+sub_outcomes_dm <- paste0(sub_outcomes, "_dm")
+
+## Observed coefficients: 4 outcomes x 3 periods (using demeaned outcomes)
 obs_sub <- matrix(NA, nrow = length(sub_outcomes), ncol = length(periods))
 for (j in seq_along(periods)) {
   dat <- periods[[j]]
   for (i in seq_along(sub_outcomes)) {
-    ols <- lm(as.formula(paste(sub_outcomes[i], "~ treatment")), data = dat)
+    ols <- lm(as.formula(paste(sub_outcomes_dm[i], "~ treatment")), data = dat)
     obs_sub[i, j] <- coef(ols)["treatment"]
   }
 }
@@ -508,7 +527,7 @@ for (p in 1:n_perms) {
            else trader_day[trader_day$date >= as.Date("2025-11-15"), ]
 
     for (i in seq_along(sub_outcomes)) {
-      ols <- lm(as.formula(paste(sub_outcomes[i], "~ treat_perm")), data = dat)
+      ols <- lm(as.formula(paste(sub_outcomes_dm[i], "~ treat_perm")), data = dat)
       ri_sub[p, i, j] <- coef(ols)["treat_perm"]
     }
   }
@@ -541,9 +560,16 @@ trader_outcomes <- c("Fat_supervised", "delivered_quantity", "any_rejected",
 trader_map_endline <- traders[, c("trader_ID", "MCC_ID", "treat")]
 treat_counts_endline <- tapply(trader_map_endline$treat, trader_map_endline$MCC_ID, sum)
 
+## Demean trader outcomes within MCC to match feols FE specification
+for (y in trader_outcomes) {
+  mcc_means <- tapply(traders[[y]], traders$MCC_ID, mean, na.rm = TRUE)
+  traders[[paste0(y, "_dm")]] <- traders[[y]] - as.numeric(mcc_means[as.character(traders$MCC_ID)])
+}
+trader_outcomes_dm <- paste0(trader_outcomes, "_dm")
+
 obs_trader <- numeric(length(trader_outcomes))
 for (i in seq_along(trader_outcomes)) {
-  ols <- lm(as.formula(paste(trader_outcomes[i], "~ treat")), data = traders)
+  ols <- lm(as.formula(paste(trader_outcomes_dm[i], "~ treat")), data = traders)
   obs_trader[i] <- coef(ols)["treat"]
 }
 
@@ -568,7 +594,7 @@ for (p in 1:n_perms) {
 
   for (i in seq_along(trader_outcomes)) {
     traders$treat_perm <- perm_map$treat_perm[match(traders$trader_ID, perm_map$trader_ID)]
-    ols <- lm(as.formula(paste(trader_outcomes[i], "~ treat_perm")), data = traders)
+    ols <- lm(as.formula(paste(trader_outcomes_dm[i], "~ treat_perm")), data = traders)
     ri_trader[p, i] <- coef(ols)["treat_perm"]
   }
 }
@@ -589,9 +615,16 @@ farmer_fu_outcomes <- c("avg_price", "quality_checked", "feeding_index",
                         "used_bran", "used_residu", "used_lick", "used_cgrazing")
 
 ## Farmers inherit treatment from their trader
+## Demean farmer outcomes within MCC to match feols FE specification
+for (y in farmer_fu_outcomes) {
+  mcc_means <- tapply(farmers_fu[[y]], farmers_fu$MCC_ID, mean, na.rm = TRUE)
+  farmers_fu[[paste0(y, "_dm")]] <- farmers_fu[[y]] - as.numeric(mcc_means[as.character(farmers_fu$MCC_ID)])
+}
+farmer_fu_outcomes_dm <- paste0(farmer_fu_outcomes, "_dm")
+
 obs_farmer_fu <- numeric(length(farmer_fu_outcomes))
 for (i in seq_along(farmer_fu_outcomes)) {
-  ols <- lm(as.formula(paste(farmer_fu_outcomes[i], "~ treat")), data = farmers_fu)
+  ols <- lm(as.formula(paste(farmer_fu_outcomes_dm[i], "~ treat")), data = farmers_fu)
   obs_farmer_fu[i] <- coef(ols)["treat"]
 }
 
@@ -619,7 +652,7 @@ for (p in 1:n_perms) {
     match(farmers_fu$trader_ID, perm_map$trader_ID)]
 
   for (i in seq_along(farmer_fu_outcomes)) {
-    ols <- lm(as.formula(paste(farmer_fu_outcomes[i], "~ treat_perm")), data = farmers_fu)
+    ols <- lm(as.formula(paste(farmer_fu_outcomes_dm[i], "~ treat_perm")), data = farmers_fu)
     ri_farmer_fu[p, i] <- coef(ols)["treat_perm"]
   }
 }
