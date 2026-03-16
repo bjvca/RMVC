@@ -51,7 +51,7 @@ knitr
 \pdf_backref false
 \pdf_pdfusetitle true
 \papersize default
-\use_geometry true
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
@@ -343,10 +343,12 @@ name "sec:introduction"
 
 \end_inset
 
-Quality is central to value chain development.
- Higher-quality inputs improve processing efficiency, reduce waste, and support
- compliance with domestic and export standards; maintaining quality during
- aggregation, storage, and transport is critical for food safety
+Quality of commodities transacted within value chains, and the preservation
+ of that quality throughout the chain, is central to value chain development.
+ Higher-quality inputs improve processing efficiency by yielding more output
+ per unit of input and reducing waste; maintaining quality during aggregation,
+ storage, transport, and processing is critical for food safety and consumer
+ health
 \begin_inset ERT
 status open
 
@@ -360,52 +362,28 @@ citep{REARDON2000195,MINTEN20091728}
 \end_inset
 
 .
- Yet in many agricultural supply chains in developing countries, quality
- remains difficult to observe at the point of first sale, and early aggregation
- of output from multiple suppliers makes it nearly impossible to trace quality
- back to individual producers.
- These features give rise to a classic lemons problem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{2b080e07-2197-39e6-8e29-cfa83db9de24}
+ Beyond these direct effects, consistent quality fosters trust and reputation
+ among chain participants, supports compliance with domestic and export
+ standards, and facilitates access to higher-value markets.
+ As a result, the transformation of value chains in developing countries
+ is often accompanied by substantial quality upgrading, reshaping incentives,
+ market structures, and the distribution of value along the chain.
+ In agrifood systems, where perishability amplifies quality risks and where
+ smallholder production is the norm, these dynamics are especially consequential:
+ the ability to produce, preserve, and verify quality determines whether
+ small-scale producers can participate in modernizing value chains or are
+ excluded from them.
+ Understanding what drives quality upgrading---and what prevents it---is
+ therefore a first-order question for both economic efficiency and rural
+ development.
 \end_layout
 
-\end_inset
-
-: upstream actors cannot be rewarded for supplying higher-quality output,
- so they underinvest in quality-enhancing practices.
- A natural hypothesis, prominent in both the industrial-organization literature
- and in policy discussions around value chain upgrading, is that making quality
- measurable and traceable should trigger the endogenous emergence of quality-differentiated
- pricing---in short, a
-\begin_inset Quotes eld
-\end_inset
-
-market for quality
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{bold2022market,10.1093/qje/qjaa048,macchiavello2015value}
-\end_layout
-
-\end_inset
-
-.
- If buyers can verify what they are purchasing, price premiums for quality
- should follow, realigning incentives throughout the chain
+\begin_layout Standard
+For quality to become an important driver of behavior, actors along the
+ chain must be properly incentivized to produce and preserve it.
+ In many markets, such incentives take the form of price premiums for higher-quality
+ products, which reward the additional effort or investment required to meet
+ quality standards
 \begin_inset ERT
 status open
 
@@ -419,37 +397,202 @@ citep{https://doi.org/10.1111/j.1574-0862.2007.00237.x}
 \end_inset
 
 .
+ When buyers are willing and able to pay more for quality, producers have
+ stronger incentives to adopt better inputs and practices---improved feeding,
+ better breeds, more hygienic handling---while intermediaries are more likely
+ to safeguard quality during aggregation, storage, and transport.
+ Empirical evidence from developing-country value chains confirms that price
+ premiums can be powerful levers for upgrading: bonuses for compositional
+ quality in dairy, premiums for grade in horticulture, and price schedules
+ tied to certification in export crops have all been shown to induce behavioral
+ change among upstream actors
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{REARDON2000195,MINTEN20091728,https://doi.org/10.1111/agec.12012}
+\end_layout
+
+\end_inset
+
+.
+ In the absence of such premiums, however, quality improvements may not
+ be financially viable, and actors may instead prioritize volume over quality,
+ leading to a low-quality equilibrium in which no participant has the incentive
+ to deviate unilaterally.
+ The critical question is therefore not merely whether quality matters for
+ value chain performance, but whether and how quality-based price incentives
+ emerge and transmit through chains that are characterized by information
+ frictions, intermediation, and fragmented production.
+\end_layout
+
+\begin_layout Standard
+The emergence of quality-based pricing is often hindered by difficulties
+ in observing and verifying quality at the point of transaction.
+ When quality attributes are not directly visible to the buyer and are costly
+ to discover, the market faces a classic problem of asymmetric information.
+ Without credible verification mechanisms, high- and low-quality products
+ trade at similar prices, eroding incentives to invest in quality and potentially
+ leading to adverse selection equilibria in which high-quality producers
+ exit and average quality deteriorates
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{2b080e07-2197-39e6-8e29-cfa83db9de24}
+\end_layout
+
+\end_inset
+
+.
+ Aggregation across suppliers further weakens the connection between individual
+ performance and observed quality: when milk from dozens or hundreds of
+ producers is pooled into a single cooling tank, the contribution of any
+ one supplier becomes undetectable, and even a buyer who wishes to pay for
+ quality cannot identify whom to reward.
+ The absence of traceability thus prevents quality-enhancing investments
+ from translating into higher returns.
+ Additional constraints arise from the coordination and investment required
+ to establish quality-based payment systems, including grading, certification,
+ and monitoring infrastructure---costs that may be prohibitive for small-scale
+ aggregation points in developing countries
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{bold2022market,10.1093/qje/qjaa048}
+\end_layout
+
+\end_inset
+
+.
+ A natural hypothesis, prominent in both the industrial-organization literature
+ and in policy discussions around value chain upgrading, is that making quality
+ measurable and traceable should trigger the endogenous emergence of quality-differentiated
+ pricing---in short, a
+\begin_inset Quotes eld
+\end_inset
+
+market for quality.
+\begin_inset Quotes erd
+\end_inset
+
+ If buyers can verify what they are purchasing, price premiums for quality
+ should follow, realigning incentives throughout the chain
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{macchiavello2015value}
+\end_layout
+
+\end_inset
+
+.
  Yet the conditions under which quality observability actually translates
  into quality-based pricing remain poorly understood, particularly in the
  smallholder-dominated supply chains where the information frictions are
  most severe.
- This paper provides the first experimental test of this measurement-to-pricing
+\end_layout
+
+\begin_layout Standard
+Another fundamental constraint to quality upgrading lies in the imperfect
+ transmission of information across chain nodes.
+ Quality signals attenuate as the distance between actors increases: upstream
+ producers and downstream processors often develop divergent conceptions
+ of what constitutes quality, especially in the absence of shared standards
+ or explicit product specifications
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{https://doi.org/10.1111/agec.12731,Ponte01022005,Gereffi01022005}
+\end_layout
+
+\end_inset
+
+.
+ Producers tend to focus on easily observable attributes---such as cleanliness,
+ freshness, or appearance---that are only weakly correlated with processing
+ outcomes, while overlooking compositional or chemical traits that buyers
+ value more highly.
+ This misalignment of quality perceptions leads to inefficient allocation
+ of effort: producers invest in attributes that yield limited market returns,
+ while neglecting the dimensions of quality that would actually command
+ a premium if properly measured and communicated.
+ The structure of the value chain itself can exacerbate these challenges.
+ When producers and processors are linked only indirectly through layers
+ of traders or informal intermediaries, the likelihood of traceability breaking
+ down increases substantially.
+ Intermediated chains may further limit information flows: traders may not
+ transmit, or may even distort, processors' signals about which quality
+ attributes matter most, leaving producers with little guidance for aligning
+ their practices with downstream demand
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{KEMBRO201777}
+\end_layout
+
+\end_inset
+
+.
+ By contrast, in chains where producers are more directly connected to processors,
+ opportunities for credible testing, traceability, and clearer communication
+ of standards are greater, increasing the scope for effective quality-based
+ incentives to emerge.
+ The role of intermediaries as potential barriers to---or facilitators of---price
+ signal transmission is therefore central to understanding whether quality
+ measurement can catalyze markets for quality.
+\end_layout
+
+\begin_layout Standard
+This paper provides the first experimental test of the measurement-to-pricing
  hypothesis---and finds that the hypothesis fails.
+ We study this question using two sequential field experiments in Ugandan
+ dairy supply chains, a setting that is ideal for examining these dynamics.
+ Making quality measurable dramatically improves quality, but exclusively
+ through an enforcement channel---the credible threat of rejecting adulterated
+ deliveries---rather than through the emergence of quality-differentiated
+ pricing.
+ No market for quality materializes.
+ We then provide the price incentives directly, experimentally activating
+ the price channel that the market itself did not generate, and show that
+ intermediaries respond to quality premiums but do not transmit them upstream
+ to the farmers who ultimately determine raw milk quality.
+ Together, the two experiments decompose the effects of quality measurement
+ technology into enforcement and pricing components, and reveal that price
+ transmission failure through intermediaries constitutes a separate and
+ binding constraint on quality upgrading---one that quality measurement
+ alone cannot address.
 \end_layout
 
 \begin_layout Standard
-We study this question using two sequential field experiments in Ugandan
- dairy supply chains.
- Experiment 1 is a cluster-randomized controlled trial in which we deploy
- digital milk analyzers and a quality monitoring system at approximately
- 120 randomly selected Milk Collection Centers (MCCs)---the nodes where
- smallholder milk from roughly 800 farmers is first aggregated---cross-randomized
- with a farmer-level information treatment designed to align producers'
- understanding of quality with processor priorities.
- Experiment 2 is a trader-level RCT conducted at 19 MCCs that already have
- the measurement infrastructure in place, in which we randomly assign explicit
- quality-based bonus payments to 99 milk traders---the intermediaries linking
- farmers to MCCs---and track daily delivery records and endline surveys
- over approximately 30 days.
- Together, the two experiments allow us to separate the effects of quality
- observability from the effects of quality-based pricing, and to trace
- how price signals do or do not transmit upstream through the chain.
-\end_layout
-
-\begin_layout Standard
-The setting is Uganda's southwestern milk shed, an area that has undergone
- rapid value chain transformation over the past decade as foreign direct
- investment has spurred the development of modern dairy processing
+The setting is Uganda's southwestern milk shed, an area centered on the
+ town of Mbarara that has undergone rapid value chain transformation over
+ the past decade.
+ Foreign direct investment has spurred the development of a modern processing
+ cluster, and a dense network of Milk Collection Centers (MCCs) now connects
+ smallholder dairy farmers to a growing set of processors
 \begin_inset ERT
 status open
 
@@ -463,25 +606,31 @@ citep{https://doi.org/10.1111/agec.12638}
 \end_inset
 
 .
- A dense network of MCCs now connects smallholder dairy farmers to a growing
- cluster of processors.
  In dairy, quality is economically important: compositional attributes---butterfat,
- protein, solids-not-fat---determine processing yields for products such
- as cheese, casein, and infant formula.
- Yet unlike more developed dairy markets, there is generally no functioning
- market for quality in Uganda.
+ protein, solids-not-fat (SNF)---determine processing yields for products
+ such as cheese, casein, yogurt, and infant formula, and maintaining sanitary
+ conditions is essential given the extreme perishability of raw milk.
+ Yet unlike in more developed dairy markets, where compositional testing
+ at the point of first sale is standard and prices are routinely differentiated
+ by butterfat content, there is generally no functioning market for quality
+ in Uganda.
  Prices are fixed per liter, irrespective of composition.
- Part of the problem lies in divergent quality perceptions: farmers associate
- quality with hygiene---clean containers, washed udders---while processors
- prioritize compositional parameters driven largely by feeding practices
- and breed.
+ Part of the problem lies in sharply divergent understandings of quality
+ across chain actors.
+ Dairy farmers typically associate quality with hygiene practices---using
+ clean containers, washing udders before milking, filtering milk---while
+ processors prioritize compositional parameters such as butterfat and SNF,
+ which are driven largely by feeding practices, breed, and lactation stage
+ rather than by the handling practices that farmers emphasize.
  Another part lies in the lack of technological capacity to measure and
  communicate compositional quality at the point of aggregation: most MCCs
- limit testing to freshness and basic adulteration checks, and farmers rarely
- receive test results.
+ limit testing to freshness checks (the alcohol test) and basic adulteration
+ detection (primarily for added water), and farmers rarely have access to
+ test results or feedback on the compositional quality of their milk.
  When producers and processors are linked only indirectly through layers
- of traders, the likelihood of traceability breaking down increases, and
- traders may not transmit---or may distort---processors' quality signals
+ of small traders---the dominant mode of market access for many farmers---the
+ likelihood of traceability breaking down increases further, and traders
+ may not transmit or may distort the quality signals that processors send
 \begin_inset ERT
 status open
 
@@ -495,28 +644,46 @@ citep{KEMBRO201777,https://doi.org/10.1111/agec.12731}
 \end_inset
 
 .
+ The Ugandan dairy chain thus exhibits all the features that the theory
+ identifies as barriers to markets for quality: unobservable quality, pooled
+ aggregation, divergent perceptions, and intermediated exchange.
 \end_layout
 
 \begin_layout Standard
-Experiment 1 deploys milk analyzers, digital record-keeping, and farmer-facing
- information campaigns at treatment MCCs.
+Experiment 1 is a cluster-randomized controlled trial designed to test whether
+ making quality measurable and visible can trigger the emergence of quality-based
+ pricing.
+ We deploy digital milk analyzers (Lactoscans that read butterfat, SNF,
+ protein, density, and water content) together with a digitalized bookkeeping
+ system for tracking quality over time at approximately 120 randomly selected
+ MCCs.
+ This is a bundled intervention: compositional measurement plus digital
+ record-keeping, designed to make quality both observable in real time and
+ traceable over time.
  The MCC-level intervention is cluster-randomized at the catchment-area
- level; the farmer-level information treatment is cross-randomized within
- MCCs in a 2
+ level; it is cross-randomized with a farmer-level information treatment---a
+ quality awareness video designed to align farmers' understanding of quality
+ with processor priorities---in a 2
 \begin_inset Formula $\times$
 \end_inset
 
-2 factorial design.
- We collect endline survey data from MCCs and farmers, and we draw independent
- milk samples for laboratory analysis to obtain objective quality measures
- uncontaminated by reporting bias.
+2 factorial design, with full factorial results reported in the Online Appendix
+ and the main text focusing on the measurement system.
+ We survey approximately 800 farmers at baseline and endline, and crucially,
+ we draw independent supervised milk samples at endline using project Lactoscans
+ to obtain objective quality measures uncontaminated by self-reporting or
+ MCC measurement bias.
+ All statistical inference uses CR2 cluster-robust standard errors clustered
+ at the catchment-area level, and we report randomization inference p-values
+ based on 5,000 permutations throughout.
 \end_layout
 
 \begin_layout Standard
 Experiment 1 produces three sets of results.
- First, the intervention massively increases quality testing: the probability
- that an MCC tests incoming milk rises by 53.3 percentage points (randomization
- inference
+ First, the measurement system dramatically increases quality testing at
+ MCCs.
+ The probability that an MCC tests incoming milk rises by 53.3 percentage
+ points (randomization inference
 \begin_inset Formula $p<0.001$
 \end_inset
 
@@ -529,8 +696,12 @@ Experiment 1 produces three sets of results.
 \end_inset
 
  with two of six individually significant.
- Second, milk quality improves substantially: butterfat increases by 0.114
- percentage points (RI
+ The intervention fundamentally changes what MCCs know about the milk passing
+ through them: treatment MCCs shift from a regime of minimal freshness checks
+ to one in which compositional quality is routinely measured and recorded.
+ Second, milk quality improves substantially.
+ Supervised milk samples show that butterfat increases by 0.114 percentage
+ points (RI
 \begin_inset Formula $p=0.002$
 \end_inset
 
@@ -548,28 +719,64 @@ Experiment 1 produces three sets of results.
 \end_inset
 
  with three of five individually significant.
- The pattern of effects---water down, fat up, but solids-not-fat and protein
- unchanged---is consistent with reduced adulteration (less water added to
- milk) rather than deeper shifts in production practices such as improved
- feeding.
- Third, and crucially, prices are completely unresponsive.
- Average farmer sales price (RI
+ The pattern of effects is telling: water content falls and fat content
+ rises---the two variables most directly affected by adulteration through
+ water addition---while SNF and protein, which are biologically determined
+ by breed, feeding, and lactation stage, remain unchanged.
+ This is consistent with reduced adulteration rather than deeper shifts
+ in production practices.
+ The quality improvement reflects a behavioral response: farmers and traders
+ reduce water addition because detection is now credible, not because they
+ have adopted new feeding or management practices that would improve the
+ underlying biological composition of the milk.
+\end_layout
+
+\begin_layout Standard
+Third, and most strikingly, prices are completely unresponsive at every
+ stage of the chain.
+ Despite substantial and statistically significant quality improvements,
+ neither the measurement intervention nor the farmer-level information treatment
+ affects pricing at any node.
+ Average farmer sales price is null (RI
 \begin_inset Formula $p=0.215$
 \end_inset
 
-), whether the farmer receives a quality bonus (RI
+), whether the farmer receives a quality bonus is null (RI
 \begin_inset Formula $p=0.439$
 \end_inset
 
-), and all four outcomes in the farmer pricing family are individually
- null; the omnibus test yields
+), and all four outcomes in the farmer pricing family are individually insignificant;
+ the omnibus test yields
 \begin_inset Formula $p=1.0$
 \end_inset
 
 .
- MCC-level pricing outcomes are similarly null.
- No quality premiums emerge at any stage of the chain.
- The market for quality does not materialize.
+ MCC-level pricing outcomes are similarly null: the price MCCs pay to farmers
+ (RI
+\begin_inset Formula $p=0.304$
+\end_inset
+
+), the price MCCs receive from processors (RI
+\begin_inset Formula $p=0.865$
+\end_inset
+
+), whether MCCs give quality bonuses to suppliers (RI
+\begin_inset Formula $p=0.635$
+\end_inset
+
+), and whether MCCs receive quality bonuses from processors (RI
+\begin_inset Formula $p=0.674$
+\end_inset
+
+) are all null.
+ The market for quality simply does not emerge.
+ Quality measurement improves quality, but there is no corresponding shift
+ in the price structure that would create continuous incentives for further
+ improvement.
+ The enforcement channel---the credible threat of rejection for adulterated
+ deliveries---bites; the price channel does not activate.
+ This is a central finding: making quality observable is not sufficient
+ to generate quality-differentiated pricing.
  The cross-randomized farmer-level information treatment has no significant
  independent effects on primary outcomes; full factorial results are reported
  in the Online Appendix.
@@ -577,61 +784,90 @@ Experiment 1 produces three sets of results.
 
 \begin_layout Standard
 To rationalize these findings, we develop a simple model of MCC behavior
- in which a parameter
+ that nests two channels through which quality measurement can improve outcomes.
+ A parameter
 \begin_inset Formula $\alpha\in[0,1]$
 \end_inset
 
- governs whether quality measurement is translated into quality-differentiated
- pricing (
-\begin_inset Formula $\alpha>0$
-\end_inset
-
-) or used solely for enforcement through acceptance thresholds (
+ governs the extent to which the MCC translates quality measurement into
+ quality-differentiated pricing.
+ When
 \begin_inset Formula $\alpha=0$
 \end_inset
 
-).
- The model nests two channels through which quality measurement can improve
- outcomes: a price channel, in which MCCs pass quality information into
- price schedules that reward higher-quality milk, and an enforcement channel,
- in which MCCs use measurement to credibly threaten rejection of adulterated
- deliveries.
+, quality measurement is used purely for enforcement: the MCC sets an acceptance
+ threshold and credibly threatens to reject deliveries that fall below it,
+ but the price schedule remains flat for all milk that passes the threshold.
+ When
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+, quality information enters the price schedule, and suppliers receive higher
+ prices for higher-quality milk above the threshold.
+ The model shows that the two channels have distinct behavioral signatures.
+ Under pure enforcement (
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+), quality improvements are concentrated at the lower tail of the distribution---suppliers
+ who would otherwise fall below the threshold adjust upward, but suppliers
+ already above the threshold have no incentive to improve further.
+ Under pricing (
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+), improvements extend across the entire distribution, and price pass-through
+ to upstream suppliers should be observed.
  The Experiment 1 results are consistent with
 \begin_inset Formula $\alpha=0$
 \end_inset
 
-: quality improves because the measurement technology raises the credibility
- of rejection threats, but the downstream price schedule remains flat.
- The model generates a clear testable prediction: if quality-based pricing
- were activated exogenously---that is, if
+: quality improves through reduced adulteration (a threshold response) but
+ prices remain flat.
+ The model generates a clear testable prediction: if
 \begin_inset Formula $\alpha$
 \end_inset
 
- were switched on from outside---we should observe additional quality gains
- and behavioral responses among upstream actors.
- Experiment 2 tests exactly this.
+ were activated exogenously---that is, if quality-based pricing were switched
+ on from outside---we should observe additional quality responses beyond
+ the enforcement threshold, behavioral adjustments among upstream actors,
+ and price pass-through.
+ Experiment 2 tests exactly this prediction.
 \end_layout
 
 \begin_layout Standard
-In Experiment 2, we work with 19 MCCs where the measurement system is already
- operational and randomly assign quality premiums to traders who deliver
- milk to these MCCs.
- Treated traders receive UGX 100 per liter for each 0.1 percentage point
- of butterfat and solids-not-fat above East African standards (3.3 percent
- fat, 8.5 percent SNF), paid daily via mobile money.
- The experiment proceeds in two stages: in Stage 1, thresholds are set at
- the East African standards, coinciding with the rainy season when high-quality
- milk is naturally abundant; in Stage 2, the fat threshold is raised from
- 3.3 to 3.9 percent, simulating dry-season scarcity conditions under which
- sourcing high-quality milk requires active effort.
+In Experiment 2, we build on Experiment 1's measurement infrastructure to
+ provide the first experimental test of the quality-pricing channel in an
+ agricultural value chain.
+ We work with 19 MCCs where the digital quality monitoring system is already
+ installed and operational, and randomly assign quality-based bonus payments
+ to 99 milk traders---the key intermediaries linking farmers to MCCs---within
+ MCC blocks.
+ Treated traders receive UGX 100 per liter for every 0.1 percentage point
+ of butterfat and SNF above East African Community standards (3.3 percent
+ fat, 8.5 percent SNF), paid daily via mobile money based on Lactoscan
+ readings at the MCC.
+ The experiment proceeds in two stages designed to vary the scarcity of
+ quality: in Stage 1, thresholds are set at the EAC standards, coinciding
+ with the rainy season when high-quality milk is naturally abundant and
+ most deliveries already exceed the standard; in Stage 2, the fat threshold
+ is raised from 3.3 to 3.9 percent, simulating scarcity conditions under
+ which sourcing high-quality milk requires active effort---selective purchasing,
+ route changes, or upstream investments.
+ We observe 5,596 daily milk submissions recorded digitally by the Lactoscans
+ at MCCs, and collect endline surveys from the 99 traders and 422 farmers
+ in their supply networks.
+ All specifications include MCC fixed effects, and farmer-level outcomes
+ are clustered at the trader level.
 \end_layout
 
 \begin_layout Standard
-The results reveal strikingly different trader responses across the two
- stages.
- In Stage 1, when quality is abundant, treated traders respond primarily
- on the volume margin: daily quantity delivered increases by 126 liters
- (RI
+The Experiment 2 results reveal strikingly different trader responses across
+ the two stages, consistent with the model's predictions about how the price
+ channel operates.
+ In Stage 1, when high-quality milk is abundant, treated traders respond
+ primarily on the extensive margin: daily volume delivered increases by 126
+ liters (RI
 \begin_inset Formula $p=0.005$
 \end_inset
 
@@ -640,47 +876,72 @@ The results reveal strikingly different trader responses across the two
 \end_inset
 
 ).
- With high-quality milk already plentiful, the most profitable response
- is simply to collect more of it.
- In Stage 2, once the higher threshold makes quality scarce, the pattern
- shifts: treated traders deliver milk with significantly higher fat content,
- up 0.169 percentage points (RI
+ This is the profit-maximizing response: when quality already exceeds the
+ bonus threshold for most deliveries, the highest return comes from simply
+ collecting more milk, each additional liter earning the bonus.
+ In Stage 2, once the raised fat threshold makes quality scarce, the pattern
+ shifts from the extensive to the intensive margin: treated traders deliver
+ milk with significantly higher fat content, up 0.169 percentage points
+ (RI
 \begin_inset Formula $p<0.001$
 \end_inset
 
-), and SNF also improves significantly; all four primary outcomes are individually
- significant and the omnibus test rejects at
+), and SNF also improves significantly; all four primary submission-level
+ outcomes are individually significant and the omnibus test rejects at
 \begin_inset Formula $p=0.001$
 \end_inset
 
 .
  Traders shift from volume expansion to quality-based sourcing when the
- margin of adjustment that matters changes.
- Yet the most striking finding concerns price transmission.
- Treated traders do not pass the quality premium upstream to farmers.
- If anything, the estimated effect on farm-gate prices is negative: -17
- UGX per liter (RI
+ margin of adjustment that matters changes---a clean demonstration that
+ intermediaries can and do improve quality when appropriately incentivized,
+ and that the null price and quality-sourcing results in Experiment 1 reflect
+ the absence of incentives rather than an inability to respond.
+\end_layout
+
+\begin_layout Standard
+Yet the most striking finding of Experiment 2 concerns price transmission.
+ Quality premiums paid to traders do not pass through to the farmers who
+ supply them.
+ Treated traders do not pay farmers more for milk; if anything, the estimated
+ effect on farm-gate prices is negative: -17 UGX per liter (RI
 \begin_inset Formula $p=0.017$
 \end_inset
 
 ).
  Even when explicit, exogenous quality premiums are injected into the chain,
  the value chain fails to transmit price signals to the producers who ultimately
- determine raw milk quality.
- Farmer feeding practices show marginally significant improvements (RI
+ determine raw milk quality through their feeding, breeding, and management
+ decisions.
+ There is some evidence of information transmission---farmer feeding practices
+ show marginally significant improvements (RI
 \begin_inset Formula $p=0.076$
 \end_inset
 
- with fixed-effect demeaning), but trader endline outcomes are null across
- all five measures---effects visible in the daily digital data do not survive
- into the endline survey, likely reflecting timing and power limitations.
+ with MCC fixed-effect demeaning), suggesting that treated traders may communicate
+ some quality information to their suppliers even as they withhold the price
+ signal---but the dominant pattern is one of intermediary absorption.
+ Trader endline survey outcomes are null across all five measures, suggesting
+ that the effects visible in the daily digital data do not survive into
+ the endline survey period, likely reflecting timing and power limitations
+ in the survey-based measurement.
+ The price transmission failure implies that even if MCCs were to adopt
+ quality-differentiated pricing (i.e., even if
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ emerged endogenously), the resulting price signals would be unlikely to
+ reach farmers through the intermediated chains that dominate this market,
+ limiting the scope for sustained quality upgrading driven by upstream behavioral
+ change.
 \end_layout
 
 \begin_layout Standard
-These results contribute to several literatures.
+These results contribute to three literatures.
  First, we provide the first mechanism decomposition for the effects of
  quality measurement technology in agricultural value chains.
- A growing body of work studies quality problems in developing-country markets
+ A growing body of work studies quality problems in developing-country markets,
+ including the role of input quality
 \begin_inset ERT
 status open
 
@@ -688,13 +949,12 @@ status open
 
 ~
 \backslash
-citep{bold2022market,saenger2013contract,RAO2023708}
+citep{bold2022market}
 \end_layout
 
 \end_inset
 
-, and recent contributions examine how measurement and monitoring technologies
- can improve market outcomes
+, measurement and monitoring technologies
 \begin_inset ERT
 status open
 
@@ -707,21 +967,41 @@ citep{jensen2007digital,rustagi2022measuring,duflo2013truth}
 
 \end_inset
 
+, and incentive design in agricultural supply chains
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{saenger2013contract,RAO2023708}
+\end_layout
+
+\end_inset
+
 .
  Our contribution is to show that quality measurement operates through enforcement---the
  credible threat of rejection---rather than through pricing, a distinction
- that existing work has not drawn.
- This matters for policy: a system that improves quality by excluding low-quality
- output has very different welfare and distributional implications than one
- that rewards quality through higher prices.
- The enforcement channel may harm the most resource-constrained farmers
- who lack the means to improve quality and face exclusion rather than incentives.
+ that no prior work has drawn explicitly.
+ This distinction has sharp welfare implications.
+ A system that improves quality by excluding low-quality output creates
+ a floor: adulteration is deterred, and minimum standards are enforced.
+ But it leaves money on the table above the threshold, providing no incentive
+ for continuous quality improvement, and may harm the most resource-constrained
+ farmers who lack the means to meet the threshold and face exclusion rather
+ than incentives.
+ A system that rewards quality through price differentiation, by contrast,
+ creates continuous incentives across the entire quality distribution and
+ could channel resources to producers willing to invest in upgrading.
+ Our findings show that measurement delivers the former but not the latter.
 \end_layout
 
 \begin_layout Standard
-Second, we provide the first direct experimental evidence on the price channel.
+Second, we provide the first direct experimental evidence on the price channel
+ for quality in agricultural value chains.
  By exogenously activating quality-based pricing in Experiment 2, we complement
- the observational evidence in
+ the observational evidence on quality grading in Vietnamese dairy
 \begin_inset ERT
 status open
 
@@ -729,13 +1009,13 @@ status open
 
 ~
 \backslash
-citet{saenger2013contract}
+citep{saenger2013contract}
 \end_layout
 
 \end_inset
 
- on quality grading in Vietnamese dairy,
- the structural analysis of relational contracting in Kenyan roses by
+, the structural analysis of relational contracting in Kenyan roses and
+ tea
 \begin_inset ERT
 status open
 
@@ -743,26 +1023,12 @@ status open
 
 ~
 \backslash
-citet{macchiavello2015value}
-\end_layout
-
-\end_inset
-
- and
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citet{10.1093/qje/qjaa048}
+citep{macchiavello2015value,10.1093/qje/qjaa048}
 \end_layout
 
 \end_inset
 
 , and the evidence on group-level incentives in Indian dairy cooperatives
- from
 \begin_inset ERT
 status open
 
@@ -770,22 +1036,28 @@ status open
 
 ~
 \backslash
-citet{RAO2023708}
+citep{RAO2023708}
 \end_layout
 
 \end_inset
 
 .
- Unlike these studies, which examine settings where quality pricing emerged
- endogenously or was imposed by processors, we experimentally switch on
+ Unlike these studies, which examine settings where quality pricing either
+ emerged endogenously through market institutions or was imposed by processors
+ as part of broader organizational reforms, we experimentally switch on
  a price channel that the market itself did not generate.
  This allows us to identify the causal effect of quality-based pricing in
  isolation from the institutional conditions that normally accompany it.
  The finding that traders respond to quality premiums---adjusting along
  the volume margin when quality is abundant and along the quality margin
  when it is scarce---confirms that intermediaries are sensitive to price
- incentives, and that the absence of quality-based sourcing in Experiment
- 1 reflects the absence of incentives rather than an inability to respond.
+ incentives and that the failure of quality-based sourcing to emerge in
+ Experiment 1 reflects the absence of incentives rather than an inability
+ to respond.
+ This matters because it rules out the alternative explanation that the
+ null pricing results in Experiment 1 reflect some deeper structural inability
+ of chain actors to differentiate quality, pointing instead to the institutional
+ conditions governing price formation as the binding constraint.
 \end_layout
 
 \begin_layout Standard
@@ -795,22 +1067,9 @@ Third, we document a striking failure of price transmission along the value
  determine raw milk quality; if anything, treated traders pay farmers less.
  This finding highlights that the institutional conditions for transmitting
  price signals upstream constitute a separate and binding constraint, distinct
- from the information frictions that quality measurement addresses
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{swinnen2007globalization,casaburi2019infrequent}
-\end_layout
-
-\end_inset
-
-.
- The result resonates with work on intermediary behavior and information
- distortion in value chains
+ from the information frictions that quality measurement addresses.
+ It resonates with work on intermediary behavior and information distortion
+ in developing-country value chains
 \begin_inset ERT
 status open
 
@@ -823,9 +1082,41 @@ citep{KEMBRO201777,Ponte01022005,Gereffi01022005}
 
 \end_inset
 
-, and with the broader literature on how the organization of global value
- chains shapes the scope for upstream actors to capture rents from quality
- upgrading.
+, with evidence on the role of delayed payments and commitment problems
+ in agricultural markets
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{casaburi2019infrequent}
+\end_layout
+
+\end_inset
+
+, and with the broader literature on how the organization of value chains
+ shapes the scope for upstream actors to capture rents from quality upgrading
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+~
+\backslash
+citep{swinnen2007globalization}
+\end_layout
+
+\end_inset
+
+.
+ The value chain literature has long theorized about the conditions under
+ which price signals transmit through intermediated chains, but direct experimental
+ evidence has been scarce.
+ Our finding that even explicit, exogenous premiums are absorbed by intermediaries
+ implies that intermediary behavior is a separate binding constraint that
+ must be addressed independently of---and in addition to---measurement infrastructure.
  Together, our findings imply that quality measurement technology is necessary
  but not sufficient for creating markets for quality.
  Measurement moves the system from a pooling equilibrium toward enforcement-based
@@ -833,6 +1124,27 @@ citep{KEMBRO201777,Ponte01022005,Gereffi01022005}
  pricing that reaches producers---requires separate policy attention to
  the institutional and organizational conditions that govern how price signals
  are formed and transmitted through intermediated chains.
+\end_layout
+
+\begin_layout Standard
+The policy implications are direct.
+ Quality measurement infrastructure delivers genuine quality improvements
+ through the enforcement channel, and this alone justifies investment in
+ testing capacity at aggregation points.
+ But creating a market for quality---where price signals drive continuous
+ upgrading across the full quality distribution---requires a fundamentally
+ different set of interventions addressing three distinct constraints: (i)
+ the institutional conditions under which MCCs adopt quality-differentiated
+ pricing, which may require coordination among processors or regulatory
+ mandates rather than merely providing measurement capacity; (ii) the competitive
+ structure of the downstream market, where processors must compete on quality
+ to generate the demand for compositional differentiation; and (iii) the
+ intermediary behavior that blocks price transmission, which may require
+ disintermediation, direct farmer-MCC contracts, or structured incentive
+ schemes that bypass traders.
+ These are fundamentally different policy problems than installing measurement
+ equipment, and conflating them risks overpromising the transformative potential
+ of quality measurement technology alone.
 \end_layout
 
 \begin_layout Standard
