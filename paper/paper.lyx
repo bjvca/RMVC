@@ -2951,19 +2951,19 @@ Treatment &
 \backslash
 Sexpr{res_submissions[1,1]}$^{
 \backslash
-Sexpr{stars(res_submissions[1,3])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[1,1])}}$ &
 \backslash
 Sexpr{res_submissions[2,1]}$^{
 \backslash
-Sexpr{stars(res_submissions[2,3])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[2,1])}}$ &
 \backslash
 Sexpr{res_submissions[3,1]}$^{
 \backslash
-Sexpr{stars(res_submissions[3,3])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[3,1])}}$ &
 \backslash
 Sexpr{res_submissions[4,1]}$^{
 \backslash
-Sexpr{stars(res_submissions[4,3])}}$
+Sexpr{stars(ri$exp2_submissions$ri_p[4,1])}}$
 \backslash
 
 \backslash
@@ -3032,19 +3032,19 @@ Treatment &
 \backslash
 Sexpr{res_submissions[1,6]}$^{
 \backslash
-Sexpr{stars(res_submissions[1,8])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[1,2])}}$ &
 \backslash
 Sexpr{res_submissions[2,6]}$^{
 \backslash
-Sexpr{stars(res_submissions[2,8])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[2,2])}}$ &
 \backslash
 Sexpr{res_submissions[3,6]}$^{
 \backslash
-Sexpr{stars(res_submissions[3,8])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[3,2])}}$ &
 \backslash
 Sexpr{res_submissions[4,6]}$^{
 \backslash
-Sexpr{stars(res_submissions[4,8])}}$
+Sexpr{stars(ri$exp2_submissions$ri_p[4,2])}}$
 \backslash
 
 \backslash
@@ -3113,19 +3113,19 @@ Treatment &
 \backslash
 Sexpr{res_submissions[1,11]}$^{
 \backslash
-Sexpr{stars(res_submissions[1,13])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[1,3])}}$ &
 \backslash
 Sexpr{res_submissions[2,11]}$^{
 \backslash
-Sexpr{stars(res_submissions[2,13])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[2,3])}}$ &
 \backslash
 Sexpr{res_submissions[3,11]}$^{
 \backslash
-Sexpr{stars(res_submissions[3,13])}}$ &
+Sexpr{stars(ri$exp2_submissions$ri_p[3,3])}}$ &
 \backslash
 Sexpr{res_submissions[4,11]}$^{
 \backslash
-Sexpr{stars(res_submissions[4,13])}}$
+Sexpr{stars(ri$exp2_submissions$ri_p[4,3])}}$
 \backslash
 
 \backslash

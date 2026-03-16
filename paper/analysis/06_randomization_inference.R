@@ -422,7 +422,247 @@ cat(sprintf("  Omnibus RI p-value: %.4f\n\n", omni_samples$omnibus_p))
 
 
 # ===========================================================================
-# SECTION 5: SAVE ALL RESULTS
+# SECTION 5: EXPERIMENT 2 — TRADER-LEVEL QUALITY PREMIUM RCT
+# ===========================================================================
+# Treatment randomized at trader level within MCC blocks.
+# Permutation: within each MCC, permute which traders are treated
+# (maintaining the count of treated traders per MCC).
+#
+# Three outcome levels:
+#   (A) Daily submissions (trader-day panel): outcome ~ treatment
+#       Test statistic: OLS coefficient on treatment (no FE in RI, FE absorbed)
+#   (B) Trader endline: outcome ~ treat
+#   (C) Farmer endline: outcome ~ treat (farmers inherit trader treatment)
+# ---------------------------------------------------------------------------
+
+cat("\n===========================================================\n")
+cat("  Fisher Randomization Inference: Experiment 2\n")
+cat("===========================================================\n\n")
+
+## Load Experiment 2 prepped data
+submissions_list <- readRDS(paste(path, "paper/results/prepped_submissions.rds", sep = "/"))
+trader_day <- submissions_list$trader_day
+traders    <- readRDS(paste(path, "paper/results/prepped_traders.rds", sep = "/"))
+farmers_fu <- readRDS(paste(path, "paper/results/prepped_farmers_fu.rds", sep = "/"))
+
+## Build within-MCC treatment count for permutation
+## Each MCC has a fixed number of treated traders; we permute which ones
+trader_mcc_map <- unique(trader_day[, c("trader_ID", "MCC_ID", "treatment")])
+treat_counts_by_mcc <- tapply(trader_mcc_map$treatment, trader_mcc_map$MCC_ID, sum)
+
+cat(sprintf("Experiment 2: %d traders across %d MCCs\n",
+            nrow(trader_mcc_map), length(treat_counts_by_mcc)))
+cat(sprintf("Number of permutations: %d\n\n", n_perms))
+
+## --- 5A. Daily submissions: full period, stage 1, stage 2 ---
+## Outcomes: avg_fat, avg_snf, total_qty, bonus
+## Periods: full (after Nov 3), stage1 (Nov 3-14), stage2 (Nov 15+)
+
+post_treat <- trader_day[trader_day$date >= as.Date("2025-11-03"), ]
+stage1     <- trader_day[trader_day$date >= as.Date("2025-11-03") &
+                           trader_day$date <= as.Date("2025-11-14"), ]
+stage2     <- trader_day[trader_day$date >= as.Date("2025-11-15"), ]
+
+sub_outcomes <- c("avg_fat", "avg_snf", "total_qty", "bonus")
+periods <- list(full = post_treat, s1 = stage1, s2 = stage2)
+
+## Observed coefficients: 4 outcomes x 3 periods
+obs_sub <- matrix(NA, nrow = length(sub_outcomes), ncol = length(periods))
+for (j in seq_along(periods)) {
+  dat <- periods[[j]]
+  for (i in seq_along(sub_outcomes)) {
+    ols <- lm(as.formula(paste(sub_outcomes[i], "~ treatment")), data = dat)
+    obs_sub[i, j] <- coef(ols)["treatment"]
+  }
+}
+
+## Permutation loop for submissions
+ri_sub <- array(NA, dim = c(n_perms, length(sub_outcomes), length(periods)))
+
+cat("Running Experiment 2 submission RI permutations...\n")
+for (p in 1:n_perms) {
+  if (p %% 1000 == 0) cat(sprintf("  Permutation %d / %d\n", p, n_perms))
+
+  ## Permute treatment within each MCC
+  perm_map <- trader_mcc_map
+  perm_map$treat_perm <- 0
+  for (mcc in names(treat_counts_by_mcc)) {
+    idx <- which(perm_map$MCC_ID == mcc)
+    n_treat <- treat_counts_by_mcc[mcc]
+    if (n_treat > 0 && n_treat < length(idx)) {
+      treat_idx <- sample(idx, n_treat, replace = FALSE)
+      perm_map$treat_perm[treat_idx] <- 1
+    } else if (n_treat == length(idx)) {
+      perm_map$treat_perm[idx] <- 1
+    }
+  }
+
+  ## Map permuted treatment back to trader_day
+  trader_day$treat_perm <- perm_map$treat_perm[
+    match(trader_day$trader_ID, perm_map$trader_ID)]
+
+  for (j in seq_along(periods)) {
+    dat <- if (j == 1) trader_day[trader_day$date >= as.Date("2025-11-03"), ]
+           else if (j == 2) trader_day[trader_day$date >= as.Date("2025-11-03") &
+                                         trader_day$date <= as.Date("2025-11-14"), ]
+           else trader_day[trader_day$date >= as.Date("2025-11-15"), ]
+
+    for (i in seq_along(sub_outcomes)) {
+      ols <- lm(as.formula(paste(sub_outcomes[i], "~ treat_perm")), data = dat)
+      ri_sub[p, i, j] <- coef(ols)["treat_perm"]
+    }
+  }
+}
+
+## RI p-values for submissions: 4 outcomes x 3 periods
+ri_p_sub <- matrix(NA, nrow = length(sub_outcomes), ncol = length(periods),
+                   dimnames = list(sub_outcomes, c("full", "s1", "s2")))
+for (j in seq_along(periods)) {
+  for (i in seq_along(sub_outcomes)) {
+    ri_p_sub[i, j] <- mean(abs(ri_sub[, i, j]) >= abs(obs_sub[i, j]), na.rm = TRUE)
+  }
+}
+
+cat("\nExperiment 2 submission RI p-values:\n")
+for (j in seq_along(periods)) {
+  cat(sprintf("  %s period:\n", names(periods)[j]))
+  for (i in seq_along(sub_outcomes)) {
+    cat(sprintf("    %-15s  RI p = %.4f\n", sub_outcomes[i], ri_p_sub[i, j]))
+  }
+}
+
+## --- 5B. Trader endline ---
+traders$any_rejected  <- as.numeric(traders$rejected_month > 0)
+traders$pays_premium  <- as.numeric(traders$pay_premim == 1)
+trader_outcomes <- c("Fat_supervised", "delivered_quantity", "any_rejected",
+                     "pays_premium", "avg_purchase_price")
+
+## Build trader-level MCC map for permutation
+trader_map_endline <- traders[, c("trader_ID", "MCC_ID", "treat")]
+treat_counts_endline <- tapply(trader_map_endline$treat, trader_map_endline$MCC_ID, sum)
+
+obs_trader <- numeric(length(trader_outcomes))
+for (i in seq_along(trader_outcomes)) {
+  ols <- lm(as.formula(paste(trader_outcomes[i], "~ treat")), data = traders)
+  obs_trader[i] <- coef(ols)["treat"]
+}
+
+ri_trader <- matrix(NA, nrow = n_perms, ncol = length(trader_outcomes))
+
+cat("\nRunning Experiment 2 trader endline RI permutations...\n")
+for (p in 1:n_perms) {
+  if (p %% 1000 == 0) cat(sprintf("  Permutation %d / %d\n", p, n_perms))
+
+  perm_map <- trader_map_endline
+  perm_map$treat_perm <- 0
+  for (mcc in names(treat_counts_endline)) {
+    idx <- which(perm_map$MCC_ID == mcc)
+    n_treat <- treat_counts_endline[mcc]
+    if (n_treat > 0 && n_treat < length(idx)) {
+      treat_idx <- sample(idx, n_treat, replace = FALSE)
+      perm_map$treat_perm[treat_idx] <- 1
+    } else if (n_treat == length(idx)) {
+      perm_map$treat_perm[idx] <- 1
+    }
+  }
+
+  for (i in seq_along(trader_outcomes)) {
+    traders$treat_perm <- perm_map$treat_perm[match(traders$trader_ID, perm_map$trader_ID)]
+    ols <- lm(as.formula(paste(trader_outcomes[i], "~ treat_perm")), data = traders)
+    ri_trader[p, i] <- coef(ols)["treat_perm"]
+  }
+}
+
+ri_p_trader <- numeric(length(trader_outcomes))
+names(ri_p_trader) <- trader_outcomes
+for (i in seq_along(trader_outcomes)) {
+  ri_p_trader[i] <- mean(abs(ri_trader[, i]) >= abs(obs_trader[i]), na.rm = TRUE)
+}
+
+cat("\nTrader endline RI p-values:\n")
+for (i in seq_along(trader_outcomes)) {
+  cat(sprintf("  %-25s  RI p = %.4f\n", trader_outcomes[i], ri_p_trader[i]))
+}
+
+## --- 5C. Farmer endline ---
+farmer_fu_outcomes <- c("avg_price", "quality_checked", "feeding_index",
+                        "used_bran", "used_residu", "used_lick", "used_cgrazing")
+
+## Farmers inherit treatment from their trader
+obs_farmer_fu <- numeric(length(farmer_fu_outcomes))
+for (i in seq_along(farmer_fu_outcomes)) {
+  ols <- lm(as.formula(paste(farmer_fu_outcomes[i], "~ treat")), data = farmers_fu)
+  obs_farmer_fu[i] <- coef(ols)["treat"]
+}
+
+ri_farmer_fu <- matrix(NA, nrow = n_perms, ncol = length(farmer_fu_outcomes))
+
+cat("\nRunning Experiment 2 farmer endline RI permutations...\n")
+for (p in 1:n_perms) {
+  if (p %% 1000 == 0) cat(sprintf("  Permutation %d / %d\n", p, n_perms))
+
+  ## Same trader-level permutation, propagated to farmers
+  perm_map <- trader_map_endline
+  perm_map$treat_perm <- 0
+  for (mcc in names(treat_counts_endline)) {
+    idx <- which(perm_map$MCC_ID == mcc)
+    n_treat <- treat_counts_endline[mcc]
+    if (n_treat > 0 && n_treat < length(idx)) {
+      treat_idx <- sample(idx, n_treat, replace = FALSE)
+      perm_map$treat_perm[treat_idx] <- 1
+    } else if (n_treat == length(idx)) {
+      perm_map$treat_perm[idx] <- 1
+    }
+  }
+
+  farmers_fu$treat_perm <- perm_map$treat_perm[
+    match(farmers_fu$trader_ID, perm_map$trader_ID)]
+
+  for (i in seq_along(farmer_fu_outcomes)) {
+    ols <- lm(as.formula(paste(farmer_fu_outcomes[i], "~ treat_perm")), data = farmers_fu)
+    ri_farmer_fu[p, i] <- coef(ols)["treat_perm"]
+  }
+}
+
+ri_p_farmer_fu <- numeric(length(farmer_fu_outcomes))
+names(ri_p_farmer_fu) <- farmer_fu_outcomes
+for (i in seq_along(farmer_fu_outcomes)) {
+  ri_p_farmer_fu[i] <- mean(abs(ri_farmer_fu[, i]) >= abs(obs_farmer_fu[i]), na.rm = TRUE)
+}
+
+cat("\nFarmer endline RI p-values:\n")
+for (i in seq_along(farmer_fu_outcomes)) {
+  cat(sprintf("  %-25s  RI p = %.4f\n", farmer_fu_outcomes[i], ri_p_farmer_fu[i]))
+}
+
+## --- 5D. Omnibus tests for Experiment 2 ---
+## Submissions: omnibus across 4 outcomes for each period
+omni_sub_full <- omnibus_count_test(obs_sub[, 1], ri_sub[, , 1])
+omni_sub_s1   <- omnibus_count_test(obs_sub[, 2], ri_sub[, , 2])
+omni_sub_s2   <- omnibus_count_test(obs_sub[, 3], ri_sub[, , 3])
+
+cat(sprintf("\nOmnibus — Submissions full: %d/%d sig, p=%.4f\n",
+            omni_sub_full$obs_count, length(sub_outcomes), omni_sub_full$omnibus_p))
+cat(sprintf("Omnibus — Submissions S1: %d/%d sig, p=%.4f\n",
+            omni_sub_s1$obs_count, length(sub_outcomes), omni_sub_s1$omnibus_p))
+cat(sprintf("Omnibus — Submissions S2: %d/%d sig, p=%.4f\n",
+            omni_sub_s2$obs_count, length(sub_outcomes), omni_sub_s2$omnibus_p))
+
+## Trader endline omnibus
+omni_trader <- omnibus_count_test(obs_trader, ri_trader)
+cat(sprintf("Omnibus — Trader endline: %d/%d sig, p=%.4f\n",
+            omni_trader$obs_count, length(trader_outcomes), omni_trader$omnibus_p))
+
+## Farmer endline omnibus (exclude individual feeding practices, keep avg_price, quality_checked, feeding_index)
+farmer_fu_primary_idx <- 1:3
+omni_farmer_fu <- omnibus_count_test(obs_farmer_fu[farmer_fu_primary_idx],
+                                      ri_farmer_fu[, farmer_fu_primary_idx])
+cat(sprintf("Omnibus — Farmer FU (primary): %d/%d sig, p=%.4f\n",
+            omni_farmer_fu$obs_count, length(farmer_fu_primary_idx), omni_farmer_fu$omnibus_p))
+
+
+# ===========================================================================
+# SECTION 6: SAVE ALL RESULTS
 # ===========================================================================
 
 ri_results <- list(
@@ -455,12 +695,36 @@ ri_results <- list(
     N            = obs_samples_N,
     perm_coefs   = ri_samples
   ),
+  ## Experiment 2 results
+  exp2_submissions = list(
+    outcomes   = sub_outcomes,
+    obs_coefs  = obs_sub,
+    ri_p       = ri_p_sub,
+    perm_coefs = ri_sub
+  ),
+  exp2_traders = list(
+    outcomes   = trader_outcomes,
+    obs_coefs  = obs_trader,
+    ri_p       = ri_p_trader,
+    perm_coefs = ri_trader
+  ),
+  exp2_farmers = list(
+    outcomes   = farmer_fu_outcomes,
+    obs_coefs  = obs_farmer_fu,
+    ri_p       = ri_p_farmer_fu,
+    perm_coefs = ri_farmer_fu
+  ),
   ## Omnibus count tests
   omnibus = list(
     farmer_treat = omni_farmer_treat,
     farmer_vid   = omni_farmer_vid,
     mcc          = omni_mcc,
     samples      = omni_samples,
+    exp2_sub_full = omni_sub_full,
+    exp2_sub_s1   = omni_sub_s1,
+    exp2_sub_s2   = omni_sub_s2,
+    exp2_traders  = omni_trader,
+    exp2_farmers  = omni_farmer_fu,
     alpha        = 0.05
   ),
   ## Metadata
