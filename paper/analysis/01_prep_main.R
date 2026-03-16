@@ -1,7 +1,8 @@
 ###############################################################################
 ## 01_prep_main.R
 ##
-## Data preparation for the main 2x2 factorial RCT analysis.
+## Data preparation for the main 2x2 factorial RCT analysis
+## (quality measurement and digital monitoring system x information video).
 ## Loads baseline and endline farmer/MCC data, constructs all outcome
 ## variables, balance variables, and saves prepped data to paper/results/.
 ##
@@ -106,9 +107,9 @@ farmers_end <- merge(farmers_end, farmers_base[c("farmer_ID", "b_improve_index")
                      by = "farmer_ID", all.x = TRUE)
 
 # ---------------------------------------------------------------------------
-# 3b. Buyer checks using milk analyzer
+# 3b. Buyer checks using quality measurement system (milk analyzer)
 # ---------------------------------------------------------------------------
-# check_MA = TRUE if buyer used milk analyzer for any transaction in last 7 days
+# check_MA = TRUE if buyer used measurement system for any transaction in last 7 days
 farmers_end$check_MA <- farmers_end$q58.4 == "True" | farmers_end$qx5.4 == "True" |
   farmers_end$qx17.4 == "True" | farmers_end$qx29.4 == "True" |
   farmers_end$qx41.4 == "True" | farmers_end$qx53.4 == "True"
@@ -208,7 +209,7 @@ farmers_end <- merge(farmers_end, farmers_base[c("farmer_ID", "b_bargain_power")
                      by = "farmer_ID", all.x = TRUE)
 
 # ---------------------------------------------------------------------------
-# 3f. LATE instrument: actual machine use at MCC
+# 3f. LATE instrument: actual use of measurement & monitoring system at MCC
 # ---------------------------------------------------------------------------
 MCCs_end$treat_TOT <- MCCs_end$machine_in_use %in% 1:2
 farmers_end <- merge(farmers_end, MCCs_end[c("MCC_ID", "treat_TOT")],
@@ -354,7 +355,6 @@ farmers_end$still_supplying_dry <- as.character(farmers_end$q51_name_prevx) ==
 # 3k. Demeaned treatment variables (for orthogonalized models)
 # ---------------------------------------------------------------------------
 
-farmers_end$trader_demeaned <- farmers_end$trader - mean(farmers_end$trader, na.rm = TRUE)
 farmers_end$vid_demeaned    <- farmers_end$vid    - mean(farmers_end$vid, na.rm = TRUE)
 farmers_end$treat_demeaned  <- farmers_end$treat  - mean(farmers_end$treat, na.rm = TRUE)
 
@@ -372,7 +372,7 @@ MCCs_end$catchment_ID <- as.factor(MCCs_end$catchment_ID)
 MCCs_end$treat_TOT <- MCCs_end$machine_in_use %in% 1:2
 
 # ---------------------------------------------------------------------------
-# 4a. Testing of incoming milk quality using milk analyzer
+# 4a. Testing of incoming milk quality using measurement & monitoring system
 # ---------------------------------------------------------------------------
 MCCs_end$test_MA_in <- MCCs_end$q25x3 != 3
 MCCs_end$test_MA_in[MCCs_end$q25x3 == "n/a"] <- NA
@@ -533,7 +533,7 @@ MCCs_base$b_tot_sales_q <- rowSums(MCCs_base[columns], na.rm = TRUE)
 MCCs_end <- merge(MCCs_end, MCCs_base[c("MCC_ID", "b_tot_sales_q")],
                   by = "MCC_ID", all.x = TRUE)
 
-## Used milk analyzer for outgoing sales
+## Used measurement system for outgoing sales quality checks
 MCCs_end$test_MA <- (MCCs_end$q39a == 2 | MCCs_end$q39c == 2) |
   (MCCs_end$q52a == 2 | MCCs_end$q52c == 2) |
   (MCCs_end$q62a == 2 | MCCs_end$q62c == 2) |

@@ -2,7 +2,10 @@
 # run_all.R — Master script for the combined paper
 # ---------------------------------------------------------------------------
 # Runs all analysis scripts in order, from data preparation through
-# figure generation. Must be run with working directory set to paper/analysis/.
+# figure generation for the two experiments:
+#   Exp 1: quality measurement & digital monitoring system x information video
+#   Exp 2: quality premium intervention leveraging digital monitoring system
+# Must be run with working directory set to paper/analysis/.
 #
 # Usage:
 #   setwd("/path/to/RMVC/paper/analysis")
@@ -36,7 +39,10 @@ source("03_prep_followup.R")
 cat("\n--- Step 4: Running Experiment 2 analysis ---\n")
 source("04_analysis_followup.R")
 
-cat("\n--- Step 5: Generating figures ---\n")
+cat("\n--- Step 5: Randomization inference (5,000 permutations) ---\n")
+source("06_randomization_inference.R")
+
+cat("\n--- Step 6: Generating figures ---\n")
 source("05_figures.R")
 
 cat("\n=== Pipeline complete ===\n")

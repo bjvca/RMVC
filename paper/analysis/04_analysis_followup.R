@@ -1,7 +1,8 @@
 ###############################################################################
 ## 04_analysis_followup.R
 ##
-## Experiment 2 regressions: trader-level randomized feedback intervention
+## Experiment 2 regressions: trader-level randomized quality premium intervention
+## (leveraging the digital monitoring system from Experiment 1).
 ## Uses fixest for FE regressions on daily submission data, trader endline,
 ## and farmer follow-up endline.
 ##

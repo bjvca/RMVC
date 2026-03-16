@@ -3,6 +3,7 @@
 ##
 ## Generates all figures for the combined paper:
 ##   - Time series plots for Experiment 2 daily submission data
+##     (quality premium intervention using digital monitoring system)
 ##   - Forest plots for Experiment 1 and Experiment 2 treatment effects
 ##
 ## Must be run with working directory set to paper/analysis/.
@@ -139,9 +140,8 @@ make_timeseries(daily_avg, "mean_bonus", "se_bonus",
 ###############################################################################
 ## 5. FOREST PLOT: Experiment 1 farmer primary outcomes
 ###############################################################################
-## Uses orthogonalized (demeaned) coefficients for Lactoscan and Video,
-## plus bundle comparison.
-## Cols 19-21: orthog treat (Lactoscan), 22-24: orthog vid, 27-29: bundle
+## Uses orthogonalized (demeaned) coefficients for the measurement & monitoring
+## system (T1): pooled marginal effect. Cols 12-14 of res_farmers (new layout).
 
 outcome_names_farmer <- c("Improved Practices Index", "Buyer Checks w/ MA",
                           "Average Sales Price", "Gets Quality Bonus")
@@ -149,14 +149,9 @@ outcome_names_farmer <- c("Improved Practices Index", "Buyer Checks w/ MA",
 idx_primary <- 1:4
 
 forest_farmer_primary <- data.frame(
-  outcome = rep(outcome_names_farmer, 3),
-  treatment = rep(c("Lactoscan", "Video", "Bundle"), each = 4),
-  coef = c(res_farmers[idx_primary, 19],
-           res_farmers[idx_primary, 22],
-           res_farmers[idx_primary, 27]),
-  se   = c(res_farmers[idx_primary, 20],
-           res_farmers[idx_primary, 23],
-           res_farmers[idx_primary, 28]),
+  outcome = outcome_names_farmer,
+  coef = res_farmers[idx_primary, 12],
+  se   = res_farmers[idx_primary, 13],
   stringsAsFactors = FALSE
 )
 
@@ -164,23 +159,19 @@ forest_farmer_primary <- forest_farmer_primary %>%
   mutate(
     ci_lo = coef - 1.96 * se,
     ci_hi = coef + 1.96 * se,
-    treatment = factor(treatment, levels = c("Lactoscan", "Video", "Bundle")),
     outcome = factor(outcome, levels = rev(outcome_names_farmer))
   )
 
-p5 <- ggplot(forest_farmer_primary,
-             aes(x = coef, y = outcome, color = treatment)) +
-  geom_point(size = 3.5, position = position_dodge(width = 0.6)) +
+p5 <- ggplot(forest_farmer_primary, aes(x = coef, y = outcome)) +
+  geom_point(size = 4, color = "#1f77b4") +
   geom_errorbarh(aes(xmin = ci_lo, xmax = ci_hi), height = 0.25,
-                 position = position_dodge(width = 0.6), linewidth = 0.8) +
+                 linewidth = 0.8, color = "#1f77b4") +
   geom_vline(xintercept = 0, linetype = "solid", color = "black", linewidth = 1) +
-  scale_color_manual(values = custom_colors_3arm) +
   labs(title = "Experiment 1: Farmer Primary Outcomes",
-       x = "Treatment Effect (95% CI)", y = "", color = "Treatment") +
+       x = "Treatment Effect (95% CI)", y = "") +
   theme_minimal(base_size = 16) +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
-        axis.text.y = element_text(size = 14, face = "bold"),
-        legend.position = "top")
+        axis.text.y = element_text(size = 14, face = "bold"))
 
 save_plot(p5, "fig_forest_farmer_primary")
 
@@ -226,34 +217,19 @@ save_plot(p6, "fig_forest_mcc_primary")
 ###############################################################################
 ## 7. FOREST PLOT: Experiment 1 prices (all null)
 ###############################################################################
-## Combines avg_sales_p from primary (row 3 of res_farmers)
-## and price_wet, price_dry from secondary sales (rows 4,5 of res_farmers_sec_sold)
+## Shows the treatment effect on prices.
+## Primary array (res_farmers): orthog treat = cols 12-13 (new 15-col layout).
+## Secondary array (res_farmers_sec_sold): treat = cols 3-4 (new 11-col layout).
 
 price_labels <- c("Price Last Week", "Price Wet Season", "Price Dry Season")
 
-## Gather orthog treat (cols 19-21), orthog vid (cols 22-24), bundle (cols 27-29)
-price_rows_farmer   <- res_farmers[3, , drop = FALSE]       # avg_sales_p
-price_rows_sec_sold <- res_farmers_sec_sold[4:5, , drop = FALSE]  # price_wet, price_dry
-
-## Combine rows (both are 32/33-col arrays; use first 32 cols for sec_sold)
-## res_farmers has 33 cols, res_farmers_sec_sold has 32 cols
-## We only need specific columns, so extract directly
-
 forest_prices <- data.frame(
-  outcome = rep(price_labels, 3),
-  treatment = rep(c("Lactoscan", "Video", "Bundle"), each = 3),
+  outcome = price_labels,
   coef = c(
-    ## Lactoscan (orthog): col 19
-    res_farmers[3, 19], res_farmers_sec_sold[4, 19], res_farmers_sec_sold[5, 19],
-    ## Video (orthog): col 22
-    res_farmers[3, 22], res_farmers_sec_sold[4, 22], res_farmers_sec_sold[5, 22],
-    ## Bundle: col 27
-    res_farmers[3, 27], res_farmers_sec_sold[4, 27], res_farmers_sec_sold[5, 27]
+    res_farmers[3, 12], res_farmers_sec_sold[4, 3], res_farmers_sec_sold[5, 3]
   ),
   se = c(
-    res_farmers[3, 20], res_farmers_sec_sold[4, 20], res_farmers_sec_sold[5, 20],
-    res_farmers[3, 23], res_farmers_sec_sold[4, 23], res_farmers_sec_sold[5, 23],
-    res_farmers[3, 28], res_farmers_sec_sold[4, 28], res_farmers_sec_sold[5, 28]
+    res_farmers[3, 13], res_farmers_sec_sold[4, 4], res_farmers_sec_sold[5, 4]
   ),
   stringsAsFactors = FALSE
 )
@@ -262,22 +238,19 @@ forest_prices <- forest_prices %>%
   mutate(
     ci_lo = coef - 1.96 * se,
     ci_hi = coef + 1.96 * se,
-    treatment = factor(treatment, levels = c("Lactoscan", "Video", "Bundle")),
     outcome = factor(outcome, levels = rev(price_labels))
   )
 
-p7 <- ggplot(forest_prices, aes(x = coef, y = outcome, color = treatment)) +
-  geom_point(size = 3.5, position = position_dodge(width = 0.6)) +
+p7 <- ggplot(forest_prices, aes(x = coef, y = outcome)) +
+  geom_point(size = 4, color = "#1f77b4") +
   geom_errorbarh(aes(xmin = ci_lo, xmax = ci_hi), height = 0.25,
-                 position = position_dodge(width = 0.6), linewidth = 0.8) +
+                 linewidth = 0.8, color = "#1f77b4") +
   geom_vline(xintercept = 0, linetype = "solid", color = "black", linewidth = 1) +
-  scale_color_manual(values = custom_colors_3arm) +
   labs(title = "Experiment 1: Price Outcomes",
-       x = "Treatment Effect (95% CI)", y = "", color = "Treatment") +
+       x = "Treatment Effect (95% CI)", y = "") +
   theme_minimal(base_size = 16) +
   theme(plot.title = element_text(hjust = 0.5, face = "bold"),
-        axis.text.y = element_text(size = 14, face = "bold"),
-        legend.position = "top")
+        axis.text.y = element_text(size = 14, face = "bold"))
 
 save_plot(p7, "fig_forest_prices_exp1")
 

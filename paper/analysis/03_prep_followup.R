@@ -1,8 +1,9 @@
 ###############################################################################
 ## 03_prep_followup.R
 ##
-## Data preparation for the follow-up experiment (trader-level milk quality
-## monitoring via app-based data collection and quality bonuses).
+## Data preparation for the follow-up experiment (trader-level quality
+## premium intervention, leveraging the digital monitoring system deployed
+## in Experiment 1 for app-based data collection and quality bonuses).
 ##
 ## Reads from LOCAL CSV files (anonymized public data), not from ODK Central.
 ## Clean port from follow_up/analysis/initial_analysis.R.
@@ -21,12 +22,13 @@ source("00_utilities.R")
 
 library(dplyr)
 library(lubridate)
+library(andersonTools)
 
 ## Auto-detect project root from working directory
 path <- strsplit(getwd(), "/paper/analysis")[[1]]
 
 ###############################################################################
-## 1. SUBMISSIONS DATA (app-based daily milk quality measurements)
+## 1. SUBMISSIONS DATA (daily milk quality measurements from digital monitoring system)
 ###############################################################################
 
 submissions <- read.csv(paste(path, "follow_up/data/public/samples/anonymized_submission_data.csv",

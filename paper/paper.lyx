@@ -159,10 +159,11 @@ International Food Policy Research Institute (IFPRI)
 \begin_layout Abstract
 [Placeholder abstract.
  This paper follows a three-act structure.
- Act 1 (Experiment 1): We introduce milk analyzers to dairy collection centers
- in Uganda and show that quality measurement technology improves milk quality
- practices but does not generate quality-differentiated pricing---an enforcement
- equilibrium rather than a market for quality.
+ Act 1 (Experiment 1): We deploy a quality measurement and digital monitoring
+ system---milk analyzers coupled with digitalized bookkeeping---at dairy
+ collection centers in Uganda and show that this quality infrastructure
+ improves milk quality practices but does not generate quality-differentiated
+ pricing---an enforcement equilibrium rather than a market for quality.
  Act 2 (Model): We develop a simple model with parameter alpha governing
  the strength of the price channel to rationalize these findings.
  Act 3 (Experiment 2): We directly activate the price channel through quality
@@ -268,6 +269,20 @@ attrition <- readRDS(paste0(path, "/results/attrition.rds"))
 
 \begin_layout Plain Layout
 
+# Load randomization inference results
+\end_layout
+
+\begin_layout Plain Layout
+
+ri <- readRDS(paste0(path, "/results/randomization_inference.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 # Load Experiment 2 results
 \end_layout
 
@@ -329,31 +344,34 @@ name "sec:introduction"
  In many agricultural value chains in developing countries, quality is difficult
  to measure, leading to classic lemons problems where high-quality producers
  are not rewarded and have little incentive to invest in quality.
- We study whether introducing measurement technology---milk analyzers that
- can objectively assess fat content and solids-not-fat---can catalyze the
- emergence of quality-differentiated pricing in Ugandan dairy supply chains.
+ We study whether introducing a quality measurement and digital monitoring
+ system---milk analyzers that objectively assess fat content and solids-not-fat,
+ combined with digitalized bookkeeping that tracks quality across deliveries
+ and over time---can catalyze the emergence of quality-differentiated pricing
+ in Ugandan dairy supply chains.
 \end_layout
 
 \begin_layout Standard
-Experiment 1 introduces milk analyzers to randomly selected Milk Collection
- Centers (MCCs) and an information video to randomly selected farmers in
- a 2x2 factorial design.
- We find that quality measurement technology improves milk quality practices
+Experiment 1 deploys a quality measurement and digital monitoring system---milk
+ analyzers paired with digitalized quality tracking---at randomly selected
+ Milk Collection Centers (MCCs), and provides an information video to randomly
+ selected farmers, in a 2x2 factorial design.
+ We find that this quality infrastructure improves milk quality practices
  and reduces adulteration, but does not lead to quality-differentiated pricing.
  This is an enforcement equilibrium, not a market for quality.
 \end_layout
 
 \begin_layout Standard
 To rationalize these findings, we develop a simple model in which a parameter
- alpha governs the extent to which measurement technology is used for price
- differentiation versus enforcement.
- When alpha equals zero, the technology is used purely for enforcement; when
+ alpha governs the extent to which the quality monitoring system is used
+ for price differentiation versus enforcement.
+ When alpha equals zero, the system is used purely for enforcement; when
  alpha is positive, prices are differentiated by quality.
 \end_layout
 
 \begin_layout Standard
 Experiment 2 directly tests the price channel by introducing quality bonuses
- at MCCs that already have analyzers.
+ at MCCs that already have the measurement and monitoring system.
  We find that activating the price channel through explicit bonuses elicits
  further quality improvements, confirming that the missing ingredient was
  not information but price incentives.]
@@ -375,7 +393,9 @@ name "sec:context"
  milk to Milk Collection Centers (MCCs), which aggregate and cool milk before
  selling to processors.
  Some farmers sell directly to MCCs while others sell through traders/middlemen.
- Quality is difficult to observe without testing equipment.
+ Quality is difficult to observe without testing equipment, and the absence
+ of systematic record-keeping means that even when quality is checked, there
+ is no way to track patterns across deliveries or over time.
  Adulteration (primarily water addition) is a widespread problem.
  MCCs vary in organizational form (cooperatives vs.
  private) and capacity.]
@@ -404,7 +424,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Milk Analyzer Installed at an MCC
+Quality Measurement and Digital Monitoring System Installed at an MCC
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:milk-analyzer"
@@ -425,7 +445,7 @@ name "fig:milk-analyzer"
 \end_layout
 
 \begin_layout Section
-Experiment 1: Making Quality Visible
+Experiment 1: Quality Measurement and Digital Monitoring
 \end_layout
 
 \begin_layout Standard
@@ -450,12 +470,18 @@ name "subsec:design"
 \end_inset
 
 [Placeholder describing the 2x2 factorial experimental design.
- Treatment 1 (Lactoscan): Cluster-randomized provision of a Lactoscan milk
- analyzer to MCCs.
+ Treatment 1 (Lactoscan): Cluster-randomized provision of a quality measurement
+ and digital monitoring system---a Lactoscan milk analyzer combined with
+ a digitalized bookkeeping application that records quality readings across
+ deliveries and over time---to MCCs.
+ This bundled intervention enables both point-of-delivery quality measurement
+ and systematic quality tracking, making quality not just visible but traceable
+ and trackable.
  Treatment 2 (Video): Farmer-level randomization of a quality awareness
  video within all MCCs.
  The design allows estimation of the individual and joint effects of supply-side
- information (video) and demand-side measurement capacity (analyzer).]
+ information (video) and demand-side quality infrastructure (measurement
+ plus digital monitoring).]
 \end_layout
 
 \begin_layout Standard
@@ -578,12 +604,23 @@ name "subsec:estimation"
  Intent-to-treat (ITT) effects are estimated using OLS with CR2 cluster-robust
  standard errors (clubSandwich).
  Local Average Treatment Effects (LATE) are estimated via two-stage least
- squares, instrumenting actual machine use with random assignment.
+ squares, instrumenting actual use of the measurement and monitoring system
+ with random assignment.
  The orthogonalized factorial specification follows Muralidharan et al.,
  using demeaned treatment indicators to isolate individual treatment effects
  that are invariant to the other treatment arm.
  Anderson indices are constructed as summary measures across outcome families.
- Multiple testing is addressed using Anderson-Sharp q-values.]
+ Statistical inference in the main text uses Fisher randomization inference
+ (RI) p-values, computed from 5,000 permutations that respect the experimental
+ design: the measurement and monitoring system treatment is permuted at the
+ MCC level (maintaining the number of treated MCCs), and the video treatment
+ is permuted within each MCC (maintaining counts).
+ For multiple testing, we report an omnibus count test following the EGAP
+ approach: under the sharp null of no treatment effect, we compute the
+ probability of observing as many individually significant outcomes as in
+ the actual data.
+ CR2 cluster-robust p-values, Anderson-Sharp q-values, and Westfall-Young
+ stepdown-adjusted p-values are reported in the appendix.]
 \end_layout
 
 \begin_layout Subsection
@@ -1007,9 +1044,9 @@ nolink "false"
 \end_inset
 
  presents the primary ITT estimates from the orthogonalized factorial specification.
- The Lactoscan treatment increases adoption of improved practices and awareness
- that the buyer uses an analyzer, but does not affect average sales prices
- or the probability of receiving a quality bonus.
+ The measurement and monitoring system treatment increases adoption of improved
+ practices and awareness that the buyer uses quality testing, but does not
+ affect average sales prices or the probability of receiving a quality bonus.
  The Anderson index summarizes across the outcome family.]
 \end_layout
 
@@ -1049,7 +1086,7 @@ label{tab:farmer-primary}
 
 
 \backslash
-begin{tabular}{lcccccc}
+begin{tabular}{lccccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1061,7 +1098,7 @@ hline
 
 \begin_layout Plain Layout
 
-& Control & Lactoscan & Video & Interaction & Bundle & N
+& Control & Lactoscan & RI $p$ & Video & N
 \backslash
 
 \backslash
@@ -1070,7 +1107,7 @@ hline
 
 \begin_layout Plain Layout
 
-& Mean (SD) & (SE) & (SE) & (SE) & (SE) &
+& Mean (SD) & (SE) & & (SE) &
 \backslash
 
 \backslash
@@ -1090,23 +1127,17 @@ Improved practices &
 \backslash
 Sexpr{res_farmers[1,1]} &
 \backslash
-Sexpr{res_farmers[1,19]}$^{
+Sexpr{res_farmers[1,12]}$^{
 \backslash
-Sexpr{stars(res_farmers[1,21])}}$ &
+Sexpr{stars(ri$farmer$ri_p_treat[1])}}$ & $
 \backslash
-Sexpr{res_farmers[1,22]}$^{
+Sexpr{round(ri$farmer$ri_p_treat[1], 3)}$ &
 \backslash
-Sexpr{stars(res_farmers[1,24])}}$ &
+Sexpr{res_farmers[1,6]}$^{
 \backslash
-Sexpr{res_farmers[1,9]}$^{
+Sexpr{stars(res_farmers[1,8])}}$ &
 \backslash
-Sexpr{stars(res_farmers[1,11])}}$ &
-\backslash
-Sexpr{res_farmers[1,27]}$^{
-\backslash
-Sexpr{stars(res_farmers[1,29])}}$ &
-\backslash
-Sexpr{res_farmers[1,12]}
+Sexpr{res_farmers[1,9]}
 \backslash
 
 \backslash
@@ -1119,13 +1150,9 @@ Sexpr{res_farmers[1,12]}
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,20]}) & (
+Sexpr{res_farmers[1,13]}) & & (
 \backslash
-Sexpr{res_farmers[1,23]}) & (
-\backslash
-Sexpr{res_farmers[1,10]}) & (
-\backslash
-Sexpr{res_farmers[1,28]}) &
+Sexpr{res_farmers[1,7]}) &
 \backslash
 
 \backslash
@@ -1138,23 +1165,17 @@ Buyer uses analyzer &
 \backslash
 Sexpr{res_farmers[2,1]} &
 \backslash
-Sexpr{res_farmers[2,19]}$^{
+Sexpr{res_farmers[2,12]}$^{
 \backslash
-Sexpr{stars(res_farmers[2,21])}}$ &
+Sexpr{stars(ri$farmer$ri_p_treat[2])}}$ & $
 \backslash
-Sexpr{res_farmers[2,22]}$^{
+Sexpr{round(ri$farmer$ri_p_treat[2], 3)}$ &
 \backslash
-Sexpr{stars(res_farmers[2,24])}}$ &
+Sexpr{res_farmers[2,6]}$^{
 \backslash
-Sexpr{res_farmers[2,9]}$^{
+Sexpr{stars(res_farmers[2,8])}}$ &
 \backslash
-Sexpr{stars(res_farmers[2,11])}}$ &
-\backslash
-Sexpr{res_farmers[2,27]}$^{
-\backslash
-Sexpr{stars(res_farmers[2,29])}}$ &
-\backslash
-Sexpr{res_farmers[2,12]}
+Sexpr{res_farmers[2,9]}
 \backslash
 
 \backslash
@@ -1167,13 +1188,9 @@ Sexpr{res_farmers[2,12]}
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,20]}) & (
+Sexpr{res_farmers[2,13]}) & & (
 \backslash
-Sexpr{res_farmers[2,23]}) & (
-\backslash
-Sexpr{res_farmers[2,10]}) & (
-\backslash
-Sexpr{res_farmers[2,28]}) &
+Sexpr{res_farmers[2,7]}) &
 \backslash
 
 \backslash
@@ -1186,23 +1203,17 @@ Average sales price &
 \backslash
 Sexpr{res_farmers[3,1]} &
 \backslash
-Sexpr{res_farmers[3,19]}$^{
+Sexpr{res_farmers[3,12]}$^{
 \backslash
-Sexpr{stars(res_farmers[3,21])}}$ &
+Sexpr{stars(ri$farmer$ri_p_treat[3])}}$ & $
 \backslash
-Sexpr{res_farmers[3,22]}$^{
+Sexpr{round(ri$farmer$ri_p_treat[3], 3)}$ &
 \backslash
-Sexpr{stars(res_farmers[3,24])}}$ &
+Sexpr{res_farmers[3,6]}$^{
 \backslash
-Sexpr{res_farmers[3,9]}$^{
+Sexpr{stars(res_farmers[3,8])}}$ &
 \backslash
-Sexpr{stars(res_farmers[3,11])}}$ &
-\backslash
-Sexpr{res_farmers[3,27]}$^{
-\backslash
-Sexpr{stars(res_farmers[3,29])}}$ &
-\backslash
-Sexpr{res_farmers[3,12]}
+Sexpr{res_farmers[3,9]}
 \backslash
 
 \backslash
@@ -1215,13 +1226,9 @@ Sexpr{res_farmers[3,12]}
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,20]}) & (
+Sexpr{res_farmers[3,13]}) & & (
 \backslash
-Sexpr{res_farmers[3,23]}) & (
-\backslash
-Sexpr{res_farmers[3,10]}) & (
-\backslash
-Sexpr{res_farmers[3,28]}) &
+Sexpr{res_farmers[3,7]}) &
 \backslash
 
 \backslash
@@ -1234,23 +1241,17 @@ Gets quality bonus &
 \backslash
 Sexpr{res_farmers[4,1]} &
 \backslash
-Sexpr{res_farmers[4,19]}$^{
+Sexpr{res_farmers[4,12]}$^{
 \backslash
-Sexpr{stars(res_farmers[4,21])}}$ &
+Sexpr{stars(ri$farmer$ri_p_treat[4])}}$ & $
 \backslash
-Sexpr{res_farmers[4,22]}$^{
+Sexpr{round(ri$farmer$ri_p_treat[4], 3)}$ &
 \backslash
-Sexpr{stars(res_farmers[4,24])}}$ &
+Sexpr{res_farmers[4,6]}$^{
 \backslash
-Sexpr{res_farmers[4,9]}$^{
+Sexpr{stars(res_farmers[4,8])}}$ &
 \backslash
-Sexpr{stars(res_farmers[4,11])}}$ &
-\backslash
-Sexpr{res_farmers[4,27]}$^{
-\backslash
-Sexpr{stars(res_farmers[4,29])}}$ &
-\backslash
-Sexpr{res_farmers[4,12]}
+Sexpr{res_farmers[4,9]}
 \backslash
 
 \backslash
@@ -1263,13 +1264,9 @@ Sexpr{res_farmers[4,12]}
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,20]}) & (
+Sexpr{res_farmers[4,13]}) & & (
 \backslash
-Sexpr{res_farmers[4,23]}) & (
-\backslash
-Sexpr{res_farmers[4,10]}) & (
-\backslash
-Sexpr{res_farmers[4,28]}) &
+Sexpr{res_farmers[4,7]}) &
 \backslash
 
 \backslash
@@ -1289,23 +1286,17 @@ Anderson index &
 \backslash
 Sexpr{res_farmers[5,1]} &
 \backslash
-Sexpr{res_farmers[5,19]}$^{
+Sexpr{res_farmers[5,12]}$^{
 \backslash
-Sexpr{stars(res_farmers[5,21])}}$ &
+Sexpr{stars(ri$farmer$ri_p_treat[5])}}$ & $
 \backslash
-Sexpr{res_farmers[5,22]}$^{
+Sexpr{round(ri$farmer$ri_p_treat[5], 3)}$ &
 \backslash
-Sexpr{stars(res_farmers[5,24])}}$ &
+Sexpr{res_farmers[5,6]}$^{
 \backslash
-Sexpr{res_farmers[5,9]}$^{
+Sexpr{stars(res_farmers[5,8])}}$ &
 \backslash
-Sexpr{stars(res_farmers[5,11])}}$ &
-\backslash
-Sexpr{res_farmers[5,27]}$^{
-\backslash
-Sexpr{stars(res_farmers[5,29])}}$ &
-\backslash
-Sexpr{res_farmers[5,12]}
+Sexpr{res_farmers[5,9]}
 \backslash
 
 \backslash
@@ -1318,13 +1309,9 @@ Sexpr{res_farmers[5,12]}
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,20]}) & (
+Sexpr{res_farmers[5,13]}) & & (
 \backslash
-Sexpr{res_farmers[5,23]}) & (
-\backslash
-Sexpr{res_farmers[5,10]}) & (
-\backslash
-Sexpr{res_farmers[5,28]}) &
+Sexpr{res_farmers[5,7]}) &
 \backslash
 
 \backslash
@@ -1360,7 +1347,19 @@ small
 \backslash
 textit{Notes:} Orthogonalized treatment effects (Muralidharan et al.).
  CR2 cluster-robust standard errors in parentheses.
- * p<0.1, ** p<0.05, *** p<0.01.
+ Significance stars on the Lactoscan coefficient are based on Fisher randomizati
+on inference (RI) $p$-values from 5,000 permutations respecting the experimental
+ design.
+ * $p<0.1$, ** $p<0.05$, *** $p<0.01$.
+ Omnibus RI test (EGAP):
+\backslash
+Sexpr{ri$omnibus$farmer_treat$obs_count} of 4 individual outcomes significant
+ at 5
+\backslash
+% level (omnibus RI $p =
+\backslash
+Sexpr{round(ri$omnibus$farmer_treat$omnibus_p, 3)}$).
+ CR2 $p$-values and Anderson-Sharp $q$-values are reported in the appendix.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1435,7 +1434,7 @@ label{tab:mcc-results}
 
 
 \backslash
-begin{tabular}{lccc}
+begin{tabular}{lcccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1447,7 +1446,7 @@ hline
 
 \begin_layout Plain Layout
 
-& Control Mean & Treatment Effect & N
+& Control Mean & Treatment Effect & RI $p$ & N
 \backslash
 
 \backslash
@@ -1456,7 +1455,7 @@ hline
 
 \begin_layout Plain Layout
 
-& (SD) & (SE) &
+& (SD) & (SE) & &
 \backslash
 
 \backslash
@@ -1472,15 +1471,17 @@ hline
 
 \begin_layout Plain Layout
 
-Uses analyzer &
+Tests incoming (analyzer) &
 \backslash
 Sexpr{res_MCCs[1,1]} &
 \backslash
 Sexpr{res_MCCs[1,3]}$^{
 \backslash
-Sexpr{stars(res_MCCs[1,5])}}$ &
+Sexpr{stars(ri$MCC$ri_p[1])}}$ & $
 \backslash
-Sexpr{res_MCCs[1,8]}
+Sexpr{round(ri$MCC$ri_p[1], 3)}$ &
+\backslash
+Sexpr{res_MCCs[1,9]}
 \backslash
 
 \backslash
@@ -1493,7 +1494,7 @@ Sexpr{res_MCCs[1,8]}
 \backslash
 Sexpr{res_MCCs[1,2]}) & (
 \backslash
-Sexpr{res_MCCs[1,4]}) &
+Sexpr{res_MCCs[1,4]}) & &
 \backslash
 
 \backslash
@@ -1502,15 +1503,17 @@ Sexpr{res_MCCs[1,4]}) &
 
 \begin_layout Plain Layout
 
-Quality premium &
+Tests outgoing (analyzer) &
 \backslash
 Sexpr{res_MCCs[2,1]} &
 \backslash
 Sexpr{res_MCCs[2,3]}$^{
 \backslash
-Sexpr{stars(res_MCCs[2,5])}}$ &
+Sexpr{stars(ri$MCC$ri_p[2])}}$ & $
 \backslash
-Sexpr{res_MCCs[2,8]}
+Sexpr{round(ri$MCC$ri_p[2], 3)}$ &
+\backslash
+Sexpr{res_MCCs[2,9]}
 \backslash
 
 \backslash
@@ -1523,7 +1526,7 @@ Sexpr{res_MCCs[2,8]}
 \backslash
 Sexpr{res_MCCs[2,2]}) & (
 \backslash
-Sexpr{res_MCCs[2,4]}) &
+Sexpr{res_MCCs[2,4]}) & &
 \backslash
 
 \backslash
@@ -1532,15 +1535,17 @@ Sexpr{res_MCCs[2,4]}) &
 
 \begin_layout Plain Layout
 
-Rejects milk &
+Price paid to farmers &
 \backslash
 Sexpr{res_MCCs[3,1]} &
 \backslash
 Sexpr{res_MCCs[3,3]}$^{
 \backslash
-Sexpr{stars(res_MCCs[3,5])}}$ &
+Sexpr{stars(ri$MCC$ri_p[3])}}$ & $
 \backslash
-Sexpr{res_MCCs[3,8]}
+Sexpr{round(ri$MCC$ri_p[3], 3)}$ &
+\backslash
+Sexpr{res_MCCs[3,9]}
 \backslash
 
 \backslash
@@ -1553,7 +1558,142 @@ Sexpr{res_MCCs[3,8]}
 \backslash
 Sexpr{res_MCCs[3,2]}) & (
 \backslash
-Sexpr{res_MCCs[3,4]}) &
+Sexpr{res_MCCs[3,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average sales price &
+\backslash
+Sexpr{res_MCCs[4,1]} &
+\backslash
+Sexpr{res_MCCs[4,3]}$^{
+\backslash
+Sexpr{stars(ri$MCC$ri_p[4])}}$ & $
+\backslash
+Sexpr{round(ri$MCC$ri_p[4], 3)}$ &
+\backslash
+Sexpr{res_MCCs[4,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[4,2]}) & (
+\backslash
+Sexpr{res_MCCs[4,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Gives quality bonus &
+\backslash
+Sexpr{res_MCCs[5,1]} &
+\backslash
+Sexpr{res_MCCs[5,3]}$^{
+\backslash
+Sexpr{stars(ri$MCC$ri_p[5])}}$ & $
+\backslash
+Sexpr{round(ri$MCC$ri_p[5], 3)}$ &
+\backslash
+Sexpr{res_MCCs[5,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[5,2]}) & (
+\backslash
+Sexpr{res_MCCs[5,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Gets quality bonus &
+\backslash
+Sexpr{res_MCCs[6,1]} &
+\backslash
+Sexpr{res_MCCs[6,3]}$^{
+\backslash
+Sexpr{stars(ri$MCC$ri_p[6])}}$ & $
+\backslash
+Sexpr{round(ri$MCC$ri_p[6], 3)}$ &
+\backslash
+Sexpr{res_MCCs[6,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[6,2]}) & (
+\backslash
+Sexpr{res_MCCs[6,4]}) & &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Anderson index &
+\backslash
+Sexpr{res_MCCs[7,1]} &
+\backslash
+Sexpr{res_MCCs[7,3]}$^{
+\backslash
+Sexpr{stars(ri$MCC$ri_p[7])}}$ & $
+\backslash
+Sexpr{round(ri$MCC$ri_p[7], 3)}$ &
+\backslash
+Sexpr{res_MCCs[7,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& (
+\backslash
+Sexpr{res_MCCs[7,2]}) & (
+\backslash
+Sexpr{res_MCCs[7,4]}) & &
 \backslash
 
 \backslash
@@ -1587,8 +1727,20 @@ begin{flushleft}
 \backslash
 small
 \backslash
-textit{Notes:} CR2 cluster-robust standard errors in parentheses.
- * p<0.1, ** p<0.05, *** p<0.01.
+textit{Notes:} OLS ANCOVA with baseline control.
+ CR2 cluster-robust standard errors in parentheses.
+ Significance stars based on Fisher randomization inference (RI) $p$-values
+ from 5,000 permutations.
+ * $p<0.1$, ** $p<0.05$, *** $p<0.01$.
+ Omnibus RI test (EGAP):
+\backslash
+Sexpr{ri$omnibus$mcc$obs_count} of 6 individual outcomes significant at
+ 5
+\backslash
+% level (omnibus RI $p =
+\backslash
+Sexpr{round(ri$omnibus$mcc$omnibus_p, 3)}$).
+ CR2 $p$-values and Anderson-Sharp $q$-values are reported in the appendix.
 \end_layout
 
 \begin_layout Plain Layout
@@ -1640,8 +1792,9 @@ name "subsec:late"
 \end_inset
 
 [Placeholder discussing Local Average Treatment Effect estimates.
- The LATE specification instruments actual analyzer use (treat_TOT) with
- random assignment (treat) using two-stage least squares via the ivreg package.
+ The LATE specification instruments actual use of the measurement and monitoring
+ system (treat_TOT) with random assignment (treat) using two-stage least
+ squares via the ivreg package.
  Present results from res_farmers_TOT and discuss the first-stage F-statistic
  and compliance rates.]
 \end_layout
@@ -1658,9 +1811,7 @@ name "subsec:heterogeneity"
 \end_inset
 
 [Placeholder discussing heterogeneous treatment effects.
- Key heterogeneity dimension: whether the farmer sells directly to the MCC
- or through a trader (identified by _T or _T_R suffix on farmer_ID).
- Additional heterogeneity by cooperative status of the MCC and baseline
+ Key heterogeneity dimensions: cooperative status of the MCC and baseline
  quality practices.]
 \end_layout
 
@@ -1676,9 +1827,10 @@ name "subsec:exp1-summary"
 \end_inset
 
 [Placeholder summarizing Experiment 1 findings.
- The key takeaway: measurement technology improves quality through an enforcement
- channel (MCCs can now detect and reject adulterated milk) but does not
- generate quality-differentiated pricing.
+ The key takeaway: the quality measurement and digital monitoring system
+ improves quality through an enforcement channel (MCCs can now detect and
+ reject adulterated milk, and digital records make quality traceable over
+ time) but does not generate quality-differentiated pricing.
  This motivates the theoretical model in Section 5 and the follow-up experiment
  in Section 6.]
 \end_layout
@@ -1727,7 +1879,7 @@ name "fig:forest-primary"
 \end_layout
 
 \begin_layout Section
-A Model of Measurement Technology and Quality Incentives
+A Model of Quality Infrastructure and Quality Incentives
 \end_layout
 
 \begin_layout Standard
@@ -1739,29 +1891,33 @@ name "sec:model"
 
 This section presents a simple model to rationalize the findings from Experiment
  1.
- The model shows how measurement technology can improve quality through
- two distinct channels---enforcement and price differentiation---and how
- the relative importance of these channels depends on a single parameter.
+ The model shows how a quality measurement and digital monitoring system
+ can improve quality through two distinct channels---enforcement and price
+ differentiation---and how the relative importance of these channels depends
+ on a single parameter.
 \end_layout
 
 \begin_layout Standard
 [Placeholder for model setup.
  Consider an MCC that procures milk from farmers.
- The MCC has access to a measurement technology that reveals milk quality
- (fat content, adulteration).
+ The MCC has access to a quality measurement and digital monitoring system
+ that reveals milk quality (fat content, adulteration) and tracks quality
+ records across deliveries and over time.
  The parameter alpha in [0,1] governs how the MCC uses this information:]
 \end_layout
 
 \begin_layout Standard
-[When alpha = 0, the MCC uses the technology purely for enforcement: milk
- below a minimum quality threshold is rejected, but all accepted milk receives
- the same price.
+[When alpha = 0, the MCC uses the measurement and monitoring system purely
+ for enforcement: milk below a minimum quality threshold is rejected, but
+ all accepted milk receives the same price.
+ The digital records enable systematic detection of repeat offenders.
  This is an enforcement-only equilibrium.]
 \end_layout
 
 \begin_layout Standard
-[When alpha > 0, the MCC uses the technology for price differentiation:
- higher-quality milk receives a higher price.
+[When alpha > 0, the MCC uses the measurement and monitoring system for
+ price differentiation: higher-quality milk receives a higher price, with
+ digital records providing the basis for quality-based payment schedules.
  The strength of the price channel is increasing in alpha.]
 \end_layout
 
@@ -1772,16 +1928,18 @@ This section presents a simple model to rationalize the findings from Experiment
 
 \begin_layout Standard
 1.
- Enforcement channel (alpha = 0): Technology reduces adulteration by raising
- the probability of detection and rejection.
+ Enforcement channel (alpha = 0): The quality measurement and monitoring
+ system reduces adulteration by raising the probability of detection and
+ rejection, with digital records enabling systematic tracking of quality
+ patterns.
  Quality improves but prices do not differentiate.
 \end_layout
 
 \begin_layout Standard
 2.
- Price channel (alpha > 0): Technology enables quality-differentiated pricing,
- providing continuous incentives for quality improvement beyond the minimum
- threshold.]
+ Price channel (alpha > 0): The system enables quality-differentiated pricing,
+ with digital quality records providing the basis for continuous incentives
+ for quality improvement beyond the minimum threshold.]
 \end_layout
 
 \begin_layout Standard
@@ -1923,7 +2081,8 @@ end{table}
 
 \begin_layout Standard
 [Placeholder for discussion of how Experiment 1 results are consistent with
- alpha = 0: quality improves through enforcement but prices do not differentiate.
+ alpha = 0: quality improves through enforcement---enabled by both real-time
+ measurement and systematic digital tracking---but prices do not differentiate.
  This motivates Experiment 2, which exogenously sets alpha > 0 through quality
  bonuses.]
 \end_layout
@@ -1954,9 +2113,12 @@ name "subsec:exp2-design"
 \end_inset
 
 [Placeholder describing Experiment 2 design.
- Among MCCs that received the Lactoscan analyzer in Experiment 1, we randomly
- assign quality bonuses that create explicit price incentives for milk quality.
- This exogenously activates the price channel (sets alpha > 0 in the model).]
+ Among MCCs that received the quality measurement and digital monitoring
+ system in Experiment 1, we randomly assign quality bonuses that create
+ explicit price incentives for milk quality.
+ This exogenously activates the price channel (sets alpha > 0 in the model),
+ leveraging the digital quality records already in place to implement quality-based
+ payments.]
 \end_layout
 
 \begin_layout Subsection
@@ -1971,10 +2133,14 @@ name "subsec:exp2-intervention"
 \end_inset
 
 [Placeholder describing the quality bonus intervention.
- Farmers delivering milk above a fat content threshold receive a price bonus.
+ Traders delivering milk above a fat content threshold receive a price bonus,
+ calculated from the quality readings recorded by the digital monitoring
+ system.
  The bonus creates a direct link between measured quality and price, which
  was absent under the enforcement-only equilibrium observed in Experiment
- 1.]
+ 1.
+ The digital bookkeeping system is essential to this intervention: it provides
+ the verifiable quality records on which bonus payments are based.]
 \end_layout
 
 \begin_layout Subsection
@@ -2007,10 +2173,11 @@ name "subsec:exp2-data"
 \end_inset
 
 [Placeholder describing the data sources for Experiment 2.
- Daily milk submission records from the Lactoscan analyzer (fat content,
- SNF, quantity).
+ Daily milk submission records from the digital monitoring system (fat content,
+ SNF, quantity), which provides continuous quality tracking at each delivery.
  Endline survey data from traders and farmers.
- Administrative records on bonus payments.]
+ Administrative records on bonus payments, calculated from the digitalized
+ quality records.]
 \end_layout
 
 \begin_layout Subsection
@@ -2603,8 +2770,9 @@ Key points to develop:
 \begin_layout Standard
 1.
  The enforcement equilibrium: Why MCCs chose alpha = 0.
- Measurement technology alone leads to enforcement (rejection of adulterated
- milk) rather than price differentiation.
+ The quality measurement and digital monitoring system leads to enforcement
+ (rejection of adulterated milk, with digital records enabling systematic
+ tracking) rather than price differentiation.
  This is consistent with models of collective action problems where MCCs
  have limited incentive to invest in quality-differentiated pricing when
  they can simply enforce minimum standards.
@@ -2622,11 +2790,12 @@ ity making graded pricing administratively costly, and social norms around
 \begin_layout Standard
 3.
  Policy implications.
- Making quality visible is necessary but not sufficient for creating markets
- for quality.
- Additional interventions that directly create price incentives (such as
- quality bonuses or graded pricing mandates) are needed to move from enforcement
- equilibria to quality-differentiated markets.
+ Deploying quality measurement and digital monitoring infrastructure is
+ necessary but not sufficient for creating markets for quality.
+ Even when quality is both measurable and digitally trackable, additional
+ interventions that directly create price incentives (such as quality bonuses
+ or graded pricing mandates) are needed to move from enforcement equilibria
+ to quality-differentiated markets.
  This has implications for the design of quality infrastructure programs
  in developing country agricultural value chains.]
 \end_layout
@@ -2643,11 +2812,13 @@ name "sec:conclusion"
 \end_inset
 
 [Placeholder conclusion.
- Summarize the three-act structure: (1) measurement technology improves
- quality through enforcement but not pricing, (2) a model rationalizes this
- as an alpha = 0 equilibrium, (3) exogenously activating the price channel
- through quality bonuses confirms that the missing ingredient was price
- incentives.
+ Summarize the three-act structure: (1) a quality measurement and digital
+ monitoring system improves quality through enforcement but not pricing---even
+ though the system makes quality both measurable and trackable over time,
+ (2) a model rationalizes this as an alpha = 0 equilibrium, (3) exogenously
+ activating the price channel through quality bonuses---leveraging the digital
+ quality records already in place---confirms that the missing ingredient
+ was price incentives.
  Discuss external validity and directions for future research on quality
  infrastructure in developing country value chains.]
 \end_layout
@@ -2702,10 +2873,6 @@ name "sec:appendix"
 
 \begin_layout Standard
 - LATE results table
-\end_layout
-
-\begin_layout Standard
-- Heterogeneity by trader status
 \end_layout
 
 \begin_layout Standard
