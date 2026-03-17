@@ -1576,8 +1576,6 @@ we randomize the second innovation bundle (T2) at the farmer level.
  half of its supplying farmers are assigned to T2 and the remainder to the farmer-level control.
  This yields a nested,
  multi-level design in which T1 varies across MCCs and T2 varies within MCCs.
- To examine heterogeneous effects,
- we further stratify the farmer-level randomization by the nature of the farmer’s linkage to the MCC (direct delivery versus delivery through a trader).
 \end_layout
 
 \begin_layout Standard
@@ -1708,39 +1706,6 @@ Hypothesis 3:
 Hypothesis 4:
  making quality visible at the MCC level (T1) and providing information on what the desired milk quality parameters are to farmers (YT2) increases outcomes for farmers 
 \begin_inset Formula $\left(\beta_{H4}>0\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Additional hypotheses,
- based on the stratification,
- tests for equality in average treatment effects between farmers that are directly connected to MCCs and that are using traders.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 5:
- The average treatment effect of the MCC-level intervention (T1) differs for farmers directly connected to an MCC and those supplying through traders 
-\begin_inset Formula $\left(\beta_{H2C}\neq\beta_{H2T}\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 6:
- The average treatment effect of the farmer-level information intervention (T2) differs for farmers directly connected to an MCC and those supplying through traders 
-\begin_inset Formula $\left(\beta_{H3C}\neq\beta_{H3T}\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 7:
- The average treatment effect of the combined intervention (T1 × T2) differs for farmers directly connected to an MCC and those supplying through traders 
-\begin_inset Formula $\left(\beta_{H4C}\neq\beta_{H4T}\right)$
 \end_inset
 
 .
@@ -2069,7 +2034,246 @@ analyzer
  treatment).
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
+Sample and Timeline
+\end_layout
+
+\begin_layout Standard
+Sample size was determined using a series of power simulations,
+ details of which can be found in the pre-analysis plan.
+ The primary outcome for these calculations was the price of milk,
+ modeled at both the MCC and farmer level.
+ At the MCC level,
+ prices were assumed normally distributed with mean 1000 UGX/liter and standard deviation 50,
+ while farmer-level prices were drawn with the MCC mean and a higher variance (SD = 100) to capture greater dispersion at that level.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Processors set fairly stable procurement prices and MCCs adjust tightly around those.
+ The nested nature of the sampling and variance parameters imply an intra-cluster correlation of approximately ρ≈0.20.
+\end_layout
+
+\end_inset
+
+ We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size),
+ translate into a 40 UGX/liter increase for farmers (small to medium effect),
+ and that the individual-level information treatment would generate a 25 UGX/liter increase (small effect),
+ with a large interaction effect of 50 UGX/liter.
+ Power was calculated for the joint test of all hypotheses being true at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100–130 MCCs) and farmers per cluster (10–40).
+ Results showed that with about 125 MCCs and 20 farmers per MCC (total sample of about 2,500 farmers),
+ power was just above 0.80 for a joint significance test,
+ while power for individual hypotheses was substantially higher,
+ ranging from 0.87 to 0.99.
+ At the design stage,
+ we decided to target 130 MCCs to account for attrition.
+\end_layout
+
+\begin_layout Standard
+The field experiment was conducted in four districts of Southwestern Uganda:
+ Ntungamo,
+ Mbarara,
+ Kazo,
+ and Kirihura.
+ The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
+ from which we sampled 130 MCCs.
+ Half of these were randomly selected to receive T1,
+ while the other half served as the control.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In some cases,
+ more than one MCC were in a particular location (eg.
+ in a trading center).
+ In such cases,
+ MCCs were pooled in the same treatment group,
+ as a result,
+ the number of clusters was slightly lower than the number of MCCs.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Maybe we should estimate how big the difference was and see if results are sensitive to the degree of clustering.
+\end_layout
+
+\end_inset
+
+ In each of the 130 MCCs,
+ we then randomly selected 20 farmers who deliver milk to the center,
+ half of which were taking the milk themselves and the other half using a trader or transported to get the milk to the MCC.
+ Of these 20 farmers,
+ 10 were randomly assigned to the video treatment (T2),
+ while the remaining 10 served as the control group,
+ with again in each group half directly connected and the other half connected through an intermediary.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../../figures/sampling.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sampling and Randomization
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sampling"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sampling"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ illustrates the randomization of T1 and T2 in three of the four study districts at both the MCC and farmer levels.
+ The leftmost panel displays the spatial distribution of MCCs and their assigned T1 status.
+ The middle panel shows the corresponding T1 assignment for farmers connected to those MCCs,
+ reflecting the fact that T1 was clustered at the MCC level.
+ The rightmost panel depicts the allocation of T2 among farmers linked to MCCs,
+ which was randomized at the individual level.
+\end_layout
+
+\begin_layout Standard
+Baseline data from both MCCs and associated farmers was collected towards the end of 2022 using in-person surveys.
+ At that time,
+ the intervention at the farmer level (T2) was implemented.
+ In the second half of 2023 milk analyzers were installed and MCC managers were trained on the use of the analyzers and the digital record-keeping system.
+ Towards the end of the installation of the analyzers,
+ in October 2023,
+ we reinforced T2 by showing the video again to T2 farmers.
+ Next,
+ during the course of one year,
+ together with the DDA we supported T1 MCCs with regular visits to make sure the equipment was operational,
+ including recalibration after 6 months.
+ In december 2024,
+ endline data was collected.
+ This involved in-person surveys at the MCC level and at the farmer level.
+ In addition,
+ during endline we also measured quality of incoming milk.
+ To do so,
+ an enumerator equipped with a milk analyzer paid an unannounced visit to each MCC enrolled in the study and measured all incoming milk samples over the course of one full day.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This exercise posed logistical challenges,
+ as MCCs opened early (usually at 8:00 am) and were often in remote areas.
+ Enumerators frequently stayed overnight nearby to set up equipment before deliveries and carried generators for use where power was unavailable.
+ To limit information spillovers,
+ the testing was conducted over a short period with as many enumerators deployed simultaneously as possible.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Outcome Variables
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:outcome-variables"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We measure outcomes at three levels of the value chain.
+\end_layout
+
+\begin_layout Standard
+At the MCC level,
+ primary outcomes capture the adoption of quality testing infrastructure and the emergence of quality-based pricing.
+ Testing outcomes include whether the MCC uses the milk analyzer to test incoming milk deliveries and whether it tests outgoing milk sold to processors.
+ Pricing outcomes include the average price paid to farmers for milk,
+ the average price received from buyers,
+ and whether the MCC gives or receives quality-based bonuses.
+\end_layout
+
+\begin_layout Standard
+At the farmer level,
+ primary outcomes capture changes in production practices and market returns.
+ These include an index of improved dairy management practices (oversowing,
+ legume pastures,
+ controlled grazing,
+ pasture conservation,
+ and supplementary feeding),
+ whether the farmer's buyer uses a milk analyzer for quality testing,
+ the quantity-weighted average sales price received,
+ and whether the farmer receives a quality bonus from any buyer.
+ We combine these four outcomes into an Anderson index as a summary measure.
+\end_layout
+
+\begin_layout Standard
+Finally,
+ to obtain objective measures of milk quality independent of self-reported survey data,
+ we collect supervised milk samples at endline.
+ Enumerators equipped with project Lactoscans visited each MCC and tested all incoming deliveries over one full day,
+ yielding measurements of butterfat,
+ solids-not-fat,
+ protein,
+ added water,
+ and corrected lactometer reading for each delivery.
+ These sample-level outcomes are analyzed using quantity-weighted least squares,
+ with treatment effects identified from the MCC-level randomization.
+\end_layout
+
+\begin_layout Standard
+Secondary outcome families,
+ reported in the appendix,
+ include sales quantities,
+ treatment uptake indicators,
+ sales channel choices,
+ and MCC-level farmer counts and volumes.
+\end_layout
+
+\begin_layout Subsection
 Estimation and Inference
 \begin_inset CommandInset label
 LatexCommand label
@@ -2447,167 +2651,7 @@ y_{i,m}=\alpha+\beta_{H3}T2_{i,m}+\beta^{T2}_{H2}\left(T1_{i,m}-\bar{T1}\right)+
 \end_layout
 
 \begin_layout Standard
-Next,
- note that 
-\begin_inset Formula $\beta^{*}_{H4}$
-\end_inset
-
- in equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- is estimated as an incremental effect to the main effects.
- In our analysis,
- we will also test Hypothesis 4 by directly comparing farmers that received the training and are connected to an MCC that received a milk analyzer to farmers that did not get the training and are connected to a control MCC.
- In other words,
- we will estimate:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{i,m}=\alpha+\beta_{H4}.T1_{i,m}.T2_{i,m}+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:one-1-1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-after dropping from our data farmers that were exposed to only a single treatment.
- This specification recovers the effect of the intervention as an integrated package that addresses quality upgrading through both supply-side (push) and demand-side (pull) channels.
-\end_layout
-
-\begin_layout Standard
-Finally,
- we will also look at treatment heterogeneity,
- exploiting the fact that we stratified farmers on their link to the MCC.
- In particular,
- 
-\begin_inset Formula $C_{i,m}$
-\end_inset
-
- is an indicator variable at the farmer level that is one if farmer 
-\emph on
-i
-\emph default
- is directly connected to MCC 
-\emph on
-m
-\emph default
- (and zero if the farmer is connected through an intermediary).
- We also add a full set of interactions with this connection indicator,
- resulting in the the following model:
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-begin{multline}      
-\end_layout
-
-\begin_layout Plain Layout
-y_{i,m}=
-\backslash
-alpha+
-\backslash
-alpha{}_{C}C_{i,m}+
-\backslash
-beta_{H2T}.T1_{i,m}+
-\backslash
-beta_{H3T}T2_{i,m}+
-\backslash
-beta_{H4T}T2_{i.m}.T1_{i,m} 
-\backslash
-
-\backslash
-         
-\end_layout
-
-\begin_layout Plain Layout
-& +
-\backslash
-beta_{H2C}.T1_{i,m}.C_{i,m}+
-\backslash
-beta_{H3C}T2_{i}.C_{i,m}+
-\backslash
-beta_{H4C}T2_{i}.T1_{i,m}.C_{i,m}+
-\backslash
-beta_{b}.y_{i,m}^{b}+
-\backslash
-varepsilon_{i,m}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{eq:two}    
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{multline}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This specification is used to test Hypotheses 5-7 outlined in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-In all farmer level regressions (Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- to 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
- 
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-),
+In all farmer level regressions,
  we apply a cluster-robust variance estimator with the bias-reduced linearization (CR2) small-sample correction 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -2619,7 +2663,7 @@ literal "false"
 ,
  with standard errors clustered at the level of randomization (MCC catchment area level).
  To account for multiple comparisons,
- we will combine primary outcomes into an index following 
+ we will combine primary outcomes into an index following
 \begin_inset CommandInset citation
 LatexCommand citet
 key "doi:10.1198/016214508000000841"
@@ -2630,265 +2674,9 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Subsection
-Sample and Timeline
-\end_layout
-
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:sample-timeline"
-
-\end_inset
-
-[Placeholder describing the sample selection process and study timeline.
- MCCs were selected from dairy-producing regions in Uganda.
- Farmers were sampled from MCC client lists.
- Baseline data were collected before randomization.
- Treatment was implemented and endline data collected after a sufficient period for effects to materialize.]
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../PAP/figures/sampling.png
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Sampling Strategy
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:sampling"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Sample and Timeline
-\end_layout
-
-\begin_layout Standard
-Sample size was determined using a series of power simulations,
- details of which can be found in the pre-analysis plan.
- The primary outcome for these calculations was the price of milk,
- modeled at both the MCC and farmer level.
- At the MCC level,
- prices were assumed normally distributed with mean 1000 UGX/liter and standard deviation 50,
- while farmer-level prices were drawn with the MCC mean and a higher variance (SD = 100) to capture greater dispersion at that level.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Processors set fairly stable procurement prices and MCCs adjust tightly around those.
- The nested nature of the sampling and variance parameters imply an intra-cluster correlation of approximately ρ≈0.20.
-\end_layout
-
-\end_inset
-
- We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size),
- translate into a 40 UGX/liter increase for farmers (small to medium effect),
- and that the individual-level information treatment would generate a 25 UGX/liter increase (small effect),
- with a large interaction effect of 50 UGX/liter.
- Power was calculated for the joint test of all hypotheses being true at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100–130 MCCs) and farmers per cluster (10–40).
- Results showed that with about 125 MCCs and 20 farmers per MCC (total sample of about 2,500 farmers),
- power was just above 0.80 for a joint significance test,
- while power for individual hypotheses was substantially higher,
- ranging from 0.87 to 0.99.
- At the design stage,
- we decided to target 130 MCCs to account for attrition.
-\end_layout
-
-\begin_layout Standard
-The field experiment was conducted in four districts of Southwestern Uganda:
- Ntungamo,
- Mbarara,
- Kazo,
- and Kirihura.
- The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
- from which we sampled 130 MCCs.
- Half of these were randomly selected to receive T1,
- while the other half served as the control.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-In some cases,
- more than one MCC were in a particular location (eg.
- in a trading center).
- In such cases,
- MCCs were pooled in the same treatment group,
- as a result,
- the number of clusters was slightly lower than the number of MCCs.
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Maybe we should estimate how big the difference was and see if results are sensitive to the degree of clustering.
-\end_layout
-
-\end_inset
-
- In each of the 130 MCCs,
- we then randomly selected 20 farmers who deliver milk to the center,
- half of which were taking the milk themselves and the other half using a trader or transported to get the milk to the MCC.
- Of these 20 farmers,
- 10 were randomly assigned to the video treatment (T2),
- while the remaining 10 served as the control group,
- with again in each group half directly connected and the other half connected through an intermediary.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../../../../../figures/sampling.png
-	lyxscale 50
-	scale 35
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Sampling and Randomization
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Sampling"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Sampling"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- illustrates the randomization of T1 and T2 in three of the four study districts at both the MCC and farmer levels.
- The leftmost panel displays the spatial distribution of MCCs and their assigned T1 status.
- The middle panel shows the corresponding T1 assignment for farmers connected to those MCCs,
- reflecting the fact that T1 was clustered at the MCC level.
- The rightmost panel depicts the allocation of T2 among farmers linked to MCCs,
- which was randomized at the individual level.
-\end_layout
-
-\begin_layout Standard
-Baseline data from both MCCs and associated farmers was collected towards the end of 2022 using in-person surveys.
- At that time,
- the intervention at the farmer level (T2) was implemented.
- In the second half of 2023 milk analyzers were installed and MCC managers were trained on the use of the analyzers and the digital record-keeping system.
- Towards the end of the installation of the analyzers,
- in October 2023,
- we reinforced T2 by showing the video again to T2 farmers.
- Next,
- during the course of one year,
- together with the DDA we supported T1 MCCs with regular visits to make sure the equipment was operational,
- including recalibration after 6 months.
- In december 2024,
- endline data was collected.
- This involved in-person surveys at the MCC level and at the farmer level.
- In addition,
- during endline we also measured quality of incoming milk.
- To do so,
- an enumerator equipped with a milk analyzer paid an unannounced visit to each MCC enrolled in the study and measured all incoming milk samples over the course of one full day.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This exercise posed logistical challenges,
- as MCCs opened early (usually at 8:00 am) and were often in remote areas.
- Enumerators frequently stayed overnight nearby to set up equipment before deliveries and carried generators for use where power was unavailable.
- To limit information spillovers,
- the testing was conducted over a short period with as many enumerators deployed simultaneously as possible.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Estimation
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:estimation"
-
-\end_inset
-
-[Placeholder describing the estimation strategy.
- Intent-to-treat (ITT) effects are estimated using OLS with CR2 cluster-robust standard errors (clubSandwich).
- Local Average Treatment Effects (LATE) are estimated via two-stage least squares,
- instrumenting actual use of the measurement and monitoring system with random assignment.
- The orthogonalized factorial specification follows Muralidharan et al.,
- using demeaned treatment indicators to isolate individual treatment effects that are invariant to the other treatment arm.
- Anderson indices are constructed as summary measures across outcome families.
- Statistical inference in the main text uses Fisher randomization inference (RI) p-values,
+In addition to the CR2-based inference described above,
+ we also report Fisher randomization inference (RI) p-values as our primary inferential framework,
  computed from 5,000 permutations that respect the experimental design:
  the measurement and monitoring system treatment is permuted at the MCC level (maintaining the number of treated MCCs),
  and the video treatment is permuted within each MCC (maintaining counts).
@@ -2898,7 +2686,7 @@ name "subsec:estimation"
  we compute the probability of observing as many individually significant outcomes as in the actual data.
  CR2 cluster-robust p-values,
  Anderson-Sharp q-values,
- and Westfall-Young stepdown-adjusted p-values are reported in the appendix.]
+ and further robustness checks are reported in the appendix.
 \end_layout
 
 \begin_layout Subsection
