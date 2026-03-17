@@ -1120,9 +1120,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Although dairy value chains in Uganda differ in their organizational form—
-from fully integrated systems led by large processors to fragmented structures of small cooperatives—
-a typical chain comprises five main actors,
+Although dairy value chains in Uganda differ in their organizational form,
+ from fully integrated systems led by large processors to fragmented structures of small cooperatives,
+ a typical chain comprises five main actors,
  each with a distinct role in milk production,
  transport,
  and processing:
@@ -1164,8 +1164,9 @@ Milk Collection Centers:
  These centers are strategically distributed across rural areas,
  facilitating access for farmers,
  traders and transporters.
- MCCs vary in organizational form (cooperatives vs.
- private) and capacity.
+ MCCs vary considerably in organizational form and capacity.
+ Cooperative MCCs are owned by member farmers and in principle have stronger incentives to transmit quality signals upstream, since members benefit directly from higher prices.
+ Privately owned MCCs, by contrast, operate as commercial entities purchasing milk for resale, with less institutional pressure to differentiate on quality.
 \end_layout
 
 \begin_layout Enumerate
@@ -1178,9 +1179,8 @@ Large Traders:
 \begin_layout Enumerate
 Processors:
  Processors,
- concentrated in or around key towns such as Mbarara—
-Uganda’s dairy hub—
-convert raw milk into value-added products with extended shelf lives,
+ concentrated in or around key towns such as Mbarara (Uganda’s dairy hub),
+ convert raw milk into value-added products with extended shelf lives,
  such as ultra-heat-treated (UHT) milk,
  powdered milk,
  and infant formula.
@@ -1188,7 +1188,25 @@ convert raw milk into value-added products with extended shelf lives,
 \end_layout
 
 \begin_layout Standard
-This layered and dynamic structure enables the participation of diverse stakeholders while presenting opportunities for efficiency improvements at various points along the chain.
+This layered structure, in which milk passes through multiple intermediaries before reaching processors, has important implications for quality incentives.
+ Because milk from different farmers is typically pooled at each stage, traceability from individual producer to final buyer is lost early in the chain, weakening the link between individual quality effort and the price received.
+ The intermediation layers also mean that any quality premium generated at the processor level must pass through traders and MCCs before reaching the farmer, creating multiple points at which price signals can be absorbed or distorted.
+\end_layout
+
+\begin_layout Standard
+Milk quality is a persistent challenge in Uganda's dairy sector.
+ Water adulteration is the most common form of quality fraud: traders and farmers add water to increase the volume of milk delivered, diluting its compositional value.
+ Because traders are paid per liter with no adjustment for composition, the incentive to adulterate is straightforward.
+ Adulterated milk reduces processing yields for butter, cheese, and powdered milk, and in severe cases can lead to rejection of entire batches at the processor level, imposing losses on MCCs.
+ Beyond adulteration, compositional quality (butterfat, protein, solids-not-fat) varies substantially across farmers depending on breed, feeding practices, and animal health, but these differences are not reflected in prices.
+\end_layout
+
+\begin_layout Standard
+Pricing along the chain reinforces the low-quality equilibrium.
+ Prices at MCCs are typically fixed per liter, with no differentiation based on compositional quality.
+ Payments from MCCs to farmers are made on a biweekly cycle, creating a wedge between the moment of delivery (when quality could in principle be observed) and the moment of payment (when incentives are realized).
+ This payment structure makes it difficult to link compensation to the quality of specific deliveries, even when testing infrastructure is available.
+ At the processor level, quality-based pricing does exist in some cases, but these premiums rarely flow upstream to MCCs, let alone to farmers or traders.
 \end_layout
 
 \begin_layout Standard
@@ -1198,16 +1216,19 @@ Quality of raw milk is difficult to observe without proper testing equipment.
  The lactometer test is a gravity based test that measures milk density using a floating hydrometer and is primarily employed to detect added water,
  since dilution lowers density,
  although readings are sensitive to temperature and cannot distinguish intentional adulteration from natural variation in fat or SNF.
- The alcohol test—
-typically using 68 to 75 percent ethanol—
-assesses protein stability as a proxy for freshness and acidity;
+ The alcohol test,
+ typically using 68 to 75 percent ethanol,
+ assesses protein stability as a proxy for freshness and acidity;
  milk that curdles upon contact with alcohol is rejected as sour.
  While both tests are inexpensive and easy to administer,
  neither provides information on compositional attributes such as butterfat,
  solids-not-fat,
  or protein,
  limiting their usefulness for enforcing or rewarding quality beyond basic adulteration and hygiene.
- 
+ Electronic milk analyzers, such as the Lactoscan, offer a more comprehensive alternative: they measure butterfat, solids-not-fat, protein, added water, and density in real time from a small milk sample.
+ However, these devices are not widely available at MCCs due to their cost (approximately USD 3,000 per unit) and the need for regular calibration and maintenance.
+ When paired with a digital record-keeping system, milk analyzers can provide not only point-of-delivery quality measurement but also systematic tracking of quality across deliveries and over time, enabling MCCs to identify patterns, detect persistent adulteration, and build individual quality histories for suppliers.
+ It is precisely this combination of measurement technology and digital monitoring infrastructure that forms the basis of our intervention in Experiment 1.
 \end_layout
 
 \begin_layout Section
