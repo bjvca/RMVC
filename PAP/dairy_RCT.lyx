@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -7,7 +7,7 @@
 \textclass article
 \begin_preamble
 \usepackage{amsmath}
-\emergencystretch 3em
+\emergencystretch 3em 
 \sloppy
 \end_preamble
 \use_default_options true
@@ -17,7 +17,7 @@ knitr
 \maintain_unincluded_children no
 \language english
 \language_package default
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -47,9 +47,9 @@ knitr
 \pdf_bookmarksnumbered false
 \pdf_bookmarksopen false
 \pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder false
-\pdf_colorlinks false
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
 \pdf_backref false
 \pdf_pdfusetitle true
 \pdf_quoted_options "linkcolor=black, urlcolor=blue, citecolor=blue, pdfstartview={FitH}, hyperfootnotes=false, unicode=true"
@@ -72,27 +72,15 @@ knitr
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 1in
-\topmargin 1in
-\rightmargin 1in
-\bottommargin 1in
 \secnumdepth 3
 \tocdepth 3
 \paragraph_separation indent
@@ -108,13 +96,12 @@ knitr
 \tracking_changes false
 \output_changes false
 \change_bars false
-\postpone_fragile_content true
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -127,6 +114,7 @@ knitr
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 author{Richard Ariong
@@ -162,10 +150,7 @@ thanks{Innovation Policy and Scaling Unit,
 
 \end_inset
 
-Measurement,
- Enforcement,
- and Price Incentives in Agricultural Supply Chains:
- Experimental Evidence from Ugandan Dairy
+Measurement, Enforcement, and Price Incentives in Agricultural Supply Chains: Experimental Evidence from Ugandan Dairy
 \end_layout
 
 \begin_layout Abstract
@@ -175,8 +160,9 @@ Measurement technology could improve agricultural product quality through price 
  We develop a model nesting both channels and test its predictions in a field experiment providing digital milk analyzers to 120 milk collection centers serving 2,500 farmers in Uganda.
  Added water falls sharply and butterfat rises modestly,
  yet prices remain unchanged.
- An information intervention affects behavior only when paired with enforcement.
  The data consistently point to enforcement---raising the detection probability for substandard supply---rather than quality-differentiated pricing as the operative channel in this cooperative setting.
+ A cross-randomized information treatment had no independent effect on primary outcomes;
+ full factorial results are reported in the Online Appendix.
 \end_layout
 
 \begin_layout Standard
@@ -202,6 +188,7 @@ Keywords:
 status open
 
 \begin_layout Plain Layout
+
 <<code,
   echo=FALSE,
  warning = FALSE,
@@ -209,10 +196,12 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+
 rm(list=ls())
 \end_layout
 
 \begin_layout Plain Layout
+
 path2 <- getwd()
 \end_layout
 
@@ -221,6 +210,7 @@ path2 <- getwd()
 \end_layout
 
 \begin_layout Plain Layout
+
 balance <- readRDS(paste(path2,"results/balance.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -233,6 +223,7 @@ balance <- readRDS(paste(path2,"results/balance.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 balance_farmer <- readRDS(paste(path2,"/results/balance_farmer.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -245,6 +236,7 @@ balance_farmer <- readRDS(paste(path2,"/results/balance_farmer.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 F_test <- readRDS(paste(path2,"/results/F_test.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -261,6 +253,7 @@ F_test <- readRDS(paste(path2,"/results/F_test.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 res_MCCs <- readRDS(paste(path2,"/results/res_MCCs.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -273,6 +266,7 @@ res_MCCs <- readRDS(paste(path2,"/results/res_MCCs.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 res_MCCs_sec_quant <- readRDS(paste(path2,"/results/res_MCCs_sec_quant.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -285,6 +279,7 @@ res_MCCs_sec_quant <- readRDS(paste(path2,"/results/res_MCCs_sec_quant.RData",se
 \end_layout
 
 \begin_layout Plain Layout
+
 res_MCCs_sec_uptake <- readRDS(paste(path2,"/results/res_MCCs_sec_uptake.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -297,6 +292,7 @@ res_MCCs_sec_uptake <- readRDS(paste(path2,"/results/res_MCCs_sec_uptake.RData",
 \end_layout
 
 \begin_layout Plain Layout
+
 res_MCCs_sec_sales <- readRDS(paste(path2,"/results/res_MCCs_sec_sales.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -313,6 +309,7 @@ res_MCCs_sec_sales <- readRDS(paste(path2,"/results/res_MCCs_sec_sales.RData",se
 \end_layout
 
 \begin_layout Plain Layout
+
 res_farmers <- readRDS(paste(path2,"/results/res_farmers.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -325,6 +322,7 @@ res_farmers <- readRDS(paste(path2,"/results/res_farmers.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 res_farmers_TOT <- readRDS(paste(path2,"/results/res_farmers_TOT.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -337,6 +335,7 @@ res_farmers_TOT <- readRDS(paste(path2,"/results/res_farmers_TOT.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 res_farmers_sec_quant <- readRDS(paste(path2,"/results/res_farmers_sec_quant.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -349,6 +348,7 @@ res_farmers_sec_quant <- readRDS(paste(path2,"/results/res_farmers_sec_quant.RDa
 \end_layout
 
 \begin_layout Plain Layout
+
 res_farmers_sec_uptake <- readRDS(paste(path2,"/results/res_farmers_sec_uptake.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -361,6 +361,7 @@ res_farmers_sec_uptake <- readRDS(paste(path2,"/results/res_farmers_sec_uptake.R
 \end_layout
 
 \begin_layout Plain Layout
+
 res_farmers_sec_sold <- readRDS(paste(path2,"/results/res_farmers_sec_sold.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -373,6 +374,7 @@ res_farmers_sec_sold <- readRDS(paste(path2,"/results/res_farmers_sec_sold.RData
 \end_layout
 
 \begin_layout Plain Layout
+
 res_farmers_sec_switching <- readRDS(paste(path2,"/results/res_farmers_sec_switching.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -389,6 +391,7 @@ res_farmers_sec_switching <- readRDS(paste(path2,"/results/res_farmers_sec_switc
 \end_layout
 
 \begin_layout Plain Layout
+
 res_samples <- readRDS(paste(path2,"/results/res_samples.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -401,6 +404,7 @@ res_samples <- readRDS(paste(path2,"/results/res_samples.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 assorted_tests <- readRDS(paste(path2,"/results/assorted_tests.RData",sep=
 \begin_inset Quotes erd
 \end_inset
@@ -413,6 +417,7 @@ assorted_tests <- readRDS(paste(path2,"/results/assorted_tests.RData",sep=
 \end_layout
 
 \begin_layout Plain Layout
+
 @
 \end_layout
 
@@ -621,10 +626,11 @@ literal "false"
 
 .
  Water addition to milk is endemic.
- We implement a multi-level randomized controlled trial across 120 MCCs and over 2,500 farmers in which we cross-randomize two interventions:
- (T1) digital milk analyzers installed at MCCs that enable precise,
- rapid compositional testing of every delivery;
- and (T2) an information treatment providing farmers with knowledge about compositional quality parameters and practices to improve them.
+ We implement a cluster-randomized controlled trial across 120 MCCs and over 2,500 farmers in which we provide digital milk analyzers to treatment MCCs,
+ enabling precise,
+ rapid compositional testing of every delivery.
+ A cross-randomized farmer-level information treatment was also implemented;
+ those results are reported in the Online Appendix.
 \end_layout
 
 \begin_layout Standard
@@ -634,14 +640,11 @@ We develop a model that nests both channels.
  the model reduces to pure enforcement;
  when positive,
  a price channel also operates.
- The two regimes generate sharply different predictions for prices,
- the magnitude of quality improvement,
- and whether farmer information works independently or only through enforcement.
+ The two regimes generate sharply different predictions for prices and the magnitude of quality improvement.
  Under enforcement alone,
  the model predicts a large reduction in adulteration,
  a modest improvement in compositional quality bounded at the acceptance floor,
- no change in prices,
- and an information treatment that works only when paired with the analyzer.
+ and no change in prices.
 \end_layout
 
 \begin_layout Standard
@@ -655,9 +658,6 @@ The experimental results align closely with these predictions.
  MCC selling prices,
  farmer prices,
  and the prevalence of quality premia were all unaffected.
- The farmer-level information treatment had effects only when paired with the analyzer,
- confirming that enforcement and knowledge are complements:
- information about quality is actionable only when there is a credible threat of detection.
  Directly connected farmers responded more strongly than those selling through traders,
  consistent with the model’s prediction that intermediation dilutes individual detection.
 \end_layout
@@ -715,7 +715,7 @@ The rest of the paper is organized as follows.
  Section 2 describes Uganda’s dairy value chain and the institutional context.
  Section 3 frames the competing channels through which measurement technology may affect quality and develops the research hypotheses.
  Section 4 presents the conceptual framework and derives testable predictions.
- Section 5 details the two intervention bundles and Section 6 outlines the experimental design.
+ Section 5 details the measurement and monitoring system and Section 6 outlines the experimental design.
  Section 7 discusses the estimation strategy.
  Section 8 describes the sample,
  data collection,
@@ -763,13 +763,11 @@ A typical dairy value chain connects five actors.
 \emph on
  milk collection centers
 \emph default
- (MCCs).
- 
+ (MCCs). 
 \emph on
  Transporters
 \emph default
- collect milk from farms and deliver it to MCCs for a fee;
- 
+ collect milk from farms and deliver it to MCCs for a fee; 
 \emph on
  traders
 \emph default
@@ -778,8 +776,7 @@ A typical dairy value chain connects five actors.
  MCCs bulk and chill milk,
  initiating the cold chain,
  and are distributed across rural areas to facilitate access.
- Once chilled,
- 
+ Once chilled, 
 \emph on
  large traders
 \emph default
@@ -792,8 +789,7 @@ A typical dairy value chain connects five actors.
 
 \begin_layout Standard
 Three features of this chain are critical to our study.
- First,
- 
+ First, 
 \emph on
  adulteration is endemic
 \emph default
@@ -819,8 +815,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Second,
- 
+Second, 
 \emph on
  pricing is flat
 \emph default
@@ -855,8 +850,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Third,
- 
+Third, 
 \emph on
  MCCs are the natural enforcement node
 \emph default
@@ -1093,6 +1087,7 @@ literal "false"
 .
 \end_layout
 
+
 \begin_layout Section
 Conceptual Framework and Testable Predictions
 \begin_inset CommandInset label
@@ -1190,6 +1185,7 @@ In practice,
  rejected milk can sometimes be sold on the informal market at a steep discount,
  or it may be a total loss.
  The key assumption is that rejection is costly:
+
 \begin_inset Formula $s<p_{0}$
 \end_inset
 
@@ -1209,7 +1205,7 @@ More generally,
 i
 \emph default
  as:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 p_{i}=p_{0}+\alpha\delta\beta\left(q_{i}-\underline{q}\right)^{+}\label{eq:price-schedule}
 \end{equation}
@@ -1305,7 +1301,7 @@ i
 ,
  representing the amount of water (or other adulterants) added to the milk.
  The quality of delivered milk is:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 q_{i}=\theta_{i}e_{i}-\gamma w_{i}+\varepsilon_{i}\label{eq:quality}
 \end{equation}
@@ -1318,6 +1314,7 @@ where
 
  captures how effectively effort translates into compositional quality (e.g.,
  butterfat),
+
 \begin_inset Formula $\gamma>0$
 \end_inset
 
@@ -1332,9 +1329,9 @@ where
 \begin_layout Standard
 Quality effort is costly.
  We model the cost of effort as a convex function:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-c(e_{i})=\frac{k}{2}e^{2}_{i}
+c(e_{i})=\frac{k}{2}e_{i}^{2}
 \end{equation}
 
 \end_inset
@@ -1352,7 +1349,7 @@ with
 
  per unit of adulterant added,
  reflecting the volume gain from stretching the milk supply:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 B(w_{i})=bw_{i}
 \end{equation}
@@ -1394,7 +1391,7 @@ The probability that farmer
 i
 \emph default
  's milk is rejected is:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \rho_{i}(e_{i},w_{i};\delta)=\delta\cdot\Pr\left(q_{i}<\underline{q}\right)
 \end{equation}
@@ -1453,7 +1450,7 @@ We abstract from the noise term
 
 .
  The key comparative static is:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \frac{\partial\rho_{i}}{\partial\delta}\geq0,\quad\text{with strict inequality when }q_{i}<\underline{q}
 \end{equation}
@@ -1488,9 +1485,9 @@ nolink "false"
 
 ,
  the payoff can be written as:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-V_{i}(e_{i},w_{i})=\left[1-\rho_{i}\right]\left(p_{0}-s\right)y_{i}+sy_{i}+\alpha\delta\beta\mathbb{E}\left[\left(q_{i}-\underline{q}\right)^{+}\right]y_{i}+bw_{i}-\frac{k}{2}e^{2}_{i}\label{eq:payoff}
+V_{i}(e_{i},w_{i})=\left[1-\rho_{i}\right]\left(p_{0}-s\right)y_{i}+sy_{i}+\alpha\delta\beta\mathbb{E}\left[\left(q_{i}-\underline{q}\right)^{+}\right]y_{i}+bw_{i}-\frac{k}{2}e_{i}^{2}\label{eq:payoff}
 \end{equation}
 
 \end_inset
@@ -1545,7 +1542,7 @@ The marginal benefit of adding water is the volume gain
 
 ,
  the reduction in the quality premium:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \frac{\partial V_{i}}{\partial w_{i}}=b-\gamma\left[\delta f(\underline{q})\cdot L+\alpha\delta\beta y_{i}\right]
 \end{equation}
@@ -1569,9 +1566,9 @@ The first term in brackets is the enforcement cost (rejection risk);
 
  evaluated near the threshold,
  the farmer stops adulterating when detection is sufficiently high:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-w^{*}_{i}(\delta)=\begin{cases}
+w_{i}^{*}(\delta)=\begin{cases}
 w^{+}>0 & \text{if }\delta<\hat{\delta}_{w}(\alpha)\equiv\frac{b}{\gamma\left[f(\underline{q})\cdot L+\alpha\beta y_{i}\right]}\\
 0 & \text{if }\delta\geq\hat{\delta}_{w}(\alpha)
 \end{cases}\label{eq:adulteration}
@@ -1615,7 +1612,7 @@ The first-order condition for quality effort equates the marginal return---from 
 
 ,
  the increased quality premium---to the marginal cost:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \delta\theta_{i}\left[f(\underline{q})\cdot L+\alpha\beta y_{i}\right]=ke_{i}
 \end{equation}
@@ -1623,9 +1620,9 @@ The first-order condition for quality effort equates the marginal return---from 
 \end_inset
 
 At an interior solution:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-e^{*}_{i}=\frac{\delta\theta_{i}}{k}\left[f(\underline{q})\cdot L+\alpha\beta y_{i}\right]\label{eq:effort}
+e_{i}^{*}=\frac{\delta\theta_{i}}{k}\left[f(\underline{q})\cdot L+\alpha\beta y_{i}\right]\label{eq:effort}
 \end{equation}
 
 \end_inset
@@ -1769,9 +1766,9 @@ nolink "false"
  the private gain from adding water is small relative to the penalties,
  so moderate improvements in detection deter adulteration for most farmers.
  This prediction does not distinguish between regimes:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-\frac{\partial w^{*}_{i}}{\partial\delta}\leq0\quad\text{under both }\alpha=0\text{ and }\alpha>0
+\frac{\partial w_{i}^{*}}{\partial\delta}\leq0\quad\text{under both }\alpha=0\text{ and }\alpha>0
 \end{equation}
 
 \end_inset
@@ -1839,9 +1836,9 @@ modest
 larger
 \emph default
  and quality improvement is more substantial:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-e^{*}_{i}(\alpha>0)>e^{*}_{i}(\alpha=0)\quad\text{for all }\delta>0
+e_{i}^{*}(\alpha>0)>e_{i}^{*}(\alpha=0)\quad\text{for all }\delta>0
 \end{equation}
 
 \end_inset
@@ -1875,7 +1872,7 @@ nolink "false"
 ,
  the MCC pays a flat price for all accepted milk,
  and increased measurement precision has no effect on prices:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \alpha=0:\quad\frac{\partial p_{i}}{\partial\delta}=0
 \end{equation}
@@ -1888,7 +1885,7 @@ Under
 
 ,
  improved measurement enables quality-differentiated pricing and quality premia emerge:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \alpha>0:\quad\frac{\partial p_{i}}{\partial\delta}=\alpha\beta\left(q_{i}-\underline{q}\right)^{+}>0\quad\text{for }q_{i}>\underline{q}
 \end{equation}
@@ -1923,9 +1920,9 @@ Both regimes predict that adulteration reduction exceeds quality improvement,
 
 ,
  the asymmetry is large because quality effort is bounded by the floor density:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-\alpha=0:\quad\left|\frac{\partial w^{*}_{i}}{\partial\delta}\right|\gg\left|\frac{\partial e^{*}_{i}}{\partial\delta}\right|
+\alpha=0:\quad\left|\frac{\partial w_{i}^{*}}{\partial\delta}\right|\gg\left|\frac{\partial e_{i}^{*}}{\partial\delta}\right|
 \end{equation}
 
 \end_inset
@@ -1967,7 +1964,7 @@ From the MCC's perspective,
 
  in the aggregated tank.
  MCCs therefore have a strong incentive to adopt and use the analyzer regardless of the pricing regime:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \bar{q}_{m}(\delta_{1})>\bar{q}_{m}(\delta_{0})\quad\text{under both }\alpha=0\text{ and }\alpha>0
 \end{equation}
@@ -2002,9 +1999,9 @@ nolink "false"
 
 ,
  the main effect of training on effort is:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-\frac{\partial e^{*}_{i}}{\partial\theta_{i}}=\frac{\delta}{k}\left[f(\underline{q})\cdot L+\alpha\beta y_{i}\right]
+\frac{\partial e_{i}^{*}}{\partial\theta_{i}}=\frac{\delta}{k}\left[f(\underline{q})\cdot L+\alpha\beta y_{i}\right]
 \end{equation}
 
 \end_inset
@@ -2046,9 +2043,9 @@ positive main effect
 .
  The interaction is smaller and incremental rather than the dominant effect.
  In both regimes the cross-partial is positive:
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-\frac{\partial^{2}e^{*}_{i}}{\partial\delta\,\partial\theta_{i}}>0
+\frac{\partial^{2}e_{i}^{*}}{\partial\delta\,\partial\theta_{i}}>0
 \end{equation}
 
 \end_inset
@@ -2082,9 +2079,9 @@ Farmers who sell through traders face a longer and less transparent transaction 
  Under both regimes,
  this implies that directly connected farmers respond more strongly to the analyzer.
  The intermediation prediction does not distinguish between channels:
-\begin_inset Formula 
+\begin_inset Formula
 \[
-\left|\Delta w^{*}_{i}(\delta|\text{direct})\right|>\left|\Delta w^{*}_{i}(\delta|\text{trader})\right|\quad\text{under both }\alpha=0\text{ and }\alpha>0
+\left|\Delta w_{i}^{*}(\delta|\text{direct})\right|>\left|\Delta w_{i}^{*}(\delta|\text{trader})\right|\quad\text{under both }\alpha=0\text{ and }\alpha>0
 \]
 
 \end_inset
@@ -2278,8 +2275,7 @@ No
 \begin_inset Text
 
 \begin_layout Plain Layout
-Modest,
- bounded at floor
+Modest, bounded at floor
 \end_layout
 
 \end_inset
@@ -2288,8 +2284,7 @@ Modest,
 \begin_inset Text
 
 \begin_layout Plain Layout
-Larger,
- continuous
+Larger, continuous
 \end_layout
 
 \end_inset
@@ -2440,8 +2435,7 @@ Analyzer
 \begin_inset Text
 
 \begin_layout Plain Layout
-Interaction dominates;
- no main effect
+Interaction dominates; no main effect
 \end_layout
 
 \end_inset
@@ -2450,8 +2444,7 @@ Interaction dominates;
 \begin_inset Text
 
 \begin_layout Plain Layout
-Main effect positive;
- interaction incremental
+Main effect positive; interaction incremental
 \end_layout
 
 \end_inset
@@ -2563,7 +2556,7 @@ The enforcement channel alone is sufficient to account for the central empirical
 \end_layout
 
 \begin_layout Section
-Innovation Bundles for Addressing Milk Quality Challenges
+The Measurement and Monitoring System
 \end_layout
 
 \begin_layout Standard
@@ -2863,91 +2856,22 @@ We emphasize that while the T1 intervention is a package,
 \end_layout
 
 \begin_layout Standard
-To address the mismatch between how farmers and processors perceive milk quality,
- we designed an intervention to improve farmers’ understanding of compositional quality and its role in the dairy value chain.
- The treatment combines targeted information,
- practical guidance,
- and modest material support.
- It consists of three components:
-\end_layout
-
-\begin_layout Standard
-1.
- Educational Video:
- A short,
- engaging video was developed to explain the concept of compositional milk quality (parameters such as butterfat and protein content) and why it matters for both farmers and processors.
- The video also highlights practical management practices and inputs that farmers can adopt to improve milk quality,
- mostly focusing on feeding strategies.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-To determine the content of the video,
- we first identified the top five practices and inputs that are known to raise butter fat and SNF in milk.
- This was done through consultations of experts.
- We found the top 5 practices and inputs were:
- selection of breed and genetic potential,
- selection of grasses for high-quality forage,
- best practice in silage and hay making,
- correct mixing and dosage of feed,
- and feed supplements like Methionine and Lysine.
- As selection of breed and genetic potential is unlikely to change sufficiently fast give the length of our research project,
- we decided to focus on feeding practices.
-\end_layout
-
-\end_inset
-
- The video is designed to be accessible and appealing,
- ensuring key messages resonate with the target audience.
- The video was shown to treatment farmers twice:
- once during baseline data collection in December 2022 and once at the time of installation of the milk analyzers in October 2023.
- The use of videos such as the one we use has been found to increase technology adoption in different settings 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "spielman2021information"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-2.
- Cartoon Handout:
- To reinforce the information provided in the video,
- we created a handout in the form of a cartoon summary.
- The cartoons provide a visual,
- easy-to-understand recap of the key points from the video,
- serving as a quick reference for farmers after watching the video.
- This format ensures the information remains accessible even to farmers with limited literacy.
-\end_layout
-
-\begin_layout Standard
-3.
- Improved Pasture Seeds:
- To make the knowledge actionable,
- each participating farmer received a free bag of improved pasture seeds (1 kg of 
-\emph on
-Chloris Gayana
-\emph default
-,
- also known as Rhodes grass).
- By planting these seeds,
- farmers can enhance the nutritional value of their pastures,
- a critical factor in increasing the compositional quality of milk.
- This practical input complements the educational components,
- enabling farmers to directly apply the recommendations provided.
-\end_layout
-
-\begin_layout Standard
-This socio-technical innovation bundle,
- referred to as T2 (or sometimes also as the 
+In addition to the measurement and monitoring system,
+ we cross-randomized a farmer-level information treatment (referred to as T2 or the
 \emph on
 video
 \emph default
- treatment),
- seeks to narrow perception gaps around milk quality and strengthen farmers’ capacity to supply higher compositional quality on a sustained basis.
+ treatment) at the individual farmer level within each MCC,
+ creating a 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 factorial design.
+ This treatment combined an educational video on compositional milk quality and feeding practices,
+ a cartoon handout reinforcing the video’s content,
+ and a bag of improved pasture seeds.
+ The video treatment and its interaction with the measurement system are analyzed in the Online Appendix;
+ we focus here on the measurement and monitoring system.
 \end_layout
 
 \begin_layout Section
@@ -2974,8 +2898,9 @@ nolink "false"
 \end_inset
 
 .
- In particular we use a split-plot design with interventions at two levels of the value chain.
- The design is illustrated in Figure 
+ We use a cluster-randomized design,
+ with the measurement and monitoring system randomly assigned at the MCC level.
+ The design is illustrated in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Design"
@@ -2991,32 +2916,28 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-The experimental design mirrors the structure of the dairy value chain and involves randomization at two levels.
- First,
- at the MCC level,
- we assign half of the MCCs to receive the first socio-technical innovation bundle (T1),
+At the MCC level,
+ we randomly assign half of the 120 MCCs to receive the measurement and monitoring system,
  with the remaining MCCs serving as controls.
- Second,
- within each MCC—
-regardless of its assignment to T1—
-we randomize the second innovation bundle (T2) at the farmer level.
- For each MCC,
- half of its supplying farmers are assigned to T2 and the remainder to the farmer-level control.
- This yields a nested,
- multi-level design in which T1 varies across MCCs and T2 varies within MCCs.
+ This cluster-randomized design enables us to estimate both MCC-level effects and upstream effects on farmers linked to treated MCCs.
  To examine heterogeneous effects,
- we further stratify the farmer-level randomization by the nature of the farmer’s linkage to the MCC (direct delivery versus delivery through a trader).
+ we stratify by the nature of the farmer’s linkage to the MCC (direct delivery versus delivery through a trader).
+ In addition,
+ a farmer-level information treatment was cross-randomized within MCCs,
+ creating a 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 factorial design;
+ the full factorial results are reported in the Online Appendix.
 \end_layout
 
 \begin_layout Standard
-This multi-level design enables us to estimate impacts at different nodes of the value chain.
+This design enables us to estimate impacts at different nodes of the value chain.
  At the MCC level,
- we can assess the effect of T1 on outcomes at the MCC level.
- Because T1 is assigned downstream,
+ we assess the effect of the measurement system on MCC-level outcomes.
+ Because the system is assigned at the MCC,
  we can also evaluate its upstream effects on farmers linked to those MCCs.
- In contrast,
- the farmer-level treatment T2 varies only within MCCs,
- so its effects can be identified exclusively from farmer-level outcomes.
 \end_layout
 
 \begin_layout Standard
@@ -3105,21 +3026,22 @@ nolink "false"
 \end_inset
 
 ,
- the four main hypotheses that we test with this design are:
+ the main hypotheses that we test with this design are:
 \end_layout
 
 \begin_layout Itemize
 Hypothesis 1:
- installing the milk analyzer at the MCC level (T1) increases MCC uptake of quality screening and improves MCC-level outcomes
+ installing the measurement and monitoring system at the MCC level increases MCC uptake of quality screening and improves MCC-level outcomes
 \begin_inset Formula $\left(\beta_{H1}>0\right)$
 \end_inset
 
 .
+
 \end_layout
 
 \begin_layout Itemize
 Hypothesis 2:
- the enforcement capacity created by the analyzer (T1) reduces adulteration and improves quality outcomes for farmers in the catchment areas of treated MCCs
+ the enforcement capacity created by the system reduces adulteration and improves quality outcomes for farmers in the catchment areas of treated MCCs
 \begin_inset Formula $\left(\beta_{H2}>0\right)$
 \end_inset
 
@@ -3128,61 +3050,15 @@ Hypothesis 2:
 
 \begin_layout Itemize
 Hypothesis 3:
- the information intervention (T2) increases farmer quality effort,
- but primarily when combined with the enforcement technology (T1)
-\begin_inset Formula $\left(\beta_{H3}>0\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 4:
- the combined intervention (T1
-\begin_inset Formula $\times$
-\end_inset
-
-T2) generates complementary effects on farmer outcomes through the interaction of enforcement and knowledge
-\begin_inset Formula $\left(\beta_{H4}>0\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Additional hypotheses test whether treatment effects differ by the farmer's mode of connection to the MCC,
- as predicted by the enforcement model's intermediation prediction:
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 5:
- the treatment effect of the analyzer (T1) is larger for farmers directly connected to the MCC than for those selling through traders
+ the treatment effect of the system is larger for farmers directly connected to the MCC than for those selling through traders
 \begin_inset Formula $\left(\beta_{H2C}\neq\beta_{H2T}\right)$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Itemize
-Hypothesis 6:
- the treatment effect of the information intervention (T2) differs by mode of connection
-\begin_inset Formula $\left(\beta_{H3C}\neq\beta_{H3T}\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Hypothesis 7:
- the treatment effect of the combined intervention (T1
-\begin_inset Formula $\times$
-\end_inset
-
-T2) differs by mode of connection
-\begin_inset Formula $\left(\beta_{H4C}\neq\beta_{H4T}\right)$
-\end_inset
-
-.
+\begin_layout Standard
+Additional hypotheses related to the cross-randomized information treatment and its interaction with the measurement system are tested in the Online Appendix.
 \end_layout
 
 \begin_layout Section
@@ -3239,7 +3115,7 @@ M
 \noun off
 \color none
 
-\begin_inset Formula $\left(y^{b}_{m}\right)$
+\begin_inset Formula $\left(y_{m}^{b}\right)$
 \end_inset
 
 :
@@ -3248,7 +3124,7 @@ M
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-y_{m}=\alpha+\beta_{H1}.T1_{m}+\beta_{b}.y^{b}_{m}+\varepsilon_{m}\label{eq:one}
+y_{m}=\alpha+\beta_{H1}.T1_{m}+\beta_{b}.y_{m}^{b}+\varepsilon_{m}\label{eq:one}
 \end{equation}
 
 \end_inset
@@ -3277,16 +3153,25 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-All other equations use farmer level data.
- We start by estimating the main treatment effect for T1 on farmers that are associated to that MCC.
- One way to do this is to estimate a fully interacted model such as:
- 
+For farmer-level outcomes,
+ we estimate the effect of the MCC-level treatment on farmers in the catchment areas of treated MCCs.
+ Because the information treatment was cross-randomized at the farmer level,
+ we use the orthogonalized specification recommended by
+\begin_inset CommandInset citation
+LatexCommand citet
+key "muralidharan2019factorial"
+literal "false"
+
+\end_inset
+
+ to recover the pooled marginal effect of the measurement system,
+ adjusting for the orthogonal treatment as a demeaned covariate:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-y_{i,m}=\alpha+\beta^{*}_{H2}.T1_{i,m}+\beta^{*}_{H3}.T2_{i,m}+\beta^{*}_{H4}.T1_{i,m}.T2_{i,m}+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:one-1}
+y_{i,m}=\alpha+\beta_{H2}T1_{i,m}+\gamma\left(T2_{i,m}-\bar{T2}\right)+\delta T1_{i,m}\left(T2_{i,m}-\bar{T2}\right)+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}\label{eq:one-1}
 \end{equation}
 
 \end_inset
@@ -3296,60 +3181,42 @@ y_{i,m}=\alpha+\beta^{*}_{H2}.T1_{i,m}+\beta^{*}_{H3}.T2_{i,m}+\beta^{*}_{H4}.T1
 
 \begin_layout Standard
 Here,
- 
-\begin_inset Formula $T2_{i}$
+
+\begin_inset Formula $T1_{i,m}$
 \end_inset
 
- is a treatment indicator at the farmer level that is one 
-\emph on
- 
-\emph default
- if the farmer was allocated to T2,
- with 
+ is a treatment indicator that is one if the MCC (in whose catchment area farmer
 \emph on
 i
 \emph default
- indicating the farmer running from 1 to 
-\emph on
-I
-\emph default
-,
- 
+ resides) received the measurement system,
+
+\begin_inset Formula $T2_{i,m}$
+\end_inset
+
+ is the farmer-level information treatment (entered demeaned),
+
 \begin_inset Formula $y_{i,m}$
 \end_inset
 
- is the outcome of interest at the level of the individual farmer living in the catchment area of milk collection center 
-\emph on
-m
-\emph default
- and 
+ is the outcome of interest,
+ and
 \begin_inset Formula $\varepsilon_{i,m}$
 \end_inset
 
  is an error term (which may be correlated within catchment area).
- As above,
- 
-\begin_inset Formula $T1_{i,m}$
-\end_inset
-
- is a treatment indicator that is one if the MCC (in whose catchment area farmer 
-\emph on
-i
-\emph default
- resides) was allocated to T1,
- and zero otherwise.
- We also control for the lagged baseline outcome 
-\begin_inset Formula $y^{b}_{i,m}$
+ We also control for the lagged baseline outcome
+\begin_inset Formula $y_{i,m}^{b}$
 \end_inset
 
 .
- The parameter of interest in this equation is 
-\begin_inset Formula $\beta^{*}_{H2}$
+ The parameter of interest is
+\begin_inset Formula $\beta_{H2}$
 \end_inset
 
 ,
- which tests the impact of T1 om farmers,
- corresponding to Hypothesis 2 in Section 
+ which recovers the pooled marginal effect of the measurement system,
+ corresponding to Hypothesis 2 in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Experiment"
@@ -3361,370 +3228,16 @@ nolink "false"
 \end_inset
 
 .
+ The full 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 factorial specification and orthogonalization methodology are described in the Online Appendix.
 \end_layout
 
 \begin_layout Standard
-Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- can also be used to test 2 other hypotheses.
- First,
- 
-\begin_inset Formula $\beta^{*}_{H3}$
-\end_inset
-
-,
- provides an estimate of the farmer level impact of T2,
- which tests Hypothesis 3 from Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- Second,
- in a fully saturated model such as the one in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- 
-\begin_inset Formula $\beta^{*}_{H4}$
-\end_inset
-
- also allows us to tests for the interaction effect,
- corresponding to Hypothesis 4 in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-While our power calculations relied on models that include the full set of interactions,
- an important feature of split-plot (factorial) designs is that statistical power to estimate the effect of one treatment can be increased by pooling observations across the orthogonal treatment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "list2011so"
-literal "false"
-
-\end_inset
-
-.
- In our case,
- this means that the effect of the farmer-level intervention can be estimated by pooling across MCC-level treatment arms,
- and conversely the effect of the MCC-level intervention can be estimated by pooling across farmer-level treatment arms.
- At the same time,
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "muralidharan2019factorial"
-literal "false"
-
-\end_inset
-
- cautions against indiscriminate pooling of treatment cells when the underlying interventions may exhibit interaction effects.
- The authors note that,
- in the presence of even modest complementarities or antagonisms between treatment components,
- pooling can lead to biased or misleading estimates of marginal treatment effects.
- Consequently,
- they argue that a more rigorous and defensible approach is to estimate fully interacted specifications,
- which allow each treatment combination to have its own effect and thereby avoid imposing potentially unwarranted additivity assumptions.
- One way to recover an unbiased estimate of the pooled main treatment effect is to consider the orthogonal treatment as a co-variate and adjust for it,
- entering it in the regression demeaned and fully interacted as in equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-It is important to note that the estimand of the respective treatments in Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- changes.
- For instance,
- while the estimand for the MCC-level treatment (T1) in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- is the effect of the treatment in and of itself,
- the estimand in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- is a weighted average of the pure effect of the MCC-level treatment (T1) and the effect of the T1 in the presence of T2.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{i,m}=\alpha+\beta_{H2}T1_{i,m}+\beta^{T1}_{H3}\left(T2_{i,m}-\bar{T2}\right)+\beta^{T1}_{H4}T1_{i,m}\left(T2_{i,m}-\bar{T2}\right)+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:pooled-1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{i,m}=\alpha+\beta_{H3}T2_{i,m}+\beta^{T2}_{H2}\left(T1_{i,m}-\bar{T1}\right)+\beta^{T2}_{H4}T2_{i,m}\left(T1_{i,m}-\bar{T1}\right)+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:pooled-1-1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Next,
- note that 
-\begin_inset Formula $\beta^{*}_{H4}$
-\end_inset
-
- in equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- is estimated as an incremental effect to the main effects.
- In our analysis,
- we will also test Hypothesis 4 by directly comparing farmers that received the training and are connected to an MCC that received a milk analyzer to farmers that did not get the training and are connected to a control MCC.
- In other words,
- we will estimate:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{i,m}=\alpha+\beta_{H4}.T1_{i,m}.T2_{i,m}+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:one-1-1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-after dropping from our data farmers that were exposed to only a single treatment.
- This specification recovers the effect of the intervention as an integrated package that addresses quality upgrading through both enforcement (the analyzer) and knowledge (the information treatment) channels.
-\end_layout
-
-\begin_layout Standard
-Finally,
- we will also look at treatment heterogeneity,
- exploiting the fact that we stratified farmers on their link to the MCC.
- In particular,
- 
-\begin_inset Formula $C_{i,m}$
-\end_inset
-
- is an indicator variable at the farmer level that is one if farmer 
-\emph on
-i
-\emph default
- is directly connected to MCC 
-\emph on
-m
-\emph default
- (and zero if the farmer is connected through an intermediary).
- We also add a full set of interactions with this connection indicator,
- resulting in the following model:
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-begin{multline}
-\end_layout
-
-\begin_layout Plain Layout
-y_{i,m}=
-\backslash
-alpha+
-\backslash
-alpha{}_{C}C_{i,m}+
-\backslash
-beta_{H2T}T1_{i,m}+
-\backslash
-beta_{H3T}T2_{i,m}+
-\backslash
-beta_{H4T}T2_{i,m}T1_{i,m}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-+
-\backslash
-beta_{H2C}T1_{i,m}C_{i,m}+
-\backslash
-beta_{H3C}T2_{i}C_{i,m}+
-\backslash
-beta_{H4C}T2_{i}T1_{i,m}C_{i,m}+
-\backslash
-beta_{b}y_{i,m}^{b}+
-\backslash
-varepsilon_{i,m}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{eq:two}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{multline}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This specification is used to test Hypotheses 5-7 outlined in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-In all regressions (Equations
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- to 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
- 
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-),
- we report CR2 cluster-robust standard errors 
+In all regressions,
+ we report CR2 cluster-robust standard errors
 \begin_inset CommandInset citation
 LatexCommand citep
 key "10.1162/REST_a_00552"
@@ -3735,15 +3248,13 @@ literal "false"
  clustered at the level of randomization (MCC catchment area level) for descriptive purposes.
  However,
  because this is a randomized experiment with a known assignment mechanism,
- our primary inference is based on 
+ our primary inference is based on
 \emph on
  Fisher randomization inference
 \emph default
  (RI).
  We construct the permutation distribution of each treatment effect estimate under the sharp null hypothesis of no effect for any unit,
- using 5,000 random reassignments of treatment status that respect the experimental design:
- T1 is permuted across MCCs (maintaining the number treated),
- T2 is permuted across farmers within each MCC.
+ using 5,000 random reassignments of treatment status that respect the experimental design.
  The RI p-value is the fraction of permutation test statistics at least as extreme as the observed statistic (two-sided).
  RI p-values are exact and require no distributional assumptions about errors or cluster structure,
  making them particularly appropriate given that most catchment areas contain a single MCC,
@@ -3853,6 +3364,7 @@ In some cases,
 \end_layout
 
 \end_inset
+
 
  In each of the 130 MCCs,
  we then randomly selected 20 farmers who deliver milk to the center,
@@ -4070,11 +3582,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccc}
@@ -4082,6 +3596,7 @@ begin{tabular}{rccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -4093,6 +3608,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer  & nobs 
 \backslash
 
@@ -4105,6 +3621,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 cline{2-4}
@@ -4119,6 +3636,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 MCC is cooperative?
  (1=yes)  & 
 \backslash
@@ -4136,6 +3654,7 @@ Sexpr{balance[1,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[1,2]}) & (
@@ -4152,6 +3671,7 @@ Sexpr{balance[1,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Total Capacity of milk tanks (in liters)  & 
 \backslash
 Sexpr{balance[4,1]} & 
@@ -4168,6 +3688,7 @@ Sexpr{balance[4,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[4,2]}) & (
@@ -4184,6 +3705,7 @@ Sexpr{balance[4,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 MCC pays quality premium (1=yes) & 
 \backslash
 Sexpr{balance[6,1]} & 
@@ -4200,6 +3722,7 @@ Sexpr{balance[6,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[6,2]}) & (
@@ -4216,6 +3739,7 @@ Sexpr{balance[6,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 MCC age in years of operation  & 
 \backslash
 Sexpr{balance[7,1]} & 
@@ -4232,6 +3756,7 @@ Sexpr{balance[7,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[7,2]}) & (
@@ -4248,6 +3773,7 @@ Sexpr{balance[7,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Facilitates supply of acaracides?
  (1=yes) & 
 \backslash
@@ -4265,6 +3791,7 @@ Sexpr{balance[10,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[10,2]}) & (
@@ -4278,11 +3805,13 @@ Sexpr{balance[10,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 F-statistic & & 
 \backslash
 Sexpr{F_test[1,1]} 
@@ -4293,6 +3822,7 @@ Sexpr{F_test[1,1]}
 \end_layout
 
 \begin_layout Plain Layout
+
 p-value & & 
 \backslash
 Sexpr{F_test[2,1]} 
@@ -4308,6 +3838,7 @@ Sexpr{F_test[2,1]}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -4315,6 +3846,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -4322,17 +3854,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
@@ -4440,16 +3975,14 @@ nolink "false"
 placement document
 alignment document
 wide false
-sideways true
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Baseline Balance Between Control Farmers and Farmers Assigned to Analyzer,
- Video,
- or Bundle Treatments
+Baseline Balance of Farmer Characteristics by MCC Treatment Assignment
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Balance_farmer"
@@ -4470,17 +4003,20 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
-begin{tabular}{rccccc}
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 hline
@@ -4493,7 +4029,8 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & video & bundle & nobs 
+
+& mean ctrl & system & nobs
 \backslash
 
 \backslash
@@ -4506,8 +4043,9 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
-cline{2-6}
+cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4515,23 +4053,16 @@ cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
-Household Head Age (years) & 
+
+Household Head Age (years) &
 \backslash
-Sexpr{balance_farmer[2,1]} & 
+Sexpr{balance_farmer[2,1]} &
 \backslash
-Sexpr{balance_farmer[2,3]}$^{
+Sexpr{balance_farmer[2,19]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[2,5]<.01,"**",ifelse(balance_farmer[2,5]<.05,"*",ifelse(balance_farmer[2,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[2,21]<.01,"**",ifelse(balance_farmer[2,21]<.05,"*",ifelse(balance_farmer[2,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[2,6]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[2,8]<.01,"**",ifelse(balance_farmer[2,8]<.05,"*",ifelse(balance_farmer[2,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[2,9]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[2,11]<.01,"**",ifelse(balance_farmer[2,11]<.05,"*",ifelse(balance_farmer[2,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[2,12]} 
+Sexpr{balance_farmer[2,12]}
 \backslash
 
 \backslash
@@ -4539,15 +4070,12 @@ Sexpr{balance_farmer[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[2,2]}) & (
 \backslash
-Sexpr{balance_farmer[2,4]}) & (
-\backslash
-Sexpr{balance_farmer[2,7]}) & (
-\backslash
-Sexpr{balance_farmer[2,10]})
+Sexpr{balance_farmer[2,20]})
 \backslash
 
 \backslash
@@ -4560,30 +4088,15 @@ Sexpr{balance_farmer[2,10]})
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-Current Total herd size (number) & 
+Current Total herd size (number) &
 \backslash
-Sexpr{balance_farmer[3,1]}& 
+Sexpr{balance_farmer[3,1]} &
 \backslash
-Sexpr{balance_farmer[3,3]}$^{
+Sexpr{balance_farmer[3,19]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[3,5]<.01,"**",ifelse(balance_farmer[3,5]<.05,"*",ifelse(balance_farmer[3,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[3,21]<.01,"**",ifelse(balance_farmer[3,21]<.05,"*",ifelse(balance_farmer[3,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[3,6]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[3,8]<.01,"**",ifelse(balance_farmer[3,8]<.05,"*",ifelse(balance_farmer[3,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[3,9]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[3,11]<.01,"**",ifelse(balance_farmer[3,11]<.05,"*",ifelse(balance_farmer[3,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[3,12]} 
+Sexpr{balance_farmer[3,12]}
 \backslash
 
 \backslash
@@ -4591,15 +4104,12 @@ Sexpr{balance_farmer[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[3,2]}) & (
 \backslash
-Sexpr{balance_farmer[3,4]}) & (
-\backslash
-Sexpr{balance_farmer[3,7]}) & (
-\backslash
-Sexpr{balance_farmer[3,10]})
+Sexpr{balance_farmer[3,20]})
 \backslash
 
 \backslash
@@ -4612,26 +4122,15 @@ Sexpr{balance_farmer[3,10]})
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-Number of improved animals in total herd (share)  & 
+Number of improved animals in total herd (share)  &
 \backslash
-Sexpr{balance_farmer[4,1]} & 
+Sexpr{balance_farmer[4,1]} &
 \backslash
-Sexpr{balance_farmer[4,3]}$^{
+Sexpr{balance_farmer[4,19]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[4,5]<.01,"**",ifelse(balance_farmer[4,5]<.05,"*",ifelse(balance_farmer[4,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[4,21]<.01,"**",ifelse(balance_farmer[4,21]<.05,"*",ifelse(balance_farmer[4,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[4,6]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[4,8]<.01,"**",ifelse(balance_farmer[4,8]<.05,"*",ifelse(balance_farmer[4,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[4,9]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[4,11]<.01,"**",ifelse(balance_farmer[4,11]<.05,"*",ifelse(balance_farmer[4,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[4,12]} 
+Sexpr{balance_farmer[4,12]}
 \backslash
 
 \backslash
@@ -4639,15 +4138,12 @@ Sexpr{balance_farmer[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[4,2]}) & (
 \backslash
-Sexpr{balance_farmer[4,4]}) & (
-\backslash
-Sexpr{balance_farmer[4,7]}) & (
-\backslash
-Sexpr{balance_farmer[4,10]})
+Sexpr{balance_farmer[4,20]})
 \backslash
 
 \backslash
@@ -4659,23 +4155,16 @@ Sexpr{balance_farmer[4,10]})
 \end_layout
 
 \begin_layout Plain Layout
-Liters milk sold per day (on average in the rainy season) (liters)  & 
+
+Liters milk sold per day (on average in the rainy season) (liters)  &
 \backslash
-Sexpr{balance_farmer[6,1]} & 
+Sexpr{balance_farmer[6,1]} &
 \backslash
-Sexpr{balance_farmer[6,3]}$^{
+Sexpr{balance_farmer[6,19]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[6,5]<.01,"**",ifelse(balance_farmer[6,5]<.05,"*",ifelse(balance_farmer[6,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[6,21]<.01,"**",ifelse(balance_farmer[6,21]<.05,"*",ifelse(balance_farmer[6,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[6,6]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[6,8]<.01,"**",ifelse(balance_farmer[6,8]<.05,"*",ifelse(balance_farmer[6,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[6,9]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[6,11]<.01,"**",ifelse(balance_farmer[6,11]<.05,"*",ifelse(balance_farmer[6,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[6,12]} 
+Sexpr{balance_farmer[6,12]}
 \backslash
 
 \backslash
@@ -4683,15 +4172,12 @@ Sexpr{balance_farmer[6,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[6,2]}) & (
 \backslash
-Sexpr{balance_farmer[6,4]}) & (
-\backslash
-Sexpr{balance_farmer[6,7]}) & (
-\backslash
-Sexpr{balance_farmer[6,10]})
+Sexpr{balance_farmer[6,20]})
 \backslash
 
 \backslash
@@ -4704,26 +4190,15 @@ Sexpr{balance_farmer[6,10]})
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-Average monthly expense (USD) on chemical purchases & 
+Average monthly expense (USD) on chemical purchases &
 \backslash
-Sexpr{balance_farmer[10,1]} & 
+Sexpr{balance_farmer[10,1]} &
 \backslash
-Sexpr{balance_farmer[10,3]}$^{
+Sexpr{balance_farmer[10,19]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[10,5]<.01,"**",ifelse(balance_farmer[10,5]<.05,"*",ifelse(balance_farmer[10,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance_farmer[10,21]<.01,"**",ifelse(balance_farmer[10,21]<.05,"*",ifelse(balance_farmer[10,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[10,6]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[10,8]<.01,"**",ifelse(balance_farmer[10,8]<.05,"*",ifelse(balance_farmer[10,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[10,9]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[10,11]<.01,"**",ifelse(balance_farmer[10,11]<.05,"*",ifelse(balance_farmer[10,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{balance_farmer[10,12]} 
+Sexpr{balance_farmer[10,12]}
 \backslash
 
 \backslash
@@ -4731,15 +4206,12 @@ Sexpr{balance_farmer[10,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[10,2]}) & (
 \backslash
-Sexpr{balance_farmer[10,4]}) & (
-\backslash
-Sexpr{balance_farmer[10,7]}) & (
-\backslash
-Sexpr{balance_farmer[10,10]})
+Sexpr{balance_farmer[10,20]})
 \backslash
 
 \backslash
@@ -4752,18 +4224,16 @@ Sexpr{balance_farmer[10,10]})
 
 \begin_layout Plain Layout
 
+
 \backslash
-cline{2-6}
+cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
-F-statistic & & 
+
+F-statistic & &
 \backslash
-Sexpr{F_test[1,3]} & 
-\backslash
-Sexpr{F_test[1,4]}& 
-\backslash
-Sexpr{F_test[1,5]}
+Sexpr{F_test[1,3]}
 \backslash
 
 \backslash
@@ -4771,13 +4241,10 @@ Sexpr{F_test[1,5]}
 \end_layout
 
 \begin_layout Plain Layout
-p-value & & 
+
+p-value & &
 \backslash
-Sexpr{F_test[2,3]} & 
-\backslash
-Sexpr{F_test[2,4]} & 
-\backslash
-Sexpr{F_test[2,5]} 
+Sexpr{F_test[2,3]}
 \backslash
 
 \backslash
@@ -4789,6 +4256,7 @@ Sexpr{F_test[2,5]}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 hline
@@ -4797,6 +4265,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -4804,31 +4273,33 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
- This table reports baseline balance across farmers in the control group and the three treatment groups (analyzer,
- video,
- and bundle).
+ This table reports baseline balance between farmers connected to MCCs assigned the measurement system and those connected to control MCCs,
+ pooling across the cross-randomized information treatment.
  Column 1 shows control group means with standard deviations in parentheses.
- Columns 2–4 report differences in means relative to the control group,
+ Column 2 reports the pooled difference in means (system vs. control),
  with robust standard errors in parentheses.
- Column 5 gives the number of non-missing observations for each variable.
- The F-statistic and p-value correspond to joint tests of equality of all covariates across groups.
+ Column 3 gives the number of non-missing observations.
+ The F-statistic and p-value correspond to a joint test of equality of all covariates.
  Significance levels:
  * p < 0.10,
  ** p < 0.05,
  *** p < 0.01.
- 
+
 \end_layout
 
 \end_inset
@@ -4842,7 +4313,7 @@ Note:
 \end_layout
 
 \begin_layout Standard
-The farmer-level balance tables (Table 
+Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance_farmer"
@@ -4853,7 +4324,17 @@ nolink "false"
 
 \end_inset
 
- and Appendix Table 
+ reports farmer-level balance between the treatment group (farmers connected to MCCs assigned the measurement system) and the control group,
+ pooling across the cross-randomized information treatment.
+ We find that farmers connected to treatment MCCs are somewhat less likely to be a member of a cooperative and more likely to be using steel cans or buckets,
+ with slightly higher expenditure on chemicals.
+ However,
+ F-tests do not reject joint orthogonality.
+ Balance on the full 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 factorial arms is reported in Appendix Tables
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Balance_appendix-farmer"
@@ -4864,82 +4345,7 @@ nolink "false"
 
 \end_inset
 
-) report six different sets of comparisons (corresponding to the six 
-\begin_inset Formula $\beta_{H.}$
-\end_inset
-
- coefficients in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
- 
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-).
- First,
- we test for pre-treatment differences between farmers connected to MCCs that received a milk analyzer and those connected to control MCCs (corresponding to 
-\begin_inset Formula $\beta_{H2T}$
-\end_inset
-
- and indicated as 
-\emph on
-analyzer
-\emph default
- in the table heading).
- We find that farmers that are connected to a treatment MCC are somewhat less likely to be a member of a cooperative and more likely to be using steel cans or buckets.
- They also have a slightly higher expenditure on chemicals.
- However,
- F-tests do not reject joint orthogonality.
-\end_layout
-
-\begin_layout Standard
-Second,
- we examine differences between farmers who received T2 and those who did not (corresponding to 
-\begin_inset Formula $\beta_{H3T}$
-\end_inset
-
-;
- see column with header 
-\emph on
-video
-\emph default
-).
- Again,
- some significant differences are found between the two groups (treated farmer produce and sell slightly more milk,
- and are more likely to use steel cans or buckets),
- but the joint tests are not significant.
- 
-\end_layout
-
-\begin_layout Standard
-Third,
- we report the interaction effects at baseline (denoted as 
-\emph on
-bundle
-\emph default
- in the table and corresponding to 
-\begin_inset Formula $\beta_{H4T}$
-\end_inset
-
-),
- where we now find some evidence that farmers that received the full package were producing and selling less milk,
- and were less likely to use steel cans and buckets.
- However,
- also here,
- joint significance tests do not suggest imbalance.
-\end_layout
-
-\begin_layout Standard
-In the appendix,
- partly for consistency with results reporting below,
- we add a few more comparisons.
- In particular,
- in Table 
+ and
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Baseline-pooled"
@@ -4950,63 +4356,21 @@ nolink "false"
 
 \end_inset
 
- we report on pre-treatment differences based on the pooled models (with the column named 
-\emph on
-analyzer
-\emph default
- corresponding to 
-\begin_inset Formula $\beta_{H2}$
-\end_inset
-
- in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and the column named 
-\emph on
-video
-\emph default
- corresponding to 
-\begin_inset Formula $\beta_{H3}$
-\end_inset
-
- in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- ) for the 10 preregistered farmer level characteristics.
- In the last column,
- we test pre-treatment differences for the bundled intervention by directly comparing pure control farmers to those that were exposed to both T1 and T2,
- corresponding to 
-\begin_inset Formula $\beta_{H4}$
-\end_inset
-
- in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
 .
+ In the appendix,
+ in Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Baseline-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ we report on pre-treatment differences based on the pooled orthogonalized models for the 10 preregistered farmer level characteristics,
+ including the pooled system effect and the pooled video effect.
  These additional models confirm good overall balance.
 \end_layout
 
@@ -5067,17 +4431,12 @@ We also documented several compliance challenges.
 \end_layout
 
 \begin_layout Standard
-Similar compliance concerns arise at the farmer level.
- Although the information treatment was delivered in a controlled manner and the video was shown twice,
- only about half of farmers assigned to the video treatment recalled having been shown a video at endline,
- suggesting substantial recall decay over the study period.
- At the same time,
- more than one in five control-group farmers stated that they had seen a video explaining how to improve compositional quality,
- indicating potential contamination from social interactions or confusion with other extension materials.
- Among treated farmers,
- only 42 percent reported using the seed provided by the project,
- a rate that is plausibly affected by drought conditions during the season.
- We revisit these compliance concerns when discussing secondary outcomes in Section
+Similar compliance concerns arise at the farmer level for the cross-randomized information treatment.
+ Only about half of farmers assigned to the video treatment recalled having been shown a video at endline,
+ and more than one in five control-group farmers stated that they had seen such a video,
+ indicating potential contamination.
+ These compliance issues are discussed further in the Online Appendix alongside the full factorial results.
+ We revisit compliance concerns when discussing secondary outcomes in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Secondary-outcomes"
@@ -5162,6 +4521,7 @@ Our first two outcomes measure the extent to which quality testing becomes embed
  Together,
  these indicators capture MCC uptake of the enforcement technology,
  the necessary precondition for the enforcement channel to operate.
+
 \end_layout
 
 \begin_layout Standard
@@ -5214,11 +4574,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rcccc}
@@ -5226,6 +4588,7 @@ begin{tabular}{rcccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -5237,6 +4600,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & nobs 
 \backslash
 
@@ -5245,6 +4609,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 cline{2-4}
@@ -5259,6 +4624,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 Tested incoming milk using MA (1=yes) & 
 \backslash
 Sexpr{res_MCCs[1,1]} & 
@@ -5275,6 +4641,7 @@ Sexpr{res_MCCs[1,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[1,2]}) & (
@@ -5291,6 +4658,7 @@ Sexpr{res_MCCs[1,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Testing outgoing milk using MA (1=yes) & 
 \backslash
 Sexpr{res_MCCs[2,1]} & 
@@ -5307,6 +4675,7 @@ Sexpr{res_MCCs[2,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[2,2]}) & (
@@ -5323,6 +4692,7 @@ Sexpr{res_MCCs[2,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Price at which milk was bought from farmers (UGX) & 
 \backslash
 Sexpr{res_MCCs[3,1]} & 
@@ -5339,6 +4709,7 @@ Sexpr{res_MCCs[3,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[3,2]}) & (
@@ -5355,6 +4726,7 @@ Sexpr{res_MCCs[3,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Price at which milk was sold (UGX) & 
 \backslash
 Sexpr{res_MCCs[4,1]} & 
@@ -5371,6 +4743,7 @@ Sexpr{res_MCCs[4,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[4,2]}) & (
@@ -5387,6 +4760,7 @@ Sexpr{res_MCCs[4,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Does the MCC pay a quality premium to suppliers?
  & 
 \backslash
@@ -5404,6 +4778,7 @@ Sexpr{res_MCCs[5,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[5,2]}) & (
@@ -5420,6 +4795,7 @@ Sexpr{res_MCCs[5,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Did the buyer pay a quality premium?
  & 
 \backslash
@@ -5437,6 +4813,7 @@ Sexpr{res_MCCs[6,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[6,2]}) & (
@@ -5454,6 +4831,7 @@ Sexpr{res_MCCs[6,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -5461,6 +4839,7 @@ Sexpr{res_MCCs[6,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of primary MCC outcomes & 
 \backslash
 Sexpr{res_MCCs[7,1]} & 
@@ -5477,6 +4856,7 @@ Sexpr{res_MCCs[7,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[7,2]}) & (
@@ -5502,6 +4882,7 @@ Sexpr{res_MCCs[7,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -5509,6 +4890,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -5516,17 +4898,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
@@ -5535,8 +4920,7 @@ Note:
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
  The "Index of primary MCC outcomes" is an Anderson (2008) index of the variables listed above.
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment-area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment-area level.
  Significance levels:
  * p < 0.10,
  ** p < 0.05,
@@ -5662,6 +5046,7 @@ We also define four primary outcomes at the farmer level and combine them into a
  complementarity between the analyzer and the information treatment (Prediction 6),
  no change in prices (Prediction 3),
  and weaker responses among farmers selling through traders (Prediction 7).
+
 \end_layout
 
 \begin_layout Standard
@@ -5681,6 +5066,7 @@ literal "false"
 Napier
 \emph default
 ,
+
 \emph on
 Brachiaria
 \emph default
@@ -5695,6 +5081,7 @@ Rhodes
 Centro
 \emph default
 ,
+
 \emph on
 Siratro
 \emph default
@@ -5776,14 +5163,14 @@ Reported prices below 600 UGX/liter and above 1,500 UGX/liter are treated as imp
 placement document
 alignment document
 wide false
-sideways true
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Primary Outcomes for Farmers
+Primary Outcomes for Farmers: Effect of Measurement and Monitoring System
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Primary-outcomes-farmer"
@@ -5804,17 +5191,20 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
-begin{tabular}{rccccc}
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 hline
@@ -5827,7 +5217,8 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean & analyzer & video & bundle & nobs 
+
+& mean ctrl & system & nobs
 \backslash
 
 \backslash
@@ -5840,32 +5231,22 @@ hline
 
 \begin_layout Plain Layout
 
+
+\backslash
+cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
 
+Production investment and management (Index) &
 \backslash
-cline{2-6}
-\end_layout
-
-\begin_layout Plain Layout
-Production investment and management (Index) & 
+Sexpr{res_farmers[1,1]} &
 \backslash
-Sexpr{res_farmers[1,1]} & 
+Sexpr{res_farmers[1,19]}$^{
 \backslash
-Sexpr{res_farmers[1,3]}$^{
+Sexpr{ifelse(res_farmers[1,21]<.01,"**",ifelse(res_farmers[1,21]<.05,"*",ifelse(res_farmers[1,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{ifelse(res_farmers[1,5]<.01,"**",ifelse(res_farmers[1,5]<.05,"*",ifelse(res_farmers[1,5]<.1,"+","")))}}$ & 
-\backslash
-Sexpr{res_farmers[1,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[1,8]<.01,"**",ifelse(res_farmers[1,8]<.05,"*",ifelse(res_farmers[1,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[1,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[1,11]<.01,"**",ifelse(res_farmers[1,11]<.05,"*",ifelse(res_farmers[1,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[1,12]} 
+Sexpr{res_farmers[1,12]}
 \backslash
 
 \backslash
@@ -5873,29 +5254,12 @@ Sexpr{res_farmers[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,4]}) & (
-\backslash
-Sexpr{res_farmers[1,7]}) & (
-\backslash
-Sexpr{res_farmers[1,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[1,13]}] & [
-\backslash
-Sexpr{res_farmers[1,14]}] & [
-\backslash
-Sexpr{res_farmers[1,33]}]
+Sexpr{res_farmers[1,20]})
 \backslash
 
 \backslash
@@ -5907,23 +5271,16 @@ Sexpr{res_farmers[1,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Buyer checked for quality (1=yes) & 
+
+Buyer checked for quality (1=yes) &
 \backslash
-Sexpr{res_farmers[2,1]} & 
+Sexpr{res_farmers[2,1]} &
 \backslash
-Sexpr{res_farmers[2,3]}$^{
+Sexpr{res_farmers[2,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[2,5]<.01,"**",ifelse(res_farmers[2,5]<.05,"*",ifelse(res_farmers[2,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[2,21]<.01,"**",ifelse(res_farmers[2,21]<.05,"*",ifelse(res_farmers[2,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[2,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[2,8]<.01,"**",ifelse(res_farmers[2,8]<.05,"*",ifelse(res_farmers[2,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[2,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[2,11]<.01,"**",ifelse(res_farmers[2,11]<.05,"*",ifelse(res_farmers[2,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[2,12]} 
+Sexpr{res_farmers[2,12]}
 \backslash
 
 \backslash
@@ -5931,29 +5288,12 @@ Sexpr{res_farmers[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,4]}) & (
-\backslash
-Sexpr{res_farmers[2,7]}) & (
-\backslash
-Sexpr{res_farmers[2,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[2,13]}] & [
-\backslash
-Sexpr{res_farmers[2,14]}] & [
-\backslash
-Sexpr{res_farmers[2,33]}]
+Sexpr{res_farmers[2,20]})
 \backslash
 
 \backslash
@@ -5965,23 +5305,16 @@ Sexpr{res_farmers[2,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Price received for milk sold & 
+
+Price received for milk sold &
 \backslash
-Sexpr{res_farmers[3,1]} & 
+Sexpr{res_farmers[3,1]} &
 \backslash
-Sexpr{res_farmers[3,3]}$^{
+Sexpr{res_farmers[3,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[3,5]<.01,"**",ifelse(res_farmers[3,5]<.05,"*",ifelse(res_farmers[3,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[3,21]<.01,"**",ifelse(res_farmers[3,21]<.05,"*",ifelse(res_farmers[3,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[3,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[3,8]<.01,"**",ifelse(res_farmers[3,8]<.05,"*",ifelse(res_farmers[3,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[3,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[3,11]<.01,"**",ifelse(res_farmers[3,11]<.05,"*",ifelse(res_farmers[3,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[3,12]} 
+Sexpr{res_farmers[3,12]}
 \backslash
 
 \backslash
@@ -5989,29 +5322,12 @@ Sexpr{res_farmers[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,4]}) & (
-\backslash
-Sexpr{res_farmers[3,7]}) & (
-\backslash
-Sexpr{res_farmers[3,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[3,13]}] & [
-\backslash
-Sexpr{res_farmers[3,14]}] & [
-\backslash
-Sexpr{res_farmers[3,33]}]
+Sexpr{res_farmers[3,20]})
 \backslash
 
 \backslash
@@ -6023,23 +5339,16 @@ Sexpr{res_farmers[3,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Get quality premium  & 
+
+Get quality premium  &
 \backslash
-Sexpr{res_farmers[4,1]} & 
+Sexpr{res_farmers[4,1]} &
 \backslash
-Sexpr{res_farmers[4,3]}$^{
+Sexpr{res_farmers[4,19]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[4,5]<.01,"**",ifelse(res_farmers[4,5]<.05,"*",ifelse(res_farmers[4,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[4,21]<.01,"**",ifelse(res_farmers[4,21]<.05,"*",ifelse(res_farmers[4,21]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[4,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[4,8]<.01,"**",ifelse(res_farmers[4,8]<.05,"*",ifelse(res_farmers[4,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[4,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[4,11]<.01,"**",ifelse(res_farmers[4,11]<.05,"*",ifelse(res_farmers[4,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[4,12]} 
+Sexpr{res_farmers[4,12]}
 \backslash
 
 \backslash
@@ -6047,29 +5356,12 @@ Sexpr{res_farmers[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,4]}) & (
-\backslash
-Sexpr{res_farmers[4,7]}) & (
-\backslash
-Sexpr{res_farmers[4,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[4,13]}] & [
-\backslash
-Sexpr{res_farmers[4,14]}] & [
-\backslash
-Sexpr{res_farmers[4,33]}]
+Sexpr{res_farmers[4,20]})
 \backslash
 
 \backslash
@@ -6078,30 +5370,7 @@ Sexpr{res_farmers[4,33]}]
 
 \begin_layout Plain Layout
 
-\backslash
 
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-Index of primary farmer outcomes & 
-\backslash
-Sexpr{res_farmers[5,1]} & 
-\backslash
-Sexpr{res_farmers[5,3]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[5,5]<.01,"**",ifelse(res_farmers[5,5]<.05,"*",ifelse(res_farmers[5,5]<.1,"+","")))}}$ & 
-\backslash
-Sexpr{res_farmers[5,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[5,8]<.01,"**",ifelse(res_farmers[5,8]<.05,"*",ifelse(res_farmers[5,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[5,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[5,11]<.01,"**",ifelse(res_farmers[5,11]<.05,"*",ifelse(res_farmers[5,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[5,12]} 
 \backslash
 
 \backslash
@@ -6109,29 +5378,29 @@ Sexpr{res_farmers[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
+Index of primary farmer outcomes &
+\backslash
+Sexpr{res_farmers[5,1]} &
+\backslash
+Sexpr{res_farmers[5,19]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[5,21]<.01,"**",ifelse(res_farmers[5,21]<.05,"*",ifelse(res_farmers[5,21]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers[5,12]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,4]}) & (
-\backslash
-Sexpr{res_farmers[5,7]}) & (
-\backslash
-Sexpr{res_farmers[5,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[5,13]}] & [
-\backslash
-Sexpr{res_farmers[5,14]}] & [
-\backslash
-Sexpr{res_farmers[5,33]}]
+Sexpr{res_farmers[5,20]})
 \backslash
 
 \backslash
@@ -6148,9 +5417,6 @@ Sexpr{res_farmers[5,33]}]
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
 
 \backslash
 hline
@@ -6159,6 +5425,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -6166,32 +5433,34 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
- Column 1 reports mean outcomes for pure control farmers (those not receiving the information treatment and connected to control MCCs),
+ Column 1 reports mean outcomes for control farmers (connected to control MCCs),
  with standard deviations in parentheses.
- Columns 2–4 present the pooled main treatment effects of the MCC-level intervention (T1),
- the farmer-level information intervention (T2),
- and their combined exposure,
- respectively;
+ Column 2 presents the pooled marginal effect of the measurement and monitoring system,
+ estimated using the orthogonalized specification that adjusts for the cross-randomized information treatment following Muralidharan et al. (2023);
  robust standard errors appear in parentheses.
- Numbers in square brackets report p-values for tests of whether the treatment effect differs by the farmer’s connection type (directly to an MCC versus through a small trader).
- Column 5 shows the number of non-missing observations.
+ Column 3 shows the number of non-missing observations.
  Prices are in Ugandan shillings (UGX).
- The "Index of primary farmer outcomes" is an Anderson (2008) index of the outcomes listed above;
- the RI p-value on this index is an exact omnibus test of the joint null.
+ The "Index of primary farmer outcomes" is an Anderson (2008) index of the outcomes listed above.
  P-values are based on Fisher randomization inference (5,000 permutations);
  standard errors are CR2 cluster-robust at the catchment-area level.
+ Full 2$
+\backslash
+times$2 factorial results including the information treatment and interaction effects are in the Online Appendix.
  Significance levels:
  **,
  * and + denote significance at the 1,
@@ -6220,24 +5489,13 @@ nolink "false"
 
 \end_inset
 
- reports treatment effects on our four primary outcomes at the farmer level,
- as well as the index.
- The table shows parameter estimates from the fully interacted model of Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
- in Section 
+ reports treatment effects of the measurement and monitoring system on our four primary outcomes at the farmer level,
+ as well as the composite index.
+ The table shows the pooled marginal effect of the system,
+ estimated using the orthogonalized specification of Equation
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Estimation-and-inference"
+reference "eq:one-1"
 plural "false"
 caps "false"
 noprefix "false"
@@ -6245,146 +5503,34 @@ nolink "false"
 
 \end_inset
 
-.
+ that adjusts for the cross-randomized information treatment.
  In the first column,
- we show mean outcome for pure control farmers (that did not get the information treatment and are connected to control MCCs);
+ we show mean outcomes for control farmers (connected to control MCCs);
  standard deviations are in parentheses below.
  In the second column,
- we provide an estimate of the farmer level main treatment effect of T1 (corresponding to 
-\begin_inset Formula $\beta_{H2C}$
+ we provide the estimated pooled effect of the measurement system on farmer outcomes (corresponding to
+\begin_inset Formula $\beta_{H2}$
 \end_inset
 
- in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-,
- standard errors in parentheses below) and in the third column,
- we provide an estimate of the farmer level main treatment effect of T2 (corresponding to 
-\begin_inset Formula $\beta_{H3C}$
-\end_inset
-
- in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
+ in Equation
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-,
- standard errors in parentheses below).
- The fourth column provides an estimate of the interaction between the MCC level treatment and the farmer level treatment (corresponding to 
-\begin_inset Formula $\beta_{H4C}$
-\end_inset
-
- in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-,
- standard errors in parentheses below).
- Finally,
- below the standard errors,
- we also provide p-values for the null hypothesis that there is no difference in the estimated effect depending on how the farmer is connected to the MCC (directly or through a small trader).
- More in particular,
- the number in square brackets in column two is the p-value for the hypothesis 
-\begin_inset Formula $\beta_{H2C}\neq\beta_{H2T}$
-\end_inset
-
- obtained from equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-.
- Similar tests are reported for 
-\begin_inset Formula $\beta_{H3C}\neq\beta_{H3T}$
-\end_inset
-
- in column three and 
-\begin_inset Formula $\beta_{H4C}\neq\beta_{H4T}$
-\end_inset
-
- in column four.
+),
+ with standard errors in parentheses below.
 \end_layout
 
 \begin_layout Standard
 In addition to the tables in the main text,
- we again provide various tables with additional estimates in the Appendix for robustness.
- In particular,
- we present tables with results from the pooled regressions corresponding to Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and the treatment bundle corresponding to Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- (See Appendix Tables 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
+ we provide LATE estimates in the Appendix,
+ instrumenting actual presence of a functioning milk analyzer with MCC-level treatment assignment (See Appendix Tables
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer-pooled-LATE"
@@ -6396,11 +5542,16 @@ nolink "false"
 \end_inset
 
 ).
- Furthermore,
- in light of the compliance issues reported in Section 
+ The full 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 factorial results,
+ including the information treatment and interaction effects,
+ are reported in Appendix Tables
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Attrition-and-Compliance"
+reference "tab:Primary-outcomes-farmer-pooled"
 plural "false"
 caps "false"
 noprefix "false"
@@ -6408,9 +5559,7 @@ nolink "false"
 
 \end_inset
 
-,
- we also present LATE estimates where in addition to instrumenting actual presence of a milk analyzer with MCC level treatment assignment,
- we now also instrument the fact that farmers recall having seen the video with the farmer level treatment assignment (See Appendix Tables 
+ and
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer-LATE"
@@ -6421,22 +5570,11 @@ nolink "false"
 
 \end_inset
 
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled-LATE"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-).
+.
 \end_layout
 
 \begin_layout Standard
-Looking at the main (fully interacted) specification in Table
+Looking at the estimates in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer"
@@ -6447,55 +5585,17 @@ nolink "false"
 
 \end_inset
 
- and the pooled estimates in Table
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
 ,
- we do not find evidence that the MCC-level intervention alone affected farmers’ production investments and management practices.
- The farmer-level information treatment also shows no significant effect in the fully interacted model.
- However,
- the pooled regression suggests a modest positive effect of the farmer-level intervention (significant at the 10 percent level).
+ the pooled effect of the measurement and monitoring system on farmers’ production investments and management practices is modest and not statistically significant.
  This modest magnitude is consistent with Prediction 2:
  because the return to quality effort comes entirely from reducing the probability of rejection near the threshold---not from earning a price premium---the incentive to invest is bounded,
  and the model predicts only a limited behavioral response on the intensive margin.
-\end_layout
-
-\begin_layout Standard
-The significant interaction term in Table
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- indicates that this effect is driven almost entirely by farmers whose MCCs were also equipped with an analyzer.
- This is direct evidence for Prediction 6 (complementarity):
- the information intervention raises the productivity of effort
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
-,
- but this only translates into behavioral change when detection is also high,
- because without the threat of rejection there is no return to improving quality.
- Conversely,
- information alone---without enforcement---has limited effect,
- as the model predicts.
- We also find significant heterogeneity with respect to intermediation for the interaction effect,
- consistent with Prediction 7:
- the significant increase in investment and effort is driven by directly connected farmers,
- for whom the individual detection probability is higher than for those selling through traders who pool milk from multiple sources.
+ The cross-randomized information treatment had no significant independent effect on primary outcomes;
+ however,
+ in the full factorial specification (Online Appendix),
+ the interaction between the system and the information treatment on improved practices is positive and significant,
+ suggesting that enforcement and knowledge are complements:
+ the information treatment raises quality effort only when paired with the measurement system.
 \end_layout
 
 \begin_layout Standard
@@ -6536,12 +5636,9 @@ nolink "false"
 
 \end_inset
 
- The coefficient on the farmer-level information treatment is likewise positive but imprecisely estimated.
- At the same time,
- the fully interacted model indicates heterogeneity by connection type:
- the information treatment reduces the likelihood of being tested among farmers who supply through traders,
- consistent with Prediction 7.
- We detect no statistically significant interaction between the MCC-level and farmer-level interventions for this outcome.
+ Full factorial results,
+ including the information treatment and interaction effects,
+ are available in the Online Appendix.
 \end_layout
 
 \begin_layout Standard
@@ -6549,10 +5646,8 @@ Across all specifications,
  we find no evidence that either intervention affected the prices farmers receive for milk.
  Control farmers report an average price of UGX 1,019 per liter---a level consistent with MCC-level data once accounting for sales to alternative buyers such as traders or direct consumers,
  who typically pay slightly less.
- Prices received by farmers in both treatment arms are statistically indistinguishable from those of control farmers,
- and this holds for the interaction term as well as for pooled,
- fully interacted,
- and instrumented models.
+ The estimated effect of the measurement system on farmer prices is close to zero and not statistically significant,
+ and this holds across alternative specifications and LATE estimates.
  Similarly,
  the likelihood that a farmer reports receiving an explicit quality premium does not differ across groups.
  These null price results mirror the MCC-level findings and are fully consistent with Prediction 3:
@@ -6566,19 +5661,8 @@ The overall composite index of primary farmer outcomes is not statistically sign
  the return to effort under flat-price enforcement is inherently limited compared with the large discrete response on the extensive margin (adulteration),
  which is captured by the objective milk sample data analyzed in the next subsection.
  Nonetheless,
- the pooled specification does provide some suggestive evidence that the MCC-level intervention modestly improves the combined index,
- and a direct comparison between pure control farmers and those exposed to the full bundle of interventions points to a small but positive shift in behavior (See Appendix Table
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-).
+ the point estimate is positive,
+ and the pooled specification provides some suggestive evidence that the measurement system modestly improves the combined index.
 \end_layout
 
 \begin_layout Standard
@@ -6711,11 +5795,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rcccc}
@@ -6723,6 +5809,7 @@ begin{tabular}{rcccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -6734,6 +5821,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & nobs 
 \backslash
 
@@ -6742,6 +5830,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 cline{2-4}
@@ -6756,6 +5845,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 Butter fat (
 \backslash
 %) & 
@@ -6774,6 +5864,7 @@ Sexpr{res_samples[1,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[1,2]}) & (
@@ -6790,6 +5881,7 @@ Sexpr{res_samples[1,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 SNF  (
 \backslash
 %) & 
@@ -6808,6 +5900,7 @@ Sexpr{res_samples[2,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[2,2]}) & (
@@ -6824,6 +5917,7 @@ Sexpr{res_samples[2,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Added Water  (
 \backslash
 %)  & 
@@ -6842,6 +5936,7 @@ Sexpr{res_samples[3,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[3,2]}) & (
@@ -6858,6 +5953,7 @@ Sexpr{res_samples[3,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Protein  (
 \backslash
 %)  & 
@@ -6876,6 +5972,7 @@ Sexpr{res_samples[4,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[4,2]}) & (
@@ -6892,6 +5989,7 @@ Sexpr{res_samples[4,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Density (CLR) & 
 \backslash
 Sexpr{res_samples[5,1]} & 
@@ -6908,6 +6006,7 @@ Sexpr{res_samples[5,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[5,2]}) & (
@@ -6921,6 +6020,7 @@ Sexpr{res_samples[5,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -6928,6 +6028,7 @@ Sexpr{res_samples[5,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index & 
 \backslash
 Sexpr{res_samples[6,1]} & 
@@ -6944,6 +6045,7 @@ Sexpr{res_samples[6,9]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[6,2]}) & (
@@ -6973,6 +6075,7 @@ Sexpr{res_samples[6,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -6980,6 +6083,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -6987,17 +6091,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports mean milk quality measures for the control group,
  with standard deviations in parentheses.
@@ -7006,8 +6113,7 @@ Note:
  Column 3 shows the number of non-missing observations.
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment-area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment-area level.
  Significance levels:
  * p < 0.10,
  ** p < 0.05,
@@ -7238,11 +6344,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rcccc}
@@ -7250,6 +6358,7 @@ begin{tabular}{rcccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -7261,6 +6370,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & nobs 
 \backslash
 
@@ -7269,6 +6379,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 cline{2-4}
@@ -7283,6 +6394,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 Poster is visible (1=yes) & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[1,1]} & 
@@ -7299,6 +6411,7 @@ Sexpr{res_MCCs_sec_uptake[1,7]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[1,2]}) & (
@@ -7315,6 +6428,7 @@ Sexpr{res_MCCs_sec_uptake[1,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Milk Analyzer present (1=yes) & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[2,1]} & 
@@ -7331,6 +6445,7 @@ Sexpr{res_MCCs_sec_uptake[2,7]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[2,2]}) & (
@@ -7347,6 +6462,7 @@ Sexpr{res_MCCs_sec_uptake[2,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Project Milk Analyzer is present (1=yes)  & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[3,1]} & 
@@ -7363,6 +6479,7 @@ Sexpr{res_MCCs_sec_uptake[3,7]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[3,2]}) & (
@@ -7379,6 +6496,7 @@ Sexpr{res_MCCs_sec_uptake[3,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Milk analyzer operational (1=yes) & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[4,1]} & 
@@ -7395,6 +6513,7 @@ Sexpr{res_MCCs_sec_uptake[4,7]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[4,2]}) & (
@@ -7411,6 +6530,7 @@ Sexpr{res_MCCs_sec_uptake[4,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 MCC uses digital record-keeping (1=yes) & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[5,1]} & 
@@ -7427,6 +6547,7 @@ Sexpr{res_MCCs_sec_uptake[5,7]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[5,2]}) & (
@@ -7448,6 +6569,7 @@ Sexpr{res_MCCs_sec_uptake[5,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -7455,6 +6577,7 @@ Sexpr{res_MCCs_sec_uptake[5,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of uptake & 
 \backslash
 Sexpr{res_MCCs_sec_uptake[6,1]} & 
@@ -7471,6 +6594,7 @@ Sexpr{res_MCCs_sec_uptake[6,7]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs_sec_uptake[6,2]}) & (
@@ -7496,6 +6620,7 @@ Sexpr{res_MCCs_sec_uptake[6,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -7503,6 +6628,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -7510,17 +6636,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
@@ -7528,8 +6657,7 @@ Note:
  with standard errors in parentheses.
  Column 3 lists the number of MCCs with non-missing observations.
  The "Index of uptake" is an Anderson (2008) index of the variables listed above.
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment-area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment-area level.
  Significance levels:
  * p < 0.10,
  ** p < 0.05,
@@ -7551,12 +6679,11 @@ Farmer level:
 \end_layout
 
 \begin_layout Standard
-To understand whether the farmer-level components of the intervention were implemented as intended,
- and to assess the earliest steps along the behavioral impact pathway,
- we also examine a set of secondary outcomes capturing farmers’ treatment exposure,
+We also examine secondary outcomes capturing farmers’ treatment exposure,
  compliance,
- and basic conceptual understanding of compositional quality.
- Table 
+ and knowledge of compositional quality.
+ Because these outcomes primarily concern the cross-randomized information treatment,
+ they are reported in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Secondary-outcomes-farmer-uptake"
@@ -7567,27 +6694,7 @@ nolink "false"
 
 \end_inset
 
- reports these outcomes.
- 
-\end_layout
-
-\begin_layout Standard
-A first outcome simply asks whether the farmer recalls having been shown the informational video on milk quality during baseline.
- This directly captures exposure with the information treatment.
- A second outcome records whether the farmer recalls the distribution of the pasture seed pack,
- which served as a simple extension-style nudge toward improved feeding practices.
- We also have an indicator variable for farmers actually planting the seed.
- This allows us to study exposure,
- recall,
- and behavioral follow-through.
-\end_layout
-
-\begin_layout Standard
-The final outcome tests whether farmers can correctly identify practices that increase the compositional quality of milk.
- Farmers were presented with three pairs of options—
-each contrasting a hygiene-focused practice (such as washing hands or using clean containers) with a compositional-quality-focused practice (such as controlled grazing or using feed supplements).
- The individual answers are aggregated again using and Anderson (2008) index.
- This measure provides an objective assessment of whether the interventions shifted farmers’ understanding of what determines higher-quality milk.
+ using the full factorial specification.
 \end_layout
 
 \begin_layout Standard
@@ -7612,45 +6719,11 @@ In contrast,
 \end_layout
 
 \begin_layout Standard
-We do not find that the farmer level intervention increased knowledge in the fully interacted model in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Secondary-outcomes-farmer-uptake"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- Results from the pooled model,
- reported in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Secondary-outcomes-farmer-pooled-uptake"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- are somewhat more encouraging.
- If we remove from the index the multiple choice questions we deem to be the most difficult,
- the coefficient does become significantly positive.
-\end_layout
-
-\begin_layout Standard
-The composite index,
- which aggregates all farmer-level outcomes into a single measure,
- reinforces this conclusion.
- The video treatment leads to a substantial and statistically significant increase in overall uptake,
- while the MCC treatment shows no effect.
- Taken together,
- these results show that farmer-level behavioral change depends critically on direct information provision,
- whereas changes in practices at MCCs do not automatically trickle down to farmers without explicit communication or incentives.
+The information treatment increased recall of the video and seed distribution,
+ confirming that the treatment was delivered as intended.
+ However,
+ effects on knowledge of compositional quality are modest.
+ Detailed discussion of these results is provided alongside the full factorial analysis in the Online Appendix.
 \end_layout
 
 \begin_layout Standard
@@ -7686,11 +6759,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -7698,6 +6773,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -7709,6 +6785,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean & analyzer & video & bundle & nobs 
 \backslash
 
@@ -7726,11 +6803,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 Remembers video & 
 \backslash
 Sexpr{res_farmers_sec_uptake[1,1]} & 
@@ -7755,6 +6834,7 @@ Sexpr{res_farmers_sec_uptake[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[1,2]}) & (
@@ -7771,6 +6851,7 @@ Sexpr{res_farmers_sec_uptake[1,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_sec_uptake[1,13]}] & [
@@ -7805,6 +6886,7 @@ Sexpr{res_farmers_sec_uptake[1,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Remembers receiving seed & 
 \backslash
 Sexpr{res_farmers_sec_uptake[2,1]} & 
@@ -7829,6 +6911,7 @@ Sexpr{res_farmers_sec_uptake[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[2,2]}) & (
@@ -7845,6 +6928,7 @@ Sexpr{res_farmers_sec_uptake[2,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_sec_uptake[2,13]}] & [
@@ -7863,6 +6947,7 @@ Sexpr{res_farmers_sec_uptake[2,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Used seed  & 
 \backslash
 Sexpr{res_farmers_sec_uptake[3,1]} & 
@@ -7887,6 +6972,7 @@ Sexpr{res_farmers_sec_uptake[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[3,2]}) & (
@@ -7903,6 +6989,7 @@ Sexpr{res_farmers_sec_uptake[3,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_sec_uptake[3,13]}] & [
@@ -7921,6 +7008,7 @@ Sexpr{res_farmers_sec_uptake[3,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Knows compositional quality matters & 
 \backslash
 Sexpr{res_farmers_sec_uptake[4,1]} & 
@@ -7945,6 +7033,7 @@ Sexpr{res_farmers_sec_uptake[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[4,2]}) & (
@@ -7961,6 +7050,7 @@ Sexpr{res_farmers_sec_uptake[4,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_sec_uptake[4,13]}] & [
@@ -7979,6 +7069,7 @@ Sexpr{res_farmers_sec_uptake[4,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of uptake & 
 \backslash
 Sexpr{res_farmers_sec_uptake[5,1]} & 
@@ -8003,6 +7094,7 @@ Sexpr{res_farmers_sec_uptake[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[5,2]}) & (
@@ -8019,6 +7111,7 @@ Sexpr{res_farmers_sec_uptake[5,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_sec_uptake[5,13]}] & [
@@ -8042,6 +7135,7 @@ Sexpr{res_farmers_sec_uptake[5,33]}]
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -8049,6 +7143,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -8056,17 +7151,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  First column reports control group means (and standard deviations below);
  the second column shows average treatment effect of MCC level intervention,
@@ -8075,8 +7173,7 @@ Note:
  (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
  the fourth column shows average treatment effect of the interaction of the MCC level and farmer level intervention,
  (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment area level.
  **,
  * and + denote significance at the 1,
  5 and 10 percent level.
@@ -8123,7 +7220,6 @@ A natural concern is whether the enforcement model is falsifiable---that is,
 \end_layout
 
 \begin_layout Standard
-
 \emph on
 Power considerations.
 
@@ -8144,7 +7240,6 @@ Power considerations.
 \end_layout
 
 \begin_layout Standard
-
 \emph on
 Selection versus deterrence.
 
@@ -8349,10 +7444,11 @@ The empirical results align closely with the model’s predictions.
  The pronounced asymmetry between these two margins (Prediction 4) reflects the fundamental cost asymmetry in the model---stopping adulteration requires only that a farmer cease an essentially costless action whose benefit is now outweighed by detection risk,
  whereas increasing compositional quality demands costly ongoing investment with returns bounded by the flat-price regime.
  Self-reported farmer survey data corroborate these patterns:
- quality effort increased modestly,
- and only when the information treatment was combined with the analyzer (Prediction 6),
+ quality effort increased modestly.
+ In the full factorial analysis reported in the Online Appendix,
+ the information treatment raised quality effort only when combined with the analyzer,
  confirming that enforcement and information are complements.
- Directly connected farmers responded more strongly than those selling through traders (Prediction 7),
+ Directly connected farmers responded more strongly than those selling through traders,
  consistent with the model’s prediction that intermediation dilutes individual detection.
 \end_layout
 
@@ -8504,6 +7600,7 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 appendix
 \end_layout
@@ -8523,11 +7620,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 setcounter{table}{0} 
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 setcounter{figure}{0} 
@@ -8535,17 +7634,20 @@ setcounter{figure}{0}
 
 \begin_layout Plain Layout
 
+
 \backslash
 setcounter{subsection}{0}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 setcounter{page}{1}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 renewcommand{
@@ -8557,6 +7659,7 @@ arabic{table}}
 
 \begin_layout Plain Layout
 
+
 \backslash
 renewcommand{
 \backslash
@@ -8566,6 +7669,7 @@ arabic{figure}}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 renewcommand{
@@ -8617,11 +7721,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccc}
@@ -8629,6 +7735,7 @@ begin{tabular}{rccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -8640,6 +7747,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer &  nobs 
 \backslash
 
@@ -8653,6 +7761,7 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-4}
 \end_layout
@@ -8662,6 +7771,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 Number of people employed at MCC?
   & 
 \backslash
@@ -8679,6 +7789,7 @@ Sexpr{balance[2,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[2,2]}) & (
@@ -8695,6 +7806,7 @@ Sexpr{balance[2,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Nr farmers that supply to MCC   & 
 \backslash
 Sexpr{balance[3,1]} & 
@@ -8711,6 +7823,7 @@ Sexpr{balance[3,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[3,2]}) & (
@@ -8727,6 +7840,7 @@ Sexpr{balance[3,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Capacity use during dry season (
 \backslash
 %) & 
@@ -8745,6 +7859,7 @@ Sexpr{balance[5,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[5,2]}) & (
@@ -8761,6 +7876,7 @@ Sexpr{balance[5,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Number of milk cans owned by MCC   & 
 \backslash
 Sexpr{balance[8,1]} & 
@@ -8777,6 +7893,7 @@ Sexpr{balance[8,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[8,2]}) & (
@@ -8793,6 +7910,7 @@ Sexpr{balance[8,4]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Supplies credit/loans (1=yes) & 
 \backslash
 Sexpr{balance[9,1]} & 
@@ -8809,6 +7927,7 @@ Sexpr{balance[9,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance[9,2]}) & (
@@ -8822,11 +7941,13 @@ Sexpr{balance[9,4]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 F-statistic & & 
 \backslash
 Sexpr{F_test[1,2]} 
@@ -8837,6 +7958,7 @@ Sexpr{F_test[1,2]}
 \end_layout
 
 \begin_layout Plain Layout
+
 p-value & & 
 \backslash
 Sexpr{F_test[2,2]} 
@@ -8860,6 +7982,7 @@ Sexpr{F_test[2,2]}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -8867,6 +7990,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -8874,17 +7998,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
@@ -8943,11 +8070,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -8955,6 +8084,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -8966,6 +8096,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & video & bundle & nobs 
 \backslash
 
@@ -8983,11 +8114,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 Household Members (number) & 
 \backslash
 Sexpr{balance_farmer[1,1]} & 
@@ -9012,6 +8145,7 @@ Sexpr{balance_farmer[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[1,2]}) & (
@@ -9036,6 +8170,7 @@ Sexpr{balance_farmer[1,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Liters Produced Total Per Day (average during rainy season) (liters)  & 
 \backslash
 Sexpr{balance_farmer[5,1]} & 
@@ -9060,6 +8195,7 @@ Sexpr{balance_farmer[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[5,2]}) & (
@@ -9080,6 +8216,7 @@ Sexpr{balance_farmer[5,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Normally during the rainy season sells most of its milk to a milk collection center?
  (1=yes) & 
 \backslash
@@ -9105,6 +8242,7 @@ Sexpr{balance_farmer[7,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[7,2]}) & (
@@ -9125,6 +8263,7 @@ Sexpr{balance_farmer[7,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Uses only steel can/bucket during sales transactions in the last 7 days before survey?
  (1=yes)  & 
 \backslash
@@ -9150,6 +8289,7 @@ Sexpr{balance_farmer[8,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[8,2]}) & (
@@ -9170,6 +8310,7 @@ Sexpr{balance_farmer[8,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Member of dairy cooperative?
  (1=yes) & 
 \backslash
@@ -9195,6 +8336,7 @@ Sexpr{balance_farmer[9,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[9,2]}) & (
@@ -9220,11 +8362,13 @@ Sexpr{balance_farmer[9,10]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 F-statistic & & 
 \backslash
 Sexpr{F_test[1,6]} & 
@@ -9239,6 +8383,7 @@ Sexpr{F_test[1,8]}
 \end_layout
 
 \begin_layout Plain Layout
+
 p-value & & 
 \backslash
 Sexpr{F_test[2,6]} & 
@@ -9258,6 +8403,7 @@ Sexpr{F_test[2,8]}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -9265,6 +8411,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -9272,17 +8419,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  This table reports baseline balance across farmers in the control group and the three treatment groups (analyzer,
  video,
@@ -9344,11 +8494,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -9356,6 +8508,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -9367,6 +8520,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & video & nobs 
 \backslash
 
@@ -9376,11 +8530,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 Household Head Age (years) & 
 \backslash
 Sexpr{balance_farmer[2,1]} & 
@@ -9405,6 +8561,7 @@ Sexpr{balance_farmer[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[2,2]}) & (
@@ -9429,6 +8586,7 @@ Sexpr{balance_farmer[2,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Current Total herd size (number) & 
 \backslash
 Sexpr{balance_farmer[3,1]} & 
@@ -9453,6 +8611,7 @@ Sexpr{balance_farmer[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[3,2]}) & (
@@ -9473,6 +8632,7 @@ Sexpr{balance_farmer[3,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Number of improved animals in total herd (share)  & 
 \backslash
 Sexpr{balance_farmer[4,1]} & 
@@ -9497,6 +8657,7 @@ Sexpr{balance_farmer[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[4,2]}) & (
@@ -9517,6 +8678,7 @@ Sexpr{balance_farmer[4,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Liters milk sold per day (on average in the rainy season) (liters) & 
 \backslash
 Sexpr{balance_farmer[6,1]} & 
@@ -9541,6 +8703,7 @@ Sexpr{balance_farmer[6,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[6,2]}) & (
@@ -9565,6 +8728,7 @@ Sexpr{balance_farmer[6,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Average monthly expense (USD) on chemical purchases  & 
 \backslash
 Sexpr{balance_farmer[10,1]} & 
@@ -9589,6 +8753,7 @@ Sexpr{balance_farmer[10,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[10,2]}) & (
@@ -9606,6 +8771,7 @@ Sexpr{balance_farmer[10,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -9613,6 +8779,7 @@ Sexpr{balance_farmer[10,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Household Members (number) & 
 \backslash
 Sexpr{balance_farmer[1,1]} & 
@@ -9637,6 +8804,7 @@ Sexpr{balance_farmer[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[1,2]}) & (
@@ -9657,6 +8825,7 @@ Sexpr{balance_farmer[1,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Liters Produced Total Per Day (average during rainy season) (liters)  & 
 \backslash
 Sexpr{balance_farmer[5,1]} & 
@@ -9681,6 +8850,7 @@ Sexpr{balance_farmer[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[5,2]}) & (
@@ -9701,6 +8871,7 @@ Sexpr{balance_farmer[5,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Normally during the rainy season sells most of its milk to a milk collection center?
  (1=yes)  & 
 \backslash
@@ -9726,6 +8897,7 @@ Sexpr{balance_farmer[7,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[7,2]}) & (
@@ -9746,6 +8918,7 @@ Sexpr{balance_farmer[7,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Uses only steel can/bucket during sales transactions in the last 7 days before survey?
  (1=yes)   & 
 \backslash
@@ -9771,6 +8944,7 @@ Sexpr{balance_farmer[8,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[8,2]}) & (
@@ -9791,6 +8965,7 @@ Sexpr{balance_farmer[8,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Member of dairy cooperative?
  (1=yes)& 
 \backslash
@@ -9816,6 +8991,7 @@ Sexpr{balance_farmer[9,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{balance_farmer[9,2]}) & (
@@ -9845,6 +9021,7 @@ Sexpr{balance_farmer[9,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -9852,6 +9029,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -9859,17 +9037,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  The first column reports means for the pure control group,
  with standard deviations in parentheses.
@@ -9925,11 +9106,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rcccc}
@@ -9937,6 +9120,7 @@ begin{tabular}{rcccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -9948,6 +9132,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & nobs 
 \backslash
 
@@ -9956,6 +9141,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 cline{2-4}
@@ -9970,6 +9156,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 Tested incoming milk using MA (1=yes) & 
 \backslash
 Sexpr{res_MCCs[1,1]} & 
@@ -9986,6 +9173,7 @@ Sexpr{res_MCCs[1,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[1,2]}) & (
@@ -10002,6 +9190,7 @@ Sexpr{res_MCCs[1,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Testing outgoing milk using MA (1=yes)  & 
 \backslash
 Sexpr{res_MCCs[2,1]} & 
@@ -10018,6 +9207,7 @@ Sexpr{res_MCCs[2,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[2,2]}) & (
@@ -10034,6 +9224,7 @@ Sexpr{res_MCCs[2,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Price at which milk was bought from farmers (UGX)  & 
 \backslash
 Sexpr{res_MCCs[3,1]} & 
@@ -10050,6 +9241,7 @@ Sexpr{res_MCCs[3,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[3,2]}) & (
@@ -10066,6 +9258,7 @@ Sexpr{res_MCCs[3,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Price at which milk was sold (UGX)  & 
 \backslash
 Sexpr{res_MCCs[4,1]} & 
@@ -10082,6 +9275,7 @@ Sexpr{res_MCCs[4,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[4,2]}) & (
@@ -10098,6 +9292,7 @@ Sexpr{res_MCCs[4,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Does the MCC pay a quality premium to suppliers?
   & 
 \backslash
@@ -10115,6 +9310,7 @@ Sexpr{res_MCCs[5,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[5,2]}) & (
@@ -10131,6 +9327,7 @@ Sexpr{res_MCCs[5,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Did the buyer pay a quality premium?
   & 
 \backslash
@@ -10148,6 +9345,7 @@ Sexpr{res_MCCs[6,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[6,2]}) & (
@@ -10165,6 +9363,7 @@ Sexpr{res_MCCs[6,7]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -10172,6 +9371,7 @@ Sexpr{res_MCCs[6,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of primary MCC outcomes & 
 \backslash
 Sexpr{res_MCCs[7,1]} & 
@@ -10188,6 +9388,7 @@ Sexpr{res_MCCs[7,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_MCCs[7,2]}) & (
@@ -10213,6 +9414,7 @@ Sexpr{res_MCCs[7,7]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -10220,6 +9422,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -10227,17 +9430,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Column 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
  Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
@@ -10245,8 +9451,7 @@ Column 1 reports the mean of each outcome for the control group,
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
  The "Index of primary MCC outcomes" is an Anderson (2008) index of the variables listed above.
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment-area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment-area level.
  Significance levels:
  * p < 0.10,
  ** p < 0.05,
@@ -10296,11 +9501,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -10308,6 +9515,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -10319,6 +9527,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean & analyzer & video &  bundle & nobs 
 \backslash
 
@@ -10336,11 +9545,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 Production investment and management & 
 \backslash
 Sexpr{res_farmers[1,1]} & 
@@ -10365,6 +9576,7 @@ Sexpr{res_farmers[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[1,2]}) & (
@@ -10385,6 +9597,7 @@ Sexpr{res_farmers[1,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Buyer checks for quality  & 
 \backslash
 Sexpr{res_farmers[2,1]} & 
@@ -10409,6 +9622,7 @@ Sexpr{res_farmers[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[2,2]}) & (
@@ -10429,6 +9643,7 @@ Sexpr{res_farmers[2,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Price received for milk sold  & 
 \backslash
 Sexpr{res_farmers[3,1]} & 
@@ -10453,6 +9668,7 @@ Sexpr{res_farmers[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[3,2]}) & (
@@ -10473,6 +9689,7 @@ Sexpr{res_farmers[3,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Get quality premium  & 
 \backslash
 Sexpr{res_farmers[4,1]} & 
@@ -10497,6 +9714,7 @@ Sexpr{res_farmers[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[4,2]}) & (
@@ -10514,6 +9732,7 @@ Sexpr{res_farmers[4,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -10521,6 +9740,7 @@ Sexpr{res_farmers[4,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of primary farmer outcomes  & 
 \backslash
 Sexpr{res_farmers[5,1]} & 
@@ -10545,6 +9765,7 @@ Sexpr{res_farmers[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers[5,2]}) & (
@@ -10570,6 +9791,7 @@ Sexpr{res_farmers[5,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -10577,6 +9799,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -10584,17 +9807,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports mean outcomes for pure control farmers (those not receiving the information treatment and linked to control MCCs),
  with standard deviations in parentheses.
@@ -10659,11 +9885,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -10671,6 +9899,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -10682,6 +9911,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean & analyzer & video & bundle & nobs 
 \backslash
 
@@ -10699,11 +9929,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 Production investment and management (Index) & 
 \backslash
 Sexpr{res_farmers_TOT[1,1]} & 
@@ -10728,6 +9960,7 @@ Sexpr{res_farmers_TOT[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[1,2]}) & (
@@ -10744,6 +9977,7 @@ Sexpr{res_farmers_TOT[1,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_TOT[1,13]}] & [
@@ -10762,6 +9996,7 @@ Sexpr{res_farmers_TOT[1,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Buyer checked for quality (1=yes) & 
 \backslash
 Sexpr{res_farmers_TOT[2,1]} & 
@@ -10786,6 +10021,7 @@ Sexpr{res_farmers_TOT[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[2,2]}) & (
@@ -10802,6 +10038,7 @@ Sexpr{res_farmers_TOT[2,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_TOT[2,13]}] & [
@@ -10820,6 +10057,7 @@ Sexpr{res_farmers_TOT[2,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Price received for milk sold & 
 \backslash
 Sexpr{res_farmers_TOT[3,1]} & 
@@ -10844,6 +10082,7 @@ Sexpr{res_farmers_TOT[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[3,2]}) & (
@@ -10860,6 +10099,7 @@ Sexpr{res_farmers_TOT[3,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_TOT[3,13]}] & [
@@ -10878,6 +10118,7 @@ Sexpr{res_farmers_TOT[3,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Get quality premium  & 
 \backslash
 Sexpr{res_farmers_TOT[4,1]} & 
@@ -10902,6 +10143,7 @@ Sexpr{res_farmers_TOT[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[4,2]}) & (
@@ -10918,6 +10160,7 @@ Sexpr{res_farmers_TOT[4,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_TOT[4,13]}] & [
@@ -10933,6 +10176,7 @@ Sexpr{res_farmers_TOT[4,33]}]
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -10940,6 +10184,7 @@ Sexpr{res_farmers_TOT[4,33]}]
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of primary farmer outcomes & 
 \backslash
 Sexpr{res_farmers_TOT[5,1]} & 
@@ -10964,6 +10209,7 @@ Sexpr{res_farmers_TOT[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[5,2]}) & (
@@ -10980,6 +10226,7 @@ Sexpr{res_farmers_TOT[5,10]})
 \end_layout
 
 \begin_layout Plain Layout
+
 &  & [
 \backslash
 Sexpr{res_farmers_TOT[5,13]}] & [
@@ -11007,6 +10254,7 @@ Sexpr{res_farmers_TOT[5,33]}]
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -11014,6 +10262,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -11021,17 +10270,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports mean outcomes for pure control farmers (those not receiving the information treatment and connected to control MCCs),
  with standard deviations in parentheses.
@@ -11094,11 +10346,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -11106,6 +10360,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -11117,6 +10372,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean & analyzer & video &  bundle & nobs 
 \backslash
 
@@ -11134,11 +10390,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-6}
 \end_layout
 
 \begin_layout Plain Layout
+
 Production investment and management & 
 \backslash
 Sexpr{res_farmers_TOT[1,1]} & 
@@ -11163,6 +10421,7 @@ Sexpr{res_farmers_TOT[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[1,2]}) & (
@@ -11183,6 +10442,7 @@ Sexpr{res_farmers_TOT[1,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Buyer checks for quality  & 
 \backslash
 Sexpr{res_farmers_TOT[2,1]} & 
@@ -11207,6 +10467,7 @@ Sexpr{res_farmers_TOT[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[2,2]}) & (
@@ -11227,6 +10488,7 @@ Sexpr{res_farmers_TOT[2,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Price received for milk sold  & 
 \backslash
 Sexpr{res_farmers_TOT[3,1]} & 
@@ -11251,6 +10513,7 @@ Sexpr{res_farmers_TOT[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[3,2]}) & (
@@ -11271,6 +10534,7 @@ Sexpr{res_farmers_TOT[3,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Get quality premium  & 
 \backslash
 Sexpr{res_farmers_TOT[4,1]} & 
@@ -11295,6 +10559,7 @@ Sexpr{res_farmers_TOT[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[4,2]}) & (
@@ -11312,6 +10577,7 @@ Sexpr{res_farmers_TOT[4,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -11319,6 +10585,7 @@ Sexpr{res_farmers_TOT[4,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of primary farmer outcomes  & 
 \backslash
 Sexpr{res_farmers_TOT[5,1]} & 
@@ -11343,6 +10610,7 @@ Sexpr{res_farmers_TOT[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_TOT[5,2]}) & (
@@ -11368,6 +10636,7 @@ Sexpr{res_farmers_TOT[5,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -11375,6 +10644,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -11382,17 +10652,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports mean outcomes for pure control farmers (those not receiving the information treatment and linked to control MCCs),
  with standard deviations in parentheses.
@@ -11456,11 +10729,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rcccc}
@@ -11468,6 +10743,7 @@ begin{tabular}{rcccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -11479,6 +10755,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean ctrl & analyzer & nobs 
 \backslash
 
@@ -11487,6 +10764,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 cline{2-4}
@@ -11501,6 +10779,7 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
+
 Butter fat (
 \backslash
 %) & 
@@ -11519,6 +10798,7 @@ Sexpr{res_samples[1,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[1,2]}) & (
@@ -11535,6 +10815,7 @@ Sexpr{res_samples[1,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 SNF (
 \backslash
 %) & 
@@ -11553,6 +10834,7 @@ Sexpr{res_samples[2,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[2,2]}) & (
@@ -11569,6 +10851,7 @@ Sexpr{res_samples[2,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Added Water (
 \backslash
 %) & 
@@ -11587,6 +10870,7 @@ Sexpr{res_samples[3,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[3,2]}) & (
@@ -11603,6 +10887,7 @@ Sexpr{res_samples[3,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Protein (
 \backslash
 %) & 
@@ -11621,6 +10906,7 @@ Sexpr{res_samples[4,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[4,2]}) & (
@@ -11637,6 +10923,7 @@ Sexpr{res_samples[4,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Density (CLR) & 
 \backslash
 Sexpr{res_samples[5,1]} & 
@@ -11653,6 +10940,7 @@ Sexpr{res_samples[5,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[5,2]}) & (
@@ -11666,6 +10954,7 @@ Sexpr{res_samples[5,7]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 
 \backslash
@@ -11673,6 +10962,7 @@ Sexpr{res_samples[5,7]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index  & 
 \backslash
 Sexpr{res_samples[6,1]} & 
@@ -11689,6 +10979,7 @@ Sexpr{res_samples[6,10]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_samples[6,2]}) & (
@@ -11714,6 +11005,7 @@ Sexpr{res_samples[1,7]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -11721,6 +11013,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -11728,17 +11021,20 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  Column 1 reports mean milk quality measures for the control group,
  with standard deviations in parentheses.
@@ -11747,8 +11043,7 @@ Note:
  Column 3 shows the number of non-missing observations.
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment-area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment-area level.
  Significance levels:
  * p < 0.10,
  ** p < 0.05,
@@ -11798,11 +11093,13 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{center}
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{tabular}{rccccc}
@@ -11810,6 +11107,7 @@ begin{tabular}{rccccc}
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -11821,6 +11119,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 & mean & analyzer & video & bundle & nobs 
 \backslash
 
@@ -11838,11 +11137,13 @@ hline
 
 \begin_layout Plain Layout
 
+
 \backslash
 cline{2-5}
 \end_layout
 
 \begin_layout Plain Layout
+
 Remembers video &  
 \backslash
 Sexpr{res_farmers_sec_uptake[1,1]} & 
@@ -11867,6 +11168,7 @@ Sexpr{res_farmers_sec_uptake[1,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[1,2]}) & (
@@ -11887,6 +11189,7 @@ Sexpr{res_farmers_sec_uptake[1,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Remembers seed &  
 \backslash
 Sexpr{res_farmers_sec_uptake[2,1]} & 
@@ -11911,6 +11214,7 @@ Sexpr{res_farmers_sec_uptake[2,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[2,2]}) & (
@@ -11931,6 +11235,7 @@ Sexpr{res_farmers_sec_uptake[2,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Used seed &  
 \backslash
 Sexpr{res_farmers_sec_uptake[3,1]} & 
@@ -11955,6 +11260,7 @@ Sexpr{res_farmers_sec_uptake[3,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[3,2]}) & (
@@ -11975,6 +11281,7 @@ Sexpr{res_farmers_sec_uptake[3,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Knows compositional quality matters &  
 \backslash
 Sexpr{res_farmers_sec_uptake[4,1]} & 
@@ -11999,6 +11306,7 @@ Sexpr{res_farmers_sec_uptake[4,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[4,2]}) & (
@@ -12019,6 +11327,7 @@ Sexpr{res_farmers_sec_uptake[4,28]})
 \end_layout
 
 \begin_layout Plain Layout
+
 Index of uptake  &  
 \backslash
 Sexpr{res_farmers_sec_uptake[5,1]} & 
@@ -12043,6 +11352,7 @@ Sexpr{res_farmers_sec_uptake[5,12]}
 \end_layout
 
 \begin_layout Plain Layout
+
 & (
 \backslash
 Sexpr{res_farmers_sec_uptake[5,2]}) & (
@@ -12068,6 +11378,7 @@ Sexpr{res_farmers_sec_uptake[5,28]})
 
 \begin_layout Plain Layout
 
+
 \backslash
 hline
 \backslash
@@ -12075,6 +11386,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{tabular}
@@ -12082,28 +11394,36 @@ end{tabular}
 
 \begin_layout Plain Layout
 
+
 \backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
+
 \backslash
 scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
 Note:
  First column reports control group means (and standard deviations below);
  the second column shows average treatment effect of MCC level intervention,
  (standard error of coefficient estimate below);
  the third column shows average treatment effect of the farmer level intervention,
  (standard error of coefficient estimate below);
- P-values are based on Fisher randomization inference (5,000 permutations);
- standard errors are CR2 cluster-robust at the catchment area level.
+ P-values are based on Fisher randomization inference (5,000 permutations); standard errors are CR2 cluster-robust at the catchment area level.
  **,
  * and + denote significance at the 1,
  5 and 10 percent level.
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -12111,9 +11431,95 @@ Note:
 
 \end_layout
 
+\begin_layout Subsection
+Full 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 Factorial Results
+\end_layout
+
+\begin_layout Standard
+In addition to the measurement and monitoring system analyzed in the main text,
+ we cross-randomized an information treatment at the farmer level.
+ This treatment consisted of an educational video explaining compositional milk quality and feeding practices,
+ a cartoon handout,
+ and a bag of improved pasture seeds.
+ The video was shown to treatment farmers twice:
+ once during baseline data collection and once at the time of analyzer installation.
+ This created a 2
+\begin_inset Formula $\times$
+\end_inset
+
+2 factorial design with four groups:
+ control (no system, no video),
+ system only,
+ video only,
+ and bundle (system + video).
+\end_layout
+
+\begin_layout Standard
+Following
+\begin_inset CommandInset citation
+LatexCommand citet
+key "muralidharan2019factorial"
+literal "false"
+
+\end_inset
+
+,
+ we estimate both a fully interacted specification and orthogonalized pooled specifications that recover the marginal effect of each treatment while adjusting for the other.
+ Specifically,
+ the pooled effect of the measurement system is estimated from:
+
+\begin_inset Formula
+\begin{equation}
+y_{i,m}=\alpha+\beta_{H2}T1_{i,m}+\gamma\left(T2_{i,m}-\bar{T2}\right)+\delta T1_{i,m}\left(T2_{i,m}-\bar{T2}\right)+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}
+\end{equation}
+
+\end_inset
+
+and the pooled effect of the information treatment from:
+
+\begin_inset Formula
+\begin{equation}
+y_{i,m}=\alpha+\beta_{H3}T2_{i,m}+\gamma\left(T1_{i,m}-\bar{T1}\right)+\delta T2_{i,m}\left(T1_{i,m}-\bar{T1}\right)+\beta_{b}.y_{i,m}^{b}+\varepsilon_{i,m}
+\end{equation}
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+The full factorial tables above (Tables
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ through
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) report results from these specifications.
+ The information treatment shows no significant independent effects on any primary outcome after multiple testing correction.
+ However,
+ the interaction between the measurement system and the information treatment on improved practices is positive and significant (p=0.018),
+ suggesting that enforcement and knowledge are complements:
+ information about quality is actionable only when there is a credible threat of detection through the measurement system.
 \end_layout
 
 \end_body
