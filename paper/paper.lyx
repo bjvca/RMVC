@@ -471,7 +471,7 @@ literal "false"
 .
  In the absence of such premiums,
  quality improvements may not be financially viable,
- and actors may instead prioritize volume over quality
+ and actors may instead prioritize volume over quality 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bai2025quality"
@@ -506,7 +506,7 @@ literal "false"
  certification,
  and monitoring infrastructure.
  Even in settings where quality can be observed,
- the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging
+ the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bai2024quality"
@@ -1073,75 +1073,145 @@ nolink "false"
 \begin_layout Section
 Context:
  Dairy Supply Chains in Uganda
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:context"
 
 \end_inset
 
-[Placeholder section on the Ugandan dairy sector context.
- Describe the structure of dairy supply chains:
- smallholder farmers sell milk to Milk Collection Centers (MCCs),
- which aggregate and cool milk before selling to processors.
- Some farmers sell directly to MCCs while others sell through traders/middlemen.
- Quality is difficult to observe without testing equipment,
- and the absence of systematic record-keeping means that even when quality is checked,
- there is no way to track patterns across deliveries or over time.
- Adulteration (primarily water addition) is a widespread problem.
- MCCs vary in organizational form (cooperatives vs.
- private) and capacity.]
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement h
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../PAP/figures/milk_analyzer_installed.jpg
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
+The Ugandan dairy subsector is a dynamic and rapidly growing sector,
+ with its development closely linked to significant policy reforms.
+ Notably,
+ the privatization of the National Dairy Corporation and the enactment of the Dairy Industry Act of 1998 marked critical turning points for the industry.
+ These reforms also led to the establishment of the Dairy Development Authority (DDA),
+ a statutory body under the Ministry of Agriculture,
+ Animal Industry,
+ and Fisheries.
+ The DDA has a dual mandate to regulate and promote the dairy sector,
+ ensuring compliance with quality standards while supporting farmers and stakeholders through training,
+ improved technologies,
+ and market development initiatives.
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Quality Measurement and Digital Monitoring System Installed at an MCC
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:milk-analyzer"
+\begin_layout Standard
+The policy changes spurred an influx of foreign direct investment,
+ particularly in Mbarara,
+ a key town in southwestern Uganda often referred to as the country’s "milk shed” 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "vancampenhout2021leading"
+literal "false"
 
 \end_inset
 
-
+.
+ This investment fostered the emergence of a cluster of milk processors in the region,
+ enhancing value addition and market access.
+ Additionally,
+ productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
+ such as Holstein Friesians and Jersey cows,
+ significantly increasing milk yields and overall sector efficiency.
+ Today,
+ the dairy subsector is one of the main export earners of the country.
 \end_layout
 
-\end_inset
-
-
+\begin_layout Standard
+Although dairy value chains in Uganda differ in their organizational form—
+from fully integrated systems led by large processors to fragmented structures of small cooperatives—
+a typical chain comprises five main actors,
+ each with a distinct role in milk production,
+ transport,
+ and processing:
 \end_layout
 
+\begin_layout Enumerate
+Dairy farmers:
+ At the upstream end of the chain are farmer households,
+ who are the primary producers of milk.
+ These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
+\end_layout
+
+\begin_layout Enumerate
+Transporters and Traders:
+ Transporters collect milk directly from farms and deliver it to MCCs for a fee,
+ thus providing a service.
+ Traders purchase milk from farmers with the intent to sell it at MCCs or to other traders for profit,
+ thus functioning as commercial intermediaries within the chain.
+ In the follow-up study (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:experiment2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
 \end_inset
 
+) we work specifically with traders.
+\end_layout
 
+\begin_layout Enumerate
+Milk Collection Centers:
+ MCCs are critical nodes in the value chain.
+ Their primary role is to bulk and chill milk,
+ marking the start of the cold chain essential for maintaining milk quality.
+ These centers are strategically distributed across rural areas,
+ facilitating access for farmers,
+ traders and transporters.
+ MCCs vary in organizational form (cooperatives vs.
+ private) and capacity.
+\end_layout
+
+\begin_layout Enumerate
+Large Traders:
+ Once milk is chilled and bulked at MCCs,
+ large traders transport it to processing facilities.
+ This step often involves the use of specialized milk tankers to preserve quality during transit.
+\end_layout
+
+\begin_layout Enumerate
+Processors:
+ Processors,
+ concentrated in or around key towns such as Mbarara—
+Uganda’s dairy hub—
+convert raw milk into value-added products with extended shelf lives,
+ such as ultra-heat-treated (UHT) milk,
+ powdered milk,
+ and infant formula.
+ These processors play a pivotal role in integrating Uganda’s dairy sector into both domestic and export markets.
+\end_layout
+
+\begin_layout Standard
+This layered and dynamic structure enables the participation of diverse stakeholders while presenting opportunities for efficiency improvements at various points along the chain.
+\end_layout
+
+\begin_layout Standard
+Quality of raw milk is difficult to observe without proper testing equipment.
+ Most milk collection centers in Uganda rely on two low-cost diagnostic tests to assess basic milk quality:
+ the lactometer test and the alcohol test.
+ The lactometer test is a gravity based test that measures milk density using a floating hydrometer and is primarily employed to detect added water,
+ since dilution lowers density,
+ although readings are sensitive to temperature and cannot distinguish intentional adulteration from natural variation in fat or SNF.
+ The alcohol test—
+typically using 68 to 75 percent ethanol—
+assesses protein stability as a proxy for freshness and acidity;
+ milk that curdles upon contact with alcohol is rejected as sour.
+ While both tests are inexpensive and easy to administer,
+ neither provides information on compositional attributes such as butterfat,
+ solids-not-fat,
+ or protein,
+ limiting their usefulness for enforcing or rewarding quality beyond basic adulteration and hygiene.
+ 
 \end_layout
 
 \begin_layout Section
-Experiment 1:
- Quality Measurement and Digital Monitoring
+Quality Measurement and Digital Monitoring
 \end_layout
 
 \begin_layout Standard
@@ -1217,6 +1287,335 @@ name "fig:design"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsection
+Intervention
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../PAP/figures/milk_analyzer_installed.jpg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Quality Measurement and Digital Monitoring System Installed at an MCC
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:milk-analyzer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Innovation Bundles for Addressing Milk Quality Challenges
+\end_layout
+
+\begin_layout Standard
+In response to the challenge of unobservable milk quality in the Ugandan dairy value chain,
+ we designed a first socio-technical innovation bundle targeting Milk Collection Centers (MCCs).
+ This bundle aims to enhance transparency,
+ improve record-keeping,
+ and empower both MCC managers and farmers by making milk quality measurable and visible.
+ The bundle,
+ developed after extensive consultations with stakeholders and implemented together with the DDA,
+ consists of three key components:
+\end_layout
+
+\begin_layout Standard
+1.
+ Milk Analyzer:
+ A central component of the innovation bundle is the installation of milk analyzers at MCCs.
+ These machines assesses milk quality based on a set of compositional parameters,
+ such as butterfat content and solids-not-fat (SNF).
+ Another important parameter is the amount of added water,
+ providing a more accurate assessment of what MCC managers usually test using gravity based methods.
+ The testing process is non-destructive and takes less than one minute per sample,
+ enabling rapid and accurate quality evaluation of each delivery.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Generally milk was tested per (25 or 50 liter) milk can.
+ Sometimes,
+ if multiple cans of the same farmer were delivered,
+ a composite sample of the different cans were tested.
+\end_layout
+
+\end_inset
+
+ By providing immediate feedback,
+ the milk analyzers help ensure that quality standards are met and maintained.
+ More information on the milk analyzer can be obtained from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "manufacturer's website"
+target "https://www.essae.com/milk-fat-analyzer-machine.php"
+literal "false"
+
+\end_inset
+
+.
+ Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Milk-analyzer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ shows a milk analyzer during piloting.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../../figures/milk_analyzer_installed.jpg
+	lyxscale 50
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Milk analyzer results during testing showing results for an exceptionally high quality milk sample
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Milk-analyzer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The milk analyzers were delivered with clear Standard Operating Procedures.
+ Two separate trainings were organized.
+ One training targeted MCC owners,
+ where the focus was mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality.
+ A second training was geared toward MCC managers and focused more on use and maintenance of the milk analyzers.
+\end_layout
+
+\begin_layout Standard
+We collaborated with the DDA to set up a system to monitor the milk analyzers and its use.
+ In particular,
+ DDA technicians visited treatment MCCs at set periods.
+ We also provided various ways in which MCC managers could request assistance if needed,
+ including a WhatAapp group and a telephone hotline.
+ We also made sure that,
+ over the course of the project,
+ equipment was adequately calibrated.
+ We also made sure MCC managers had access to cleaning reagents.
+ If milk analyzers malfunctioned,
+ we fixed or replaced the machines.
+ 
+\end_layout
+
+\begin_layout Standard
+2.
+ ICT-Mediated Record-Keeping System:
+ We developed an Android application for MCC managers to facilitate digital record-keeping.
+ The app was designed to replace the paper notebooks that MCC managers generally use for keeping track milk deliveries and payments.
+ In addition to recording quantities and prices,
+ the app allows MCC managers to store and monitor quality parameters obtained from the milk analyzer.
+ The app can provide MCC managers with simple reports,
+ such as the average butter fat (weighted by quantities supplied) over a certain period (today,
+ yesterday,
+ last week,
+ last two weeks,
+ and custom data range).
+ Reports by farmer are also possible,
+ such that MCC managers can determine the total sum to be paid to a farmer for milk delivered over a particular time frame,
+ such as in the last 14 days.
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Farmers are typically paid on the 1st and the 15th of the month.
+\end_layout
+
+\end_inset
+
+ In addition to the app,
+ we also developed different online portals that can be used to obtain data for different stakeholders.
+ For instance,
+ one portal targeted MCC owners,
+ such that they can monitor key parameters in the MCCs they own.
+ Another portal aggregated information from all MCCs,
+ enabling government officials such as the DDA to monitor quality parameters,
+ prices and quantities in real time.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The portal can be found 
+\begin_inset CommandInset href
+LatexCommand href
+name "here"
+target "https://bjvca.shinyapps.io/sample_submission_viewer_public/"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ This digital system enhances efficiency and transparency,
+ providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
+ The android app can be downloaded from 
+\begin_inset CommandInset href
+LatexCommand href
+name "google play store"
+target "https://play.google.com/store/search?q=cgiar%20milk&c=apps&hl=en"
+literal "false"
+
+\end_inset
+
+;
+ A screenshot of the application can be found in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Application"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ../../../../../figures/app.png
+	lyxscale 20
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dairy record keeping app
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Application"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet computers on which the application was pre-installed.
+ Each tablet contained a SIM card with a prepaid data bundle to enable cloud-based synchronization of records.
+ The application was developed following offline-first design principles,
+ ensuring that all core functionalities remained accessible without an active internet connection and that data were uploaded automatically once connectivity was restored.
+ Data bundles were topped up by us on a monthly basis throughout the course of the project.
+\end_layout
+
+\begin_layout Standard
+3.
+ Increasing Farmer Awareness of Midstream Testing Capacity:
+ To mitigate potential power imbalances that could arise once MCCs adopt milk analyzers and to ensure farmers are equally informed,
+ we implemented a farmer-facing information campaign using posters displayed at MCCs.
+ Designed by a local artist,
+ the posters publicized the new testing capacity and encouraged farmers to request free quality tests for their milk.
+ By making this service visible and widely known,
+ the campaign aimed to equip farmers with accurate information about their product quality and strengthen trust and cooperation between farmers and MCC managers.
+\end_layout
+
+\begin_layout Standard
+Together,
+ these three components form an integrated strategy to make milk quality observable and actionable,
+ improving information flows and incentive structures throughout the dairy value chain.
+ This bundle constitutes the first treatment arm in the field experiment and is referred to as T1 (or sometimes also as the 
+\emph on
+analyzer
+\emph default
+ treatment).
 \end_layout
 
 \begin_layout Subsection
