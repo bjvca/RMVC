@@ -480,7 +480,6 @@ literal "false"
 \end_inset
 
 .
-
 \end_layout
 
 \begin_layout Standard
@@ -506,7 +505,8 @@ literal "false"
  including grading,
  certification,
  and monitoring infrastructure.
- Even in settings where quality can be observed, the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging
+ Even in settings where quality can be observed,
+ the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bai2024quality"
@@ -515,7 +515,6 @@ literal "false"
 \end_inset
 
 .
-
 \end_layout
 
 \begin_layout Standard
@@ -546,7 +545,8 @@ literal "false"
 
  formalize this mechanism directly in agricultural markets,
  showing that without firm-level traceability,
- individual producers rationally extract from the collective reputational stock in a dynamic analogous to common-pool resource overuse, producing an equilibrium in which the group as a whole undersupplies quality even when a premium would be available to a verifiably high-quality producer.
+ individual producers rationally extract from the collective reputational stock in a dynamic analogous to common-pool resource overuse,
+ producing an equilibrium in which the group as a whole undersupplies quality even when a premium would be available to a verifiably high-quality producer.
  
 \end_layout
 
@@ -564,7 +564,8 @@ literal "false"
  no individual agent fully internalizes the returns to their effort,
  weakening quality investments at precisely the point where aggregation severs the link between individual performance and observed outcomes.
  The practical consequence is that even when buyers wish to pay for quality,
- the absence of traceability prevents quality-enhancing investments from translating into higher returns, a pattern well-documented empirically across commodity supply chains in developing countries 
+ the absence of traceability prevents quality-enhancing investments from translating into higher returns,
+ a pattern well-documented empirically across commodity supply chains in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bold2022market,minten2008"
@@ -576,13 +577,14 @@ literal "false"
  Further constraints arise from the coordination and investment required to establish quality-based payment systems in the first place,
  including grading infrastructure,
  third-party certification,
- and monitoring capacity, each of which constitutes a public or collective good subject to its own underprovision problem.
+ and monitoring capacity,
+ each of which constitutes a public or collective good subject to its own underprovision problem.
 \end_layout
 
 \begin_layout Standard
 The structure of the value chain itself can exacerbate these challenges.
  When producers and processors are linked only indirectly through layers of traders or informal intermediaries,
- the likelihood of traceability breaking down increases substantially
+ the likelihood of traceability breaking down increases substantially 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bai2025quality,macchiavello2026quality"
@@ -596,7 +598,7 @@ literal "false"
  opportunities for credible testing,
  traceability,
  and clearer communication of standards are greater,
- increasing the scope for effective quality-based incentives to emerge
+ increasing the scope for effective quality-based incentives to emerge 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bergquist2020competition"
@@ -640,7 +642,8 @@ literal "false"
  primarily for added water,
  and farmers rarely have access to test results.
  Without the ability to credibly observe and attribute quality at the farm level,
- the informational preconditions for quality-based pricing are simply absent, making it difficult to establish the kind of verification mechanism necessary for quality premia to emerge and sustain incentives along the chain.
+ the informational preconditions for quality-based pricing are simply absent,
+ making it difficult to establish the kind of verification mechanism necessary for quality premia to emerge and sustain incentives along the chain.
 \end_layout
 
 \begin_layout Standard
@@ -669,9 +672,11 @@ We use this setting to test whether strengthening quality observability can enab
 The intervention substantially increased the visibility,
  presence,
  and day-to-day use of quality-testing infrastructure,
- generating large and consistent increases in actual testing of both incoming and outgoing milk; the probability that an MCC tests incoming deliveries rose by over 50 percentage points relative to the control group.
+ generating large and consistent increases in actual testing of both incoming and outgoing milk;
+ the probability that an MCC tests incoming deliveries rose by over 50 percentage points relative to the control group.
  Despite this operational uptake,
- neither the MCC-level intervention nor the farmer-level information treatment affected prices or the emergence of quality premia at any stage of the chain: farmer sales prices,
+ neither the MCC-level intervention nor the farmer-level information treatment affected prices or the emergence of quality premia at any stage of the chain:
+ farmer sales prices,
  the incidence of quality bonuses,
  and all pricing outcomes at the MCC level were uniformly unresponsive,
  and no quality premiums materialized anywhere along the chain.
@@ -698,7 +703,8 @@ The pattern of results (large increases in testing,
  but there is no incentive to invest beyond what is needed to clear it.
  The enforcement channel disciplines the bottom of the quality distribution without rewarding the top.
  Notably,
- the speed and consistency of the quality response suggests that the chain converges relatively quickly to this new equilibrium, one in which measurement has done its work,
+ the speed and consistency of the quality response suggests that the chain converges relatively quickly to this new equilibrium,
+ one in which measurement has done its work,
  adulteration is curtailed,
  and behavior has adjusted.
  But it is a low-level equilibrium.
@@ -744,7 +750,8 @@ The follow-up experiment reveals that injecting explicit quality premiums into t
 Yet the most striking finding concerns price transmission.
  Despite receiving explicit,
  exogenously introduced quality premiums,
- treated traders do not pass value upstream to farmers; if anything,
+ treated traders do not pass value upstream to farmers;
+ if anything,
  farm-gate prices move slightly downward,
  by around 17 UGX per liter.
  One plausible mechanism is that traders facing stronger incentives to source high-quality milk expand their supplier networks to increase the probability of meeting quality thresholds,
@@ -847,7 +854,7 @@ literal "false"
 
  find in the Vietnamese dairy sector that both penalties and bonuses improve farmer investment in quality-enhancing inputs,
  with bonuses generating the stronger response.
-
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "macchiavello2019buyer"
@@ -856,7 +863,7 @@ literal "false"
 \end_inset
 
  exploit the staggered rollout of a quality sustainability program in Colombian coffee and find that eligible farmers produced higher-quality output in response to embedded price premiums and extension services.
-
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "treurniet2021potency"
@@ -865,9 +872,10 @@ literal "false"
 \end_inset
 
  finds similarly in Indonesian dairy that individual quality incentives improve compositional quality quickly after introduction,
- though hygienic quality gains erode over time, suggesting that incentive effects may be fragile even when they successfully reach farmers.
+ though hygienic quality gains erode over time,
+ suggesting that incentive effects may be fragile even when they successfully reach farmers.
  In a related setting,
-
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "park2023quality"
@@ -875,8 +883,9 @@ literal "false"
 
 \end_inset
 
- find that training dragon fruit farmers in Vietnam to meet export quality standards substantially increases quality, with effects amplified when accompanied by buyer incentives.
-
+ find that training dragon fruit farmers in Vietnam to meet export quality standards substantially increases quality,
+ with effects amplified when accompanied by buyer incentives.
+ 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "ashraf2009finding"
@@ -921,7 +930,8 @@ literal "false"
  delivered either through prices or credit.
  Our follow-up experiment generates a sharply different result under otherwise similar experimental logic:
  traders receiving explicit,
- daily quality-linked bonuses paid via mobile money do not transmit value upstream; farm-gate prices if anything drift slightly downward,
+ daily quality-linked bonuses paid via mobile money do not transmit value upstream;
+ farm-gate prices if anything drift slightly downward,
  consistent with expanded sourcing shifting bargaining power toward traders.
  The contrast clarifies a mechanism:
  unconditional subsidies create competitive pressure that raises farmer prices,
@@ -938,7 +948,9 @@ literal "false"
 
  document across four field experiments that even when downstream demand for quality exists,
  the organization of supply chains often prevents gains from reaching upstream producers;
- our experiment provides clean identification of the intermediation structure, rather than demand-side uncertainty or information frictions, as the relevant mechanism.
+ our experiment provides clean identification of the intermediation structure,
+ rather than demand-side uncertainty or information frictions,
+ as the relevant mechanism.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -976,7 +988,8 @@ Finally,
  but rarely both in the same supply chain and with clean separation between them.
  By first varying observability in a large cluster-randomized trial and then varying pricing within an environment where measurement infrastructure is already operational,
  we can trace the binding constraint at each stage.
- The result (that measurement and pricing are complementary rather than substitutable, and that injecting incentives at the trader level does not propagate to farmers) points to a low-level equilibrium trap that cannot be escaped by addressing only one dimension of the problem.
+ The result (that measurement and pricing are complementary rather than substitutable,
+ and that injecting incentives at the trader level does not propagate to farmers) points to a low-level equilibrium trap that cannot be escaped by addressing only one dimension of the problem.
  This sequential logic connects to the broader argument in 
 \begin_inset CommandInset citation
 LatexCommand citet
