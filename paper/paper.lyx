@@ -343,143 +343,46 @@ stars <- function(p) ifelse(p < 0.01,
 
 \begin_layout Section
 Introduction
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:introduction"
 
 \end_inset
 
-Quality upgrading is widely viewed as key to growth in low- and middle-income countries,
- in part because it enables firms to access higher-value markets where consumers pay substantial price premiums
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{verhoogen2008trade,atkin2017exporting}
 \end_layout
+
+\begin_layout Standard
+In many agricultural value chains in developing countries,
+ quality is unobservable at the point of first sale.
+ Milk,
+ grain,
+ tea,
+ and other commodities are aggregated from multiple suppliers before reaching processors,
+ and individual lots cannot be traced once pooled.
+ When buyers cannot distinguish high- from low-quality supply,
+ the classic adverse selection problem arises:
+ producers who invest in quality are not rewarded,
+ while those who adulterate their output face no penalty 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "2b080e07-2197-39e6-8e29-cfa83db9de24"
+literal "false"
 
 \end_inset
 
 .
- Yet despite these potential returns,
- producers in developing countries often fall short of quality standards.
- A large literature has examined supply-side barriers to upgrading---lack of information or know-how
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{bloom2013does}
-\end_layout
-
-\end_inset
-
-,
- credit constraints on quality-enhancing investments
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{demel2008returns}
-\end_layout
-
-\end_inset
-
-,
- and the costs of monitoring and maintaining quality
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{hanna2014learning}
-\end_layout
-
-\end_inset
-
----but there has been less work on the demand-side incentives that producers face,
- and in particular on whether quality premia generated downstream actually reach upstream producers through intermediated supply chains
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{bai2025quality,macchiavello2026quality}
-\end_layout
+ The resulting equilibrium is characterized by low quality,
+ widespread adulteration,
+ and uniform pricing that reflects the pooled average rather than individual supply 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "swinnen2007globalization,barrett2022agri"
+literal "false"
 
 \end_inset
 
 .
- In many agricultural value chains in developing countries,
- quality remains difficult to observe at the point of first sale,
- and early aggregation of output from multiple suppliers makes it nearly impossible to trace quality back to individual producers---a classic lemons problem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{2b080e07-2197-39e6-8e29-cfa83db9de24}
-\end_layout
-
-\end_inset
-
-.
- A natural hypothesis is that making quality measurable and traceable should trigger the endogenous emergence of quality-differentiated pricing---in short,
- a
-\begin_inset Quotes eld
-\end_inset
-
-market for quality
-\begin_inset Quotes erd
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{bold2022market,10.1093/qje/qjaa048}
-\end_layout
-
-\end_inset
-
-.
- Yet the conditions under which quality observability actually translates into quality-based pricing remain poorly understood,
- particularly in the smallholder-dominated supply chains where information frictions are most severe and intermediaries may absorb rather than transmit price signals
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-~
-\backslash
-citep{bergquist2020competition}
-\end_layout
-
-\end_inset
-
-.
- This paper provides the first experimental test of this measurement-to-pricing hypothesis---and finds that the hypothesis fails.
 \end_layout
 
 \begin_layout Standard
