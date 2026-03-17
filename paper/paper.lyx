@@ -169,7 +169,6 @@ Technology,
 \end_layout
 
 \begin_layout Abstract
-
 Quality in agri-food supply chains is often unobservable at first sale,
  and early aggregation limits traceability,
  weakening incentives for quality provision.
@@ -211,7 +210,6 @@ In many agri-food supply chains,
 \end_layout
 
 \end_inset
-
 
 
 \end_layout
@@ -385,7 +383,6 @@ name "sec:introduction"
 \end_inset
 
 
-
 \end_layout
 
 \begin_layout Standard
@@ -400,13 +397,11 @@ literal "false"
 \end_inset
 
 .
-
  Higher-quality inputs improve efficiency by yielding more output per unit of input and reducing waste 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bold2017lemon"
 literal "false"
-
 
 \end_inset
 
@@ -448,7 +443,6 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-
 For quality to become an important driver of behavior,
  actors must be properly incentivized to produce and preserve it.
  In many markets,
@@ -459,11 +453,9 @@ LatexCommand citep
 key "shapiro1983premiums"
 literal "false"
 
-
 \end_inset
 
 .
-
  When buyers are willing and able to pay more for quality,
  producers have stronger incentives to adopt better inputs and practices,
  while intermediaries are more likely to safeguard quality during aggregation,
@@ -480,24 +472,6 @@ literal "false"
  In the absence of such premiums,
  quality improvements may not be financially viable,
  and actors may instead prioritize volume over quality.
-
-\end_layout
-
-\begin_layout Standard
-The emergence of quality premia is often hindered by difficulties in observing and verifying quality at the point of transaction.
- When quality attributes are not directly visible and are costly to discover,
- buyers face a classic problem of asymmetric information.
- Without a credible verification mechanisms,
- high- and low-quality products trade at similar prices,
- eroding incentives to invest in quality and potentially leading to adverse selection equilibria.
- Aggregation across suppliers further weakens the connection between individual performance and observed quality,
- undermining incentives for improvement:
- Even when buyers wish to pay for quality,
- the absence of traceability prevents quality-enhancing investments from translating into higher returns.
- Further constraints arise from the coordination and investment required to establish quality-based payment systems,
- including grading,
- certification,
- and monitoring infrastructure.
 \end_layout
 
 \begin_layout Standard
@@ -512,12 +486,17 @@ literal "false"
 \end_inset
 
 :
-
  without credible verification mechanisms,
  high- and low-quality products trade at similar prices,
  eroding incentives to invest in quality and potentially producing adverse selection equilibria in which low-quality goods drive out high-quality ones.
- 
-
+ Aggregation across suppliers further weakens the connection between individual performance and observed quality,
+ undermining incentives for improvement:
+ Even when buyers wish to pay for quality,
+ the absence of traceability prevents quality-enhancing investments from translating into higher returns.
+ Further constraints arise from the coordination and investment required to establish quality-based payment systems,
+ including grading,
+ certification,
+ and monitoring infrastructure.
 \end_layout
 
 \begin_layout Standard
@@ -721,7 +700,6 @@ To test whether activating the pricing channel can shift the chain to a higher e
  3.3 percent fat and 8.5 percent SNF —
  coinciding with the rainy season when high-quality milk is naturally abundant and the premium tier is relatively accessible.
  In Stage 2,
-
  the fat threshold is raised from 3.3 to 3.9 percent,
  simulating the scarcity conditions of the dry season under which sourcing high-quality milk requires active effort from upstream suppliers.
  Together,
@@ -755,7 +733,6 @@ Yet the most striking finding concerns price transmission.
  by around 17 UGX per liter.
  One plausible mechanism is that traders facing stronger incentives to source high-quality milk expand their supplier networks to increase the probability of meeting quality thresholds,
  and the resulting increase in the supply of potential sellers shifts bargaining power toward the trader.
-
  Alternatively,
  traders may substitute away from price-based competition for suppliers toward quality-based screening,
  spending more effort on selection and less on offering attractive prices.
@@ -787,7 +764,6 @@ key "tirole1996"
 literal "false"
 
 \end_inset
-
 
 ,
  and 
@@ -840,7 +816,6 @@ literal "false"
  quality monitoring reduces adulteration through enforcement rather than through new price signals.
  Together,
  these studies suggest a recurring pattern in which measurement technology disciplines the lower tail of the quality distribution without activating the continuous quality gradient that higher-value markets require.
-
 \end_layout
 
 \begin_layout Standard
@@ -899,7 +874,6 @@ literal "false"
 \end_inset
 
  that quality upgrading is fundamentally a margin-of-response problem shaped by the structure of incentives and input availability jointly.
-
 \end_layout
 
 \begin_layout Standard
@@ -933,7 +907,6 @@ key "bold2022market"
 literal "false"
 
 \end_inset
-
 
  document across four field experiments that even when downstream demand for quality exists,
  the organization of supply chains often prevents gains from reaching upstream producers;
@@ -992,7 +965,6 @@ literal "false"
  that quality upgrading in developing-country value chains requires coordination across multiple margins simultaneously,
  and that partial interventions addressing only one bottleneck are likely to generate exactly the kind of limited,
  compliance-margin improvements documented here.
-
 \end_layout
 
 \begin_layout Standard
@@ -3767,9 +3739,12 @@ name "sec:conclusion"
 
 [Placeholder conclusion.
  Summarize the three-act structure:
- (1) a quality measurement and digital monitoring system improves quality through enforcement but not , even though the system makes quality both measurable and trackable over time.
+ (1) a quality measurement and digital monitoring system improves quality through enforcement but not ,
+ even though the system makes quality both measurable and trackable over time.
  (2) a model rationalizes this as an alpha = 0 equilibrium,
- (3) exogenously activating the price channel through quality bonuses, leveraging the digital quality records already in place, confirms that the missing ingredient was price incentives.
+ (3) exogenously activating the price channel through quality bonuses,
+ leveraging the digital quality records already in place,
+ confirms that the missing ingredient was price incentives.
  Discuss external validity and directions for future research on quality infrastructure in developing country value chains.]
 \end_layout
 
