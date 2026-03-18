@@ -1363,8 +1363,7 @@ The design enables us to estimate treatment effects at multiple levels of the va
 \end_layout
 
 \begin_layout Subsection
-Intervention:
- Innovation Bundles for Addressing Milk Quality Challenges
+Intervention
 \begin_inset Float figure
 placement h
 alignment document
@@ -1410,7 +1409,7 @@ name "fig:milk-analyzer"
 
 \begin_layout Standard
 In response to the challenge of unobservable milk quality in the Ugandan dairy value chain,
- we designed a first socio-technical innovation bundle targeting Milk Collection Centers (MCCs).
+ we designed a socio-technical innovation bundle targeting Milk Collection Centers (MCCs).
  This bundle aims to enhance transparency,
  improve record-keeping,
  and empower both MCC managers and farmers by making milk quality measurable and visible.
@@ -1678,7 +1677,7 @@ Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet 
 Together,
  these three components form an integrated strategy to make milk quality observable and actionable,
  improving information flows and incentive structures throughout the dairy value chain.
- This bundle constitutes the first treatment arm in the field experiment and is referred to as T1 (or sometimes also as the 
+ This bundle constitutes the treatment in the main experiment (sometimes referred to as the
 \emph on
 analyzer
 \emph default
