@@ -2035,7 +2035,16 @@ literal "false"
 
 \begin_layout Standard
 Our primary inferential framework is Fisher randomization inference (RI), computed from 5,000 permutations that respect the experimental design: the measurement system treatment is permuted at the MCC level, maintaining the number of treated MCCs.
- For multiple testing, we report an omnibus count test following the EGAP approach: under the sharp null of no treatment effect on any outcome in a family, we compute the probability of observing as many individually significant results as in the actual data.
+ To account for multiple testing across outcomes within a family, we report Westfall-Young stepdown-adjusted p-values
+\begin_inset CommandInset citation
+LatexCommand citep
+key "westfall1993resampling"
+literal "false"
+
+\end_inset
+
+, which control the familywise error rate while exploiting the correlation structure across outcomes through the same permutation distribution used for individual RI p-values.
+ This procedure is more powerful than Bonferroni-type corrections because it accounts for the joint distribution of test statistics under the null.
  CR2 cluster-robust p-values and Anderson-Sharp q-values are reported in the appendix.
 \end_layout
 
