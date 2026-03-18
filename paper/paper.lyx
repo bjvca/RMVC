@@ -1330,81 +1330,54 @@ name "sec:experiment1"
 
 \begin_layout Subsection
 Design
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:design"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 We use a cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
  The unit of randomization is the MCC catchment area.
- Of the 130 MCCs enrolled in the study, half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection, while the remaining MCCs served as controls.
+ Of the 130 MCCs enrolled in the study,
+ half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection,
+ while the remaining MCCs served as controls.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-In some cases, more than one MCC was located in the same area (e.g., in a trading center).
- Such MCCs were assigned to the same treatment group to avoid contamination, so the effective number of randomization clusters is slightly lower than 130.
+In some cases,
+ more than one MCC was located in the same area (e.g.,
+ in a trading center).
+ Such MCCs were assigned to the same treatment group to avoid contamination,
+ so the effective number of randomization clusters is slightly lower than 130.
 \end_layout
 
 \end_inset
 
- Within each MCC, we also cross-randomized a farmer-level information treatment (a quality awareness video); the full factorial results are reported in the Online Appendix, and the main text focuses on the effect of the measurement and monitoring system, estimated by pooling across the information treatment arms.
+
 \end_layout
 
 \begin_layout Standard
 The design enables us to estimate treatment effects at multiple levels of the value chain.
- At the MCC level, we assess whether the system changes testing practices, pricing behavior, and the emergence of quality premiums.
- At the farmer level, we assess whether farmers connected to treatment MCCs experience changes in prices received, quality bonuses, and production practices.
- Finally, through supervised milk sample collection at endline, we obtain objective measures of milk quality that are independent of self-reported survey data.
+ At the MCC level,
+ we assess whether the system changes testing practices,
+ pricing behavior,
+ and the emergence of quality premiums.
+ At the farmer level,
+ we assess whether farmers connected to treatment MCCs experience changes in prices received,
+ quality bonuses,
+ and production practices.
+ Finally,
+ through supervised milk sample collection at endline,
+ we obtain objective measures of milk quality that are independent of self-reported survey data.
 \end_layout
 
 \begin_layout Subsection
 Intervention
-\begin_inset Float figure
-placement h
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../PAP/figures/milk_analyzer_installed.jpg
-	lyxscale 50
-	width 80text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Quality Measurement and Digital Monitoring System Installed at an MCC
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:milk-analyzer"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1477,7 +1450,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../../../../../figures/milk_analyzer_installed.jpg
+	filename ../PAP/figures/milk_analyzer_installed.jpg
 	lyxscale 50
 	scale 20
 
@@ -1621,7 +1594,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../../../../../figures/app.png
+	filename /Users/B.VanCampenhout/data/projects/OneCG/RMVC/PAP/figures/app.png
 	lyxscale 20
 	scale 15
 
@@ -1679,7 +1652,7 @@ Together,
  improving information flows and incentive structures throughout the dairy value chain.
  This bundle constitutes the treatment in the main experiment (sometimes referred to as the
 \emph on
-analyzer
+ analyzer
 \emph default
  treatment).
 \end_layout
@@ -1774,7 +1747,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename ../../../../../figures/sampling.png
+	filename /Users/B.VanCampenhout/data/projects/OneCG/RMVC/PAP/figures/sampling.png
 	lyxscale 50
 	scale 35
 
