@@ -2905,11 +2905,6 @@ name "subsec:attrition-compliance"
 \end_layout
 
 \begin_layout Standard
-[Placeholder discussing attrition rates across treatment arms and compliance with treatment assignment.
- Report differential attrition tests and first-stage results for the LATE specification.]
-\end_layout
-
-\begin_layout Standard
 Meeting sample size targets within the available budget proved challenging at baseline,
  largely because dairy farmers are geographically dispersed.
  In the end,
@@ -2917,7 +2912,7 @@ Meeting sample size targets within the available budget proved challenging at ba
  corresponding to 87 and 95 percent of our planned farmer and MCC samples,
  and 90 and 99 percent of the required sizes from the power calculations.
  Of these 124 MCCs,
- 60 were randomly assigned to control condition and 64 to treatment condition T1.
+ 60 were randomly assigned to the control condition and 64 to the treatment condition.
 \end_layout
 
 \begin_layout Standard
@@ -2934,7 +2929,7 @@ By endline,
  Further restricting farmers to the subset of farmers connected to an MCC that we were able to interview at endline,
  we get 2,059.
  Also at the farmer level,
- attrition is unrelated to the treatments and any interaction thereof.
+ attrition is unrelated to treatment assignment.
 \end_layout
 
 \begin_layout Standard
@@ -2954,34 +2949,8 @@ We also documented several compliance challenges.
  the remaining units were non-functional or lacked an available operator.
 \end_layout
 
-\begin_layout Standard
-Similar compliance concerns arise at the farmer level.
- Although the information treatment was delivered in a controlled manner and the video was shown twice,
- only 54 percent of farmers in the control group reported having been shown a video,
- suggesting substantial recall error.
- At the same time,
- more than one in five control-group farmers stated that they had seen a video explaining how to improve compositional quality,
- indicating potential contamination.
- Among treated farmers,
- only 42 percent reported using the seed provided by the project,
- a rate that is plausibly affected by drought conditions during the season.
- We revisit these issues in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Secondary-outcomes"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Section
-Results:
- Experiment 1
+Results
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:results-exp1"
