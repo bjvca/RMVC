@@ -2980,8 +2980,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Section
-Results:
- Experiment 1
+Results
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:results-exp1"
@@ -2992,185 +2991,136 @@ name "sec:results-exp1"
 \end_layout
 
 \begin_layout Subsection
-Milk Quality
-\end_layout
-
-\begin_layout Standard
+Milk Samples
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:milk-quality"
 
 \end_inset
 
-We begin with the most direct evidence:
- supervised milk quality measurements collected at MCCs using the project's Lactoscan analyzers.
- Table
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:samples"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
 
-\end_inset
-
- reports ITT estimates from quantity-weighted regressions of milk composition on treatment assignment,
- with standard errors clustered at the catchment level.
- The measurement and monitoring system significantly increased fat content by
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-Sexpr{res_samples[1,3]}
-\end_layout
-
-\end_inset
-
- percentage points (RI
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-$p =
-\backslash
-Sexpr{ri$samples$ri_p[1]}$
-\end_layout
-
-\end_inset
-
-) and reduced added water by
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-Sexpr{abs(res_samples[3,3])}
-\end_layout
-
-\end_inset
-
- percentage points.
- The Anderson index combining all five quality indicators shows an improvement of
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-Sexpr{res_samples[6,3]}
-\end_layout
-
-\end_inset
-
- standard deviations (RI
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-$p =
-\backslash
-Sexpr{ri$samples$ri_p[6]}$
-\end_layout
-
-\end_inset
-
-).
- The omnibus randomization inference test confirms that the overall pattern of quality improvements is unlikely under the null (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-$p =
-\backslash
-Sexpr{round(ri$omnibus$samples$omnibus_p,
- 3)}$
-\end_layout
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Standard
+To obtain objective measures of compositional milk quality,
+ enumerators conducted supervised testing at both treatment and control MCCs.
+ For one full day at each site,
+ all incoming milk was analyzed using milk analyzers,
+ yielding high-quality measures of key quality parameters:
+ added water,
+ butterfat,
+ solids-not-fat (SNF),
+ protein,
+ and density (corrected lactometer reading).
+ These variables are also combined into an index of overall quality.
+\end_layout
+
+\begin_layout Standard
+It is important to note that the compositional quality measures obtained through supervised testing at MCCs are farmer-level outcomes,
+ but they need not correspond to the same individuals who appear in the farmer survey.
+ The universe of suppliers observed in the testing data reflects the set of farmers who delivered milk on the specific day of supervised measurement,
+ which may include new entrants who began supplying after analyzers were introduced,
+ as well as exclude farmers who had previously supplied but stopped delivering.
+ Conversely,
+ the survey sample includes baseline suppliers regardless of whether they continued or ceased deliveries by endline.
+ Each data source therefore captures a different margin of adjustment.
+ The MCC testing data reveal changes in the composition and quality of actual incoming supply,
+ incorporating potential selection effects induced by the technology.
+ The survey-based outcomes capture how the intervention affected the behaviors and perceptions of a fixed cohort of farmers.
+ Both perspectives are essential for identifying the mechanisms at play:
+ selection into supplying higher-quality milk is itself part of the theory of change,
+ and observing it requires precisely this dual use of administrative-style testing data and survey follow-up.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Milk quality
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-milk-quality"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 \backslash
-begin{table}[h]
+begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-caption{Effect of Measurement and Monitoring System on Milk Quality}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{tab:samples}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lcccc}
+begin{tabular}{rcccc}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-& Control Mean & System Effect & RI $p$ & N
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& (SD) & (SE) & &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \backslash
 hline
 \end_layout
 
 \begin_layout Plain Layout
-Fat (
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer & nobs 
 \backslash
-%) &
+
 \backslash
-Sexpr{res_samples[1,1]} &
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Butter fat (
+\backslash
+%) & 
+\backslash
+Sexpr{res_samples[1,1]} & 
 \backslash
 Sexpr{res_samples[1,3]}$^{
 \backslash
-Sexpr{stars(ri$samples$ri_p[1])}}$ &
+Sexpr{ifelse(res_samples[1,5]<.01,"**",ifelse(res_samples[1,5]<.05,"*",ifelse(res_samples[1,5]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{round(ri$samples$ri_p[1],3)} &
-\backslash
-Sexpr{res_samples[1,9]}
+Sexpr{res_samples[1,9]} 
 \backslash
 
 \backslash
@@ -3182,7 +3132,7 @@ Sexpr{res_samples[1,9]}
 \backslash
 Sexpr{res_samples[1,2]}) & (
 \backslash
-Sexpr{res_samples[1,4]}) & &
+Sexpr{res_samples[1,4]}) 
 \backslash
 
 \backslash
@@ -3190,19 +3140,21 @@ Sexpr{res_samples[1,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-SNF (
+
+\end_layout
+
+\begin_layout Plain Layout
+SNF  (
 \backslash
-%) &
+%) & 
 \backslash
-Sexpr{res_samples[2,1]} &
+Sexpr{res_samples[2,1]} & 
 \backslash
 Sexpr{res_samples[2,3]}$^{
 \backslash
-Sexpr{stars(ri$samples$ri_p[2])}}$ &
+Sexpr{ifelse(res_samples[2,5]<.01,"**",ifelse(res_samples[2,5]<.05,"*",ifelse(res_samples[2,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$samples$ri_p[2],3)} &
-\backslash
-Sexpr{res_samples[2,9]}
+Sexpr{res_samples[2,9]} 
 \backslash
 
 \backslash
@@ -3214,7 +3166,7 @@ Sexpr{res_samples[2,9]}
 \backslash
 Sexpr{res_samples[2,2]}) & (
 \backslash
-Sexpr{res_samples[2,4]}) & &
+Sexpr{res_samples[2,4]}) 
 \backslash
 
 \backslash
@@ -3222,19 +3174,21 @@ Sexpr{res_samples[2,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Added water (
+
+\end_layout
+
+\begin_layout Plain Layout
+Added Water  (
 \backslash
-%) &
+%)  & 
 \backslash
-Sexpr{res_samples[3,1]} &
+Sexpr{res_samples[3,1]} & 
 \backslash
 Sexpr{res_samples[3,3]}$^{
 \backslash
-Sexpr{stars(ri$samples$ri_p[3])}}$ &
+Sexpr{ifelse(res_samples[3,5]<.01,"**",ifelse(res_samples[3,5]<.05,"*",ifelse(res_samples[3,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$samples$ri_p[3],3)} &
-\backslash
-Sexpr{res_samples[3,9]}
+Sexpr{res_samples[3,9]} 
 \backslash
 
 \backslash
@@ -3246,7 +3200,7 @@ Sexpr{res_samples[3,9]}
 \backslash
 Sexpr{res_samples[3,2]}) & (
 \backslash
-Sexpr{res_samples[3,4]}) & &
+Sexpr{res_samples[3,4]}) 
 \backslash
 
 \backslash
@@ -3254,19 +3208,21 @@ Sexpr{res_samples[3,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Protein (
+
+\end_layout
+
+\begin_layout Plain Layout
+Protein  (
 \backslash
-%) &
+%)  & 
 \backslash
-Sexpr{res_samples[4,1]} &
+Sexpr{res_samples[4,1]} & 
 \backslash
 Sexpr{res_samples[4,3]}$^{
 \backslash
-Sexpr{stars(ri$samples$ri_p[4])}}$ &
+Sexpr{ifelse(res_samples[4,5]<.01,"**",ifelse(res_samples[4,5]<.05,"*",ifelse(res_samples[4,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$samples$ri_p[4],3)} &
-\backslash
-Sexpr{res_samples[4,9]}
+Sexpr{res_samples[4,9]} 
 \backslash
 
 \backslash
@@ -3278,7 +3234,7 @@ Sexpr{res_samples[4,9]}
 \backslash
 Sexpr{res_samples[4,2]}) & (
 \backslash
-Sexpr{res_samples[4,4]}) & &
+Sexpr{res_samples[4,4]}) 
 \backslash
 
 \backslash
@@ -3286,17 +3242,19 @@ Sexpr{res_samples[4,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Lactometer reading &
+
+\end_layout
+
+\begin_layout Plain Layout
+Density (CLR) & 
 \backslash
-Sexpr{res_samples[5,1]} &
+Sexpr{res_samples[5,1]} & 
 \backslash
 Sexpr{res_samples[5,3]}$^{
 \backslash
-Sexpr{stars(ri$samples$ri_p[5])}}$ &
+Sexpr{ifelse(res_samples[5,5]<.01,"**",ifelse(res_samples[5,5]<.05,"*",ifelse(res_samples[5,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$samples$ri_p[5],3)} &
-\backslash
-Sexpr{res_samples[5,9]}
+Sexpr{res_samples[5,9]} 
 \backslash
 
 \backslash
@@ -3308,7 +3266,7 @@ Sexpr{res_samples[5,9]}
 \backslash
 Sexpr{res_samples[5,2]}) & (
 \backslash
-Sexpr{res_samples[5,4]}) & &
+Sexpr{res_samples[5,4]}) 
 \backslash
 
 \backslash
@@ -3318,21 +3276,21 @@ Sexpr{res_samples[5,4]}) & &
 \begin_layout Plain Layout
 
 \backslash
-hline
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
-Anderson index &
+Index & 
 \backslash
-Sexpr{res_samples[6,1]} &
+Sexpr{res_samples[6,1]} & 
 \backslash
 Sexpr{res_samples[6,3]}$^{
 \backslash
-Sexpr{stars(ri$samples$ri_p[6])}}$ &
+Sexpr{ifelse(res_samples[6,5]<.01,"**",ifelse(res_samples[6,5]<.05,"*",ifelse(res_samples[6,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$samples$ri_p[6],3)} &
-\backslash
-Sexpr{res_samples[6,9]}
+Sexpr{res_samples[6,9]} 
 \backslash
 
 \backslash
@@ -3344,7 +3302,7 @@ Sexpr{res_samples[6,9]}
 \backslash
 Sexpr{res_samples[6,2]}) & (
 \backslash
-Sexpr{res_samples[6,4]}) & &
+Sexpr{res_samples[6,4]}) 
 \backslash
 
 \backslash
@@ -3353,6 +3311,24 @@ Sexpr{res_samples[6,4]}) & &
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
 \backslash
 hline
 \end_layout
@@ -3366,40 +3342,29 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{flushleft}
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-small
-\backslash
-textit{Notes:} WLS regressions weighted by quantity delivered.
- CR2 cluster-robust SEs in parentheses.
- RI $p$-values from Fisher randomization inference (5,000 permutations).
- * $p<0.1$,
- ** $p<0.05$,
- *** $p<0.01$ (RI).
- Omnibus RI test:
-\backslash
-Sexpr{ri$omnibus$samples$obs_count} of 5 outcomes significant at 5
-\backslash
-% (omnibus $p =
-\backslash
-Sexpr{round(ri$omnibus$samples$omnibus_p,
- 3)}$).
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
-
-\backslash
-end{flushleft}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
+Note:
+ Column 1 reports mean milk quality measures for the control group,
+ with standard deviations in parentheses.
+ Column 2 presents the average treatment effect of the MCC-level analyzer intervention,
+ with robust standard errors in parentheses.
+ Column 3 shows the number of non-missing observations.
+ The index is an Anderson (2008) index of the five quality components,
+ with added water entering with a negative sign.
+ Standard errors are clustered at the catchment-area level.
+ Significance levels:
+ * p < 0.10,
+ ** p < 0.05,
+ *** p < 0.01.
 \end_layout
 
 \end_inset
@@ -3407,22 +3372,16 @@ end{table}
 
 \end_layout
 
-\begin_layout Subsection
-Farmer Level
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:farmer-level"
-
-\end_inset
-
-[Placeholder discussing the main farmer-level results.
- Table
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:farmer-primary"
+reference "tab:Primary-outcomes-milk-quality"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3430,88 +3389,269 @@ nolink "false"
 
 \end_inset
 
- presents the primary ITT estimates.
- The measurement and monitoring system treatment increases adoption of improved practices and awareness that the buyer uses quality testing,
- but does not affect average sales prices or the probability of receiving a quality bonus.
- The Anderson index summarizes across the outcome family.]
+ reports the results obtained from the analysis of supervised testing data.
+ Average butterfat content of milk samples delivered to control MCCs was 3.88 percent;
+ this increased to approximately 4.00 percent in MCCs equipped with analyzers.
+ SNF shows a similar directional increase,
+ but the estimate is not statistically distinguishable from zero with the current sample size.
+ Protein—
+which is a component of SNF—
+shows no detectable change,
+ consistent with the null finding for SNF.
 \end_layout
 
 \begin_layout Standard
+In contrast,
+ we observe clear improvements in adulteration-related measures.
+ Milk delivered to treated MCCs contains significantly less added water,
+ with a reduction of nearly half a percentage point relative to the control mean of 1.63 percent.
+ Density (CLR) rises by 0.44 units,
+ consistent with lower dilution and greater compositional integrity.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+I just learned that there is not a linear interpretation for CLR.
+ For instance,
+ skimming milk will increase CLR.
+ Should we drop it?
+ Or include in deviation from standard?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The composite index combining all five components mirrors these patterns,
+ indicating a significant improvement of 0.21 standard deviations in overall milk quality.
+ Taken together,
+ these results suggest that the introduction of analyzers reduced adulteration and improved observable fat content,
+ but had more limited effects on biologically determined components such as SNF and protein.
+ This pattern is consistent with adjustments driven by changes in handling practices—
+such as reduced skimming or dilution—
+rather than by deeper shifts in feeding or production management,
+ in line with the comparatively weak farmer-level behavioral responses documented in the previous subsection.
+\end_layout
+
+\begin_layout Standard
+The treatment-on-the-treated estimates,
+ presented in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-milk-quality-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ for completeness,
+ are generally less precisely estimated than the intention-to-treat (ITT) effects.
+ The instrument only shifts the probability that an MCC consistently uses the analyzer,
+ and the first stage is mechanically weaker than the underlying ITT assignment.
+ As a result,
+ the 2SLS estimator inflates sampling variability because it attributes all treatment effects to the subset of MCCs that actually complied with analyzer use.
+ Moreover,
+ if assignment affects outcomes partly through channels other than actual machine use—
+such as expectations,
+ monitoring incentives,
+ or changes in manager behavior—
+then the instrument captures only a fraction of the relevant variation,
+ further reducing precision.
+ Together,
+ these factors imply wider confidence intervals for the LATE relative to the more precise ITT estimates.
+\end_layout
+
+\begin_layout Subsection
+Farmer Level
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:farmer-level"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We also define four primary outcomes at the farmer level and combine them into an index to assess overall impact of the interventions on farmers level outcomes.
+ 
+\end_layout
+
+\begin_layout Standard
+The first outcome is a composite in itself,
+ and measures production investment and management practices that are expected to improve milk quality.
+ We construct an 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1198/016214508000000841"
+literal "false"
+
+\end_inset
+
+ index from farmer reports on six recommended practices undertaken in the past year:
+ (i) over-sowing new fields with improved forage grasses such as 
+\emph on
+Napier
+\emph default
+,
+ 
+\emph on
+Brachiaria
+\emph default
+,
+ or 
+\emph on
+Rhodes
+\emph default
+ grasses;
+ (ii) using legume pastures such as 
+\emph on
+Centro
+\emph default
+,
+ 
+\emph on
+Siratro
+\emph default
+,
+ or 
+\emph on
+Desmodium
+\emph default
+;
+ (iii) adopting controlled or zero grazing during the last dry season;
+ (iv) practicing pasture conservation through hay,
+ silage,
+ or haylage;
+ and (v) using feed supplements such as maize bran,
+ crop residues (for example banana peelings),
+ or mineral licks.
+ This index summarizes the extent to which farmers adjusted production strategies as a result of the treatments (T2 in particular).
+\end_layout
+
+\begin_layout Standard
+The second outcome captures whether buyers actively checked milk quality at the point of transaction.
+ Here,
+ we distinguish between different categories of buyers (eg.
+ MCCs,
+ processor,
+ trader,
+ etc.) and ask if milk was tested using a milk analyzer if the farmer sold milk to this particular buyer in the 7 days prior to the survey.
+ The indicator is true if milk sold in the last 7 days was tested by at least one buyer.
+\end_layout
+
+\begin_layout Standard
+The third outcome is the price received for milk sold.
+ Specifically,
+ we record the average price per liter obtained in the farmer’s most recent sale during the past seven days,
+ inclusive of any quality premiums.
+ Farmers reported prices by buyer category,
+ and we construct a weighted average across categories using transaction volumes as weights.
+ We also directly ask whether the buyer pays a higher price for higher-quality milk.
+ This question was posed in general terms,
+ without reference to a specific time frame.
+ These outcomes capture whether quality improvements translate into tangible financial benefits for farmers.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primary Outcomes for Farmers
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-farmer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 \backslash
-begin{table}[h]
+begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-caption{Experiment 1:
- Primary Farmer-Level Results (ITT)}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{tab:farmer-primary}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lcccc}
+begin{tabular}{rccccc}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-& Control & Treatment & RI $p$ & N
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& Mean (SD) & (SE) & &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \backslash
 hline
 \end_layout
 
 \begin_layout Plain Layout
-Improved practices &
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean & analyzer & video & bundle & nobs 
 \backslash
-Sexpr{res_farmers[1,1]} &
+
 \backslash
-Sexpr{res_farmers[1,12]}$^{
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 \backslash
-Sexpr{stars(ri$farmer$ri_p_treat[1])}}$ & $
+cline{2-6}
+\end_layout
+
+\begin_layout Plain Layout
+Production investment and management (Index) & 
 \backslash
-Sexpr{round(ri$farmer$ri_p_treat[1],
- 3)}$ &
+Sexpr{res_farmers[1,1]} & 
 \backslash
-Sexpr{res_farmers[1,9]}
+Sexpr{res_farmers[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[1,5]<.01,"**",ifelse(res_farmers[1,5]<.05,"*",ifelse(res_farmers[1,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[1,8]<.01,"**",ifelse(res_farmers[1,8]<.05,"*",ifelse(res_farmers[1,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[1,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[1,11]<.01,"**",ifelse(res_farmers[1,11]<.05,"*",ifelse(res_farmers[1,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[1,12]} 
 \backslash
 
 \backslash
@@ -3523,7 +3663,11 @@ Sexpr{res_farmers[1,9]}
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,13]}) & &
+Sexpr{res_farmers[1,4]}) & (
+\backslash
+Sexpr{res_farmers[1,7]}) & (
+\backslash
+Sexpr{res_farmers[1,10]})
 \backslash
 
 \backslash
@@ -3531,18 +3675,41 @@ Sexpr{res_farmers[1,13]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Buyer uses analyzer &
+&  & [
 \backslash
-Sexpr{res_farmers[2,1]} &
+Sexpr{res_farmers[1,13]}] & [
 \backslash
-Sexpr{res_farmers[2,12]}$^{
+Sexpr{res_farmers[1,14]}] & [
 \backslash
-Sexpr{stars(ri$farmer$ri_p_treat[2])}}$ & $
+Sexpr{res_farmers[1,33]}]
 \backslash
-Sexpr{round(ri$farmer$ri_p_treat[2],
- 3)}$ &
+
 \backslash
-Sexpr{res_farmers[2,9]}
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Buyer checked for quality (1=yes) & 
+\backslash
+Sexpr{res_farmers[2,1]} & 
+\backslash
+Sexpr{res_farmers[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[2,5]<.01,"**",ifelse(res_farmers[2,5]<.05,"*",ifelse(res_farmers[2,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[2,8]<.01,"**",ifelse(res_farmers[2,8]<.05,"*",ifelse(res_farmers[2,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[2,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[2,11]<.01,"**",ifelse(res_farmers[2,11]<.05,"*",ifelse(res_farmers[2,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[2,12]} 
 \backslash
 
 \backslash
@@ -3554,7 +3721,11 @@ Sexpr{res_farmers[2,9]}
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,13]}) & &
+Sexpr{res_farmers[2,4]}) & (
+\backslash
+Sexpr{res_farmers[2,7]}) & (
+\backslash
+Sexpr{res_farmers[2,10]})
 \backslash
 
 \backslash
@@ -3562,18 +3733,41 @@ Sexpr{res_farmers[2,13]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Average sales price &
+&  & [
 \backslash
-Sexpr{res_farmers[3,1]} &
+Sexpr{res_farmers[2,13]}] & [
 \backslash
-Sexpr{res_farmers[3,12]}$^{
+Sexpr{res_farmers[2,14]}] & [
 \backslash
-Sexpr{stars(ri$farmer$ri_p_treat[3])}}$ & $
+Sexpr{res_farmers[2,33]}]
 \backslash
-Sexpr{round(ri$farmer$ri_p_treat[3],
- 3)}$ &
+
 \backslash
-Sexpr{res_farmers[3,9]}
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Price received for milk sold & 
+\backslash
+Sexpr{res_farmers[3,1]} & 
+\backslash
+Sexpr{res_farmers[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[3,5]<.01,"**",ifelse(res_farmers[3,5]<.05,"*",ifelse(res_farmers[3,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[3,8]<.01,"**",ifelse(res_farmers[3,8]<.05,"*",ifelse(res_farmers[3,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[3,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[3,11]<.01,"**",ifelse(res_farmers[3,11]<.05,"*",ifelse(res_farmers[3,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[3,12]} 
 \backslash
 
 \backslash
@@ -3585,7 +3779,11 @@ Sexpr{res_farmers[3,9]}
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,13]}) & &
+Sexpr{res_farmers[3,4]}) & (
+\backslash
+Sexpr{res_farmers[3,7]}) & (
+\backslash
+Sexpr{res_farmers[3,10]})
 \backslash
 
 \backslash
@@ -3593,18 +3791,41 @@ Sexpr{res_farmers[3,13]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Gets quality bonus &
+&  & [
 \backslash
-Sexpr{res_farmers[4,1]} &
+Sexpr{res_farmers[3,13]}] & [
 \backslash
-Sexpr{res_farmers[4,12]}$^{
+Sexpr{res_farmers[3,14]}] & [
 \backslash
-Sexpr{stars(ri$farmer$ri_p_treat[4])}}$ & $
+Sexpr{res_farmers[3,33]}]
 \backslash
-Sexpr{round(ri$farmer$ri_p_treat[4],
- 3)}$ &
+
 \backslash
-Sexpr{res_farmers[4,9]}
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Get quality premium  & 
+\backslash
+Sexpr{res_farmers[4,1]} & 
+\backslash
+Sexpr{res_farmers[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[4,5]<.01,"**",ifelse(res_farmers[4,5]<.05,"*",ifelse(res_farmers[4,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[4,8]<.01,"**",ifelse(res_farmers[4,8]<.05,"*",ifelse(res_farmers[4,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[4,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[4,11]<.01,"**",ifelse(res_farmers[4,11]<.05,"*",ifelse(res_farmers[4,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[4,12]} 
 \backslash
 
 \backslash
@@ -3616,7 +3837,25 @@ Sexpr{res_farmers[4,9]}
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,13]}) & &
+Sexpr{res_farmers[4,4]}) & (
+\backslash
+Sexpr{res_farmers[4,7]}) & (
+\backslash
+Sexpr{res_farmers[4,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers[4,13]}] & [
+\backslash
+Sexpr{res_farmers[4,14]}] & [
+\backslash
+Sexpr{res_farmers[4,33]}]
 \backslash
 
 \backslash
@@ -3626,22 +3865,29 @@ Sexpr{res_farmers[4,13]}) & &
 \begin_layout Plain Layout
 
 \backslash
-hline
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
-Anderson index &
+Index of primary farmer outcomes & 
 \backslash
-Sexpr{res_farmers[5,1]} &
+Sexpr{res_farmers[5,1]} & 
 \backslash
-Sexpr{res_farmers[5,12]}$^{
+Sexpr{res_farmers[5,3]}$^{
 \backslash
-Sexpr{stars(ri$farmer$ri_p_treat[5])}}$ & $
+Sexpr{ifelse(res_farmers[5,5]<.01,"**",ifelse(res_farmers[5,5]<.05,"*",ifelse(res_farmers[5,5]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{round(ri$farmer$ri_p_treat[5],
- 3)}$ &
+Sexpr{res_farmers[5,6]}$^{
 \backslash
-Sexpr{res_farmers[5,9]}
+Sexpr{ifelse(res_farmers[5,8]<.01,"**",ifelse(res_farmers[5,8]<.05,"*",ifelse(res_farmers[5,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[5,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers[5,11]<.01,"**",ifelse(res_farmers[5,11]<.05,"*",ifelse(res_farmers[5,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers[5,12]} 
 \backslash
 
 \backslash
@@ -3653,7 +3899,25 @@ Sexpr{res_farmers[5,9]}
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,13]}) & &
+Sexpr{res_farmers[5,4]}) & (
+\backslash
+Sexpr{res_farmers[5,7]}) & (
+\backslash
+Sexpr{res_farmers[5,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers[5,13]}] & [
+\backslash
+Sexpr{res_farmers[5,14]}] & [
+\backslash
+Sexpr{res_farmers[5,33]}]
 \backslash
 
 \backslash
@@ -3662,6 +3926,20 @@ Sexpr{res_farmers[5,13]}) & &
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
 \backslash
 hline
 \end_layout
@@ -3675,42 +3953,33 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{flushleft}
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-small
-\backslash
-textit{Notes:} ITT estimates.
- ANCOVA specification controlling for baseline outcomes.
- CR2 cluster-robust standard errors in parentheses.
- Significance stars on the treatment coefficient are based on Fisher randomization inference (RI) $p$-values from 5,000 permutations respecting the experimental design.
- * $p<0.1$,
- ** $p<0.05$,
- *** $p<0.01$.
- Omnibus RI test (EGAP):
-\backslash
-Sexpr{ri$omnibus$farmer_treat$obs_count} of 4 individual outcomes significant at 5
-\backslash
-% level (omnibus RI $p =
-\backslash
-Sexpr{round(ri$omnibus$farmer_treat$omnibus_p,
- 3)}$).
- CR2 $p$-values and Anderson-Sharp $q$-values are reported in the appendix.
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
-
-\backslash
-end{flushleft}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
+Note:
+ Column 1 reports mean outcomes for pure control farmers (those not receiving the information treatment and connected to control MCCs),
+ with standard deviations in parentheses.
+ Columns 2–4 present the pooled main treatment effects of the MCC-level intervention (T1),
+ the farmer-level information intervention (T2),
+ and their combined exposure,
+ respectively;
+ robust standard errors appear in parentheses.
+ Numbers in square brackets report p-values for tests of whether the treatment effect differs by the farmer’s connection type (directly to an MCC versus through a small trader).
+ Column 5 shows the number of non-missing observations.
+ Prices are in Ugandan shillings (UGX).
+ The “Index of primary farmer outcomes” is an Anderson (2008) index of the outcomes listed above.
+ Standard errors are clustered at the catchment-area level.
+ Significance levels:
+ * p < 0.10,
+ ** p < 0.05,
+ *** p < 0.01 (Benjamini-Krieger-Yekutieli sharpened q-values).
 \end_layout
 
 \end_inset
@@ -3718,101 +3987,513 @@ end{table}
 
 \end_layout
 
-\begin_layout Subsection
-MCC Level
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:mcc-level"
+Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-[Placeholder discussing MCC-level results.
- Present treatment effects on MCC-level outcomes including quality testing practices,
- rejection rates,
- pricing policies,
- and throughput.
- Results from the res_MCCs object.]
-\end_layout
-
-\begin_layout Standard
+ reports treatment effects on our four primary outcomes at the farmer level,
+ as well as the index.
+ The table shows parameter estimates from the fully interacted model of Equation 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 \backslash
-begin{table}[h]
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Estimation-and-inference"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ In the first column,
+ we show mean outcome for pure control farmers (that did not get the information treatment and are connected to control MCCs);
+ standard deviations are in parenthesis below.
+ In the second column,
+ we provide an estimate of the farmer level main treatment effect of T1 (corresponding to 
+\begin_inset Formula $\beta_{H2C}$
+\end_inset
+
+ in Equation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+,
+ standard errors in parenthesis below) and in the third column,
+ we provide an estimate of the farmer level main treatment effect of T2 (corresponding to 
+\begin_inset Formula $\beta_{H3C}$
+\end_inset
+
+ in Equation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+,
+ standard errors in parenthesis below).
+ The fourth column provides an estimate of the interaction between the MCC level treatment and the farmer level treatment (corresponding to 
+\begin_inset Formula $\beta_{H4C}$
+\end_inset
+
+ in Equation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+,
+ standard errors in parenthesis below).
+ Finally,
+ below the standard errors,
+ we also provide p-values for the null hypothesis that there is no difference in the estimated effect depending on how the farmer is connected to the MCC (directly or through a small trader).
+ More in particular,
+ the number in square brackets in column two is the p-value for the hypothesis 
+\begin_inset Formula $\beta_{H2C}\neq\beta_{H2T}$
+\end_inset
+
+ obtained from equation 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+ref{eq:two}
+\end_layout
+
+\end_inset
+
+.
+ Similar tests are reported for 
+\begin_inset Formula $\beta_{H3C}\neq\beta_{H3T}$
+\end_inset
+
+ in column three and 
+\begin_inset Formula $\beta_{H4C}\neq\beta_{H4T}$
+\end_inset
+
+ in column four.
+\end_layout
+
+\begin_layout Standard
+In addition to the tables in the main text,
+ we again provide various tables with additional estimates in the Appendix for robustness.
+ In particular,
+ we present tables with results from the pooled regressions corresponding to Equations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:pooled-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and the treatment bundle corresponding to Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:one-1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ (See Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ Furthermore,
+ in light of the compliance issues reported in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Attrition-and-Compliance"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we also present LATE estimates where in addition to instrumenting actual presence of a milk analyzer with MCC level treatment assignment,
+ we now also instrument the fact that farmers recall having seen the video with the farmer level treatment assignment (See Appendix Tables 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Looking at the main (fully interacted) specification in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ and the pooled estimates in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we do not find evidence that the MCC-level intervention alone affected farmers’ production investments and management practices.
+ The farmer-level information treatment also shows no significant effect in the fully interacted model.
+ However,
+ the pooled regression suggests a modest positive effect of the farmer-level intervention (significant at the 10 percent level).
+ The significant interaction term in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ indicates that this pooled effect is driven almost entirely by farmers whose MCCs were also equipped with an analyzer,
+ suggesting that information only translates into improved management practices when quality is made observable and salient at the MCC level.
+ This pattern is consistent with complementarities in the theory of change:
+ farmers have little incentive to act on information in environments where quality is not measured,
+ but respond when improved knowledge is paired with an institutional setting that demands or rewards higher quality.
+ Finally,
+ we find significant heterogeneity with respect to intermediation for the interaction effect:
+ As expected,
+ the significant increase in investment and effort is driven by directly connected farmers.
+\end_layout
+
+\begin_layout Standard
+Among pure control farmers,
+ approximately 16 percent report that their milk was tested using an analyzer.
+ Farmers linked to treatment MCCs report slightly higher testing rates—
+by roughly 6 to 7 percentage points in both the fully interacted and pooled specifications—
+although these differences are not statistically distinguishable from zero.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Although these effects are generally small and imprecise,
+ they are consistent with qualitative reports from MCC managers who stated that analyzers were typically used only in suspected cases of adulteration rather than on every single delivery.
+ Our outcome measure captures self-reported testing across all potential offtakers,
+ not just MCCs,
+ and therefore may not fully reflect this selective-use pattern.
+ Even so,
+ selective but credible testing can still shift behavior:
+ the possibility of being tested may be sufficient to induce farmers to upgrade milk quality,
+ a mechanism supported by the compositional improvements documented in the sample-based analysis below (Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Milk-samples"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+ The coefficient on the farmer-level information treatment is likewise positive but imprecisely estimated.
+ At the same time,
+ the fully interacted model indicates heterogeneity by connection type:
+ the information treatment reduces the likelihood of being tested among farmers who supply through traders.
+ We detect no statistically significant interaction between the MCC-level and farmer-level interventions.
+\end_layout
+
+\begin_layout Standard
+Across all specifications,
+ we find no evidence that either intervention affected the prices farmers receive for milk.
+ Control farmers report an average price of UGX 1,019 per liter—
+a level consistent with MCC-level data once accounting for sales to alternative buyers such as traders or direct consumers,
+ who typically pay slightly less.
+ Prices received by farmers in both treatment arms are statistically indistinguishable from those of control farmers,
+ and this holds for the interaction term as well as for pooled,
+ fully interacted,
+ and instrumented models.
+ Similarly,
+ the likelihood that a farmer reports receiving an explicit quality premium does not differ across groups,
+ mirroring the null effects observed for prices.
+ Taken together,
+ these results point to no detectable impact of the interventions on the price dimension of farmers’ marketing outcomes.
+\end_layout
+
+\begin_layout Standard
+Taken together,
+ these weak and null effects translate into an overall insignificant impact on the composite index of primary farmer outcomes.
+ Nonetheless,
+ the pooled specification does provide some suggestive evidence that the MCC-level intervention modestly improves the combined index,
+ and a direct comparison between pure control farmers and those exposed to the full bundle of interventions points to a small but positive shift in behavior (See Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-pooled"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+MCC Level
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:mcc-level"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We pre-registered six primary outcomes at the level of the MCC.
+ All six are hypothesized to move in a positive direction in response to our intervention designed to make milk quality more transparent and traceable.
+ To capture the aggregate effect across these outcomes (and simultaneously consider multiple hypothesis testing concerns),
+ we also construct a summary index following 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "doi:10.1198/016214508000000841"
+literal "false"
+
+\end_inset
+
+.
+ This index provides a single measure of how the intervention influenced the overall development of a market for quality at the MCC level.
+\end_layout
+
+\begin_layout Standard
+Our first two outcomes measure the extent to which quality testing becomes embedded in routine operations at the MCC.
+ Specifically,
+ we record whether MCCs used a milk analyzer to measure butter fat and solid-non-fat content of incoming milk samples in the last 7 days.
+ In addition,
+ we asked whether MCCs test outgoing milk deliveries destined for buyers.
+ This measure is based on more detailed sales transaction data,
+ and is true if for any buyer (eg processor,
+ other trader,
+ etc) butter fat or SNF was tested using a milk analyzer.
+ Together,
+ these indicators capture the degree to which the analyzers are used as intended,
+ and whether testing shapes quality assurance both upstream and downstream.
+ 
+\end_layout
+
+\begin_layout Standard
+The next two outcomes reflect how increased transparency affects prices.
+ We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey.
+ We then ask about the average price MCCs received for sales to various buyers during the last transaction in the previous week,
+ and take a (weighted) average of these.
+ These outcomes allow us to assess whether improved quality monitoring translates into higher farm-gate prices and whether MCCs are able to cash in on quality improvements through higher sales prices.
+\end_layout
+
+\begin_layout Standard
+Finally,
+ two outcomes directly capture whether price differentiation by quality emerges.
+ We ask whether the MCC pays explicit quality premiums to its suppliers,
+ and whether downstream buyers pay a premium for higher-quality milk.
+ Together,
+ these indicators provide evidence on whether the intervention helped overcome the central coordination problem in quality upgrading:
+ aligning incentives on both sides of the market so that producers and intermediaries are rewarded for investing in quality.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primary Outcomes for Milk Collection Centers (MCCs)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-MCC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-caption{Experiment 1:
- MCC-Level Results (ITT)}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{tab:mcc-results}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lcccc}
+begin{tabular}{rcccc}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-& Control Mean & Treatment Effect & RI $p$ & N
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& (SD) & (SE) & &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \backslash
 hline
 \end_layout
 
 \begin_layout Plain Layout
-Tests incoming (analyzer) &
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer & nobs 
 \backslash
-Sexpr{res_MCCs[1,1]} &
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Tested incoming milk using MA (1=yes) & 
+\backslash
+Sexpr{res_MCCs[1,1]} & 
 \backslash
 Sexpr{res_MCCs[1,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[1])}}$ & $
+Sexpr{ifelse(res_MCCs[1,5]<.01,"**",ifelse(res_MCCs[1,5]<.05,"*",ifelse(res_MCCs[1,5]<.1,"+","")))}}$ & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[1],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[1,9]}
+Sexpr{res_MCCs[1,9]} 
 \backslash
 
 \backslash
@@ -3824,7 +4505,7 @@ Sexpr{res_MCCs[1,9]}
 \backslash
 Sexpr{res_MCCs[1,2]}) & (
 \backslash
-Sexpr{res_MCCs[1,4]}) & &
+Sexpr{res_MCCs[1,4]}) 
 \backslash
 
 \backslash
@@ -3832,18 +4513,19 @@ Sexpr{res_MCCs[1,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Tests outgoing (analyzer) &
+
+\end_layout
+
+\begin_layout Plain Layout
+Testing outgoing milk using MA (1=yes) & 
 \backslash
-Sexpr{res_MCCs[2,1]} &
+Sexpr{res_MCCs[2,1]} & 
 \backslash
 Sexpr{res_MCCs[2,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[2])}}$ & $
+Sexpr{ifelse(res_MCCs[2,5]<.01,"**",ifelse(res_MCCs[2,5]<.05,"*",ifelse(res_MCCs[2,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[2],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[2,9]}
+Sexpr{res_MCCs[2,9]} 
 \backslash
 
 \backslash
@@ -3855,7 +4537,7 @@ Sexpr{res_MCCs[2,9]}
 \backslash
 Sexpr{res_MCCs[2,2]}) & (
 \backslash
-Sexpr{res_MCCs[2,4]}) & &
+Sexpr{res_MCCs[2,4]}) 
 \backslash
 
 \backslash
@@ -3863,18 +4545,19 @@ Sexpr{res_MCCs[2,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Price paid to farmers &
+
+\end_layout
+
+\begin_layout Plain Layout
+Price at which milk was bought from farmers (UGX) & 
 \backslash
-Sexpr{res_MCCs[3,1]} &
+Sexpr{res_MCCs[3,1]} & 
 \backslash
 Sexpr{res_MCCs[3,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[3])}}$ & $
+Sexpr{ifelse(res_MCCs[3,5]<.01,"**",ifelse(res_MCCs[3,5]<.05,"*",ifelse(res_MCCs[3,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[3],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[3,9]}
+Sexpr{res_MCCs[3,9]} 
 \backslash
 
 \backslash
@@ -3886,7 +4569,7 @@ Sexpr{res_MCCs[3,9]}
 \backslash
 Sexpr{res_MCCs[3,2]}) & (
 \backslash
-Sexpr{res_MCCs[3,4]}) & &
+Sexpr{res_MCCs[3,4]}) 
 \backslash
 
 \backslash
@@ -3894,18 +4577,19 @@ Sexpr{res_MCCs[3,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Average sales price &
+
+\end_layout
+
+\begin_layout Plain Layout
+Price at which milk was sold (UGX) & 
 \backslash
-Sexpr{res_MCCs[4,1]} &
+Sexpr{res_MCCs[4,1]} & 
 \backslash
 Sexpr{res_MCCs[4,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[4])}}$ & $
+Sexpr{ifelse(res_MCCs[4,5]<.01,"**",ifelse(res_MCCs[4,5]<.05,"*",ifelse(res_MCCs[4,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[4],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[4,9]}
+Sexpr{res_MCCs[4,9]} 
 \backslash
 
 \backslash
@@ -3917,7 +4601,7 @@ Sexpr{res_MCCs[4,9]}
 \backslash
 Sexpr{res_MCCs[4,2]}) & (
 \backslash
-Sexpr{res_MCCs[4,4]}) & &
+Sexpr{res_MCCs[4,4]}) 
 \backslash
 
 \backslash
@@ -3925,18 +4609,20 @@ Sexpr{res_MCCs[4,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Gives quality bonus &
+
+\end_layout
+
+\begin_layout Plain Layout
+Does the MCC pay a quality premium to suppliers?
+ & 
 \backslash
-Sexpr{res_MCCs[5,1]} &
+Sexpr{res_MCCs[5,1]} & 
 \backslash
 Sexpr{res_MCCs[5,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[5])}}$ & $
+Sexpr{ifelse(res_MCCs[5,5]<.01,"**",ifelse(res_MCCs[5,5]<.05,"*",ifelse(res_MCCs[5,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[5],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[5,9]}
+Sexpr{res_MCCs[5,9]} 
 \backslash
 
 \backslash
@@ -3948,7 +4634,7 @@ Sexpr{res_MCCs[5,9]}
 \backslash
 Sexpr{res_MCCs[5,2]}) & (
 \backslash
-Sexpr{res_MCCs[5,4]}) & &
+Sexpr{res_MCCs[5,4]}) 
 \backslash
 
 \backslash
@@ -3956,18 +4642,20 @@ Sexpr{res_MCCs[5,4]}) & &
 \end_layout
 
 \begin_layout Plain Layout
-Gets quality bonus &
+
+\end_layout
+
+\begin_layout Plain Layout
+Did the buyer pay a quality premium?
+ & 
 \backslash
-Sexpr{res_MCCs[6,1]} &
+Sexpr{res_MCCs[6,1]} & 
 \backslash
 Sexpr{res_MCCs[6,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[6])}}$ & $
+Sexpr{ifelse(res_MCCs[6,5]<.01,"**",ifelse(res_MCCs[6,5]<.05,"*",ifelse(res_MCCs[6,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[6],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[6,9]}
+Sexpr{res_MCCs[6,9]} 
 \backslash
 
 \backslash
@@ -3979,7 +4667,7 @@ Sexpr{res_MCCs[6,9]}
 \backslash
 Sexpr{res_MCCs[6,2]}) & (
 \backslash
-Sexpr{res_MCCs[6,4]}) & &
+Sexpr{res_MCCs[6,4]}) 
 \backslash
 
 \backslash
@@ -3988,23 +4676,26 @@ Sexpr{res_MCCs[6,4]}) & &
 
 \begin_layout Plain Layout
 
-\backslash
-hline
 \end_layout
 
 \begin_layout Plain Layout
-Anderson index &
+
 \backslash
-Sexpr{res_MCCs[7,1]} &
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Index of primary MCC outcomes & 
+\backslash
+Sexpr{res_MCCs[7,1]} & 
 \backslash
 Sexpr{res_MCCs[7,3]}$^{
 \backslash
-Sexpr{stars(ri$MCC$ri_p[7])}}$ & $
+Sexpr{ifelse(res_MCCs[7,5]<.01,"**",ifelse(res_MCCs[7,5]<.05,"*",ifelse(res_MCCs[7,5]<.1,"+","")))}}$  & 
 \backslash
-Sexpr{round(ri$MCC$ri_p[7],
- 3)}$ &
-\backslash
-Sexpr{res_MCCs[7,9]}
+Sexpr{res_MCCs[7,9]} 
 \backslash
 
 \backslash
@@ -4016,7 +4707,7 @@ Sexpr{res_MCCs[7,9]}
 \backslash
 Sexpr{res_MCCs[7,2]}) & (
 \backslash
-Sexpr{res_MCCs[7,4]}) & &
+Sexpr{res_MCCs[7,4]}) 
 \backslash
 
 \backslash
@@ -4025,6 +4716,20 @@ Sexpr{res_MCCs[7,4]}) & &
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
 \backslash
 hline
 \end_layout
@@ -4038,46 +4743,128 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{flushleft}
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-small
-\backslash
-textit{Notes:} OLS ANCOVA with baseline control.
- CR2 cluster-robust standard errors in parentheses.
- Significance stars based on Fisher randomization inference (RI) $p$-values from 5,000 permutations.
- * $p<0.1$,
- ** $p<0.05$,
- *** $p<0.01$.
- Omnibus RI test (EGAP):
-\backslash
-Sexpr{ri$omnibus$mcc$obs_count} of 6 individual outcomes significant at 5
-\backslash
-% level (omnibus RI $p =
-\backslash
-Sexpr{round(ri$omnibus$mcc$omnibus_p,
- 3)}$).
- CR2 $p$-values and Anderson-Sharp $q$-values are reported in the appendix.
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
-
-\backslash
-end{flushleft}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
+Note:
+ Column 1 reports the mean of each outcome for the control group,
+ with standard deviations in parentheses.
+ Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
+ with robust standard errors in parentheses.
+ Column 3 lists the number of MCCs with non-missing observations.
+ All prices are in Ugandan shillings (UGX).
+ The “Index of primary MCC outcomes” is an Anderson (2008) index of the variables listed above.
+ Significance levels:
+ * p < 0.10,
+ ** p < 0.05,
+ *** p < 0.01.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Results are in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ The results show that many MCCs saw the merits of milk analyzers.
+ In particular,
+ MCCs in the treatment group were substantially more likely to test incoming deliveries:
+ the probability of testing rose by 53 percentage points relative to a control group mean of 29 percent,
+ a large and highly significant increase.
+ We also observe a large and significant increase in the probability of testing outgoing deliveries to buyers.
+ These results suggest that the analyzers were effectively used for monitoring both milk supplied by farmers and deliveries to downstream buyers.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+These self-reported outcomes may raise concerns about experimenter bias.
+ However,
+ as shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Secondary-outcomes-MCC-uptake"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ we obtain similar results when using direct enumerator observations of analyzer use.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Turning to prices,
+ we find no evidence that the intervention affected transaction terms at MCCs.
+ In the control group,
+ the average farm-gate price paid to suppliers was about UGX 1,075 per liter,
+ and we detect no significant increase in the treatment group.
+ Similarly,
+ the average price MCCs received from buyers was about UGX 2,200 per liter in the control group,
+ with no evidence that the mcc level treatment raised buyer offers.
+ These results suggest that while the intervention influenced testing practices,
+ it did not translate into higher prices on either side of the market.
+\end_layout
+
+\begin_layout Standard
+In addition,
+ about 20 percent of MCCs in the control group reported paying a quality premium to suppliers,
+ and the same share (11 out of 59) reported receiving a premium from buyers.
+ Consistent with the price outcomes,
+ we do not find that making quality more visible in the value chain increased the likelihood of such premiums being paid.
+\end_layout
+
+\begin_layout Standard
+In light of the compliance issues discussed in the previous section,
+ we also estimated Local Average Treatment Effects (LATE),
+ instrumenting the actual availability of a functioning milk analyzer with the randomized treatment assignment (See Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+ The conclusions remain largely unchanged.
+ Overall,
+ MCC-level data indicate that the intervention produced a sizable and consistent increase in testing activity,
+ yet we find no evidence that it generated quality-based price differentiation.
+ When we consider the composite index of pre-registered MCC-level outcomes,
+ the data indicate that T1 did not lead to measurable improvements at the MCC level.
 \end_layout
 
 \begin_layout Subsection
