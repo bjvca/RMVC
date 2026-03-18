@@ -675,7 +675,7 @@ The intervention substantially increased the visibility,
  generating large and consistent increases in actual testing of both incoming and outgoing milk;
  the probability that an MCC tests incoming deliveries rose by over 50 percentage points relative to the control group.
  Despite this operational uptake,
- neither the MCC-level intervention nor the farmer-level information treatment affected prices or the emergence of quality premia at any stage of the chain:
+ the intervention did not affect prices or the emergence of quality premia at any stage of the chain:
  farmer sales prices,
  the incidence of quality bonuses,
  and all pricing outcomes at the MCC level were uniformly unresponsive,
@@ -1950,22 +1950,13 @@ At the farmer level, let
 \begin_inset Formula $m$
 \end_inset
 
-.
- Since the experiment also cross-randomized a farmer-level information treatment, we estimate the pooled effect of the measurement system by adjusting for the orthogonal treatment following
-\begin_inset CommandInset citation
-LatexCommand citet
-key "muralidharan2019factorial"
-literal "false"
-
-\end_inset
-
 :
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula
 \begin{equation}
-y_{i,m}=\alpha+\beta T_{i,m}+\delta\left(V_{i,m}-\bar{V}\right)+\phi T_{i,m}\left(V_{i,m}-\bar{V}\right)+\gamma y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:farmer}
+y_{i,m}=\alpha+\beta T_{i,m}+\gamma y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:farmer}
 \end{equation}
 
 \end_inset
@@ -1982,16 +1973,11 @@ where
 \begin_inset Formula $i$
 \end_inset
 
-'s MCC was assigned to treatment,
-\begin_inset Formula $V_{i,m}$
+'s MCC was assigned to treatment and
+\begin_inset Formula $\varepsilon_{i,m}$
 \end_inset
 
- indicates assignment to the information treatment (demeaned to ensure orthogonality), and
-\begin_inset Formula $\beta$
-\end_inset
-
- recovers the pooled effect of the measurement system averaging across information treatment arms.
- Full factorial results are reported in the Online Appendix.
+ is an error term that may be correlated within catchment areas.
 \end_layout
 
 \begin_layout Standard
@@ -2855,7 +2841,7 @@ nolink "false"
 
 \end_inset
 
- presents the primary ITT estimates from the orthogonalized factorial specification.
+ presents the primary ITT estimates.
  The measurement and monitoring system treatment increases adoption of improved practices and awareness that the buyer uses quality testing,
  but does not affect average sales prices or the probability of receiving a quality bonus.
  The Anderson index summarizes across the outcome family.]
@@ -2893,7 +2879,7 @@ label{tab:farmer-primary}
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{lccccc}
+begin{tabular}{lcccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2903,7 +2889,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& Control & Lactoscan & RI $p$ & Video & N
+& Control & Treatment & RI $p$ & N
 \backslash
 
 \backslash
@@ -2911,7 +2897,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& Mean (SD) & (SE) & & (SE) &
+& Mean (SD) & (SE) & &
 \backslash
 
 \backslash
@@ -2936,10 +2922,6 @@ Sexpr{stars(ri$farmer$ri_p_treat[1])}}$ & $
 Sexpr{round(ri$farmer$ri_p_treat[1],
  3)}$ &
 \backslash
-Sexpr{res_farmers[1,6]}$^{
-\backslash
-Sexpr{stars(res_farmers[1,8])}}$ &
-\backslash
 Sexpr{res_farmers[1,9]}
 \backslash
 
@@ -2952,9 +2934,7 @@ Sexpr{res_farmers[1,9]}
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,13]}) & & (
-\backslash
-Sexpr{res_farmers[1,7]}) &
+Sexpr{res_farmers[1,13]}) & &
 \backslash
 
 \backslash
@@ -2973,10 +2953,6 @@ Sexpr{stars(ri$farmer$ri_p_treat[2])}}$ & $
 Sexpr{round(ri$farmer$ri_p_treat[2],
  3)}$ &
 \backslash
-Sexpr{res_farmers[2,6]}$^{
-\backslash
-Sexpr{stars(res_farmers[2,8])}}$ &
-\backslash
 Sexpr{res_farmers[2,9]}
 \backslash
 
@@ -2989,9 +2965,7 @@ Sexpr{res_farmers[2,9]}
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,13]}) & & (
-\backslash
-Sexpr{res_farmers[2,7]}) &
+Sexpr{res_farmers[2,13]}) & &
 \backslash
 
 \backslash
@@ -3010,10 +2984,6 @@ Sexpr{stars(ri$farmer$ri_p_treat[3])}}$ & $
 Sexpr{round(ri$farmer$ri_p_treat[3],
  3)}$ &
 \backslash
-Sexpr{res_farmers[3,6]}$^{
-\backslash
-Sexpr{stars(res_farmers[3,8])}}$ &
-\backslash
 Sexpr{res_farmers[3,9]}
 \backslash
 
@@ -3026,9 +2996,7 @@ Sexpr{res_farmers[3,9]}
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,13]}) & & (
-\backslash
-Sexpr{res_farmers[3,7]}) &
+Sexpr{res_farmers[3,13]}) & &
 \backslash
 
 \backslash
@@ -3047,10 +3015,6 @@ Sexpr{stars(ri$farmer$ri_p_treat[4])}}$ & $
 Sexpr{round(ri$farmer$ri_p_treat[4],
  3)}$ &
 \backslash
-Sexpr{res_farmers[4,6]}$^{
-\backslash
-Sexpr{stars(res_farmers[4,8])}}$ &
-\backslash
 Sexpr{res_farmers[4,9]}
 \backslash
 
@@ -3063,9 +3027,7 @@ Sexpr{res_farmers[4,9]}
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,13]}) & & (
-\backslash
-Sexpr{res_farmers[4,7]}) &
+Sexpr{res_farmers[4,13]}) & &
 \backslash
 
 \backslash
@@ -3090,10 +3052,6 @@ Sexpr{stars(ri$farmer$ri_p_treat[5])}}$ & $
 Sexpr{round(ri$farmer$ri_p_treat[5],
  3)}$ &
 \backslash
-Sexpr{res_farmers[5,6]}$^{
-\backslash
-Sexpr{stars(res_farmers[5,8])}}$ &
-\backslash
 Sexpr{res_farmers[5,9]}
 \backslash
 
@@ -3106,9 +3064,7 @@ Sexpr{res_farmers[5,9]}
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,13]}) & & (
-\backslash
-Sexpr{res_farmers[5,7]}) &
+Sexpr{res_farmers[5,13]}) & &
 \backslash
 
 \backslash
@@ -3138,9 +3094,9 @@ begin{flushleft}
 \backslash
 small
 \backslash
-textit{Notes:} Orthogonalized treatment effects (Muralidharan et al.).
+textit{Notes:} ITT estimates. ANCOVA specification controlling for baseline outcomes.
  CR2 cluster-robust standard errors in parentheses.
- Significance stars on the Lactoscan coefficient are based on Fisher randomization inference (RI) $p$-values from 5,000 permutations respecting the experimental design.
+ Significance stars on the treatment coefficient are based on Fisher randomization inference (RI) $p$-values from 5,000 permutations respecting the experimental design.
  * $p<0.1$,
  ** $p<0.05$,
  *** $p<0.01$.
