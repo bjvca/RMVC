@@ -5382,11 +5382,90 @@ A higher
 \end_layout
 
 \begin_layout Subsubsection
+Response to Threshold Changes under Quality-based Pricing
+\end_layout
+
+\begin_layout Standard
+The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ relative to the prevailing quality distribution.
+ When
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ is low relative to the natural distribution of quality (as when high-quality milk is abundant in the rainy season), most suppliers are comfortably above the threshold:
+\begin_inset Formula $\pi_{i}\approx1$
+\end_inset
+
+ and
+\begin_inset Formula $\partial\pi_{i}/\partial e_{i}\approx0$
+\end_inset
+
+.
+ In this regime, the extensive margin contributes little to the marginal return to effort.
+ The dominant incentive comes from the intensive margin,
+\begin_inset Formula $\pi_{i}\lambda_{i}\alpha\theta_{i}y_{i}$
+\end_inset
+
+, which rewards increases in volume delivered (since accepted milk earns the quality premium on every liter).
+ The most profitable response is to scale up the quantity of milk collected, not to improve its composition.
+\end_layout
+
+\begin_layout Standard
+When
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ is raised (as when quality thresholds are tightened or when the dry season reduces the natural quality of available milk), a larger fraction of suppliers falls near or below the threshold.
+ The acceptance probability
+\begin_inset Formula $\pi_{i}$
+\end_inset
+
+ drops below one for many suppliers, and the extensive margin
+\begin_inset Formula $\frac{\partial\pi_{i}}{\partial e_{i}}\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]$
+\end_inset
+
+ becomes the binding incentive.
+ The response shifts from volume expansion to quality-based sourcing: agents invest effort in securing higher-quality milk to avoid rejection, rather than simply collecting more of what is already available.
+ Formally, the relative importance of the extensive margin in the first-order condition is increasing in
+\begin_inset Formula $q_{min}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\begin{equation}
+\frac{\partial}{\partial q_{min}}\left[\frac{\text{extensive margin}}{\text{total marginal return}}\right]>0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This comparative static generates a testable prediction for Experiment 2: when the quality threshold is at the East African standard (Stage 1, low
+\begin_inset Formula $q_{min}$
+\end_inset
+
+), the premium should elicit primarily a volume response; when the threshold is raised (Stage 2, high
+\begin_inset Formula $q_{min}$
+\end_inset
+
+), the same premium should elicit primarily a quality response.
+ The margin of adjustment tracks the margin that is binding.
+\end_layout
+
+\begin_layout Subsubsection
 Farmer Responses to Stronger Downstream Incentives
 \end_layout
 
 \begin_layout Standard
-With 
+With
 \begin_inset Formula $\lambda_{i}>0$
 \end_inset
 
