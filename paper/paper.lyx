@@ -4475,6 +4475,1231 @@ end{table}
  which exogenously sets alpha > 0 through quality bonuses.]
 \end_layout
 
+\begin_layout Standard
+This section lays out a simple analytical framework that guides our interpretation of the mechanisms and generates testable predictions.
+\end_layout
+
+\begin_layout Subsection
+Environment and Timing
+\end_layout
+
+\begin_layout Standard
+There is one processor,
+ multiple MCCs indexed by 
+\emph on
+m
+\emph default
+,
+ and,
+ within each MCC catchment,
+ multiple farmers indexed by 
+\emph on
+i
+\emph default
+ that deliver milk to the MCC.
+ The quantity of milk supplied by farmer 
+\emph on
+i
+\emph default
+,
+ denoted 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+,
+ is assumed to be fixed in the short run,
+ as it primarily depends on the farmer’s herd size,
+ which does not adjust quickly.
+ Milk quality is expressed on a continuum 
+\begin_inset Formula $\left(q_{i}\in\left[0,1\right]\right)$
+\end_inset
+
+ and reflects compositional attributes such as butterfat and SNF.
+\end_layout
+
+\begin_layout Standard
+After observing delivered quantities and a (possibly noisy) signal of quality for each farmer,
+ the MCC decides whether to accept or reject each delivery.
+ Accepted milk is aggregated and sold to the processor,
+ who pays a premium for verifiable compositional quality.
+ The downstream price received by the MCC therefore depends on average quality of accepted milk.
+\end_layout
+
+\begin_layout Standard
+Farmers differ in how they are connected to the MCC:
+ some deliver directly;
+ others deliver through intermediaries.
+ Because these intermediaries may retain part of any quality premium,
+ farmers connected through traders face lower pass-through of downstream incentives.
+\end_layout
+
+\begin_layout Subsection
+Production of Quality at the Farm
+\end_layout
+
+\begin_layout Standard
+Each farmer 
+\emph on
+i
+\emph default
+ supplies a fixed quantity of milk 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ in the short run and chooses effort 
+\begin_inset Formula $e_{i}\geq0$
+\end_inset
+
+ that affects the compositional quality of milk:
+\begin_inset Formula 
+\begin{equation}
+q_{i}=\theta_{i}e_{i}+\varepsilon_{i}\label{eq:quality}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $\theta_{i}\geq0$
+\end_inset
+
+ capturing how effectively effort is translated into quality,
+ and 
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+ a mean-zero shock.
+ 
+\end_layout
+
+\begin_layout Standard
+Effort is assumed to be costly,
+ which we model as a quadratic function:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+c_{i}(e_{i})=\frac{k_{i}}{2}e^{2}_{i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with 
+\begin_inset Formula $k_{i}>0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsection
+Prices,
+ Pass-Through,
+ and Intermediation
+\end_layout
+
+\begin_layout Standard
+Let the processor pay the MCC a unit price 
+\begin_inset Formula 
+\begin{equation}
+p_{m}=\bar{p}+\alpha\,\bar{q}_{m}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ is average quality in MCC 
+\begin_inset Formula $m$
+\end_inset
+
+ and 
+\begin_inset Formula $\alpha\geq0$
+\end_inset
+
+ is the per-unit premium slope for verifiable quality.
+ A key assumption we make is that,
+ without verifiable measurement,
+ 
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+;
+ when quality becomes observable,
+ we assume that,
+ 
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The MCC posts a pricing rule that links observed quality 
+\begin_inset Formula $\left(q_{i}\right)$
+\end_inset
+
+ to price paid to farmers 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(p_{i}\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+.
+ Let the supplier-level price schedule be:
+ 
+\begin_inset Formula 
+\begin{equation}
+p_{i}=p_{0}+\lambda_{i}\alpha\,q_{i}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ is a base price,
+ and 
+\begin_inset Formula $0\leq\lambda_{i}\leq1$
+\end_inset
+
+ is the pass-through rate of the premium to farmer 
+\begin_inset Formula $i$
+\end_inset
+
+.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In principle,
+ the extent to which the MCC passes through the quality premium to farmers is the outcome of a profit-maximization problem:
+ the MCC would optimally choose a pass-through rate that balances retaining a share of the downstream premium against inducing higher farmer effort and thus higher average quality.
+ For tractability and to keep the conceptual model focused on testable predictions,
+ we treat 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ as a reduced-form parameter summarizing institutional frictions,
+ bargaining power,
+ and local contracting norms
+\end_layout
+
+\end_inset
+
+ Pass-through depends on local contracting frictions and transparency.
+ We assume 
+\begin_inset Formula $\lambda_{i}=\lambda_{C}$
+\end_inset
+
+ if the farmer is directly connected to the MCC and 
+\begin_inset Formula $\lambda_{i}=\lambda_{T}$
+\end_inset
+
+ if the farmer sells via a trader,
+ with 
+\begin_inset Formula $0\leq\lambda_{T}\leq\lambda_{C}\leq1$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Farmer Optimization
+\end_layout
+
+\begin_layout Standard
+The MCC may reject milk that does not meet a minimum quality standard.
+ Let 
+\begin_inset Formula $a_{i}\in\left\{ 0,1\right\} $
+\end_inset
+
+ be an acceptance indicator,
+ where 
+\begin_inset Formula $a_{i}=1$
+\end_inset
+
+ if farmer 
+\emph on
+i
+\emph default
+'s milk meets a minimum quality threshold 
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ and 
+\begin_inset Formula $a_{i}=0$
+\end_inset
+
+ otherwise:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+a_{i}=1\left\{ q_{i}\geq q_{min}\right\} 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Farmer 
+\emph on
+i
+\emph default
+’s realized revenue is then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+r_{i}\left(e_{i}\right)=a_{i}p_{i}\left(q_{i}\right)y_{i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because observed quality includes noise (Equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quality"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ acceptance is uncertain from the farmer’s perspective.
+ Let
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\pi_{i}\left(e_{i};\bar{q}\right)=Pr\left(a_{i}=1|e_{i}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+denote the acceptance probability for farmer 
+\emph on
+i
+\emph default
+.
+ Since higher effort raises quality 
+\begin_inset Formula $q_{i}=\theta_{i}e_{i}$
+\end_inset
+
+,
+ the acceptance probability is increasing in effort:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\pi_{i}\left(e_{i};q_{min}\right)}{\partial e_{i}}>0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Farmer 
+\emph on
+i
+\emph default
+’s expected revenue is therefore
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+E\left[r_{i}\left(e_{i}\right)\right]=\pi_{i}\left(e_{i};q_{min}\right)\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The farmer chooses effort to maximize expected net returns:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{equation}
+\end_layout
+
+\begin_layout Plain Layout
+e_i^* = 
+\backslash
+arg
+\backslash
+max_{e_i 
+\backslash
+ge 0} 
+\backslash
+left
+\backslash
+{ 
+\backslash
+mathbb{E}[r_i(e_i)] - c_i(e_i) 
+\backslash
+right
+\backslash
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This decision problem highlights two distinct channels through which effort affects expected payoffs:
+\end_layout
+
+\begin_layout Enumerate
+Intensive margin (price effect):
+ When pass-through is positive 
+\begin_inset Formula $\left(\lambda_{i}>0\right)$
+\end_inset
+
+,
+ higher effort raises quality 
+\begin_inset Formula $q_{i}$
+\end_inset
+
+ and therefore the quality-linked component of the price 
+\begin_inset Formula $\lambda_{i}\alpha q_{i}$
+\end_inset
+
+ conditional on acceptance.
+ Holding the acceptance probability fixed,
+ the marginal return to effort comes from a steeper price–quality gradient.
+\end_layout
+
+\begin_layout Enumerate
+Extensive margin (acceptance effect):
+ Even absent pass-through on the price (for example when 
+\begin_inset Formula $\lambda_{i}=0$
+\end_inset
+
+),
+ higher effort increases the probability that milk meets the MCC’s standard and is accepted,
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\pi_{i}\left(e_{i};q_{min}\right)$
+\end_inset
+
+.
+ If rejected milk receives a strictly lower payoff than accepted milk (for example zero or a low salvage value),
+ this acceptance channel generates its own incentive to exert effort.
+\end_layout
+
+\begin_layout Standard
+The first-order condition,
+ which implicitly defines optimal effort is
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+This leads to an interior solution,
+ for the extreme cases of no rejection,
+ optimal effort is 
+\begin_inset Formula $e^{*}_{i}=\frac{\lambda_{i}\alpha\theta_{i}y_{i}}{k_{i}}$
+\end_inset
+
+,
+ when everything is rejected,
+ optimal effort is zero.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{equation}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+frac{
+\backslash
+mathrm{d}}{
+\backslash
+mathrm{d} e_i} 
+\backslash
+mathbb{E}[r_i(e_i)] = k_i e_i,
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where the left-hand side collects both intensive and extensive margin effects:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{equation}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+frac{
+\backslash
+mathrm{d}}{
+\backslash
+mathrm{d} e_i} 
+\backslash
+mathbb{E}[r_i(e_i)]
+\end_layout
+
+\begin_layout Plain Layout
+= 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+underbrace{
+\backslash
+pi_i(e_i;
+ q_{min}) 
+\backslash
+lambda_i 
+\backslash
+alpha 
+\backslash
+theta_i y_i}_{
+\backslash
+text{intensive margin}}
+\end_layout
+
+\begin_layout Plain Layout
++ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+underbrace{
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+frac{
+\backslash
+partial 
+\backslash
+pi_i(e_i;
+ q_{min})}{
+\backslash
+partial e_i}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+left[ p_0 y_i + 
+\backslash
+lambda_i 
+\backslash
+alpha 
+\backslash
+theta_i e_i y_i 
+\backslash
+right]
+\end_layout
+
+\begin_layout Plain Layout
+}_{
+\backslash
+text{extensive margin}}.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{equation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The model therefore implies that stronger quality-based incentives at the MCC level (higher 
+\begin_inset Formula $\alpha$
+\end_inset
+
+),
+ higher pass-through 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+,
+ more effective technology 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+,
+ and lower effort cost 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+,
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ all increase optimal effort 
+\begin_inset Formula $e^{*}_{i}$
+\end_inset
+
+,
+ realized quality 
+\begin_inset Formula $q^{*}_{i}=\theta_{i}e^{*}_{i}$
+\end_inset
+
+,
+ and the likelihood of supplying accepted milk.
+\end_layout
+
+\begin_layout Subsection
+MCC Pricing,
+ Screening,
+ and Outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:MCC-pricing.-screening."
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The MCC observes a (possibly noisy) measure of individual quality and decides whether to accept each farmer’s delivery.
+ Aggregate quality at the MCC is then a weighted average of the quality of all accepted milk:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\bar{q}_{m}=\frac{\sum_{i}a_{i}y_{i}q_{i}}{\sum_{i}a_{i}y_{i}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The MCC chooses a quality standard (acceptance rule) that trades off higher average quality against the loss of volume from rejected milk.
+ A higher weight on quality in the downstream price schedule,
+ 
+\begin_inset Formula $\alpha$
+\end_inset
+
+,
+ makes it optimal for the MCC to tighten this standard,
+ rejecting more low-quality milk and thereby directly increasing 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+,
+ even holding farmer effort fixed.
+\end_layout
+
+\begin_layout Standard
+The MCCs aggregate milk and sell to the processor.
+ Its per-unit margin per farmer is:
+ 
+\begin_inset Formula 
+\begin{equation}
+\underbrace{\bar{p}+\alpha\bar{q}_{m}}_{\text{revenue from processor}}-\underbrace{\big(p_{0}+\lambda_{i}\alpha q_{i}\big)}_{\text{payment to farmer}}
+\end{equation}
+
+\end_inset
+
+Averaging over farmers,
+ the expected margin per liter becomes:
+ 
+\begin_inset Formula 
+\begin{equation}
+\text{\ensuremath{\mu}}_{m}=\bar{p}-p_{0}+\alpha(1-\bar{\lambda}_{m})\,\bar{q}_{m}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\bar{\lambda}_{m}$
+\end_inset
+
+ is the (volume-weighted) mean of the individual pass-through rates applied to accepted milk..
+\end_layout
+
+\begin_layout Standard
+An increase in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ raises 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ both directly (through stricter acceptance),
+ and,
+ at least if 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\lambda_{i}>0$
+\end_inset
+
+,
+ through increased effort 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+of the farmer.
+ 
+\end_layout
+
+\begin_layout Subsection
+Model predictions
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Model-predictions"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Stronger Quality-based Incentives at the Aggregation Stage
+\end_layout
+
+\begin_layout Standard
+A higher 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ increases the value of quality for the MCC.
+ As a result,
+ MCCs may tightens acceptance standard,
+ rejecting more low-quality milk and thereby increasing average quality 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ among accepted deliveries.
+ Second,
+ when pass-through is positive 
+\begin_inset Formula $\left(\lambda_{i}>0\right)$
+\end_inset
+
+,
+ higher 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ also raises farmer effort and individual quality 
+\begin_inset Formula $q^{*}_{i}$
+\end_inset
+
+,
+ further increasing 
+\begin_inset Formula $\bar{q}_{m}$
+\end_inset
+
+ and any intermediary outcome that is increasing in realized quality or quality-linked revenue
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\bar{q_{m}}}{\partial\alpha}>0\label{eq:comp_stat_trans-1}
+\end{equation}
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Farmer Responses to Stronger Downstream Incentives
+\end_layout
+
+\begin_layout Standard
+With 
+\begin_inset Formula $\lambda_{i}>0$
+\end_inset
+
+,
+ an increase in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ raises farmers’ optimal effort 
+\begin_inset Formula $e^{*}_{i}$
+\end_inset
+
+ and quality 
+\begin_inset Formula $q^{*}_{i}$
+\end_inset
+
+,
+ and also raises the quality-linked component of the price received.
+ 
+\begin_inset Formula 
+\begin{equation}
+\lambda_{i}>0\Rightarrow\frac{\partial e^{*}_{i}}{\partial\alpha}>0\:and\:\frac{\partial q^{*}_{i}}{\partial\alpha}>0\label{eq:comp_stat_trans-1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Efficiency and Cost-effectiveness of Producing Quality
+\end_layout
+
+\begin_layout Standard
+An increase in the ability to translate effort into quality 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(\theta_{i}\uparrow\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ or a reduction in the marginal cost of effort 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(k_{i}\downarrow\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ both increase optimal effort,
+ realized quality,
+ and quality-linked revenues.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial e^{*}_{i}}{\partial\theta_{i}}>0\:and\:\frac{\partial e^{*}_{i}}{\partial k_{i}}<0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interaction
+\end_layout
+
+\begin_layout Standard
+Because 
+\begin_inset Formula $e^{*}_{i}$
+\end_inset
+
+ is multiplicative in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\theta_{i}/k_{i}$
+\end_inset
+
+,
+ the cross-partial derivative is positive:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial^{2}e^{*}_{i}}{\partial\alpha\,\partial\left(\theta_{i}/k_{i}\right)}>0\label{eq:cross1-1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hence,
+ stronger incentives 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\left(\alpha\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ have larger effects on effort when
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ the cost-effectivenss of producing quality 
+\begin_inset Formula $\left(\theta_{i}/k_{i}\right)$
+\end_inset
+
+ is higher ,
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ and vice-versa.
+\end_layout
+
+\begin_layout Subsubsection
+Intermedation
+\end_layout
+
+\begin_layout Standard
+When suppliers differ in the extent to which intermediary incentives are transmitted to them,
+ those with direct linkages 
+\begin_inset Formula $\left(\lambda_{C}>\lambda_{T}\right)$
+\end_inset
+
+ respond more strongly to changes in 
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\Delta e^{*}_{i}(\alpha|\lambda_{C})>\Delta e^{*}_{i}(\alpha|\lambda_{T})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+The model actually generates some more predictions that we could test
+\end_layout
+
+\begin_layout Itemize
+Effects scale with baseline volume 
+\begin_inset Formula $y_{i}$
+\end_inset
+
+ - test hetereogenity by baseline farmer volumes;
+ bigger treatment gains for higher-volume farmers would be consistent with the model’s prediction
+\end_layout
+
+\begin_layout Itemize
+Effects are stronger for farmers with lower baseline 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ (eg located closer to mcc,
+ lots of labour,
+ already good equipment,
+ no cash constraints) or higher baseline 
+\begin_inset Formula $\theta_{i}$
+\end_inset
+
+ (eg did we test knowledge at baseline?) - again look at heterogeneity
+\end_layout
+
+\begin_layout Itemize
+If posters and free testing increase 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+,
+ treated MCCs should exhibit higher pass-through proxies:
+ more price differentiation by measured quality,
+ fewer disputes,
+ and more frequent test usage.
+ (dif in dif)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Experiment 2:
  Activating the Price Channel
