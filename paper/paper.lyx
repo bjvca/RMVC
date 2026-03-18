@@ -4298,185 +4298,10 @@ name "sec:model"
 
 \end_inset
 
-This section presents a simple model to rationalize the findings from Experiment 1.
- The model shows how a quality measurement and digital monitoring system can improve quality through two distinct (enforcement and price differentiation) and how the relative importance of these channels depends on a single parameter.
-\end_layout
-
-\begin_layout Standard
-[Placeholder for model setup.
- Consider an MCC that procures milk from farmers.
- The MCC has access to a quality measurement and digital monitoring system that reveals milk quality (fat content,
- adulteration) and tracks quality records across deliveries and over time.
- The parameter alpha in [0,1] governs how the MCC uses this information:]
-\end_layout
-
-\begin_layout Standard
-[When alpha = 0,
- the MCC uses the measurement and monitoring system purely for enforcement:
- milk below a minimum quality threshold is rejected,
- but all accepted milk receives the same price.
- The digital records enable systematic detection of repeat offenders.
- This is an enforcement-only equilibrium.]
-\end_layout
-
-\begin_layout Standard
-[When alpha > 0,
- the MCC uses the measurement and monitoring system for price differentiation:
- higher-quality milk receives a higher price,
- with digital records providing the basis for quality-based payment schedules.
- The strength of the price channel is increasing in alpha.]
-\end_layout
-
-\begin_layout Standard
-[Placeholder for model predictions.
- The model nests two channels:
-\end_layout
-
-\begin_layout Standard
-1.
- Enforcement channel (alpha = 0):
- The quality measurement and monitoring system reduces adulteration by raising the probability of detection and rejection,
- with digital records enabling systematic tracking of quality patterns.
- Quality improves but prices do not differentiate.
-\end_layout
-
-\begin_layout Standard
-2.
- Price channel (alpha > 0):
- The system enables quality-differentiated pricing,
- with digital quality records providing the basis for continuous incentives for quality improvement beyond the minimum threshold.]
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-begin{table}[h]
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-caption{Model Predictions}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{tab:model-predictions}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lcc}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-Outcome & Enforcement ($
-\backslash
-alpha = 0$) & Price channel ($
-\backslash
-alpha > 0$)
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-Adulteration & Decreases & Decreases
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-Quality investment & No change & Increases
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-Average price & No change & Increases for high quality
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-Price dispersion & No change & Increases
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-Rejection rate & Increases & Increases
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-[Placeholder for discussion of how Experiment 1 results are consistent with alpha = 0:
- quality improves through (enabled by both real-time measurement and systematic digital tracking) but prices do not differentiate.
- This motivates Experiment 2,
- which exogenously sets alpha > 0 through quality bonuses.]
-\end_layout
-
-\begin_layout Standard
-This section lays out a simple analytical framework that guides our interpretation of the mechanisms and generates testable predictions.
+This section presents a simple analytical framework to interpret the findings from both experiments.
+ The model formalizes two channels through which quality infrastructure can affect outcomes: an enforcement channel, in which improved measurement precision makes rejection thresholds credibly binding, and a price channel, in which quality measurement enables quality-differentiated pricing.
+ The Experiment 1 results are consistent with the enforcement channel operating in isolation: quality improves but prices do not differentiate.
+ Experiment 2 then tests the price channel directly by exogenously activating quality-based premiums.
 \end_layout
 
 \begin_layout Subsection
@@ -4523,6 +4348,67 @@ After observing delivered quantities and a (possibly noisy) signal of quality fo
  Accepted milk is aggregated and sold to the processor,
  who pays a premium for verifiable compositional quality.
  The downstream price received by the MCC therefore depends on average quality of accepted milk.
+\end_layout
+
+\begin_layout Standard
+A critical feature of the model is how the MCC observes quality.
+ Without measurement technology, the MCC observes a noisy signal of farmer
+\emph on
+i
+\emph default
+'s quality:
+\begin_inset Formula
+\begin{equation}
+s_{i}=q_{i}+\eta_{i}
+\end{equation}
+
+\end_inset
+
+where
+\begin_inset Formula $\eta_{i}\sim N(0,\sigma^{2})$
+\end_inset
+
+ is measurement noise independent of the quality shock
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+.
+ With only basic tools (lactometer, alcohol test),
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is large: the MCC can detect gross adulteration but cannot precisely assess compositional quality.
+ The introduction of a milk analyzer reduces
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ toward zero, enabling precise measurement of butterfat, SNF, protein, and added water.
+\end_layout
+
+\begin_layout Standard
+The acceptance decision is based on the observed signal:
+\begin_inset Formula
+\begin{equation}
+a_{i}=\mathbf{1}\left\{ s_{i}\geq q_{min}\right\}
+\end{equation}
+
+\end_inset
+
+rather than true quality
+\begin_inset Formula $q_{i}$
+\end_inset
+
+.
+ This distinction is central: when
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is high, the acceptance threshold is only weakly enforced because the MCC cannot reliably distinguish high-quality from low-quality milk.
+ Reducing
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ makes the threshold credibly binding.
 \end_layout
 
 \begin_layout Standard
@@ -4747,24 +4633,24 @@ Farmer Optimization
 
 \begin_layout Standard
 The MCC may reject milk that does not meet a minimum quality standard.
- Let 
+ Let
 \begin_inset Formula $a_{i}\in\left\{ 0,1\right\} $
 \end_inset
 
  be an acceptance indicator,
- where 
+ where
 \begin_inset Formula $a_{i}=1$
 \end_inset
 
- if farmer 
+ if farmer
 \emph on
 i
 \emph default
-'s milk meets a minimum quality threshold 
+'s observed signal meets a minimum quality threshold
 \begin_inset Formula $q_{min}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $a_{i}=0$
 \end_inset
 
@@ -4772,9 +4658,9 @@ i
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-a_{i}=1\left\{ q_{i}\geq q_{min}\right\} 
+a_{i}=\mathbf{1}\left\{ s_{i}\geq q_{min}\right\}
 \end{equation}
 
 \end_inset
@@ -4802,51 +4688,58 @@ r_{i}\left(e_{i}\right)=a_{i}p_{i}\left(q_{i}\right)y_{i}
 \end_layout
 
 \begin_layout Standard
-Because observed quality includes noise (Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:quality"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
+Because both quality and its observation include noise, acceptance is uncertain from the farmer’s perspective.
+ Since
+\begin_inset Formula $s_{i}=q_{i}+\eta_{i}=\theta_{i}e_{i}+\varepsilon_{i}+\eta_{i}$
 \end_inset
 
-),
- acceptance is uncertain from the farmer’s perspective.
- Let
+, and
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+ and
+\begin_inset Formula $\eta_{i}$
+\end_inset
+
+ are independent, the acceptance probability can be written as:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-\pi_{i}\left(e_{i};\bar{q}\right)=Pr\left(a_{i}=1|e_{i}\right)
+\pi_{i}\left(e_{i};q_{min},\sigma^{2}\right)=\Pr\left(s_{i}\geq q_{min}|e_{i}\right)=1-\Phi\left(\frac{q_{min}-\theta_{i}e_{i}}{\sqrt{\sigma_{\varepsilon}^{2}+\sigma^{2}}}\right)
 \end{equation}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-denote the acceptance probability for farmer 
-\emph on
-i
-\emph default
-.
- Since higher effort raises quality 
-\begin_inset Formula $q_{i}=\theta_{i}e_{i}$
+where
+\begin_inset Formula $\Phi$
 \end_inset
 
-,
- the acceptance probability is increasing in effort:
+ is the standard normal CDF and
+\begin_inset Formula $\sigma_{\varepsilon}^{2}$
+\end_inset
+
+ is the variance of
+\begin_inset Formula $\varepsilon_{i}$
+\end_inset
+
+.
+ This makes explicit that reducing
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ (better measurement) tightens the acceptance probability around the threshold.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+The acceptance probability is increasing in effort:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
 \begin{equation}
-\frac{\partial\pi_{i}\left(e_{i};q_{min}\right)}{\partial e_{i}}>0
+\frac{\partial\pi_{i}\left(e_{i};q_{min},\sigma^{2}\right)}{\partial e_{i}}>0
 \end{equation}
 
 \end_inset
@@ -4865,7 +4758,7 @@ i
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-E\left[r_{i}\left(e_{i}\right)\right]=\pi_{i}\left(e_{i};q_{min}\right)\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]
+E\left[r_{i}\left(e_{i}\right)\right]=\pi_{i}\left(e_{i};q_{min},\sigma^{2}\right)\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]
 \end{equation}
 
 \end_inset
@@ -4965,7 +4858,7 @@ Extensive margin (acceptance effect):
 \noun off
 \color none
 
-\begin_inset Formula $\pi_{i}\left(e_{i};q_{min}\right)$
+\begin_inset Formula $\pi_{i}\left(e_{i};q_{min},\sigma^{2}\right)$
 \end_inset
 
 .
@@ -5065,11 +4958,13 @@ mathbb{E}[r_i(e_i)]
 underbrace{
 \backslash
 pi_i(e_i;
- q_{min}) 
+ q_{min},
 \backslash
-lambda_i 
+sigma^2)
 \backslash
-alpha 
+lambda_i
+\backslash
+alpha
 \backslash
 theta_i y_i}_{
 \backslash
@@ -5077,7 +4972,7 @@ text{intensive margin}}
 \end_layout
 
 \begin_layout Plain Layout
-+ 
++
 \end_layout
 
 \begin_layout Plain Layout
@@ -5091,10 +4986,12 @@ underbrace{
 \backslash
 frac{
 \backslash
-partial 
+partial
 \backslash
 pi_i(e_i;
- q_{min})}{
+ q_{min},
+\backslash
+sigma^2)}{
 \backslash
 partial e_i}
 \end_layout
@@ -5291,7 +5188,7 @@ where
 \begin_inset Formula $\bar{\lambda}_{m}$
 \end_inset
 
- is the (volume-weighted) mean of the individual pass-through rates applied to accepted milk..
+ is the (volume-weighted) mean of the individual pass-through rates applied to accepted milk.
 \end_layout
 
 \begin_layout Standard
@@ -5354,6 +5251,87 @@ name "subsec:Model-predictions"
 \end_layout
 
 \begin_layout Subsubsection
+Effect of Improved Measurement Precision
+\end_layout
+
+\begin_layout Standard
+The central comparative static for Experiment 1 concerns the effect of reducing measurement noise
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+.
+ Consider the acceptance probability:
+\begin_inset Formula
+\begin{equation}
+\pi_{i}\left(e_{i};q_{min},\sigma^{2}\right)=1-\Phi\left(\frac{q_{min}-\theta_{i}e_{i}}{\sqrt{\sigma_{\varepsilon}^{2}+\sigma^{2}}}\right)
+\end{equation}
+
+\end_inset
+
+Reducing
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ (improving measurement precision) has two effects.
+ First, for farmers whose expected quality
+\begin_inset Formula $\theta_{i}e_{i}$
+\end_inset
+
+ is close to but above the threshold
+\begin_inset Formula $q_{min}$
+\end_inset
+
+, acceptance becomes more certain, reducing the risk of false rejection.
+ Second, and more importantly, for farmers whose expected quality is near or below the threshold, the probability of rejection increases sharply.
+ The threat of rejection, previously weakened by the noise in the MCC's observation, becomes credible.
+\end_layout
+
+\begin_layout Standard
+This tightening of the acceptance probability distribution around the threshold generates an incentive for farmers near the margin to increase effort:
+\begin_inset Formula
+\begin{equation}
+\frac{\partial e_{i}^{*}}{\partial\sigma^{2}}<0\quad\text{when }\theta_{i}e_{i}\text{ is near }q_{min}
+\end{equation}
+
+\end_inset
+
+That is, better measurement (lower
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+) induces higher effort from farmers who are close to the acceptance threshold.
+ Crucially, this mechanism operates entirely through the extensive margin (acceptance probability) and does not require any price differentiation (
+\begin_inset Formula $\alpha$
+\end_inset
+
+ can be zero).
+ The model therefore predicts that measurement technology can improve quality purely through more credible enforcement, without any change in the price schedule.
+\end_layout
+
+\begin_layout Standard
+This is the enforcement channel.
+ Its key empirical signatures are: (i) quality improves, particularly through reduced adulteration (the quality dimension most directly affected by effort near the threshold); (ii) prices do not change (because
+\begin_inset Formula $\alpha=0$
+\end_inset
+
+); (iii) the quality improvement is concentrated at the lower tail of the distribution (farmers near
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ adjust, while those already well above the threshold do not).
+\end_layout
+
+\begin_layout Standard
+The enforcement channel explains the Experiment 1 results: quality improves through more credible rejection threats, but prices do not differentiate.
+ The model, however, also generates predictions about what would happen if quality-based pricing were activated, i.e., if
+\begin_inset Formula $\alpha$
+\end_inset
+
+ were exogenously increased from zero.
+ This motivates Experiment 2, which directly tests these predictions by providing quality premiums to traders.
+\end_layout
+
+\begin_layout Subsubsection
 Stronger Quality-based Incentives at the Aggregation Stage
 \end_layout
 
@@ -5364,7 +5342,7 @@ A higher
 
  increases the value of quality for the MCC.
  As a result,
- MCCs may tightens acceptance standard,
+ MCCs may tighten acceptance standard,
  rejecting more low-quality milk and thereby increasing average quality 
 \begin_inset Formula $\bar{q}_{m}$
 \end_inset
@@ -5603,7 +5581,7 @@ Hence,
 \uwave off
 \noun off
 \color none
- the cost-effectivenss of producing quality 
+ the cost-effectiveness of producing quality 
 \begin_inset Formula $\left(\theta_{i}/k_{i}\right)$
 \end_inset
 
@@ -5626,7 +5604,7 @@ Hence,
 \end_layout
 
 \begin_layout Subsubsection
-Intermedation
+Intermediation
 \end_layout
 
 \begin_layout Standard
