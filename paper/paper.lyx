@@ -2916,9 +2916,11 @@ Meeting sample size targets within the available budget proved challenging at ba
 
 \begin_layout Standard
 By endline,
- 4 of the 124 baseline MCCs had attrited: 2 could not be re-contacted and 2 refused to cooperate,
+ 4 of the 124 baseline MCCs had attrited:
+ 2 could not be re-contacted and 2 refused to cooperate,
  leaving us with data for 120 MCCs.
- Of the 4 attrited MCCs, one was originally assigned to the control group and 3 to the treatment group.
+ Of the 4 attrited MCCs,
+ one was originally assigned to the control group and 3 to the treatment group.
  A chi-square test confirms that attrition was unrelated to the treatment.
  We further managed to contact 2,139 farmers,
  of whom 6 refused to be interviewed,
@@ -2939,12 +2941,14 @@ We also documented several compliance challenges.
  we observed that 14 of the 59 control MCCs had a milk analyzer on site,
  and 14 of the 61 treatment MCCs did not have a machine readily available.
  Among the 14 analyzers found in control MCCs,
- five were devices originally provided through the project, likely reflecting transfers between nearby MCCs.
+ five were devices originally provided through the project,
+ likely reflecting transfers between nearby MCCs.
  In the treatment group,
  we identified 47 analyzers across MCCs,
  but only 37 were operational or could be used for immediate testing at the time of the visit;
  the remaining units were non-functional or lacked an available operator.
- Given this imperfect compliance in both directions, we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
+ Given this imperfect compliance in both directions,
+ we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
 \end_layout
 
 \begin_layout Section
@@ -4466,134 +4470,18 @@ nolink "false"
  the data indicate that the analyzer intervention did not lead to measurable improvements at the MCC level.
 \end_layout
 
-\begin_layout Subsection
-Secondary Outcomes
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:secondary-outcomes"
-
-\end_inset
-
-[Placeholder discussing secondary outcome families:
- quantity supplied,
- uptake of improved practices,
- milk sold and revenues,
- and switching behavior between buyers.
- Results drawn from res_farmers_sec_quant,
- res_farmers_sec_uptake,
- res_farmers_sec_sold,
- and res_farmers_sec_switching.]
-\end_layout
-
-\begin_layout Subsection
-LATE
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:late"
-
-\end_inset
-
-[Placeholder discussing Local Average Treatment Effect estimates.
- The LATE specification instruments actual use of the measurement and monitoring system (treat_TOT) with random assignment (treat) using two-stage least squares via the ivreg package.
- Present results from res_farmers_TOT and discuss the first-stage F-statistic and compliance rates.]
-\end_layout
-
-\begin_layout Subsection
-Heterogeneity
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:heterogeneity"
-
-\end_inset
-
-[Placeholder discussing heterogeneous treatment effects.
- Key heterogeneity dimensions:
- cooperative status of the MCC and baseline quality practices.]
-\end_layout
-
-\begin_layout Subsection
-Summary
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:exp1-summary"
-
-\end_inset
-
-[Placeholder summarizing Experiment 1 findings.
- The key takeaway:
- the quality measurement and digital monitoring system improves quality through an enforcement channel (MCCs can now detect and reject adulterated milk,
- and digital records make quality traceable over time) but does not generate quality-differentiated pricing.
- This motivates the theoretical model in Section 5 and the follow-up experiment in Section 6.]
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename ../PAP/results/forest_primary.png
-	lyxscale 50
-	width 90text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Forest Plot:
- Primary Outcomes (Experiment 1)
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:forest-primary"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 A Model of Quality Infrastructure and Quality Incentives
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:model"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 This section presents a simple analytical framework to interpret the findings from both experiments.
  The model formalizes two channels through which quality infrastructure can affect outcomes:
  an enforcement channel,
