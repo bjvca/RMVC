@@ -1893,252 +1893,65 @@ name "sec:Estimation-and-inference"
 \end_layout
 
 \begin_layout Standard
-To assess impact of the treatments,
- we estimate various specifications using Ordinary Least Squares.
- A first specification uses data at the MCC level.
- Denote milk collection centers by 
-\emph on
-m
-\emph default
-,
- running from 1 to 
-\emph on
-M
-\emph default
-.
- 
-\begin_inset Formula $T1_{m}$
+We estimate intent-to-treat (ITT) effects using ordinary least squares with ANCOVA specifications that control for baseline values of the outcome where available.
+ At the MCC level, denote milk collection centers by
+\begin_inset Formula $m$
 \end_inset
 
- is a treatment indicator at the MCC level that is one if the MCC was allocated to T1.
- 
+ and let
+\begin_inset Formula $T_{m}$
+\end_inset
+
+ be a treatment indicator equal to one if MCC
+\begin_inset Formula $m$
+\end_inset
+
+ was assigned to receive the quality measurement and monitoring system.
+ The MCC-level estimating equation is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
+\begin{equation}
+y_{m}=\alpha+\beta T_{m}+\gamma y^{b}_{m}+\varepsilon_{m}\label{eq:mcc}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where
 \begin_inset Formula $y_{m}$
 \end_inset
 
- is the outcome of interest at the level of the milk collection center we want to estimate the treatment effect for and 
-\begin_inset Formula $\varepsilon_{m}$
+ is the outcome of interest,
+\begin_inset Formula $y^{b}_{m}$
 \end_inset
 
- is an error term.
- In all equations we also control for baseline outcome if information was collected at that time 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $\left(y^{b}_{m}\right)$
+ is its baseline value, and
+\begin_inset Formula $\beta$
 \end_inset
 
-:
+ is the parameter of interest.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{m}=\alpha+\beta_{H1}.T1_{m}+\beta_{b}.y^{b}_{m}+\varepsilon_{m}\label{eq:one}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The parameter of interest in this equation is 
-\begin_inset Formula $\beta_{H1}$
-\end_inset
-
-,
- which tests Hypothesis 1 in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-All other equations use farmer level data.
- We start by estimating the main treatment effect for T1 on farmers that are associated to that MCC.
- One way to do this is to estimate a fully interacted model such as:
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y_{i,m}=\alpha+\beta^{*}_{H2}.T1_{i,m}+\beta^{*}_{H3}.T2_{i,m}+\beta^{*}_{H4}.T1_{i,m}.T2_{i,m}+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:one-1}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Here,
- 
-\begin_inset Formula $T2_{i}$
-\end_inset
-
- is a treatment indicator at the farmer level that is one
-\emph on
- 
-\emph default
-if the farmer was allocated to T2,
- with 
-\emph on
-i
-\emph default
- indicating the farmer running from 1 to 
-\emph on
-I
-\emph default
-,
- 
+At the farmer level, let
 \begin_inset Formula $y_{i,m}$
 \end_inset
 
- is the outcome of interest at the level of the individual farmer living in the catchment area of milk collection center 
-\emph on
-m
-\emph default
- and 
-\begin_inset Formula $\varepsilon_{i,m}$
+ denote the outcome for farmer
+\begin_inset Formula $i$
 \end_inset
 
- is an error term (which may be correlated within catchment area).
- As above,
- 
-\begin_inset Formula $T1_{i,m}$
-\end_inset
-
- is a treatment indicator that is one if the MCC (in who's catchment area farmer 
-\emph on
-i
-\emph default
- resides) was allocated to T1,
- and zero otherwise.
- We also control for the lagged baseline outcome 
-\begin_inset Formula $y^{b}_{i,m}$
+ in the catchment area of MCC
+\begin_inset Formula $m$
 \end_inset
 
 .
- The parameter of interest in this equation is 
-\begin_inset Formula $\beta^{*}_{H2}$
-\end_inset
-
-,
- which tests the impact of T1 om farmers,
- corresponding to Hypothesis 2 in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- can also be used to test 2 other hypotheses.
- First,
- 
-\begin_inset Formula $\beta^{*}_{H3}$
-\end_inset
-
-,
- provides and estimate of the farmer level impact of T2,
- which tests Hypothesis 3 from Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
- Second,
- in a fully saturated model such as the one in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- 
-\begin_inset Formula $\beta^{*}_{H4}$
-\end_inset
-
- also allows us to tests for the interaction effect,
- corresponding to Hypothesis 4 in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Experiment"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-While our power calculations relied on models that include the full set of interactions,
- an important feature of split-plot (factorial) designs is that statistical power to estimate the effect of one treatment can be increased by pooling observations across the orthogonal treatment 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "list2011so"
-literal "false"
-
-\end_inset
-
-.
- In our case,
- this means that the effect of the farmer-level intervention can be estimated by pooling across MCC-level treatment arms,
- and conversely the effect of the MCC-level intervention can be estimated by pooling across farmer-level treatment arms.
- At the same time,
- 
+ Since the experiment also cross-randomized a farmer-level information treatment, we estimate the pooled effect of the measurement system by adjusting for the orthogonal treatment following
 \begin_inset CommandInset citation
 LatexCommand citet
 key "muralidharan2019factorial"
@@ -2146,100 +1959,13 @@ literal "false"
 
 \end_inset
 
- cautions against indiscriminate pooling of treatment cells when the underlying interventions may exhibit interaction effects.
- The authors note that,
- in the presence of even modest complementarities or antagonisms between treatment components,
- pooling can lead to biased or misleading estimates of marginal treatment effects.
- Consequently,
- they argue that a more rigorous and defensible approach is to estimate fully interacted specifications,
- which allow each treatment combination to have its own effect and thereby avoid imposing potentially unwarranted additivity assumptions.
- One way to recover an unbiased estimate of the pooled main treatment effect is to consider the orthogonal treatment as a co-variate and adjust for it,
- entering it in the regression demeaned and fully interacted as in equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-It is important to note that the estimand of the respective treatments in Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- changes.
- For instance,
- while the estimand for the MCC-level treatment (T1) in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- is the effect of the treatment in and of itself,
- the estimand in Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- is a weighted average of the pure effect of the MCC-level treatment (T1) and the effect of the T1 in the presence of T2.
-\end_layout
-
-\end_inset
-
-
+:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
-y_{i,m}=\alpha+\beta_{H2}T1_{i,m}+\beta^{T1}_{H3}\left(T2_{i,m}-\bar{T2}\right)+\beta^{T1}_{H4}T1_{i,m}\left(T2_{i,m}-\bar{T2}\right)+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:pooled-1}
+y_{i,m}=\alpha+\beta T_{i,m}+\delta\left(V_{i,m}-\bar{V}\right)+\phi T_{i,m}\left(V_{i,m}-\bar{V}\right)+\gamma y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:farmer}
 \end{equation}
 
 \end_inset
@@ -2248,9 +1974,34 @@ y_{i,m}=\alpha+\beta_{H2}T1_{i,m}+\beta^{T1}_{H3}\left(T2_{i,m}-\bar{T2}\right)+
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+where
+\begin_inset Formula $T_{i,m}$
+\end_inset
+
+ indicates whether farmer
+\begin_inset Formula $i$
+\end_inset
+
+'s MCC was assigned to treatment,
+\begin_inset Formula $V_{i,m}$
+\end_inset
+
+ indicates assignment to the information treatment (demeaned to ensure orthogonality), and
+\begin_inset Formula $\beta$
+\end_inset
+
+ recovers the pooled effect of the measurement system averaging across information treatment arms.
+ Full factorial results are reported in the Online Appendix.
+\end_layout
+
+\begin_layout Standard
+For supervised milk samples collected at endline, we estimate treatment effects using quantity-weighted least squares:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula
 \begin{equation}
-y_{i,m}=\alpha+\beta_{H3}T2_{i,m}+\beta^{T2}_{H2}\left(T1_{i,m}-\bar{T1}\right)+\beta^{T2}_{H4}T2_{i,m}\left(T1_{i,m}-\bar{T1}\right)+\beta_{b}.y^{b}_{i,m}+\varepsilon_{i,m}\label{eq:pooled-1-1}
+q_{j,m}=\alpha+\beta T_{m}+\varepsilon_{j,m}\label{eq:samples}
 \end{equation}
 
 \end_inset
@@ -2259,22 +2010,36 @@ y_{i,m}=\alpha+\beta_{H3}T2_{i,m}+\beta^{T2}_{H2}\left(T1_{i,m}-\bar{T1}\right)+
 \end_layout
 
 \begin_layout Standard
-In all farmer level regressions,
- we apply a cluster-robust variance estimator with the bias-reduced linearization (CR2) small-sample correction 
+where
+\begin_inset Formula $q_{j,m}$
+\end_inset
+
+ is the quality measure for milk delivery
+\begin_inset Formula $j$
+\end_inset
+
+ at MCC
+\begin_inset Formula $m$
+\end_inset
+
+, weighted by the quantity delivered.
+ No baseline control is available for these outcomes as supervised quality testing was conducted only at endline.
+\end_layout
+
+\begin_layout Standard
+In all farmer-level regressions, we apply the bias-reduced linearization (CR2) cluster-robust variance estimator
 \begin_inset CommandInset citation
 LatexCommand citep
-key "10.1162/REST_a_00552"
+key "imbens2016robust"
 literal "false"
 
 \end_inset
 
-,
- with standard errors clustered at the level of randomization (MCC catchment area level).
- To account for multiple comparisons,
- we will combine primary outcomes into an index following
+, with standard errors clustered at the MCC catchment area level.
+ To summarize effects across multiple outcomes within a family, we construct Anderson indices
 \begin_inset CommandInset citation
-LatexCommand citet
-key "doi:10.1198/016214508000000841"
+LatexCommand citep
+key "anderson2008multiple"
 literal "false"
 
 \end_inset
@@ -2283,18 +2048,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In addition to the CR2-based inference described above,
- we also report Fisher randomization inference (RI) p-values as our primary inferential framework,
- computed from 5,000 permutations that respect the experimental design:
- the measurement and monitoring system treatment is permuted at the MCC level (maintaining the number of treated MCCs),
- and the video treatment is permuted within each MCC (maintaining counts).
- For multiple testing,
- we report an omnibus count test following the EGAP approach:
- under the sharp null of no treatment effect,
- we compute the probability of observing as many individually significant outcomes as in the actual data.
- CR2 cluster-robust p-values,
- Anderson-Sharp q-values,
- and further robustness checks are reported in the appendix.
+Our primary inferential framework is Fisher randomization inference (RI), computed from 5,000 permutations that respect the experimental design: the measurement system treatment is permuted at the MCC level, maintaining the number of treated MCCs.
+ For multiple testing, we report an omnibus count test following the EGAP approach: under the sharp null of no treatment effect on any outcome in a family, we compute the probability of observing as many individually significant results as in the actual data.
+ CR2 cluster-robust p-values and Anderson-Sharp q-values are reported in the appendix.
 \end_layout
 
 \begin_layout Subsection
