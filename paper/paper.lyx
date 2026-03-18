@@ -1679,11 +1679,8 @@ Processors set fairly stable procurement prices and MCCs adjust tightly around t
 
 \end_inset
 
- We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size),
- translate into a 40 UGX/liter increase for farmers (small to medium effect),
- and that the individual-level information treatment would generate a 25 UGX/liter increase (small effect),
- with a large interaction effect of 50 UGX/liter.
- Power was calculated for the joint test of all hypotheses being true at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100–130 MCCs) and farmers per cluster (10–40).
+ We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size) and translate into a 40 UGX/liter increase for farmers (small to medium effect).
+ Power was calculated at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100 to 130 MCCs) and farmers per cluster (10 to 40).
  Results showed that with about 125 MCCs and 20 farmers per MCC (total sample of about 2,500 farmers),
  power was just above 0.80 for a joint significance test,
  while power for individual hypotheses was substantially higher,
@@ -1700,8 +1697,8 @@ The field experiment was conducted in four districts of Southwestern Uganda:
  and Kirihura.
  The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
  from which we sampled 130 MCCs.
- Half of these were randomly selected to receive T1,
- while the other half served as the control.
+ Half of these were randomly assigned to receive the quality measurement and digital monitoring system,
+ while the other half served as controls.
 \begin_inset Foot
 status collapsed
 
@@ -1728,12 +1725,7 @@ Maybe we should estimate how big the difference was and see if results are sensi
 \end_inset
 
  In each of the 130 MCCs,
- we then randomly selected 20 farmers who deliver milk to the center,
- half of which were taking the milk themselves and the other half using a trader or transported to get the milk to the MCC.
- Of these 20 farmers,
- 10 were randomly assigned to the video treatment (T2),
- while the remaining 10 served as the control group,
- with again in each group half directly connected and the other half connected through an intermediary.
+ we randomly selected 20 farmers who deliver milk to the center for baseline and endline surveys.
 \end_layout
 
 \begin_layout Standard
@@ -1747,7 +1739,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/B.VanCampenhout/data/projects/OneCG/RMVC/PAP/figures/sampling.png
+	filename figures/sampling_two_panels.png
 	lyxscale 50
 	scale 35
 
@@ -1792,27 +1784,19 @@ nolink "false"
 
 \end_inset
 
- illustrates the randomization of T1 and T2 in three of the four study districts at both the MCC and farmer levels.
- The leftmost panel displays the spatial distribution of MCCs and their assigned T1 status.
- The middle panel shows the corresponding T1 assignment for farmers connected to those MCCs,
- reflecting the fact that T1 was clustered at the MCC level.
- The rightmost panel depicts the allocation of T2 among farmers linked to MCCs,
- which was randomized at the individual level.
+ illustrates the randomization in three of the four study districts.
+ The left panel displays the spatial distribution of MCCs and their treatment assignment.
+ The right panel shows the corresponding treatment assignment for farmers connected to those MCCs,
+ reflecting the cluster-randomized design in which all farmers within a treated MCC's catchment area are assigned to treatment.
 \end_layout
 
 \begin_layout Standard
 Baseline data from both MCCs and associated farmers was collected towards the end of 2022 using in-person surveys.
- At that time,
- the intervention at the farmer level (T2) was implemented.
- In the second half of 2023 milk analyzers were installed and MCC managers were trained on the use of the analyzers and the digital record-keeping system.
- Towards the end of the installation of the analyzers,
- in October 2023,
- we reinforced T2 by showing the video again to T2 farmers.
- Next,
- during the course of one year,
- together with the DDA we supported T1 MCCs with regular visits to make sure the equipment was operational,
+ In the second half of 2023, milk analyzers were installed at treatment MCCs and MCC managers were trained on the use of the analyzers and the digital record-keeping system.
+ During the course of one year,
+ together with the DDA we supported treatment MCCs with regular visits to ensure the equipment remained operational,
  including recalibration after 6 months.
- In december 2024,
+ In December 2024,
  endline data was collected.
  This involved in-person surveys at the MCC level and at the farmer level.
  In addition,
