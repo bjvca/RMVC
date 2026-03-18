@@ -17,7 +17,7 @@ knitr
 \maintain_unincluded_children no
 \language english
 \language_package default
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -2078,8 +2078,6 @@ name "subsec:baseline-balance"
 
 \end_layout
 
-\end_layout
-
 \begin_layout Standard
 We pre-registered 10 variables at each level to demonstrate balance.
  Results for five variables measured at the MCC level are in Table 
@@ -2511,7 +2509,8 @@ To calculate herd,
 \end_inset
 
  Farmers sell roughly 60 liters of milk per day during the rainy season,
- and they spend on average USD 66 per month on chemical purchases, primarily acaracides.
+ and they spend on average USD 66 per month on chemical purchases,
+ primarily acaracides.
  Further characteristics are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2842,7 +2841,8 @@ scriptsize
 Note:
  This table reports baseline balance between farmers connected to treatment MCCs and those connected to control MCCs.
  Column 1 presents control group means with standard deviations in parentheses.
- Column 2 shows the treatment-control difference with CR2 cluster-robust standard errors in parentheses, clustered at the catchment area level.
+ Column 2 shows the treatment-control difference with CR2 cluster-robust standard errors in parentheses,
+ clustered at the catchment area level.
  Column 3 gives the number of non-missing observations for each variable.
  The F-statistic and p-value correspond to a joint test of equality of all covariates.
  Significance levels:
@@ -2885,8 +2885,12 @@ nolink "false"
 \end_inset
 
 ) compare pre-treatment characteristics of farmers connected to treatment MCCs with those connected to control MCCs.
- While a few individual differences are statistically significant (farmers connected to treatment MCCs are somewhat less likely to be a member of a cooperative, more likely to be using steel cans or buckets, and have slightly higher expenditure on chemicals), the joint F-test does not reject the null of balance across all covariates.
- Overall, the evidence supports the conclusion that randomization achieved comparable treatment and control groups at the farmer level.
+ While a few individual differences are statistically significant (farmers connected to treatment MCCs are somewhat less likely to be a member of a cooperative,
+ more likely to be using steel cans or buckets,
+ and have slightly higher expenditure on chemicals),
+ the joint F-test does not reject the null of balance across all covariates.
+ Overall,
+ the evidence supports the conclusion that randomization achieved comparable treatment and control groups at the farmer level.
 \end_layout
 
 \begin_layout Subsection
@@ -2903,6 +2907,76 @@ name "subsec:attrition-compliance"
 \begin_layout Standard
 [Placeholder discussing attrition rates across treatment arms and compliance with treatment assignment.
  Report differential attrition tests and first-stage results for the LATE specification.]
+\end_layout
+
+\begin_layout Standard
+Meeting sample size targets within the available budget proved challenging at baseline,
+ largely because dairy farmers are geographically dispersed.
+ In the end,
+ we surveyed 2,261 farmers across 124 MCCs,
+ corresponding to 87 and 95 percent of our planned farmer and MCC samples,
+ and 90 and 99 percent of the required sizes from the power calculations.
+ Of these 124 MCCs,
+ 60 were randomly assigned to control condition and 64 to treatment condition T1.
+\end_layout
+
+\begin_layout Standard
+By endline,
+ we managed to re-contact 122 MCCs,
+ of which 2 MCCs refused to cooperate,
+ leaving us with data for 120 MCCs.
+ One of the 4 attrited MCCs was originally assigned to the control arm of the mcc level treatment;
+ 3 were from the treatment group.
+ A chi-square test confirms that attrition was unrelated to the treatment.
+ We further managed to contact 2,139,
+ from which 6 refused to be interviewed,
+ leading to an effective sample of 2,133.
+ Further restricting farmers to the subset of farmers connected to an MCC that we were able to interview at endline,
+ we get 2,059.
+ Also at the farmer level,
+ attrition is unrelated to the treatments and any interaction thereof.
+\end_layout
+
+\begin_layout Standard
+We also documented several compliance challenges.
+ In some cases,
+ analyzers were moved to control MCCs,
+ and in others,
+ treatment MCCs did not use or retain the machines.
+ At endline,
+ we observed that 14 of the 59 control MCCs had a milk analyzer on site,
+ and 14 of the 61 treatment MCCs did not have a machine readily available.
+ Among the 14 analyzers found in control MCCs,
+ five were devices originally provided through the project.
+ In the treatment group,
+ we identified 47 analyzers across MCCs,
+ but only 37 were operational or could be used for immediate testing at the time of the visit;
+ the remaining units were non-functional or lacked an available operator.
+\end_layout
+
+\begin_layout Standard
+Similar compliance concerns arise at the farmer level.
+ Although the information treatment was delivered in a controlled manner and the video was shown twice,
+ only 54 percent of farmers in the control group reported having been shown a video,
+ suggesting substantial recall error.
+ At the same time,
+ more than one in five control-group farmers stated that they had seen a video explaining how to improve compositional quality,
+ indicating potential contamination.
+ Among treated farmers,
+ only 42 percent reported using the seed provided by the project,
+ a rate that is plausibly affected by drought conditions during the season.
+ We revisit these issues in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Secondary-outcomes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
