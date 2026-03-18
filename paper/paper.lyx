@@ -173,7 +173,7 @@ Quality in agri-food supply chains is often unobservable at first sale,
  and early aggregation limits traceability,
  weakening incentives for quality provision.
  We study whether improving measurement and traceability induces quality-based incentives in Uganda’s dairy sector.
- In a cluster randomized trial with 130 milk collection centers and 2,600 farmers,
+ In a cluster randomized trial with 124 milk collection centers and over 2,000 farmers,
  we introduce digital milk analyzers and record-keeping systems.
  The intervention improves milk quality,
  primarily by reducing adulteration,
@@ -497,14 +497,6 @@ literal "false"
  without credible verification mechanisms,
  high- and low-quality products trade at similar prices,
  eroding incentives to invest in quality and potentially producing adverse selection equilibria in which low-quality goods drive out high-quality ones.
- Aggregation across suppliers further weakens the connection between individual performance and observed quality,
- undermining incentives for improvement:
- Even when buyers wish to pay for quality,
- the absence of traceability prevents quality-enhancing investments from translating into higher returns.
- Further constraints arise from the coordination and investment required to establish quality-based payment systems,
- including grading,
- certification,
- and monitoring infrastructure.
  Even in settings where quality can be observed,
  the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging 
 \begin_inset CommandInset citation
@@ -1032,7 +1024,7 @@ nolink "false"
 
  presents the design,
  data,
- and results of main cluster randomized control trial.
+ and results of the main cluster randomized controlled trial.
  Section
 \begin_inset space ~
 \end_inset
@@ -1045,7 +1037,7 @@ nolink "false"
 
 \end_inset
 
- presents a simple model that rationalized the findings and provides the basis for the follow-up experiment,
+ presents a simple model that rationalizes the findings and provides the basis for the follow-up experiment,
  which is presented in 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1399,7 +1391,7 @@ In response to the challenge of unobservable milk quality in the Ugandan dairy v
 1.
  Milk Analyzer:
  A central component of the innovation bundle is the installation of milk analyzers at MCCs.
- These machines assesses milk quality based on a set of compositional parameters,
+ These machines assess milk quality based on a set of compositional parameters,
  such as butterfat content and solids-not-fat (SNF).
  Another important parameter is the amount of added water,
  providing a more accurate assessment of what MCC managers usually test using gravity based methods.
@@ -1412,7 +1404,7 @@ status collapsed
 Generally milk was tested per (25 or 50 liter) milk can.
  Sometimes,
  if multiple cans of the same farmer were delivered,
- a composite sample of the different cans were tested.
+ a composite sample of the different cans was tested.
 \end_layout
 
 \end_inset
@@ -1489,24 +1481,19 @@ name "fig:Milk-analyzer"
 
 \begin_layout Standard
 The milk analyzers were delivered with clear Standard Operating Procedures.
- Two separate trainings were organized.
+ Two separate training sessions were organized.
  One training targeted MCC owners,
  where the focus was mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality.
  A second training was geared toward MCC managers and focused more on use and maintenance of the milk analyzers.
 \end_layout
 
 \begin_layout Standard
-We collaborated with the DDA to set up a system to monitor the milk analyzers and its use.
- In particular,
- DDA technicians visited treatment MCCs at set periods.
- We also provided various ways in which MCC managers could request assistance if needed,
- including a WhatAapp group and a telephone hotline.
- We also made sure that,
- over the course of the project,
- equipment was adequately calibrated.
- We also made sure MCC managers had access to cleaning reagents.
- If milk analyzers malfunctioned,
- we fixed or replaced the machines.
+To support sustained adoption,
+ the Dairy Development Authority (DDA) conducted periodic monitoring visits to treatment MCCs throughout the intervention year.
+ MCC managers could request technical assistance through a dedicated support channel.
+ Equipment was recalibrated at regular intervals,
+ cleaning reagents were supplied,
+ and malfunctioning units were repaired or replaced.
  
 \end_layout
 
@@ -1514,15 +1501,15 @@ We collaborated with the DDA to set up a system to monitor the milk analyzers an
 2.
  ICT-Mediated Record-Keeping System:
  We developed an Android application for MCC managers to facilitate digital record-keeping.
- The app was designed to replace the paper notebooks that MCC managers generally use for keeping track milk deliveries and payments.
+ The app was designed to replace the paper notebooks that MCC managers generally use for keeping track of milk deliveries and payments.
  In addition to recording quantities and prices,
  the app allows MCC managers to store and monitor quality parameters obtained from the milk analyzer.
  The app can provide MCC managers with simple reports,
- such as the average butter fat (weighted by quantities supplied) over a certain period (today,
+ such as the average butterfat (weighted by quantities supplied) over a certain period (today,
  yesterday,
  last week,
  last two weeks,
- and custom data range).
+ and custom date range).
  Reports by farmer are also possible,
  such that MCC managers can determine the total sum to be paid to a farmer for milk delivered over a particular time frame,
  such as in the last 14 days.
@@ -1598,7 +1585,7 @@ status collapsed
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /Users/B.VanCampenhout/data/projects/OneCG/RMVC/PAP/figures/app.png
+	filename figures/app.png
 	lyxscale 20
 	scale 15
 
@@ -1636,7 +1623,7 @@ Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet 
  Each tablet contained a SIM card with a prepaid data bundle to enable cloud-based synchronization of records.
  The application was developed following offline-first design principles,
  ensuring that all core functionalities remained accessible without an active internet connection and that data were uploaded automatically once connectivity was restored.
- Data bundles were topped up by us on a monthly basis throughout the course of the project.
+ Monthly data subscriptions were provided to ensure continuous connectivity.
 \end_layout
 
 \begin_layout Standard
@@ -1708,7 +1695,7 @@ status collapsed
 
 \begin_layout Plain Layout
 In some cases,
- more than one MCC were in a particular location (eg.
+ more than one MCC was in a particular location (e.g.,
  in a trading center).
  In such cases,
  MCCs were pooled in the same treatment group,
@@ -2120,8 +2107,8 @@ nolink "false"
  reflecting how collective institutions continue to play a central role in the organization of Uganda’s dairy value chain.
  Their average total storage capacity is about 4,000 liters,
  and 27 percent reported paying a premium for higher quality milk to suppliers.
- The average MCCs has been in operation for just under 10 years,
- and 58 percent facilitated the supply of acaracides to supplying farmer.
+ The average MCC has been in operation for just under 10 years,
+ and 58 percent facilitated the supply of acaricides to supplying farmers.
 \end_layout
 
 \begin_layout Standard
@@ -2356,7 +2343,7 @@ Sexpr{balance[7,4]})
 \end_layout
 
 \begin_layout Plain Layout
-Facilitates supply of acaracides?
+Facilitates supply of acaricides?
  (1=yes) & 
 \backslash
 Sexpr{balance[10,1]} & 
@@ -2510,7 +2497,7 @@ To calculate herd,
 
  Farmers sell roughly 60 liters of milk per day during the rainy season,
  and they spend on average USD 66 per month on chemical purchases,
- primarily acaracides.
+ primarily acaricides.
  Further characteristics are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3505,7 +3492,7 @@ Desmodium
 \begin_layout Standard
 The second outcome captures whether buyers actively checked milk quality at the point of transaction.
  Here,
- we distinguish between different categories of buyers (eg.
+ we distinguish between different categories of buyers (e.g.,
  MCCs,
  processor,
  trader,
@@ -3867,7 +3854,7 @@ nolink "false"
  In light of the compliance issues reported in Section
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Attrition-and-Compliance"
+reference "subsec:attrition-compliance"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3916,7 +3903,7 @@ Although these effects are generally small and imprecise,
  a mechanism supported by the compositional improvements documented in the sample-based analysis below (Section
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Milk-samples"
+reference "subsec:milk-quality"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3979,11 +3966,11 @@ literal "false"
 \begin_layout Standard
 Our first two outcomes measure the extent to which quality testing becomes embedded in routine operations at the MCC.
  Specifically,
- we record whether MCCs used a milk analyzer to measure butter fat and solid-non-fat content of incoming milk samples in the last 7 days.
+ we record whether MCCs used a milk analyzer to measure butter fat and solids-not-fat content of incoming milk samples in the last 7 days.
  In addition,
  we asked whether MCCs test outgoing milk deliveries destined for buyers.
  This measure is based on more detailed sales transaction data,
- and is true if for any buyer (eg processor,
+ and is true if for any buyer (e.g., processor,
  other trader,
  etc) butter fat or SNF was tested using a milk analyzer.
  Together,
@@ -4488,9 +4475,9 @@ This section presents a simple analytical framework to interpret the findings fr
  in which improved measurement precision makes rejection thresholds credibly binding,
  and a price channel,
  in which quality measurement enables quality-differentiated pricing.
- The Experiment 1 results are consistent with the enforcement channel operating in isolation:
+ The main experiment results are consistent with the enforcement channel operating in isolation:
  quality improves but prices do not differentiate.
- Experiment 2 then tests the price channel directly by exogenously activating quality-based premiums.
+ The follow-up experiment then tests the price channel directly by exogenously activating quality-based premiums.
 \end_layout
 
 \begin_layout Subsection
@@ -5456,7 +5443,7 @@ Effect of Improved Measurement Precision
 \end_layout
 
 \begin_layout Standard
-The central comparative static for Experiment 1 concerns the effect of reducing measurement noise
+The central comparative static for the main experiment concerns the effect of reducing measurement noise
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -5539,7 +5526,7 @@ This is the enforcement channel.
 \end_layout
 
 \begin_layout Standard
-The enforcement channel explains the Experiment 1 results:
+The enforcement channel explains the main experiment results:
  quality improves through more credible rejection threats,
  but prices do not differentiate.
  The model,
@@ -5551,7 +5538,7 @@ The enforcement channel explains the Experiment 1 results:
 \end_inset
 
  were exogenously increased from zero.
- This motivates Experiment 2,
+ This motivates the follow-up experiment,
  which directly tests these predictions by providing quality premiums to traders.
 \end_layout
 
@@ -5681,7 +5668,7 @@ When
 \end_layout
 
 \begin_layout Standard
-This comparative static generates a testable prediction for Experiment 2:
+This comparative static generates a testable prediction for the follow-up experiment:
  when the quality threshold is at the East African standard (Stage 1,
  low
 \begin_inset Formula $q_{min}$
@@ -5918,7 +5905,7 @@ Hence,
 \uwave default
 \noun default
 \color inherit
- and vice-versa.
+ and vice versa.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5966,7 +5953,7 @@ nolink "false"
  summarizes the model's predictions,
  the channel and parameter variation each relies on,
  and the corresponding empirical test.
- The first four predictions concern Experiment 1,
+ The first four predictions concern the main experiment,
  where the introduction of measurement technology reduces
 \begin_inset Formula $\sigma^{2}$
 \end_inset
@@ -5976,7 +5963,7 @@ nolink "false"
 \end_inset
 
  remains at zero.
- The remaining predictions concern Experiment 2,
+ The remaining predictions concern the follow-up experiment,
  where quality-based pricing is exogenously activated (
 \begin_inset Formula $\alpha>0$
 \end_inset
@@ -6049,7 +6036,7 @@ hline
 \backslash
 multicolumn{5}{l}{
 \backslash
-textit{Experiment 1:
+textit{Main Experiment:
  Measurement technology ($
 \backslash
 sigma^2
@@ -6129,7 +6116,7 @@ hline
 \backslash
 multicolumn{5}{l}{
 \backslash
-textit{Experiment 2:
+textit{Follow-up Experiment:
  Quality-based pricing ($
 \backslash
 alpha > 0$)}}
@@ -6250,7 +6237,7 @@ If posters and free testing increase
 \end_layout
 
 \begin_layout Section
-Experiment 2:
+Follow-up Experiment:
  Activating the Price Channel
 \end_layout
 
@@ -6275,8 +6262,8 @@ name "subsec:exp2-design"
 
 \end_inset
 
-[Placeholder describing Experiment 2 design.
- Among MCCs that received the quality measurement and digital monitoring system in Experiment 1,
+[Placeholder describing the follow-up experiment design.
+ Among MCCs that received the quality measurement and digital monitoring system in the main experiment,
  we randomly assign quality bonuses that create explicit price incentives for milk quality.
  This exogenously activates the price channel (sets alpha > 0 in the model),
  leveraging the digital quality records already in place to implement quality-based payments.]
@@ -6297,7 +6284,7 @@ name "subsec:exp2-intervention"
  Traders delivering milk above a fat content threshold receive a price bonus,
  calculated from the quality readings recorded by the digital monitoring system.
  The bonus creates a direct link between measured quality and price,
- which was absent under the enforcement-only equilibrium observed in Experiment 1.
+ which was absent under the enforcement-only equilibrium observed in the main experiment.
  The digital bookkeeping system is essential to this intervention:
  it provides the verifiable quality records on which bonus payments are based.]
 \end_layout
@@ -6313,7 +6300,7 @@ name "subsec:two-stages"
 
 \end_inset
 
-[Placeholder describing the two-stage design of Experiment 2.
+[Placeholder describing the two-stage design of the follow-up experiment.
  Stage 1 uses a lower fat threshold (3.3%) that most farmers can achieve.
  Stage 2 raises the threshold (3.9%) to test whether farmers respond to more demanding quality standards.
  This allows us to examine the intensive margin of quality improvement.]
@@ -6330,7 +6317,7 @@ name "subsec:exp2-data"
 
 \end_inset
 
-[Placeholder describing the data sources for Experiment 2.
+[Placeholder describing the data sources for the follow-up experiment.
  Daily milk submission records from the digital monitoring system (fat content,
  SNF,
  quantity),
@@ -6351,7 +6338,7 @@ name "subsec:exp2-estimation"
 
 \end_inset
 
-[Placeholder describing the estimation strategy for Experiment 2.
+[Placeholder describing the estimation strategy for the follow-up experiment.
  Difference-in-differences using daily submission data.
  Cross-sectional comparisons at endline for trader and farmer surveys.]
 \end_layout
@@ -6390,7 +6377,7 @@ centering
 \begin_layout Plain Layout
 
 \backslash
-caption{Experiment 2:
+caption{Follow-up Experiment:
  Pre-Treatment Balance}
 \end_layout
 
@@ -6541,7 +6528,7 @@ end{table}
 
 \begin_layout Section
 Results:
- Experiment 2
+ Follow-up Experiment
 \end_layout
 
 \begin_layout Standard
@@ -6551,7 +6538,7 @@ name "sec:results-exp2"
 
 \end_inset
 
-[Placeholder discussing Experiment 2 results.
+[Placeholder discussing follow-up experiment results.
  The quality bonus treatment (activating the price channel) leads to improvements in milk quality as measured by fat content and solids-not-fat.
  Effects are analyzed across the full period and separately for Stage 1 (lower threshold) and Stage 2 (higher threshold).]
 \end_layout
@@ -6575,7 +6562,7 @@ centering
 \begin_layout Plain Layout
 
 \backslash
-caption{Experiment 2:
+caption{Follow-up Experiment:
  Treatment Effects on Daily Milk Quality}
 \end_layout
 
@@ -6863,8 +6850,8 @@ end{table}
 
 \begin_layout Standard
 [Placeholder for time series figures showing daily milk quality trends in treatment vs.
- control groups across the two stages of Experiment 2.
- Include forest plot of Experiment 2 results.]
+ control groups across the two stages of the follow-up experiment.
+ Include forest plot of follow-up experiment results.]
 \end_layout
 
 \begin_layout Section
@@ -7012,7 +6999,7 @@ name "sec:appendix"
 \end_layout
 
 \begin_layout Standard
-- Experiment 2 trader and farmer endline results]
+- Follow-up experiment trader and farmer endline results]
 \end_layout
 
 \end_body
