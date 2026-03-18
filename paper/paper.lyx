@@ -2909,22 +2909,19 @@ Meeting sample size targets within the available budget proved challenging at ba
  largely because dairy farmers are geographically dispersed.
  In the end,
  we surveyed 2,261 farmers across 124 MCCs,
- corresponding to 87 and 95 percent of our planned farmer and MCC samples,
- and 90 and 99 percent of the required sizes from the power calculations.
+ corresponding to 87 percent of our planned farmer sample and 95 percent of our planned MCC sample.
  Of these 124 MCCs,
  60 were randomly assigned to the control condition and 64 to the treatment condition.
 \end_layout
 
 \begin_layout Standard
 By endline,
- we managed to re-contact 122 MCCs,
- of which 2 MCCs refused to cooperate,
+ 4 of the 124 baseline MCCs had attrited: 2 could not be re-contacted and 2 refused to cooperate,
  leaving us with data for 120 MCCs.
- One of the 4 attrited MCCs was originally assigned to the control arm of the mcc level treatment;
- 3 were from the treatment group.
+ Of the 4 attrited MCCs, one was originally assigned to the control group and 3 to the treatment group.
  A chi-square test confirms that attrition was unrelated to the treatment.
- We further managed to contact 2,139,
- from which 6 refused to be interviewed,
+ We further managed to contact 2,139 farmers,
+ of whom 6 refused to be interviewed,
  leading to an effective sample of 2,133.
  Further restricting farmers to the subset of farmers connected to an MCC that we were able to interview at endline,
  we get 2,059.
@@ -2942,11 +2939,12 @@ We also documented several compliance challenges.
  we observed that 14 of the 59 control MCCs had a milk analyzer on site,
  and 14 of the 61 treatment MCCs did not have a machine readily available.
  Among the 14 analyzers found in control MCCs,
- five were devices originally provided through the project.
+ five were devices originally provided through the project, likely reflecting transfers between nearby MCCs.
  In the treatment group,
  we identified 47 analyzers across MCCs,
  but only 37 were operational or could be used for immediate testing at the time of the visit;
  the remaining units were non-functional or lacked an available operator.
+ Given this imperfect compliance in both directions, we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
 \end_layout
 
 \begin_layout Section
