@@ -2449,9 +2449,9 @@ Note:
  “Total tank capacity” is measured in liters and “MCC age” in years.
  The F-statistic and p-value correspond to a joint test of equality of all covariates.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
@@ -2846,9 +2846,9 @@ Note:
  Column 3 gives the number of non-missing observations for each variable.
  The F-statistic and p-value correspond to a joint test of equality of all covariates.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
@@ -3330,9 +3330,9 @@ Note:
  with added water entering with a negative sign.
  Standard errors are clustered at the catchment-area level.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
@@ -3346,7 +3346,7 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Table 
+Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-milk-quality"
@@ -3362,9 +3362,9 @@ nolink "false"
  this increased to approximately 4.00 percent in MCCs equipped with analyzers.
  SNF shows a similar directional increase,
  but the estimate is not statistically distinguishable from zero with the current sample size.
- Protein—
-which is a component of SNF—
-shows no detectable change,
+ Protein,
+ which is a component of SNF,
+ shows no detectable change,
  consistent with the null finding for SNF.
 \end_layout
 
@@ -3397,9 +3397,7 @@ The composite index combining all five components mirrors these patterns,
  Taken together,
  these results suggest that the introduction of analyzers reduced adulteration and improved observable fat content,
  but had more limited effects on biologically determined components such as SNF and protein.
- This pattern is consistent with adjustments driven by changes in handling practices—
-such as reduced skimming or dilution—
-rather than by deeper shifts in feeding or production management,
+ This pattern is consistent with adjustments driven by changes in handling practices (such as reduced skimming or dilution) rather than by deeper shifts in feeding or production management,
  in line with the comparatively weak farmer-level behavioral responses documented in the previous subsection.
 \end_layout
 
@@ -3423,11 +3421,10 @@ nolink "false"
  As a result,
  the 2SLS estimator inflates sampling variability because it attributes all treatment effects to the subset of MCCs that actually complied with analyzer use.
  Moreover,
- if assignment affects outcomes partly through channels other than actual machine use—
-such as expectations,
+ if assignment affects outcomes partly through channels other than actual machine use (such as expectations,
  monitoring incentives,
- or changes in manager behavior—
-then the instrument captures only a fraction of the relevant variation,
+ or changes in manager behavior),
+ then the instrument captures only a fraction of the relevant variation,
  further reducing precision.
  Together,
  these factors imply wider confidence intervals for the LATE relative to the more precise ITT estimates.
@@ -3445,7 +3442,7 @@ name "subsec:farmer-level"
 \end_layout
 
 \begin_layout Standard
-We also define four primary outcomes at the farmer level and combine them into an index to assess overall impact of the interventions on farmers level outcomes.
+We also define four primary outcomes at the farmer level and combine them into an index to assess the overall impact of the intervention on farmer-level outcomes.
  
 \end_layout
 
@@ -3498,7 +3495,7 @@ Desmodium
  and (v) using feed supplements such as maize bran,
  crop residues (for example banana peelings),
  or mineral licks.
- This index summarizes the extent to which farmers adjusted production strategies as a result of the treatments (T2 in particular).
+ This index summarizes the extent to which farmers adjusted production strategies in response to the intervention.
 \end_layout
 
 \begin_layout Standard
@@ -3530,7 +3527,7 @@ The third outcome is the price received for milk sold.
 placement document
 alignment document
 wide false
-sideways true
+sideways false
 status collapsed
 
 \begin_layout Plain Layout
@@ -3565,7 +3562,7 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{rccccc}
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -3581,7 +3578,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean & analyzer & video & bundle & nobs 
+& mean ctrl & analyzer & nobs
 \backslash
 
 \backslash
@@ -3590,36 +3587,24 @@ hline
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \backslash
-cline{2-6}
+cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
-Production investment and management (Index) & 
+
+\end_layout
+
+\begin_layout Plain Layout
+Production investment and management (Index) &
 \backslash
-Sexpr{res_farmers[1,1]} & 
+Sexpr{res_farmers[1,1]} &
 \backslash
 Sexpr{res_farmers[1,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[1,5]<.01,"**",ifelse(res_farmers[1,5]<.05,"*",ifelse(res_farmers[1,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[1,10]<.01,"**",ifelse(res_farmers[1,10]<.05,"*",ifelse(res_farmers[1,10]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[1,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[1,8]<.01,"**",ifelse(res_farmers[1,8]<.05,"*",ifelse(res_farmers[1,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[1,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[1,11]<.01,"**",ifelse(res_farmers[1,11]<.05,"*",ifelse(res_farmers[1,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[1,12]} 
+Sexpr{res_farmers[1,9]}
 \backslash
 
 \backslash
@@ -3631,25 +3616,7 @@ Sexpr{res_farmers[1,12]}
 \backslash
 Sexpr{res_farmers[1,2]}) & (
 \backslash
-Sexpr{res_farmers[1,4]}) & (
-\backslash
-Sexpr{res_farmers[1,7]}) & (
-\backslash
-Sexpr{res_farmers[1,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[1,13]}] & [
-\backslash
-Sexpr{res_farmers[1,14]}] & [
-\backslash
-Sexpr{res_farmers[1,33]}]
+Sexpr{res_farmers[1,4]})
 \backslash
 
 \backslash
@@ -3661,23 +3628,15 @@ Sexpr{res_farmers[1,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Buyer checked for quality (1=yes) & 
+Buyer checked for quality (1=yes) &
 \backslash
-Sexpr{res_farmers[2,1]} & 
+Sexpr{res_farmers[2,1]} &
 \backslash
 Sexpr{res_farmers[2,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[2,5]<.01,"**",ifelse(res_farmers[2,5]<.05,"*",ifelse(res_farmers[2,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[2,10]<.01,"**",ifelse(res_farmers[2,10]<.05,"*",ifelse(res_farmers[2,10]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[2,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[2,8]<.01,"**",ifelse(res_farmers[2,8]<.05,"*",ifelse(res_farmers[2,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[2,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[2,11]<.01,"**",ifelse(res_farmers[2,11]<.05,"*",ifelse(res_farmers[2,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[2,12]} 
+Sexpr{res_farmers[2,9]}
 \backslash
 
 \backslash
@@ -3689,25 +3648,7 @@ Sexpr{res_farmers[2,12]}
 \backslash
 Sexpr{res_farmers[2,2]}) & (
 \backslash
-Sexpr{res_farmers[2,4]}) & (
-\backslash
-Sexpr{res_farmers[2,7]}) & (
-\backslash
-Sexpr{res_farmers[2,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[2,13]}] & [
-\backslash
-Sexpr{res_farmers[2,14]}] & [
-\backslash
-Sexpr{res_farmers[2,33]}]
+Sexpr{res_farmers[2,4]})
 \backslash
 
 \backslash
@@ -3719,23 +3660,15 @@ Sexpr{res_farmers[2,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Price received for milk sold & 
+Price received for milk sold &
 \backslash
-Sexpr{res_farmers[3,1]} & 
+Sexpr{res_farmers[3,1]} &
 \backslash
 Sexpr{res_farmers[3,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[3,5]<.01,"**",ifelse(res_farmers[3,5]<.05,"*",ifelse(res_farmers[3,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[3,10]<.01,"**",ifelse(res_farmers[3,10]<.05,"*",ifelse(res_farmers[3,10]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[3,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[3,8]<.01,"**",ifelse(res_farmers[3,8]<.05,"*",ifelse(res_farmers[3,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[3,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[3,11]<.01,"**",ifelse(res_farmers[3,11]<.05,"*",ifelse(res_farmers[3,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[3,12]} 
+Sexpr{res_farmers[3,9]}
 \backslash
 
 \backslash
@@ -3747,25 +3680,7 @@ Sexpr{res_farmers[3,12]}
 \backslash
 Sexpr{res_farmers[3,2]}) & (
 \backslash
-Sexpr{res_farmers[3,4]}) & (
-\backslash
-Sexpr{res_farmers[3,7]}) & (
-\backslash
-Sexpr{res_farmers[3,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[3,13]}] & [
-\backslash
-Sexpr{res_farmers[3,14]}] & [
-\backslash
-Sexpr{res_farmers[3,33]}]
+Sexpr{res_farmers[3,4]})
 \backslash
 
 \backslash
@@ -3777,23 +3692,15 @@ Sexpr{res_farmers[3,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Get quality premium  & 
+Get quality premium &
 \backslash
-Sexpr{res_farmers[4,1]} & 
+Sexpr{res_farmers[4,1]} &
 \backslash
 Sexpr{res_farmers[4,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[4,5]<.01,"**",ifelse(res_farmers[4,5]<.05,"*",ifelse(res_farmers[4,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[4,10]<.01,"**",ifelse(res_farmers[4,10]<.05,"*",ifelse(res_farmers[4,10]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[4,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[4,8]<.01,"**",ifelse(res_farmers[4,8]<.05,"*",ifelse(res_farmers[4,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[4,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[4,11]<.01,"**",ifelse(res_farmers[4,11]<.05,"*",ifelse(res_farmers[4,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[4,12]} 
+Sexpr{res_farmers[4,9]}
 \backslash
 
 \backslash
@@ -3805,25 +3712,7 @@ Sexpr{res_farmers[4,12]}
 \backslash
 Sexpr{res_farmers[4,2]}) & (
 \backslash
-Sexpr{res_farmers[4,4]}) & (
-\backslash
-Sexpr{res_farmers[4,7]}) & (
-\backslash
-Sexpr{res_farmers[4,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[4,13]}] & [
-\backslash
-Sexpr{res_farmers[4,14]}] & [
-\backslash
-Sexpr{res_farmers[4,33]}]
+Sexpr{res_farmers[4,4]})
 \backslash
 
 \backslash
@@ -3839,23 +3728,15 @@ Sexpr{res_farmers[4,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Index of primary farmer outcomes & 
+Index of primary farmer outcomes &
 \backslash
-Sexpr{res_farmers[5,1]} & 
+Sexpr{res_farmers[5,1]} &
 \backslash
 Sexpr{res_farmers[5,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[5,5]<.01,"**",ifelse(res_farmers[5,5]<.05,"*",ifelse(res_farmers[5,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers[5,10]<.01,"**",ifelse(res_farmers[5,10]<.05,"*",ifelse(res_farmers[5,10]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers[5,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[5,8]<.01,"**",ifelse(res_farmers[5,8]<.05,"*",ifelse(res_farmers[5,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[5,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers[5,11]<.01,"**",ifelse(res_farmers[5,11]<.05,"*",ifelse(res_farmers[5,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers[5,12]} 
+Sexpr{res_farmers[5,9]}
 \backslash
 
 \backslash
@@ -3867,25 +3748,7 @@ Sexpr{res_farmers[5,12]}
 \backslash
 Sexpr{res_farmers[5,2]}) & (
 \backslash
-Sexpr{res_farmers[5,4]}) & (
-\backslash
-Sexpr{res_farmers[5,7]}) & (
-\backslash
-Sexpr{res_farmers[5,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers[5,13]}] & [
-\backslash
-Sexpr{res_farmers[5,14]}] & [
-\backslash
-Sexpr{res_farmers[5,33]}]
+Sexpr{res_farmers[5,4]})
 \backslash
 
 \backslash
@@ -3932,22 +3795,18 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- Column 1 reports mean outcomes for pure control farmers (those not receiving the information treatment and connected to control MCCs),
+ Column 1 reports the mean of each outcome for control farmers,
  with standard deviations in parentheses.
- Columns 2–4 present the pooled main treatment effects of the MCC-level intervention (T1),
- the farmer-level information intervention (T2),
- and their combined exposure,
- respectively;
- robust standard errors appear in parentheses.
- Numbers in square brackets report p-values for tests of whether the treatment effect differs by the farmer’s connection type (directly to an MCC versus through a small trader).
- Column 5 shows the number of non-missing observations.
+ Column 2 shows the estimated treatment effect of the analyzer intervention,
+ with robust standard errors in parentheses.
+ Column 3 lists the number of farmers with non-missing observations.
  Prices are in Ugandan shillings (UGX).
- The “Index of primary farmer outcomes” is an Anderson (2008) index of the outcomes listed above.
+ The “Index of primary farmer outcomes” is an Anderson (2008) index of the variables listed above.
  Standard errors are clustered at the catchment-area level.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01 (Benjamini-Krieger-Yekutieli sharpened q-values).
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01 (Benjamini-Krieger-Yekutieli sharpened q-values).
 \end_layout
 
 \end_inset
@@ -3961,10 +3820,10 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Table 
+Table
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Primary-outcomes-MCC"
+reference "tab:Primary-outcomes-farmer"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3973,20 +3832,20 @@ nolink "false"
 \end_inset
 
  reports treatment effects on our four primary outcomes at the farmer level,
- as well as the index.
- The table shows parameter estimates from the fully interacted model of Equation 
+ as well as the composite index.
+ The table shows ITT estimates from Equation
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 \backslash
-ref{eq:two}
+ref{eq:farmer}
 \end_layout
 
 \end_inset
 
- in Section 
+ in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Estimation-and-inference"
@@ -3998,158 +3857,10 @@ nolink "false"
 \end_inset
 
 .
- In the first column,
- we show mean outcome for pure control farmers (that did not get the information treatment and are connected to control MCCs);
- standard deviations are in parenthesis below.
- In the second column,
- we provide an estimate of the farmer level main treatment effect of T1 (corresponding to 
-\begin_inset Formula $\beta_{H2C}$
-\end_inset
-
- in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-,
- standard errors in parenthesis below) and in the third column,
- we provide an estimate of the farmer level main treatment effect of T2 (corresponding to 
-\begin_inset Formula $\beta_{H3C}$
-\end_inset
-
- in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-,
- standard errors in parenthesis below).
- The fourth column provides an estimate of the interaction between the MCC level treatment and the farmer level treatment (corresponding to 
-\begin_inset Formula $\beta_{H4C}$
-\end_inset
-
- in Equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-,
- standard errors in parenthesis below).
- Finally,
- below the standard errors,
- we also provide p-values for the null hypothesis that there is no difference in the estimated effect depending on how the farmer is connected to the MCC (directly or through a small trader).
- More in particular,
- the number in square brackets in column two is the p-value for the hypothesis 
-\begin_inset Formula $\beta_{H2C}\neq\beta_{H2T}$
-\end_inset
-
- obtained from equation 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-ref{eq:two}
-\end_layout
-
-\end_inset
-
-.
- Similar tests are reported for 
-\begin_inset Formula $\beta_{H3C}\neq\beta_{H3T}$
-\end_inset
-
- in column three and 
-\begin_inset Formula $\beta_{H4C}\neq\beta_{H4T}$
-\end_inset
-
- in column four.
-\end_layout
-
-\begin_layout Standard
-In addition to the tables in the main text,
- we again provide various tables with additional estimates in the Appendix for robustness.
- In particular,
- we present tables with results from the pooled regressions corresponding to Equations 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:pooled-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and the treatment bundle corresponding to Equation 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:one-1-1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- (See Appendix Tables 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled-LATE"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-).
- Furthermore,
- in light of the compliance issues reported in Section 
+ The first column reports the control group mean (with standard deviations in parentheses),
+ the second column reports the estimated treatment effect of the analyzer intervention (with cluster-robust standard errors in parentheses),
+ and the third column reports the number of non-missing observations.
+ In light of the compliance issues reported in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Attrition-and-Compliance"
@@ -4161,22 +3872,10 @@ nolink "false"
 \end_inset
 
 ,
- we also present LATE estimates where in addition to instrumenting actual presence of a milk analyzer with MCC level treatment assignment,
- we now also instrument the fact that farmers recall having seen the video with the farmer level treatment assignment (See Appendix Tables 
+ we also present LATE estimates instrumenting actual analyzer availability with randomized treatment assignment (See Appendix Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer-LATE"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled-LATE"
 plural "false"
 caps "false"
 noprefix "false"
@@ -4188,61 +3887,16 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-Looking at the main (fully interacted) specification in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- and the pooled estimates in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- we do not find evidence that the MCC-level intervention alone affected farmers’ production investments and management practices.
- The farmer-level information treatment also shows no significant effect in the fully interacted model.
- However,
- the pooled regression suggests a modest positive effect of the farmer-level intervention (significant at the 10 percent level).
- The significant interaction term in Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- indicates that this pooled effect is driven almost entirely by farmers whose MCCs were also equipped with an analyzer,
- suggesting that information only translates into improved management practices when quality is made observable and salient at the MCC level.
- This pattern is consistent with complementarities in the theory of change:
- farmers have little incentive to act on information in environments where quality is not measured,
- but respond when improved knowledge is paired with an institutional setting that demands or rewards higher quality.
- Finally,
- we find significant heterogeneity with respect to intermediation for the interaction effect:
- As expected,
- the significant increase in investment and effort is driven by directly connected farmers.
+We do not find evidence that the analyzer intervention affected farmers’ production investments and management practices.
+ The point estimate is small and statistically insignificant.
 \end_layout
 
 \begin_layout Standard
-Among pure control farmers,
+Among control farmers,
  approximately 16 percent report that their milk was tested using an analyzer.
- Farmers linked to treatment MCCs report slightly higher testing rates—
-by roughly 6 to 7 percentage points in both the fully interacted and pooled specifications—
-although these differences are not statistically distinguishable from zero.
+ Farmers linked to treatment MCCs report slightly higher testing rates,
+ by roughly 6 to 7 percentage points,
+ although this difference is not statistically distinguishable from zero.
 \begin_inset Foot
 status collapsed
 
@@ -4255,7 +3909,7 @@ Although these effects are generally small and imprecise,
  Even so,
  selective but credible testing can still shift behavior:
  the possibility of being tested may be sufficient to induce farmers to upgrade milk quality,
- a mechanism supported by the compositional improvements documented in the sample-based analysis below (Section 
+ a mechanism supported by the compositional improvements documented in the sample-based analysis below (Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Milk-samples"
@@ -4271,47 +3925,24 @@ nolink "false"
 
 \end_inset
 
- The coefficient on the farmer-level information treatment is likewise positive but imprecisely estimated.
- At the same time,
- the fully interacted model indicates heterogeneity by connection type:
- the information treatment reduces the likelihood of being tested among farmers who supply through traders.
- We detect no statistically significant interaction between the MCC-level and farmer-level interventions.
+
 \end_layout
 
 \begin_layout Standard
-Across all specifications,
- we find no evidence that either intervention affected the prices farmers receive for milk.
- Control farmers report an average price of UGX 1,019 per liter—
-a level consistent with MCC-level data once accounting for sales to alternative buyers such as traders or direct consumers,
+We find no evidence that the intervention affected the prices farmers receive for milk.
+ Control farmers report an average price of UGX 1,019 per liter,
+ a level consistent with MCC-level data once accounting for sales to alternative buyers such as traders or direct consumers,
  who typically pay slightly less.
- Prices received by farmers in both treatment arms are statistically indistinguishable from those of control farmers,
- and this holds for the interaction term as well as for pooled,
- fully interacted,
- and instrumented models.
+ Prices received by farmers in the treatment group are statistically indistinguishable from those of control farmers.
  Similarly,
- the likelihood that a farmer reports receiving an explicit quality premium does not differ across groups,
+ the likelihood that a farmer reports receiving an explicit quality premium does not differ between groups,
  mirroring the null effects observed for prices.
- Taken together,
- these results point to no detectable impact of the interventions on the price dimension of farmers’ marketing outcomes.
+ These results point to no detectable impact of the intervention on the price dimension of farmers’ marketing outcomes.
 \end_layout
 
 \begin_layout Standard
 Taken together,
  these weak and null effects translate into an overall insignificant impact on the composite index of primary farmer outcomes.
- Nonetheless,
- the pooled specification does provide some suggestive evidence that the MCC-level intervention modestly improves the combined index,
- and a direct comparison between pure control farmers and those exposed to the full bundle of interventions points to a small but positive shift in behavior (See Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-farmer-pooled"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-).
 \end_layout
 
 \begin_layout Subsection
@@ -4730,9 +4361,9 @@ Note:
  All prices are in Ugandan shillings (UGX).
  The “Index of primary MCC outcomes” is an Anderson (2008) index of the variables listed above.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
@@ -4799,7 +4430,7 @@ Turning to prices,
  and we detect no significant increase in the treatment group.
  Similarly,
  the average price MCCs received from buyers was about UGX 2,200 per liter in the control group,
- with no evidence that the mcc level treatment raised buyer offers.
+ with no evidence that the MCC level treatment raised buyer offers.
  These results suggest that while the intervention influenced testing practices,
  it did not translate into higher prices on either side of the market.
 \end_layout
@@ -4832,7 +4463,7 @@ nolink "false"
  MCC-level data indicate that the intervention produced a sizable and consistent increase in testing activity,
  yet we find no evidence that it generated quality-based price differentiation.
  When we consider the composite index of pre-registered MCC-level outcomes,
- the data indicate that T1 did not lead to measurable improvements at the MCC level.
+ the data indicate that the analyzer intervention did not lead to measurable improvements at the MCC level.
 \end_layout
 
 \begin_layout Subsection
