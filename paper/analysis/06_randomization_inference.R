@@ -696,6 +696,125 @@ cat(sprintf("Omnibus — Farmer FU (primary): %d/%d sig, p=%.4f\n",
 
 
 # ===========================================================================
+# SECTION 5E: WESTFALL-YOUNG STEPDOWN ADJUSTED P-VALUES
+# ===========================================================================
+# Uses the existing permutation matrices to compute familywise error rate
+# (FWER) adjusted p-values via the Westfall-Young stepdown procedure.
+# This avoids re-running any permutations.
+
+cat("\n===========================================================\n")
+cat("  Westfall-Young Stepdown Adjusted P-Values\n")
+cat("===========================================================\n\n")
+
+westfall_young_stepdown <- function(obs_coefs, perm_matrix) {
+  K <- length(obs_coefs)
+  n_perms <- nrow(perm_matrix)
+
+  ## Individual RI p-values
+  raw_p <- sapply(1:K, function(k) {
+    mean(abs(perm_matrix[, k]) >= abs(obs_coefs[k]))
+  })
+
+  ## Order by raw p-value (most significant first)
+  ord <- order(raw_p)
+  adj_p <- numeric(K)
+
+  ## For each outcome k, rank |perm coefs| in descending order across permutations
+  ## ranks[p,k] = rank of |perm_matrix[p,k]| among all |perm_matrix[,k]| (1 = largest)
+  ## So the "p-value" of permutation p for outcome k = ranks[p,k] / n_perms
+  ranks <- apply(abs(perm_matrix), 2, function(col) rank(-col, ties.method = "max"))
+
+  remaining <- ord
+  prev_adj_p <- 0
+
+  for (step in 1:K) {
+    k_current <- remaining[1]
+
+    ## Minimum p-value across remaining outcomes for each permutation
+    min_rank <- apply(ranks[, remaining, drop = FALSE], 1, min)
+    min_p_perm <- min_rank / n_perms
+
+    ## Adjusted p-value: fraction of permutations where min_p <= observed raw p
+    adj_p[k_current] <- mean(min_p_perm <= raw_p[k_current])
+
+    ## Enforce monotonicity
+    adj_p[k_current] <- max(adj_p[k_current], prev_adj_p)
+    prev_adj_p <- adj_p[k_current]
+
+    remaining <- remaining[-1]
+    if (length(remaining) == 0) break
+  }
+
+  return(list(raw_p = raw_p, adj_p = adj_p, order = ord))
+}
+
+## --- Apply to each outcome family ---
+
+## 1. Experiment 1 farmer outcomes, treat arm (exclude Anderson index = col 5)
+wy_farmer_treat <- westfall_young_stepdown(obs_farmer_treat[1:4], ri_farmer_treat[, 1:4])
+cat("Exp 1 Farmer outcomes (treat) -- Westfall-Young stepdown:\n")
+for (i in 1:4) {
+  cat(sprintf("  %-25s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              farmer_outcomes[i], wy_farmer_treat$raw_p[i], wy_farmer_treat$adj_p[i]))
+}
+
+## 2. Experiment 1 MCC outcomes (exclude Anderson index = col 7)
+wy_mcc <- westfall_young_stepdown(obs_mcc[1:6], ri_mcc[, 1:6])
+cat("\nExp 1 MCC outcomes -- Westfall-Young stepdown:\n")
+for (i in 1:6) {
+  cat(sprintf("  %-25s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              MCC_outcomes[i], wy_mcc$raw_p[i], wy_mcc$adj_p[i]))
+}
+
+## 3. Experiment 1 milk samples (exclude Anderson index = col 6)
+wy_samples <- westfall_young_stepdown(obs_samples[1:5], ri_samples[, 1:5])
+cat("\nExp 1 Milk samples -- Westfall-Young stepdown:\n")
+for (i in 1:5) {
+  cat(sprintf("  %-35s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              sample_outcomes[i], wy_samples$raw_p[i], wy_samples$adj_p[i]))
+}
+
+## 4. Experiment 2 submissions (full, stage 1, stage 2)
+wy_sub_full <- westfall_young_stepdown(obs_sub[, 1], ri_sub[, , 1])
+wy_sub_s1   <- westfall_young_stepdown(obs_sub[, 2], ri_sub[, , 2])
+wy_sub_s2   <- westfall_young_stepdown(obs_sub[, 3], ri_sub[, , 3])
+
+cat("\nExp 2 Submissions (full) -- Westfall-Young stepdown:\n")
+for (i in seq_along(sub_outcomes)) {
+  cat(sprintf("  %-15s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              sub_outcomes[i], wy_sub_full$raw_p[i], wy_sub_full$adj_p[i]))
+}
+cat("\nExp 2 Submissions (stage 1) -- Westfall-Young stepdown:\n")
+for (i in seq_along(sub_outcomes)) {
+  cat(sprintf("  %-15s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              sub_outcomes[i], wy_sub_s1$raw_p[i], wy_sub_s1$adj_p[i]))
+}
+cat("\nExp 2 Submissions (stage 2) -- Westfall-Young stepdown:\n")
+for (i in seq_along(sub_outcomes)) {
+  cat(sprintf("  %-15s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              sub_outcomes[i], wy_sub_s2$raw_p[i], wy_sub_s2$adj_p[i]))
+}
+
+## 5. Experiment 2 trader outcomes
+wy_traders <- westfall_young_stepdown(obs_trader, ri_trader)
+cat("\nExp 2 Trader outcomes -- Westfall-Young stepdown:\n")
+for (i in seq_along(trader_outcomes)) {
+  cat(sprintf("  %-25s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              trader_outcomes[i], wy_traders$raw_p[i], wy_traders$adj_p[i]))
+}
+
+## 6. Experiment 2 farmer outcomes (primary only: first 3)
+wy_farmers <- westfall_young_stepdown(obs_farmer_fu[1:3], ri_farmer_fu[, 1:3])
+cat("\nExp 2 Farmer outcomes (primary) -- Westfall-Young stepdown:\n")
+for (i in 1:3) {
+  cat(sprintf("  %-25s  raw RI p = %.4f  |  WY adj p = %.4f\n",
+              farmer_fu_outcomes[i], wy_farmers$raw_p[i], wy_farmers$adj_p[i]))
+}
+
+cat("\n")
+
+
+# ===========================================================================
 # SECTION 6: SAVE ALL RESULTS
 # ===========================================================================
 
@@ -760,6 +879,17 @@ ri_results <- list(
     exp2_traders  = omni_trader,
     exp2_farmers  = omni_farmer_fu,
     alpha        = 0.05
+  ),
+  ## Westfall-Young stepdown adjusted p-values
+  wy = list(
+    farmer_treat   = wy_farmer_treat,
+    mcc            = wy_mcc,
+    samples        = wy_samples,
+    exp2_sub_full  = wy_sub_full,
+    exp2_sub_s1    = wy_sub_s1,
+    exp2_sub_s2    = wy_sub_s2,
+    exp2_traders   = wy_traders,
+    exp2_farmers   = wy_farmers
   ),
   ## Metadata
   n_perms = n_perms,
