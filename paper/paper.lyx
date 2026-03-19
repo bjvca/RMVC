@@ -2938,7 +2938,7 @@ We also documented several compliance challenges.
  we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Results
 \begin_inset CommandInset label
 LatexCommand label
@@ -2949,7 +2949,7 @@ name "sec:results-exp1"
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Milk Samples
 \begin_inset CommandInset label
 LatexCommand label
@@ -3421,7 +3421,7 @@ nolink "false"
  these factors imply wider confidence intervals for the LATE relative to the more precise ITT estimates.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Farmer Level
 \begin_inset CommandInset label
 LatexCommand label
@@ -3936,7 +3936,7 @@ Taken together,
  these weak and null effects translate into an overall insignificant impact on the composite index of primary farmer outcomes.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 MCC Level
 \begin_inset CommandInset label
 LatexCommand label
@@ -3970,7 +3970,8 @@ Our first two outcomes measure the extent to which quality testing becomes embed
  In addition,
  we asked whether MCCs test outgoing milk deliveries destined for buyers.
  This measure is based on more detailed sales transaction data,
- and is true if for any buyer (e.g., processor,
+ and is true if for any buyer (e.g.,
+ processor,
  other trader,
  etc) butter fat or SNF was tested using a milk analyzer.
  Together,
@@ -4531,7 +4532,7 @@ A critical feature of the model is how the MCC observes quality.
  Without measurement technology,
  the MCC observes a noisy signal of farmer
 \emph on
-i
+ i
 \emph default
 's quality:
 \begin_inset Formula 
@@ -4541,23 +4542,24 @@ s_{i}=q_{i}+\eta_{i}
 
 \end_inset
 
-where
+where 
 \begin_inset Formula $\eta_{i}\sim N(0,\sigma^{2})$
 \end_inset
 
- is measurement noise independent of the quality shock
+ is measurement noise independent of the quality shock 
 \begin_inset Formula $\varepsilon_{i}$
 \end_inset
 
 .
  With only basic tools (lactometer,
  alcohol test),
+ 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
  is large:
  the MCC can detect gross adulteration but cannot precisely assess compositional quality.
- The introduction of a milk analyzer reduces
+ The introduction of a milk analyzer reduces 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -4583,13 +4585,13 @@ rather than true quality
 
 .
  This distinction is central:
- when
+ when 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
  is high,
  the acceptance threshold is only weakly enforced because the MCC cannot reliably distinguish high-quality from low-quality milk.
- Reducing
+ Reducing 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -4818,12 +4820,12 @@ Farmer Optimization
 
 \begin_layout Standard
 The MCC may reject milk that does not meet a minimum quality standard.
- Let
+ Let 
 \begin_inset Formula $a_{i}\in\left\{ 0,1\right\} $
 \end_inset
 
  be an acceptance indicator,
- where
+ where 
 \begin_inset Formula $a_{i}=1$
 \end_inset
 
@@ -4831,11 +4833,11 @@ The MCC may reject milk that does not meet a minimum quality standard.
 \emph on
 i
 \emph default
-'s observed signal meets a minimum quality threshold
+'s observed signal meets a minimum quality threshold 
 \begin_inset Formula $q_{min}$
 \end_inset
 
- and
+ and 
 \begin_inset Formula $a_{i}=0$
 \end_inset
 
@@ -4875,16 +4877,16 @@ r_{i}\left(e_{i}\right)=a_{i}p_{i}\left(q_{i}\right)y_{i}
 \begin_layout Standard
 Because both quality and its observation include noise,
  acceptance is uncertain from the farmer’s perspective.
- Since
+ Since 
 \begin_inset Formula $s_{i}=q_{i}+\eta_{i}=\theta_{i}e_{i}+\varepsilon_{i}+\eta_{i}$
 \end_inset
 
 ,
- and
+ and 
 \begin_inset Formula $\varepsilon_{i}$
 \end_inset
 
- and
+ and 
 \begin_inset Formula $\eta_{i}$
 \end_inset
 
@@ -4900,20 +4902,20 @@ Because both quality and its observation include noise,
 
 \end_inset
 
-where
+where 
 \begin_inset Formula $\Phi$
 \end_inset
 
- is the standard normal CDF and
+ is the standard normal CDF and 
 \begin_inset Formula $\sigma^{2}_{\varepsilon}$
 \end_inset
 
- is the variance of
+ is the variance of 
 \begin_inset Formula $\varepsilon_{i}$
 \end_inset
 
 .
- This makes explicit that reducing
+ This makes explicit that reducing 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -5456,17 +5458,17 @@ The central comparative static for the main experiment concerns the effect of re
 
 \end_inset
 
-Reducing
+Reducing 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
  (improving measurement precision) has two effects.
  First,
- for farmers whose expected quality
+ for farmers whose expected quality 
 \begin_inset Formula $\theta_{i}e_{i}$
 \end_inset
 
- is close to but above the threshold
+ is close to but above the threshold 
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5492,7 +5494,7 @@ This tightening of the acceptance probability distribution around the threshold 
 \end_inset
 
 That is,
- better measurement (lower
+ better measurement (lower 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -5512,12 +5514,12 @@ This is the enforcement channel.
  Its key empirical signatures are:
  (i) quality improves,
  particularly through reduced adulteration (the quality dimension most directly affected by effort near the threshold);
- (ii) prices do not change (because
+ (ii) prices do not change (because 
 \begin_inset Formula $\alpha=0$
 \end_inset
 
 );
- (iii) the quality improvement is concentrated at the lower tail of the distribution (farmers near
+ (iii) the quality improvement is concentrated at the lower tail of the distribution (farmers near 
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5597,28 +5599,29 @@ Response to Threshold Changes under Quality-based Pricing
 \end_layout
 
 \begin_layout Standard
-The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold
+The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold 
 \begin_inset Formula $q_{min}$
 \end_inset
 
  relative to the prevailing quality distribution.
- When
+ When 
 \begin_inset Formula $q_{min}$
 \end_inset
 
  is low relative to the natural distribution of quality (as when high-quality milk is abundant in the rainy season),
  most suppliers are comfortably above the threshold:
+ 
 \begin_inset Formula $\pi_{i}\approx1$
 \end_inset
 
- and
+ and 
 \begin_inset Formula $\partial\pi_{i}/\partial e_{i}\approx0$
 \end_inset
 
 .
  In this regime,
  the extensive margin contributes little to the marginal return to effort.
- The dominant incentive comes from the intensive margin,
+ The dominant incentive comes from the intensive margin ,
 \begin_inset Formula $\pi_{i}\lambda_{i}\alpha\theta_{i}y_{i}$
 \end_inset
 
@@ -5629,7 +5632,7 @@ The model also generates predictions about how the behavioral response to qualit
 \end_layout
 
 \begin_layout Standard
-When
+When 
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5640,7 +5643,7 @@ When
 \end_inset
 
  drops below one for many suppliers,
- and the extensive margin
+ and the extensive margin 
 \begin_inset Formula $\frac{\partial\pi_{i}}{\partial e_{i}}\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]$
 \end_inset
 
@@ -5649,7 +5652,7 @@ When
  agents invest effort in securing higher-quality milk to avoid rejection,
  rather than simply collecting more of what is already available.
  Formally,
- the relative importance of the extensive margin in the first-order condition is increasing in
+ the relative importance of the extensive margin in the first-order condition is increasing in 
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5670,14 +5673,14 @@ When
 \begin_layout Standard
 This comparative static generates a testable prediction for the follow-up experiment:
  when the quality threshold is at the East African standard (Stage 1,
- low
+ low 
 \begin_inset Formula $q_{min}$
 \end_inset
 
 ),
  the premium should elicit primarily a volume response;
  when the threshold is raised (Stage 2,
- high
+ high 
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -6308,7 +6311,8 @@ name "subsec:exp2-intervention"
 
 Treated traders receive a quality premium of UGX 100 per liter for each 0.1 percentage point of fat and SNF content above the East African Community standards of 3.3 percent fat and 8.5 percent SNF.
  The premium is calculated automatically from the digital quality records already captured by the measurement system installed during the main experiment.
- Bonuses are paid daily via mobile money (using the Yo! Uganda API),
+ Bonuses are paid daily via mobile money (using the Yo!
+ Uganda API),
  creating immediate and salient incentives that traders can link directly to each day's delivery quality.
  The digital infrastructure from the main experiment is essential to this intervention:
  it provides the verifiable,
@@ -6438,7 +6442,8 @@ The third source is the farmer follow-up endline survey.
  Outcomes include the volume-weighted price received from the trader (UGX per liter,
  constructed from up to six recent transactions),
  whether quality was checked in any recent transaction,
- and a set of feeding practice indicators: use of bran,
+ and a set of feeding practice indicators:
+ use of bran,
  use of crop residues,
  use of mineral licks,
  and use of controlled grazing.
@@ -6462,7 +6467,7 @@ For the daily submission data,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula
+\begin_inset Formula 
 \begin{equation}
 y_{jt}=\alpha+\beta\,\text{Treatment}_{j}+\mu_{m}+\varepsilon_{jt}\label{eq:exp2-daily}
 \end{equation}
@@ -6486,7 +6491,6 @@ where
 \end_inset
 
 ,
-
 \begin_inset Formula $\text{Treatment}_{j}$
 \end_inset
 
@@ -6507,7 +6511,8 @@ where
  Because treatment was randomized within MCC,
  the MCC fixed effects absorb all time-invariant MCC-level confounders and increase precision.
  Standard errors are clustered at the trader level.
- We estimate this specification over three windows: the full post-treatment period (November 3 onward),
+ We estimate this specification over three windows:
+ the full post-treatment period (November 3 onward),
  Stage 1 only (November 3 through 14),
  and Stage 2 only (November 15 onward).
  Comparing coefficients across stages reveals whether traders adjust to the higher quality threshold.
@@ -6564,7 +6569,8 @@ nolink "false"
 \begin_inset Formula $p=0.0004$
 \end_inset
 
-): control traders delivered milk with higher average fat (control mean of 4.06 percent) than treatment traders in this pre-period.
+):
+ control traders delivered milk with higher average fat (control mean of 4.06 percent) than treatment traders in this pre-period.
  This imbalance likely reflects the combination of a very short pre-treatment window (one to two delivery days) and a small number of traders,
  which leaves limited scope for the law of large numbers to equalize baseline quality across arms.
 \end_layout
@@ -6575,7 +6581,8 @@ Several features of the design mitigate concern that this imbalance compromises 
  the MCC fixed effects in our estimating equation absorb any MCC-level differences in milk quality,
  so the treatment effect is identified from within-MCC variation between treated and control traders.
  Second,
- the comparison across Stage 1 and Stage 2 is particularly informative: because the same traders face both regimes,
+ the comparison across Stage 1 and Stage 2 is particularly informative:
+ because the same traders face both regimes,
  the stage-by-stage contrast traces behavioral dynamics within treated traders over time and does not rely on the level difference between treatment and control groups.
  Third,
  the Fisher randomization inference accounts for the within-MCC assignment structure,
@@ -6761,7 +6768,7 @@ end{table}
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Results:
  Follow-up Experiment
 \end_layout
@@ -6773,18 +6780,24 @@ name "sec:results-exp2"
 
 \end_inset
 
-The follow-up experiment generates a daily panel of milk submissions over 30 days (November 3 to December 1), providing a granular view of how traders adjust sourcing behavior when quality-contingent bonuses are introduced.
- Unlike the main experiment, where treatment effects accumulate over months and are measured in a single endline survey, the follow-up experiment functions as a lab-in-the-field: traders face a repeated daily decision (where to source milk and from whom) under incentives that evolve at a known date.
- We present results in three parts: the daily submission outcomes that constitute the primary findings, trader endline survey outcomes, and farmer-level outcomes that capture downstream pass-through.
+The follow-up experiment generates a daily panel of milk submissions over 30 days (November 3 to December 1),
+ providing a granular view of how traders adjust sourcing behavior when quality-contingent bonuses are introduced.
+ Unlike the main experiment,
+ where treatment effects accumulate over months and are measured in a single endline survey,
+ the follow-up experiment functions as a lab-in-the-field:
+ traders face a repeated daily decision (where to source milk and from whom) under incentives that evolve at a known date.
+ We present results in three parts:
+ the daily submission outcomes that constitute the primary findings,
+ trader endline survey outcomes,
+ and farmer-level outcomes that capture downstream pass-through.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Daily Submission Outcomes
 \end_layout
 
 \begin_layout Standard
-Table\InsetSpace ~
-
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:submissions"
@@ -6792,44 +6805,75 @@ nolink "false"
 
 \end_inset
 
- reports treatment effects on daily milk submissions for the full experimental period (Panel A) and separately for Stage 1 (Panel B, November 3 to 14, fat threshold of 3.3 percent) and Stage 2 (Panel C, November 15 onward, fat threshold of 3.9 percent).
+ reports treatment effects on daily milk submissions for the full experimental period (Panel A) and separately for Stage 1 (Panel B,
+ November 3 to 14,
+ fat threshold of 3.3 percent) and Stage 2 (Panel C,
+ November 15 onward,
+ fat threshold of 3.9 percent).
  All specifications include day fixed effects and control for baseline trader characteristics.
  We report randomization inference p-values and Westfall-Young adjusted p-values to account for multiple testing across the four outcomes.
 \end_layout
 
 \begin_layout Standard
-Over the full period, treated traders deliver milk with 0.109 percentage points higher fat content (RI p = 0.003, WY p = 0.007) and 0.030 percentage points higher solids-not-fat (RI p = 0.119).
- Treated traders also deliver 124 liters more per day (RI p = 0.013, WY p = 0.025) and earn 13,030 UGX more in daily bonuses (RI p = 0.001, WY p = 0.004).
- The fat and quantity effects are robust to multiple testing correction; the SNF effect is not.
+Over the full period,
+ treated traders deliver milk with 0.109 percentage points higher fat content (RI p = 0.003,
+ WY p = 0.007) and 0.030 percentage points higher solids-not-fat (RI p = 0.119).
+ Treated traders also deliver 124 liters more per day (RI p = 0.013,
+ WY p = 0.025) and earn 13,030 UGX more in daily bonuses (RI p = 0.001,
+ WY p = 0.004).
+ The fat and quantity effects are robust to multiple testing correction;
+ the SNF effect is not.
 \end_layout
 
 \begin_layout Standard
 The contrast between Stage 1 and Stage 2 reveals the central finding of the follow-up experiment.
- During Stage 1, when the fat threshold is set at 3.3 percent (a level easily met during the rainy season, when feed is abundant and baseline fat content is high), treated traders show no significant improvement in quality: the fat effect is 0.035 percentage points (RI p = 0.263) and the SNF effect is 0.004 percentage points (RI p = 0.888).
- Yet even in Stage 1, treated traders deliver significantly more milk (126 liters, RI p = 0.004, WY p = 0.010) and earn significantly higher bonuses (13,784 UGX, RI p = 0.003, WY p = 0.009).
- This pattern is consistent with traders responding to the extensive margin of the bonus: when the quality threshold is easy to clear, the optimal response is to source more milk (from additional farmers or larger quantities from existing suppliers) rather than to screen for quality.
+ During Stage 1,
+ when the fat threshold is set at 3.3 percent (a level easily met during the rainy season,
+ when feed is abundant and baseline fat content is high),
+ treated traders show no significant improvement in quality:
+ the fat effect is 0.035 percentage points (RI p = 0.263) and the SNF effect is 0.004 percentage points (RI p = 0.888).
+ Yet even in Stage 1,
+ treated traders deliver significantly more milk (126 liters,
+ RI p = 0.004,
+ WY p = 0.010) and earn significantly higher bonuses (13,784 UGX,
+ RI p = 0.003,
+ WY p = 0.009).
+ This pattern is consistent with traders responding to the extensive margin of the bonus:
+ when the quality threshold is easy to clear,
+ the optimal response is to source more milk (from additional farmers or larger quantities from existing suppliers) rather than to screen for quality.
 \end_layout
 
 \begin_layout Standard
-When the threshold increases to 3.9 percent at the start of Stage 2, the behavioral response shifts markedly.
- The fat content effect jumps to 0.169 percentage points (RI p < 0.001, WY p < 0.001) and SNF rises by 0.051 percentage points (RI p = 0.014, WY p = 0.028), both highly significant even after multiple testing adjustment.
- The quantity and bonus effects remain significant at 123 liters (RI p = 0.042, WY p = 0.042) and 12,743 UGX (RI p = 0.001, WY p = 0.004), respectively.
- The emergence of strong quality effects only after the threshold increase maps directly onto the model's prediction about the extensive margin: as the minimum quality standard
+When the threshold increases to 3.9 percent at the start of Stage 2,
+ the behavioral response shifts markedly.
+ The fat content effect jumps to 0.169 percentage points (RI p < 0.001,
+ WY p < 0.001) and SNF rises by 0.051 percentage points (RI p = 0.014,
+ WY p = 0.028),
+ both highly significant even after multiple testing adjustment.
+ The quantity and bonus effects remain significant at 123 liters (RI p = 0.042,
+ WY p = 0.042) and 12,743 UGX (RI p = 0.001,
+ WY p = 0.004),
+ respectively.
+ The emergence of strong quality effects only after the threshold increase maps directly onto the model's prediction about the extensive margin:
+ as the minimum quality standard
 \begin_inset Formula $q_{\min}$
 \end_inset
 
- rises, the set of farmers whose milk clears the threshold shrinks, and the returns to selective sourcing increase.
- Traders shift from a volume strategy (source broadly, rely on naturally high quality) to a quality strategy (screen suppliers, favor those with higher-fat milk).
+ rises,
+ the set of farmers whose milk clears the threshold shrinks,
+ and the returns to selective sourcing increase.
+ Traders shift from a volume strategy (source broadly,
+ rely on naturally high quality) to a quality strategy (screen suppliers,
+ favor those with higher-fat milk).
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Behavioral Dynamics
 \end_layout
 
 \begin_layout Standard
 The daily panel reveals adjustment dynamics that would be invisible in a standard endline-only design.
- Figures\InsetSpace ~
-
+ Figures 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:daily-fat"
@@ -6837,8 +6881,7 @@ nolink "false"
 
 \end_inset
 
- and\InsetSpace ~
-
+ and 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:daily-quantity"
@@ -6847,10 +6890,18 @@ nolink "false"
 \end_inset
 
  plot average daily fat content and quantity by treatment status over the 30-day experiment.
- The volume response in Stage 1 is immediate: within the first few days of the bonus activation, treated traders deliver visibly more milk than control traders, and this gap is sustained throughout the period.
- After the threshold change on November 15, the quality response emerges within two to three days, as treated traders begin screening suppliers and redirecting sourcing toward higher-quality milk.
- The speed of adjustment is consistent with the low adjustment costs inherent in daily sourcing decisions: traders choose each morning which farmers to visit and how much to collect, and these choices can shift rapidly when incentives change.
- Some treated traders recruit additional suppliers (friends and family members) to increase volumes, a form of extensive-margin adjustment that further illustrates the flexibility of the trader's sourcing problem.
+ The volume response in Stage 1 is immediate:
+ within the first few days of the bonus activation,
+ treated traders deliver visibly more milk than control traders,
+ and this gap is sustained throughout the period.
+ After the threshold change on November 15,
+ the quality response emerges within two to three days,
+ as treated traders begin screening suppliers and redirecting sourcing toward higher-quality milk.
+ The speed of adjustment is consistent with the low adjustment costs inherent in daily sourcing decisions:
+ traders choose each morning which farmers to visit and how much to collect,
+ and these choices can shift rapidly when incentives change.
+ Some treated traders recruit additional suppliers (friends and family members) to increase volumes,
+ a form of extensive-margin adjustment that further illustrates the flexibility of the trader's sourcing problem.
 \end_layout
 
 \begin_layout Standard
@@ -6941,60 +6992,96 @@ name "fig:daily-quantity"
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Trader Endline Survey
 \end_layout
 
 \begin_layout Standard
-Despite the strong effects in the daily submission data, the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the five outcomes: supervised fat content (p = 0.287), delivered quantity (p = 0.396), rejection rates (p = 0.691), whether the trader pays a quality premium (p = 0.155), and purchase price (p = 0.413).
+Despite the strong effects in the daily submission data,
+ the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the five outcomes:
+ supervised fat content (p = 0.287),
+ delivered quantity (p = 0.396),
+ rejection rates (p = 0.691),
+ whether the trader pays a quality premium (p = 0.155),
+ and purchase price (p = 0.413).
  None of the five outcomes approaches conventional significance levels.
 \end_layout
 
 \begin_layout Standard
 Three factors likely explain the divergence between the daily and survey results.
- First, the endline was conducted after the bonus period ended, so traders were no longer operating under the treatment incentive at the time of the survey.
+ First,
+ the endline was conducted after the bonus period ended,
+ so traders were no longer operating under the treatment incentive at the time of the survey.
  The null results are therefore consistent with a model in which behavioral responses to the bonus are contemporaneous rather than habit-forming.
- Second, the trader sample is small (99 traders, of whom only 30 have a supervised fat test), limiting statistical power for survey-based detection.
- Third, the daily submission data aggregate behavior over 30 days of repeated decisions, whereas the endline captures a single cross-sectional snapshot.
- Cumulative treatment effects visible in panel data can fall below detection thresholds in a one-time survey, particularly when the treatment has ended.
+ Second,
+ the trader sample is small (99 traders,
+ of whom only 30 have a supervised fat test),
+ limiting statistical power for survey-based detection.
+ Third,
+ the daily submission data aggregate behavior over 30 days of repeated decisions,
+ whereas the endline captures a single cross-sectional snapshot.
+ Cumulative treatment effects visible in panel data can fall below detection thresholds in a one-time survey,
+ particularly when the treatment has ended.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Farmer-Level Outcomes
 \end_layout
 
 \begin_layout Standard
 We also examine whether the trader-level treatment generates downstream effects on the farmers from whom treated traders source milk.
- The most striking finding is a negative effect on farmer prices: farmers selling to treated traders report receiving 16.89 UGX less per liter (RI p = 0.017, WY p = 0.050).
+ The most striking finding is a negative effect on farmer prices:
+ farmers selling to treated traders report receiving 16.89 UGX less per liter (RI p = 0.017,
+ WY p = 0.050).
  This negative pass-through is significant and runs counter to the prediction that quality premiums at the trader level would raise prices for farmers.
 \end_layout
 
 \begin_layout Standard
 Several mechanisms can rationalize this result.
- First, treated traders expand their sourcing networks (recruiting friends and family to deliver more milk), which increases the supply of milk available to the trader and shifts bargaining power away from individual farmers.
- Second, the quality bonus creates an incentive for traders to substitute from price competition to quality screening: rather than competing for farmer loyalty through higher prices, treated traders screen for quality and direct their collection toward farmers whose milk meets the threshold.
- Third, the bonus reward structure encourages sourcing from more farmers at the prevailing price (extensive-margin expansion) rather than paying existing farmers a premium.
- In each case, the surplus generated by the quality bonus accrues to the trader rather than passing through to farmers.
+ First,
+ treated traders expand their sourcing networks (recruiting friends and family to deliver more milk),
+ which increases the supply of milk available to the trader and shifts bargaining power away from individual farmers.
+ Second,
+ the quality bonus creates an incentive for traders to substitute from price competition to quality screening:
+ rather than competing for farmer loyalty through higher prices,
+ treated traders screen for quality and direct their collection toward farmers whose milk meets the threshold.
+ Third,
+ the bonus reward structure encourages sourcing from more farmers at the prevailing price (extensive-margin expansion) rather than paying existing farmers a premium.
+ In each case,
+ the surplus generated by the quality bonus accrues to the trader rather than passing through to farmers.
 \end_layout
 
 \begin_layout Standard
 Other farmer outcomes provide limited evidence of behavioral transmission.
- Whether the farmer reports having quality checked is unaffected by treatment (coefficient of -0.027, not significant).
- The feeding practices index shows a marginally significant improvement of 0.134 (RI p = 0.076, WY p = 0.145), though this does not survive multiple testing correction.
+ Whether the farmer reports having quality checked is unaffected by treatment (coefficient of -0.027,
+ not significant).
+ The feeding practices index shows a marginally significant improvement of 0.134 (RI p = 0.076,
+ WY p = 0.145),
+ though this does not survive multiple testing correction.
  No individual feeding practice is significant on its own.
- The marginal feeding index result suggests that some information about quality requirements may transmit from treated traders to their farmers, inducing modest adjustments in feeding behavior even in the absence of price incentives.
+ The marginal feeding index result suggests that some information about quality requirements may transmit from treated traders to their farmers,
+ inducing modest adjustments in feeding behavior even in the absence of price incentives.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Summary
 \end_layout
 
 \begin_layout Standard
 The follow-up experiment confirms that activating the price channel through quality-contingent bonuses elicits rapid and substantial behavioral responses from traders.
- The Stage 1 versus Stage 2 contrast provides a clean test of the model's prediction: when quality is abundant relative to the threshold, traders respond on volume; when the threshold binds, they shift to quality-based sourcing.
- The daily panel reveals that these adjustments occur within days, consistent with the low adjustment costs inherent in trader sourcing decisions.
- At the same time, the surplus from quality bonuses does not pass through to farmers, and the effects do not persist into the post-treatment survey.
- Taken together, these findings indicate that while the price channel can activate quality-improving behavior at the trader level, sustaining and transmitting these effects through the supply chain requires incentive structures that operate continuously rather than temporarily.
+ The Stage 1 versus Stage 2 contrast provides a clean test of the model's prediction:
+ when quality is abundant relative to the threshold,
+ traders respond on volume;
+ when the threshold binds,
+ they shift to quality-based sourcing.
+ The daily panel reveals that these adjustments occur within days,
+ consistent with the low adjustment costs inherent in trader sourcing decisions.
+ At the same time,
+ the surplus from quality bonuses does not pass through to farmers,
+ and the effects do not persist into the post-treatment survey.
+ Taken together,
+ these findings indicate that while the price channel can activate quality-improving behavior at the trader level,
+ sustaining and transmitting these effects through the supply chain requires incentive structures that operate continuously rather than temporarily.
 \end_layout
 
 \begin_layout Standard
