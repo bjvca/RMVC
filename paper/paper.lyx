@@ -3395,6 +3395,14 @@ The composite index combining all five components mirrors these patterns,
 \end_layout
 
 \begin_layout Standard
+The distributional pattern of the added-water variable is particularly informative about the underlying mechanism.
+ While the median delivery shows no detectable added water, approximately 29 percent of deliveries in the control group test positive for some water addition, and 11 percent show more than 5 percent added water.
+ In the treatment group, the incidence of serious adulteration (more than 5 percent added water) falls to 5 percent, roughly half the control rate.
+ This concentration of the treatment effect in the right tail of the adulteration distribution is consistent with the enforcement channel identified in the model: the credible threat of detection disciplines the most egregious adulterators without necessarily changing behavior among suppliers who were already delivering clean milk.
+ The enforcement threshold truncates the lower tail of the quality distribution rather than shifting it uniformly.
+\end_layout
+
+\begin_layout Standard
 The treatment-on-the-treated estimates,
  presented in Appendix Table 
 \begin_inset CommandInset ref
