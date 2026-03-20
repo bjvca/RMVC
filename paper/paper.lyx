@@ -1368,6 +1368,7 @@ In some cases,
  Such MCCs were assigned to the same treatment group to avoid contamination.
  As a result,
  the 125 endline MCCs map to 92 distinct randomization clusters.
+ A minimum detectable effect analysis confirms that this reduction does not materially affect statistical power: with baseline controls, the MDE for MCC-level prices is approximately 21 UGX, well below the hypothesized 30 UGX effect, and Fisher randomization inference does not depend on asymptotic cluster counts.
 \end_layout
 
 \end_inset
