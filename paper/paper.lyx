@@ -726,8 +726,8 @@ To test whether activating the pricing channel can shift the chain to a higher e
 The follow-up experiment reveals that injecting explicit quality premiums into the chain does shift trader behavior,
  but in ways that depend critically on the scarcity of high-quality milk.
  When quality thresholds are set at standard East African levels and high-quality milk is naturally abundant,
- treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters) without any meaningful improvement in fat content.
- Sourcing more of the milk already available is simply the most profitable response when quality is plentiful.
+ treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters, almost 50 percent above the control mean) without any meaningful improvement in fat content.
+ The results suggest that when quality is abundant and the threshold easily met, traders find it more profitable to expand the volume of qualifying milk than to invest in sourcing higher-quality milk.
  When the fat threshold is raised and quality becomes scarce,
  the pattern shifts decisively:
  traders move from volume expansion to active quality-based sourcing,
@@ -5633,8 +5633,7 @@ The model also generates predictions about how the behavioral response to qualit
 
 ,
  which rewards increases in volume delivered (since accepted milk earns the quality premium on every liter).
- The most profitable response is to scale up the quantity of milk collected,
- not to improve its composition.
+ In this regime, expanding the volume of qualifying milk is a lower-cost margin of adjustment than sourcing higher-quality milk.
 \end_layout
 
 \begin_layout Standard
@@ -6839,7 +6838,7 @@ The contrast between Stage 1 and Stage 2 reveals the central finding of the foll
  treated traders show no significant improvement in quality:
  the fat effect is 0.035 percentage points (RI p = 0.263) and the SNF effect is 0.004 percentage points (RI p = 0.888).
  Yet even in Stage 1,
- treated traders deliver significantly more milk (126 liters,
+ treated traders deliver significantly more milk (126 liters, almost 50 percent above the control mean,
  RI p = 0.004,
  WY p = 0.010) and earn significantly higher bonuses (13,784 UGX,
  RI p = 0.003,
