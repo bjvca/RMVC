@@ -727,7 +727,7 @@ The follow-up experiment reveals that injecting explicit quality premiums into t
  but in ways that depend critically on the scarcity of high-quality milk.
  When quality thresholds are set at standard East African levels and high-quality milk is naturally abundant,
  treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters, almost 50 percent above the control mean) without any meaningful improvement in fat content.
- Sourcing more of the milk already available is simply the most profitable response when quality is plentiful.
+ The results suggest that when quality is abundant and the threshold easily met, traders find it more profitable to expand the volume of qualifying milk than to invest in sourcing higher-quality milk.
  When the fat threshold is raised and quality becomes scarce,
  the pattern shifts decisively:
  traders move from volume expansion to active quality-based sourcing,
@@ -5625,8 +5625,7 @@ The model also generates predictions about how the behavioral response to qualit
 
 ,
  which rewards increases in volume delivered (since accepted milk earns the quality premium on every liter).
- The most profitable response is to scale up the quantity of milk collected,
- not to improve its composition.
+ In this regime, expanding the volume of qualifying milk is a lower-cost margin of adjustment than sourcing higher-quality milk.
 \end_layout
 
 \begin_layout Standard
