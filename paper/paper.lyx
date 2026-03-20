@@ -2019,8 +2019,7 @@ where
 \end_layout
 
 \begin_layout Standard
-In all farmer-level regressions,
- we apply the bias-reduced linearization (CR2) cluster-robust variance estimator 
+We report point estimates and CR2 cluster-robust standard errors
 \begin_inset CommandInset citation
 LatexCommand citep
 key "imbens2016robust"
@@ -2028,11 +2027,8 @@ literal "false"
 
 \end_inset
 
-,
- with standard errors clustered at the MCC catchment area level.
- To summarize effects across multiple outcomes within a family,
- we construct Anderson indices,
- a strategy that also limits false positives due to multiple hypothesis testing 
+ clustered at the MCC catchment area level, for effect size interpretation.
+ To summarize effects across multiple outcomes within a family, we construct Anderson indices
 \begin_inset CommandInset citation
 LatexCommand citep
 key "anderson2008multiple"
@@ -2044,12 +2040,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Our primary inferential framework is Fisher randomization inference (RI),
- computed from 5,000 permutations that respect the experimental design:
- the measurement system treatment is permuted at the MCC catchment level,
- maintaining the number of treated MCCs.
- To account for multiple testing across outcomes within a family,
- we report Westfall-Young stepdown-adjusted p-values 
+Statistical inference is based on Fisher randomization inference (RI).
+ Using the OLS coefficient as the test statistic, we evaluate its significance against a permutation distribution generated from 5,000 reassignments of treatment at the MCC catchment level, maintaining the number of treated clusters.
+ Because the permutation scheme mirrors the actual randomization, the resulting p-values are exact and do not depend on asymptotic approximations or assumptions about within-cluster correlation or the number of clusters.
+ To account for multiple testing across outcomes within a family, we apply Westfall-Young stepdown adjustments
 \begin_inset CommandInset citation
 LatexCommand citep
 key "westfall1993resampling"
@@ -2057,9 +2051,8 @@ literal "false"
 
 \end_inset
 
-,
- which control the familywise error rate while exploiting the correlation structure across outcomes through the same permutation distribution used for individual RI p-values.
- CR2 cluster-robust p-values and Anderson-Sharp q-values are reported in the appendix.
+ using the same permutation distribution, controlling the familywise error rate while exploiting the correlation structure across outcomes.
+ CR2-based p-values and Anderson-Sharp q-values are reported in the appendix.
 \end_layout
 
 \begin_layout Subsection
