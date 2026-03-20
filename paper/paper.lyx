@@ -162,8 +162,7 @@ thanks{Innovation Policy and Scaling Unit,
 
 \end_inset
 
-When Quality (doesn't) Pay:
-Evidence from Two Experiments in Ugandan Dairy
+When Quality (doesn't) Pay:Evidence from Two Experiments in Ugandan Dairy
 \end_layout
 
 \begin_layout Abstract
@@ -171,7 +170,7 @@ Quality in agri-food supply chains is often unobservable at first sale,
  and early aggregation limits traceability,
  weakening incentives for quality provision.
  We study whether improving measurement and traceability induces quality-based incentives in Uganda’s dairy sector.
- In a cluster randomized trial with 124 milk collection centers and over 2,000 farmers,
+ In a cluster randomized trial with 125 milk collection centers and over 2,000 farmers,
  we introduce digital milk analyzers and record-keeping systems.
  The intervention improves milk quality,
  primarily by reducing adulteration,
@@ -494,7 +493,7 @@ literal "false"
 :
  without credible verification mechanisms,
  high- and low-quality products trade at similar prices,
- eroding incentives to invest in quality and potentially producing adverse selection equilibria in which low-quality goods drive out high-quality ones.
+ resulting in adverse selection equilibria in which low-quality goods drive out high-quality ones.
  Even in settings where quality can be observed,
  the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging 
 \begin_inset CommandInset citation
@@ -639,7 +638,7 @@ literal "false"
 \begin_layout Standard
 We use this setting to test whether strengthening quality observability can enable the emergence of quality premia in Uganda's dairy sector.
  We implement a cluster randomized controlled trial across four districts in the southwestern milk shed around Mbarara,
- randomly assigning 130 MCCs to receive milk analyzer equipment,
+ randomly assigning 125 MCCs to receive milk analyzer equipment,
  digital record-keeping infrastructure,
  and farmer-facing quality information.
  Following a one-year intervention period,
