@@ -650,7 +650,7 @@ We use this setting to test whether strengthening quality observability can enab
  we measure prices received and the incidence of quality bonuses.
  Finally,
  to obtain objective measures of compositional milk quality independent of self-reports,
- enumerators conducted supervised testing of all incoming milk deliveries at both treatment and control MCCs on a single day at endline,
+ enumerators conducted supervised testing of all incoming milk deliveries at both treatment and control MCCs during the course of a full day at endline,
  yielding direct measures of butterfat,
  solids-not-fat,
  protein,
@@ -707,7 +707,7 @@ The pattern of results (large increases in testing,
 
 \begin_layout Standard
 To test whether activating the pricing channel can shift the chain to a higher equilibrium,
- we conduct a follow-up experiment at 19 MCCs where the measurement infrastructure is already operational,
+ we conduct a follow-up experiment at 20 MCCs where the measurement infrastructure is already operational,
  randomly assigning quality premiums to traders delivering milk to these MCCs.
  Treated traders receive UGX 100 per liter for each 0.1 percentage point of butterfat and solids-not-fat above East African standards,
  paid daily via mobile money.
@@ -1045,11 +1045,19 @@ nolink "false"
 \end_inset
 
 .
- Section
-\begin_inset space ~
+ Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:discussion"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
 \end_inset
 
-
+ provides a discussion while Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:conclusion"
@@ -7389,15 +7397,16 @@ end{table}
 
 \begin_layout Section
 Discussion
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:discussion"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 [Placeholder discussion section.
 \end_layout
 
@@ -7435,15 +7444,16 @@ Key points to develop:
 
 \begin_layout Section
 Conclusion
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:conclusion"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 [Placeholder conclusion.
  Summarize the three-act structure:
  (1) a quality measurement and digital monitoring system improves quality through enforcement but not ,
