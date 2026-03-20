@@ -1351,20 +1351,21 @@ name "subsec:design"
 \end_layout
 
 \begin_layout Standard
-We use a cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
+We use a simple cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
  The unit of randomization is the MCC catchment area.
- Of the 130 MCCs enrolled in the study,
- half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection,
+ Of the 125 MCCs enrolled in the study,
+ about half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection,
  while the remaining MCCs served as controls.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
 In some cases,
- more than one MCC was located in the same area (e.g.,
+ multiple MCCs were located in the same catchment area (e.g.,
  in a trading center).
- Such MCCs were assigned to the same treatment group to avoid contamination,
- so the effective number of randomization clusters is slightly lower than 130.
+ Such MCCs were assigned to the same treatment group to avoid contamination.
+ As a result,
+ the 125 endline MCCs map to 92 distinct randomization clusters.
 \end_layout
 
 \end_inset
@@ -1383,7 +1384,7 @@ The design enables us to estimate treatment effects at multiple levels of the va
  quality bonuses,
  and production practices.
  Finally,
- through supervised milk sample collection at endline,
+ through supervised milk sample collection and testing at endline,
  we obtain objective measures of milk quality that are independent of self-reported survey data.
 \end_layout
 
@@ -1635,10 +1636,9 @@ name "fig:Application"
 
 \begin_layout Standard
 Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet computers on which the application was pre-installed.
- Each tablet contained a SIM card with a prepaid data bundle to enable cloud-based synchronization of records.
+ Each tablet contained a SIM card with a prepaid data bundle (which was regularly renewed by the project) to enable cloud-based synchronization of records.
  The application was developed following offline-first design principles,
  ensuring that all core functionalities remained accessible without an active internet connection and that data were uploaded automatically once connectivity was restored.
- Monthly data subscriptions were provided to ensure continuous connectivity.
 \end_layout
 
 \begin_layout Standard
@@ -1655,12 +1655,7 @@ Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet 
 \begin_layout Standard
 Together,
  these three components form an integrated strategy to make milk quality observable and actionable,
- improving information flows and incentive structures throughout the dairy value chain.
- This bundle constitutes the treatment in the main experiment (sometimes referred to as the
-\emph on
- analyzer
-\emph default
- treatment).
+ improving information flows throughout the dairy value chain.
 \end_layout
 
 \begin_layout Subsection
