@@ -1312,7 +1312,9 @@ Quality of raw milk is difficult to observe without proper testing equipment.
 \end_layout
 
 \begin_layout Standard
-Electronic milk analyzers offer a more comprehensive alternative:
+At present, most MCCs track only the quantity of milk delivered by each supplier, typically recorded by hand in a paper notebook.
+ No compositional quality information is captured at the point of delivery.
+ Electronic milk analyzers offer a more comprehensive alternative:
  they measure butterfat,
  solids-not-fat,
  protein,
