@@ -726,7 +726,7 @@ To test whether activating the pricing channel can shift the chain to a higher e
 The follow-up experiment reveals that injecting explicit quality premiums into the chain does shift trader behavior,
  but in ways that depend critically on the scarcity of high-quality milk.
  When quality thresholds are set at standard East African levels and high-quality milk is naturally abundant,
- treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters) without any meaningful improvement in fat content.
+ treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters, almost 50 percent above the control mean) without any meaningful improvement in fat content.
  Sourcing more of the milk already available is simply the most profitable response when quality is plentiful.
  When the fat threshold is raised and quality becomes scarce,
  the pattern shifts decisively:
@@ -6831,7 +6831,7 @@ The contrast between Stage 1 and Stage 2 reveals the central finding of the foll
  treated traders show no significant improvement in quality:
  the fat effect is 0.035 percentage points (RI p = 0.263) and the SNF effect is 0.004 percentage points (RI p = 0.888).
  Yet even in Stage 1,
- treated traders deliver significantly more milk (126 liters,
+ treated traders deliver significantly more milk (126 liters, almost 50 percent above the control mean,
  RI p = 0.004,
  WY p = 0.010) and earn significantly higher bonuses (13,784 UGX,
  RI p = 0.003,
