@@ -1312,7 +1312,9 @@ Quality of raw milk is difficult to observe without proper testing equipment.
 \end_layout
 
 \begin_layout Standard
-At present, most MCCs track only the quantity of milk delivered by each supplier, typically recorded by hand in a paper notebook.
+At present,
+ most MCCs track only the quantity of milk delivered by each supplier,
+ typically recorded by hand in a paper notebook.
  No compositional quality information is captured at the point of delivery.
  Electronic milk analyzers offer a more comprehensive alternative:
  they measure butterfat,
@@ -1532,7 +1534,7 @@ To support sustained adoption,
  such that MCC managers can determine the total sum to be paid to a farmer for milk delivered over a particular time frame,
  such as in the last 14 days.
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Farmers are typically paid on the 1st and the 15th of the month.
@@ -1673,11 +1675,11 @@ Sample size was determined using a series of power simulations,
  prices were assumed normally distributed with mean 1000 UGX/liter and standard deviation 50,
  while farmer-level prices were drawn with the MCC mean and a higher variance (SD = 100) to capture greater dispersion at that level.
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Processors set fairly stable procurement prices and MCCs adjust tightly around those.
- The nested nature of the sampling and variance parameters imply an intra-cluster correlation of approximately ρ≈0.20.
+ The nested nature of the sampling and variance parameters imply an intra-cluster (within MCCs) correlation of approximately ρ≈0.20.
 \end_layout
 
 \end_inset
@@ -1706,7 +1708,9 @@ The field experiment was conducted in four districts of Southwestern Uganda:
 status collapsed
 
 \begin_layout Plain Layout
-As noted above, co-located MCCs were assigned to the same treatment group, yielding 92 distinct randomization clusters from the 125 endline MCCs.
+As noted above,
+ co-located MCCs were assigned to the same treatment group,
+ yielding 92 distinct randomization clusters from the 125 endline MCCs.
 \end_layout
 
 \end_inset
@@ -1857,16 +1861,14 @@ At the farmer level,
 
 \begin_layout Standard
 Finally,
- to obtain objective measures of milk quality independent of self-reported survey data,
+ to obtain objective measures of milk quality,
  we collect supervised milk samples at endline.
- Enumerators equipped with project Lactoscans visited each MCC and tested all incoming deliveries over one full day,
+ Enumerators equipped with milk analyzers visited each MCC and tested all incoming deliveries over one full day,
  yielding measurements of butterfat,
  solids-not-fat,
  protein,
  added water,
  and corrected lactometer reading for each delivery.
- These sample-level outcomes are analyzed using quantity-weighted least squares,
- with treatment effects identified from the MCC-level randomization.
 \end_layout
 
 \begin_layout Standard
@@ -1890,7 +1892,7 @@ name "sec:Estimation-and-inference"
 \end_layout
 
 \begin_layout Standard
-We estimate intent-to-treat (ITT) effects using ordinary least squares with ANCOVA specifications that control for baseline values of the outcome where available.
+We estimate intent-to-treat (ITT) effects using ordinary least squares with Analysis of Covariance (ANCOVA) specifications that control for baseline values of the outcome where available.
  At the MCC level,
  denote milk collection centers by 
 \begin_inset Formula $m$
@@ -2006,7 +2008,7 @@ where
 \begin_inset Formula $j$
 \end_inset
 
- at MCC
+ at MCC 
 \begin_inset Formula $m$
 \end_inset
 
@@ -2043,7 +2045,7 @@ literal "false"
 \begin_layout Standard
 Our primary inferential framework is Fisher randomization inference (RI),
  computed from 5,000 permutations that respect the experimental design:
- the measurement system treatment is permuted at the MCC level,
+ the measurement system treatment is permuted at the MCC catchment level,
  maintaining the number of treated MCCs.
  To account for multiple testing across outcomes within a family,
  we report Westfall-Young stepdown-adjusted p-values 
@@ -2056,7 +2058,6 @@ literal "false"
 
 ,
  which control the familywise error rate while exploiting the correlation structure across outcomes through the same permutation distribution used for individual RI p-values.
- This procedure is more powerful than Bonferroni-type corrections because it accounts for the joint distribution of test statistics under the null.
  CR2 cluster-robust p-values and Anderson-Sharp q-values are reported in the appendix.
 \end_layout
 
