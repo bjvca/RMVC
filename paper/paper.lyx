@@ -726,8 +726,10 @@ To test whether activating the pricing channel can shift the chain to a higher e
 The follow-up experiment reveals that injecting explicit quality premiums into the chain does shift trader behavior,
  but in ways that depend critically on the scarcity of high-quality milk.
  When quality thresholds are set at standard East African levels and high-quality milk is naturally abundant,
- treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters, almost 50 percent above the control mean) without any meaningful improvement in fat content.
- The results suggest that when quality is abundant and the threshold easily met, traders find it more profitable to expand the volume of qualifying milk than to invest in sourcing higher-quality milk.
+ treated traders respond primarily on the volume margin (daily deliveries increase by around 126 liters,
+ almost 50 percent above the control mean) without any meaningful improvement in fat content.
+ The results suggest that when quality is abundant and the threshold easily met,
+ traders find it more profitable to expand the volume of qualifying milk than to invest in sourcing higher-quality milk.
  When the fat threshold is raised and quality becomes scarce,
  the pattern shifts decisively:
  traders move from volume expansion to active quality-based sourcing,
@@ -1209,8 +1211,10 @@ Milk Collection Centers:
  facilitating access for farmers,
  traders and transporters.
  MCCs vary considerably in organizational form and capacity.
- Cooperative MCCs are owned by member farmers, which in principle aligns their interests with suppliers but also creates pressure toward uniform pricing and inclusivity that may work against quality differentiation.
- Privately owned MCCs operate as commercial entities with more flexibility to differentiate on quality, but less institutional incentive to pass margins upstream.
+ Cooperative MCCs are owned by member farmers,
+ which in principle aligns their interests with suppliers but also creates pressure toward uniform pricing and inclusivity that may work against quality differentiation.
+ Privately owned MCCs operate as commercial entities with more flexibility to differentiate on quality,
+ but less institutional incentive to pass margins upstream.
 \end_layout
 
 \begin_layout Enumerate
@@ -1244,8 +1248,13 @@ This layered structure,
 
 \begin_layout Standard
 Milk quality remains a persistent challenge in Uganda's dairy sector.
- Media reports and anecdotal evidence from industry stakeholders point to widespread adulteration, particularly the addition of water to increase the volume of milk delivered, but systematic data on the prevalence of adulteration in Uganda are scarce.
- Evidence from neighboring Kenya, where similar value chain structures prevail, suggests that 5 to 10 percent of milk samples at retail show signs of water addition, with higher rates during the dry season when volumes are low and incentives to dilute are strongest
+ Media reports and anecdotal evidence from industry stakeholders point to widespread adulteration,
+ particularly the addition of water to increase the volume of milk delivered,
+ but systematic data on the prevalence of adulteration in Uganda are scarce.
+ Evidence from neighboring Kenya,
+ where similar value chain structures prevail,
+ suggests that 5 to 10 percent of milk samples at retail show signs of water addition,
+ with higher rates during the dry season when volumes are low and incentives to dilute are strongest 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "wanjohi2020milk"
@@ -1254,9 +1263,20 @@ literal "false"
 \end_inset
 
 .
- Because traders in Uganda are paid per liter with no adjustment for composition, the incentive structure is similar.
- Adulterated milk reduces processing yields for butter, cheese, and powdered milk, and in severe cases can lead to rejection of entire batches at the processor level, imposing losses on MCCs.
- Beyond adulteration, compositional quality (butterfat, protein, solids-not-fat) varies substantially across farmers depending on breed, feeding practices, and animal health, but these differences are not reflected in prices.
+ Because traders in Uganda are paid per liter with no adjustment for composition,
+ the incentive structure is similar.
+ Adulterated milk reduces processing yields for butter,
+ cheese,
+ and powdered milk,
+ and in severe cases can lead to rejection of entire batches at the processor level,
+ imposing losses on MCCs.
+ Beyond adulteration,
+ compositional quality (butterfat,
+ protein,
+ solids-not-fat) varies substantially across farmers depending on breed,
+ feeding practices,
+ and animal health,
+ but these differences are not reflected in prices.
 \end_layout
 
 \begin_layout Standard
@@ -1265,12 +1285,11 @@ Pricing along the chain reinforces the low-quality equilibrium.
  with no differentiation based on compositional quality.
  Payments from MCCs to farmers are made on a biweekly cycle,
  creating a wedge between the moment of delivery (when quality could in principle be observed) and the moment of payment (when incentives are realized).
- This payment structure makes it difficult to link compensation to the quality of specific deliveries,
- even when testing infrastructure is available.
- At the processor level,
- quality-based pricing does exist in some cases,
- but these premiums rarely flow upstream to MCCs,
- let alone to farmers or traders.
+ A similar rigidity prevails downstream:
+ processors typically announce fixed procurement prices for two-week periods,
+ adjusting only in response to acute shortages or seasonal gluts.
+ This structure severs the link between the quality of a specific delivery and the price paid for it,
+ even when testing infrastructure is available to measure that quality.
 \end_layout
 
 \begin_layout Standard
@@ -1293,9 +1312,7 @@ Quality of raw milk is difficult to observe without proper testing equipment.
 \end_layout
 
 \begin_layout Standard
-Electronic milk analyzers,
- such as the Lactoscan,
- offer a more comprehensive alternative:
+Electronic milk analyzers offer a more comprehensive alternative:
  they measure butterfat,
  solids-not-fat,
  protein,
@@ -3392,9 +3409,14 @@ The composite index combining all five components mirrors these patterns,
 
 \begin_layout Standard
 The distributional pattern of the added-water variable is particularly informative about the underlying mechanism.
- While the median delivery shows no detectable added water, approximately 29 percent of deliveries in the control group test positive for some water addition, and 11 percent show more than 5 percent added water.
- In the treatment group, the incidence of serious adulteration (more than 5 percent added water) falls to 5 percent, roughly half the control rate.
- This concentration of the treatment effect in the right tail of the adulteration distribution is consistent with the enforcement channel identified in the model: the credible threat of detection disciplines the most egregious adulterators without necessarily changing behavior among suppliers who were already delivering clean milk.
+ While the median delivery shows no detectable added water,
+ approximately 29 percent of deliveries in the control group test positive for some water addition,
+ and 11 percent show more than 5 percent added water.
+ In the treatment group,
+ the incidence of serious adulteration (more than 5 percent added water) falls to 5 percent,
+ roughly half the control rate.
+ This concentration of the treatment effect in the right tail of the adulteration distribution is consistent with the enforcement channel identified in the model:
+ the credible threat of detection disciplines the most egregious adulterators without necessarily changing behavior among suppliers who were already delivering clean milk.
  The enforcement threshold truncates the lower tail of the quality distribution rather than shifting it uniformly.
 \end_layout
 
@@ -5633,7 +5655,8 @@ The model also generates predictions about how the behavioral response to qualit
 
 ,
  which rewards increases in volume delivered (since accepted milk earns the quality premium on every liter).
- In this regime, expanding the volume of qualifying milk is a lower-cost margin of adjustment than sourcing higher-quality milk.
+ In this regime,
+ expanding the volume of qualifying milk is a lower-cost margin of adjustment than sourcing higher-quality milk.
 \end_layout
 
 \begin_layout Standard
@@ -6838,7 +6861,8 @@ The contrast between Stage 1 and Stage 2 reveals the central finding of the foll
  treated traders show no significant improvement in quality:
  the fat effect is 0.035 percentage points (RI p = 0.263) and the SNF effect is 0.004 percentage points (RI p = 0.888).
  Yet even in Stage 1,
- treated traders deliver significantly more milk (126 liters, almost 50 percent above the control mean,
+ treated traders deliver significantly more milk (126 liters,
+ almost 50 percent above the control mean,
  RI p = 0.004,
  WY p = 0.010) and earn significantly higher bonuses (13,784 UGX,
  RI p = 0.003,
