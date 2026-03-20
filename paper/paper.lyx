@@ -162,7 +162,7 @@ thanks{Innovation Policy and Scaling Unit,
 
 \end_inset
 
-When Quality (doesn't) Pay:
+When Quality (doesn't) Pay: 
 Evidence from Two Experiments in Ugandan Dairy
 \end_layout
 
@@ -494,7 +494,7 @@ literal "false"
 :
  without credible verification mechanisms,
  high- and low-quality products trade at similar prices,
- eroding incentives to invest in quality and potentially producing adverse selection equilibria in which low-quality goods drive out high-quality ones.
+ potentially producing adverse selection equilibria in which low-quality goods drive out high-quality ones.
  Even in settings where quality can be observed,
  the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging 
 \begin_inset CommandInset citation
@@ -558,7 +558,7 @@ literal "false"
  a pattern well-documented empirically across commodity supply chains in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "bold2022market,minten2008"
+key "bold2022market,macchiavello2026quality,bai2025quality,minten2009global"
 literal "false"
 
 \end_inset
