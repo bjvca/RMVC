@@ -1243,24 +1243,20 @@ This layered structure,
 \end_layout
 
 \begin_layout Standard
-Milk quality is a persistent challenge in Uganda's dairy sector.
- Water adulteration is the most common form of quality fraud:
- traders and farmers add water to increase the volume of milk delivered,
- diluting its compositional value.
- Because traders are paid per liter with no adjustment for composition,
- the incentive to adulterate is straightforward.
- Adulterated milk reduces processing yields for butter,
- cheese,
- and powdered milk,
- and in severe cases can lead to rejection of entire batches at the processor level,
- imposing losses on MCCs.
- Beyond adulteration,
- compositional quality (butterfat,
- protein,
- solids-not-fat) varies substantially across farmers depending on breed,
- feeding practices,
- and animal health,
- but these differences are not reflected in prices.
+Milk quality remains a persistent challenge in Uganda's dairy sector.
+ Media reports and anecdotal evidence from industry stakeholders point to widespread adulteration, particularly the addition of water to increase the volume of milk delivered, but systematic data on the prevalence of adulteration in Uganda are scarce.
+ Evidence from neighboring Kenya, where similar value chain structures prevail, suggests that 5 to 10 percent of milk samples at retail show signs of water addition, with higher rates during the dry season when volumes are low and incentives to dilute are strongest
+\begin_inset CommandInset citation
+LatexCommand citep
+key "wanjohi2020milk"
+literal "false"
+
+\end_inset
+
+.
+ Because traders in Uganda are paid per liter with no adjustment for composition, the incentive structure is similar.
+ Adulterated milk reduces processing yields for butter, cheese, and powdered milk, and in severe cases can lead to rejection of entire batches at the processor level, imposing losses on MCCs.
+ Beyond adulteration, compositional quality (butterfat, protein, solids-not-fat) varies substantially across farmers depending on breed, feeding practices, and animal health, but these differences are not reflected in prices.
 \end_layout
 
 \begin_layout Standard
