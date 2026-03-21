@@ -7621,7 +7621,7 @@ placement H
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7630,7 +7630,7 @@ status collapsed
 Additional Balance of MCC Baseline Characteristics
 \begin_inset CommandInset label
 LatexCommand label
-name “tab:Balance_appendix”
+name "tab:Balance_appendix"
 
 \end_inset
 
@@ -7703,7 +7703,15 @@ Sexpr{balance[2,1]} &
 \backslash
 Sexpr{balance[2,3]}$^{
 \backslash
-Sexpr{ifelse(balance[2,5]<.01,”**”,ifelse(balance[2,5]<.05,”*”,ifelse(balance[2,5]<.1,”+”,””)))}}$ &
+Sexpr{ifelse(balance[2,5]<.01,
+\begin_inset Quotes erd
+\end_inset
+
+**
+\begin_inset Quotes erd
+\end_inset
+
+,ifelse(balance[2,5]<.05,"*",ifelse(balance[2,5]<.1,"+","")))}}$ &
 \backslash
 Sexpr{balance[2,8]}
 \backslash
@@ -7735,7 +7743,7 @@ Sexpr{balance[3,1]} &
 \backslash
 Sexpr{balance[3,3]}$^{
 \backslash
-Sexpr{ifelse(balance[3,5]<.01,”**”,ifelse(balance[3,5]<.05,”*”,ifelse(balance[3,5]<.1,”+”,””)))}}$ &
+Sexpr{ifelse(balance[3,5]<.01,"**",ifelse(balance[3,5]<.05,"*",ifelse(balance[3,5]<.1,"+","")))}}$ &
 \backslash
 Sexpr{balance[3,8]}
 \backslash
@@ -7761,13 +7769,15 @@ Sexpr{balance[3,4]})
 \end_layout
 
 \begin_layout Plain Layout
-Capacity utilization in dry season (%) &
+Capacity utilization in dry season (
+\backslash
+%) &
 \backslash
 Sexpr{balance[5,1]} &
 \backslash
 Sexpr{balance[5,3]}$^{
 \backslash
-Sexpr{ifelse(balance[5,5]<.01,”**”,ifelse(balance[5,5]<.05,”*”,ifelse(balance[5,5]<.1,”+”,””)))}}$ &
+Sexpr{ifelse(balance[5,5]<.01,"**",ifelse(balance[5,5]<.05,"*",ifelse(balance[5,5]<.1,"+","")))}}$ &
 \backslash
 Sexpr{balance[5,8]}
 \backslash
@@ -7799,7 +7809,7 @@ Sexpr{balance[8,1]} &
 \backslash
 Sexpr{balance[8,3]}$^{
 \backslash
-Sexpr{ifelse(balance[8,5]<.01,”**”,ifelse(balance[8,5]<.05,”*”,ifelse(balance[8,5]<.1,”+”,””)))}}$ &
+Sexpr{ifelse(balance[8,5]<.01,"**",ifelse(balance[8,5]<.05,"*",ifelse(balance[8,5]<.1,"+","")))}}$ &
 \backslash
 Sexpr{balance[8,8]}
 \backslash
@@ -7831,7 +7841,7 @@ Sexpr{balance[9,1]} &
 \backslash
 Sexpr{balance[9,3]}$^{
 \backslash
-Sexpr{ifelse(balance[9,5]<.01,”**”,ifelse(balance[9,5]<.05,”*”,ifelse(balance[9,5]<.1,”+”,””)))}}$ &
+Sexpr{ifelse(balance[9,5]<.01,"**",ifelse(balance[9,5]<.05,"*",ifelse(balance[9,5]<.1,"+","")))}}$ &
 \backslash
 Sexpr{balance[9,8]}
 \backslash
@@ -7937,7 +7947,7 @@ placement H
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
