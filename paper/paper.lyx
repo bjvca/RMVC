@@ -1370,7 +1370,11 @@ In some cases,
  Such MCCs were assigned to the same treatment group to avoid contamination.
  As a result,
  the 125 endline MCCs map to 92 distinct randomization clusters.
- A minimum detectable effect analysis confirms that this reduction does not materially affect statistical power: with baseline controls, the MDE for MCC-level prices is approximately 21 UGX, well below the hypothesized 30 UGX effect, and Fisher randomization inference does not depend on asymptotic cluster counts.
+ A minimum detectable effect analysis confirms that this reduction does not materially affect statistical power:
+ with baseline controls,
+ the MDE for MCC-level prices is approximately 21 UGX,
+ well below the hypothesized 30 UGX effect,
+ and Fisher randomization inference does not depend on asymptotic cluster counts.
 \end_layout
 
 \end_inset
@@ -2019,7 +2023,7 @@ where
 \end_layout
 
 \begin_layout Standard
-We report point estimates and CR2 cluster-robust standard errors
+We report point estimates and CR2 cluster-robust standard errors 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "imbens2016robust"
@@ -2027,8 +2031,10 @@ literal "false"
 
 \end_inset
 
- clustered at the MCC catchment area level, for effect size interpretation.
- To summarize effects across multiple outcomes within a family, we construct Anderson indices
+ clustered at the MCC catchment area level,
+ for effect size interpretation.
+ To summarize effects across multiple outcomes within a family,
+ we construct Anderson indices 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "anderson2008multiple"
@@ -2041,9 +2047,13 @@ literal "false"
 
 \begin_layout Standard
 Statistical inference is based on Fisher randomization inference (RI).
- Using the OLS coefficient as the test statistic, we evaluate its significance against a permutation distribution generated from 5,000 reassignments of treatment at the MCC catchment level, maintaining the number of treated clusters.
- Because the permutation scheme mirrors the actual randomization, the resulting p-values are exact and do not depend on asymptotic approximations or assumptions about within-cluster correlation or the number of clusters.
- To account for multiple testing across outcomes within a family, we apply Westfall-Young stepdown adjustments
+ Using the OLS coefficient as the test statistic,
+ we evaluate its significance against a permutation distribution generated from 5,000 reassignments of treatment at the MCC catchment level,
+ maintaining the number of treated clusters.
+ Because the permutation scheme mirrors the actual randomization,
+ the resulting p-values are exact and do not depend on asymptotic approximations or assumptions about within-cluster correlation or the number of clusters.
+ To account for multiple testing across outcomes within a family,
+ we apply Westfall-Young stepdown adjustments 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "westfall1993resampling"
@@ -2051,7 +2061,8 @@ literal "false"
 
 \end_inset
 
- using the same permutation distribution, controlling the familywise error rate while exploiting the correlation structure across outcomes.
+ using the same permutation distribution,
+ controlling the familywise error rate while exploiting the correlation structure across outcomes.
  CR2-based p-values and Anderson-Sharp q-values are reported in the appendix.
 \end_layout
 
@@ -2083,11 +2094,12 @@ nolink "false"
  five more variables are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_appendix-mcc"
+reference "tab:Balance_appendix"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -2116,11 +2128,12 @@ nolink "false"
 Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_appendix-mcc"
+reference "tab:Balance_appendix"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -2502,11 +2515,12 @@ To calculate herd,
  Further characteristics are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_appendix-farmer"
+reference "tab:Balance_farmer_appendix"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -2864,11 +2878,12 @@ nolink "false"
  and Appendix Table
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Balance_appendix-farmer"
+reference "tab:Balance_farmer_appendix"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -7500,23 +7515,756 @@ encoding "default"
 
 \end_layout
 
-\begin_layout Section*
-Online Appendix
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Online Appendix
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:appendix"
 
 \end_inset
 
-[Placeholder for online appendix.
- This section will contain additional tables and robustness checks including:
+
 \end_layout
 
 \begin_layout Standard
-- Farmer-level balance table
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+setcounter{table}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+setcounter{figure}{0} 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+setcounter{subsection}{0}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thetable}{A
+\backslash
+arabic{table}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thefigure}{A
+\backslash
+arabic{figure}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thesubsection}{A
+\backslash
+arabic{subsection}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Additional balance tables
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance of Baseline Characteristics Between Treatment and Control Milk Collection Centers (MCCs)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_appendix"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer  & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC is cooperative?
+ (1=yes)  & 
+\backslash
+Sexpr{balance[1,1]} & 
+\backslash
+Sexpr{balance[1,3]}$^{
+\backslash
+Sexpr{ifelse(balance[1,5]<.01,"**",ifelse(balance[1,5]<.05,"*",ifelse(balance[1,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[1,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[1,2]}) & (
+\backslash
+Sexpr{balance[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Total Capacity of milk tanks (in liters)  & 
+\backslash
+Sexpr{balance[4,1]} & 
+\backslash
+Sexpr{balance[4,3]}$^{
+\backslash
+Sexpr{ifelse(balance[4,5]<.01,"**",ifelse(balance[4,5]<.05,"*",ifelse(balance[4,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[4,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[4,2]}) & (
+\backslash
+Sexpr{balance[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC pays quality premium (1=yes) & 
+\backslash
+Sexpr{balance[6,1]} & 
+\backslash
+Sexpr{balance[6,3]}$^{
+\backslash
+Sexpr{ifelse(balance[6,5]<.01,"**",ifelse(balance[6,5]<.05,"*",ifelse(balance[6,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[6,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[6,2]}) & (
+\backslash
+Sexpr{balance[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC age in years of operation  & 
+\backslash
+Sexpr{balance[7,1]} & 
+\backslash
+Sexpr{balance[7,3]}$^{
+\backslash
+Sexpr{ifelse(balance[7,5]<.01,"**",ifelse(balance[7,5]<.05,"*",ifelse(balance[7,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[7,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[7,2]}) & (
+\backslash
+Sexpr{balance[7,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Facilitates supply of acaricides?
+ (1=yes) & 
+\backslash
+Sexpr{balance[10,1]} & 
+\backslash
+Sexpr{balance[10,3]}$^{
+\backslash
+Sexpr{ifelse(balance[10,5]<.01,"**",ifelse(balance[10,5]<.05,"*",ifelse(balance[10,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[10,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[10,2]}) & (
+\backslash
+Sexpr{balance[10,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+F-statistic & & 
+\backslash
+Sexpr{F_test[1,1]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+p-value & & 
+\backslash
+Sexpr{F_test[2,1]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ Column 1 presents control group means with standard deviations in parentheses.
+ Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
+ Column 3 lists the number of non-missing observations.
+ “Total tank capacity” is measured in liters and “MCC age” in years.
+ The F-statistic and p-value correspond to a joint test of equality of all covariates.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Baseline Balance of Farmer Characteristics by MCC Treatment Assignment
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_farmer_appendix"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & treatment & nobs
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Household Head Age (years) &
+\backslash
+Sexpr{balance_farmer[2,1]} &
+\backslash
+Sexpr{balance_farmer[2,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[2,5]<.01,"**",ifelse(balance_farmer[2,5]<.05,"*",ifelse(balance_farmer[2,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[2,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[2,2]}) & (
+\backslash
+Sexpr{balance_farmer[2,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Current Total herd size (number) &
+\backslash
+Sexpr{balance_farmer[3,1]} &
+\backslash
+Sexpr{balance_farmer[3,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[3,5]<.01,"**",ifelse(balance_farmer[3,5]<.05,"*",ifelse(balance_farmer[3,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[3,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[3,2]}) & (
+\backslash
+Sexpr{balance_farmer[3,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Number of improved animals in total herd (share) &
+\backslash
+Sexpr{balance_farmer[4,1]} &
+\backslash
+Sexpr{balance_farmer[4,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[4,5]<.01,"**",ifelse(balance_farmer[4,5]<.05,"*",ifelse(balance_farmer[4,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[4,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[4,2]}) & (
+\backslash
+Sexpr{balance_farmer[4,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Liters milk sold per day (on average in the rainy season) (liters) &
+\backslash
+Sexpr{balance_farmer[6,1]} &
+\backslash
+Sexpr{balance_farmer[6,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[6,5]<.01,"**",ifelse(balance_farmer[6,5]<.05,"*",ifelse(balance_farmer[6,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[6,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[6,2]}) & (
+\backslash
+Sexpr{balance_farmer[6,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Average monthly expense (USD) on chemical purchases &
+\backslash
+Sexpr{balance_farmer[10,1]} &
+\backslash
+Sexpr{balance_farmer[10,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[10,5]<.01,"**",ifelse(balance_farmer[10,5]<.05,"*",ifelse(balance_farmer[10,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[10,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[10,2]}) & (
+\backslash
+Sexpr{balance_farmer[10,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+F-statistic & &
+\backslash
+Sexpr{F_test[1,3]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+p-value & &
+\backslash
+Sexpr{F_test[2,3]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ This table reports baseline balance between farmers connected to treatment MCCs and those connected to control MCCs.
+ Column 1 presents control group means with standard deviations in parentheses.
+ Column 2 shows the treatment-control difference with CR2 cluster-robust standard errors in parentheses,
+ clustered at the catchment area level.
+ Column 3 gives the number of non-missing observations for each variable.
+ The F-statistic and p-value correspond to a joint test of equality of all covariates.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
