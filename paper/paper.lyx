@@ -7627,10 +7627,10 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Balance of Baseline Characteristics Between Treatment and Control Milk Collection Centers (MCCs)
+Additional Balance of MCC Baseline Characteristics
 \begin_inset CommandInset label
 LatexCommand label
-name "tab:Balance_appendix"
+name “tab:Balance_appendix”
 
 \end_inset
 
@@ -7671,7 +7671,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer  & nobs 
+& mean ctrl & analyzer  & nobs
 \backslash
 
 \backslash
@@ -7697,48 +7697,15 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
-MCC is cooperative?
- (1=yes)  & 
+Full-time employees (number)  &
 \backslash
-Sexpr{balance[1,1]} & 
+Sexpr{balance[2,1]} &
 \backslash
-Sexpr{balance[1,3]}$^{
+Sexpr{balance[2,3]}$^{
 \backslash
-Sexpr{ifelse(balance[1,5]<.01,"**",ifelse(balance[1,5]<.05,"*",ifelse(balance[1,5]<.1,"+","")))}}$ &  
+Sexpr{ifelse(balance[2,5]<.01,”**”,ifelse(balance[2,5]<.05,”*”,ifelse(balance[2,5]<.1,”+”,””)))}}$ &
 \backslash
-Sexpr{balance[1,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& (
-\backslash
-Sexpr{balance[1,2]}) & (
-\backslash
-Sexpr{balance[1,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-Total Capacity of milk tanks (in liters)  & 
-\backslash
-Sexpr{balance[4,1]} & 
-\backslash
-Sexpr{balance[4,3]}$^{
-\backslash
-Sexpr{ifelse(balance[4,5]<.01,"**",ifelse(balance[4,5]<.05,"*",ifelse(balance[4,5]<.1,"+","")))}}$ &  
-\backslash
-Sexpr{balance[4,8]} 
+Sexpr{balance[2,8]}
 \backslash
 
 \backslash
@@ -7748,41 +7715,9 @@ Sexpr{balance[4,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[4,2]}) & (
+Sexpr{balance[2,2]}) & (
 \backslash
-Sexpr{balance[4,4]}) 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-MCC pays quality premium (1=yes) & 
-\backslash
-Sexpr{balance[6,1]} & 
-\backslash
-Sexpr{balance[6,3]}$^{
-\backslash
-Sexpr{ifelse(balance[6,5]<.01,"**",ifelse(balance[6,5]<.05,"*",ifelse(balance[6,5]<.1,"+","")))}}$ & 
-\backslash
-Sexpr{balance[6,8]} 
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& (
-\backslash
-Sexpr{balance[6,2]}) & (
-\backslash
-Sexpr{balance[6,4]}) 
+Sexpr{balance[2,4]})
 \backslash
 
 \backslash
@@ -7794,15 +7729,15 @@ Sexpr{balance[6,4]})
 \end_layout
 
 \begin_layout Plain Layout
-MCC age in years of operation  & 
+Number of farmers/traders supplying milk (rainy season)  &
 \backslash
-Sexpr{balance[7,1]} & 
+Sexpr{balance[3,1]} &
 \backslash
-Sexpr{balance[7,3]}$^{
+Sexpr{balance[3,3]}$^{
 \backslash
-Sexpr{ifelse(balance[7,5]<.01,"**",ifelse(balance[7,5]<.05,"*",ifelse(balance[7,5]<.1,"+","")))}}$ &  
+Sexpr{ifelse(balance[3,5]<.01,”**”,ifelse(balance[3,5]<.05,”*”,ifelse(balance[3,5]<.1,”+”,””)))}}$ &
 \backslash
-Sexpr{balance[7,8]} 
+Sexpr{balance[3,8]}
 \backslash
 
 \backslash
@@ -7812,30 +7747,29 @@ Sexpr{balance[7,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[7,2]}) & (
+Sexpr{balance[3,2]}) & (
 \backslash
-Sexpr{balance[7,4]}) 
-\backslash
-
+Sexpr{balance[3,4]})
 \backslash
 
-\end_layout
-
-\begin_layout Plain Layout
+\backslash
 
 \end_layout
 
 \begin_layout Plain Layout
-Facilitates supply of acaricides?
- (1=yes) & 
+
+\end_layout
+
+\begin_layout Plain Layout
+Capacity utilization in dry season (%) &
 \backslash
-Sexpr{balance[10,1]} & 
+Sexpr{balance[5,1]} &
 \backslash
-Sexpr{balance[10,3]}$^{
+Sexpr{balance[5,3]}$^{
 \backslash
-Sexpr{ifelse(balance[10,5]<.01,"**",ifelse(balance[10,5]<.05,"*",ifelse(balance[10,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(balance[5,5]<.01,”**”,ifelse(balance[5,5]<.05,”*”,ifelse(balance[5,5]<.1,”+”,””)))}}$ &
 \backslash
-Sexpr{balance[10,8]} 
+Sexpr{balance[5,8]}
 \backslash
 
 \backslash
@@ -7845,9 +7779,73 @@ Sexpr{balance[10,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[10,2]}) & (
+Sexpr{balance[5,2]}) & (
 \backslash
-Sexpr{balance[10,4]}) 
+Sexpr{balance[5,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Number of milk cans owned  &
+\backslash
+Sexpr{balance[8,1]} &
+\backslash
+Sexpr{balance[8,3]}$^{
+\backslash
+Sexpr{ifelse(balance[8,5]<.01,”**”,ifelse(balance[8,5]<.05,”*”,ifelse(balance[8,5]<.1,”+”,””)))}}$ &
+\backslash
+Sexpr{balance[8,8]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[8,2]}) & (
+\backslash
+Sexpr{balance[8,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Provides credit to suppliers (1=yes) &
+\backslash
+Sexpr{balance[9,1]} &
+\backslash
+Sexpr{balance[9,3]}$^{
+\backslash
+Sexpr{ifelse(balance[9,5]<.01,”**”,ifelse(balance[9,5]<.05,”*”,ifelse(balance[9,5]<.1,”+”,””)))}}$ &
+\backslash
+Sexpr{balance[9,8]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[9,2]}) & (
+\backslash
+Sexpr{balance[9,4]})
 \backslash
 
 \backslash
@@ -7861,9 +7859,9 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
-F-statistic & & 
+F-statistic & &
 \backslash
-Sexpr{F_test[1,1]} 
+Sexpr{F_test[1,2]}
 \backslash
 
 \backslash
@@ -7871,9 +7869,9 @@ Sexpr{F_test[1,1]}
 \end_layout
 
 \begin_layout Plain Layout
-p-value & & 
+p-value & &
 \backslash
-Sexpr{F_test[2,1]} 
+Sexpr{F_test[2,2]}
 \backslash
 
 \backslash
@@ -7912,11 +7910,10 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ This table reports additional baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
  Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
  Column 3 lists the number of non-missing observations.
- “Total tank capacity” is measured in liters and “MCC age” in years.
  The F-statistic and p-value correspond to a joint test of equality of all covariates.
  Significance levels:
  + p < 0.10,
@@ -7939,14 +7936,14 @@ Note:
 placement H
 alignment document
 wide false
-sideways true
+sideways false
 status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Baseline Balance of Farmer Characteristics by MCC Treatment Assignment
+Additional Balance of Farmer Baseline Characteristics
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Balance_farmer_appendix"
@@ -8012,55 +8009,15 @@ cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
-Household Head Age (years) &
+Household size (number of members) &
 \backslash
-Sexpr{balance_farmer[2,1]} &
+Sexpr{balance_farmer[1,1]} &
 \backslash
-Sexpr{balance_farmer[2,3]}$^{
+Sexpr{balance_farmer[1,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[2,5]<.01,"**",ifelse(balance_farmer[2,5]<.05,"*",ifelse(balance_farmer[2,5]<.1,"+","")))}}$ &
+Sexpr{ifelse(balance_farmer[1,5]<.01,"**",ifelse(balance_farmer[1,5]<.05,"*",ifelse(balance_farmer[1,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[2,9]}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& (
-\backslash
-Sexpr{balance_farmer[2,2]}) & (
-\backslash
-Sexpr{balance_farmer[2,4]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-Current Total herd size (number) &
-\backslash
-Sexpr{balance_farmer[3,1]} &
-\backslash
-Sexpr{balance_farmer[3,3]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[3,5]<.01,"**",ifelse(balance_farmer[3,5]<.05,"*",ifelse(balance_farmer[3,5]<.1,"+","")))}}$ &
-\backslash
-Sexpr{balance_farmer[3,9]}
+Sexpr{balance_farmer[1,9]}
 \backslash
 
 \backslash
@@ -8070,16 +8027,12 @@ Sexpr{balance_farmer[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[3,2]}) & (
+Sexpr{balance_farmer[1,2]}) & (
 \backslash
-Sexpr{balance_farmer[3,4]})
-\backslash
-
+Sexpr{balance_farmer[1,4]})
 \backslash
 
-\end_layout
-
-\begin_layout Plain Layout
+\backslash
 
 \end_layout
 
@@ -8088,15 +8041,15 @@ Sexpr{balance_farmer[3,4]})
 \end_layout
 
 \begin_layout Plain Layout
-Number of improved animals in total herd (share) &
+Liters milk produced per day (rainy season) &
 \backslash
-Sexpr{balance_farmer[4,1]} &
+Sexpr{balance_farmer[5,1]} &
 \backslash
-Sexpr{balance_farmer[4,3]}$^{
+Sexpr{balance_farmer[5,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[4,5]<.01,"**",ifelse(balance_farmer[4,5]<.05,"*",ifelse(balance_farmer[4,5]<.1,"+","")))}}$ &
+Sexpr{ifelse(balance_farmer[5,5]<.01,"**",ifelse(balance_farmer[5,5]<.05,"*",ifelse(balance_farmer[5,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[4,9]}
+Sexpr{balance_farmer[5,9]}
 \backslash
 
 \backslash
@@ -8106,41 +8059,9 @@ Sexpr{balance_farmer[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[4,2]}) & (
+Sexpr{balance_farmer[5,2]}) & (
 \backslash
-Sexpr{balance_farmer[4,4]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-Liters milk sold per day (on average in the rainy season) (liters) &
-\backslash
-Sexpr{balance_farmer[6,1]} &
-\backslash
-Sexpr{balance_farmer[6,3]}$^{
-\backslash
-Sexpr{ifelse(balance_farmer[6,5]<.01,"**",ifelse(balance_farmer[6,5]<.05,"*",ifelse(balance_farmer[6,5]<.1,"+","")))}}$ &
-\backslash
-Sexpr{balance_farmer[6,9]}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& (
-\backslash
-Sexpr{balance_farmer[6,2]}) & (
-\backslash
-Sexpr{balance_farmer[6,4]})
+Sexpr{balance_farmer[5,4]})
 \backslash
 
 \backslash
@@ -8152,19 +8073,15 @@ Sexpr{balance_farmer[6,4]})
 \end_layout
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-Average monthly expense (USD) on chemical purchases &
+Sells to MCC in rainy season (1=yes) &
 \backslash
-Sexpr{balance_farmer[10,1]} &
+Sexpr{balance_farmer[7,1]} &
 \backslash
-Sexpr{balance_farmer[10,3]}$^{
+Sexpr{balance_farmer[7,3]}$^{
 \backslash
-Sexpr{ifelse(balance_farmer[10,5]<.01,"**",ifelse(balance_farmer[10,5]<.05,"*",ifelse(balance_farmer[10,5]<.1,"+","")))}}$ &
+Sexpr{ifelse(balance_farmer[7,5]<.01,"**",ifelse(balance_farmer[7,5]<.05,"*",ifelse(balance_farmer[7,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{balance_farmer[10,9]}
+Sexpr{balance_farmer[7,9]}
 \backslash
 
 \backslash
@@ -8174,9 +8091,73 @@ Sexpr{balance_farmer[10,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[10,2]}) & (
+Sexpr{balance_farmer[7,2]}) & (
 \backslash
-Sexpr{balance_farmer[10,4]})
+Sexpr{balance_farmer[7,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Uses steel containers for delivery (1=yes) &
+\backslash
+Sexpr{balance_farmer[8,1]} &
+\backslash
+Sexpr{balance_farmer[8,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[8,5]<.01,"**",ifelse(balance_farmer[8,5]<.05,"*",ifelse(balance_farmer[8,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[8,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[8,2]}) & (
+\backslash
+Sexpr{balance_farmer[8,4]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Member of dairy cooperative (1=yes) &
+\backslash
+Sexpr{balance_farmer[9,1]} &
+\backslash
+Sexpr{balance_farmer[9,3]}$^{
+\backslash
+Sexpr{ifelse(balance_farmer[9,5]<.01,"**",ifelse(balance_farmer[9,5]<.05,"*",ifelse(balance_farmer[9,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{balance_farmer[9,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance_farmer[9,2]}) & (
+\backslash
+Sexpr{balance_farmer[9,4]})
 \backslash
 
 \backslash
@@ -8196,7 +8177,7 @@ cline{2-4}
 \begin_layout Plain Layout
 F-statistic & &
 \backslash
-Sexpr{F_test[1,3]}
+Sexpr{F_test[1,6]}
 \backslash
 
 \backslash
@@ -8206,7 +8187,7 @@ Sexpr{F_test[1,3]}
 \begin_layout Plain Layout
 p-value & &
 \backslash
-Sexpr{F_test[2,3]}
+Sexpr{F_test[2,6]}
 \backslash
 
 \backslash
@@ -8245,7 +8226,7 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- This table reports baseline balance between farmers connected to treatment MCCs and those connected to control MCCs.
+ This table reports additional baseline balance between farmers connected to treatment MCCs and those connected to control MCCs.
  Column 1 presents control group means with standard deviations in parentheses.
  Column 2 shows the treatment-control difference with CR2 cluster-robust standard errors in parentheses,
  clustered at the catchment area level.
