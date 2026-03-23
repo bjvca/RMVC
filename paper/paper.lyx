@@ -3841,7 +3841,7 @@ Sexpr{res_farmers[5,1]} &
 \backslash
 Sexpr{res_farmers[5,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers[5,10]<.01,"**",ifelse(res_farmers[5,10]<.05,"*",ifelse(res_farmers[5,10]<.1,"+","")))}}$ &
+Sexpr{ifelse(res_farmers[5,5]<.01,"**",ifelse(res_farmers[5,5]<.05,"*",ifelse(res_farmers[5,5]<.1,"+","")))}}$ &
 \backslash
 Sexpr{res_farmers[5,9]}
 \backslash
