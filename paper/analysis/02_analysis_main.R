@@ -503,18 +503,25 @@ b_outcomes_mcc_e <- c(b_outcomes_mcc_e, "b_primary_MCC_index")
 res_MCCs <- array(NA, dim = c(length(outcomes_mcc_e), 12))
 
 for (i in seq_along(outcomes_mcc_e)) {
-  ## OLS: outcome ~ treat + baseline
-  ols <- lm(as.formula(paste(outcomes_mcc_e[i], "~ treat +", b_outcomes_mcc_e[i])),
-            data = MCCs_end)
+  ## OLS: outcome ~ treat + baseline (drop baseline if constant)
+  b_var <- MCCs_end[[b_outcomes_mcc_e[i]]]
+  has_baseline <- length(unique(b_var[!is.na(b_var)])) > 1
+  if (has_baseline) {
+    fmla <- paste(outcomes_mcc_e[i], "~ treat +", b_outcomes_mcc_e[i])
+  } else {
+    fmla <- paste(outcomes_mcc_e[i], "~ treat")
+  }
+  ols <- lm(as.formula(fmla), data = MCCs_end)
 
   y_ctrl <- MCCs_end[MCCs_end$treat == "C", outcomes_mcc_e[i]]
   res_MCCs[i, 1] <- mean(y_ctrl, na.rm = TRUE)
   res_MCCs[i, 2] <- sd(y_ctrl, na.rm = TRUE)
 
   ## CR2 cluster-robust SEs
+  use_rows <- !is.na(MCCs_end[[outcomes_mcc_e[i]]])
+  if (has_baseline) use_rows <- use_rows & !is.na(MCCs_end[[b_outcomes_mcc_e[i]]])
   vcov_cr2 <- vcovCR(ols,
-    cluster = MCCs_end[!is.na(MCCs_end[[outcomes_mcc_e[i]]]) &
-                         !is.na(MCCs_end[[b_outcomes_mcc_e[i]]]), "catchment_ID"],
+    cluster = MCCs_end[use_rows, "catchment_ID"],
     type = "CR2")
   cr2_test <- coef_test(ols, vcov = vcov_cr2)[2, ]
   res_MCCs[i, 3] <- cr2_test[["beta"]]
@@ -523,14 +530,17 @@ for (i in seq_along(outcomes_mcc_e)) {
   res_MCCs[i, 9] <- nobs(ols)
 
   ## 2SLS: outcome ~ treat_TOT + baseline | treat + baseline
-  iv_formula <- as.formula(paste0(
-    outcomes_mcc_e[i], " ~ treat_TOT + ", b_outcomes_mcc_e[i],
-    " | treat + ", b_outcomes_mcc_e[i]
-  ))
+  if (has_baseline) {
+    iv_formula <- as.formula(paste0(
+      outcomes_mcc_e[i], " ~ treat_TOT + ", b_outcomes_mcc_e[i],
+      " | treat + ", b_outcomes_mcc_e[i]))
+  } else {
+    iv_formula <- as.formula(paste0(
+      outcomes_mcc_e[i], " ~ treat_TOT | treat"))
+  }
   iv_mod <- ivreg(iv_formula, data = MCCs_end)
   vcov_iv_cr2 <- vcovCR(iv_mod,
-    cluster = MCCs_end[!is.na(MCCs_end[[outcomes_mcc_e[i]]]) &
-                         !is.na(MCCs_end[[b_outcomes_mcc_e[i]]]), "catchment_ID"],
+    cluster = MCCs_end[use_rows, "catchment_ID"],
     type = "CR2")
   cr2_iv_test <- coef_test(iv_mod, vcov = vcov_iv_cr2)[2, ]
   res_MCCs[i, 6]  <- cr2_iv_test[["beta"]]

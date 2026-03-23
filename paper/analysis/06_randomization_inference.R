@@ -242,10 +242,20 @@ ri_mcc <- matrix(NA, nrow = n_perms, ncol = length(MCC_outcomes))
 obs_mcc   <- numeric(length(MCC_outcomes))
 obs_mcc_N <- integer(length(MCC_outcomes))
 
+## Check which baseline controls have variation
+has_bl_var_mcc <- sapply(MCC_b_outcomes, function(v) {
+  vals <- MCCs_end[[v]]
+  length(unique(vals[!is.na(vals)])) > 1
+})
+
 for (i in seq_along(MCC_outcomes)) {
   outcome   <- MCC_outcomes[i]
   b_outcome <- MCC_b_outcomes[i]
-  fml <- as.formula(paste(outcome, "~ treat +", b_outcome))
+  if (has_bl_var_mcc[i]) {
+    fml <- as.formula(paste(outcome, "~ treat +", b_outcome))
+  } else {
+    fml <- as.formula(paste(outcome, "~ treat"))
+  }
   ols <- lm(fml, data = MCCs_end)
   obs_mcc[i]   <- coef(ols)["treatT"]
   obs_mcc_N[i] <- nobs(ols)
@@ -270,7 +280,11 @@ for (p in 1:n_perms) {
   for (i in seq_along(MCC_outcomes)) {
     outcome   <- MCC_outcomes[i]
     b_outcome <- MCC_b_outcomes[i]
-    fml <- as.formula(paste(outcome, "~ treat_perm +", b_outcome))
+    if (has_bl_var_mcc[i]) {
+      fml <- as.formula(paste(outcome, "~ treat_perm +", b_outcome))
+    } else {
+      fml <- as.formula(paste(outcome, "~ treat_perm"))
+    }
     ols <- lm(fml, data = MCCs_end)
     ri_mcc[p, i] <- coef(ols)["treat_permT"]
   }

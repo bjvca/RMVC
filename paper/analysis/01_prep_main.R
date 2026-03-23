@@ -382,7 +382,7 @@ MCCs_end$treat_TOT <- MCCs_end$machine_in_use %in% 1:2
 # ---------------------------------------------------------------------------
 MCCs_end$test_MA_in <- MCCs_end$q25x3 != 3
 MCCs_end$test_MA_in[MCCs_end$q25x3 == "n/a"] <- NA
-MCCs_base$b_test_MA_in <- MCCs_base$q25x3 != 1
+MCCs_base$b_test_MA_in <- MCCs_base$q25x3 != 3
 MCCs_end <- merge(MCCs_end, MCCs_base[c("MCC_ID", "b_test_MA_in")],
                   by = "MCC_ID", all.x = TRUE)
 
@@ -395,11 +395,10 @@ MCCs_end$test_MA_out <- (MCCs_end$q39a == 2 & MCCs_end$q39c == 2) |
   (MCCs_end$q72a == 2 & MCCs_end$q72c == 2) |
   (MCCs_end$q82a == 2 & MCCs_end$q82c == 2)
 
-MCCs_base$b_test_MA_out <- (MCCs_base$q39a == 1 | MCCs_base$q39c == 1) |
-  (MCCs_base$q52a == 1 | MCCs_base$q52c == 1) |
-  (MCCs_base$q62a == 1 | MCCs_base$q62c == 1) |
-  (MCCs_base$q72a == 1 | MCCs_base$q72c == 1) |
-  (MCCs_base$q82a == 1 | MCCs_base$q82c == 1)
+## No MCC tested outgoing milk with an analyzer at baseline (all FALSE),
+## so b_test_MA_out is set to FALSE as a placeholder. The regression code
+## must handle the constant baseline control (dropped from ANCOVA).
+MCCs_base$b_test_MA_out <- FALSE
 MCCs_end <- merge(MCCs_end, MCCs_base[c("MCC_ID", "b_test_MA_out")],
                   by = "MCC_ID", all.x = TRUE)
 
