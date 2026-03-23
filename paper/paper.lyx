@@ -8389,7 +8389,7 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{rcccc}
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8405,7 +8405,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs 
+& mean ctrl & analyzer (LATE) & nobs
 \backslash
 
 \backslash
@@ -8429,15 +8429,15 @@ cline{2-4}
 \begin_layout Plain Layout
 Butter fat (
 \backslash
-%) & 
+%) &
 \backslash
-Sexpr{res_samples[1,1]} & 
+Sexpr{res_samples[1,1]} &
 \backslash
-Sexpr{res_samples[1,3]}$^{
+Sexpr{res_samples[1,6]}$^{
 \backslash
-Sexpr{ifelse(res_samples[1,5]<.01,"**",ifelse(res_samples[1,5]<.05,"*",ifelse(res_samples[1,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_samples[1,8]<.01,"**",ifelse(res_samples[1,8]<.05,"*",ifelse(res_samples[1,8]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_samples[1,9]} 
+Sexpr{res_samples[1,10]}
 \backslash
 
 \backslash
@@ -8449,7 +8449,7 @@ Sexpr{res_samples[1,9]}
 \backslash
 Sexpr{res_samples[1,2]}) & (
 \backslash
-Sexpr{res_samples[1,4]}) 
+Sexpr{res_samples[1,7]})
 \backslash
 
 \backslash
@@ -8463,15 +8463,15 @@ Sexpr{res_samples[1,4]})
 \begin_layout Plain Layout
 SNF  (
 \backslash
-%) & 
+%) &
 \backslash
-Sexpr{res_samples[2,1]} & 
+Sexpr{res_samples[2,1]} &
 \backslash
-Sexpr{res_samples[2,3]}$^{
+Sexpr{res_samples[2,6]}$^{
 \backslash
-Sexpr{ifelse(res_samples[2,5]<.01,"**",ifelse(res_samples[2,5]<.05,"*",ifelse(res_samples[2,5]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_samples[2,8]<.01,"**",ifelse(res_samples[2,8]<.05,"*",ifelse(res_samples[2,8]<.1,"+","")))}}$  &
 \backslash
-Sexpr{res_samples[2,9]} 
+Sexpr{res_samples[2,10]}
 \backslash
 
 \backslash
@@ -8483,7 +8483,7 @@ Sexpr{res_samples[2,9]}
 \backslash
 Sexpr{res_samples[2,2]}) & (
 \backslash
-Sexpr{res_samples[2,4]}) 
+Sexpr{res_samples[2,7]})
 \backslash
 
 \backslash
@@ -8497,15 +8497,15 @@ Sexpr{res_samples[2,4]})
 \begin_layout Plain Layout
 Added Water  (
 \backslash
-%)  & 
+%)  &
 \backslash
-Sexpr{res_samples[3,1]} & 
+Sexpr{res_samples[3,1]} &
 \backslash
-Sexpr{res_samples[3,3]}$^{
+Sexpr{res_samples[3,6]}$^{
 \backslash
-Sexpr{ifelse(res_samples[3,5]<.01,"**",ifelse(res_samples[3,5]<.05,"*",ifelse(res_samples[3,5]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_samples[3,8]<.01,"**",ifelse(res_samples[3,8]<.05,"*",ifelse(res_samples[3,8]<.1,"+","")))}}$  &
 \backslash
-Sexpr{res_samples[3,9]} 
+Sexpr{res_samples[3,10]}
 \backslash
 
 \backslash
@@ -8517,7 +8517,7 @@ Sexpr{res_samples[3,9]}
 \backslash
 Sexpr{res_samples[3,2]}) & (
 \backslash
-Sexpr{res_samples[3,4]}) 
+Sexpr{res_samples[3,7]})
 \backslash
 
 \backslash
@@ -8531,15 +8531,15 @@ Sexpr{res_samples[3,4]})
 \begin_layout Plain Layout
 Protein  (
 \backslash
-%)  & 
+%)  &
 \backslash
-Sexpr{res_samples[4,1]} & 
+Sexpr{res_samples[4,1]} &
 \backslash
-Sexpr{res_samples[4,3]}$^{
+Sexpr{res_samples[4,6]}$^{
 \backslash
-Sexpr{ifelse(res_samples[4,5]<.01,"**",ifelse(res_samples[4,5]<.05,"*",ifelse(res_samples[4,5]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_samples[4,8]<.01,"**",ifelse(res_samples[4,8]<.05,"*",ifelse(res_samples[4,8]<.1,"+","")))}}$  &
 \backslash
-Sexpr{res_samples[4,9]} 
+Sexpr{res_samples[4,10]}
 \backslash
 
 \backslash
@@ -8551,7 +8551,7 @@ Sexpr{res_samples[4,9]}
 \backslash
 Sexpr{res_samples[4,2]}) & (
 \backslash
-Sexpr{res_samples[4,4]}) 
+Sexpr{res_samples[4,7]})
 \backslash
 
 \backslash
@@ -8563,15 +8563,15 @@ Sexpr{res_samples[4,4]})
 \end_layout
 
 \begin_layout Plain Layout
-Density (CLR) & 
+Density (CLR) &
 \backslash
-Sexpr{res_samples[5,1]} & 
+Sexpr{res_samples[5,1]} &
 \backslash
-Sexpr{res_samples[5,3]}$^{
+Sexpr{res_samples[5,6]}$^{
 \backslash
-Sexpr{ifelse(res_samples[5,5]<.01,"**",ifelse(res_samples[5,5]<.05,"*",ifelse(res_samples[5,5]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_samples[5,8]<.01,"**",ifelse(res_samples[5,8]<.05,"*",ifelse(res_samples[5,8]<.1,"+","")))}}$  &
 \backslash
-Sexpr{res_samples[5,9]} 
+Sexpr{res_samples[5,10]}
 \backslash
 
 \backslash
@@ -8583,7 +8583,7 @@ Sexpr{res_samples[5,9]}
 \backslash
 Sexpr{res_samples[5,2]}) & (
 \backslash
-Sexpr{res_samples[5,4]}) 
+Sexpr{res_samples[5,7]})
 \backslash
 
 \backslash
@@ -8599,15 +8599,15 @@ Sexpr{res_samples[5,4]})
 \end_layout
 
 \begin_layout Plain Layout
-Index & 
+Index &
 \backslash
-Sexpr{res_samples[6,1]} & 
+Sexpr{res_samples[6,1]} &
 \backslash
-Sexpr{res_samples[6,3]}$^{
+Sexpr{res_samples[6,6]}$^{
 \backslash
-Sexpr{ifelse(res_samples[6,5]<.01,"**",ifelse(res_samples[6,5]<.05,"*",ifelse(res_samples[6,5]<.1,"+","")))}}$  & 
+Sexpr{ifelse(res_samples[6,8]<.01,"**",ifelse(res_samples[6,8]<.05,"*",ifelse(res_samples[6,8]<.1,"+","")))}}$  &
 \backslash
-Sexpr{res_samples[6,9]} 
+Sexpr{res_samples[6,10]}
 \backslash
 
 \backslash
@@ -8619,7 +8619,7 @@ Sexpr{res_samples[6,9]}
 \backslash
 Sexpr{res_samples[6,2]}) & (
 \backslash
-Sexpr{res_samples[6,4]}) 
+Sexpr{res_samples[6,7]})
 \backslash
 
 \backslash
@@ -8672,11 +8672,680 @@ scriptsize
 Note:
  Column 1 reports mean milk quality measures for the control group,
  with standard deviations in parentheses.
- Column 2 presents the average treatment effect of the MCC-level analyzer intervention,
+ Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
  with robust standard errors in parentheses.
  Column 3 shows the number of non-missing observations.
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
+ Standard errors are clustered at the catchment-area level.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primary farmer outcomes (LATE estimates)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-farmer-LATE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer (LATE) & video & nobs
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-5}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Improved Practices Index &
+\backslash
+Sexpr{res_farmers_TOT[1,1]} &
+\backslash
+Sexpr{res_farmers_TOT[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[1,5]<.01,"**",ifelse(res_farmers_TOT[1,5]<.05,"*",ifelse(res_farmers_TOT[1,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[1,8]<.01,"**",ifelse(res_farmers_TOT[1,8]<.05,"*",ifelse(res_farmers_TOT[1,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[1,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_TOT[1,2]}) & (
+\backslash
+Sexpr{res_farmers_TOT[1,4]}) & (
+\backslash
+Sexpr{res_farmers_TOT[1,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Buyer Checks with MA &
+\backslash
+Sexpr{res_farmers_TOT[2,1]} &
+\backslash
+Sexpr{res_farmers_TOT[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[2,5]<.01,"**",ifelse(res_farmers_TOT[2,5]<.05,"*",ifelse(res_farmers_TOT[2,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[2,8]<.01,"**",ifelse(res_farmers_TOT[2,8]<.05,"*",ifelse(res_farmers_TOT[2,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[2,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_TOT[2,2]}) & (
+\backslash
+Sexpr{res_farmers_TOT[2,4]}) & (
+\backslash
+Sexpr{res_farmers_TOT[2,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Average Sales Price &
+\backslash
+Sexpr{res_farmers_TOT[3,1]} &
+\backslash
+Sexpr{res_farmers_TOT[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[3,5]<.01,"**",ifelse(res_farmers_TOT[3,5]<.05,"*",ifelse(res_farmers_TOT[3,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[3,8]<.01,"**",ifelse(res_farmers_TOT[3,8]<.05,"*",ifelse(res_farmers_TOT[3,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[3,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_TOT[3,2]}) & (
+\backslash
+Sexpr{res_farmers_TOT[3,4]}) & (
+\backslash
+Sexpr{res_farmers_TOT[3,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Gets Quality Bonus &
+\backslash
+Sexpr{res_farmers_TOT[4,1]} &
+\backslash
+Sexpr{res_farmers_TOT[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[4,5]<.01,"**",ifelse(res_farmers_TOT[4,5]<.05,"*",ifelse(res_farmers_TOT[4,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[4,8]<.01,"**",ifelse(res_farmers_TOT[4,8]<.05,"*",ifelse(res_farmers_TOT[4,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[4,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_TOT[4,2]}) & (
+\backslash
+Sexpr{res_farmers_TOT[4,4]}) & (
+\backslash
+Sexpr{res_farmers_TOT[4,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Index &
+\backslash
+Sexpr{res_farmers_TOT[5,1]} &
+\backslash
+Sexpr{res_farmers_TOT[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[5,5]<.01,"**",ifelse(res_farmers_TOT[5,5]<.05,"*",ifelse(res_farmers_TOT[5,5]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[5,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_TOT[5,8]<.01,"**",ifelse(res_farmers_TOT[5,8]<.05,"*",ifelse(res_farmers_TOT[5,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_farmers_TOT[5,9]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_TOT[5,2]}) & (
+\backslash
+Sexpr{res_farmers_TOT[5,4]}) & (
+\backslash
+Sexpr{res_farmers_TOT[5,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Column 1 reports control group means with standard deviations in parentheses.
+ Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
+ with robust standard errors in parentheses.
+ Column 3 presents the video treatment effect.
+ Column 4 shows the number of observations.
+ The index is an Anderson (2008) index of the four primary outcomes.
+ Standard errors are clustered at the catchment-area level.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primary MCC outcomes (LATE estimates)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Primary-outcomes-MCC-LATE"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer (LATE) & nobs
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Tests Incoming (MA) &
+\backslash
+Sexpr{res_MCCs[1,1]} &
+\backslash
+Sexpr{res_MCCs[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[1,8]<.01,"**",ifelse(res_MCCs[1,8]<.05,"*",ifelse(res_MCCs[1,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[1,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[1,2]}) & (
+\backslash
+Sexpr{res_MCCs[1,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Tests Outgoing (MA) &
+\backslash
+Sexpr{res_MCCs[2,1]} &
+\backslash
+Sexpr{res_MCCs[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[2,8]<.01,"**",ifelse(res_MCCs[2,8]<.05,"*",ifelse(res_MCCs[2,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[2,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[2,2]}) & (
+\backslash
+Sexpr{res_MCCs[2,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Price Bought &
+\backslash
+Sexpr{res_MCCs[3,1]} &
+\backslash
+Sexpr{res_MCCs[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[3,8]<.01,"**",ifelse(res_MCCs[3,8]<.05,"*",ifelse(res_MCCs[3,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[3,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[3,2]}) & (
+\backslash
+Sexpr{res_MCCs[3,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Avg Sales Price &
+\backslash
+Sexpr{res_MCCs[4,1]} &
+\backslash
+Sexpr{res_MCCs[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[4,8]<.01,"**",ifelse(res_MCCs[4,8]<.05,"*",ifelse(res_MCCs[4,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[4,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[4,2]}) & (
+\backslash
+Sexpr{res_MCCs[4,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Gives Quality Bonus &
+\backslash
+Sexpr{res_MCCs[5,1]} &
+\backslash
+Sexpr{res_MCCs[5,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[5,8]<.01,"**",ifelse(res_MCCs[5,8]<.05,"*",ifelse(res_MCCs[5,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[5,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[5,2]}) & (
+\backslash
+Sexpr{res_MCCs[5,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Gets Quality Bonus &
+\backslash
+Sexpr{res_MCCs[6,1]} &
+\backslash
+Sexpr{res_MCCs[6,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[6,8]<.01,"**",ifelse(res_MCCs[6,8]<.05,"*",ifelse(res_MCCs[6,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[6,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[6,2]}) & (
+\backslash
+Sexpr{res_MCCs[6,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Index &
+\backslash
+Sexpr{res_MCCs[7,1]} &
+\backslash
+Sexpr{res_MCCs[7,6]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs[7,8]<.01,"**",ifelse(res_MCCs[7,8]<.05,"*",ifelse(res_MCCs[7,8]<.1,"+","")))}}$ &
+\backslash
+Sexpr{res_MCCs[7,10]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs[7,2]}) & (
+\backslash
+Sexpr{res_MCCs[7,7]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Column 1 reports control group means with standard deviations in parentheses.
+ Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
+ with robust standard errors in parentheses.
+ Column 3 shows the number of observations.
+ The index is an Anderson (2008) index of the six primary MCC outcomes.
  Standard errors are clustered at the catchment-area level.
  Significance levels:
  + p < 0.10,
