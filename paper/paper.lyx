@@ -8744,7 +8744,7 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{rccccc}
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8760,7 +8760,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & video & nobs
+& mean ctrl & analyzer (LATE) & nobs
 \backslash
 
 \backslash
@@ -8770,7 +8770,7 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-cline{2-5}
+cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8786,10 +8786,6 @@ Sexpr{res_farmers_TOT[1,3]}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[1,5]<.01,"**",ifelse(res_farmers_TOT[1,5]<.05,"*",ifelse(res_farmers_TOT[1,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_TOT[1,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_TOT[1,8]<.01,"**",ifelse(res_farmers_TOT[1,8]<.05,"*",ifelse(res_farmers_TOT[1,8]<.1,"+","")))}}$ &
-\backslash
 Sexpr{res_farmers_TOT[1,9]}
 \backslash
 
@@ -8802,9 +8798,7 @@ Sexpr{res_farmers_TOT[1,9]}
 \backslash
 Sexpr{res_farmers_TOT[1,2]}) & (
 \backslash
-Sexpr{res_farmers_TOT[1,4]}) & (
-\backslash
-Sexpr{res_farmers_TOT[1,7]})
+Sexpr{res_farmers_TOT[1,4]})
 \backslash
 
 \backslash
@@ -8824,10 +8818,6 @@ Sexpr{res_farmers_TOT[2,3]}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[2,5]<.01,"**",ifelse(res_farmers_TOT[2,5]<.05,"*",ifelse(res_farmers_TOT[2,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_TOT[2,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_TOT[2,8]<.01,"**",ifelse(res_farmers_TOT[2,8]<.05,"*",ifelse(res_farmers_TOT[2,8]<.1,"+","")))}}$ &
-\backslash
 Sexpr{res_farmers_TOT[2,9]}
 \backslash
 
@@ -8840,9 +8830,7 @@ Sexpr{res_farmers_TOT[2,9]}
 \backslash
 Sexpr{res_farmers_TOT[2,2]}) & (
 \backslash
-Sexpr{res_farmers_TOT[2,4]}) & (
-\backslash
-Sexpr{res_farmers_TOT[2,7]})
+Sexpr{res_farmers_TOT[2,4]})
 \backslash
 
 \backslash
@@ -8862,10 +8850,6 @@ Sexpr{res_farmers_TOT[3,3]}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[3,5]<.01,"**",ifelse(res_farmers_TOT[3,5]<.05,"*",ifelse(res_farmers_TOT[3,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_TOT[3,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_TOT[3,8]<.01,"**",ifelse(res_farmers_TOT[3,8]<.05,"*",ifelse(res_farmers_TOT[3,8]<.1,"+","")))}}$ &
-\backslash
 Sexpr{res_farmers_TOT[3,9]}
 \backslash
 
@@ -8878,9 +8862,7 @@ Sexpr{res_farmers_TOT[3,9]}
 \backslash
 Sexpr{res_farmers_TOT[3,2]}) & (
 \backslash
-Sexpr{res_farmers_TOT[3,4]}) & (
-\backslash
-Sexpr{res_farmers_TOT[3,7]})
+Sexpr{res_farmers_TOT[3,4]})
 \backslash
 
 \backslash
@@ -8900,10 +8882,6 @@ Sexpr{res_farmers_TOT[4,3]}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[4,5]<.01,"**",ifelse(res_farmers_TOT[4,5]<.05,"*",ifelse(res_farmers_TOT[4,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_TOT[4,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_TOT[4,8]<.01,"**",ifelse(res_farmers_TOT[4,8]<.05,"*",ifelse(res_farmers_TOT[4,8]<.1,"+","")))}}$ &
-\backslash
 Sexpr{res_farmers_TOT[4,9]}
 \backslash
 
@@ -8916,9 +8894,7 @@ Sexpr{res_farmers_TOT[4,9]}
 \backslash
 Sexpr{res_farmers_TOT[4,2]}) & (
 \backslash
-Sexpr{res_farmers_TOT[4,4]}) & (
-\backslash
-Sexpr{res_farmers_TOT[4,7]})
+Sexpr{res_farmers_TOT[4,4]})
 \backslash
 
 \backslash
@@ -8942,10 +8918,6 @@ Sexpr{res_farmers_TOT[5,3]}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[5,5]<.01,"**",ifelse(res_farmers_TOT[5,5]<.05,"*",ifelse(res_farmers_TOT[5,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_TOT[5,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_TOT[5,8]<.01,"**",ifelse(res_farmers_TOT[5,8]<.05,"*",ifelse(res_farmers_TOT[5,8]<.1,"+","")))}}$ &
-\backslash
 Sexpr{res_farmers_TOT[5,9]}
 \backslash
 
@@ -8958,9 +8930,7 @@ Sexpr{res_farmers_TOT[5,9]}
 \backslash
 Sexpr{res_farmers_TOT[5,2]}) & (
 \backslash
-Sexpr{res_farmers_TOT[5,4]}) & (
-\backslash
-Sexpr{res_farmers_TOT[5,7]})
+Sexpr{res_farmers_TOT[5,4]})
 \backslash
 
 \backslash
@@ -9002,8 +8972,7 @@ Note:
  Column 1 reports control group means with standard deviations in parentheses.
  Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
  with robust standard errors in parentheses.
- Column 3 presents the video treatment effect.
- Column 4 shows the number of observations.
+ Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the four primary outcomes.
  Standard errors are clustered at the catchment-area level.
  Significance levels:
