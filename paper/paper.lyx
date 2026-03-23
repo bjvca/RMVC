@@ -2953,8 +2953,10 @@ We also documented several compliance challenges.
  we identified 47 analyzers across MCCs,
  but only 37 were operational or could be used for immediate testing at the time of the visit;
  the remaining units were non-functional or lacked an available operator.
- Given this imperfect compliance in both directions,
- we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
+ The resulting first-stage relationship between random assignment and actual analyzer availability is 0.37: assignment to treatment increases the probability of having a functioning analyzer by 37 percentage points, from 24 percent in the control group to 61 percent in the treatment group.
+ The ITT estimates should therefore be interpreted as the effect of being assigned to receive the system, averaging over substantial non-compliance in both directions, and are likely attenuated relative to the effect of actual analyzer use.
+ Given this, we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
+ The fact that we detect significant quality improvements despite this attenuation suggests that the true effect of a functioning quality measurement system is substantially larger than the ITT estimates indicate.
 \end_layout
 
 \begin_layout Subsection
@@ -7466,7 +7468,15 @@ Key points to develop:
  Deploying quality measurement and digital monitoring infrastructure is necessary but not sufficient for creating markets for quality.
  Even when quality is both measurable and digitally trackable,
  additional interventions that directly create price incentives (such as quality bonuses or graded pricing mandates) are needed to move from enforcement equilibria to quality-differentiated markets.
- This has implications for the design of quality infrastructure programs in developing country agricultural value chains.]
+ This has implications for the design of quality infrastructure programs in developing country agricultural value chains.
+\end_layout
+
+\begin_layout Standard
+4.
+ Revealed preference for quality measurement.
+ The substantial contamination of the control group (24 percent of control MCCs had acquired a milk analyzer by endline, including five units originally provided through the project) provides indirect evidence that MCCs value quality measurement technology independently of any price channel.
+ MCCs appear willing to invest in or acquire analyzers for their enforcement value alone, suggesting that the demand for quality infrastructure is real even when quality-differentiated pricing does not emerge.
+ This is consistent with the model's prediction that the enforcement channel (reducing sigma-squared) generates value for MCCs through reduced rejection risk and improved screening, independent of the pricing parameter alpha.]
 \end_layout
 
 \begin_layout Section
