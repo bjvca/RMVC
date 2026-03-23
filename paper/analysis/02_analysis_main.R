@@ -559,6 +559,42 @@ saveRDS(res_MCCs, file = paste(path, "paper/results/res_MCCs.rds", sep = "/"))
 
 
 ###############################################################################
+## E2. MCC SECONDARY OUTCOMES: TREATMENT UPTAKE (no baseline, no 2SLS)
+###############################################################################
+## Result array: 7 columns (mean, SD, coef, SE, p, q-val, N)
+## These are directly observed by enumerators, no baseline version exists.
+
+outcomes_mcc_uptake <- c("poster", "machine", "machine_project",
+                          "machine_in_use", "uses_app")
+MCCs_end$secondary_MCC_index <- anderson_index(MCCs_end[outcomes_mcc_uptake])$index
+outcomes_mcc_uptake <- c(outcomes_mcc_uptake, "secondary_MCC_index")
+
+res_MCCs_sec_uptake <- array(NA, dim = c(length(outcomes_mcc_uptake), 7))
+
+for (i in seq_along(outcomes_mcc_uptake)) {
+  ols <- lm(as.formula(paste(outcomes_mcc_uptake[i], "~ treat")), data = MCCs_end)
+  y_ctrl <- MCCs_end[MCCs_end$treat == "C", outcomes_mcc_uptake[i]]
+  res_MCCs_sec_uptake[i, 1] <- mean(y_ctrl, na.rm = TRUE)
+  res_MCCs_sec_uptake[i, 2] <- sd(y_ctrl, na.rm = TRUE)
+
+  vcov_cr2 <- vcovCR(ols, cluster = MCCs_end[!is.na(MCCs_end[[outcomes_mcc_uptake[i]]]),
+    "catchment_ID"], type = "CR2")
+  cr2_test <- coef_test(ols, vcov = vcov_cr2)[2, ]
+  res_MCCs_sec_uptake[i, 3] <- cr2_test[["beta"]]
+  res_MCCs_sec_uptake[i, 4] <- cr2_test[["SE"]]
+  res_MCCs_sec_uptake[i, 5] <- cr2_test[["p_Satt"]]
+  res_MCCs_sec_uptake[i, 7] <- nobs(ols)
+}
+
+idx_uptake <- 1:(length(outcomes_mcc_uptake) - 1)
+res_MCCs_sec_uptake[idx_uptake, 6] <- anderson_sharp_q(res_MCCs_sec_uptake[idx_uptake, 5])
+res_MCCs_sec_uptake <- round(res_MCCs_sec_uptake, digits = 3)
+
+saveRDS(res_MCCs_sec_uptake,
+        file = paste(path, "paper/results/res_MCCs_sec_uptake.rds", sep = "/"))
+
+
+###############################################################################
 ## F. MILK SAMPLE ANALYSIS (supervised quality testing)
 ###############################################################################
 ## Supervised milk quality testing at MCCs using project Lactoscans.

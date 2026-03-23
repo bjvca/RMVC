@@ -299,6 +299,11 @@ res_MCCs <- readRDS(paste0(path,
 \end_layout
 
 \begin_layout Plain Layout
+res_MCCs_sec_uptake <- readRDS(paste0(path,
+ "/results/res_MCCs_sec_uptake.rds"))
+\end_layout
+
+\begin_layout Plain Layout
 res_samples <- readRDS(paste0(path,
  "/results/res_samples.rds"))
 \end_layout
