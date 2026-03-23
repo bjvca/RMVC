@@ -3420,7 +3420,21 @@ The composite index combining all five components mirrors these patterns,
 \end_layout
 
 \begin_layout Standard
-The distributional pattern of the added-water variable is particularly informative.
+The distributional pattern of the added-water variable,
+ illustrated in Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:cdf-added-water"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
+ is particularly informative.
  While the median delivery shows no detectable added water,
  approximately 29 percent of deliveries in the control group test positive for some water addition,
  and 11 percent show more than 5 percent added water.
@@ -3437,8 +3451,51 @@ nolink "false"
 
 \end_inset
 
-,
  where we develop a framework that distinguishes enforcement from price-based channels.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/fig_cdf_added_water.eps
+	lyxscale 50
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:cdf-added-water"
+
+\end_inset
+
+Empirical CDF of added water (%) by treatment status.
+ The y-axis is truncated at 0.7 because approximately 71 percent of all samples show zero added water.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

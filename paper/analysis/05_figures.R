@@ -326,5 +326,29 @@ p9 <- ggplot(forest_farmers_fu, aes(x = coef, y = outcome)) +
 save_plot(p9, "fig_forest_farmer_exp2")
 
 
+###############################################################################
+## 10. CDF PLOT: Added Water by Treatment Group (Experiment 1)
+###############################################################################
+## Shows the empirical CDF of added water (%) for treatment vs control samples.
+## Key pattern: treatment effect concentrated in the right tail (heavy adulterators).
+
+samples_cdf <- readRDS(paste(path, "paper/results/samples_for_cdf.rds", sep = "/"))
+samples_cdf <- samples_cdf[!is.na(samples_cdf$Added.Water), ]
+samples_cdf$group <- ifelse(samples_cdf$treat == "T", "Treatment", "Control")
+
+p10 <- ggplot(samples_cdf, aes(x = Added.Water, color = group, linetype = group)) +
+  stat_ecdf(geom = "step", linewidth = 1.2, pad = FALSE) +
+  scale_color_manual(values = c("Treatment" = "#1b9e77", "Control" = "#d62728")) +
+  scale_linetype_manual(values = c("Treatment" = "solid", "Control" = "dashed")) +
+  coord_cartesian(xlim = c(0, 15), ylim = c(0.7, 1.0)) +
+  labs(x = "Added Water (%)", y = "Cumulative Proportion",
+       color = NULL, linetype = NULL) +
+  theme_minimal(base_size = 16) +
+  theme(legend.position = c(0.85, 0.25),
+        legend.text = element_text(size = 14))
+
+save_plot(p10, "fig_cdf_added_water")
+
+
 cat("\n05_figures.R completed successfully.\n")
 cat("Figures saved to:", fig_dir, "\n")

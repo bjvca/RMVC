@@ -616,6 +616,8 @@ res_samples[idx, 12] <- anderson_sharp_q(res_samples[idx, 8])
 res_samples <- round(res_samples, digits = 3)
 
 saveRDS(res_samples, file = paste(path, "paper/results/res_samples.rds", sep = "/"))
+saveRDS(samples[c("Added.Water", "treat", "catch_ID", "Qty")],
+        file = paste(path, "paper/results/samples_for_cdf.rds", sep = "/"))
 
 
 ###############################################################################
