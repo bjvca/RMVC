@@ -1695,8 +1695,6 @@ Processors set fairly stable procurement prices and MCCs adjust tightly around t
  power was just above 0.80 for a joint significance test,
  while power for individual hypotheses was substantially higher,
  ranging from 0.87 to 0.99.
- At the design stage,
- we decided to target 130 MCCs to account for attrition.
 \end_layout
 
 \begin_layout Standard
@@ -1706,8 +1704,8 @@ The field experiment was conducted in four districts of Southwestern Uganda:
  Kazo,
  and Kirihura.
  The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
- from which we sampled 130 MCCs.
- Half of these were randomly assigned to receive the quality measurement and digital monitoring system,
+ from which we sampled 125 MCCs.
+ About half of these were randomly assigned to receive the quality measurement and digital monitoring system,
  while the other half served as controls.
 \begin_inset Foot
 status collapsed
@@ -1720,17 +1718,7 @@ As noted above,
 
 \end_inset
 
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Maybe we should estimate how big the difference was and see if results are sensitive to the degree of clustering.
-\end_layout
-
-\end_inset
-
- In each of the 130 MCCs,
+ In each of the 125 MCCs,
  we randomly selected 20 farmers who deliver milk to the center for baseline and endline surveys.
 \end_layout
 
@@ -2078,7 +2066,7 @@ name "subsec:baseline-balance"
 \end_layout
 
 \begin_layout Standard
-We pre-registered 10 variables at each level to demonstrate balance.
+We pre-registered 10 variables at each level (MCC level and farmer level) to describe the data and demonstrate balance.
  Results for five variables measured at the MCC level are in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2118,8 +2106,21 @@ nolink "false"
  shows that among MCCs in the control group,
  63 percent are organized as cooperatives,
  reflecting how collective institutions continue to play a central role in the organization of Uganda’s dairy value chain.
- Their average total storage capacity is about 4,000 liters,
+ The average total storage capacity of MCCs is about 4,000 liters,
  and 27 percent reported paying a premium for higher quality milk to suppliers.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+While 27 percent of control MCCs report paying a premium for higher-quality milk,
+ this appears to be aspirational rather than operational:
+ MCCs that report paying a premium pay an average of 798 UGX per liter at baseline,
+ statistically indistinguishable from the 790 UGX paid by those that do not (p = 0.63).
+ The 'premium' likely reflects the accept/reject decision rather than continuous quality-differentiated pricing
+\end_layout
+
+\end_inset
+
  The average MCC has been in operation for just under 10 years,
  and 58 percent facilitated the supply of acaricides to supplying farmers.
 \end_layout
@@ -2505,13 +2506,18 @@ To calculate herd,
  and ask the same 3 categories for improved animals.
  Farmers were allowed to indicate that they did not know for a particular category,
  which were treated as missing in our analysis leading to the reduction in the number of observations.
+ As such,
+ the 62 animals include all cattle,
+ so the number of milking animals is substantially smaller.
+ In addition,
+ the distribution is significantly skewed with the median being 47 animals.
 \end_layout
 
 \end_inset
 
  Farmers sell roughly 60 liters of milk per day during the rainy season,
  and they spend on average USD 66 per month on chemical purchases,
- primarily acaricides.
+ primarily acaricides to fight off tick borne diseases.
  Further characteristics are in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2524,8 +2530,8 @@ tuple "list"
 
 \end_inset
 
- and shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season.
- Roughly 79 percent of farmers sell most of their milk to a collection center,
+ and shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season (implying they keep about 10 liters for own consumption).
+ Roughly 79 percent of farmers sell most of their milk to an MCC,
  three-quarters report using only steel containers when transacting,
  and a similarly high share are members of a dairy cooperative.
 \end_layout
@@ -2887,13 +2893,9 @@ tuple "list"
 
 \end_inset
 
-) compare pre-treatment characteristics of farmers connected to treatment MCCs with those connected to control MCCs.
- While a few individual differences are statistically significant (farmers connected to treatment MCCs are somewhat less likely to be a member of a cooperative,
- more likely to be using steel cans or buckets,
- and have slightly higher expenditure on chemicals),
- the joint F-test does not reject the null of balance across all covariates.
+) also compare pre-treatment characteristics of farmers connected to treatment MCCs with those connected to control MCCs in the second column.
  Overall,
- the evidence supports the conclusion that randomization achieved comparable treatment and control groups at the farmer level.
+ the evidence supports the conclusion that randomization achieved comparable treatment and control groups at the farmer level as well.
 \end_layout
 
 \begin_layout Subsection
@@ -2909,22 +2911,23 @@ name "subsec:attrition-compliance"
 
 \begin_layout Standard
 Meeting sample size targets within the available budget proved challenging at baseline,
- largely because dairy farmers are geographically dispersed.
+ particularly for the farmer level data because dairy farmers are geographically dispersed.
  In the end,
  we surveyed 2,261 farmers across 124 MCCs,
- corresponding to 87 percent of our planned farmer sample and 95 percent of our planned MCC sample.
+ corresponding to 87 percent of our planned farmer sample and 99 percent of our planned MCC sample.
  Of these 124 MCCs,
  60 were randomly assigned to the control condition and 64 to the treatment condition.
 \end_layout
 
 \begin_layout Standard
-By endline,
+By the time of the endline survey,
  4 of the 124 baseline MCCs had attrited:
  2 could not be re-contacted and 2 refused to cooperate,
  leaving us with data for 120 MCCs.
  Of the 4 attrited MCCs,
  one was originally assigned to the control group and 3 to the treatment group.
- A chi-square test confirms that attrition was unrelated to the treatment.
+ A Fisher exact test does not reject equal attrition rates across treatment arms (p = 0.62),
+ though the test has limited power given the small number of attriting units.
  We further managed to contact 2,139 farmers,
  of whom 6 refused to be interviewed,
  leading to an effective sample of 2,133.
