@@ -1796,22 +1796,6 @@ Baseline data from both MCCs and associated farmers was collected towards the en
  This involved in-person surveys at the MCC level and at the farmer level.
  In addition,
  during endline we also measured quality of incoming milk.
- To do so,
- an enumerator equipped with a milk analyzer paid an unannounced visit to each MCC enrolled in the study and measured all incoming milk samples over the course of one full day.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-This exercise posed logistical challenges,
- as MCCs opened early (usually at 8:00 am) and were often in remote areas.
- Enumerators frequently stayed overnight nearby to set up equipment before deliveries and carried generators for use where power was unavailable.
- To limit information spillovers,
- the testing was conducted over a short period with as many enumerators deployed simultaneously as possible.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
@@ -1862,6 +1846,21 @@ Finally,
  protein,
  added water,
  and corrected lactometer reading for each delivery.
+ These visits were unannounced.
+ To limit information spillovers,
+ the testing was conducted over a short period with as many enumerators deployed simultaneously as possible.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+This exercise posed logistical challenges,
+ as MCCs opened early (usually at 8:00 am) and were often in remote areas.
+ Enumerators frequently stayed overnight nearby to set up equipment before deliveries and carried generators for use where power was unavailable.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2953,9 +2952,18 @@ We also documented several compliance challenges.
  we identified 47 analyzers across MCCs,
  but only 37 were operational or could be used for immediate testing at the time of the visit;
  the remaining units were non-functional or lacked an available operator.
- The resulting first-stage relationship between random assignment and actual analyzer availability is 0.37: assignment to treatment increases the probability of having a functioning analyzer by 37 percentage points, from 24 percent in the control group to 61 percent in the treatment group.
- The ITT estimates should therefore be interpreted as the effect of being assigned to receive the system, averaging over substantial non-compliance in both directions, and are likely attenuated relative to the effect of actual analyzer use.
- Given this, we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
+ 
+\end_layout
+
+\begin_layout Standard
+The resulting first-stage relationship between random assignment and actual analyzer availability is 0.37:
+ assignment to treatment increases the probability of having a functioning analyzer by 37 percentage points,
+ from 24 percent in the control group to 61 percent in the treatment group.
+ The ITT estimates should therefore be interpreted as the effect of being assigned to receive the system,
+ averaging over substantial non-compliance in both directions,
+ and are likely attenuated relative to the effect of actual analyzer use.
+ Given this,
+ we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
  The fact that we detect significant quality improvements despite this attenuation suggests that the true effect of a functioning quality measurement system is substantially larger than the ITT estimates indicate.
 \end_layout
 
@@ -2982,7 +2990,20 @@ name "subsec:milk-quality"
 \end_layout
 
 \begin_layout Standard
-To obtain objective measures of compositional milk quality,
+As mentioned in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:outcome-variables"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
+ to obtain objective measures of compositional milk quality,
  enumerators conducted supervised testing at both treatment and control MCCs.
  For one full day at each site,
  all incoming milk was analyzed using milk analyzers,
@@ -3358,7 +3379,7 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Table
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-milk-quality"
@@ -3381,36 +3402,21 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-In contrast,
- we observe clear improvements in adulteration-related measures.
+We also observe improvements in adulteration-related measures.
  Milk delivered to treated MCCs contains significantly less added water,
  with a reduction of nearly half a percentage point relative to the control mean of 1.63 percent.
  Density (CLR) rises by 0.44 units,
  consistent with lower dilution and greater compositional integrity.
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-I just learned that there is not a linear interpretation for CLR.
- For instance,
- skimming milk will increase CLR.
- Should we drop it?
- Or include in deviation from standard?
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 The composite index combining all five components mirrors these patterns,
  indicating a significant improvement of 0.21 standard deviations in overall milk quality.
  Taken together,
- these results suggest that the introduction of analyzers reduced adulteration and improved observable fat content,
- but had more limited effects on biologically determined components such as SNF and protein.
+ these results suggest that the introduction of analyzers reduced adulteration and improved butter fat content,
+ but had limited effects on biologically determined components such as SNF and protein.
  This pattern is consistent with adjustments driven by changes in handling practices (such as reduced skimming or dilution) rather than by deeper shifts in feeding or production management,
- in line with the comparatively weak farmer-level behavioral responses documented in the previous subsection.
+ in line with the comparatively weak farmer-level behavioral responses documented in the next subsection.
 \end_layout
 
 \begin_layout Standard
@@ -7474,9 +7480,12 @@ Key points to develop:
 \begin_layout Standard
 4.
  Revealed preference for quality measurement.
- The substantial contamination of the control group (24 percent of control MCCs had acquired a milk analyzer by endline, including five units originally provided through the project) provides indirect evidence that MCCs value quality measurement technology independently of any price channel.
- MCCs appear willing to invest in or acquire analyzers for their enforcement value alone, suggesting that the demand for quality infrastructure is real even when quality-differentiated pricing does not emerge.
- This is consistent with the model's prediction that the enforcement channel (reducing sigma-squared) generates value for MCCs through reduced rejection risk and improved screening, independent of the pricing parameter alpha.]
+ The substantial contamination of the control group (24 percent of control MCCs had acquired a milk analyzer by endline,
+ including five units originally provided through the project) provides indirect evidence that MCCs value quality measurement technology independently of any price channel.
+ MCCs appear willing to invest in or acquire analyzers for their enforcement value alone,
+ suggesting that the demand for quality infrastructure is real even when quality-differentiated pricing does not emerge.
+ This is consistent with the model's prediction that the enforcement channel (reducing sigma-squared) generates value for MCCs through reduced rejection risk and improved screening,
+ independent of the pricing parameter alpha.]
 \end_layout
 
 \begin_layout Section
