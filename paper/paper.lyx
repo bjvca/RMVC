@@ -4053,6 +4053,18 @@ While no individual outcome reaches conventional significance,
  The pricing components of the index,
  however,
  remain firmly null.
+ Results for the LATE analysis in Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ are very similar.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4070,10 +4082,10 @@ name "subsec:mcc-level"
 We pre-registered six primary outcomes at the level of the MCC.
  All six are hypothesized to move in a positive direction in response to our intervention designed to make milk quality more transparent and traceable.
  To capture the aggregate effect across these outcomes (and simultaneously consider multiple hypothesis testing concerns),
- we also construct a summary index following 
+ we again construct a summary index following 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "doi:10.1198/016214508000000841"
+key "anderson2008multiple"
 literal "false"
 
 \end_inset
@@ -4102,7 +4114,8 @@ Our first two outcomes measure the extent to which quality testing becomes embed
 \begin_layout Standard
 The next two outcomes reflect how increased transparency affects prices.
  We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey.
- We then ask about the average price MCCs received for sales to various buyers during the last transaction in the previous week,
+ For onward sales by MCCs,
+ we ask about the average price MCCs received for sales to various buyers during the last transaction in the previous week,
  and take a (weighted) average of these.
  These outcomes allow us to assess whether improved quality monitoring translates into higher farm-gate prices and whether MCCs are able to cash in on quality improvements through higher sales prices.
 \end_layout
@@ -4548,7 +4561,7 @@ Turning to prices,
 
 \begin_layout Standard
 In addition,
- about 20 percent of MCCs in the control group reported paying a quality premium to suppliers,
+ about 19 percent of MCCs in the control group reported paying a quality premium to suppliers,
  and the same share (11 out of 59) reported receiving a premium from buyers.
  Consistent with the price outcomes,
  we do not find that making quality more visible in the value chain increased the likelihood of such premiums being paid.
@@ -4574,7 +4587,18 @@ nolink "false"
  MCC-level data indicate that the intervention produced a sizable and consistent increase in testing activity,
  yet we find no evidence that it generated quality-based price differentiation.
  When we consider the composite index of pre-registered MCC-level outcomes,
- the data indicate that the analyzer intervention did not lead to measurable improvements at the MCC level.
+ the data indicate that the analyzer intervention led to marginal improvements at the MCC level,
+ but this is entirely driven by an increase in MCC milk testing behaviour.
+\end_layout
+
+\begin_layout Subsubsection
+Secondary outcomes
+\end_layout
+
+\begin_layout Standard
+For completeness,
+ we report a variety of tables of pre-regsteres scecondary outcomes in the appendix.
+ 
 \end_layout
 
 \begin_layout Section
@@ -6361,9 +6385,6 @@ If posters and free testing increase
 \begin_layout Section
 Follow-up Experiment:
  Activating the Price Channel
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:experiment2"
@@ -6375,15 +6396,16 @@ name "sec:experiment2"
 
 \begin_layout Subsection
 Design
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:exp2-design"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 The main experiment established that making quality observable through the measurement and digital monitoring system improved enforcement but did not,
  on its own,
  generate quality-based pricing.
@@ -9346,15 +9368,786 @@ Note:
 
 \end_layout
 
-\begin_layout Standard
-- Full secondary outcome tables (quantity,
- uptake,
- sales,
- switching)
+\begin_layout Subsection
+Secondary outcome tables
 \end_layout
 
 \begin_layout Standard
-- 
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secondary outcomes at farmer level - uptake
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-farmer-uptake"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rccccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean & analyzer & video & bundle & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-6}
+\end_layout
+
+\begin_layout Plain Layout
+Remembers video & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,5]<.01,"**",ifelse(res_farmers_sec_uptake[1,5]<.05,"*",ifelse(res_farmers_sec_uptake[1,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,8]<.01,"**",ifelse(res_farmers_sec_uptake[1,8]<.05,"*",ifelse(res_farmers_sec_uptake[1,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[1,11]<.01,"**",ifelse(res_farmers_sec_uptake[1,11]<.05,"*",ifelse(res_farmers_sec_uptake[1,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[1,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[1,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[1,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[1,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[1,33]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Remembers receiving seed & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,5]<.01,"**",ifelse(res_farmers_sec_uptake[2,5]<.05,"*",ifelse(res_farmers_sec_uptake[2,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,8]<.01,"**",ifelse(res_farmers_sec_uptake[2,8]<.05,"*",ifelse(res_farmers_sec_uptake[2,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[2,11]<.01,"**",ifelse(res_farmers_sec_uptake[2,11]<.05,"*",ifelse(res_farmers_sec_uptake[2,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[2,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[2,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[2,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[2,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[2,33]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Used seed  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,5]<.01,"**",ifelse(res_farmers_sec_uptake[3,5]<.05,"*",ifelse(res_farmers_sec_uptake[3,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,8]<.01,"**",ifelse(res_farmers_sec_uptake[3,8]<.05,"*",ifelse(res_farmers_sec_uptake[3,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[3,11]<.01,"**",ifelse(res_farmers_sec_uptake[3,11]<.05,"*",ifelse(res_farmers_sec_uptake[3,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[3,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[3,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[3,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[3,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[3,33]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Knows compositional quality matters & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,5]<.01,"**",ifelse(res_farmers_sec_uptake[4,5]<.05,"*",ifelse(res_farmers_sec_uptake[4,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,8]<.01,"**",ifelse(res_farmers_sec_uptake[4,8]<.05,"*",ifelse(res_farmers_sec_uptake[4,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[4,11]<.01,"**",ifelse(res_farmers_sec_uptake[4,11]<.05,"*",ifelse(res_farmers_sec_uptake[4,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[4,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[4,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[4,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[4,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[4,33]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Index of uptake & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,1]} & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,5]<.01,"**",ifelse(res_farmers_sec_uptake[5,5]<.05,"*",ifelse(res_farmers_sec_uptake[5,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,6]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,8]<.01,"**",ifelse(res_farmers_sec_uptake[5,8]<.05,"*",ifelse(res_farmers_sec_uptake[5,8]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,9]}$^{
+\backslash
+Sexpr{ifelse(res_farmers_sec_uptake[5,11]<.01,"**",ifelse(res_farmers_sec_uptake[5,11]<.05,"*",ifelse(res_farmers_sec_uptake[5,11]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_farmers_sec_uptake[5,12]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,2]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,4]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,7]}) & (
+\backslash
+Sexpr{res_farmers_sec_uptake[5,10]})
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+&  & [
+\backslash
+Sexpr{res_farmers_sec_uptake[5,13]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[5,14]}] & [
+\backslash
+Sexpr{res_farmers_sec_uptake[5,33]}]
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ First column reports control group means (and standard deviations below);
+ the second column shows average treatment effect of MCC level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ the third column shows average treatment effect of the farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+  the third column shows average treatment effect of the interaction of the MCC level and farmer level intervention,
+ (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
+ Standard errors are clustered at the catchment area level,
+ **,
+ * and + denote significance at the 1,
+ 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Uptake and Operational Use of Milk Analyzers at MCCs
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Secondary-outcomes-MCC-uptake"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rcccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Poster is visible (1=yes) & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[1,5]<.01,"**",ifelse(res_MCCs_sec_uptake[1,5]<.05,"*",ifelse(res_MCCs_sec_uptake[1,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Milk Analyzer present (1=yes) & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[2,5]<.01,"**",ifelse(res_MCCs_sec_uptake[2,5]<.05,"*",ifelse(res_MCCs_sec_uptake[2,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[2,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Project Milk Analyzer is present (1=yes)  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[3,5]<.01,"**",ifelse(res_MCCs_sec_uptake[3,5]<.05,"*",ifelse(res_MCCs_sec_uptake[3,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[3,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Milk analyzer operational (1=yes) & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[4,5]<.01,"**",ifelse(res_MCCs_sec_uptake[4,5]<.05,"*",ifelse(res_MCCs_sec_uptake[4,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC uses digital record-keeping (1=yes) & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[5,5]<.01,"**",ifelse(res_MCCs_sec_uptake[5,5]<.05,"*",ifelse(res_MCCs_sec_uptake[5,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[5,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Index of uptake & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,1]} & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,3]}$^{
+\backslash
+Sexpr{ifelse(res_MCCs_sec_uptake[6,5]<.01,"**",ifelse(res_MCCs_sec_uptake[6,5]<.05,"*",ifelse(res_MCCs_sec_uptake[6,5]<.1,"+","")))}}$  & 
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,7]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,2]}) & (
+\backslash
+Sexpr{res_MCCs_sec_uptake[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ olumn 1 reports the mean of each outcome for the control group,
+ with standard deviations in parentheses.
+ Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
+ with robust standard errors in parentheses.
+ Column 3 lists the number of MCCs with non-missing observations.
+ All prices are in Ugandan shillings (UGX).
+ The “Index of uptake” is an Anderson (2008) index of the variables listed above.
+ Significance levels:
+ * p < 0.10,
+ ** p < 0.05,
+ *** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
