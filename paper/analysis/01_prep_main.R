@@ -147,6 +147,12 @@ farmers_base[columns] <- lapply(farmers_base[columns], function(x) {
 farmers_end[columns_q]  <- lapply(farmers_end[columns_q],  function(x) as.numeric(as.character(x)))
 farmers_base[columns_q] <- lapply(farmers_base[columns_q], function(x) as.numeric(as.character(x)))
 
+## Zero out quantities where price is missing (avoid denominator inflation)
+for (j in seq_along(columns)) {
+  farmers_end[[columns_q[j]]][is.na(farmers_end[[columns[j]]])] <- NA
+  farmers_base[[columns_q[j]]][is.na(farmers_base[[columns[j]]])] <- NA
+}
+
 ## Quantity-weighted average price
 farmers_end$avg_sales_p <- rowSums(farmers_end[columns] * farmers_end[columns_q], na.rm = TRUE) /
   rowSums(farmers_end[columns_q], na.rm = TRUE)
