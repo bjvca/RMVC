@@ -4645,7 +4645,6 @@ At the farmer level,
  not farmer education.
  Improved analyzer use at MCCs did not spill over into farmer knowledge or practice,
  reinforcing the interpretation that the intervention operated through the enforcement channel at the MCC level rather than through changes in farmer behavior.
-
 \end_layout
 
 \begin_layout Section
@@ -4660,7 +4659,7 @@ name "sec:model"
 \end_layout
 
 \begin_layout Standard
-This section presents a simple analytical framework to interpret the findings from both experiments.
+This section presents a simple analytical framework to rationalize the findings from the experiment.
  The model formalizes two channels through which quality infrastructure can affect outcomes:
  an enforcement channel,
  in which improved measurement precision makes rejection thresholds credibly binding,
@@ -4668,7 +4667,7 @@ This section presents a simple analytical framework to interpret the findings fr
  in which quality measurement enables quality-differentiated pricing.
  The main experiment results are consistent with the enforcement channel operating in isolation:
  quality improves but prices do not differentiate.
- The follow-up experiment then tests the price channel directly by exogenously activating quality-based premiums.
+ We then present results from a follow-up experiment that tests the price channel directly by exogenously activating quality-based premiums.
 \end_layout
 
 \begin_layout Subsection
