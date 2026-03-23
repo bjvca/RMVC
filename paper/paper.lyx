@@ -3498,7 +3498,7 @@ Empirical CDF of added water (%) by treatment status.
 \end_layout
 
 \begin_layout Standard
-The treatment-on-the-treated estimates,
+The treatment-on-the-treated (LATE) estimates,
  presented in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3524,8 +3524,23 @@ nolink "false"
  further reducing precision.
  Together,
  these factors imply wider confidence intervals for the LATE relative to the more precise ITT estimates.
- Consistent with this,
- the LATE point estimates are roughly two to three times larger than the corresponding ITT coefficients,
+ 
+\end_layout
+
+\begin_layout Standard
+Consistent with this,
+ the LATE point estimates in Appendix Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-milk-quality-LATE"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ are roughly two to three times larger than the corresponding ITT coefficients,
  reflecting the rescaling by the compliance rate.
  The composite quality index remains statistically significant at the 5 percent level under 2SLS,
  and the individual estimates for fat content and density (CLR) are marginally significant,
@@ -3559,7 +3574,7 @@ The first outcome is a composite in itself,
  We construct an 
 \begin_inset CommandInset citation
 LatexCommand citet
-key "doi:10.1198/016214508000000841"
+key "anderson2008multiple"
 literal "false"
 
 \end_inset
@@ -3927,7 +3942,7 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Table
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer"
@@ -3940,7 +3955,7 @@ nolink "false"
 
  reports treatment effects on our four primary outcomes at the farmer level,
  as well as the composite index.
- The table shows ITT estimates from Equation
+ The table shows ITT estimates from Equation 
 \begin_inset ERT
 status open
 
@@ -3952,7 +3967,7 @@ ref{eq:farmer}
 
 \end_inset
 
- in Section
+ in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Estimation-and-inference"
@@ -3967,7 +3982,7 @@ nolink "false"
  The first column reports the control group mean (with standard deviations in parentheses),
  the second column reports the estimated treatment effect of the analyzer intervention (with cluster-robust standard errors in parentheses),
  and the third column reports the number of non-missing observations.
- In light of the compliance issues reported in Section
+ In light of the compliance issues reported in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:attrition-compliance"
