@@ -9459,7 +9459,7 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{rccccc}
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9475,7 +9475,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean & analyzer & video & bundle & nobs 
+& mean ctrl & analyzer & nobs
 \backslash
 
 \backslash
@@ -9484,36 +9484,20 @@ hline
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
 \backslash
-cline{2-6}
+cline{2-4}
 \end_layout
 
 \begin_layout Plain Layout
-Remembers video & 
+Remembers video &
 \backslash
-Sexpr{res_farmers_sec_uptake[1,1]} & 
+Sexpr{res_farmers_sec_uptake[1,1]} &
 \backslash
 Sexpr{res_farmers_sec_uptake[1,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers_sec_uptake[1,5]<.01,"**",ifelse(res_farmers_sec_uptake[1,5]<.05,"*",ifelse(res_farmers_sec_uptake[1,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers_sec_uptake[1,5]<.01,"**",ifelse(res_farmers_sec_uptake[1,5]<.05,"*",ifelse(res_farmers_sec_uptake[1,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_sec_uptake[1,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[1,8]<.01,"**",ifelse(res_farmers_sec_uptake[1,8]<.05,"*",ifelse(res_farmers_sec_uptake[1,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[1,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[1,11]<.01,"**",ifelse(res_farmers_sec_uptake[1,11]<.05,"*",ifelse(res_farmers_sec_uptake[1,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[1,12]} 
+Sexpr{res_farmers_sec_uptake[1,9]}
 \backslash
 
 \backslash
@@ -9525,25 +9509,7 @@ Sexpr{res_farmers_sec_uptake[1,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[1,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[1,4]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[1,7]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[1,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers_sec_uptake[1,13]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[1,14]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[1,33]}]
+Sexpr{res_farmers_sec_uptake[1,4]})
 \backslash
 
 \backslash
@@ -9571,23 +9537,15 @@ Sexpr{res_farmers_sec_uptake[1,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Remembers receiving seed & 
+Remembers receiving seed &
 \backslash
-Sexpr{res_farmers_sec_uptake[2,1]} & 
+Sexpr{res_farmers_sec_uptake[2,1]} &
 \backslash
 Sexpr{res_farmers_sec_uptake[2,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers_sec_uptake[2,5]<.01,"**",ifelse(res_farmers_sec_uptake[2,5]<.05,"*",ifelse(res_farmers_sec_uptake[2,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers_sec_uptake[2,5]<.01,"**",ifelse(res_farmers_sec_uptake[2,5]<.05,"*",ifelse(res_farmers_sec_uptake[2,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_sec_uptake[2,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[2,8]<.01,"**",ifelse(res_farmers_sec_uptake[2,8]<.05,"*",ifelse(res_farmers_sec_uptake[2,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[2,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[2,11]<.01,"**",ifelse(res_farmers_sec_uptake[2,11]<.05,"*",ifelse(res_farmers_sec_uptake[2,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[2,12]} 
+Sexpr{res_farmers_sec_uptake[2,9]}
 \backslash
 
 \backslash
@@ -9599,25 +9557,7 @@ Sexpr{res_farmers_sec_uptake[2,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[2,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[2,4]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[2,7]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[2,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers_sec_uptake[2,13]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[2,14]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[2,33]}]
+Sexpr{res_farmers_sec_uptake[2,4]})
 \backslash
 
 \backslash
@@ -9629,23 +9569,15 @@ Sexpr{res_farmers_sec_uptake[2,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Used seed  & 
+Used seed &
 \backslash
-Sexpr{res_farmers_sec_uptake[3,1]} & 
+Sexpr{res_farmers_sec_uptake[3,1]} &
 \backslash
 Sexpr{res_farmers_sec_uptake[3,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers_sec_uptake[3,5]<.01,"**",ifelse(res_farmers_sec_uptake[3,5]<.05,"*",ifelse(res_farmers_sec_uptake[3,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers_sec_uptake[3,5]<.01,"**",ifelse(res_farmers_sec_uptake[3,5]<.05,"*",ifelse(res_farmers_sec_uptake[3,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_sec_uptake[3,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[3,8]<.01,"**",ifelse(res_farmers_sec_uptake[3,8]<.05,"*",ifelse(res_farmers_sec_uptake[3,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[3,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[3,11]<.01,"**",ifelse(res_farmers_sec_uptake[3,11]<.05,"*",ifelse(res_farmers_sec_uptake[3,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[3,12]} 
+Sexpr{res_farmers_sec_uptake[3,9]}
 \backslash
 
 \backslash
@@ -9657,25 +9589,7 @@ Sexpr{res_farmers_sec_uptake[3,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[3,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[3,4]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[3,7]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[3,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers_sec_uptake[3,13]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[3,14]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[3,33]}]
+Sexpr{res_farmers_sec_uptake[3,4]})
 \backslash
 
 \backslash
@@ -9687,23 +9601,15 @@ Sexpr{res_farmers_sec_uptake[3,33]}]
 \end_layout
 
 \begin_layout Plain Layout
-Knows compositional quality matters & 
+Knows compositional quality matters &
 \backslash
-Sexpr{res_farmers_sec_uptake[4,1]} & 
+Sexpr{res_farmers_sec_uptake[4,1]} &
 \backslash
 Sexpr{res_farmers_sec_uptake[4,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers_sec_uptake[4,5]<.01,"**",ifelse(res_farmers_sec_uptake[4,5]<.05,"*",ifelse(res_farmers_sec_uptake[4,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers_sec_uptake[4,5]<.01,"**",ifelse(res_farmers_sec_uptake[4,5]<.05,"*",ifelse(res_farmers_sec_uptake[4,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_sec_uptake[4,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[4,8]<.01,"**",ifelse(res_farmers_sec_uptake[4,8]<.05,"*",ifelse(res_farmers_sec_uptake[4,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[4,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[4,11]<.01,"**",ifelse(res_farmers_sec_uptake[4,11]<.05,"*",ifelse(res_farmers_sec_uptake[4,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[4,12]} 
+Sexpr{res_farmers_sec_uptake[4,9]}
 \backslash
 
 \backslash
@@ -9715,25 +9621,7 @@ Sexpr{res_farmers_sec_uptake[4,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[4,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[4,4]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[4,7]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[4,10]})
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers_sec_uptake[4,13]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[4,14]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[4,33]}]
+Sexpr{res_farmers_sec_uptake[4,4]})
 \backslash
 
 \backslash
@@ -9742,26 +9630,22 @@ Sexpr{res_farmers_sec_uptake[4,33]}]
 
 \begin_layout Plain Layout
 
+\backslash
+
+\backslash
+
 \end_layout
 
 \begin_layout Plain Layout
-Index of uptake & 
+Index of uptake &
 \backslash
-Sexpr{res_farmers_sec_uptake[5,1]} & 
+Sexpr{res_farmers_sec_uptake[5,1]} &
 \backslash
 Sexpr{res_farmers_sec_uptake[5,3]}$^{
 \backslash
-Sexpr{ifelse(res_farmers_sec_uptake[5,5]<.01,"**",ifelse(res_farmers_sec_uptake[5,5]<.05,"*",ifelse(res_farmers_sec_uptake[5,5]<.1,"+","")))}}$ & 
+Sexpr{ifelse(res_farmers_sec_uptake[5,5]<.01,"**",ifelse(res_farmers_sec_uptake[5,5]<.05,"*",ifelse(res_farmers_sec_uptake[5,5]<.1,"+","")))}}$ &
 \backslash
-Sexpr{res_farmers_sec_uptake[5,6]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[5,8]<.01,"**",ifelse(res_farmers_sec_uptake[5,8]<.05,"*",ifelse(res_farmers_sec_uptake[5,8]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[5,9]}$^{
-\backslash
-Sexpr{ifelse(res_farmers_sec_uptake[5,11]<.01,"**",ifelse(res_farmers_sec_uptake[5,11]<.05,"*",ifelse(res_farmers_sec_uptake[5,11]<.1,"+","")))}}$  & 
-\backslash
-Sexpr{res_farmers_sec_uptake[5,12]} 
+Sexpr{res_farmers_sec_uptake[5,9]}
 \backslash
 
 \backslash
@@ -9773,32 +9657,10 @@ Sexpr{res_farmers_sec_uptake[5,12]}
 \backslash
 Sexpr{res_farmers_sec_uptake[5,2]}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[5,4]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[5,7]}) & (
-\backslash
-Sexpr{res_farmers_sec_uptake[5,10]})
+Sexpr{res_farmers_sec_uptake[5,4]})
 \backslash
 
 \backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-&  & [
-\backslash
-Sexpr{res_farmers_sec_uptake[5,13]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[5,14]}] & [
-\backslash
-Sexpr{res_farmers_sec_uptake[5,33]}]
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -9834,17 +9696,16 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- First column reports control group means (and standard deviations below);
- the second column shows average treatment effect of MCC level intervention,
- (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
- the third column shows average treatment effect of the farmer level intervention,
- (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
-  the third column shows average treatment effect of the interaction of the MCC level and farmer level intervention,
- (standard error of coefficient estimate below) and [p-value for the hypothesis of no treatment heterogeneity with respect to connection type below];
- Standard errors are clustered at the catchment area level,
- **,
- * and + denote significance at the 1,
- 5 and 10 percent Benjamini-Krieger-Yekutieli sharpened q-values.
+ Column 1 reports control group means with standard deviations in parentheses.
+ Column 2 presents the treatment effect of the MCC-level analyzer intervention,
+ with robust standard errors in parentheses.
+ Column 3 shows the number of observations.
+ The index is an Anderson (2008) index of the four uptake outcomes.
+ Standard errors are clustered at the catchment-area level.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
