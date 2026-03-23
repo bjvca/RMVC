@@ -4735,11 +4735,7 @@ where
 \begin_inset Formula $\eta_{i}\sim N(0,\sigma^{2})$
 \end_inset
 
- is measurement noise independent of the quality shock 
-\begin_inset Formula $\varepsilon_{i}$
-\end_inset
-
-.
+ is measurement noise.
  With only basic tools (lactometer,
  alcohol test),
  
