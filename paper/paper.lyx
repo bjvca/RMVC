@@ -3429,11 +3429,7 @@ The distributional pattern of the added-water variable is particularly informati
  roughly half the control rate.
  The treatment effect thus appears concentrated in the right tail of the adulteration distribution:
  the intervention disciplines the most egregious adulterators without necessarily changing behavior among suppliers who were already delivering clean milk.
- We return to the interpretation of this pattern in Section
-\begin_inset space ~
-\end_inset
-
-
+ We return to the interpretation of this pattern in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:model"
@@ -3441,7 +3437,8 @@ nolink "false"
 
 \end_inset
 
-, where we develop a framework that distinguishes enforcement from price-based channels.
+,
+ where we develop a framework that distinguishes enforcement from price-based channels.
 \end_layout
 
 \begin_layout Standard
