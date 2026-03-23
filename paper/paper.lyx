@@ -4011,13 +4011,9 @@ nolink "false"
 \begin_layout Standard
 We do not find evidence that the analyzer intervention affected farmers’ production investments and management practices.
  The point estimate is small and statistically insignificant.
-\end_layout
-
-\begin_layout Standard
-Among control farmers,
+ Among control farmers,
  approximately 16 percent report that their milk was tested using an analyzer.
- Farmers linked to treatment MCCs report slightly higher testing rates,
- by roughly 6 to 7 percentage points,
+ Farmers linked to treatment MCCs report slightly higher testing rates (roughly 7 percentage points more),
  although this difference is not statistically distinguishable from zero.
 \begin_inset Foot
 status collapsed
@@ -4030,19 +4026,7 @@ Although these effects are generally small and imprecise,
  and therefore may not fully reflect this selective-use pattern.
  Even so,
  selective but credible testing can still shift behavior:
- the possibility of being tested may be sufficient to induce farmers to upgrade milk quality,
- a mechanism supported by the compositional improvements documented in the sample-based analysis below (Section
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:milk-quality"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-).
+ the possibility of being tested may be sufficient to induce farmers to upgrade milk quality.
 \end_layout
 
 \end_inset
@@ -4052,7 +4036,7 @@ nolink "false"
 
 \begin_layout Standard
 We find no evidence that the intervention affected the prices farmers receive for milk.
- Control farmers report an average price of UGX 1,019 per liter,
+ Control farmers report an average price of UGX 1,020 per liter,
  a level consistent with MCC-level data once accounting for sales to alternative buyers such as traders or direct consumers,
  who typically pay slightly less.
  Prices received by farmers in the treatment group are statistically indistinguishable from those of control farmers.
