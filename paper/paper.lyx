@@ -3524,6 +3524,17 @@ nolink "false"
  further reducing precision.
  Together,
  these factors imply wider confidence intervals for the LATE relative to the more precise ITT estimates.
+ Consistent with this,
+ the LATE point estimates are roughly two to three times larger than the corresponding ITT coefficients,
+ reflecting the rescaling by the compliance rate.
+ The composite quality index remains statistically significant at the 5 percent level under 2SLS,
+ and the individual estimates for fat content and density (CLR) are marginally significant,
+ while added water,
+ SNF,
+ and protein lose statistical significance despite retaining the expected signs.
+ The qualitative conclusions are thus unchanged:
+ actual analyzer use improves milk composition,
+ but the effects are estimated with considerably less precision.
 \end_layout
 
 \begin_layout Subsubsection
