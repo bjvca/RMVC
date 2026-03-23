@@ -4596,9 +4596,57 @@ Secondary outcomes
 \end_layout
 
 \begin_layout Standard
-For completeness,
- we report a variety of tables of pre-regsteres scecondary outcomes in the appendix.
- 
+We examine several pre-registered secondary outcomes capturing treatment uptake and compliance at both the MCC and farmer level (Appendix Tables
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Secondary-outcomes-MCC-uptake"
+nolink "false"
+
+\end_inset
+
+ and
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Secondary-outcomes-farmer-uptake"
+nolink "false"
+
+\end_inset
+
+).
+ At the MCC level,
+ the treatment produced large and precisely estimated effects on technology presence and use.
+ Treated MCCs are significantly more likely to display project posters publicizing the analyzers,
+ to have a functioning milk analyzer on site (an increase of roughly 53 percentage points),
+ and to use digital record-keeping tools for quality and quantity data.
+ These results confirm both compliance with treatment assignment and the persistence of the hardware and associated practices at treated sites.
+ The adoption of digital record-keeping is particularly noteworthy,
+ as it addresses the traceability and transparency that are prerequisites for quality-linked transactions.
+\end_layout
+
+\begin_layout Standard
+At the farmer level,
+ the MCC-level intervention generates no detectable effects on any secondary outcome,
+ including recall of the video or seed distribution,
+ seed usage,
+ or understanding of compositional quality.
+ This is consistent with the intervention design:
+ the MCC treatment targeted technology adoption at collection centers,
+ not farmer education.
+ In contrast,
+ the video treatment produces clear effects on nearly all farmer-level uptake measures.
+ Farmers assigned to the video are significantly more likely to recall both the video and the seed distribution,
+ and more likely to have planted the distributed seed.
+ The composite index of farmer-level uptake outcomes is significantly higher for video-treated farmers and null for the MCC treatment,
+ confirming that farmer-level behavioral change depends on direct information provision rather than changes in MCC practices.
+
 \end_layout
 
 \begin_layout Section
