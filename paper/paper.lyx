@@ -6179,15 +6179,38 @@ The intervention targets traders rather than farmers for three reasons.
 \end_layout
 
 \begin_layout Standard
-We focus on 19 MCCs in the Kazo district where the quality measurement system from the main experiment was functioning reliably.
+We focus on 19 MCCs in the Kazo district,
+ a subset of the main experiment's treatment sites where the quality measurement and digital monitoring system remained operational.
+ The geographic concentration within a single district ensures logistical feasibility for the daily mobile money payments and SMS feedback that the intervention requires;
+ because identification relies on within-MCC comparisons,
+ district-level characteristics are absorbed by the MCC fixed effects in the estimating equation.
  Within each MCC,
- traders who deliver milk are randomized to treatment or control,
- with randomization stratified by MCC.
- Treated traders receive a quality premium tied to their daily milk quality readings,
- while control traders continue under the status quo (their milk was only tested).
+ traders who deliver milk were randomized to treatment or control,
+ with randomization stratified by MCC,
+ yielding 47 treated and 52 control traders.
+ Both treated and control traders had their milk tested using the analyzer at each delivery,
+ and both received quality feedback (fat and SNF readings) after each test.
+ Treated traders additionally received a quality-contingent cash bonus via mobile money.
+ This design isolates the price incentive from the information channel:
+ any difference between groups reflects the effect of the financial reward for quality,
+ not the effect of knowing one's quality readings.
+\end_layout
+
+\begin_layout Standard
+Prior to randomization,
+ all traders were informed that the experiment involved a 50 percent chance of receiving quality-based bonuses and a 50 percent chance of serving as a comparison group.
+ Informed consent was obtained under this framing.
  Because randomization is within MCC,
- both groups face the same MCC-level conditions and price environment,
- isolating the effect of the quality premium itself.
+ control traders are aware that some of their peers receive bonuses.
+ This raises the possibility of spillover effects.
+ If control traders respond to the presence of treated peers by exerting more effort (competitive emulation) or by losing motivation (discouragement),
+ our estimates would respectively understate or overstate the true treatment effect.
+ On balance,
+ we consider the most plausible direction of bias to be toward attenuation:
+ if treated traders bid up farmgate prices or selectively source from the best farmers,
+ control traders face a worse pool of available milk,
+ compressing the treatment-control difference.
+ The MCC fixed effects control for any MCC-level response to the intervention.
 \end_layout
 
 \begin_layout Standard
@@ -6307,26 +6330,39 @@ name "subsec:exp2-sample"
 \end_layout
 
 \begin_layout Standard
-The follow-up experiment draws on 19 MCCs in the Kazo district,
- a subset of the main experiment's treatment MCCs where the quality measurement and digital monitoring system remained operational.
- Within these MCCs,
- we identified approximately 100 traders and randomized them to treatment or control within MCC blocks,
- yielding 47 treated and 52 control traders.
- Power calculations indicated that with 100 traders and approximately 5 farmers per trader,
- assuming a 0.5 percentage point increase in fat content,
- 70 percent pass-through from trader to farmer,
- and an intra-cluster correlation of 11 percent,
- the design would be adequately powered to detect meaningful quality effects.
+Ex ante power calculations,
+ conducted using the DeclareDesign framework,
+ indicated that a sample of 100 traders with approximately 5 farmers per trader would provide adequate power to detect a 0.5 percentage point increase in fat content at the trader level,
+ assuming an intra-cluster correlation of 0.11.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The DeclareDesign code and simulation results are available in the project repository (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+follow_up/design.R
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Baseline data collection took place in late October 2025.
- Stage 1 of the experiment began on November 1,
+Stage 1 of the experiment began on November 1,
  2025,
- and the threshold change marking Stage 2 took effect on November 15.
+ with the threshold change marking Stage 2 taking effect on November 15.
  The experiment concluded on December 1,
- generating a total of 5,596 daily milk quality submissions recorded through the digital monitoring system,
- comprising a total of 2,622 trader-day observations:
+ generating 5,596 daily milk quality submissions recorded through the digital monitoring system,
+ comprising 2,622 trader-day observations:
  1,224 in Stage 1 and 1,351 in Stage 2,
  with the remainder falling on boundary days.
  Endline surveys were conducted in the final days of the experiment,
@@ -6483,235 +6519,13 @@ Our primary inferential framework is Fisher randomization inference (RI),
  which control the familywise error rate while exploiting the correlation structure across outcomes.
 \end_layout
 
-\begin_layout Subsection
-Balance and Attrition
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:exp2-balance"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Table
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:balance-exp2"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- reports pre-treatment means and treatment-control differences for the three daily submission outcomes,
- estimated over the brief window before November 1 when deliveries were recorded but no bonuses had yet been activated.
- SNF and quantity show no significant differences between groups.
- Fat content,
- however,
- exhibits a statistically significant imbalance (
-\begin_inset Formula $p=0.0004$
-\end_inset
-
-):
- control traders delivered milk with higher average fat (control mean of 4.06 percent) than treatment traders in this pre-period.
- This imbalance likely reflects the combination of a very short pre-treatment window (one to two delivery days) and a small number of traders,
- which leaves limited scope for the law of large numbers to equalize baseline quality across arms.
-\end_layout
-
-\begin_layout Standard
-Several features of the design mitigate concern that this imbalance compromises identification.
- First,
- the MCC fixed effects in our estimating equation absorb any MCC-level differences in milk quality,
- so the treatment effect is identified from within-MCC variation between treated and control traders.
- Second,
- the comparison across Stage 1 and Stage 2 is particularly informative:
- because the same traders face both regimes,
- the stage-by-stage contrast traces behavioral dynamics within treated traders over time and does not rely on the level difference between treatment and control groups.
- Third,
- the Fisher randomization inference accounts for the within-MCC assignment structure,
- ensuring that p-values reflect the actual experimental variation rather than a hypothetical superpopulation.
-\end_layout
-
 \begin_layout Standard
 Attrition is minimal.
- The daily submission data are administrative records from the digital monitoring system,
- so they do not suffer from survey nonresponse.
+ The daily submission data are administrative records from the digital monitoring system and do not suffer from survey nonresponse.
  For the endline surveys,
- 99 of the approximately 100 targeted traders were interviewed,
+ 99 of the 100 targeted traders were interviewed,
  and 422 of the approximately 500 targeted farmers completed the follow-up questionnaire (197 in treated trader catchments and 225 in control).
- The shortfall in the farmer sample reflects the difficulty of locating smallholder farmers who sell through mobile traders,
- rather than differential attrition by treatment status.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-begin{table}[h]
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-centering
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-caption{Follow-up Experiment:
- Pre-Treatment Balance}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{tab:balance-exp2}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lccc}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-& Control Mean & Treatment Effect & N
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& & (SE) &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-Fat (
-\backslash
-%) &
-\backslash
-Sexpr{balance_fu[1,5]} &
-\backslash
-Sexpr{balance_fu[1,1]}$^{
-\backslash
-Sexpr{stars(balance_fu[1,3])}}$ &
-\backslash
-Sexpr{balance_fu[1,4]}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& & (
-\backslash
-Sexpr{balance_fu[1,2]}) &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-SNF (
-\backslash
-%) &
-\backslash
-Sexpr{balance_fu[2,5]} &
-\backslash
-Sexpr{balance_fu[2,1]}$^{
-\backslash
-Sexpr{stars(balance_fu[2,3])}}$ &
-\backslash
-Sexpr{balance_fu[2,4]}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& & (
-\backslash
-Sexpr{balance_fu[2,2]}) &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-Quantity (liters) &
-\backslash
-Sexpr{balance_fu[3,5]} &
-\backslash
-Sexpr{balance_fu[3,1]}$^{
-\backslash
-Sexpr{stars(balance_fu[3,3])}}$ &
-\backslash
-Sexpr{balance_fu[3,4]}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& & (
-\backslash
-Sexpr{balance_fu[3,2]}) &
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
-\end_layout
-
-\end_inset
-
-
+ The shortfall in the farmer sample reflects the difficulty of locating smallholder farmers who sell through mobile traders rather than differential attrition by treatment status.
 \end_layout
 
 \begin_layout Subsection
