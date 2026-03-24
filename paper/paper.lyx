@@ -6170,7 +6170,7 @@ The main experiment established that making quality observable through the measu
  on its own,
  generate quality-based pricing.
  The follow-up experiment tests whether introducing explicit price incentives for quality can activate the price channel that remained dormant in the main experiment.
- We designed this as a lab-in-the-field experiment that builds directly on the infrastructure already deployed at treatment MCCs,
+ The experiment builds directly on the infrastructure already deployed at treatment MCCs,
  exploiting the fact that milk analyzers and the digital record-keeping system were already operational at these sites.
 \end_layout
 
@@ -6178,7 +6178,7 @@ The main experiment established that making quality observable through the measu
 We focus on 19 MCCs in the Kazo district where the quality measurement system from the main experiment was functioning reliably.
  Within each MCC,
  traders who deliver milk are randomized to treatment or control,
- with randomization stratified by MCC to ensure within-center comparisons.
+ with randomization stratified by MCC.
  Treated traders receive a quality premium tied to their daily milk quality readings,
  while control traders continue under the status quo.
  Because randomization is within MCC,
@@ -6193,8 +6193,8 @@ The design exploits a repeated-game structure.
  and how much to deliver,
  generating a panel of behavioral responses over approximately 30 days.
  This creates a rich setting for observing how supply chain actors respond to price incentives for quality in real time.
- A pre-announced mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-experiment variation in the rules of the game,
- analogous to changing parameters across rounds in a laboratory experiment.
+ A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-experiment variation in the rules of the game,
+ analogous to changing parameters across rounds in lab-in-the-field experiments.
  This allows us to trace behavioral adjustment dynamics as the quality bar tightens,
  something that would be difficult to observe in a standard cross-sectional RCT.
 \end_layout
