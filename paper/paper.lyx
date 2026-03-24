@@ -5778,29 +5778,29 @@ Response to Threshold Changes under Quality-based Pricing
 \end_layout
 
 \begin_layout Standard
-The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold
+The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold 
 \begin_inset Formula $q_{min}$
 \end_inset
 
  relative to the prevailing quality distribution.
- When
+ When 
 \begin_inset Formula $q_{min}$
 \end_inset
 
  is low relative to the natural distribution of quality (as when high-quality milk is abundant in the rainy season),
  most suppliers are comfortably above the threshold:
-
+ 
 \begin_inset Formula $\pi_{i}\approx1$
 \end_inset
 
- and
+ and 
 \begin_inset Formula $\partial\pi_{i}/\partial e_{i}\approx0$
 \end_inset
 
 .
  In this regime,
  the extensive margin contributes little to the marginal return to effort.
- The intensive margin
+ The intensive margin 
 \begin_inset Formula $\pi_{i}\lambda_{i}\alpha\theta_{i}y_{i}$
 \end_inset
 
@@ -5811,26 +5811,27 @@ The model also generates predictions about how the behavioral response to qualit
 \end_layout
 
 \begin_layout Standard
-When
+When 
 \begin_inset Formula $q_{min}$
 \end_inset
 
  is raised (as when quality thresholds are tightened or when the dry season reduces the natural quality of available milk),
  a larger fraction of suppliers falls near or below the threshold.
- The acceptance probability
+ The acceptance probability 
 \begin_inset Formula $\pi_{i}$
 \end_inset
 
  drops below one for many suppliers,
- and the extensive margin
+ and the extensive margin 
 \begin_inset Formula $\frac{\partial\pi_{i}}{\partial e_{i}}\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]$
 \end_inset
 
  strengthens.
- The model unambiguously predicts that raising the threshold increases the incentive to improve quality,
+ Here,
+ the model predicts that raising the threshold increases the incentive to improve quality,
  since the threat of losing the entire bonus at the threshold creates a strong discrete incentive that complements the continuous gradient.
  Formally,
- the relative importance of the extensive margin in the first-order condition is increasing in
+ the relative importance of the extensive margin in the first-order condition is increasing in 
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5838,7 +5839,7 @@ When
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula
+\begin_inset Formula 
 \begin{equation}
 \frac{\partial}{\partial q_{min}}\left[\frac{\text{extensive margin}}{\text{total marginal return}}\right]>0
 \end{equation}
@@ -5848,27 +5849,12 @@ When
 
 \end_layout
 
-\begin_layout Standard
-The follow-up experiment varies the threshold across two stages.
- In Stage 1,
- the quality threshold is set at the East African standard (low
-\begin_inset Formula $q_{min}$
-\end_inset
-
-);
- in Stage 2,
- the threshold is raised.
- The model predicts that quality-improving effort should be stronger in Stage 2,
- when the extensive margin is active.
- Whether quality also improves in Stage 1 (through the intensive margin alone) is an empirical question that depends on the cost structure of quality sourcing relative to volume expansion.
-\end_layout
-
 \begin_layout Subsubsection
 Farmer Responses to Stronger Downstream Incentives
 \end_layout
 
 \begin_layout Standard
-With
+With 
 \begin_inset Formula $\lambda_{i}>0$
 \end_inset
 
