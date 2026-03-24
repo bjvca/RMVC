@@ -4888,11 +4888,12 @@ where
 
  is the per-unit premium slope for verifiable quality.
  In practice,
+ 
 \begin_inset Formula $\alpha$
 \end_inset
 
  depends on whether the MCC can credibly demonstrate quality to the processor.
- When
+ When 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -4901,7 +4902,7 @@ where
  processors,
  in turn,
  have little reason to offer quality premiums if upstream infrastructure cannot reliably deliver consistent compositional quality.
- When
+ When 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -4912,14 +4913,14 @@ where
  it can credibly demonstrate to the processor that its milk exceeds the market average and can approach competing buyers with evidence.
  Second,
  processors may find it worthwhile to offer quality-differentiated contracts because upstream measurement infrastructure makes consistent delivery credible.
- Whether
+ Whether 
 \begin_inset Formula $\alpha$
 \end_inset
 
  actually increases depends on whether these conditions are sufficient to overcome contracting frictions,
  processor market power,
  and coordination failures.
- A central question of this paper is whether equipping MCCs with analyzers is sufficient to activate
+ A central question of this paper is whether equipping MCCs with analyzers is sufficient to activate 
 \begin_inset Formula $\alpha>0$
 \end_inset
 
