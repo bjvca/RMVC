@@ -5914,13 +5914,14 @@ tuple "list"
  summarizes the model's predictions,
  the channel and parameter variation each relies on,
  and the corresponding empirical test.
- The first four predictions concern the main experiment,
- where the introduction of measurement technology reduces
+ The first two predictions concern the main experiment,
+ where the introduction of measurement technology reduces 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
  but,
  as the results show,
+ 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -6183,18 +6184,27 @@ We focus on 19 MCCs in the Kazo district where the quality measurement system fr
  traders who deliver milk are randomized to treatment or control,
  with randomization stratified by MCC.
  Treated traders receive a quality premium tied to their daily milk quality readings,
- while control traders continue under the status quo.
+ while control traders continue under the status quo (their milk was only tested).
  Because randomization is within MCC,
  both groups face the same MCC-level conditions and price environment,
  isolating the effect of the quality premium itself.
 \end_layout
 
 \begin_layout Standard
-The design exploits a repeated-game structure.
- Traders make daily decisions about where to source milk,
- how carefully to handle it,
- and how much to deliver,
- generating a panel of behavioral responses over approximately 30 days.
+The design further exploits the repeated transactions nature inherent to milk supply chains.
+ Cows are milked daily,
+ and as such,
+ farmers sell to traders and traders deliver to MCCs daily,
+ often making even multiple transactions in a give day (as opposed to eg maize value chains where farmers typically sell the bulk of their harvest in one transaction immediately after the harvest,
+ see for instance 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "van2015inter"
+literal "false"
+
+\end_inset
+
+).
  This creates a rich setting for observing how supply chain actors respond to price incentives for quality in real time.
  A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-experiment variation in the rules of the game,
  analogous to changing parameters across rounds in lab-in-the-field experiments 
@@ -6942,9 +6952,9 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
-Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[1])}
+Sexpr{sprintf("%.3f",
+ ri$exp2_traders$ri_p[1])}
 \end_layout
 
 \end_inset
@@ -6956,9 +6966,9 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
-Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[2])}
+Sexpr{sprintf("%.3f",
+ ri$exp2_traders$ri_p[2])}
 \end_layout
 
 \end_inset
@@ -6970,9 +6980,9 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
-Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[3])}
+Sexpr{sprintf("%.3f",
+ ri$exp2_traders$ri_p[3])}
 \end_layout
 
 \end_inset
@@ -6984,9 +6994,9 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
-Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[4])}
+Sexpr{sprintf("%.3f",
+ ri$exp2_traders$ri_p[4])}
 \end_layout
 
 \end_inset
@@ -6998,9 +7008,9 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
-Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[5])}
+Sexpr{sprintf("%.3f",
+ ri$exp2_traders$ri_p[5])}
 \end_layout
 
 \end_inset
@@ -7030,7 +7040,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 Sexpr{res_traders[2,4]}
 \end_layout
@@ -7043,7 +7052,6 @@ Sexpr{res_traders[2,4]}
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 Sexpr{res_traders[1,4]}
@@ -7074,13 +7082,11 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{table}[h]
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 centering
@@ -7088,13 +7094,12 @@ centering
 
 \begin_layout Plain Layout
 
-
 \backslash
-caption{Follow-up Experiment: Trader Endline Survey Results}
+caption{Follow-up Experiment:
+ Trader Endline Survey Results}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 label{tab:trader-endline-exp2}
@@ -7102,20 +7107,17 @@ label{tab:trader-endline-exp2}
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{tabular}{lccc}
 \end_layout
 
 \begin_layout Plain Layout
 
-
 \backslash
 hline
 \end_layout
 
 \begin_layout Plain Layout
-
 & Control Mean & Treatment Effect & N
 \backslash
 
@@ -7125,13 +7127,11 @@ hline
 
 \begin_layout Plain Layout
 
-
 \backslash
 hline
 \end_layout
 
 \begin_layout Plain Layout
-
 Fat (supervised test) &
 \backslash
 Sexpr{res_traders[1,5]} &
@@ -7148,7 +7148,6 @@ Sexpr{res_traders[1,4]}
 \end_layout
 
 \begin_layout Plain Layout
-
 & & (
 \backslash
 Sexpr{res_traders[1,2]}) &
@@ -7159,7 +7158,6 @@ Sexpr{res_traders[1,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-
 Delivered quantity (liters) &
 \backslash
 Sexpr{res_traders[2,5]} &
@@ -7176,7 +7174,6 @@ Sexpr{res_traders[2,4]}
 \end_layout
 
 \begin_layout Plain Layout
-
 & & (
 \backslash
 Sexpr{res_traders[2,2]}) &
@@ -7187,7 +7184,6 @@ Sexpr{res_traders[2,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-
 Any milk rejected (past month) &
 \backslash
 Sexpr{res_traders[3,5]} &
@@ -7204,7 +7200,6 @@ Sexpr{res_traders[3,4]}
 \end_layout
 
 \begin_layout Plain Layout
-
 & & (
 \backslash
 Sexpr{res_traders[3,2]}) &
@@ -7215,7 +7210,6 @@ Sexpr{res_traders[3,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-
 Pays quality premium to farmers &
 \backslash
 Sexpr{res_traders[4,5]} &
@@ -7232,7 +7226,6 @@ Sexpr{res_traders[4,4]}
 \end_layout
 
 \begin_layout Plain Layout
-
 & & (
 \backslash
 Sexpr{res_traders[4,2]}) &
@@ -7243,7 +7236,6 @@ Sexpr{res_traders[4,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-
 Average purchase price (UGX/liter) &
 \backslash
 Sexpr{res_traders[5,5]} &
@@ -7260,7 +7252,6 @@ Sexpr{res_traders[5,4]}
 \end_layout
 
 \begin_layout Plain Layout
-
 & & (
 \backslash
 Sexpr{res_traders[5,2]}) &
@@ -7272,32 +7263,32 @@ Sexpr{res_traders[5,2]}) &
 
 \begin_layout Plain Layout
 
-
 \backslash
 hline
 \end_layout
 
 \begin_layout Plain Layout
 
-
 \backslash
 multicolumn{4}{p{0.85
 \backslash
 textwidth}}{
 \backslash
-footnotesize Notes: OLS estimates with CR2 cluster-robust standard errors in parentheses.
- Significance stars based on randomization inference p-values: $^{***}$ p $<$ 0.01, $^{**}$ p $<$ 0.05, $^{*}$ p $<$ 0.1.}
+footnotesize Notes:
+ OLS estimates with CR2 cluster-robust standard errors in parentheses.
+ Significance stars based on randomization inference p-values:
+ $^{***}$ p $<$ 0.01,
+ $^{**}$ p $<$ 0.05,
+ $^{*}$ p $<$ 0.1.}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{tabular}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{table}
@@ -7371,7 +7362,8 @@ centering
 \begin_layout Plain Layout
 
 \backslash
-caption{Follow-up Experiment: Farmer-Level Endline Results}
+caption{Follow-up Experiment:
+ Farmer-Level Endline Results}
 \end_layout
 
 \begin_layout Plain Layout
@@ -7623,9 +7615,12 @@ vspace{2mm}
 \begin_layout Plain Layout
 
 \backslash
-footnotesize Notes: OLS estimates with CR2 cluster-robust standard errors in parentheses.
+footnotesize Notes:
+ OLS estimates with CR2 cluster-robust standard errors in parentheses.
  Significance stars from randomization inference p-values.
- * p$<$0.10, ** p$<$0.05, *** p$<$0.01.
+ * p$<$0.10,
+ ** p$<$0.05,
+ *** p$<$0.01.
 \end_layout
 
 \begin_layout Plain Layout
