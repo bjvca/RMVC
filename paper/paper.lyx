@@ -6211,9 +6211,12 @@ Treated traders receive a quality premium of UGX 100 per liter for each 0.1 perc
 
 \begin_layout Standard
 The incentives were economically significant.
- Consider a trader collecting 500 liters per day with milk at 4.0 percent fat and 8.8 percent SNF.
- This trader would earn a daily bonus of approximately UGX 35,000 (roughly USD 9),
- a meaningful supplement to typical trading margins (which would typically be about UGX 100 per liter traded).
+ The average control trader delivers approximately 270 liters per day with milk at 4.0 percent fat and 8.5 percent SNF.
+ Under Stage 1 thresholds,
+ such a trader would qualify for a daily bonus on the order of UGX 19,000 (roughly USD 5),
+ a meaningful supplement to typical trading margins of about UGX 100 per liter.
+ Among treated traders,
+ the average daily bonus actually paid was UGX 27,000 (median UGX 12,000).
  Bonuses are paid daily via mobile money,
  creating immediate and salient incentives that traders can link directly to each day's delivery quality.
  Each payment is accompanied by an SMS message reporting the trader's average fat and SNF content for that day's delivery along with the total bonus earned and volume delivered.
