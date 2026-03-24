@@ -4887,36 +4887,39 @@ where
 \end_inset
 
  is the per-unit premium slope for verifiable quality.
- Quality-differentiated pricing requires sufficiently precise measurement:
- when
-\begin_inset Formula $\sigma^{2}$
+ In practice,
+\begin_inset Formula $\alpha$
 \end_inset
 
- is high (lactometer only),
- the signal is too noisy for processors to reliably contract on compositional quality,
- so
-\begin_inset Formula $\alpha=0$
-\end_inset
-
- in equilibrium.
+ depends on whether the MCC can credibly demonstrate quality to the processor.
  When
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
- falls below some threshold (with a milk analyzer),
- precise measurement makes quality-differentiated pricing feasible and
-\begin_inset Formula $\alpha>0$
-\end_inset
-
- could emerge.
- Whether it actually does depends on market structure,
- bargaining power,
- and institutional conditions.
- A central question of this paper is whether reducing
+ is high,
+ the MCC cannot verify its own quality and has no basis to negotiate quality-differentiated prices;
+ processors,
+ in turn,
+ have little reason to offer quality premiums if upstream infrastructure cannot reliably deliver consistent compositional quality.
+ When
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
- is sufficient to activate
+ falls,
+ two things change.
+ First,
+ the MCC acquires verifiable quality information that strengthens its bargaining position:
+ it can credibly demonstrate to the processor that its milk exceeds the market average and can approach competing buyers with evidence.
+ Second,
+ processors may find it worthwhile to offer quality-differentiated contracts because upstream measurement infrastructure makes consistent delivery credible.
+ Whether
+\begin_inset Formula $\alpha$
+\end_inset
+
+ actually increases depends on whether these conditions are sufficient to overcome contracting frictions,
+ processor market power,
+ and coordination failures.
+ A central question of this paper is whether equipping MCCs with analyzers is sufficient to activate
 \begin_inset Formula $\alpha>0$
 \end_inset
 
@@ -5720,8 +5723,12 @@ This is the enforcement channel.
  Its key empirical signatures are:
  (i) quality improves,
  particularly through reduced adulteration (the quality dimension most directly affected by effort near the threshold);
- (ii) prices do not change (because 
-\begin_inset Formula $\alpha=0$
+ (ii) prices do not change (because reducing
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ alone was not sufficient to activate
+\begin_inset Formula $\alpha>0$
 \end_inset
 
 );
@@ -6167,11 +6174,12 @@ nolink "false"
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
- while
+ but,
+ as the results show,
 \begin_inset Formula $\alpha$
 \end_inset
 
- remains at zero.
+ does not activate.
  The remaining predictions concern the follow-up experiment,
  where quality-based pricing is exogenously activated (
 \begin_inset Formula $\alpha>0$
@@ -6250,10 +6258,7 @@ textit{Main Experiment:
 \backslash
 sigma^2
 \backslash
-to 0$,
- $
-\backslash
-alpha = 0$)}}
+to 0$)}}
 \backslash
 
 \backslash
@@ -6288,14 +6293,13 @@ to 0$ & Milk samples & SNF,
 \end_layout
 
 \begin_layout Plain Layout
-Prices unchanged & Price & $
+Prices unchanged & Credibility/ bargaining & $
 \backslash
 sigma^2
 \backslash
-to 0$,
- $
+to 0$ insufficient for $
 \backslash
-alpha$ remains 0 & Farmer/MCC prices & All null (omnibus $p=1.0$)
+alpha > 0$ & Farmer/MCC prices & All null (omnibus $p=1.0$)
 \backslash
 
 \backslash
