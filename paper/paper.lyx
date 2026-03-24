@@ -6191,23 +6191,23 @@ We focus on 19 MCCs in the Kazo district where the quality measurement system fr
 \end_layout
 
 \begin_layout Standard
-The design further exploits the repeated transactions nature inherent to milk supply chains.
- Cows are milked daily,
- and as such,
- farmers sell to traders and traders deliver to MCCs daily,
- often making even multiple transactions in a give day (as opposed to eg maize value chains where farmers typically sell the bulk of their harvest in one transaction immediately after the harvest,
- see for instance 
+The design exploits the high-frequency,
+ repeated-transaction structure of dairy supply chains.
+ Unlike staple crops where farmers typically sell the bulk of their harvest in a single post-harvest transaction
 \begin_inset CommandInset citation
-LatexCommand citet
+LatexCommand citep
 key "van2015inter"
 literal "false"
 
 \end_inset
 
-).
- This creates a rich setting for observing how supply chain actors respond to price incentives for quality in real time.
- A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-experiment variation in the rules of the game,
- analogous to changing parameters across rounds in lab-in-the-field experiments 
+,
+ milk is collected and delivered daily,
+ often in multiple transactions per day.
+ This generates a dense panel of behavioral responses over approximately 30 days,
+ allowing us to observe adjustment in near real time.
+ A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-subject parameter change,
+ analogous to varying treatment intensity across rounds in lab-in-the-field experiments
 \begin_inset CommandInset citation
 LatexCommand citep
 key "gneezy2017lab"
