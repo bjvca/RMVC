@@ -7561,6 +7561,88 @@ end{table}
 
 \end_layout
 
+\begin_layout Subsection
+Why Thresholds Drive Behavior More Than Gradients
+\end_layout
+
+\begin_layout Standard
+A striking pattern in the follow-up experiment is that traders respond to the threshold rather than the price gradient.
+ The quality premium is a continuous function of compositional quality above the threshold:
+ each 0.1 percentage point of fat above
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ earns an additional UGX 100 per liter.
+ Under standard price theory,
+ traders should always source higher-quality milk,
+ since the gradient rewards every increment in fat content regardless of whether the threshold is low or high.
+ Yet in Stage 1,
+ when nearly all deliveries clear the threshold,
+ traders expand volume rather than quality.
+ Only when the threshold rises in Stage 2 and many deliveries fall below it do traders shift to quality-based sourcing.
+ This suggests that the extensive margin (the discrete jump from zero to positive bonus at the threshold) dominates the intensive margin (the continuous gradient above it) in driving behavioral responses.
+\end_layout
+
+\begin_layout Standard
+Several mechanisms could explain this pattern,
+ and the daily submission data from the follow-up experiment allow us to begin distinguishing between them.
+\end_layout
+
+\begin_layout Standard
+A first explanation draws on loss aversion and reference dependence.
+ During Stage 1,
+ traders become accustomed to receiving daily bonus payments via mobile money.
+ When the threshold rises in Stage 2,
+ deliveries that previously qualified suddenly earn zero.
+ If traders evaluate outcomes relative to their Stage 1 reference point,
+ the perceived loss from falling below the new threshold exceeds the foregone gain from not optimizing along the gradient in Stage 1.
+ This predicts that traders who earned higher bonuses in Stage 1 should respond more strongly in Stage 2,
+ since they have more to lose.
+\end_layout
+
+\begin_layout Standard
+A second,
+ related explanation emphasizes salience.
+ The threshold creates a binary,
+ immediately observable signal:
+ the trader either qualifies or does not.
+ The gradient requires calculating marginal returns to quality improvement,
+ which is cognitively more demanding.
+ If thresholds are more salient than gradients,
+ traders should bunch just above the new threshold in Stage 2 rather than spread across the quality distribution.
+\end_layout
+
+\begin_layout Standard
+A third explanation is purely rational and based on the cost structure of quality sourcing.
+ Improving average quality requires restructuring the supplier network:
+ dropping low-quality farmers,
+ recruiting new ones,
+ or renegotiating terms.
+ These adjustment costs are lumpy.
+ In Stage 1,
+ the marginal return from the gradient may not justify the fixed cost of network restructuring.
+ In Stage 2,
+ the total loss from falling below the threshold is large enough to warrant these costs.
+ This predicts that the quality response should emerge gradually as traders reorganize sourcing,
+ and that treated traders should change the composition of their supplier base between stages.
+\end_layout
+
+\begin_layout Standard
+The time path of the quality response at the Stage 2 transition provides a first discriminating test.
+ If the response is immediate (within days of the threshold change),
+ this favors the behavioral explanations:
+ loss aversion and salience can operate instantly because they require only a change in effort or attention,
+ not a restructuring of supply networks.
+ If instead the response is gradual (building over weeks),
+ this points toward the cost-based explanation.
+ An analysis of whether the composition of supplying farmers changes between stages provides a further test:
+ if treated traders source from different farmers in Stage 2 than in Stage 1,
+ the cost-based mechanism is at work;
+ if the same farmers deliver higher-quality milk,
+ the effect operates through effort rather than network restructuring.
+ We leave these tests for future work.
+\end_layout
+
 \begin_layout Section
 Discussion
 \begin_inset CommandInset label
