@@ -3044,7 +3044,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5896,8 +5896,12 @@ Table
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:model-predictions"
+reference "tab:Model-Predictions"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -5924,43 +5928,60 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways true
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Model Predictions and Empirical Tests
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Model-Predictions"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-\backslash
-begin{table}[h]
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-centering
+begin{tabular}{rcccc}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-caption{Model Predictions and Empirical Tests}
+hline
+\backslash
+hline
 \end_layout
 
 \begin_layout Plain Layout
 
-\backslash
-label{tab:model-predictions}
 \end_layout
 
 \begin_layout Plain Layout
 
-\backslash
-small
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{p{3.8cm}p{2cm}p{2.5cm}p{2.5cm}p{2.5cm}}
 \end_layout
 
 \begin_layout Plain Layout
@@ -5986,7 +6007,7 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-multicolumn{5}{l}{
+multicolumn{5}{c}{
 \backslash
 textit{Main Experiment:
  Measurement technology ($
@@ -6029,6 +6050,7 @@ alpha > 0$ & Farmer/MCC prices & All null (omnibus $p=1.0$)
 \end_layout
 
 \begin_layout Plain Layout
+
 \backslash
 hline
 \end_layout
@@ -6036,7 +6058,7 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-multicolumn{5}{l}{
+multicolumn{5}{c}{
 \backslash
 textit{Follow-up Experiment:
  Quality-based pricing ($
@@ -6111,49 +6133,8 @@ end{table}
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
 \begin_layout Plain Layout
-The model actually generates some more predictions that we could test
-\end_layout
 
-\begin_layout Itemize
-Effects scale with baseline volume 
-\begin_inset Formula $y_{i}$
-\end_inset
-
- - test hetereogenity by baseline farmer volumes;
- bigger treatment gains for higher-volume farmers would be consistent with the model’s prediction
-\end_layout
-
-\begin_layout Itemize
-Effects are stronger for farmers with lower baseline 
-\begin_inset Formula $k_{i}$
-\end_inset
-
- (eg located closer to mcc,
- lots of labour,
- already good equipment,
- no cash constraints) or higher baseline 
-\begin_inset Formula $\theta_{i}$
-\end_inset
-
- (eg did we test knowledge at baseline?) - again look at heterogeneity
-\end_layout
-
-\begin_layout Itemize
-If posters and free testing increase 
-\begin_inset Formula $\lambda_{i}$
-\end_inset
-
-,
- treated MCCs should exhibit higher pass-through proxies:
- more price differentiation by measured quality,
- fewer disputes,
- and more frequent test usage.
- (dif in dif)
 \end_layout
 
 \end_inset
