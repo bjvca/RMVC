@@ -6287,13 +6287,14 @@ to 0$ & Milk samples & SNF,
 \end_layout
 
 \begin_layout Plain Layout
-Prices unchanged & $
-\backslash
-alpha = 0$ & $
+Prices unchanged & Price & $
 \backslash
 sigma^2
 \backslash
-to 0$ & Farmer/MCC prices & All null (omnibus $p=1.0$)
+to 0$,
+ $
+\backslash
+alpha$ remains 0 & Farmer/MCC prices & All null (omnibus $p=1.0$)
 \backslash
 
 \backslash
