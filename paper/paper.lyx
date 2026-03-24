@@ -6210,14 +6210,18 @@ Treated traders receive a quality premium of UGX 100 per liter for each 0.1 perc
 \end_layout
 
 \begin_layout Standard
-The incentives were economically significant.
+The incentives are economically significant.
  The average control trader delivers approximately 270 liters per day with milk at 4.0 percent fat and 8.5 percent SNF.
  Under Stage 1 thresholds,
  such a trader would qualify for a daily bonus on the order of UGX 19,000 (roughly USD 5),
  a meaningful supplement to typical trading margins of about UGX 100 per liter.
  Among treated traders,
- the average daily bonus actually paid was UGX 27,000 (median UGX 12,000).
- Bonuses are paid daily via mobile money,
+ the average daily bonus actually paid during Stage 1 was UGX 27,000 (median UGX 12,000).
+ 
+\end_layout
+
+\begin_layout Standard
+Bonuses are paid daily via mobile money,
  creating immediate and salient incentives that traders can link directly to each day's delivery quality.
  Each payment is accompanied by an SMS message reporting the trader's average fat and SNF content for that day's delivery along with the total bonus earned and volume delivered.
  Traders whose quality falls below the threshold instead receive an SMS informing them that their fat or SNF did not meet the minimum required to qualify for a bonus,
@@ -6246,7 +6250,11 @@ The experiment proceeds in two stages.
  The model is agnostic about whether traders respond on quality,
  volume,
  or both.
- In Stage 2 (beginning November 15),
+ 
+\end_layout
+
+\begin_layout Standard
+In Stage 2 (beginning November 15),
  the fat threshold is raised without prior announcement to 3.9 percent while the SNF threshold remains unchanged.
  This unannounced increase shifts the regime:
  a substantial share of deliveries now falls near or below the new threshold,
@@ -6259,38 +6267,36 @@ The experiment proceeds in two stages.
 
 \begin_layout Subsection
 Sample and Timeline
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:exp2-sample"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 The follow-up experiment draws on 19 MCCs in the Kazo district,
  a subset of the main experiment's treatment MCCs where the quality measurement and digital monitoring system remained operational.
  Within these MCCs,
  we identified approximately 100 traders and randomized them to treatment or control within MCC blocks,
  yielding 47 treated and 52 control traders.
- Power calculations using DeclareDesign indicated that with 100 traders and approximately 5 farmers per trader,
+ Power calculations indicated that with 100 traders and approximately 5 farmers per trader,
  assuming a 0.5 percentage point increase in fat content,
  70 percent pass-through from trader to farmer,
  and an intra-cluster correlation of 11 percent,
  the design would be adequately powered to detect meaningful quality effects.
- The total budget for quality premium payments was approximately USD 35,000,
- or roughly USD 200 per treated trader over the experiment period.
 \end_layout
 
 \begin_layout Standard
 Baseline data collection took place in late October 2025.
  Stage 1 of the experiment began on November 1,
  2025,
- and the pre-announced threshold change marking Stage 2 took effect on November 15.
- The experiment concluded on approximately December 1,
- generating a total of 5,596 daily milk quality submissions recorded through the digital monitoring system.
- After filtering,
- the analysis sample comprises 2,622 trader-day observations:
+ and the threshold change marking Stage 2 took effect on November 15.
+ The experiment concluded on December 1,
+ generating a total of 5,596 daily milk quality submissions recorded through the digital monitoring system,
+ comprising a total of 2,622 trader-day observations:
  1,224 in Stage 1 and 1,351 in Stage 2,
  with the remainder falling on boundary days.
  Endline surveys were conducted in the final days of the experiment,
