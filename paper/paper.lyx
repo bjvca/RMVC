@@ -5961,38 +5961,26 @@ status open
 
 \begin_layout Plain Layout
 
+\backslash
+small
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{rcccc}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-hline
-\backslash
-hline
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
+begin{tabular}{p{3.2cm}p{1.8cm}p{2.8cm}p{2.2cm}p{3.2cm}}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
 hline
+\backslash
+hline
 \end_layout
 
 \begin_layout Plain Layout
-Prediction & Channel & Parameter & Empirical test & Result
+Prediction & Channel & Parameter & Test & Result
 \backslash
 
 \backslash
@@ -6008,10 +5996,9 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-multicolumn{5}{c}{
+multicolumn{5}{l}{
 \backslash
-textit{Main Experiment:
- Measurement technology ($
+textit{Main experiment: measurement technology ($
 \backslash
 sigma^2
 \backslash
@@ -6019,31 +6006,29 @@ to 0$)}}
 \backslash
 
 \backslash
-
+[3pt]
 \end_layout
 
 \begin_layout Plain Layout
-Adulteration falls (fat up,
- water down) & Enforcement & $
+Adulteration falls & Enforcement & $
 \backslash
 sigma^2
 \backslash
-to 0$ & Milk samples & Fat +0.11pp,
- Water $-$0.49pp
+to 0$ & Milk samples & Fat +0.11pp, Water $-$0.49pp
 \backslash
 
 \backslash
-
+[3pt]
 \end_layout
 
 \begin_layout Plain Layout
-Prices unchanged & Credibility/ bargaining & $
+Prices unchanged & Credibility, bargaining & $
 \backslash
 sigma^2
 \backslash
 to 0$ insufficient for $
 \backslash
-alpha > 0$ & Farmer/MCC prices & All null (omnibus $p=1.0$)
+alpha > 0$ & Farmer/MCC prices & All null
 \backslash
 
 \backslash
@@ -6059,52 +6044,45 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-multicolumn{5}{c}{
+multicolumn{5}{l}{
 \backslash
-textit{Follow-up Experiment:
- Quality-based pricing ($
+textit{Follow-up experiment: quality-based pricing ($
 \backslash
 alpha > 0$)}}
 \backslash
 
 \backslash
-
+[3pt]
 \end_layout
 
 \begin_layout Plain Layout
 Quality and/or volume response & Intensive & $
 \backslash
-alpha > 0$,
- low $q_{min}$ & Stage 1 submissions & Qty +126L,
- Fat null
+alpha > 0$, low $q_{min}$ & Stage 1 & Qty +126L, Fat null
 \backslash
 
 \backslash
-
+[3pt]
 \end_layout
 
 \begin_layout Plain Layout
-Stronger quality response when $q_{min}$ high & Extensive & $
+Stronger quality response & Extensive & $
 \backslash
-alpha > 0$,
- high $q_{min}$ & Stage 2 submissions & Fat +0.17pp (omnibus $p=0.001$)
-\backslash
-
+alpha > 0$, high $q_{min}$ & Stage 2 & Fat +0.17pp
 \backslash
 
+\backslash
+[3pt]
 \end_layout
 
 \begin_layout Plain Layout
-Limited pass-through ($
+Limited pass-through & Price & $
 \backslash
-lambda_i$ low) & Price & $
-\backslash
-alpha > 0$,
- $
+alpha > 0$, $
 \backslash
 lambda_i
 \backslash
-approx 0$ & Farmer prices & $-$17 UGX ($p=0.017$)
+approx 0$ & Farmer prices & $-$17 UGX
 \backslash
 
 \backslash
@@ -6113,6 +6091,8 @@ approx 0$ & Farmer prices & $-$17 UGX ($p=0.017$)
 
 \begin_layout Plain Layout
 
+\backslash
+hline
 \backslash
 hline
 \end_layout
