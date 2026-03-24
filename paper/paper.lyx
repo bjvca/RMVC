@@ -6158,15 +6158,17 @@ name "subsec:exp2-design"
 The main experiment established that making quality observable through the measurement and digital monitoring system improved enforcement but did not,
  on its own,
  generate quality-based pricing.
- The follow-up experiment tests whether introducing explicit price incentives for quality can activate the price channel that remained dormant in the main experiment.
+ The follow-up experiment tests whether introducing explicit price incentives for quality targeted to traders can activate the price channel.
  The experiment builds directly on the infrastructure already deployed at treatment MCCs,
  exploiting the fact that milk analyzers and the digital record-keeping system were already operational at these sites.
 \end_layout
 
 \begin_layout Standard
-The intervention targets traders rather than farmers for three reasons.
+The intervention targets traders,
+ rather than directly incentivizing farmers,
+ for three reasons.
  First,
- the main experiment suggested that quality gains were smaller when milk passed through intermediaries than when farmers delivered directly to the MCC,
+ qualitative data from the main experiment suggested that quality gains were smaller when milk passed through intermediaries than when farmers delivered directly to the MCC,
  indicating that the trader link is where the largest unrealized quality improvements remain.
  Second,
  a core objective of the follow-up is to study whether quality premiums are passed through to upstream suppliers.
@@ -6199,7 +6201,7 @@ We focus on 19 MCCs in the Kazo district,
 \begin_layout Standard
 The design exploits the high-frequency,
  repeated-transaction structure of dairy supply chains.
- Unlike staple crops where farmers typically sell the bulk of their harvest in a single post-harvest transaction
+ Unlike staple crops where farmers typically sell the bulk of their harvest in a single post-harvest transaction 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "van2015inter"
@@ -6519,17 +6521,17 @@ Attrition is minimal.
 \end_layout
 
 \begin_layout Subsection
-Results:
- Follow-up Experiment
-\end_layout
-
-\begin_layout Standard
+Results
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:results-exp2"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 The follow-up experiment generates a daily panel of milk submissions over 30 days (November 3 to December 1),
  providing a granular view of how traders adjust sourcing behavior when quality-contingent bonuses are introduced.
  Unlike the main experiment,
