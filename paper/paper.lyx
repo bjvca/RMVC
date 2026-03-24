@@ -6229,16 +6229,29 @@ The experiment proceeds in two stages.
  In Stage 1 (November 1 through 14),
  the quality thresholds are set at the East African Community standards:
  3.3 percent fat and 8.5 percent SNF.
- These thresholds are within reach for most traders delivering unadulterated milk,
- so Stage 1 primarily tests whether the existence of any quality premium induces behavioral change along the quantity or quality margins.
+ During the rainy season,
+ most milk naturally exceeds these thresholds,
+ so nearly all treated traders qualify for the bonus.
+ In terms of the model,
+ Stage 1 represents a regime where
+\begin_inset Formula $q_{min}$
+\end_inset
+
+ is low relative to the prevailing quality distribution:
+ the extensive margin (acceptance probability) contributes little,
+ and the intensive margin (the price gradient above the threshold) is the primary incentive.
+ The model is agnostic about whether traders respond on quality,
+ volume,
+ or both.
  In Stage 2 (beginning November 15),
- the fat threshold is raised to 3.9 percent while the SNF threshold remains unchanged.
- This increase was pre-announced to traders at the start of the experiment,
- simulating conditions analogous to dry-season quality tightening or a processor raising procurement standards.
- Stage 2 tests the intensive margin:
- whether traders can and do respond to a more demanding quality bar by sourcing higher-quality milk or improving handling practices.
- The within-experiment threshold change allows us to observe how the same traders adjust behavior when the rules of the game shift,
- providing a cleaner test of behavioral flexibility than a comparison across separate experiments would allow.
+ the fat threshold is raised without prior announcement to 3.9 percent while the SNF threshold remains unchanged.
+ This unannounced increase shifts the regime:
+ a substantial share of deliveries now falls near or below the new threshold,
+ activating the extensive margin.
+ The model predicts that quality-improving effort should strengthen in this regime,
+ as the discrete threat of losing the entire bonus at the threshold creates a powerful incentive beyond the continuous gradient.
+ The within-experiment threshold change allows us to observe how the same traders adjust behavior when conditions shift,
+ providing a cleaner comparison of the two regimes than separate experiments would allow.
 \end_layout
 
 \begin_layout Subsection
