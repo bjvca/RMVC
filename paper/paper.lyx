@@ -6163,6 +6163,21 @@ The main experiment established that making quality observable through the measu
 \end_layout
 
 \begin_layout Standard
+The intervention targets traders rather than farmers for three reasons.
+ First,
+ the main experiment suggested that quality gains were smaller when milk passed through intermediaries than when farmers delivered directly to the MCC,
+ indicating that the trader link is where the largest unrealized quality improvements remain.
+ Second,
+ a core objective of the follow-up is to study whether quality premiums are passed through to upstream suppliers.
+ Providing the premium at the trader level creates a testable pass-through margin:
+ we can observe whether traders share the bonus with the farmers from whom they source.
+ Had we provided the premium directly to farmers,
+ the price effect would be mechanical rather than informative about market transmission.
+ Third,
+ working with approximately 100 traders rather than 500 individual farmers was substantially more cost-effective while still providing the statistical power needed to detect meaningful behavioral responses.
+\end_layout
+
+\begin_layout Standard
 We focus on 19 MCCs in the Kazo district where the quality measurement system from the main experiment was functioning reliably.
  Within each MCC,
  traders who deliver milk are randomized to treatment or control,
