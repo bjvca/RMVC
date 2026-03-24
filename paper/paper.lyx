@@ -4784,12 +4784,8 @@ rather than true quality
 \end_layout
 
 \begin_layout Standard
-In our model,
- farmers differ in how they are connected to the MCC:
- some deliver directly;
- others deliver through intermediaries.
- Because these intermediaries may retain part of any quality premium,
- farmers connected through traders face lower pass-through of downstream incentives.
+Farmers are connected to the MCC either directly or through intermediaries,
+ which may affect the extent to which downstream quality incentives reach them.
 \end_layout
 
 \begin_layout Subsection
@@ -5006,21 +5002,9 @@ In principle,
 
 \end_inset
 
- Pass-through depends on local contracting frictions and transparency.
- We assume 
-\begin_inset Formula $\lambda_{i}=\lambda_{C}$
-\end_inset
-
- if the farmer is directly connected to the MCC and 
-\begin_inset Formula $\lambda_{i}=\lambda_{T}$
-\end_inset
-
- if the farmer sells via a trader,
- with 
-\begin_inset Formula $0\leq\lambda_{T}\leq\lambda_{C}\leq1$
-\end_inset
-
-.
+ Pass-through depends on local contracting frictions,
+ transparency,
+ and the structure of intermediation.
 \end_layout
 
 \begin_layout Subsection
@@ -6125,31 +6109,6 @@ Hence,
 \end_layout
 
 \begin_layout Subsubsection
-Intermediation
-\end_layout
-
-\begin_layout Standard
-When suppliers differ in the extent to which intermediary incentives are transmitted to them,
- those with direct linkages 
-\begin_inset Formula $\left(\lambda_{C}>\lambda_{T}\right)$
-\end_inset
-
- respond more strongly to changes in 
-\begin_inset Formula $\alpha$
-\end_inset
-
-
-\begin_inset Formula 
-\[
-\Delta e^{*}_{i}(\alpha|\lambda_{C})>\Delta e^{*}_{i}(\alpha|\lambda_{T})
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
 Summary of Testable Predictions
 \end_layout
 
@@ -6366,11 +6325,14 @@ alpha > 0$,
 \begin_layout Plain Layout
 Limited pass-through ($
 \backslash
-lambda_T$ low) & Intermediation & $
+lambda_i$ low) & Price & $
 \backslash
-lambda_T <
+alpha > 0$,
+ $
 \backslash
-lambda_C$ & Farmer prices & $-$17 UGX ($p=0.017$)
+lambda_i
+\backslash
+approx 0$ & Farmer prices & $-$17 UGX ($p=0.017$)
 \backslash
 
 \backslash
