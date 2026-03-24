@@ -7,6 +7,7 @@
 \textclass article
 \begin_preamble
 \usepackage{amsmath}
+\usepackage{amssymb}
 \emergencystretch 3em
 \sloppy
 \end_preamble
@@ -6120,12 +6121,6 @@ hline
 
 \backslash
 end{tabular}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
 \end_layout
 
 \end_inset
