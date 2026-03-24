@@ -4984,25 +4984,6 @@ where
 \end_inset
 
 .
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-In principle,
- the extent to which the MCC passes through the quality premium to farmers is the outcome of a profit-maximization problem:
- the MCC would optimally choose a pass-through rate that balances retaining a share of the downstream premium against inducing higher farmer effort and thus higher average quality.
- For tractability and to keep the conceptual model focused on testable predictions,
- we treat 
-\begin_inset Formula $\lambda_{i}$
-\end_inset
-
- as a reduced-form parameter summarizing institutional frictions,
- bargaining power,
- and local contracting norms
-\end_layout
-
-\end_inset
-
  Pass-through depends on local contracting frictions,
  transparency,
  and the structure of intermediation.
@@ -5025,7 +5006,7 @@ The MCC may reject milk that does not meet a minimum quality standard.
 
  if farmer
 \emph on
-i
+ i
 \emph default
 's observed signal meets a minimum quality threshold 
 \begin_inset Formula $q_{min}$
@@ -5639,7 +5620,7 @@ Effect of Improved Measurement Precision
 \end_layout
 
 \begin_layout Standard
-The central comparative static for the main experiment concerns the effect of reducing measurement noise
+The central comparative static for the main experiment concerns the effect of reducing measurement noise 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
@@ -5708,11 +5689,11 @@ This is the enforcement channel.
  Its key empirical signatures are:
  (i) quality improves,
  particularly through reduced adulteration (the quality dimension most directly affected by effort near the threshold);
- (ii) prices do not change (because reducing
+ (ii) prices do not change (because reducing 
 \begin_inset Formula $\sigma^{2}$
 \end_inset
 
- alone was not sufficient to activate
+ alone was not sufficient to activate 
 \begin_inset Formula $\alpha>0$
 \end_inset
 
