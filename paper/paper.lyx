@@ -6216,7 +6216,11 @@ The incentives were economically significant.
  a meaningful supplement to typical trading margins (which would typically be about UGX 100 per liter traded).
  Bonuses are paid daily via mobile money,
  creating immediate and salient incentives that traders can link directly to each day's delivery quality.
- We also sent SMS messages that explained how the bonus that the received was claculated.
+ Each payment is accompanied by an SMS message reporting the trader's average fat and SNF content for that day's delivery along with the total bonus earned and volume delivered.
+ Traders whose quality falls below the threshold instead receive an SMS informing them that their fat or SNF did not meet the minimum required to qualify for a bonus,
+ along with the actual readings.
+ This feedback loop ensures that traders observe not only whether they qualified but also how their compositional quality compares to the threshold,
+ reinforcing the link between daily sourcing decisions and financial outcomes.
  
 \end_layout
 
