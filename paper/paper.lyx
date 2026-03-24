@@ -351,6 +351,11 @@ res_traders <- readRDS(paste0(path,
 \end_layout
 
 \begin_layout Plain Layout
+res_traders_secondary <- readRDS(paste0(path,
+ "/results/res_traders_secondary.rds"))
+\end_layout
+
+\begin_layout Plain Layout
 res_farmers_fu <- readRDS(paste0(path,
  "/results/res_farmers_fu.rds"))
 \end_layout
@@ -6916,12 +6921,85 @@ Trader Endline Survey
 \begin_layout Standard
 Despite the strong effects in the daily submission data,
  the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the five outcomes:
- supervised fat content (p = 0.287),
- delivered quantity (p = 0.396),
- rejection rates (p = 0.691),
- whether the trader pays a quality premium (p = 0.155),
- and purchase price (p = 0.413).
- None of the five outcomes approaches conventional significance levels.
+ supervised fat content (RI p =
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[1])}
+\end_layout
+
+\end_inset
+
+),
+ delivered quantity (RI p =
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[2])}
+\end_layout
+
+\end_inset
+
+),
+ rejection rates (RI p =
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[3])}
+\end_layout
+
+\end_inset
+
+),
+ whether the trader pays a quality premium (RI p =
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[4])}
+\end_layout
+
+\end_inset
+
+),
+ and purchase price (RI p =
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{sprintf("%.3f", ri$exp2_traders$ri_p[5])}
+\end_layout
+
+\end_inset
+
+).
+ None of the five outcomes approaches conventional significance levels (Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:trader-endline-exp2"
+nolink "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -6931,14 +7009,293 @@ Three factors likely explain the divergence between the daily and survey results
  so traders were no longer operating under the treatment incentive at the time of the survey.
  The null results are therefore consistent with a model in which behavioral responses to the bonus are contemporaneous rather than habit-forming.
  Second,
- the trader sample is small (99 traders,
- of whom only 30 have a supervised fat test),
+ the trader sample is small (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{res_traders[2,4]}
+\end_layout
+
+\end_inset
+
+ traders,
+ of whom only
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+Sexpr{res_traders[1,4]}
+\end_layout
+
+\end_inset
+
+ have a supervised fat test),
  limiting statistical power for survey-based detection.
  Third,
  the daily submission data aggregate behavior over 30 days of repeated decisions,
  whereas the endline captures a single cross-sectional snapshot.
  Cumulative treatment effects visible in panel data can fall below detection thresholds in a one-time survey,
  particularly when the treatment has ended.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{table}[h]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Follow-up Experiment: Trader Endline Survey Results}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{tab:trader-endline-exp2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tabular}{lccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+& Control Mean & Treatment Effect & N
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+Fat (supervised test) &
+\backslash
+Sexpr{res_traders[1,5]} &
+\backslash
+Sexpr{res_traders[1,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_traders$ri_p[1])}}$ &
+\backslash
+Sexpr{res_traders[1,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & (
+\backslash
+Sexpr{res_traders[1,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Delivered quantity (liters) &
+\backslash
+Sexpr{res_traders[2,5]} &
+\backslash
+Sexpr{res_traders[2,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_traders$ri_p[2])}}$ &
+\backslash
+Sexpr{res_traders[2,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & (
+\backslash
+Sexpr{res_traders[2,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Any milk rejected (past month) &
+\backslash
+Sexpr{res_traders[3,5]} &
+\backslash
+Sexpr{res_traders[3,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_traders$ri_p[3])}}$ &
+\backslash
+Sexpr{res_traders[3,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & (
+\backslash
+Sexpr{res_traders[3,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Pays quality premium to farmers &
+\backslash
+Sexpr{res_traders[4,5]} &
+\backslash
+Sexpr{res_traders[4,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_traders$ri_p[4])}}$ &
+\backslash
+Sexpr{res_traders[4,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & (
+\backslash
+Sexpr{res_traders[4,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+Average purchase price (UGX/liter) &
+\backslash
+Sexpr{res_traders[5,5]} &
+\backslash
+Sexpr{res_traders[5,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_traders$ri_p[5])}}$ &
+\backslash
+Sexpr{res_traders[5,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+& & (
+\backslash
+Sexpr{res_traders[5,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+multicolumn{4}{p{0.85
+\backslash
+textwidth}}{
+\backslash
+footnotesize Notes: OLS estimates with CR2 cluster-robust standard errors in parentheses.
+ Significance stars based on randomization inference p-values: $^{***}$ p $<$ 0.01, $^{**}$ p $<$ 0.05, $^{*}$ p $<$ 0.1.}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -6978,6 +7335,293 @@ Other farmer outcomes provide limited evidence of behavioral transmission.
  No individual feeding practice is significant on its own.
  The marginal feeding index result suggests that some information about quality requirements may transmit from treated traders to their farmers,
  inducing modest adjustments in feeding behavior even in the absence of price incentives.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{table}[h]
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+caption{Follow-up Experiment: Farmer-Level Endline Results}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+label{tab:farmer-endline-exp2}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{lccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+& Control Mean & Treatment Effect & N
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (SE) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+Average price received (UGX/liter) &
+\backslash
+Sexpr{res_farmers_fu[1,5]} &
+\backslash
+Sexpr{res_farmers_fu[1,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[1])}}$ &
+\backslash
+Sexpr{res_farmers_fu[1,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[1,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Quality checked by trader &
+\backslash
+Sexpr{res_farmers_fu[2,5]} &
+\backslash
+Sexpr{res_farmers_fu[2,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[2])}}$ &
+\backslash
+Sexpr{res_farmers_fu[2,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[2,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Feeding practices index &
+\backslash
+Sexpr{res_farmers_fu[3,5]} &
+\backslash
+Sexpr{res_farmers_fu[3,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[3])}}$ &
+\backslash
+Sexpr{res_farmers_fu[3,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[3,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Used bran/concentrates &
+\backslash
+Sexpr{res_farmers_fu[4,5]} &
+\backslash
+Sexpr{res_farmers_fu[4,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[4])}}$ &
+\backslash
+Sexpr{res_farmers_fu[4,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[4,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Used crop residues &
+\backslash
+Sexpr{res_farmers_fu[5,5]} &
+\backslash
+Sexpr{res_farmers_fu[5,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[5])}}$ &
+\backslash
+Sexpr{res_farmers_fu[5,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[5,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Used salt/mineral lick &
+\backslash
+Sexpr{res_farmers_fu[6,5]} &
+\backslash
+Sexpr{res_farmers_fu[6,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[6])}}$ &
+\backslash
+Sexpr{res_farmers_fu[6,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[6,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Controlled grazing &
+\backslash
+Sexpr{res_farmers_fu[7,5]} &
+\backslash
+Sexpr{res_farmers_fu[7,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[7])}}$ &
+\backslash
+Sexpr{res_farmers_fu[7,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[7,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+par
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+vspace{2mm}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+footnotesize Notes: OLS estimates with CR2 cluster-robust standard errors in parentheses.
+ Significance stars from randomization inference p-values.
+ * p$<$0.10, ** p$<$0.05, *** p$<$0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{table}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection

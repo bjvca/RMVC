@@ -210,4 +210,81 @@ res_farmers_fu <- round(res_farmers_fu, digits = 4)
 saveRDS(res_farmers_fu,
         file = paste(path, "paper/results/res_farmers_fu.rds", sep = "/"))
 
+###############################################################################
+## E. TRADER ENDLINE — SECONDARY OUTCOMES
+###############################################################################
+## Additional pre-registered trader outcomes not included in the primary table.
+## Same specification: treat with MCC FE, no clustering (trader = unit).
+
+## ---------------------------------------------------------------------------
+## E1. Clean additional variables (999 -> NA, recode 1/2/3 survey codes)
+## ---------------------------------------------------------------------------
+
+## self: 1 = tests milk themselves, 2 = no, 3 = don't know -> NA
+traders$self_tests <- ifelse(traders$self == 3, NA,
+                             ifelse(traders$self == 1, 1, 0))
+
+## use_lacto: 1 = yes, 2 = no, 3 = don't know -> NA
+traders$uses_lactometer <- ifelse(traders$use_lacto == 3, NA,
+                                  ifelse(traders$use_lacto == 1, 1, 0))
+
+## use_alcohol: 1 = yes, 2 = no, 3 = don't know -> NA
+traders$uses_alcohol <- ifelse(traders$use_alcohol == 3, NA,
+                               ifelse(traders$use_alcohol == 1, 1, 0))
+
+## ---------------------------------------------------------------------------
+## E2. Seller concentration (Herfindahl-style)
+##     Sum of (farmer_share)^2 where farmer_share = purchase_q_i / total
+##     Higher = more concentrated (fewer suppliers matter)
+## ---------------------------------------------------------------------------
+qty_cols <- c("purchase_q_1", "purchase_q_2", "purchase_q_3",
+              "purchase_q_4", "purchase_q_5", "purchase_q_6")
+
+## Build matrix of purchase quantities (already cleaned in 03_prep_followup.R)
+q_mat <- as.matrix(traders[qty_cols])
+
+## Total purchased from all farmers
+row_totals <- rowSums(q_mat, na.rm = TRUE)
+
+## Shares per farmer
+share_mat <- q_mat / row_totals
+
+## HHI = sum of squared shares (ignoring NAs = farmers not listed)
+traders$seller_hhi <- rowSums(share_mat^2, na.rm = TRUE)
+traders$seller_hhi[row_totals == 0] <- NA
+
+## ---------------------------------------------------------------------------
+## E3. Run regressions and store results
+## ---------------------------------------------------------------------------
+secondary_outcomes <- c("SNF_supervised", "self_tests", "uses_lactometer",
+                        "uses_alcohol", "seller_hhi")
+
+res_traders_secondary <- array(NA, dim = c(length(secondary_outcomes), 6),
+                               dimnames = list(secondary_outcomes,
+                                               c("coef", "se", "p",
+                                                 "ctrl_mean", "ctrl_sd", "n")))
+
+for (i in seq_along(secondary_outcomes)) {
+  y <- secondary_outcomes[i]
+
+  ## Control mean and SD
+  ctrl_vals <- traders[[y]][traders$treat == 0]
+  res_traders_secondary[i, "ctrl_mean"] <- mean(ctrl_vals, na.rm = TRUE)
+  res_traders_secondary[i, "ctrl_sd"]   <- sd(ctrl_vals, na.rm = TRUE)
+
+  ## FE regression (no clustering — trader is unit of randomization)
+  fml <- as.formula(paste(y, "~ treat | MCC_ID"))
+  fit <- feols(fml, data = traders)
+
+  res_traders_secondary[i, "coef"] <- coef(fit)["treat"]
+  res_traders_secondary[i, "se"]   <- se(fit)["treat"]
+  res_traders_secondary[i, "p"]    <- pvalue(fit)["treat"]
+  res_traders_secondary[i, "n"]    <- fit$nobs
+}
+
+res_traders_secondary <- round(res_traders_secondary, digits = 4)
+
+saveRDS(res_traders_secondary,
+        file = paste(path, "paper/results/res_traders_secondary.rds", sep = "/"))
+
 cat("\n04_analysis_followup.R completed successfully.\n")
