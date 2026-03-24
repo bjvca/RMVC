@@ -5796,40 +5796,40 @@ Response to Threshold Changes under Quality-based Pricing
 \end_layout
 
 \begin_layout Standard
-The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold 
+The model also generates predictions about how the behavioral response to quality-based pricing depends on the level of the acceptance threshold
 \begin_inset Formula $q_{min}$
 \end_inset
 
  relative to the prevailing quality distribution.
- When 
+ When
 \begin_inset Formula $q_{min}$
 \end_inset
 
  is low relative to the natural distribution of quality (as when high-quality milk is abundant in the rainy season),
  most suppliers are comfortably above the threshold:
- 
+
 \begin_inset Formula $\pi_{i}\approx1$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\partial\pi_{i}/\partial e_{i}\approx0$
 \end_inset
 
 .
  In this regime,
  the extensive margin contributes little to the marginal return to effort.
- The dominant incentive comes from the intensive margin ,
+ The intensive margin
 \begin_inset Formula $\pi_{i}\lambda_{i}\alpha\theta_{i}y_{i}$
 \end_inset
 
-,
- which rewards increases in volume delivered (since accepted milk earns the quality premium on every liter).
- In this regime,
- expanding the volume of qualifying milk is a lower-cost margin of adjustment than sourcing higher-quality milk.
+ is active and rewards both higher quality (through the price gradient) and higher volume (since accepted milk earns the quality premium on every liter).
+ The model is agnostic about which of these responses dominates:
+ this depends on the relative costs of sourcing additional volume versus sourcing higher-quality milk,
+ which are not pinned down by the model.
 \end_layout
 
 \begin_layout Standard
-When 
+When
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5840,16 +5840,15 @@ When
 \end_inset
 
  drops below one for many suppliers,
- and the extensive margin 
+ and the extensive margin
 \begin_inset Formula $\frac{\partial\pi_{i}}{\partial e_{i}}\left[p_{0}y_{i}+\lambda_{i}\alpha\theta_{i}e_{i}y_{i}\right]$
 \end_inset
 
- becomes the binding incentive.
- The response shifts from volume expansion to quality-based sourcing:
- agents invest effort in securing higher-quality milk to avoid rejection,
- rather than simply collecting more of what is already available.
+ strengthens.
+ The model unambiguously predicts that raising the threshold increases the incentive to improve quality,
+ since the threat of losing the entire bonus at the threshold creates a strong discrete incentive that complements the continuous gradient.
  Formally,
- the relative importance of the extensive margin in the first-order condition is increasing in 
+ the relative importance of the extensive margin in the first-order condition is increasing in
 \begin_inset Formula $q_{min}$
 \end_inset
 
@@ -5857,7 +5856,7 @@ When
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \frac{\partial}{\partial q_{min}}\left[\frac{\text{extensive margin}}{\text{total marginal return}}\right]>0
 \end{equation}
@@ -5868,22 +5867,18 @@ When
 \end_layout
 
 \begin_layout Standard
-This comparative static generates a testable prediction for the follow-up experiment:
- when the quality threshold is at the East African standard (Stage 1,
- low 
+The follow-up experiment varies the threshold across two stages.
+ In Stage 1,
+ the quality threshold is set at the East African standard (low
 \begin_inset Formula $q_{min}$
 \end_inset
 
-),
- the premium should elicit primarily a volume response;
- when the threshold is raised (Stage 2,
- high 
-\begin_inset Formula $q_{min}$
-\end_inset
-
-),
- the same premium should elicit primarily a quality response.
- The margin of adjustment tracks the margin that is binding.
+);
+ in Stage 2,
+ the threshold is raised.
+ The model predicts that quality-improving effort should be stronger in Stage 2,
+ when the extensive margin is active.
+ Whether quality also improves in Stage 1 (through the intensive margin alone) is an empirical question that depends on the cost structure of quality sourcing relative to volume expansion.
 \end_layout
 
 \begin_layout Subsubsection
@@ -6300,7 +6295,7 @@ alpha > 0$)}}
 \end_layout
 
 \begin_layout Plain Layout
-Volume response when $q_{min}$ low & Intensive & $
+Quality and/or volume response & Intensive & $
 \backslash
 alpha > 0$,
  low $q_{min}$ & Stage 1 submissions & Qty +126L,
@@ -6312,7 +6307,7 @@ alpha > 0$,
 \end_layout
 
 \begin_layout Plain Layout
-Quality response when $q_{min}$ high & Extensive & $
+Stronger quality response when $q_{min}$ high & Extensive & $
 \backslash
 alpha > 0$,
  high $q_{min}$ & Stage 2 submissions & Fat +0.17pp (omnibus $p=0.001$)
