@@ -5933,8 +5933,8 @@ tuple "list"
 placement document
 alignment document
 wide false
-sideways true
-status collapsed
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -5996,9 +5996,10 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-multicolumn{5}{l}{
+multicolumn{5}{c}{
 \backslash
-textit{Main experiment: measurement technology ($
+textit{Main experiment:
+ measurement technology ($
 \backslash
 sigma^2
 \backslash
@@ -6014,7 +6015,8 @@ Adulteration falls & Enforcement & $
 \backslash
 sigma^2
 \backslash
-to 0$ & Milk samples & Fat +0.11pp, Water $-$0.49pp
+to 0$ & Milk samples & Fat +0.11pp,
+ Water $-$0.49pp
 \backslash
 
 \backslash
@@ -6022,7 +6024,8 @@ to 0$ & Milk samples & Fat +0.11pp, Water $-$0.49pp
 \end_layout
 
 \begin_layout Plain Layout
-Prices unchanged & Credibility, bargaining & $
+Prices unchanged & Credibility,
+ bargaining & $
 \backslash
 sigma^2
 \backslash
@@ -6044,9 +6047,10 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-multicolumn{5}{l}{
+multicolumn{5}{c}{
 \backslash
-textit{Follow-up experiment: quality-based pricing ($
+textit{Follow-up experiment:
+ quality-based pricing ($
 \backslash
 alpha > 0$)}}
 \backslash
@@ -6058,7 +6062,9 @@ alpha > 0$)}}
 \begin_layout Plain Layout
 Quality and/or volume response & Intensive & $
 \backslash
-alpha > 0$, low $q_{min}$ & Stage 1 & Qty +126L, Fat null
+alpha > 0$,
+ low $q_{min}$ & Stage 1 & Qty +126L,
+ Fat null
 \backslash
 
 \backslash
@@ -6068,7 +6074,8 @@ alpha > 0$, low $q_{min}$ & Stage 1 & Qty +126L, Fat null
 \begin_layout Plain Layout
 Stronger quality response & Extensive & $
 \backslash
-alpha > 0$, high $q_{min}$ & Stage 2 & Fat +0.17pp
+alpha > 0$,
+ high $q_{min}$ & Stage 2 & Fat +0.17pp
 \backslash
 
 \backslash
@@ -6078,7 +6085,8 @@ alpha > 0$, high $q_{min}$ & Stage 2 & Fat +0.17pp
 \begin_layout Plain Layout
 Limited pass-through & Price & $
 \backslash
-alpha > 0$, $
+alpha > 0$,
+ $
 \backslash
 lambda_i
 \backslash
@@ -6169,27 +6177,32 @@ The design exploits a repeated-game structure.
  generating a panel of behavioral responses over approximately 30 days.
  This creates a rich setting for observing how supply chain actors respond to price incentives for quality in real time.
  A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-experiment variation in the rules of the game,
- analogous to changing parameters across rounds in lab-in-the-field experiments.
+ analogous to changing parameters across rounds in lab-in-the-field experiments 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "gneezy2017lab"
+literal "false"
+
+\end_inset
+
+.
  This allows us to trace behavioral adjustment dynamics as the quality bar tightens,
  something that would be difficult to observe in a standard cross-sectional RCT.
 \end_layout
 
 \begin_layout Subsection
 Intervention
-\end_layout
-
-\begin_layout Standard
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:exp2-intervention"
 
 \end_inset
 
-Treated traders receive a quality premium of UGX 100 per liter for each 0.1 percentage point of fat and SNF content above the East African Community standards of 3.3 percent fat and 8.5 percent SNF.
- The premium is calculated automatically from the digital quality records already captured by the measurement system installed during the main experiment.
- Bonuses are paid daily via mobile money (using the Yo!
- Uganda API),
- creating immediate and salient incentives that traders can link directly to each day's delivery quality.
+
+\end_layout
+
+\begin_layout Standard
+Treated traders receive a quality premium of UGX 100 per liter for each 0.1 percentage point of fat and of UGX 100 per liter for each 0.1 percentage point of SNF content above the East African Community standards (which are 3.3 percent fat and 8.5 percent SNF).
  The digital infrastructure from the main experiment is essential to this intervention:
  it provides the verifiable,
  timestamped quality records on which bonus calculations are based,
@@ -6197,13 +6210,14 @@ Treated traders receive a quality premium of UGX 100 per liter for each 0.1 perc
 \end_layout
 
 \begin_layout Standard
-To illustrate the magnitude of the incentive,
- consider a trader collecting 500 liters per day with milk at 4.0 percent fat and 8.8 percent SNF.
+The incentives were economically significant.
+ Consider a trader collecting 500 liters per day with milk at 4.0 percent fat and 8.8 percent SNF.
  This trader would earn a daily bonus of approximately UGX 35,000 (roughly USD 9),
- a meaningful supplement to typical trading margins.
- The premium structure is linear and transparent:
- traders can calculate their expected bonus from the quality readings displayed on the analyzer after each delivery,
- reinforcing the connection between quality effort and financial reward.
+ a meaningful supplement to typical trading margins (which would typically be about UGX 100 per liter traded).
+ Bonuses are paid daily via mobile money,
+ creating immediate and salient incentives that traders can link directly to each day's delivery quality.
+ We also sent SMS messages that explained how the bonus that the received was claculated.
+ 
 \end_layout
 
 \begin_layout Standard
