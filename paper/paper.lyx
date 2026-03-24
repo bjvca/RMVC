@@ -6197,6 +6197,26 @@ We focus on 19 MCCs in the Kazo district,
 \end_layout
 
 \begin_layout Standard
+The design exploits the high-frequency,
+ repeated-transaction structure of dairy supply chains.
+ Unlike staple crops where farmers typically sell the bulk of their harvest in a single post-harvest transaction
+\begin_inset CommandInset citation
+LatexCommand citep
+key "van2015inter"
+literal "false"
+
+\end_inset
+
+,
+ milk is collected and delivered daily,
+ often in multiple transactions per day.
+ This generates a dense panel of behavioral responses over 31 days,
+ allowing us to observe adjustment in near real time.
+ A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) provides within-subject variation in the stringency of quality requirements,
+ allowing us to trace how the same traders adjust behavior as the quality bar tightens.
+\end_layout
+
+\begin_layout Standard
 Prior to randomization,
  all traders were informed that the experiment involved a 50 percent chance of receiving quality-based bonuses and a 50 percent chance of serving as a comparison group.
  Informed consent was obtained under this framing.
@@ -6211,36 +6231,6 @@ Prior to randomization,
  control traders face a worse pool of available milk,
  compressing the treatment-control difference.
  The MCC fixed effects control for any MCC-level response to the intervention.
-\end_layout
-
-\begin_layout Standard
-The design exploits the high-frequency,
- repeated-transaction structure of dairy supply chains.
- Unlike staple crops where farmers typically sell the bulk of their harvest in a single post-harvest transaction
-\begin_inset CommandInset citation
-LatexCommand citep
-key "van2015inter"
-literal "false"
-
-\end_inset
-
-,
- milk is collected and delivered daily,
- often in multiple transactions per day.
- This generates a dense panel of behavioral responses over approximately 30 days,
- allowing us to observe adjustment in near real time.
- A surprise mid-experiment threshold shift (from Stage 1 to Stage 2) functions as a within-subject parameter change,
- analogous to varying treatment intensity across rounds in lab-in-the-field experiments
-\begin_inset CommandInset citation
-LatexCommand citep
-key "gneezy2017lab"
-literal "false"
-
-\end_inset
-
-.
- This allows us to trace behavioral adjustment dynamics as the quality bar tightens,
- something that would be difficult to observe in a standard cross-sectional RCT.
 \end_layout
 
 \begin_layout Subsection
