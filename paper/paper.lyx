@@ -4887,16 +4887,36 @@ where
 \end_inset
 
  is the per-unit premium slope for verifiable quality.
- A key assumption we make is that,
- without verifiable measurement,
- 
+ Quality-differentiated pricing requires sufficiently precise measurement:
+ when
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is high (lactometer only),
+ the signal is too noisy for processors to reliably contract on compositional quality,
+ so
 \begin_inset Formula $\alpha=0$
 \end_inset
 
-;
- when quality becomes observable,
- we assume that,
- 
+ in equilibrium.
+ When
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ falls below some threshold (with a milk analyzer),
+ precise measurement makes quality-differentiated pricing feasible and
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ could emerge.
+ Whether it actually does depends on market structure,
+ bargaining power,
+ and institutional conditions.
+ A central question of this paper is whether reducing
+\begin_inset Formula $\sigma^{2}$
+\end_inset
+
+ is sufficient to activate
 \begin_inset Formula $\alpha>0$
 \end_inset
 
@@ -6268,13 +6288,14 @@ to 0$ & Milk samples & SNF,
 \end_layout
 
 \begin_layout Plain Layout
-Prices unchanged & $
-\backslash
-alpha = 0$ & $
+Prices unchanged & Price & $
 \backslash
 sigma^2
 \backslash
-to 0$ & Farmer/MCC prices & All null (omnibus $p=1.0$)
+to 0$,
+ $
+\backslash
+alpha$ remains 0 & Farmer/MCC prices & All null (omnibus $p=1.0$)
 \backslash
 
 \backslash
