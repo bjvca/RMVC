@@ -7907,7 +7907,7 @@ Sexpr{res_submissions[2,4]} &
 \backslash
 Sexpr{res_submissions[3,4]} &
 \backslash
-Sexpr{round(res_submissions[4,4]/1000,1)}
+Sexpr{res_submissions[4,4]}
 \backslash
 
 \backslash
@@ -7984,7 +7984,7 @@ Sexpr{res_submissions[2,9]} &
 \backslash
 Sexpr{res_submissions[3,9]} &
 \backslash
-Sexpr{round(res_submissions[4,9]/1000,1)}
+Sexpr{res_submissions[4,9]}
 \backslash
 
 \backslash
@@ -8061,7 +8061,7 @@ Sexpr{res_submissions[2,14]} &
 \backslash
 Sexpr{res_submissions[3,14]} &
 \backslash
-Sexpr{round(res_submissions[4,14]/1000,1)}
+Sexpr{res_submissions[4,14]}
 \backslash
 
 \backslash
