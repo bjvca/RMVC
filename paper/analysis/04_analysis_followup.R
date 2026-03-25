@@ -141,8 +141,12 @@ saveRDS(res_submissions,
 traders$any_rejected  <- as.numeric(traders$rejected_month > 0)
 traders$pays_premium  <- as.numeric(traders$pay_premim == 1)
 
-trader_outcomes <- c("Fat_supervised", "delivered_quantity", "any_rejected",
+trader_outcomes <- c("delivered_quantity", "any_rejected",
                      "pays_premium", "avg_purchase_price")
+
+## Anderson index of trader endline outcomes
+traders$trader_index <- anderson_index(traders[trader_outcomes])$index
+trader_outcomes <- c(trader_outcomes, "trader_index")
 
 res_traders <- array(NA, dim = c(length(trader_outcomes), 5),
                      dimnames = list(trader_outcomes,
@@ -181,8 +185,12 @@ saveRDS(res_traders,
 ## Feeding practice indicators and Anderson index already constructed in 03_prep_followup.R
 ## Columns: used_bran, used_residu, used_lick, used_cgrazing, feeding_index
 
+farmer_fu_primary <- c("avg_price", "quality_checked", "feeding_index")
+farmers_fu$farmer_fu_index <- anderson_index(farmers_fu[farmer_fu_primary])$index
+
 farmer_fu_outcomes <- c("avg_price", "quality_checked", "feeding_index",
-                        "used_bran", "used_residu", "used_lick", "used_cgrazing")
+                        "used_bran", "used_residu", "used_lick", "used_cgrazing",
+                        "farmer_fu_index")
 
 res_farmers_fu <- array(NA, dim = c(length(farmer_fu_outcomes), 5),
                         dimnames = list(farmer_fu_outcomes,
