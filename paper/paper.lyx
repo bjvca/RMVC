@@ -378,6 +378,44 @@ stars <- function(p) ifelse(p < 0.01,
  "")))
 \end_layout
 
+\begin_layout Plain Layout
+# Format numbers by magnitude:
+ <1 -> 3dp,
+ <100 -> 2dp,
+ >=100 -> 1dp
+\end_layout
+
+\begin_layout Plain Layout
+fmt <- function(x) {
+\end_layout
+
+\begin_layout Plain Layout
+  ax <- abs(x)
+\end_layout
+
+\begin_layout Plain Layout
+  if (is.na(x)) return("NA")
+\end_layout
+
+\begin_layout Plain Layout
+  if (ax < 1) return(sprintf("%.3f",
+ x))
+\end_layout
+
+\begin_layout Plain Layout
+  if (ax < 100) return(sprintf("%.2f",
+ x))
+\end_layout
+
+\begin_layout Plain Layout
+  return(sprintf("%.1f",
+ x))
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
 \end_inset
 
 
@@ -2242,9 +2280,9 @@ cline{2-4}
 MCC is cooperative?
  (1=yes)  & 
 \backslash
-Sexpr{balance[1,1]} & 
+Sexpr{fmt(balance[1,1])} & 
 \backslash
-Sexpr{balance[1,3]}$^{
+Sexpr{fmt(balance[1,3])}$^{
 \backslash
 Sexpr{ifelse(balance[1,5]<.01,"**",ifelse(balance[1,5]<.05,"*",ifelse(balance[1,5]<.1,"+","")))}}$ &  
 \backslash
@@ -2258,9 +2296,9 @@ Sexpr{balance[1,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[1,2]}) & (
+Sexpr{fmt(balance[1,2])}) & (
 \backslash
-Sexpr{balance[1,4]}) 
+Sexpr{fmt(balance[1,4])}) 
 \backslash
 
 \backslash
@@ -2274,9 +2312,9 @@ Sexpr{balance[1,4]})
 \begin_layout Plain Layout
 Total Capacity of milk tanks (in liters)  & 
 \backslash
-Sexpr{balance[4,1]} & 
+Sexpr{fmt(balance[4,1])} & 
 \backslash
-Sexpr{balance[4,3]}$^{
+Sexpr{fmt(balance[4,3])}$^{
 \backslash
 Sexpr{ifelse(balance[4,5]<.01,"**",ifelse(balance[4,5]<.05,"*",ifelse(balance[4,5]<.1,"+","")))}}$ &  
 \backslash
@@ -2290,9 +2328,9 @@ Sexpr{balance[4,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[4,2]}) & (
+Sexpr{fmt(balance[4,2])}) & (
 \backslash
-Sexpr{balance[4,4]}) 
+Sexpr{fmt(balance[4,4])}) 
 \backslash
 
 \backslash
@@ -2306,9 +2344,9 @@ Sexpr{balance[4,4]})
 \begin_layout Plain Layout
 MCC pays quality premium (1=yes) & 
 \backslash
-Sexpr{balance[6,1]} & 
+Sexpr{fmt(balance[6,1])} & 
 \backslash
-Sexpr{balance[6,3]}$^{
+Sexpr{fmt(balance[6,3])}$^{
 \backslash
 Sexpr{ifelse(balance[6,5]<.01,"**",ifelse(balance[6,5]<.05,"*",ifelse(balance[6,5]<.1,"+","")))}}$ & 
 \backslash
@@ -2322,9 +2360,9 @@ Sexpr{balance[6,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[6,2]}) & (
+Sexpr{fmt(balance[6,2])}) & (
 \backslash
-Sexpr{balance[6,4]}) 
+Sexpr{fmt(balance[6,4])}) 
 \backslash
 
 \backslash
@@ -2338,9 +2376,9 @@ Sexpr{balance[6,4]})
 \begin_layout Plain Layout
 MCC age in years of operation  & 
 \backslash
-Sexpr{balance[7,1]} & 
+Sexpr{fmt(balance[7,1])} & 
 \backslash
-Sexpr{balance[7,3]}$^{
+Sexpr{fmt(balance[7,3])}$^{
 \backslash
 Sexpr{ifelse(balance[7,5]<.01,"**",ifelse(balance[7,5]<.05,"*",ifelse(balance[7,5]<.1,"+","")))}}$ &  
 \backslash
@@ -2354,9 +2392,9 @@ Sexpr{balance[7,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[7,2]}) & (
+Sexpr{fmt(balance[7,2])}) & (
 \backslash
-Sexpr{balance[7,4]}) 
+Sexpr{fmt(balance[7,4])}) 
 \backslash
 
 \backslash
@@ -2371,9 +2409,9 @@ Sexpr{balance[7,4]})
 Facilitates supply of acaricides?
  (1=yes) & 
 \backslash
-Sexpr{balance[10,1]} & 
+Sexpr{fmt(balance[10,1])} & 
 \backslash
-Sexpr{balance[10,3]}$^{
+Sexpr{fmt(balance[10,3])}$^{
 \backslash
 Sexpr{ifelse(balance[10,5]<.01,"**",ifelse(balance[10,5]<.05,"*",ifelse(balance[10,5]<.1,"+","")))}}$ & 
 \backslash
@@ -2387,9 +2425,9 @@ Sexpr{balance[10,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[10,2]}) & (
+Sexpr{fmt(balance[10,2])}) & (
 \backslash
-Sexpr{balance[10,4]}) 
+Sexpr{fmt(balance[10,4])}) 
 \backslash
 
 \backslash
@@ -2405,7 +2443,7 @@ cline{2-4}
 \begin_layout Plain Layout
 F-statistic & & 
 \backslash
-Sexpr{F_test[1,1]} 
+Sexpr{fmt(F_test[1,1])} 
 \backslash
 
 \backslash
@@ -2415,7 +2453,7 @@ Sexpr{F_test[1,1]}
 \begin_layout Plain Layout
 p-value & & 
 \backslash
-Sexpr{F_test[2,1]} 
+Sexpr{fmt(F_test[2,1])} 
 \backslash
 
 \backslash
@@ -2626,9 +2664,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Household Head Age (years) &
 \backslash
-Sexpr{balance_farmer[2,1]} &
+Sexpr{fmt(balance_farmer[2,1])} &
 \backslash
-Sexpr{balance_farmer[2,3]}$^{
+Sexpr{fmt(balance_farmer[2,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[2,5]<.01,"**",ifelse(balance_farmer[2,5]<.05,"*",ifelse(balance_farmer[2,5]<.1,"+","")))}}$ &
 \backslash
@@ -2642,9 +2680,9 @@ Sexpr{balance_farmer[2,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[2,2]}) & (
+Sexpr{fmt(balance_farmer[2,2])}) & (
 \backslash
-Sexpr{balance_farmer[2,4]})
+Sexpr{fmt(balance_farmer[2,4])})
 \backslash
 
 \backslash
@@ -2666,9 +2704,9 @@ Sexpr{balance_farmer[2,4]})
 \begin_layout Plain Layout
 Current Total herd size (number) &
 \backslash
-Sexpr{balance_farmer[3,1]} &
+Sexpr{fmt(balance_farmer[3,1])} &
 \backslash
-Sexpr{balance_farmer[3,3]}$^{
+Sexpr{fmt(balance_farmer[3,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[3,5]<.01,"**",ifelse(balance_farmer[3,5]<.05,"*",ifelse(balance_farmer[3,5]<.1,"+","")))}}$ &
 \backslash
@@ -2682,9 +2720,9 @@ Sexpr{balance_farmer[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[3,2]}) & (
+Sexpr{fmt(balance_farmer[3,2])}) & (
 \backslash
-Sexpr{balance_farmer[3,4]})
+Sexpr{fmt(balance_farmer[3,4])})
 \backslash
 
 \backslash
@@ -2702,9 +2740,9 @@ Sexpr{balance_farmer[3,4]})
 \begin_layout Plain Layout
 Number of improved animals in total herd (share) &
 \backslash
-Sexpr{balance_farmer[4,1]} &
+Sexpr{fmt(balance_farmer[4,1])} &
 \backslash
-Sexpr{balance_farmer[4,3]}$^{
+Sexpr{fmt(balance_farmer[4,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[4,5]<.01,"**",ifelse(balance_farmer[4,5]<.05,"*",ifelse(balance_farmer[4,5]<.1,"+","")))}}$ &
 \backslash
@@ -2718,9 +2756,9 @@ Sexpr{balance_farmer[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[4,2]}) & (
+Sexpr{fmt(balance_farmer[4,2])}) & (
 \backslash
-Sexpr{balance_farmer[4,4]})
+Sexpr{fmt(balance_farmer[4,4])})
 \backslash
 
 \backslash
@@ -2734,9 +2772,9 @@ Sexpr{balance_farmer[4,4]})
 \begin_layout Plain Layout
 Liters milk sold per day (on average in the rainy season) (liters) &
 \backslash
-Sexpr{balance_farmer[6,1]} &
+Sexpr{fmt(balance_farmer[6,1])} &
 \backslash
-Sexpr{balance_farmer[6,3]}$^{
+Sexpr{fmt(balance_farmer[6,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[6,5]<.01,"**",ifelse(balance_farmer[6,5]<.05,"*",ifelse(balance_farmer[6,5]<.1,"+","")))}}$ &
 \backslash
@@ -2750,9 +2788,9 @@ Sexpr{balance_farmer[6,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[6,2]}) & (
+Sexpr{fmt(balance_farmer[6,2])}) & (
 \backslash
-Sexpr{balance_farmer[6,4]})
+Sexpr{fmt(balance_farmer[6,4])})
 \backslash
 
 \backslash
@@ -2770,9 +2808,9 @@ Sexpr{balance_farmer[6,4]})
 \begin_layout Plain Layout
 Average monthly expense (USD) on chemical purchases &
 \backslash
-Sexpr{balance_farmer[10,1]} &
+Sexpr{fmt(balance_farmer[10,1])} &
 \backslash
-Sexpr{balance_farmer[10,3]}$^{
+Sexpr{fmt(balance_farmer[10,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[10,5]<.01,"**",ifelse(balance_farmer[10,5]<.05,"*",ifelse(balance_farmer[10,5]<.1,"+","")))}}$ &
 \backslash
@@ -2786,9 +2824,9 @@ Sexpr{balance_farmer[10,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[10,2]}) & (
+Sexpr{fmt(balance_farmer[10,2])}) & (
 \backslash
-Sexpr{balance_farmer[10,4]})
+Sexpr{fmt(balance_farmer[10,4])})
 \backslash
 
 \backslash
@@ -2808,7 +2846,7 @@ cline{2-4}
 \begin_layout Plain Layout
 F-statistic & &
 \backslash
-Sexpr{F_test[1,3]}
+Sexpr{fmt(F_test[1,3])}
 \backslash
 
 \backslash
@@ -2818,7 +2856,7 @@ Sexpr{F_test[1,3]}
 \begin_layout Plain Layout
 p-value & &
 \backslash
-Sexpr{F_test[2,3]}
+Sexpr{fmt(F_test[2,3])}
 \backslash
 
 \backslash
@@ -3126,9 +3164,9 @@ Butter fat (
 \backslash
 %) & 
 \backslash
-Sexpr{res_samples[1,1]} & 
+Sexpr{fmt(res_samples[1,1])} & 
 \backslash
-Sexpr{res_samples[1,3]}$^{
+Sexpr{fmt(res_samples[1,3])}$^{
 \backslash
 Sexpr{ifelse(res_samples[1,5]<.01,"**",ifelse(res_samples[1,5]<.05,"*",ifelse(res_samples[1,5]<.1,"+","")))}}$ & 
 \backslash
@@ -3142,9 +3180,9 @@ Sexpr{res_samples[1,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[1,2]}) & (
+Sexpr{fmt(res_samples[1,2])}) & (
 \backslash
-Sexpr{res_samples[1,4]}) 
+Sexpr{fmt(res_samples[1,4])}) 
 \backslash
 
 \backslash
@@ -3160,9 +3198,9 @@ SNF  (
 \backslash
 %) & 
 \backslash
-Sexpr{res_samples[2,1]} & 
+Sexpr{fmt(res_samples[2,1])} & 
 \backslash
-Sexpr{res_samples[2,3]}$^{
+Sexpr{fmt(res_samples[2,3])}$^{
 \backslash
 Sexpr{ifelse(res_samples[2,5]<.01,"**",ifelse(res_samples[2,5]<.05,"*",ifelse(res_samples[2,5]<.1,"+","")))}}$  & 
 \backslash
@@ -3176,9 +3214,9 @@ Sexpr{res_samples[2,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[2,2]}) & (
+Sexpr{fmt(res_samples[2,2])}) & (
 \backslash
-Sexpr{res_samples[2,4]}) 
+Sexpr{fmt(res_samples[2,4])}) 
 \backslash
 
 \backslash
@@ -3194,9 +3232,9 @@ Added Water  (
 \backslash
 %)  & 
 \backslash
-Sexpr{res_samples[3,1]} & 
+Sexpr{fmt(res_samples[3,1])} & 
 \backslash
-Sexpr{res_samples[3,3]}$^{
+Sexpr{fmt(res_samples[3,3])}$^{
 \backslash
 Sexpr{ifelse(res_samples[3,5]<.01,"**",ifelse(res_samples[3,5]<.05,"*",ifelse(res_samples[3,5]<.1,"+","")))}}$  & 
 \backslash
@@ -3210,9 +3248,9 @@ Sexpr{res_samples[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[3,2]}) & (
+Sexpr{fmt(res_samples[3,2])}) & (
 \backslash
-Sexpr{res_samples[3,4]}) 
+Sexpr{fmt(res_samples[3,4])}) 
 \backslash
 
 \backslash
@@ -3228,9 +3266,9 @@ Protein  (
 \backslash
 %)  & 
 \backslash
-Sexpr{res_samples[4,1]} & 
+Sexpr{fmt(res_samples[4,1])} & 
 \backslash
-Sexpr{res_samples[4,3]}$^{
+Sexpr{fmt(res_samples[4,3])}$^{
 \backslash
 Sexpr{ifelse(res_samples[4,5]<.01,"**",ifelse(res_samples[4,5]<.05,"*",ifelse(res_samples[4,5]<.1,"+","")))}}$  & 
 \backslash
@@ -3244,9 +3282,9 @@ Sexpr{res_samples[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[4,2]}) & (
+Sexpr{fmt(res_samples[4,2])}) & (
 \backslash
-Sexpr{res_samples[4,4]}) 
+Sexpr{fmt(res_samples[4,4])}) 
 \backslash
 
 \backslash
@@ -3260,9 +3298,9 @@ Sexpr{res_samples[4,4]})
 \begin_layout Plain Layout
 Density (CLR) & 
 \backslash
-Sexpr{res_samples[5,1]} & 
+Sexpr{fmt(res_samples[5,1])} & 
 \backslash
-Sexpr{res_samples[5,3]}$^{
+Sexpr{fmt(res_samples[5,3])}$^{
 \backslash
 Sexpr{ifelse(res_samples[5,5]<.01,"**",ifelse(res_samples[5,5]<.05,"*",ifelse(res_samples[5,5]<.1,"+","")))}}$  & 
 \backslash
@@ -3276,9 +3314,9 @@ Sexpr{res_samples[5,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[5,2]}) & (
+Sexpr{fmt(res_samples[5,2])}) & (
 \backslash
-Sexpr{res_samples[5,4]}) 
+Sexpr{fmt(res_samples[5,4])}) 
 \backslash
 
 \backslash
@@ -3296,9 +3334,9 @@ Sexpr{res_samples[5,4]})
 \begin_layout Plain Layout
 Index & 
 \backslash
-Sexpr{res_samples[6,1]} & 
+Sexpr{fmt(res_samples[6,1])} & 
 \backslash
-Sexpr{res_samples[6,3]}$^{
+Sexpr{fmt(res_samples[6,3])}$^{
 \backslash
 Sexpr{ifelse(res_samples[6,5]<.01,"**",ifelse(res_samples[6,5]<.05,"*",ifelse(res_samples[6,5]<.1,"+","")))}}$  & 
 \backslash
@@ -3312,9 +3350,9 @@ Sexpr{res_samples[6,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[6,2]}) & (
+Sexpr{fmt(res_samples[6,2])}) & (
 \backslash
-Sexpr{res_samples[6,4]}) 
+Sexpr{fmt(res_samples[6,4])}) 
 \backslash
 
 \backslash
@@ -3731,9 +3769,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Production investment and management (Index) &
 \backslash
-Sexpr{res_farmers[1,1]} &
+Sexpr{fmt(res_farmers[1,1])} &
 \backslash
-Sexpr{res_farmers[1,3]}$^{
+Sexpr{fmt(res_farmers[1,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers[1,10]<.01,"**",ifelse(res_farmers[1,10]<.05,"*",ifelse(res_farmers[1,10]<.1,"+","")))}}$ &
 \backslash
@@ -3747,9 +3785,9 @@ Sexpr{res_farmers[1,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers[1,2]}) & (
+Sexpr{fmt(res_farmers[1,2])}) & (
 \backslash
-Sexpr{res_farmers[1,4]})
+Sexpr{fmt(res_farmers[1,4])})
 \backslash
 
 \backslash
@@ -3763,9 +3801,9 @@ Sexpr{res_farmers[1,4]})
 \begin_layout Plain Layout
 Buyer checked for quality (1=yes) &
 \backslash
-Sexpr{res_farmers[2,1]} &
+Sexpr{fmt(res_farmers[2,1])} &
 \backslash
-Sexpr{res_farmers[2,3]}$^{
+Sexpr{fmt(res_farmers[2,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers[2,10]<.01,"**",ifelse(res_farmers[2,10]<.05,"*",ifelse(res_farmers[2,10]<.1,"+","")))}}$ &
 \backslash
@@ -3779,9 +3817,9 @@ Sexpr{res_farmers[2,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers[2,2]}) & (
+Sexpr{fmt(res_farmers[2,2])}) & (
 \backslash
-Sexpr{res_farmers[2,4]})
+Sexpr{fmt(res_farmers[2,4])})
 \backslash
 
 \backslash
@@ -3795,9 +3833,9 @@ Sexpr{res_farmers[2,4]})
 \begin_layout Plain Layout
 Price received for milk sold &
 \backslash
-Sexpr{res_farmers[3,1]} &
+Sexpr{fmt(res_farmers[3,1])} &
 \backslash
-Sexpr{res_farmers[3,3]}$^{
+Sexpr{fmt(res_farmers[3,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers[3,10]<.01,"**",ifelse(res_farmers[3,10]<.05,"*",ifelse(res_farmers[3,10]<.1,"+","")))}}$ &
 \backslash
@@ -3811,9 +3849,9 @@ Sexpr{res_farmers[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers[3,2]}) & (
+Sexpr{fmt(res_farmers[3,2])}) & (
 \backslash
-Sexpr{res_farmers[3,4]})
+Sexpr{fmt(res_farmers[3,4])})
 \backslash
 
 \backslash
@@ -3827,9 +3865,9 @@ Sexpr{res_farmers[3,4]})
 \begin_layout Plain Layout
 Get quality premium &
 \backslash
-Sexpr{res_farmers[4,1]} &
+Sexpr{fmt(res_farmers[4,1])} &
 \backslash
-Sexpr{res_farmers[4,3]}$^{
+Sexpr{fmt(res_farmers[4,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers[4,10]<.01,"**",ifelse(res_farmers[4,10]<.05,"*",ifelse(res_farmers[4,10]<.1,"+","")))}}$ &
 \backslash
@@ -3843,9 +3881,9 @@ Sexpr{res_farmers[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers[4,2]}) & (
+Sexpr{fmt(res_farmers[4,2])}) & (
 \backslash
-Sexpr{res_farmers[4,4]})
+Sexpr{fmt(res_farmers[4,4])})
 \backslash
 
 \backslash
@@ -3863,9 +3901,9 @@ Sexpr{res_farmers[4,4]})
 \begin_layout Plain Layout
 Index of primary farmer outcomes &
 \backslash
-Sexpr{res_farmers[5,1]} &
+Sexpr{fmt(res_farmers[5,1])} &
 \backslash
-Sexpr{res_farmers[5,3]}$^{
+Sexpr{fmt(res_farmers[5,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers[5,5]<.01,"**",ifelse(res_farmers[5,5]<.05,"*",ifelse(res_farmers[5,5]<.1,"+","")))}}$ &
 \backslash
@@ -3879,9 +3917,9 @@ Sexpr{res_farmers[5,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers[5,2]}) & (
+Sexpr{fmt(res_farmers[5,2])}) & (
 \backslash
-Sexpr{res_farmers[5,4]})
+Sexpr{fmt(res_farmers[5,4])})
 \backslash
 
 \backslash
@@ -4221,9 +4259,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Tested incoming milk using MA (1=yes) & 
 \backslash
-Sexpr{res_MCCs[1,1]} & 
+Sexpr{fmt(res_MCCs[1,1])} & 
 \backslash
-Sexpr{res_MCCs[1,3]}$^{
+Sexpr{fmt(res_MCCs[1,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[1,5]<.01,"**",ifelse(res_MCCs[1,5]<.05,"*",ifelse(res_MCCs[1,5]<.1,"+","")))}}$ & 
 \backslash
@@ -4237,9 +4275,9 @@ Sexpr{res_MCCs[1,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[1,2]}) & (
+Sexpr{fmt(res_MCCs[1,2])}) & (
 \backslash
-Sexpr{res_MCCs[1,4]}) 
+Sexpr{fmt(res_MCCs[1,4])}) 
 \backslash
 
 \backslash
@@ -4253,9 +4291,9 @@ Sexpr{res_MCCs[1,4]})
 \begin_layout Plain Layout
 Testing outgoing milk using MA (1=yes) & 
 \backslash
-Sexpr{res_MCCs[2,1]} & 
+Sexpr{fmt(res_MCCs[2,1])} & 
 \backslash
-Sexpr{res_MCCs[2,3]}$^{
+Sexpr{fmt(res_MCCs[2,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[2,5]<.01,"**",ifelse(res_MCCs[2,5]<.05,"*",ifelse(res_MCCs[2,5]<.1,"+","")))}}$  & 
 \backslash
@@ -4269,9 +4307,9 @@ Sexpr{res_MCCs[2,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[2,2]}) & (
+Sexpr{fmt(res_MCCs[2,2])}) & (
 \backslash
-Sexpr{res_MCCs[2,4]}) 
+Sexpr{fmt(res_MCCs[2,4])}) 
 \backslash
 
 \backslash
@@ -4285,9 +4323,9 @@ Sexpr{res_MCCs[2,4]})
 \begin_layout Plain Layout
 Price at which milk was bought from farmers (UGX) & 
 \backslash
-Sexpr{res_MCCs[3,1]} & 
+Sexpr{fmt(res_MCCs[3,1])} & 
 \backslash
-Sexpr{res_MCCs[3,3]}$^{
+Sexpr{fmt(res_MCCs[3,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[3,5]<.01,"**",ifelse(res_MCCs[3,5]<.05,"*",ifelse(res_MCCs[3,5]<.1,"+","")))}}$  & 
 \backslash
@@ -4301,9 +4339,9 @@ Sexpr{res_MCCs[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[3,2]}) & (
+Sexpr{fmt(res_MCCs[3,2])}) & (
 \backslash
-Sexpr{res_MCCs[3,4]}) 
+Sexpr{fmt(res_MCCs[3,4])}) 
 \backslash
 
 \backslash
@@ -4317,9 +4355,9 @@ Sexpr{res_MCCs[3,4]})
 \begin_layout Plain Layout
 Price at which milk was sold (UGX) & 
 \backslash
-Sexpr{res_MCCs[4,1]} & 
+Sexpr{fmt(res_MCCs[4,1])} & 
 \backslash
-Sexpr{res_MCCs[4,3]}$^{
+Sexpr{fmt(res_MCCs[4,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[4,5]<.01,"**",ifelse(res_MCCs[4,5]<.05,"*",ifelse(res_MCCs[4,5]<.1,"+","")))}}$  & 
 \backslash
@@ -4333,9 +4371,9 @@ Sexpr{res_MCCs[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[4,2]}) & (
+Sexpr{fmt(res_MCCs[4,2])}) & (
 \backslash
-Sexpr{res_MCCs[4,4]}) 
+Sexpr{fmt(res_MCCs[4,4])}) 
 \backslash
 
 \backslash
@@ -4350,9 +4388,9 @@ Sexpr{res_MCCs[4,4]})
 Does the MCC pay a quality premium to suppliers?
  & 
 \backslash
-Sexpr{res_MCCs[5,1]} & 
+Sexpr{fmt(res_MCCs[5,1])} & 
 \backslash
-Sexpr{res_MCCs[5,3]}$^{
+Sexpr{fmt(res_MCCs[5,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[5,5]<.01,"**",ifelse(res_MCCs[5,5]<.05,"*",ifelse(res_MCCs[5,5]<.1,"+","")))}}$  & 
 \backslash
@@ -4366,9 +4404,9 @@ Sexpr{res_MCCs[5,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[5,2]}) & (
+Sexpr{fmt(res_MCCs[5,2])}) & (
 \backslash
-Sexpr{res_MCCs[5,4]}) 
+Sexpr{fmt(res_MCCs[5,4])}) 
 \backslash
 
 \backslash
@@ -4383,9 +4421,9 @@ Sexpr{res_MCCs[5,4]})
 Did the buyer pay a quality premium?
  & 
 \backslash
-Sexpr{res_MCCs[6,1]} & 
+Sexpr{fmt(res_MCCs[6,1])} & 
 \backslash
-Sexpr{res_MCCs[6,3]}$^{
+Sexpr{fmt(res_MCCs[6,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[6,5]<.01,"**",ifelse(res_MCCs[6,5]<.05,"*",ifelse(res_MCCs[6,5]<.1,"+","")))}}$  & 
 \backslash
@@ -4399,9 +4437,9 @@ Sexpr{res_MCCs[6,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[6,2]}) & (
+Sexpr{fmt(res_MCCs[6,2])}) & (
 \backslash
-Sexpr{res_MCCs[6,4]}) 
+Sexpr{fmt(res_MCCs[6,4])}) 
 \backslash
 
 \backslash
@@ -4423,9 +4461,9 @@ Sexpr{res_MCCs[6,4]})
 \begin_layout Plain Layout
 Index of primary MCC outcomes & 
 \backslash
-Sexpr{res_MCCs[7,1]} & 
+Sexpr{fmt(res_MCCs[7,1])} & 
 \backslash
-Sexpr{res_MCCs[7,3]}$^{
+Sexpr{fmt(res_MCCs[7,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[7,5]<.01,"**",ifelse(res_MCCs[7,5]<.05,"*",ifelse(res_MCCs[7,5]<.1,"+","")))}}$  & 
 \backslash
@@ -4439,9 +4477,9 @@ Sexpr{res_MCCs[7,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[7,2]}) & (
+Sexpr{fmt(res_MCCs[7,2])}) & (
 \backslash
-Sexpr{res_MCCs[7,4]}) 
+Sexpr{fmt(res_MCCs[7,4])}) 
 \backslash
 
 \backslash
@@ -6683,15 +6721,15 @@ textit{Panel A:
 \begin_layout Plain Layout
 Treatment &
 \backslash
-Sexpr{res_submissions[1,1]}$^{
+Sexpr{fmt(res_submissions[1,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[1,1])}}$ &
 \backslash
-Sexpr{res_submissions[2,1]}$^{
+Sexpr{fmt(res_submissions[2,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[2,1])}}$ &
 \backslash
-Sexpr{res_submissions[3,1]}$^{
+Sexpr{fmt(res_submissions[3,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[3,1])}}$ &
 \backslash
@@ -6707,11 +6745,11 @@ Sexpr{stars(ri$exp2_submissions$ri_p[4,1])}}$
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_submissions[1,2]}) & (
+Sexpr{fmt(res_submissions[1,2])}) & (
 \backslash
-Sexpr{res_submissions[2,2]}) & (
+Sexpr{fmt(res_submissions[2,2])}) & (
 \backslash
-Sexpr{res_submissions[3,2]}) & (
+Sexpr{fmt(res_submissions[3,2])}) & (
 \backslash
 Sexpr{round(res_submissions[4,2]/1000,1)})
 \backslash
@@ -6760,15 +6798,15 @@ textit{Panel B:
 \begin_layout Plain Layout
 Treatment &
 \backslash
-Sexpr{res_submissions[1,6]}$^{
+Sexpr{fmt(res_submissions[1,6])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[1,2])}}$ &
 \backslash
-Sexpr{res_submissions[2,6]}$^{
+Sexpr{fmt(res_submissions[2,6])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[2,2])}}$ &
 \backslash
-Sexpr{res_submissions[3,6]}$^{
+Sexpr{fmt(res_submissions[3,6])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[3,2])}}$ &
 \backslash
@@ -6784,11 +6822,11 @@ Sexpr{stars(ri$exp2_submissions$ri_p[4,2])}}$
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_submissions[1,7]}) & (
+Sexpr{fmt(res_submissions[1,7])}) & (
 \backslash
-Sexpr{res_submissions[2,7]}) & (
+Sexpr{fmt(res_submissions[2,7])}) & (
 \backslash
-Sexpr{res_submissions[3,7]}) & (
+Sexpr{fmt(res_submissions[3,7])}) & (
 \backslash
 Sexpr{round(res_submissions[4,7]/1000,1)})
 \backslash
@@ -6837,15 +6875,15 @@ textit{Panel C:
 \begin_layout Plain Layout
 Treatment &
 \backslash
-Sexpr{res_submissions[1,11]}$^{
+Sexpr{fmt(res_submissions[1,11])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[1,3])}}$ &
 \backslash
-Sexpr{res_submissions[2,11]}$^{
+Sexpr{fmt(res_submissions[2,11])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[2,3])}}$ &
 \backslash
-Sexpr{res_submissions[3,11]}$^{
+Sexpr{fmt(res_submissions[3,11])}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[3,3])}}$ &
 \backslash
@@ -6861,11 +6899,11 @@ Sexpr{stars(ri$exp2_submissions$ri_p[4,3])}}$
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_submissions[1,12]}) & (
+Sexpr{fmt(res_submissions[1,12])}) & (
 \backslash
-Sexpr{res_submissions[2,12]}) & (
+Sexpr{fmt(res_submissions[2,12])}) & (
 \backslash
-Sexpr{res_submissions[3,12]}) & (
+Sexpr{fmt(res_submissions[3,12])}) & (
 \backslash
 Sexpr{round(res_submissions[4,12]/1000,1)})
 \backslash
@@ -7141,7 +7179,7 @@ Trader Endline Survey
 \begin_layout Standard
 Despite the strong effects in the daily submission data,
  the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the four outcomes:
- delivered quantity (RI p =
+ total liters delivered to the MCC on the day preceding the interview (RI p =
 \begin_inset ERT
 status open
 
@@ -7155,7 +7193,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- rejection rates (RI p =
+ number of times the trader rejected farmer milk due to poor quality in the preceding month (RI p =
 \begin_inset ERT
 status open
 
@@ -7169,7 +7207,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- whether the trader pays a quality premium (RI p =
+ whether the trader paid a higher price to farmers supplying better-quality milk in the preceding week (RI p =
 \begin_inset ERT
 status open
 
@@ -7183,7 +7221,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- and purchase price (RI p =
+ and the volume-weighted average price per liter paid to supplying farmers across the last six transactions (RI p =
 \begin_inset ERT
 status open
 
@@ -7317,9 +7355,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Delivered quantity (liters) &
 \backslash
-Sexpr{res_traders[1,5]} &
+Sexpr{fmt(res_traders[1,5])} &
 \backslash
-Sexpr{res_traders[1,1]}$^{
+Sexpr{fmt(res_traders[1,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_traders$ri_p[1])}}$ &
 \backslash
@@ -7333,7 +7371,7 @@ Sexpr{res_traders[1,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_traders[1,2]}) &
+Sexpr{fmt(res_traders[1,2])}) &
 \backslash
 
 \backslash
@@ -7343,9 +7381,9 @@ Sexpr{res_traders[1,2]}) &
 \begin_layout Plain Layout
 Any milk rejected (past month) &
 \backslash
-Sexpr{res_traders[2,5]} &
+Sexpr{fmt(res_traders[2,5])} &
 \backslash
-Sexpr{res_traders[2,1]}$^{
+Sexpr{fmt(res_traders[2,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_traders$ri_p[2])}}$ &
 \backslash
@@ -7359,7 +7397,7 @@ Sexpr{res_traders[2,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_traders[2,2]}) &
+Sexpr{fmt(res_traders[2,2])}) &
 \backslash
 
 \backslash
@@ -7369,9 +7407,9 @@ Sexpr{res_traders[2,2]}) &
 \begin_layout Plain Layout
 Pays quality premium to farmers &
 \backslash
-Sexpr{res_traders[3,5]} &
+Sexpr{fmt(res_traders[3,5])} &
 \backslash
-Sexpr{res_traders[3,1]}$^{
+Sexpr{fmt(res_traders[3,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_traders$ri_p[3])}}$ &
 \backslash
@@ -7385,7 +7423,7 @@ Sexpr{res_traders[3,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_traders[3,2]}) &
+Sexpr{fmt(res_traders[3,2])}) &
 \backslash
 
 \backslash
@@ -7395,9 +7433,9 @@ Sexpr{res_traders[3,2]}) &
 \begin_layout Plain Layout
 Average purchase price (UGX/liter) &
 \backslash
-Sexpr{res_traders[4,5]} &
+Sexpr{fmt(res_traders[4,5])} &
 \backslash
-Sexpr{res_traders[4,1]}$^{
+Sexpr{fmt(res_traders[4,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_traders$ri_p[4])}}$ &
 \backslash
@@ -7411,7 +7449,7 @@ Sexpr{res_traders[4,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_traders[4,2]}) &
+Sexpr{fmt(res_traders[4,2])}) &
 \backslash
 
 \backslash
@@ -7429,9 +7467,9 @@ Sexpr{res_traders[4,2]}) &
 \begin_layout Plain Layout
 Anderson index &
 \backslash
-Sexpr{res_traders[5,5]} &
+Sexpr{fmt(res_traders[5,5])} &
 \backslash
-Sexpr{res_traders[5,1]}$^{
+Sexpr{fmt(res_traders[5,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_traders$ri_p[5])}}$ &
 \backslash
@@ -7445,7 +7483,7 @@ Sexpr{res_traders[5,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_traders[5,2]}) &
+Sexpr{fmt(res_traders[5,2])}) &
 \backslash
 
 \backslash
@@ -7636,9 +7674,9 @@ hline
 \begin_layout Plain Layout
 Average price received (UGX/liter) &
 \backslash
-Sexpr{res_farmers_fu[1,5]} &
+Sexpr{fmt(res_farmers_fu[1,5])} &
 \backslash
-Sexpr{res_farmers_fu[1,1]}$^{
+Sexpr{fmt(res_farmers_fu[1,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[1])}}$ &
 \backslash
@@ -7652,7 +7690,7 @@ Sexpr{res_farmers_fu[1,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[1,2]}) &
+Sexpr{fmt(res_farmers_fu[1,2])}) &
 \backslash
 
 \backslash
@@ -7662,9 +7700,9 @@ Sexpr{res_farmers_fu[1,2]}) &
 \begin_layout Plain Layout
 Quality checked by trader &
 \backslash
-Sexpr{res_farmers_fu[2,5]} &
+Sexpr{fmt(res_farmers_fu[2,5])} &
 \backslash
-Sexpr{res_farmers_fu[2,1]}$^{
+Sexpr{fmt(res_farmers_fu[2,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[2])}}$ &
 \backslash
@@ -7678,7 +7716,7 @@ Sexpr{res_farmers_fu[2,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[2,2]}) &
+Sexpr{fmt(res_farmers_fu[2,2])}) &
 \backslash
 
 \backslash
@@ -7688,9 +7726,9 @@ Sexpr{res_farmers_fu[2,2]}) &
 \begin_layout Plain Layout
 Feeding practices index &
 \backslash
-Sexpr{res_farmers_fu[3,5]} &
+Sexpr{fmt(res_farmers_fu[3,5])} &
 \backslash
-Sexpr{res_farmers_fu[3,1]}$^{
+Sexpr{fmt(res_farmers_fu[3,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[3])}}$ &
 \backslash
@@ -7704,7 +7742,7 @@ Sexpr{res_farmers_fu[3,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[3,2]}) &
+Sexpr{fmt(res_farmers_fu[3,2])}) &
 \backslash
 
 \backslash
@@ -7714,9 +7752,9 @@ Sexpr{res_farmers_fu[3,2]}) &
 \begin_layout Plain Layout
 Used bran/concentrates &
 \backslash
-Sexpr{res_farmers_fu[4,5]} &
+Sexpr{fmt(res_farmers_fu[4,5])} &
 \backslash
-Sexpr{res_farmers_fu[4,1]}$^{
+Sexpr{fmt(res_farmers_fu[4,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[4])}}$ &
 \backslash
@@ -7730,7 +7768,7 @@ Sexpr{res_farmers_fu[4,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[4,2]}) &
+Sexpr{fmt(res_farmers_fu[4,2])}) &
 \backslash
 
 \backslash
@@ -7740,9 +7778,9 @@ Sexpr{res_farmers_fu[4,2]}) &
 \begin_layout Plain Layout
 Used crop residues &
 \backslash
-Sexpr{res_farmers_fu[5,5]} &
+Sexpr{fmt(res_farmers_fu[5,5])} &
 \backslash
-Sexpr{res_farmers_fu[5,1]}$^{
+Sexpr{fmt(res_farmers_fu[5,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[5])}}$ &
 \backslash
@@ -7756,7 +7794,7 @@ Sexpr{res_farmers_fu[5,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[5,2]}) &
+Sexpr{fmt(res_farmers_fu[5,2])}) &
 \backslash
 
 \backslash
@@ -7766,9 +7804,9 @@ Sexpr{res_farmers_fu[5,2]}) &
 \begin_layout Plain Layout
 Used salt/mineral lick &
 \backslash
-Sexpr{res_farmers_fu[6,5]} &
+Sexpr{fmt(res_farmers_fu[6,5])} &
 \backslash
-Sexpr{res_farmers_fu[6,1]}$^{
+Sexpr{fmt(res_farmers_fu[6,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[6])}}$ &
 \backslash
@@ -7782,7 +7820,7 @@ Sexpr{res_farmers_fu[6,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[6,2]}) &
+Sexpr{fmt(res_farmers_fu[6,2])}) &
 \backslash
 
 \backslash
@@ -7792,9 +7830,9 @@ Sexpr{res_farmers_fu[6,2]}) &
 \begin_layout Plain Layout
 Controlled grazing &
 \backslash
-Sexpr{res_farmers_fu[7,5]} &
+Sexpr{fmt(res_farmers_fu[7,5])} &
 \backslash
-Sexpr{res_farmers_fu[7,1]}$^{
+Sexpr{fmt(res_farmers_fu[7,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[7])}}$ &
 \backslash
@@ -7808,7 +7846,7 @@ Sexpr{res_farmers_fu[7,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[7,2]}) &
+Sexpr{fmt(res_farmers_fu[7,2])}) &
 \backslash
 
 \backslash
@@ -7826,9 +7864,9 @@ Sexpr{res_farmers_fu[7,2]}) &
 \begin_layout Plain Layout
 Anderson index &
 \backslash
-Sexpr{res_farmers_fu[8,5]} &
+Sexpr{fmt(res_farmers_fu[8,5])} &
 \backslash
-Sexpr{res_farmers_fu[8,1]}$^{
+Sexpr{fmt(res_farmers_fu[8,1])}$^{
 \backslash
 Sexpr{stars(ri$exp2_farmers$ri_p[8])}}$ &
 \backslash
@@ -7842,7 +7880,7 @@ Sexpr{res_farmers_fu[8,4]}
 \begin_layout Plain Layout
 & & (
 \backslash
-Sexpr{res_farmers_fu[8,2]}) &
+Sexpr{fmt(res_farmers_fu[8,2])}) &
 \backslash
 
 \backslash
@@ -8553,9 +8591,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Full-time employees (number)  &
 \backslash
-Sexpr{balance[2,1]} &
+Sexpr{fmt(balance[2,1])} &
 \backslash
-Sexpr{balance[2,3]}$^{
+Sexpr{fmt(balance[2,3])}$^{
 \backslash
 Sexpr{ifelse(balance[2,5]<.01,
 \begin_inset Quotes erd
@@ -8577,9 +8615,9 @@ Sexpr{balance[2,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[2,2]}) & (
+Sexpr{fmt(balance[2,2])}) & (
 \backslash
-Sexpr{balance[2,4]})
+Sexpr{fmt(balance[2,4])})
 \backslash
 
 \backslash
@@ -8593,9 +8631,9 @@ Sexpr{balance[2,4]})
 \begin_layout Plain Layout
 Number of farmers/traders supplying milk (rainy season)  &
 \backslash
-Sexpr{balance[3,1]} &
+Sexpr{fmt(balance[3,1])} &
 \backslash
-Sexpr{balance[3,3]}$^{
+Sexpr{fmt(balance[3,3])}$^{
 \backslash
 Sexpr{ifelse(balance[3,5]<.01,"**",ifelse(balance[3,5]<.05,"*",ifelse(balance[3,5]<.1,"+","")))}}$ &
 \backslash
@@ -8609,9 +8647,9 @@ Sexpr{balance[3,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[3,2]}) & (
+Sexpr{fmt(balance[3,2])}) & (
 \backslash
-Sexpr{balance[3,4]})
+Sexpr{fmt(balance[3,4])})
 \backslash
 
 \backslash
@@ -8627,9 +8665,9 @@ Capacity utilization in dry season (
 \backslash
 %) &
 \backslash
-Sexpr{balance[5,1]} &
+Sexpr{fmt(balance[5,1])} &
 \backslash
-Sexpr{balance[5,3]}$^{
+Sexpr{fmt(balance[5,3])}$^{
 \backslash
 Sexpr{ifelse(balance[5,5]<.01,"**",ifelse(balance[5,5]<.05,"*",ifelse(balance[5,5]<.1,"+","")))}}$ &
 \backslash
@@ -8643,9 +8681,9 @@ Sexpr{balance[5,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[5,2]}) & (
+Sexpr{fmt(balance[5,2])}) & (
 \backslash
-Sexpr{balance[5,4]})
+Sexpr{fmt(balance[5,4])})
 \backslash
 
 \backslash
@@ -8659,9 +8697,9 @@ Sexpr{balance[5,4]})
 \begin_layout Plain Layout
 Number of milk cans owned  &
 \backslash
-Sexpr{balance[8,1]} &
+Sexpr{fmt(balance[8,1])} &
 \backslash
-Sexpr{balance[8,3]}$^{
+Sexpr{fmt(balance[8,3])}$^{
 \backslash
 Sexpr{ifelse(balance[8,5]<.01,"**",ifelse(balance[8,5]<.05,"*",ifelse(balance[8,5]<.1,"+","")))}}$ &
 \backslash
@@ -8675,9 +8713,9 @@ Sexpr{balance[8,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[8,2]}) & (
+Sexpr{fmt(balance[8,2])}) & (
 \backslash
-Sexpr{balance[8,4]})
+Sexpr{fmt(balance[8,4])})
 \backslash
 
 \backslash
@@ -8691,9 +8729,9 @@ Sexpr{balance[8,4]})
 \begin_layout Plain Layout
 Provides credit to suppliers (1=yes) &
 \backslash
-Sexpr{balance[9,1]} &
+Sexpr{fmt(balance[9,1])} &
 \backslash
-Sexpr{balance[9,3]}$^{
+Sexpr{fmt(balance[9,3])}$^{
 \backslash
 Sexpr{ifelse(balance[9,5]<.01,"**",ifelse(balance[9,5]<.05,"*",ifelse(balance[9,5]<.1,"+","")))}}$ &
 \backslash
@@ -8707,9 +8745,9 @@ Sexpr{balance[9,8]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance[9,2]}) & (
+Sexpr{fmt(balance[9,2])}) & (
 \backslash
-Sexpr{balance[9,4]})
+Sexpr{fmt(balance[9,4])})
 \backslash
 
 \backslash
@@ -8725,7 +8763,7 @@ cline{2-4}
 \begin_layout Plain Layout
 F-statistic & &
 \backslash
-Sexpr{F_test[1,2]}
+Sexpr{fmt(F_test[1,2])}
 \backslash
 
 \backslash
@@ -8735,7 +8773,7 @@ Sexpr{F_test[1,2]}
 \begin_layout Plain Layout
 p-value & &
 \backslash
-Sexpr{F_test[2,2]}
+Sexpr{fmt(F_test[2,2])}
 \backslash
 
 \backslash
@@ -8875,9 +8913,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Household size (number of members) &
 \backslash
-Sexpr{balance_farmer[1,1]} &
+Sexpr{fmt(balance_farmer[1,1])} &
 \backslash
-Sexpr{balance_farmer[1,3]}$^{
+Sexpr{fmt(balance_farmer[1,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[1,5]<.01,"**",ifelse(balance_farmer[1,5]<.05,"*",ifelse(balance_farmer[1,5]<.1,"+","")))}}$ &
 \backslash
@@ -8891,9 +8929,9 @@ Sexpr{balance_farmer[1,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[1,2]}) & (
+Sexpr{fmt(balance_farmer[1,2])}) & (
 \backslash
-Sexpr{balance_farmer[1,4]})
+Sexpr{fmt(balance_farmer[1,4])})
 \backslash
 
 \backslash
@@ -8907,9 +8945,9 @@ Sexpr{balance_farmer[1,4]})
 \begin_layout Plain Layout
 Liters milk produced per day (rainy season) &
 \backslash
-Sexpr{balance_farmer[5,1]} &
+Sexpr{fmt(balance_farmer[5,1])} &
 \backslash
-Sexpr{balance_farmer[5,3]}$^{
+Sexpr{fmt(balance_farmer[5,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[5,5]<.01,"**",ifelse(balance_farmer[5,5]<.05,"*",ifelse(balance_farmer[5,5]<.1,"+","")))}}$ &
 \backslash
@@ -8923,9 +8961,9 @@ Sexpr{balance_farmer[5,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[5,2]}) & (
+Sexpr{fmt(balance_farmer[5,2])}) & (
 \backslash
-Sexpr{balance_farmer[5,4]})
+Sexpr{fmt(balance_farmer[5,4])})
 \backslash
 
 \backslash
@@ -8939,9 +8977,9 @@ Sexpr{balance_farmer[5,4]})
 \begin_layout Plain Layout
 Sells to MCC in rainy season (1=yes) &
 \backslash
-Sexpr{balance_farmer[7,1]} &
+Sexpr{fmt(balance_farmer[7,1])} &
 \backslash
-Sexpr{balance_farmer[7,3]}$^{
+Sexpr{fmt(balance_farmer[7,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[7,5]<.01,"**",ifelse(balance_farmer[7,5]<.05,"*",ifelse(balance_farmer[7,5]<.1,"+","")))}}$ &
 \backslash
@@ -8955,9 +8993,9 @@ Sexpr{balance_farmer[7,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[7,2]}) & (
+Sexpr{fmt(balance_farmer[7,2])}) & (
 \backslash
-Sexpr{balance_farmer[7,4]})
+Sexpr{fmt(balance_farmer[7,4])})
 \backslash
 
 \backslash
@@ -8971,9 +9009,9 @@ Sexpr{balance_farmer[7,4]})
 \begin_layout Plain Layout
 Uses steel containers for delivery (1=yes) &
 \backslash
-Sexpr{balance_farmer[8,1]} &
+Sexpr{fmt(balance_farmer[8,1])} &
 \backslash
-Sexpr{balance_farmer[8,3]}$^{
+Sexpr{fmt(balance_farmer[8,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[8,5]<.01,"**",ifelse(balance_farmer[8,5]<.05,"*",ifelse(balance_farmer[8,5]<.1,"+","")))}}$ &
 \backslash
@@ -8987,9 +9025,9 @@ Sexpr{balance_farmer[8,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[8,2]}) & (
+Sexpr{fmt(balance_farmer[8,2])}) & (
 \backslash
-Sexpr{balance_farmer[8,4]})
+Sexpr{fmt(balance_farmer[8,4])})
 \backslash
 
 \backslash
@@ -9003,9 +9041,9 @@ Sexpr{balance_farmer[8,4]})
 \begin_layout Plain Layout
 Member of dairy cooperative (1=yes) &
 \backslash
-Sexpr{balance_farmer[9,1]} &
+Sexpr{fmt(balance_farmer[9,1])} &
 \backslash
-Sexpr{balance_farmer[9,3]}$^{
+Sexpr{fmt(balance_farmer[9,3])}$^{
 \backslash
 Sexpr{ifelse(balance_farmer[9,5]<.01,"**",ifelse(balance_farmer[9,5]<.05,"*",ifelse(balance_farmer[9,5]<.1,"+","")))}}$ &
 \backslash
@@ -9019,9 +9057,9 @@ Sexpr{balance_farmer[9,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{balance_farmer[9,2]}) & (
+Sexpr{fmt(balance_farmer[9,2])}) & (
 \backslash
-Sexpr{balance_farmer[9,4]})
+Sexpr{fmt(balance_farmer[9,4])})
 \backslash
 
 \backslash
@@ -9041,7 +9079,7 @@ cline{2-4}
 \begin_layout Plain Layout
 F-statistic & &
 \backslash
-Sexpr{F_test[1,6]}
+Sexpr{fmt(F_test[1,6])}
 \backslash
 
 \backslash
@@ -9051,7 +9089,7 @@ Sexpr{F_test[1,6]}
 \begin_layout Plain Layout
 p-value & &
 \backslash
-Sexpr{F_test[2,6]}
+Sexpr{fmt(F_test[2,6])}
 \backslash
 
 \backslash
@@ -9198,9 +9236,9 @@ Butter fat (
 \backslash
 %) &
 \backslash
-Sexpr{res_samples[1,1]} &
+Sexpr{fmt(res_samples[1,1])} &
 \backslash
-Sexpr{res_samples[1,6]}$^{
+Sexpr{fmt(res_samples[1,6])}$^{
 \backslash
 Sexpr{ifelse(res_samples[1,8]<.01,"**",ifelse(res_samples[1,8]<.05,"*",ifelse(res_samples[1,8]<.1,"+","")))}}$ &
 \backslash
@@ -9214,9 +9252,9 @@ Sexpr{res_samples[1,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[1,2]}) & (
+Sexpr{fmt(res_samples[1,2])}) & (
 \backslash
-Sexpr{res_samples[1,7]})
+Sexpr{fmt(res_samples[1,7])})
 \backslash
 
 \backslash
@@ -9232,9 +9270,9 @@ SNF  (
 \backslash
 %) &
 \backslash
-Sexpr{res_samples[2,1]} &
+Sexpr{fmt(res_samples[2,1])} &
 \backslash
-Sexpr{res_samples[2,6]}$^{
+Sexpr{fmt(res_samples[2,6])}$^{
 \backslash
 Sexpr{ifelse(res_samples[2,8]<.01,"**",ifelse(res_samples[2,8]<.05,"*",ifelse(res_samples[2,8]<.1,"+","")))}}$  &
 \backslash
@@ -9248,9 +9286,9 @@ Sexpr{res_samples[2,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[2,2]}) & (
+Sexpr{fmt(res_samples[2,2])}) & (
 \backslash
-Sexpr{res_samples[2,7]})
+Sexpr{fmt(res_samples[2,7])})
 \backslash
 
 \backslash
@@ -9266,9 +9304,9 @@ Added Water  (
 \backslash
 %)  &
 \backslash
-Sexpr{res_samples[3,1]} &
+Sexpr{fmt(res_samples[3,1])} &
 \backslash
-Sexpr{res_samples[3,6]}$^{
+Sexpr{fmt(res_samples[3,6])}$^{
 \backslash
 Sexpr{ifelse(res_samples[3,8]<.01,"**",ifelse(res_samples[3,8]<.05,"*",ifelse(res_samples[3,8]<.1,"+","")))}}$  &
 \backslash
@@ -9282,9 +9320,9 @@ Sexpr{res_samples[3,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[3,2]}) & (
+Sexpr{fmt(res_samples[3,2])}) & (
 \backslash
-Sexpr{res_samples[3,7]})
+Sexpr{fmt(res_samples[3,7])})
 \backslash
 
 \backslash
@@ -9300,9 +9338,9 @@ Protein  (
 \backslash
 %)  &
 \backslash
-Sexpr{res_samples[4,1]} &
+Sexpr{fmt(res_samples[4,1])} &
 \backslash
-Sexpr{res_samples[4,6]}$^{
+Sexpr{fmt(res_samples[4,6])}$^{
 \backslash
 Sexpr{ifelse(res_samples[4,8]<.01,"**",ifelse(res_samples[4,8]<.05,"*",ifelse(res_samples[4,8]<.1,"+","")))}}$  &
 \backslash
@@ -9316,9 +9354,9 @@ Sexpr{res_samples[4,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[4,2]}) & (
+Sexpr{fmt(res_samples[4,2])}) & (
 \backslash
-Sexpr{res_samples[4,7]})
+Sexpr{fmt(res_samples[4,7])})
 \backslash
 
 \backslash
@@ -9332,9 +9370,9 @@ Sexpr{res_samples[4,7]})
 \begin_layout Plain Layout
 Density (CLR) &
 \backslash
-Sexpr{res_samples[5,1]} &
+Sexpr{fmt(res_samples[5,1])} &
 \backslash
-Sexpr{res_samples[5,6]}$^{
+Sexpr{fmt(res_samples[5,6])}$^{
 \backslash
 Sexpr{ifelse(res_samples[5,8]<.01,"**",ifelse(res_samples[5,8]<.05,"*",ifelse(res_samples[5,8]<.1,"+","")))}}$  &
 \backslash
@@ -9348,9 +9386,9 @@ Sexpr{res_samples[5,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[5,2]}) & (
+Sexpr{fmt(res_samples[5,2])}) & (
 \backslash
-Sexpr{res_samples[5,7]})
+Sexpr{fmt(res_samples[5,7])})
 \backslash
 
 \backslash
@@ -9368,9 +9406,9 @@ Sexpr{res_samples[5,7]})
 \begin_layout Plain Layout
 Index &
 \backslash
-Sexpr{res_samples[6,1]} &
+Sexpr{fmt(res_samples[6,1])} &
 \backslash
-Sexpr{res_samples[6,6]}$^{
+Sexpr{fmt(res_samples[6,6])}$^{
 \backslash
 Sexpr{ifelse(res_samples[6,8]<.01,"**",ifelse(res_samples[6,8]<.05,"*",ifelse(res_samples[6,8]<.1,"+","")))}}$  &
 \backslash
@@ -9384,9 +9422,9 @@ Sexpr{res_samples[6,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_samples[6,2]}) & (
+Sexpr{fmt(res_samples[6,2])}) & (
 \backslash
-Sexpr{res_samples[6,7]})
+Sexpr{fmt(res_samples[6,7])})
 \backslash
 
 \backslash
@@ -9537,9 +9575,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Improved Practices Index &
 \backslash
-Sexpr{res_farmers_TOT[1,1]} &
+Sexpr{fmt(res_farmers_TOT[1,1])} &
 \backslash
-Sexpr{res_farmers_TOT[1,3]}$^{
+Sexpr{fmt(res_farmers_TOT[1,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[1,5]<.01,"**",ifelse(res_farmers_TOT[1,5]<.05,"*",ifelse(res_farmers_TOT[1,5]<.1,"+","")))}}$ &
 \backslash
@@ -9553,9 +9591,9 @@ Sexpr{res_farmers_TOT[1,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_TOT[1,2]}) & (
+Sexpr{fmt(res_farmers_TOT[1,2])}) & (
 \backslash
-Sexpr{res_farmers_TOT[1,4]})
+Sexpr{fmt(res_farmers_TOT[1,4])})
 \backslash
 
 \backslash
@@ -9569,9 +9607,9 @@ Sexpr{res_farmers_TOT[1,4]})
 \begin_layout Plain Layout
 Buyer Checks with MA &
 \backslash
-Sexpr{res_farmers_TOT[2,1]} &
+Sexpr{fmt(res_farmers_TOT[2,1])} &
 \backslash
-Sexpr{res_farmers_TOT[2,3]}$^{
+Sexpr{fmt(res_farmers_TOT[2,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[2,5]<.01,"**",ifelse(res_farmers_TOT[2,5]<.05,"*",ifelse(res_farmers_TOT[2,5]<.1,"+","")))}}$ &
 \backslash
@@ -9585,9 +9623,9 @@ Sexpr{res_farmers_TOT[2,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_TOT[2,2]}) & (
+Sexpr{fmt(res_farmers_TOT[2,2])}) & (
 \backslash
-Sexpr{res_farmers_TOT[2,4]})
+Sexpr{fmt(res_farmers_TOT[2,4])})
 \backslash
 
 \backslash
@@ -9601,9 +9639,9 @@ Sexpr{res_farmers_TOT[2,4]})
 \begin_layout Plain Layout
 Average Sales Price &
 \backslash
-Sexpr{res_farmers_TOT[3,1]} &
+Sexpr{fmt(res_farmers_TOT[3,1])} &
 \backslash
-Sexpr{res_farmers_TOT[3,3]}$^{
+Sexpr{fmt(res_farmers_TOT[3,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[3,5]<.01,"**",ifelse(res_farmers_TOT[3,5]<.05,"*",ifelse(res_farmers_TOT[3,5]<.1,"+","")))}}$ &
 \backslash
@@ -9617,9 +9655,9 @@ Sexpr{res_farmers_TOT[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_TOT[3,2]}) & (
+Sexpr{fmt(res_farmers_TOT[3,2])}) & (
 \backslash
-Sexpr{res_farmers_TOT[3,4]})
+Sexpr{fmt(res_farmers_TOT[3,4])})
 \backslash
 
 \backslash
@@ -9633,9 +9671,9 @@ Sexpr{res_farmers_TOT[3,4]})
 \begin_layout Plain Layout
 Gets Quality Bonus &
 \backslash
-Sexpr{res_farmers_TOT[4,1]} &
+Sexpr{fmt(res_farmers_TOT[4,1])} &
 \backslash
-Sexpr{res_farmers_TOT[4,3]}$^{
+Sexpr{fmt(res_farmers_TOT[4,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[4,5]<.01,"**",ifelse(res_farmers_TOT[4,5]<.05,"*",ifelse(res_farmers_TOT[4,5]<.1,"+","")))}}$ &
 \backslash
@@ -9649,9 +9687,9 @@ Sexpr{res_farmers_TOT[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_TOT[4,2]}) & (
+Sexpr{fmt(res_farmers_TOT[4,2])}) & (
 \backslash
-Sexpr{res_farmers_TOT[4,4]})
+Sexpr{fmt(res_farmers_TOT[4,4])})
 \backslash
 
 \backslash
@@ -9669,9 +9707,9 @@ Sexpr{res_farmers_TOT[4,4]})
 \begin_layout Plain Layout
 Index &
 \backslash
-Sexpr{res_farmers_TOT[5,1]} &
+Sexpr{fmt(res_farmers_TOT[5,1])} &
 \backslash
-Sexpr{res_farmers_TOT[5,3]}$^{
+Sexpr{fmt(res_farmers_TOT[5,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_TOT[5,5]<.01,"**",ifelse(res_farmers_TOT[5,5]<.05,"*",ifelse(res_farmers_TOT[5,5]<.1,"+","")))}}$ &
 \backslash
@@ -9685,9 +9723,9 @@ Sexpr{res_farmers_TOT[5,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_TOT[5,2]}) & (
+Sexpr{fmt(res_farmers_TOT[5,2])}) & (
 \backslash
-Sexpr{res_farmers_TOT[5,4]})
+Sexpr{fmt(res_farmers_TOT[5,4])})
 \backslash
 
 \backslash
@@ -9824,9 +9862,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Tests Incoming (MA) &
 \backslash
-Sexpr{res_MCCs[1,1]} &
+Sexpr{fmt(res_MCCs[1,1])} &
 \backslash
-Sexpr{res_MCCs[1,6]}$^{
+Sexpr{fmt(res_MCCs[1,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[1,8]<.01,"**",ifelse(res_MCCs[1,8]<.05,"*",ifelse(res_MCCs[1,8]<.1,"+","")))}}$ &
 \backslash
@@ -9840,9 +9878,9 @@ Sexpr{res_MCCs[1,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[1,2]}) & (
+Sexpr{fmt(res_MCCs[1,2])}) & (
 \backslash
-Sexpr{res_MCCs[1,7]})
+Sexpr{fmt(res_MCCs[1,7])})
 \backslash
 
 \backslash
@@ -9856,9 +9894,9 @@ Sexpr{res_MCCs[1,7]})
 \begin_layout Plain Layout
 Tests Outgoing (MA) &
 \backslash
-Sexpr{res_MCCs[2,1]} &
+Sexpr{fmt(res_MCCs[2,1])} &
 \backslash
-Sexpr{res_MCCs[2,6]}$^{
+Sexpr{fmt(res_MCCs[2,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[2,8]<.01,"**",ifelse(res_MCCs[2,8]<.05,"*",ifelse(res_MCCs[2,8]<.1,"+","")))}}$ &
 \backslash
@@ -9872,9 +9910,9 @@ Sexpr{res_MCCs[2,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[2,2]}) & (
+Sexpr{fmt(res_MCCs[2,2])}) & (
 \backslash
-Sexpr{res_MCCs[2,7]})
+Sexpr{fmt(res_MCCs[2,7])})
 \backslash
 
 \backslash
@@ -9888,9 +9926,9 @@ Sexpr{res_MCCs[2,7]})
 \begin_layout Plain Layout
 Price Bought &
 \backslash
-Sexpr{res_MCCs[3,1]} &
+Sexpr{fmt(res_MCCs[3,1])} &
 \backslash
-Sexpr{res_MCCs[3,6]}$^{
+Sexpr{fmt(res_MCCs[3,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[3,8]<.01,"**",ifelse(res_MCCs[3,8]<.05,"*",ifelse(res_MCCs[3,8]<.1,"+","")))}}$ &
 \backslash
@@ -9904,9 +9942,9 @@ Sexpr{res_MCCs[3,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[3,2]}) & (
+Sexpr{fmt(res_MCCs[3,2])}) & (
 \backslash
-Sexpr{res_MCCs[3,7]})
+Sexpr{fmt(res_MCCs[3,7])})
 \backslash
 
 \backslash
@@ -9920,9 +9958,9 @@ Sexpr{res_MCCs[3,7]})
 \begin_layout Plain Layout
 Avg Sales Price &
 \backslash
-Sexpr{res_MCCs[4,1]} &
+Sexpr{fmt(res_MCCs[4,1])} &
 \backslash
-Sexpr{res_MCCs[4,6]}$^{
+Sexpr{fmt(res_MCCs[4,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[4,8]<.01,"**",ifelse(res_MCCs[4,8]<.05,"*",ifelse(res_MCCs[4,8]<.1,"+","")))}}$ &
 \backslash
@@ -9936,9 +9974,9 @@ Sexpr{res_MCCs[4,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[4,2]}) & (
+Sexpr{fmt(res_MCCs[4,2])}) & (
 \backslash
-Sexpr{res_MCCs[4,7]})
+Sexpr{fmt(res_MCCs[4,7])})
 \backslash
 
 \backslash
@@ -9952,9 +9990,9 @@ Sexpr{res_MCCs[4,7]})
 \begin_layout Plain Layout
 Gives Quality Bonus &
 \backslash
-Sexpr{res_MCCs[5,1]} &
+Sexpr{fmt(res_MCCs[5,1])} &
 \backslash
-Sexpr{res_MCCs[5,6]}$^{
+Sexpr{fmt(res_MCCs[5,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[5,8]<.01,"**",ifelse(res_MCCs[5,8]<.05,"*",ifelse(res_MCCs[5,8]<.1,"+","")))}}$ &
 \backslash
@@ -9968,9 +10006,9 @@ Sexpr{res_MCCs[5,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[5,2]}) & (
+Sexpr{fmt(res_MCCs[5,2])}) & (
 \backslash
-Sexpr{res_MCCs[5,7]})
+Sexpr{fmt(res_MCCs[5,7])})
 \backslash
 
 \backslash
@@ -9984,9 +10022,9 @@ Sexpr{res_MCCs[5,7]})
 \begin_layout Plain Layout
 Gets Quality Bonus &
 \backslash
-Sexpr{res_MCCs[6,1]} &
+Sexpr{fmt(res_MCCs[6,1])} &
 \backslash
-Sexpr{res_MCCs[6,6]}$^{
+Sexpr{fmt(res_MCCs[6,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[6,8]<.01,"**",ifelse(res_MCCs[6,8]<.05,"*",ifelse(res_MCCs[6,8]<.1,"+","")))}}$ &
 \backslash
@@ -10000,9 +10038,9 @@ Sexpr{res_MCCs[6,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[6,2]}) & (
+Sexpr{fmt(res_MCCs[6,2])}) & (
 \backslash
-Sexpr{res_MCCs[6,7]})
+Sexpr{fmt(res_MCCs[6,7])})
 \backslash
 
 \backslash
@@ -10020,9 +10058,9 @@ Sexpr{res_MCCs[6,7]})
 \begin_layout Plain Layout
 Index &
 \backslash
-Sexpr{res_MCCs[7,1]} &
+Sexpr{fmt(res_MCCs[7,1])} &
 \backslash
-Sexpr{res_MCCs[7,6]}$^{
+Sexpr{fmt(res_MCCs[7,6])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs[7,8]<.01,"**",ifelse(res_MCCs[7,8]<.05,"*",ifelse(res_MCCs[7,8]<.1,"+","")))}}$ &
 \backslash
@@ -10036,9 +10074,9 @@ Sexpr{res_MCCs[7,10]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs[7,2]}) & (
+Sexpr{fmt(res_MCCs[7,2])}) & (
 \backslash
-Sexpr{res_MCCs[7,7]})
+Sexpr{fmt(res_MCCs[7,7])})
 \backslash
 
 \backslash
@@ -10175,9 +10213,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Remembers video &
 \backslash
-Sexpr{res_farmers_sec_uptake[1,1]} &
+Sexpr{fmt(res_farmers_sec_uptake[1,1])} &
 \backslash
-Sexpr{res_farmers_sec_uptake[1,3]}$^{
+Sexpr{fmt(res_farmers_sec_uptake[1,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_sec_uptake[1,5]<.01,"**",ifelse(res_farmers_sec_uptake[1,5]<.05,"*",ifelse(res_farmers_sec_uptake[1,5]<.1,"+","")))}}$ &
 \backslash
@@ -10191,9 +10229,9 @@ Sexpr{res_farmers_sec_uptake[1,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_sec_uptake[1,2]}) & (
+Sexpr{fmt(res_farmers_sec_uptake[1,2])}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[1,4]})
+Sexpr{fmt(res_farmers_sec_uptake[1,4])})
 \backslash
 
 \backslash
@@ -10223,9 +10261,9 @@ Sexpr{res_farmers_sec_uptake[1,4]})
 \begin_layout Plain Layout
 Remembers receiving seed &
 \backslash
-Sexpr{res_farmers_sec_uptake[2,1]} &
+Sexpr{fmt(res_farmers_sec_uptake[2,1])} &
 \backslash
-Sexpr{res_farmers_sec_uptake[2,3]}$^{
+Sexpr{fmt(res_farmers_sec_uptake[2,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_sec_uptake[2,5]<.01,"**",ifelse(res_farmers_sec_uptake[2,5]<.05,"*",ifelse(res_farmers_sec_uptake[2,5]<.1,"+","")))}}$ &
 \backslash
@@ -10239,9 +10277,9 @@ Sexpr{res_farmers_sec_uptake[2,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_sec_uptake[2,2]}) & (
+Sexpr{fmt(res_farmers_sec_uptake[2,2])}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[2,4]})
+Sexpr{fmt(res_farmers_sec_uptake[2,4])})
 \backslash
 
 \backslash
@@ -10255,9 +10293,9 @@ Sexpr{res_farmers_sec_uptake[2,4]})
 \begin_layout Plain Layout
 Used seed &
 \backslash
-Sexpr{res_farmers_sec_uptake[3,1]} &
+Sexpr{fmt(res_farmers_sec_uptake[3,1])} &
 \backslash
-Sexpr{res_farmers_sec_uptake[3,3]}$^{
+Sexpr{fmt(res_farmers_sec_uptake[3,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_sec_uptake[3,5]<.01,"**",ifelse(res_farmers_sec_uptake[3,5]<.05,"*",ifelse(res_farmers_sec_uptake[3,5]<.1,"+","")))}}$ &
 \backslash
@@ -10271,9 +10309,9 @@ Sexpr{res_farmers_sec_uptake[3,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_sec_uptake[3,2]}) & (
+Sexpr{fmt(res_farmers_sec_uptake[3,2])}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[3,4]})
+Sexpr{fmt(res_farmers_sec_uptake[3,4])})
 \backslash
 
 \backslash
@@ -10287,9 +10325,9 @@ Sexpr{res_farmers_sec_uptake[3,4]})
 \begin_layout Plain Layout
 Knows compositional quality matters &
 \backslash
-Sexpr{res_farmers_sec_uptake[4,1]} &
+Sexpr{fmt(res_farmers_sec_uptake[4,1])} &
 \backslash
-Sexpr{res_farmers_sec_uptake[4,3]}$^{
+Sexpr{fmt(res_farmers_sec_uptake[4,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_sec_uptake[4,5]<.01,"**",ifelse(res_farmers_sec_uptake[4,5]<.05,"*",ifelse(res_farmers_sec_uptake[4,5]<.1,"+","")))}}$ &
 \backslash
@@ -10303,9 +10341,9 @@ Sexpr{res_farmers_sec_uptake[4,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_sec_uptake[4,2]}) & (
+Sexpr{fmt(res_farmers_sec_uptake[4,2])}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[4,4]})
+Sexpr{fmt(res_farmers_sec_uptake[4,4])})
 \backslash
 
 \backslash
@@ -10323,9 +10361,9 @@ Sexpr{res_farmers_sec_uptake[4,4]})
 \begin_layout Plain Layout
 Index of uptake &
 \backslash
-Sexpr{res_farmers_sec_uptake[5,1]} &
+Sexpr{fmt(res_farmers_sec_uptake[5,1])} &
 \backslash
-Sexpr{res_farmers_sec_uptake[5,3]}$^{
+Sexpr{fmt(res_farmers_sec_uptake[5,3])}$^{
 \backslash
 Sexpr{ifelse(res_farmers_sec_uptake[5,5]<.01,"**",ifelse(res_farmers_sec_uptake[5,5]<.05,"*",ifelse(res_farmers_sec_uptake[5,5]<.1,"+","")))}}$ &
 \backslash
@@ -10339,9 +10377,9 @@ Sexpr{res_farmers_sec_uptake[5,9]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_farmers_sec_uptake[5,2]}) & (
+Sexpr{fmt(res_farmers_sec_uptake[5,2])}) & (
 \backslash
-Sexpr{res_farmers_sec_uptake[5,4]})
+Sexpr{fmt(res_farmers_sec_uptake[5,4])})
 \backslash
 
 \backslash
@@ -10482,9 +10520,9 @@ cline{2-4}
 \begin_layout Plain Layout
 Poster is visible (1=yes) & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[1,1]} & 
+Sexpr{fmt(res_MCCs_sec_uptake[1,1])} & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[1,3]}$^{
+Sexpr{fmt(res_MCCs_sec_uptake[1,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs_sec_uptake[1,5]<.01,"**",ifelse(res_MCCs_sec_uptake[1,5]<.05,"*",ifelse(res_MCCs_sec_uptake[1,5]<.1,"+","")))}}$ & 
 \backslash
@@ -10498,9 +10536,9 @@ Sexpr{res_MCCs_sec_uptake[1,7]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[1,2]}) & (
+Sexpr{fmt(res_MCCs_sec_uptake[1,2])}) & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[1,4]}) 
+Sexpr{fmt(res_MCCs_sec_uptake[1,4])}) 
 \backslash
 
 \backslash
@@ -10514,9 +10552,9 @@ Sexpr{res_MCCs_sec_uptake[1,4]})
 \begin_layout Plain Layout
 Milk Analyzer present (1=yes) & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[2,1]} & 
+Sexpr{fmt(res_MCCs_sec_uptake[2,1])} & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[2,3]}$^{
+Sexpr{fmt(res_MCCs_sec_uptake[2,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs_sec_uptake[2,5]<.01,"**",ifelse(res_MCCs_sec_uptake[2,5]<.05,"*",ifelse(res_MCCs_sec_uptake[2,5]<.1,"+","")))}}$  & 
 \backslash
@@ -10530,9 +10568,9 @@ Sexpr{res_MCCs_sec_uptake[2,7]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[2,2]}) & (
+Sexpr{fmt(res_MCCs_sec_uptake[2,2])}) & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[2,4]}) 
+Sexpr{fmt(res_MCCs_sec_uptake[2,4])}) 
 \backslash
 
 \backslash
@@ -10546,9 +10584,9 @@ Sexpr{res_MCCs_sec_uptake[2,4]})
 \begin_layout Plain Layout
 Project Milk Analyzer is present (1=yes)  & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[3,1]} & 
+Sexpr{fmt(res_MCCs_sec_uptake[3,1])} & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[3,3]}$^{
+Sexpr{fmt(res_MCCs_sec_uptake[3,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs_sec_uptake[3,5]<.01,"**",ifelse(res_MCCs_sec_uptake[3,5]<.05,"*",ifelse(res_MCCs_sec_uptake[3,5]<.1,"+","")))}}$  & 
 \backslash
@@ -10562,9 +10600,9 @@ Sexpr{res_MCCs_sec_uptake[3,7]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[3,2]}) & (
+Sexpr{fmt(res_MCCs_sec_uptake[3,2])}) & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[3,4]}) 
+Sexpr{fmt(res_MCCs_sec_uptake[3,4])}) 
 \backslash
 
 \backslash
@@ -10578,9 +10616,9 @@ Sexpr{res_MCCs_sec_uptake[3,4]})
 \begin_layout Plain Layout
 Milk analyzer operational (1=yes) & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[4,1]} & 
+Sexpr{fmt(res_MCCs_sec_uptake[4,1])} & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[4,3]}$^{
+Sexpr{fmt(res_MCCs_sec_uptake[4,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs_sec_uptake[4,5]<.01,"**",ifelse(res_MCCs_sec_uptake[4,5]<.05,"*",ifelse(res_MCCs_sec_uptake[4,5]<.1,"+","")))}}$  & 
 \backslash
@@ -10594,9 +10632,9 @@ Sexpr{res_MCCs_sec_uptake[4,7]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[4,2]}) & (
+Sexpr{fmt(res_MCCs_sec_uptake[4,2])}) & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[4,4]}) 
+Sexpr{fmt(res_MCCs_sec_uptake[4,4])}) 
 \backslash
 
 \backslash
@@ -10610,9 +10648,9 @@ Sexpr{res_MCCs_sec_uptake[4,4]})
 \begin_layout Plain Layout
 MCC uses digital record-keeping (1=yes) & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[5,1]} & 
+Sexpr{fmt(res_MCCs_sec_uptake[5,1])} & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[5,3]}$^{
+Sexpr{fmt(res_MCCs_sec_uptake[5,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs_sec_uptake[5,5]<.01,"**",ifelse(res_MCCs_sec_uptake[5,5]<.05,"*",ifelse(res_MCCs_sec_uptake[5,5]<.1,"+","")))}}$  & 
 \backslash
@@ -10626,9 +10664,9 @@ Sexpr{res_MCCs_sec_uptake[5,7]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[5,2]}) & (
+Sexpr{fmt(res_MCCs_sec_uptake[5,2])}) & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[5,4]}) 
+Sexpr{fmt(res_MCCs_sec_uptake[5,4])}) 
 \backslash
 
 \backslash
@@ -10654,9 +10692,9 @@ Sexpr{res_MCCs_sec_uptake[5,4]})
 \begin_layout Plain Layout
 Index of uptake & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[6,1]} & 
+Sexpr{fmt(res_MCCs_sec_uptake[6,1])} & 
 \backslash
-Sexpr{res_MCCs_sec_uptake[6,3]}$^{
+Sexpr{fmt(res_MCCs_sec_uptake[6,3])}$^{
 \backslash
 Sexpr{ifelse(res_MCCs_sec_uptake[6,5]<.01,"**",ifelse(res_MCCs_sec_uptake[6,5]<.05,"*",ifelse(res_MCCs_sec_uptake[6,5]<.1,"+","")))}}$  & 
 \backslash
@@ -10670,9 +10708,9 @@ Sexpr{res_MCCs_sec_uptake[6,7]}
 \begin_layout Plain Layout
 & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[6,2]}) & (
+Sexpr{fmt(res_MCCs_sec_uptake[6,2])}) & (
 \backslash
-Sexpr{res_MCCs_sec_uptake[6,4]}) 
+Sexpr{fmt(res_MCCs_sec_uptake[6,4])}) 
 \backslash
 
 \backslash
