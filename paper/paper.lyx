@@ -6571,19 +6571,6 @@ name "sec:results-exp2"
 
 \end_layout
 
-\begin_layout Standard
-The follow-up experiment generates a daily panel of milk submissions over 30 days (November 3 to December 1),
- providing a granular view of how traders adjust sourcing behavior when quality-contingent bonuses are introduced.
- Unlike the main experiment,
- where treatment effects accumulate over months and are measured in a single endline survey,
- the follow-up experiment functions as a lab-in-the-field:
- traders face a repeated daily decision (where to source milk and from whom) under incentives that evolve at a known date.
- We present results in three parts:
- the daily submission outcomes that constitute the primary findings,
- trader endline survey outcomes,
- and farmer-level outcomes that capture downstream pass-through.
-\end_layout
-
 \begin_layout Subsubsection
 Daily Submission Outcomes
 \end_layout
