@@ -7233,14 +7233,6 @@ Sexpr{res_traders[2,4]}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
@@ -7430,11 +7422,6 @@ end{tabular}
 
 \backslash
 end{table}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
