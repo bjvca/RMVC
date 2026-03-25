@@ -6287,8 +6287,7 @@ name "subsec:exp2-intervention"
 Treated traders receive a quality premium of UGX 100 per liter for each 0.1 percentage point of fat and of UGX 100 per liter for each 0.1 percentage point of SNF content above the East African Community standards (which are 3.3 percent fat and 8.5 percent SNF).
  The digital infrastructure from the main experiment is essential to this intervention:
  it provides the verifiable,
- timestamped quality records on which bonus calculations are based,
- and eliminates the need for any additional measurement or monitoring technology.
+ timestamped quality records on which bonus calculations are based.
 \end_layout
 
 \begin_layout Standard
@@ -6315,14 +6314,16 @@ Bonuses are paid daily via mobile money,
 
 \begin_layout Standard
 The experiment proceeds in two stages.
- In Stage 1 (November 1 through 14),
+ In Stage 1 (which ran fro November 1,
+ 2025 through November 14,
+ 2025),
  the quality thresholds are set at the East African Community standards:
  3.3 percent fat and 8.5 percent SNF.
  During the rainy season,
  most milk naturally exceeds these thresholds,
  so nearly all treated traders qualify for the bonus.
  In terms of the model,
- Stage 1 represents a regime where
+ Stage 1 represents a regime where 
 \begin_inset Formula $q_{min}$
 \end_inset
 
