@@ -6408,6 +6408,9 @@ Stage 1 of the experiment began on November 1,
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
 \begin_layout Subsection
 Outcome Variables
 \begin_inset CommandInset label
@@ -6425,7 +6428,7 @@ We measure outcomes at three levels,
 \end_layout
 
 \begin_layout Standard
-The first source is the daily submission data recorded by the Lactoscan at each MCC,
+The first source is the daily submission data recorded by the milk analyzer at each MCC,
  which yields the trader-day panel described above.
  For each delivery day we observe quantity-weighted average fat content (percent),
  quantity-weighted average solids-not-fat (SNF,
@@ -6447,7 +6450,7 @@ The second source is the trader endline survey.
 \end_layout
 
 \begin_layout Standard
-The third source is the farmer follow-up endline survey.
+The third source is the farmer endline survey.
  Outcomes include the volume-weighted price received from the trader (UGX per liter,
  constructed from up to six recent transactions),
  whether quality was checked in any recent transaction,
@@ -6455,8 +6458,8 @@ The third source is the farmer follow-up endline survey.
  use of bran,
  use of crop residues,
  use of mineral licks,
- and use of controlled grazing.
- We combine the four feeding indicators into an Anderson index to summarize investments in milk quality at the farm level.
+ and use of controlled grazing,
+ which are combined into an Anderson index to summarize investments in milk quality at the farm level.
 \end_layout
 
 \begin_layout Subsection
@@ -6487,32 +6490,33 @@ y_{jt}=\alpha+\beta\,\text{Treatment}_{j}+\mu_{m}+\varepsilon_{jt}\label{eq:exp2
 \end_layout
 
 \begin_layout Standard
-where
+where 
 \begin_inset Formula $y_{jt}$
 \end_inset
 
- is the outcome for trader
+ is the outcome for trader 
 \begin_inset Formula $j$
 \end_inset
 
- on day
+ on day 
 \begin_inset Formula $t$
 \end_inset
 
 ,
+ 
 \begin_inset Formula $\text{Treatment}_{j}$
 \end_inset
 
- is an indicator equal to one if trader
+ is an indicator equal to one if trader 
 \begin_inset Formula $j$
 \end_inset
 
  was assigned to receive quality bonuses,
- and
+ and 
 \begin_inset Formula $\mu_{m}$
 \end_inset
 
- is a fixed effect for the MCC at which trader
+ is a fixed effect for the MCC at which trader 
 \begin_inset Formula $j$
 \end_inset
 
@@ -6531,13 +6535,14 @@ where
 For the trader endline,
  we estimate an analogous specification with MCC fixed effects but without clustering,
  since traders are themselves the unit of randomization.
- For the farmer follow-up endline,
+ For the farmer endline,
  the specification again includes MCC fixed effects,
  with standard errors clustered at the trader level to account for the nesting of farmers within trader catchments.
 \end_layout
 
 \begin_layout Standard
-Our primary inferential framework is Fisher randomization inference (RI),
+As was the case in the main experiment,
+ our primary inferential framework is Fisher randomization inference (RI),
  computed from 5,000 permutations of the treatment indicator within MCC blocks.
  To match the fixed-effects specification,
  outcomes are demeaned at the MCC level before computing the RI distribution.
@@ -6551,7 +6556,7 @@ Attrition is minimal.
  The daily submission data are administrative records from the digital monitoring system and do not suffer from survey nonresponse.
  For the endline surveys,
  99 of the 100 targeted traders were interviewed,
- and 422 of the approximately 500 targeted farmers completed the follow-up questionnaire (197 in treated trader catchments and 225 in control).
+ and 422 of the approximately 500 targeted farmers completed the questionnaire (197 in treated trader catchments and 225 in control).
  The shortfall in the farmer sample reflects the difficulty of locating smallholder farmers who sell through mobile traders rather than differential attrition by treatment status.
 \end_layout
 
