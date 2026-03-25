@@ -7140,21 +7140,7 @@ Trader Endline Survey
 
 \begin_layout Standard
 Despite the strong effects in the daily submission data,
- the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the five outcomes:
- supervised fat content (RI p =
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-Sexpr{sprintf("%.3f",
- ri$exp2_traders$ri_p[1])}
-\end_layout
-
-\end_inset
-
-),
+ the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the four outcomes:
  delivered quantity (RI p =
 \begin_inset ERT
 status open
@@ -7211,7 +7197,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ).
- None of the five outcomes approaches conventional significance levels (Table
+ None of the four outcomes approaches conventional significance levels (Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:trader-endline-exp2"
