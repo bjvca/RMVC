@@ -7178,7 +7178,7 @@ Trader Endline Survey
 
 \begin_layout Standard
 Despite the strong effects in the daily submission data,
- the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the four outcomes:
+ the trader endline survey conducted during the final days of the experiment shows no significant treatment effects across any of the four outcomes:
  total liters delivered to the MCC on the day preceding the interview (RI p = 
 \begin_inset ERT
 status open
@@ -7221,7 +7221,8 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- and the volume-weighted average price per liter paid to supplying farmers across the last six transactions (RI p = 
+ and the volume-weighted average price per liter paid to farmers,
+ constructed from up to six individual farmer-level purchase records (RI p = 
 \begin_inset ERT
 status open
 
@@ -7251,12 +7252,8 @@ tuple "list"
 \end_layout
 
 \begin_layout Standard
-Three factors likely explain the divergence between the daily and survey results.
+Two factors likely explain the divergence between the daily and survey results.
  First,
- the endline was conducted after the bonus period ended,
- so traders were no longer operating under the treatment incentive at the time of the survey.
- The null results are therefore consistent with a model in which behavioral responses to the bonus are contemporaneous rather than habit-forming.
- Second,
  the trader sample is small (
 \begin_inset ERT
 status open
@@ -7271,11 +7268,13 @@ Sexpr{res_traders[1,4]}
 
  traders),
  limiting statistical power for survey-based detection.
- Third,
- the daily submission data aggregate behavior over 30 days of repeated decisions,
+ Second,
+ the daily submission data aggregate behavior over 31 days of repeated decisions,
  whereas the endline captures a single cross-sectional snapshot.
- Cumulative treatment effects visible in panel data can fall below detection thresholds in a one-time survey,
- particularly when the treatment has ended.
+ Cumulative treatment effects visible in panel data can fall below detection thresholds in a one-time survey.
+ Notably,
+ the endline was conducted during the final days of the experiment while the bonus system was still operational,
+ so the null survey results cannot be attributed to the treatment having ended.
 \end_layout
 
 \begin_layout Standard
@@ -7944,14 +7943,14 @@ The follow-up experiment confirms that activating the price channel through qual
  traders respond on volume;
  when the threshold binds,
  they shift to quality-based sourcing.
- The daily panel reveals that these adjustments occur within days,
- consistent with the low adjustment costs inherent in trader sourcing decisions.
+ The daily panel reveals that volume adjustments occur within days while quality adjustments emerge more gradually over about a week,
+ consistent with the different cost structures of these two margins.
  At the same time,
  the surplus from quality bonuses does not pass through to farmers,
- and the effects do not persist into the post-treatment survey.
+ and the endline survey outcomes are null despite being collected while the bonus system was still active.
  Taken together,
- these findings indicate that while the price channel can activate quality-improving behavior at the trader level,
- sustaining and transmitting these effects through the supply chain requires incentive structures that operate continuously rather than temporarily.
+ these findings indicate that while the price channel can activate quality-improving behavior that is detectable in high-frequency administrative data,
+ these effects do not manifest in cross-sectional survey measures even during the treatment period.
 \end_layout
 
 \begin_layout Subsection
