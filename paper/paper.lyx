@@ -370,11 +370,11 @@ res_farmers_fu <- readRDS(paste0(path,
 
 \begin_layout Plain Layout
 stars <- function(p) ifelse(p < 0.01,
- "***",
- ifelse(p < 0.05,
  "**",
- ifelse(p < 0.1,
+ ifelse(p < 0.05,
  "*",
+ ifelse(p < 0.1,
+ "+",
  "")))
 \end_layout
 
@@ -7518,8 +7518,7 @@ scriptsize
 \begin_layout Plain Layout
 Notes:
  OLS estimates with CR2 cluster-robust standard errors in parentheses.
- Significance stars based on randomization inference p-values:
- Significance levels:
+ Significance stars from randomization inference p-values:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
@@ -7567,9 +7566,8 @@ tuple "list"
 Other farmer outcomes provide limited evidence of behavioral transmission.
  Whether the farmer reports having quality checked is unaffected by treatment (coefficient of -0.027,
  not significant).
- The feeding practices index shows a marginally significant improvement of 0.134 (RI p = 0.076,
- WY p = 0.145),
- though this does not survive multiple testing correction.
+ The feeding practices index shows a marginally significant improvement of 0.134 (RI p = 0.076),
+ though this does not survive Westfall-Young multiple testing correction (WY p = 0.145).
  No individual feeding practice is significant on its own.
  The marginal feeding index result suggests that some information about quality requirements may transmit from treated traders to their farmers,
  inducing modest adjustments in feeding behavior even in the absence of price incentives.
@@ -7900,8 +7898,7 @@ scriptsize
 \begin_layout Plain Layout
 Notes:
  OLS estimates with CR2 cluster-robust standard errors in parentheses.
- Significance stars based on randomization inference p-values:
- Significance levels:
+ Significance stars from randomization inference p-values:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
@@ -10728,9 +10725,9 @@ Note:
  All prices are in Ugandan shillings (UGX).
  The “Index of uptake” is an Anderson (2008) index of the variables listed above.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
