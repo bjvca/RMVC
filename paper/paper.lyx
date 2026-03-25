@@ -7033,14 +7033,13 @@ nolink "false"
  within the first few days of the bonus activation,
  treated traders deliver visibly more milk than control traders,
  and this gap is sustained throughout the period.
+ The absence of a corresponding quality response in Stage 1 is consistent with volume expansion being a lower-cost margin of adjustment than sourcing higher-quality milk:
+ traders can recruit additional suppliers or collect larger quantities from existing ones without fundamentally changing their sourcing network.
  After the threshold change on November 15,
- the quality response emerges within two to three days,
- as treated traders begin screening suppliers and redirecting sourcing toward higher-quality milk.
- The speed of adjustment is consistent with the low adjustment costs inherent in daily sourcing decisions:
- traders choose each morning which farmers to visit and how much to collect,
- and these choices can shift rapidly when incentives change.
- Some treated traders recruit additional suppliers (friends and family members) to increase volumes,
- a form of extensive-margin adjustment that further illustrates the flexibility of the trader's sourcing problem.
+ the quality response emerges more gradually,
+ with the fat content gap between treatment and control widening visibly only after about a week.
+ This slower adjustment is consistent with quality sourcing requiring more costly restructuring of supplier networks,
+ such as identifying which farmers produce higher-fat milk and redirecting collection accordingly.
 \end_layout
 
 \begin_layout Standard
