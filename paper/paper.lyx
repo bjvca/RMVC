@@ -7179,7 +7179,7 @@ Trader Endline Survey
 \begin_layout Standard
 Despite the strong effects in the daily submission data,
  the trader endline survey conducted after the experiment ended shows no significant treatment effects across any of the four outcomes:
- total liters delivered to the MCC on the day preceding the interview (RI p =
+ total liters delivered to the MCC on the day preceding the interview (RI p = 
 \begin_inset ERT
 status open
 
@@ -7193,7 +7193,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- number of times the trader rejected farmer milk due to poor quality in the preceding month (RI p =
+ number of times the trader rejected farmer milk due to poor quality in the preceding month (RI p = 
 \begin_inset ERT
 status open
 
@@ -7207,7 +7207,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- whether the trader paid a higher price to farmers supplying better-quality milk in the preceding week (RI p =
+ whether the trader paid a higher price to farmers supplying better-quality milk in the preceding week (RI p = 
 \begin_inset ERT
 status open
 
@@ -7221,7 +7221,7 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ),
- and the volume-weighted average price per liter paid to supplying farmers across the last six transactions (RI p =
+ and the volume-weighted average price per liter paid to supplying farmers across the last six transactions (RI p = 
 \begin_inset ERT
 status open
 
