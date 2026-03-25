@@ -6386,18 +6386,6 @@ Stage 1 of the experiment began on November 1,
 \end_layout
 
 \begin_layout Standard
-The combination of high-frequency digital records and endline survey data provides two complementary windows into the experiment's effects.
- The daily submission data,
- which includes fat content,
- SNF,
- and volume for each delivery,
- allows us to track behavioral dynamics within and across stages at fine temporal resolution.
- The endline surveys capture outcomes that the digital system does not record,
- including trader sourcing and testing practices,
- price pass-through to farmers,
- and farmers' feeding and management investments.
-\end_layout
-
 \begin_layout Subsection
 Outcome Variables
 \begin_inset CommandInset label
@@ -6411,7 +6399,7 @@ name "subsec:exp2-outcomes"
 
 \begin_layout Standard
 We measure outcomes at three levels,
- drawing on both administrative records and purpose-built endline surveys.
+ drawing on both the digital monitoring system and purpose-built endline surveys.
 \end_layout
 
 \begin_layout Standard
