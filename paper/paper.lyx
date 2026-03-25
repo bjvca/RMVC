@@ -7874,19 +7874,53 @@ A third explanation is purely rational and based on the cost structure of qualit
 \end_layout
 
 \begin_layout Standard
-The time path of the quality response at the Stage 2 transition provides a first discriminating test.
- If the response is immediate (within days of the threshold change),
- this favors the behavioral explanations:
- loss aversion and salience can operate instantly because they require only a change in effort or attention,
+The time path of the quality response at the Stage 2 transition helps discriminate between these explanations.
+ The behavioral mechanisms (loss aversion and salience) can operate instantly because they require only a change in effort or attention,
  not a restructuring of supply networks.
- If instead the response is gradual (building over weeks),
- this points toward the cost-based explanation.
- An analysis of whether the composition of supplying farmers changes between stages provides a further test:
- if treated traders source from different farmers in Stage 2 than in Stage 1,
- the cost-based mechanism is at work;
- if the same farmers deliver higher-quality milk,
- the effect operates through effort rather than network restructuring.
- We leave these tests for future work.
+ The cost-based mechanism,
+ by contrast,
+ predicts a gradual response as traders reorganize sourcing.
+ The daily fat content data (Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:daily-fat"
+nolink "false"
+
+\end_inset
+
+) support the latter:
+ after the threshold change on November 15,
+ the fat content gap between treated and control traders does not open up for approximately one week,
+ with clear separation emerging only around November 22.
+ This gradual adjustment is difficult to reconcile with a purely attentional or reference-point explanation,
+ which would predict an immediate response.
+ It is,
+ however,
+ consistent with a story in which quality sourcing requires costly network restructuring:
+ traders need time to identify which farmers produce higher-fat milk,
+ redirect their collection routes,
+ and possibly renegotiate terms.
+ The contrast with the volume response in Stage 1,
+ which is visible within the first few days,
+ reinforces this interpretation:
+ expanding volume is a low-cost margin that can adjust immediately,
+ while improving quality requires restructuring relationships that take time to reorganize.
+\end_layout
+
+\begin_layout Standard
+Further discriminating tests could examine whether the composition of supplying farmers changes between stages.
+ If treated traders source from different farmers in Stage 2 than in Stage 1,
+ the cost-based mechanism is directly at work.
+ If instead the same farmers deliver higher-quality milk,
+ the effect operates through farmer effort rather than trader network restructuring.
+ The seller concentration index (Herfindahl-Hirschman index computed from trader purchase records) shows no significant treatment effect,
+ suggesting that treated traders did not concentrate sourcing among fewer suppliers.
+ However,
+ this null result is based on a single endline snapshot and may not capture the dynamic reallocation visible in the daily data.
 \end_layout
 
 \begin_layout Section
