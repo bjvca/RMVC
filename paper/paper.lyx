@@ -6243,15 +6243,20 @@ Prior to randomization,
  Informed consent was obtained under this framing.
  Because randomization is within MCC,
  control traders are aware that some of their peers receive bonuses.
- This raises the possibility of spillover effects.
- If control traders respond to the presence of treated peers by exerting more effort (competitive emulation) or by losing motivation (discouragement),
- our estimates would respectively understate or overstate the true treatment effect.
- On balance,
- we consider the most plausible direction of bias to be toward attenuation:
- if treated traders bid up farmgate prices or selectively source from the best farmers,
- control traders face a worse pool of available milk,
- compressing the treatment-control difference.
- The MCC fixed effects control for any MCC-level response to the intervention.
+ This raises the possibility of spillover effects,
+ and the direction of bias differs across outcomes.
+ For quality,
+ if treated traders selectively source from the highest-quality farmers within the MCC catchment,
+ control traders are left with a lower-quality pool.
+ This sorting of existing quality across traders would inflate the treatment-control difference,
+ biasing our quality estimates upward.
+ For prices,
+ the bias likely runs in the opposite direction:
+ if treated traders compete more aggressively for farmers,
+ farmgate prices rise for control-area farmers as well,
+ attenuating the estimated price effect.
+ The short duration of the experiment (31 days) limits the scope for large-scale supplier reallocation,
+ but we cannot rule out these effects and note that our quality estimates should be interpreted as an upper bound on the true effect of the price incentive on quality improvement.
 \end_layout
 
 \begin_layout Subsection
