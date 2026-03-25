@@ -6603,7 +6603,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7197,11 +7197,15 @@ Sexpr{sprintf("%.3f",
 \end_inset
 
 ).
- None of the four outcomes approaches conventional significance levels (Table
+ None of the four outcomes approaches conventional significance levels (Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:trader-endline-exp2"
+reference "tab:Follow-up-Experiment:-Trader"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -7237,42 +7241,53 @@ Sexpr{res_traders[1,4]}
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Follow-up Experiment:
+ Trader Endline Survey Results
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Follow-up-Experiment:-Trader"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 \backslash
-begin{table}[h]
+begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-centering
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-caption{Follow-up Experiment:
- Trader Endline Survey Results}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-label{tab:trader-endline-exp2}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lccc}
-\end_layout
-
-\begin_layout Plain Layout
-
+hline
 \backslash
 hline
 \end_layout
@@ -7467,12 +7482,33 @@ end{table}
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Farmer-Level Outcomes
 \end_layout
 
 \begin_layout Standard
-We also examine whether the trader-level treatment generates downstream effects on the farmers from whom treated traders source milk.
+We also examine whether the trader-level treatment generates downstream effects on the farmers from whom treated traders source milk (Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Follow-up-Experiment:-Farmer"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+).
  The most striking finding is a negative effect on farmer prices:
  farmers selling to treated traders report receiving 16.89 UGX less per liter (RI p = 0.017,
  WY p = 0.050).
@@ -7507,38 +7543,59 @@ Other farmer outcomes provide limited evidence of behavioral transmission.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Follow-up Experiment:
+ Farmer level outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Follow-up-Experiment:-Farmer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
 \backslash
-begin{table}[h]
+begin{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-centering
+begin{tabular}{rccc}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-caption{Follow-up Experiment:
- Farmer-Level Endline Results}
-\end_layout
-
-\begin_layout Plain Layout
-
+hline
 \backslash
-label{tab:farmer-endline-exp2}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begin{tabular}{lccc}
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -7824,6 +7881,11 @@ footnotesize Notes:
 
 \backslash
 end{table}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
