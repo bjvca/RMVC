@@ -7495,7 +7495,7 @@ hline
 \backslash
 %) & SNF (
 \backslash
-%) & Quantity (L) & Bonus (UGX)
+%) & Quantity (L) & Bonus (1000 UGX)
 \backslash
 
 \backslash
@@ -7536,7 +7536,7 @@ Sexpr{res_submissions[3,1]}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[3,1])}}$ &
 \backslash
-Sexpr{res_submissions[4,1]}$^{
+Sexpr{round(res_submissions[4,1]/1000,1)}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[4,1])}}$
 \backslash
@@ -7554,7 +7554,7 @@ Sexpr{res_submissions[2,2]}) & (
 \backslash
 Sexpr{res_submissions[3,2]}) & (
 \backslash
-Sexpr{res_submissions[4,2]})
+Sexpr{round(res_submissions[4,2]/1000,1)})
 \backslash
 
 \backslash
@@ -7570,7 +7570,7 @@ Sexpr{res_submissions[2,4]} &
 \backslash
 Sexpr{res_submissions[3,4]} &
 \backslash
-Sexpr{res_submissions[4,4]}
+Sexpr{round(res_submissions[4,4]/1000,1)}
 \backslash
 
 \backslash
@@ -7613,7 +7613,7 @@ Sexpr{res_submissions[3,6]}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[3,2])}}$ &
 \backslash
-Sexpr{res_submissions[4,6]}$^{
+Sexpr{round(res_submissions[4,6]/1000,1)}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[4,2])}}$
 \backslash
@@ -7631,7 +7631,7 @@ Sexpr{res_submissions[2,7]}) & (
 \backslash
 Sexpr{res_submissions[3,7]}) & (
 \backslash
-Sexpr{res_submissions[4,7]})
+Sexpr{round(res_submissions[4,7]/1000,1)})
 \backslash
 
 \backslash
@@ -7647,7 +7647,7 @@ Sexpr{res_submissions[2,9]} &
 \backslash
 Sexpr{res_submissions[3,9]} &
 \backslash
-Sexpr{res_submissions[4,9]}
+Sexpr{round(res_submissions[4,9]/1000,1)}
 \backslash
 
 \backslash
@@ -7690,7 +7690,7 @@ Sexpr{res_submissions[3,11]}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[3,3])}}$ &
 \backslash
-Sexpr{res_submissions[4,11]}$^{
+Sexpr{round(res_submissions[4,11]/1000,1)}$^{
 \backslash
 Sexpr{stars(ri$exp2_submissions$ri_p[4,3])}}$
 \backslash
@@ -7708,7 +7708,7 @@ Sexpr{res_submissions[2,12]}) & (
 \backslash
 Sexpr{res_submissions[3,12]}) & (
 \backslash
-Sexpr{res_submissions[4,12]})
+Sexpr{round(res_submissions[4,12]/1000,1)})
 \backslash
 
 \backslash
@@ -7724,7 +7724,7 @@ Sexpr{res_submissions[2,14]} &
 \backslash
 Sexpr{res_submissions[3,14]} &
 \backslash
-Sexpr{res_submissions[4,14]}
+Sexpr{round(res_submissions[4,14]/1000,1)}
 \backslash
 
 \backslash
