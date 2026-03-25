@@ -7906,27 +7906,6 @@ Notes:
 
 \end_layout
 
-\begin_layout Subsubsection
-Summary
-\end_layout
-
-\begin_layout Standard
-The follow-up experiment confirms that activating the price channel through quality-contingent bonuses elicits rapid and substantial behavioral responses from traders.
- The Stage 1 versus Stage 2 contrast provides a clean test of the model's prediction:
- when quality is abundant relative to the threshold,
- traders respond on volume;
- when the threshold binds,
- they shift to quality-based sourcing.
- The daily panel reveals that volume adjustments occur within days while quality adjustments emerge more gradually over about a week,
- consistent with the different cost structures of these two margins.
- At the same time,
- the surplus from quality bonuses does not pass through to farmers,
- and the endline survey outcomes are null despite being collected while the bonus system was still active.
- Taken together,
- these findings indicate that while the price channel can activate quality-improving behavior that is detectable in high-frequency administrative data,
- these effects do not manifest in cross-sectional survey measures even during the treatment period.
-\end_layout
-
 \begin_layout Section
 Discussion and Conclusion
 \begin_inset CommandInset label
