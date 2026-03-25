@@ -6440,8 +6440,7 @@ The first source is the daily submission data recorded by the Lactoscan at each 
 
 \begin_layout Standard
 The second source is the trader endline survey.
- Key outcomes include fat content from a supervised test conducted by the enumerator (an objective measure independent of routine MCC records),
- liters delivered on the day preceding the interview,
+ Key outcomes include liters delivered on the day preceding the interview,
  whether any milk was rejected in the preceding month,
  whether the trader pays farmers a premium for quality,
  and the volume-weighted average price paid to supplying farmers (UGX per liter).
@@ -6888,20 +6887,7 @@ Sexpr{res_traders[2,4]}
 
 \end_inset
 
- traders,
- of whom only
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-Sexpr{res_traders[1,4]}
-\end_layout
-
-\end_inset
-
- have a supervised fat test),
+ traders),
  limiting statistical power for survey-based detection.
  Third,
  the daily submission data aggregate behavior over 30 days of repeated decisions,
@@ -6971,32 +6957,6 @@ hline
 
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-Fat (supervised test) &
-\backslash
-Sexpr{res_traders[1,5]} &
-\backslash
-Sexpr{res_traders[1,1]}$^{
-\backslash
-Sexpr{stars(ri$exp2_traders$ri_p[1])}}$ &
-\backslash
-Sexpr{res_traders[1,4]}
-\backslash
-
-\backslash
-
-\end_layout
-
-\begin_layout Plain Layout
-& & (
-\backslash
-Sexpr{res_traders[1,2]}) &
-\backslash
-
-\backslash
-
 \end_layout
 
 \begin_layout Plain Layout
