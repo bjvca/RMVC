@@ -6911,6 +6911,26 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Each panel reports OLS estimates with MCC fixed effects and trader-clustered standard errors.
+ The Bonus column reports a shadow bonus computed by applying the quality premium formula to each trader's daily readings and volume,
+ including for control traders who did not actually receive payments.
+ The treatment effect on this variable captures the additional bonus that treated traders would earn due to their behavioral response.
+ RI = randomization inference p-value;
+ WY = Westfall-Young stepdown-adjusted p-value.
+ Significance:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01 (RI p-values).
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{table}
 \end_layout
 
@@ -6933,8 +6953,12 @@ Over the full period,
  treated traders deliver milk with 0.109 percentage points higher fat content (RI p = 0.003,
  WY p = 0.007) and 0.030 percentage points higher solids-not-fat (RI p = 0.119).
  Treated traders also deliver 124 liters more per day (RI p = 0.013,
- WY p = 0.025) and earn 13,030 UGX more in daily bonuses (RI p = 0.001,
- WY p = 0.004).
+ WY p = 0.025).
+ To summarize the economic magnitude of these behavioral responses,
+ we compute a shadow bonus for all traders (including control) by applying the bonus formula to each day's quality readings and volume.
+ The treatment effect on this shadow bonus is 13,000 UGX per day (RI p = 0.001,
+ WY p = 0.004),
+ meaning that treated traders' quality and volume improvements would translate into roughly 13,000 UGX in additional daily earnings relative to control traders operating under the same pricing schedule.
  The fat and quantity effects are robust to multiple testing correction;
  the SNF effect is not.
 \end_layout
