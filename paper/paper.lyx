@@ -6911,6 +6911,12 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
 \end_layout
 
