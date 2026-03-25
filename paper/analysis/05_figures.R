@@ -259,8 +259,9 @@ save_plot(p7, "fig_forest_prices_exp1")
 ## 8. FOREST PLOT: Experiment 2 trader outcomes
 ###############################################################################
 
-trader_outcome_labels <- c("Fat (Supervised)", "Delivered Quantity",
-                           "Any Rejected", "Pays Premium", "Avg Price Paid")
+trader_outcome_labels <- c("Delivered Quantity",
+                           "Any Rejected", "Pays Premium", "Avg Price Paid",
+                           "Overall Index")
 
 forest_traders <- data.frame(
   outcome = trader_outcome_labels,
@@ -296,7 +297,7 @@ save_plot(p8, "fig_forest_trader_exp2")
 
 farmer_fu_labels <- c("Avg Price Received", "Quality Checked", "Feeding Index",
                       "Used Bran", "Used Crop Residue", "Used Salt Lick",
-                      "Controlled Grazing")
+                      "Controlled Grazing", "Overall Index")
 
 forest_farmers_fu <- data.frame(
   outcome = farmer_fu_labels,

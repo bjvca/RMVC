@@ -568,8 +568,10 @@ for (j in seq_along(periods)) {
 ## --- 5B. Trader endline ---
 traders$any_rejected  <- as.numeric(traders$rejected_month > 0)
 traders$pays_premium  <- as.numeric(traders$pay_premim == 1)
-trader_outcomes <- c("Fat_supervised", "delivered_quantity", "any_rejected",
-                     "pays_premium", "avg_purchase_price")
+traders$trader_index <- anderson_index(traders[c("delivered_quantity", "any_rejected",
+                                                  "pays_premium", "avg_purchase_price")])$index
+trader_outcomes <- c("delivered_quantity", "any_rejected",
+                     "pays_premium", "avg_purchase_price", "trader_index")
 
 ## Build trader-level MCC map for permutation
 trader_map_endline <- traders[, c("trader_ID", "MCC_ID", "treat")]
@@ -626,8 +628,10 @@ for (i in seq_along(trader_outcomes)) {
 }
 
 ## --- 5C. Farmer endline ---
+farmers_fu$farmer_fu_index <- anderson_index(farmers_fu[c("avg_price", "quality_checked", "feeding_index")])$index
 farmer_fu_outcomes <- c("avg_price", "quality_checked", "feeding_index",
-                        "used_bran", "used_residu", "used_lick", "used_cgrazing")
+                        "used_bran", "used_residu", "used_lick", "used_cgrazing",
+                        "farmer_fu_index")
 
 ## Farmers inherit treatment from their trader
 ## Demean farmer outcomes within MCC to match feols FE specification

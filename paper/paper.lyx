@@ -7145,7 +7145,7 @@ status open
 
 \backslash
 Sexpr{sprintf("%.3f",
- ri$exp2_traders$ri_p[2])}
+ ri$exp2_traders$ri_p[1])}
 \end_layout
 
 \end_inset
@@ -7159,7 +7159,7 @@ status open
 
 \backslash
 Sexpr{sprintf("%.3f",
- ri$exp2_traders$ri_p[3])}
+ ri$exp2_traders$ri_p[2])}
 \end_layout
 
 \end_inset
@@ -7173,7 +7173,7 @@ status open
 
 \backslash
 Sexpr{sprintf("%.3f",
- ri$exp2_traders$ri_p[4])}
+ ri$exp2_traders$ri_p[3])}
 \end_layout
 
 \end_inset
@@ -7187,7 +7187,7 @@ status open
 
 \backslash
 Sexpr{sprintf("%.3f",
- ri$exp2_traders$ri_p[5])}
+ ri$exp2_traders$ri_p[4])}
 \end_layout
 
 \end_inset
@@ -7218,7 +7218,7 @@ status open
 \begin_layout Plain Layout
 
 \backslash
-Sexpr{res_traders[2,4]}
+Sexpr{res_traders[1,4]}
 \end_layout
 
 \end_inset
@@ -7290,6 +7290,32 @@ hline
 \begin_layout Plain Layout
 Delivered quantity (liters) &
 \backslash
+Sexpr{res_traders[1,5]} &
+\backslash
+Sexpr{res_traders[1,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_traders$ri_p[1])}}$ &
+\backslash
+Sexpr{res_traders[1,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_traders[1,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Any milk rejected (past month) &
+\backslash
 Sexpr{res_traders[2,5]} &
 \backslash
 Sexpr{res_traders[2,1]}$^{
@@ -7314,7 +7340,7 @@ Sexpr{res_traders[2,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-Any milk rejected (past month) &
+Pays quality premium to farmers &
 \backslash
 Sexpr{res_traders[3,5]} &
 \backslash
@@ -7340,7 +7366,7 @@ Sexpr{res_traders[3,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-Pays quality premium to farmers &
+Average purchase price (UGX/liter) &
 \backslash
 Sexpr{res_traders[4,5]} &
 \backslash
@@ -7366,7 +7392,15 @@ Sexpr{res_traders[4,2]}) &
 \end_layout
 
 \begin_layout Plain Layout
-Average purchase price (UGX/liter) &
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Anderson index &
 \backslash
 Sexpr{res_traders[5,5]} &
 \backslash
@@ -7707,6 +7741,40 @@ Sexpr{res_farmers_fu[7,4]}
 & & (
 \backslash
 Sexpr{res_farmers_fu[7,2]}) &
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Anderson index &
+\backslash
+Sexpr{res_farmers_fu[8,5]} &
+\backslash
+Sexpr{res_farmers_fu[8,1]}$^{
+\backslash
+Sexpr{stars(ri$exp2_farmers$ri_p[8])}}$ &
+\backslash
+Sexpr{res_farmers_fu[8,4]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& & (
+\backslash
+Sexpr{res_farmers_fu[8,2]}) &
 \backslash
 
 \backslash
