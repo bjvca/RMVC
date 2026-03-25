@@ -1108,15 +1108,7 @@ tuple "list"
 
 \end_inset
 
- provides a discussion while Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:conclusion"
-nolink "false"
-
-\end_inset
-
- concludes.
+ discusses the results and concludes.
 \end_layout
 
 \begin_layout Section
@@ -7914,80 +7906,71 @@ Notes:
 
 \end_layout
 
-\begin_layout Subsection
-Why Thresholds Drive Behavior More Than Gradients
+\begin_layout Subsubsection
+Summary
 \end_layout
 
 \begin_layout Standard
-A striking pattern in the follow-up experiment is that traders respond to the threshold rather than the price gradient.
- The quality premium is a continuous function of compositional quality above the threshold:
- each 0.1 percentage point of fat above 
-\begin_inset Formula $q_{min}$
+The follow-up experiment confirms that activating the price channel through quality-contingent bonuses elicits rapid and substantial behavioral responses from traders.
+ The Stage 1 versus Stage 2 contrast provides a clean test of the model's prediction:
+ when quality is abundant relative to the threshold,
+ traders respond on volume;
+ when the threshold binds,
+ they shift to quality-based sourcing.
+ The daily panel reveals that volume adjustments occur within days while quality adjustments emerge more gradually over about a week,
+ consistent with the different cost structures of these two margins.
+ At the same time,
+ the surplus from quality bonuses does not pass through to farmers,
+ and the endline survey outcomes are null despite being collected while the bonus system was still active.
+ Taken together,
+ these findings indicate that while the price channel can activate quality-improving behavior that is detectable in high-frequency administrative data,
+ these effects do not manifest in cross-sectional survey measures even during the treatment period.
+\end_layout
+
+\begin_layout Section
+Discussion and Conclusion
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:discussion"
 \end_inset
 
- earns an additional UGX 100 per liter.
- Under standard price theory,
- traders should always source higher-quality milk,
- since the gradient rewards every increment in fat content regardless of whether the threshold is low or high.
- Yet in Stage 1,
- when nearly all deliveries clear the threshold,
- traders expand volume rather than quality.
- Only when the threshold rises in Stage 2 and many deliveries fall below it do traders shift to quality-based sourcing.
- This suggests that the extensive margin (the discrete jump from zero to positive bonus at the threshold) dominates the intensive margin (the continuous gradient above it) in driving behavioral responses.
+
 \end_layout
 
 \begin_layout Standard
-Several mechanisms could explain this pattern,
- and the daily submission data from the follow-up experiment allow us to begin distinguishing between them.
+This paper reports two experiments that isolate distinct channels through which quality information can improve outcomes in agricultural value chains.
+ In the main experiment,
+ providing Milk Collection Centers with milk analyzers reduces adulteration and raises compositional quality,
+ but operates entirely through enforcement:
+ the credible threat of detection disciplines the lower tail of the quality distribution.
+ Prices remain flat.
+ MCCs do not translate their new measurement capacity into quality-differentiated payments,
+ and farmers show no change in production practices or revenues.
 \end_layout
 
 \begin_layout Standard
-A first explanation draws on loss aversion and reference dependence.
- During Stage 1,
- traders become accustomed to receiving daily bonus payments via mobile money.
- When the threshold rises in Stage 2,
- deliveries that previously qualified suddenly earn zero.
- If traders evaluate outcomes relative to their Stage 1 reference point,
- the perceived loss from falling below the new threshold exceeds the foregone gain from not optimizing along the gradient in Stage 1.
- This predicts that traders who earned higher bonuses in Stage 1 should respond more strongly in Stage 2,
- since they have more to lose.
+The follow-up experiment activates the price channel directly by offering traders quality-contingent bonuses.
+ Traders respond rapidly, but to the threshold rather than the gradient.
+ When a low quality threshold makes the bonus easy to earn (Stage 1),
+ traders expand volume without improving quality.
+ When the threshold rises and most deliveries fail to qualify (Stage 2),
+ traders shift to quality-based sourcing,
+ with fat content increasing significantly.
+ The quality surplus does not pass through to farmers:
+ farm-gate prices, if anything, decline.
+ Cross-sectional endline survey outcomes are null despite being collected while the bonus system was still active,
+ indicating that high-frequency administrative data and survey-based measures can yield divergent conclusions over the same treatment period.
 \end_layout
 
 \begin_layout Standard
-A second,
- related explanation emphasizes salience.
- The threshold creates a binary,
- immediately observable signal:
- the trader either qualifies or does not.
- The gradient requires calculating marginal returns to quality improvement,
- which is cognitively more demanding.
- If thresholds are more salient than gradients,
- traders should bunch just above the new threshold in Stage 2 rather than spread across the quality distribution.
-\end_layout
-
-\begin_layout Standard
-A third explanation is purely rational and based on the cost structure of quality sourcing.
- Improving average quality requires restructuring the supplier network:
- dropping low-quality farmers,
- recruiting new ones,
- or renegotiating terms.
- These adjustment costs are lumpy.
- In Stage 1,
- the marginal return from the gradient may not justify the fixed cost of network restructuring.
- In Stage 2,
- the total loss from falling below the threshold is large enough to warrant these costs.
- This predicts that the quality response should emerge gradually as traders reorganize sourcing,
- and that treated traders should change the composition of their supplier base between stages.
-\end_layout
-
-\begin_layout Standard
-The time path of the quality response at the Stage 2 transition helps discriminate between these explanations.
- The behavioral mechanisms (loss aversion and salience) can operate instantly because they require only a change in effort or attention,
- not a restructuring of supply networks.
- The cost-based mechanism,
- by contrast,
- predicts a gradual response as traders reorganize sourcing.
- The daily fat content data (Figure
+The dominance of the threshold over the continuous price gradient is a central finding of the follow-up experiment.
+ Three mechanisms could explain this pattern:
+ loss aversion (traders anchored to Stage 1 bonus payments perceive the higher threshold as a loss),
+ salience (the binary qualify/fail signal is cognitively simpler than computing marginal returns to quality),
+ and cost-based adjustment (restructuring supplier networks involves lumpy fixed costs that the gradient alone does not justify).
+ The daily panel data favor the cost-based explanation.
+ Volume adjustments in Stage 1 appear within days, consistent with a low-cost margin.
+ Quality adjustments after the Stage 2 threshold change emerge only after approximately one week (Figure
 \begin_inset space ~
 \end_inset
 
@@ -7999,52 +7982,20 @@ nolink "false"
 
 \end_inset
 
-) support the latter:
- after the threshold change on November 15,
- the fat content gap between treated and control traders does not open up for approximately one week,
- with clear separation emerging only around November 22.
- This gradual adjustment is difficult to reconcile with a purely attentional or reference-point explanation,
- which would predict an immediate response.
- It is,
- however,
- consistent with a story in which quality sourcing requires costly network restructuring:
- traders need time to identify which farmers produce higher-fat milk,
- redirect their collection routes,
- and possibly renegotiate terms.
- The contrast with the volume response in Stage 1,
- which is visible within the first few days,
- reinforces this interpretation:
- expanding volume is a low-cost margin that can adjust immediately,
- while improving quality requires restructuring relationships that take time to reorganize.
+),
+ a gradual response that is difficult to reconcile with purely attentional or reference-point mechanisms but consistent with the time required to identify higher-quality suppliers and redirect collection routes.
 \end_layout
 
 \begin_layout Standard
-Further discriminating tests could examine whether the composition of supplying farmers changes between stages.
- If treated traders source from different farmers in Stage 2 than in Stage 1,
- the cost-based mechanism is directly at work.
- If instead the same farmers deliver higher-quality milk,
- the effect operates through farmer effort rather than trader network restructuring.
- The seller concentration index (Herfindahl-Hirschman index computed from trader purchase records) shows no significant treatment effect,
- suggesting that treated traders did not concentrate sourcing among fewer suppliers.
- However,
- this null result is based on a single endline snapshot and may not capture the dynamic reallocation visible in the daily data.
-\end_layout
-
-\begin_layout Section
-Discussion
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:discussion"
-
-\end_inset
-
-
+This pattern has implications beyond our setting.
+ Threshold-based incentive designs may be more behaviorally effective than continuous gradients when the agents who must respond face lumpy adjustment costs.
+ The threshold concentrates the stakes at a single point, making the return to costly reorganization large enough to justify the fixed cost.
+ The gradient distributes returns smoothly, and at any point along it the marginal gain may fall below the threshold for action.
 \end_layout
 
 \begin_layout Standard
-The central finding of the main experiment is that quality measurement technology improves milk quality through enforcement (reduced adulteration) without generating quality-differentiated pricing.
- This result speaks to a growing literature on quality information interventions in agricultural value chains.
- 
+The enforcement result in the main experiment confirms and extends recent findings on quality information in agricultural markets.
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bold2022market"
@@ -8052,26 +8003,8 @@ literal "false"
 
 \end_inset
 
- conduct four field experiments with Ugandan maize farmers and find that the causal return to selling high-quality output in local markets is zero;
- only when farmers are given access to a buyer who explicitly pays a quality premium do they upgrade.
- Our results confirm and extend this finding to a different commodity and a different margin:
- even providing MCCs with the technological capacity to observe and verify quality at the individual delivery level does not induce quality-based pricing.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "treurniet2021potency"
-literal "false"
+ show that the causal return to quality in Ugandan maize markets is zero absent an explicit buyer premium;
 
-\end_inset
-
- studies an Indonesian dairy cooperative that introduced individual quality incentives and finds rapid improvements in compositional quality,
- but in that setting the pricing channel was activated by the cooperative itself as part of the intervention.
- 
-\end_layout
-
-\begin_layout Standard
-Our experiment isolates the observability component from the pricing component and shows that the former alone is insufficient.
- 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "xu2024farm"
@@ -8079,10 +8012,8 @@ literal "false"
 
 \end_inset
 
- reaches a closely parallel conclusion using digital traceability in Kenyan dairy cooperatives:
- quality monitoring reduces water adulteration by 22 percent,
- but the mechanism operates through enforcement (the credible threat of detection) rather than through new price signals.
- 
+ find that digital traceability in Kenyan dairy reduces adulteration through enforcement, not price signals;
+ and
 \begin_inset CommandInset citation
 LatexCommand citet
 key "rao2023got"
@@ -8090,17 +8021,22 @@ literal "false"
 
 \end_inset
 
- similarly find that group-level quality incentives in Indian dairy cooperatives improve cleanliness through informal enforcement by managers,
- with no evidence of quality-differentiated payments reaching individual farmers.
- Across these studies,
- a consistent pattern emerges:
- quality measurement disciplines the lower tail of the quality distribution by making minimum standards credible and enforceable,
- but does not by itself activate the continuous quality gradient that would sustain investments above the threshold.
+ document that group-level quality incentives in Indian dairy cooperatives work through informal monitoring by managers, with no quality-differentiated payments reaching farmers.
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "treurniet2021potency"
+literal "false"
+
+\end_inset
+
+ finds rapid quality improvements in an Indonesian dairy cooperative,
+ but the cooperative itself activated the pricing channel as part of the intervention.
+ Across these studies, quality measurement disciplines the lower tail of the distribution without activating the continuous quality gradient.
 \end_layout
 
 \begin_layout Standard
-The null price result connects to a deeper puzzle in the literature on quality upgrading in developing-country value chains.
- The classic 
+The null price result speaks to the
 \begin_inset CommandInset citation
 LatexCommand citet
 key "akerlof1970lemons"
@@ -8108,11 +8044,9 @@ literal "false"
 
 \end_inset
 
- framework predicts that resolving information asymmetry should enable quality-differentiated pricing,
- yet our experiment provides a setting where asymmetric information has been substantially reduced and prices remain flat.
- Several factors may explain this gap.
- First,
- the collective reputation mechanism described by 
+ prediction that resolving information asymmetry should enable quality-differentiated pricing.
+ Our experiment provides a setting where asymmetric information has been substantially reduced and prices remain flat.
+ The collective reputation framework of
 \begin_inset CommandInset citation
 LatexCommand citet
 key "tirole1996"
@@ -8120,7 +8054,7 @@ literal "false"
 
 \end_inset
 
- and 
+ and
 \begin_inset CommandInset citation
 LatexCommand citet
 key "winfree2005collective"
@@ -8128,13 +8062,11 @@ literal "false"
 
 \end_inset
 
- implies that individual-level observability is a necessary but not sufficient condition for quality premia;
+ helps explain this gap:
+ individual-level observability is necessary but not sufficient for quality premia;
  the downstream contractual infrastructure that links measured quality to differentiated payments must also exist.
- In Uganda's dairy chain,
- processors typically purchase milk from MCCs at uniform per-liter prices,
- providing no downstream demand signal that MCCs could transmit to farmers.
- Second,
- 
+ In Uganda's dairy chain, processors purchase from MCCs at uniform per-liter prices, providing no demand signal that MCCs could transmit to farmers.
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "macchiavello2026quality"
@@ -8142,99 +8074,13 @@ literal "false"
 
 \end_inset
 
- document in Colombian coffee that quality premia diminish as they flow upstream through intermediation layers,
- with farmers receiving only about half of the export-gate premium.
- Our setting represents an extreme case of this attenuation:
- when no quality premium exists at the processor-MCC interface,
- the pass-through to farmers is trivially zero regardless of whether MCCs can measure quality.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "macchiavello2020competition"
-literal "false"
-
-\end_inset
-
- show in Rwanda's coffee chain that relational contracts between mills and farmers can sustain quality investments even without formal enforcement,
- but this requires downstream actors (mills) to have both the incentive and the market power to credibly commit to quality-based payments.
- In Uganda's dairy chain,
- MCCs face competitive pressure for farmer supply and limited downstream quality premia,
- a combination that makes quality-based pricing individually irrational even when measurement makes it technically feasible.
+ document that quality premia in Colombian coffee diminish as they flow upstream through intermediation layers.
+ Our setting represents an extreme case:
+ when no quality premium exists at the processor-MCC interface, pass-through is trivially zero regardless of measurement capacity.
 \end_layout
 
 \begin_layout Standard
-The follow-up experiment illuminates how enforcement thresholds shape behavioral responses to quality incentives,
- connecting to a broader literature on monitoring and compliance.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "becker1968crime"
-literal "false"
-
-\end_inset
-
- established the foundational insight that rational agents adjust behavior in response to the probability and severity of detection,
- an insight that has found strong empirical support in settings ranging from tax compliance 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "kleven2011unwilling,bott2020got"
-literal "false"
-
-\end_inset
-
- to corruption 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "olken2007monitoring"
-literal "false"
-
-\end_inset
-
- and teacher attendance 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "duflo2012incentives"
-literal "false"
-
-\end_inset
-
-.
- Our main experiment confirms this logic in an agricultural quality context:
- milk analyzers make adulteration detectable,
- and the threat of rejection at the MCC threshold disciplines the worst offenders without any accompanying price signal.
- The follow-up experiment extends this insight by showing that the threshold level itself determines which behavioral margin responds.
- When the quality threshold is easily met (Stage 1),
- treated traders expand volume without improving quality,
- a response analogous to the finding in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "kleven2011unwilling"
-literal "false"
-
-\end_inset
-
- that compliance is near-universal for income subject to third-party reporting (where the detection probability is effectively one) but that agents do not voluntarily exceed the required standard.
- When the threshold rises and quality becomes scarce (Stage 2),
- traders actively screen for quality,
- paralleling the finding in 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "duflo2013truth"
-literal "false"
-
-\end_inset
-
- that tightening the regulatory standard (not just increasing monitoring) is what shifts firm behavior from marginal compliance to genuine abatement.
- The speed of adjustment in both stages (within two to three days of the threshold change) further underscores that the responses are driven by enforcement incentives rather than by learning or habit formation.
-\end_layout
-
-\begin_layout Standard
-Perhaps the most striking result concerns the failure of quality premiums to transmit through the intermediation layer.
- Treated traders receive explicit,
- daily,
- exogenously introduced bonuses paid via mobile money,
- yet farm-gate prices if anything decline by 17 UGX per liter.
- This negative pass-through stands in sharp contrast to the findings of 
+The negative pass-through in the follow-up experiment stands in sharp contrast to
 \begin_inset CommandInset citation
 LatexCommand citet
 key "casaburi2022individual"
@@ -8243,13 +8089,11 @@ literal "false"
 \end_inset
 
 ,
- who randomize unconditional subsidies to cocoa traders in Sierra Leone and find competitive pass-through of about 8.5 percent of the subsidy value to farmers through higher effective prices.
+ who find that unconditional subsidies to cocoa traders in Sierra Leone generate competitive pass-through to farmers.
  The divergence is informative:
- unconditional subsidies increase traders' willingness to pay for the same product,
- creating competitive pressure that benefits farmers,
- whereas quality-contingent premiums induce traders to expand their sourcing networks and screen for quality,
- responses that increase the supply of potential sellers and may shift bargaining power toward the trader.
- 
+ unconditional subsidies raise traders' willingness to pay for the same product,
+ whereas quality-contingent premiums induce network expansion and screening, responses that may shift bargaining power toward the trader.
+
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bergquist2020competition"
@@ -8257,18 +8101,8 @@ literal "false"
 
 \end_inset
 
- provide structural estimates showing that Kenyan agricultural traders exercise substantial market power (with conduct consistent with joint profit maximization and markups of 39 percent),
- suggesting that the intermediation layer has considerable capacity to absorb rents.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "mitra2018asymmetric"
-literal "false"
-
-\end_inset
-
- find in the Indian potato market that even providing farmers with price information does not reduce middleman margins when farmers' outside options remain limited,
- and 
+ provide structural estimates of substantial trader market power in Kenyan agriculture,
+ and
 \begin_inset CommandInset citation
 LatexCommand citet
 key "bai2025quality"
@@ -8276,69 +8110,35 @@ literal "false"
 
 \end_inset
 
- document in Uganda's coffee chain that quality premia are attenuated as they pass upstream through multiple layers of intermediation.
- Our experiment provides clean causal evidence that the structure of intermediation,
- rather than demand-side uncertainty or information frictions,
- constitutes the binding constraint on price transmission in this value chain.
+ document quality-premium attenuation in Uganda's coffee chain.
+ Our experiment provides causal evidence that the structure of intermediation, rather than information frictions, constitutes the binding constraint on price transmission.
 \end_layout
 
 \begin_layout Standard
-Taken together,
- the two experiments point to a low-level equilibrium trap that has implications for the design of quality infrastructure programs in developing countries.
- Measurement technology is clearly valued by MCCs for its enforcement function alone,
- as evidenced by the substantial uptake of analyzers even in the control group (24 percent of control MCCs had acquired a milk analyzer by endline).
- But the gains from measurement are partial:
- enforcement disciplines the bottom of the quality distribution without rewarding the top,
- and the resulting equilibrium leaves unrealized the value that could be unlocked through quality-differentiated pricing.
- Moving beyond this equilibrium requires coordinated interventions that simultaneously address measurement capacity,
- downstream demand for quality,
- and the contractual infrastructure linking individual performance to financial rewards.
- The experience of settings where quality upgrading has succeeded,
- such as the buyer-driven programs studied by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "macchiavello2019buyer"
-literal "false"
-
-\end_inset
-
- in Colombian coffee and the vertically integrated supply chains documented by 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "hansman2020vertical"
-literal "false"
-
-\end_inset
-
-,
- suggests that the missing ingredient is typically a downstream actor with both the ability to measure quality and the contractual commitment to reward it.
- In the absence of such vertical coordination,
- deploying measurement technology at the aggregation point may improve compliance but is unlikely,
- on its own,
- to catalyze the broader quality transformation that development programs seek.
-\end_layout
-
-\begin_layout Section
-Conclusion
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:conclusion"
-
-\end_inset
-
-
+Several limitations warrant discussion.
+ The follow-up experiment was conducted over 31 days in a single district, limiting inference about longer-run dynamics and external validity.
+ Treated and control traders operated in the same catchment areas, so quality-sourcing spillovers (treated traders bidding away high-quality milk from control traders) may inflate treatment effects.
+ The follow-up lacked a true baseline period, precluding difference-in-differences estimation;
+ identification relies on random assignment.
+ Finally, the divergence between the daily administrative panel and the cross-sectional endline survey highlights that survey-based measures may lack the frequency and precision needed to detect effects that are visible in high-frequency data,
+ particularly when behavioral responses operate over days rather than months.
 \end_layout
 
 \begin_layout Standard
-[Placeholder conclusion.
- Summarize the three-act structure:
- (1) a quality measurement and digital monitoring system improves quality through enforcement but not ,
- even though the system makes quality both measurable and trackable over time.
- (2) a model rationalizes this as an alpha = 0 equilibrium,
- (3) exogenously activating the price channel through quality bonuses,
- leveraging the digital quality records already in place,
- confirms that the missing ingredient was price incentives.
- Discuss external validity and directions for future research on quality infrastructure in developing country value chains.]
+For policy, the results suggest that quality measurement infrastructure has clear value for enforcement, even in the absence of quality-differentiated pricing.
+ The 24 percent adoption rate of milk analyzers among control MCCs by endline confirms revealed-preference demand for measurement as a compliance tool.
+ However, enforcement alone disciplines the bottom of the quality distribution without rewarding the top.
+ Moving beyond this partial equilibrium requires coordinated interventions that address measurement, downstream demand for quality, and the contractual infrastructure linking individual performance to rewards.
+ The follow-up experiment further suggests that threshold-based incentive designs are more effective at eliciting quality improvements than continuous price gradients,
+ because they concentrate stakes above the action threshold imposed by lumpy adjustment costs.
+ Programs that combine measurement technology with structured quality premiums and clear thresholds are more likely to activate the behavioral responses needed for quality upgrading than programs that provide measurement alone.
+\end_layout
+
+\begin_layout Standard
+Taken together, these experiments reveal a low-level equilibrium in which quality is observable but not priced,
+ and in which pricing, when introduced, transmits through intermediaries to quality but not to farmers' incomes.
+ Building markets for quality in developing-country agriculture will require not just the technology to measure quality,
+ but the institutional architecture to ensure that quality is rewarded at every node in the chain.
 \end_layout
 
 \begin_layout Section*
