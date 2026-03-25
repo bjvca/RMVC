@@ -130,30 +130,29 @@ status open
 \begin_layout Plain Layout
 
 \backslash
-author{Richard Ariong
+author{Bjorn Van Campenhout
+\backslash
+thanks{Innovation Policy and Scaling Unit,
+ International Food Policy Research Institute,
+ Leuven,
+ Belgium},
+ Richard Ariong
 \backslash
 thanks{Innovation Policy and Scaling Unit,
  International Food Policy Research Institute,
  Kampala,
  Uganda},
- Jordan Chamberlin
+ Sarah Wairimu Kariuki
 \backslash
 thanks{CIMMYT,
  Nairobi,
- Kenya} ,
- Sarah Wairimu Kariuki
-\backslash
-footnotemark[2] ,
- 
+ Kenya},
 \backslash
 
 \backslash
- Bjorn Van Campenhout
+ Jordan Chamberlin
 \backslash
-thanks{Innovation Policy and Scaling Unit,
- International Food Policy Research Institute,
- Leuven,
- Belgium}}
+footnotemark[3]}
 \end_layout
 
 \end_inset
@@ -180,6 +179,30 @@ Quality in agri-food supply chains is often unobservable at first sale,
  Randomized quality premiums further improve quality when binding,
  yet are not passed through to farmers,
  highlighting frictions in vertical transmission within smallholder value chains.
+\end_layout
+
+\begin_layout Abstract
+
+\series bold
+Keywords:
+
+\series default
+ quality measurement,
+ dairy value chains,
+ enforcement,
+ quality premiums,
+ Uganda
+\end_layout
+
+\begin_layout Abstract
+
+\series bold
+JEL Classification:
+
+\series default
+ O13,
+ L15,
+ D82
 \end_layout
 
 \begin_layout Abstract
@@ -7911,26 +7934,39 @@ Discussion and Conclusion
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:discussion"
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-The results point to three findings that merit further interpretation: the dominance of the threshold over the gradient in the follow-up experiment, the negative effect on farm-gate prices, and the broader relationship between the two experiments.
+The results point to three findings that merit further interpretation:
+ the dominance of the threshold over the gradient in the follow-up experiment,
+ the negative effect on farm-gate prices,
+ and the broader relationship between the two experiments.
 \end_layout
 
 \begin_layout Standard
-Traders in the follow-up experiment responded to the threshold, not the gradient.
- When a low threshold made the quality bonus easy to earn (Stage 1), traders expanded volume without improving quality.
- When the threshold rose and most deliveries failed to qualify (Stage 2), traders shifted to quality-based sourcing, with fat content increasing significantly.
- The continuous price gradient, which rewarded marginal quality improvements throughout both stages, elicited no detectable response.
+Traders in the follow-up experiment responded to the threshold,
+ not the gradient.
+ When a low threshold made the quality bonus easy to earn (Stage 1),
+ traders expanded volume without improving quality.
+ When the threshold rose and most deliveries failed to qualify (Stage 2),
+ traders shifted to quality-based sourcing,
+ with fat content increasing significantly.
+ The continuous price gradient,
+ which rewarded marginal quality improvements throughout both stages,
+ elicited no detectable response.
  This asymmetry suggests that discrete pass/fail signals are more effective than smooth incentives at triggering costly behavioral change among intermediaries.
 \end_layout
 
 \begin_layout Standard
 Three mechanisms could generate this pattern.
- First, loss aversion: traders who earned the bonus in Stage 1 may perceive the higher threshold as a loss, motivating costly adjustment to restore the payment.
+ First,
+ loss aversion:
+ traders who earned the bonus in Stage 1 may perceive the higher threshold as a loss,
+ motivating costly adjustment to restore the payment.
  The approximately one-week delay in quality response (Figure
 \begin_inset space ~
 \end_inset
@@ -7943,36 +7979,69 @@ nolink "false"
 
 \end_inset
 
-) does not rule out this channel, because even loss-averse traders need time to identify new suppliers and restructure collection routes.
- Second, salience: the binary qualify/fail signal is cognitively simpler than computing marginal returns along a continuous schedule, and may command more attention.
- Third, cost-based adjustment: restructuring supplier networks involves lumpy fixed costs, and the gradient's smooth marginal returns may fall below the action threshold at every point.
- The gradual emergence of quality improvements is consistent with all three mechanisms, and the evidence does not allow us to distinguish among them conclusively.
+) does not rule out this channel,
+ because even loss-averse traders need time to identify new suppliers and restructure collection routes.
+ Second,
+ salience:
+ the binary qualify/fail signal is cognitively simpler than computing marginal returns along a continuous schedule,
+ and may command more attention.
+ Third,
+ cost-based adjustment:
+ restructuring supplier networks involves lumpy fixed costs,
+ and the gradient's smooth marginal returns may fall below the action threshold at every point.
+ The gradual emergence of quality improvements is consistent with all three mechanisms,
+ and the evidence does not allow us to distinguish among them conclusively.
 \end_layout
 
 \begin_layout Standard
-These findings have implications for incentive design, though we note that they rest on one experiment with a single threshold change, not a direct comparison of threshold and gradient structures.
- That said, the pattern suggests that when intermediaries face lumpy adjustment costs, threshold-based designs may outperform continuous gradients by concentrating stakes at a single point where the return to reorganization exceeds the fixed cost.
+These findings have implications for incentive design,
+ though we note that they rest on one experiment with a single threshold change,
+ not a direct comparison of threshold and gradient structures.
+ That said,
+ the pattern suggests that when intermediaries face lumpy adjustment costs,
+ threshold-based designs may outperform continuous gradients by concentrating stakes at a single point where the return to reorganization exceeds the fixed cost.
  Programs seeking to activate quality upgrading through supply chain intermediaries may benefit from incorporating discrete performance targets rather than relying solely on linear price schedules.
 \end_layout
 
 \begin_layout Standard
 The negative effect on farm-gate prices is the most striking welfare finding and warrants careful interpretation.
  Three mechanisms may contribute.
- First, a composition effect: treated traders who shift toward quality-based sourcing may reallocate purchases toward higher-volume farmers who accept lower per-unit prices, changing the composition of sampled transactions.
- Second, bargaining leverage: traders with quality information from the milk analyzer gain an informational advantage over farmers, potentially extracting surplus in price negotiations.
- Third, selection on outside options: if treated traders screen for quality, they may concentrate purchases among farmers with fewer alternative buyers, who have less bargaining power.
- These channels are not mutually exclusive, and the short duration of the follow-up experiment limits our ability to assess their relative importance.
- The finding underscores that quality-contingent incentives introduced at one node of the chain can redistribute surplus in ways that disadvantage upstream actors, and deserves further investigation in longer-run settings.
+ First,
+ a composition effect:
+ treated traders who shift toward quality-based sourcing may reallocate purchases toward higher-volume farmers who accept lower per-unit prices,
+ changing the composition of sampled transactions.
+ Second,
+ bargaining leverage:
+ traders with quality information from the milk analyzer gain an informational advantage over farmers,
+ potentially extracting surplus in price negotiations.
+ Third,
+ selection on outside options:
+ if treated traders screen for quality,
+ they may concentrate purchases among farmers with fewer alternative buyers,
+ who have less bargaining power.
+ These channels are not mutually exclusive,
+ and the short duration of the follow-up experiment limits our ability to assess their relative importance.
+ The finding underscores that quality-contingent incentives introduced at one node of the chain can redistribute surplus in ways that disadvantage upstream actors,
+ and deserves further investigation in longer-run settings.
 \end_layout
 
 \begin_layout Standard
-The two experiments, viewed together, illuminate the structure of the model's central parameter: the share of quality that is priced.
+The two experiments,
+ viewed together,
+ illuminate the structure of the model's central parameter:
+ the share of quality that is priced.
  The main experiment operates in a world where quality is not priced at all.
- Measurement technology enables enforcement (the credible threat of detection disciplines the lower tail of the quality distribution) but does not activate pricing, because processors purchase from MCCs at uniform per-liter rates with no quality premium to transmit.
- The follow-up experiment externally imposes quality-contingent payments, moving the system into a regime where pricing is active.
+ Measurement technology enables enforcement (the credible threat of detection disciplines the lower tail of the quality distribution) but does not activate pricing,
+ because processors purchase from MCCs at uniform per-liter rates with no quality premium to transmit.
+ The follow-up experiment externally imposes quality-contingent payments,
+ moving the system into a regime where pricing is active.
  This pairing reveals that measurement technology is necessary (it enables both enforcement and the possibility of pricing) but not sufficient (it does not generate quality-differentiated payments on its own).
- The follow-up further demonstrates that even when the price channel activates, the resulting surplus accrues to intermediaries rather than to farmers.
- This is the paper's core theoretical contribution: information resolves asymmetry at a single node, but absent institutional infrastructure linking quality measurement to payments at every node, the welfare gains from pricing remain captured within the intermediation layer.
+ The follow-up further demonstrates that even when the price channel activates,
+ the resulting surplus accrues to intermediaries rather than to farmers.
+ This is the paper's core theoretical contribution:
+ information resolves asymmetry at a single node,
+ but absent institutional infrastructure linking quality measurement to payments at every node,
+ the welfare gains from pricing remain captured within the intermediation layer.
 \end_layout
 
 \begin_layout Standard
@@ -7994,7 +8063,8 @@ literal "false"
 
 \end_inset
 
- find that digital traceability in Kenyan dairy reduces adulteration through enforcement, not price signals;
+ find that digital traceability in Kenyan dairy reduces adulteration through enforcement,
+ not price signals;
  and 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -8003,7 +8073,8 @@ literal "false"
 
 \end_inset
 
- document that group-level quality incentives in Indian dairy cooperatives work through informal monitoring, with no quality-differentiated payments reaching farmers.
+ document that group-level quality incentives in Indian dairy cooperatives work through informal monitoring,
+ with no quality-differentiated payments reaching farmers.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -8012,8 +8083,10 @@ literal "false"
 
 \end_inset
 
- finds rapid quality improvements in an Indonesian dairy cooperative, but the cooperative itself activated the pricing channel as part of the intervention.
- Across these studies, quality measurement disciplines the lower tail of the distribution without activating continuous quality pricing.
+ finds rapid quality improvements in an Indonesian dairy cooperative,
+ but the cooperative itself activated the pricing channel as part of the intervention.
+ Across these studies,
+ quality measurement disciplines the lower tail of the distribution without activating continuous quality pricing.
  The collective reputation frameworks of 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -8030,7 +8103,9 @@ literal "false"
 
 \end_inset
 
- offer the most precise theoretical lens for this pattern: individual-level observability is necessary but not sufficient for quality premia; the downstream contractual infrastructure linking measured quality to differentiated payments must also exist.
+ offer the most precise theoretical lens for this pattern:
+ individual-level observability is necessary but not sufficient for quality premia;
+ the downstream contractual infrastructure linking measured quality to differentiated payments must also exist.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -8040,7 +8115,9 @@ literal "false"
 \end_inset
 
  document that quality premia in Colombian coffee diminish as they flow upstream through intermediation layers.
- Our setting represents an extreme case: when no quality premium exists at the processor-MCC interface, pass-through is trivially zero regardless of measurement capacity.
+ Our setting represents an extreme case:
+ when no quality premium exists at the processor-MCC interface,
+ pass-through is trivially zero regardless of measurement capacity.
  The negative pass-through in the follow-up stands in contrast to 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -8049,27 +8126,48 @@ literal "false"
 
 \end_inset
 
-, who find that unconditional subsidies to traders generate competitive pass-through to farmers.
- The divergence is informative: unconditional subsidies raise willingness to pay for the same product, whereas quality-contingent premiums induce screening and network restructuring that may shift bargaining power toward the trader.
- Our experiment provides causal evidence that the structure of intermediation, rather than information frictions, may constitute a binding constraint on price transmission.
+,
+ who find that unconditional subsidies to traders generate competitive pass-through to farmers.
+ The divergence is informative:
+ unconditional subsidies raise willingness to pay for the same product,
+ whereas quality-contingent premiums induce screening and network restructuring that may shift bargaining power toward the trader.
+ Our experiment provides causal evidence that the structure of intermediation,
+ rather than information frictions,
+ may constitute a binding constraint on price transmission.
 \end_layout
 
 \begin_layout Standard
 Several limitations warrant discussion.
- The follow-up experiment was conducted over 31 days in a single district, limiting inference about longer-run dynamics and external validity.
- Traders self-selected into the follow-up, so the estimated effects reflect willingness to participate as well as treatment response.
- Treated and control traders operated in the same catchment areas, so quality-sourcing spillovers (treated traders bidding away high-quality milk from control traders) may inflate treatment effects.
- The follow-up lacked a true baseline period, precluding difference-in-differences estimation; identification relies on random assignment.
- Finally, the divergence between the daily administrative panel and the cross-sectional endline survey highlights that survey-based measures may lack the frequency and precision needed to detect effects visible in high-frequency data, particularly when behavioral responses operate over days rather than months.
+ The follow-up experiment was conducted over 31 days in a single district,
+ limiting inference about longer-run dynamics and external validity.
+ Traders self-selected into the follow-up,
+ so the estimated effects reflect willingness to participate as well as treatment response.
+ Treated and control traders operated in the same catchment areas,
+ so quality-sourcing spillovers (treated traders bidding away high-quality milk from control traders) may inflate treatment effects.
+ The follow-up lacked a true baseline period,
+ precluding difference-in-differences estimation;
+ identification relies on random assignment.
+ Finally,
+ the divergence between the daily administrative panel and the cross-sectional endline survey highlights that survey-based measures may lack the frequency and precision needed to detect effects visible in high-frequency data,
+ particularly when behavioral responses operate over days rather than months.
 \end_layout
 
 \begin_layout Standard
-For policy, the results suggest that quality measurement infrastructure has clear value for enforcement, even absent quality-differentiated pricing.
+For policy,
+ the results suggest that quality measurement infrastructure has clear value for enforcement,
+ even absent quality-differentiated pricing.
  The 24 percent adoption rate of milk analyzers among control MCCs by endline confirms revealed-preference demand for measurement as a compliance tool.
- However, enforcement alone disciplines the bottom of the quality distribution without rewarding the top.
- Moving beyond this partial equilibrium requires coordinated interventions that address measurement, downstream demand for quality, and the contractual infrastructure linking individual performance to rewards.
- In Uganda's dairy chain, the processor-MCC interface is where quality signals die: processors pay uniform per-liter prices, providing no demand signal that MCCs could transmit to farmers.
- Until this specific institutional gap is addressed, measurement technology will enable enforcement but not quality-differentiated markets.
+ However,
+ enforcement alone disciplines the bottom of the quality distribution without rewarding the top.
+ Moving beyond this partial equilibrium requires coordinated interventions that address measurement,
+ downstream demand for quality,
+ and the contractual infrastructure linking individual performance to rewards.
+ In Uganda's dairy chain,
+ the processor-MCC interface is where quality signals die:
+ processors pay uniform per-liter prices,
+ providing no demand signal that MCCs could transmit to farmers.
+ Until this specific institutional gap is addressed,
+ measurement technology will enable enforcement but not quality-differentiated markets.
 \end_layout
 
 \begin_layout Section*
@@ -8077,12 +8175,33 @@ Acknowledgments
 \end_layout
 
 \begin_layout Standard
-[Placeholder acknowledgments.
- This research was supported by the CGIAR Rethinking Markets Initiative Work Package 2 and the CGIAR Research Initiative on Better Diets and Nutrition.
- We thank [seminar participants,
- field team,
- etc.] for valuable comments and assistance.
- All errors remain our own.]
+We would like to thank Denis Athua and Benon Byarugaba of the Ministry of Agriculture Animal Industries and Fisheries (MAAIF).
+ We also would like to thank Leocardia Nabwire,
+ Wilberforce Walukano and Marc Charles Wanume for field support.
+ Funding was received from the CGIAR Rethinking Markets Research Initiatives and the CGIAR Better Diets and Nutrition Science Program.
+\end_layout
+
+\begin_layout Section*
+Notes
+\end_layout
+
+\begin_layout Standard
+This research received clearance form Makerere’s School of Social Sciences Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI IRB (DSGD-22-1057).
+ The research was also registered at the Ugandan National Commission for Science and Technology (SS1520ES).
+\end_layout
+
+\begin_layout Standard
+This paper was prepared with the assistance of Claude Code (Anthropic),
+ a large language model.
+ The AI tool was used for code auditing and debugging of R analysis scripts,
+ spelling and grammar checking of manuscript text,
+ and LaTeX/LyX formatting.
+ All analytical decisions,
+ experimental design,
+ data collection,
+ and interpretation of results were made by the authors.
+ The authors take full responsibility for the content of this paper.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -8192,10 +8311,6 @@ arabic{subsection}}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Additional balance tables
 \end_layout
 
 \begin_layout Standard
@@ -8841,17 +8956,13 @@ Note:
 
 \end_layout
 
-\begin_layout Subsection
-LATE results
-\end_layout
-
 \begin_layout Standard
 \begin_inset Float table
 placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9196,7 +9307,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9483,7 +9594,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -9826,10 +9937,6 @@ Note:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Secondary outcome tables
 \end_layout
 
 \begin_layout Standard
@@ -10469,30 +10576,6 @@ Note:
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-- Heterogeneity by cooperative status
-\end_layout
-
-\begin_layout Standard
-- Attrition analysis
-\end_layout
-
-\begin_layout Standard
-- Randomization inference p-values
-\end_layout
-
-\begin_layout Standard
-- Wild cluster bootstrap p-values
-\end_layout
-
-\begin_layout Standard
-- Lee bounds for selective attrition
-\end_layout
-
-\begin_layout Standard
-- Follow-up experiment trader and farmer endline results]
 \end_layout
 
 \end_body
