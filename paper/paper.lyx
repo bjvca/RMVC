@@ -6593,7 +6593,7 @@ tuple "list"
  fat threshold of 3.3 percent) and Stage 2 (Panel C,
  November 15 onward,
  fat threshold of 3.9 percent).
- All specifications include day fixed effects and control for baseline trader characteristics.
+ All specifications include MCC fixed effects with standard errors clustered at the trader level.
  We report randomization inference p-values and Westfall-Young adjusted p-values to account for multiple testing across the four outcomes.
 \end_layout
 
