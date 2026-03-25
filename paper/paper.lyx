@@ -7240,7 +7240,326 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance of Baseline Characteristics Between Treatment and Control Milk Collection Centers (MCCs)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Balance_main-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}{rccc}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+& mean ctrl & analyzer  & nobs 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC is cooperative?
+ (1=yes)  & 
+\backslash
+Sexpr{balance[1,1]} & 
+\backslash
+Sexpr{balance[1,3]}$^{
+\backslash
+Sexpr{ifelse(balance[1,5]<.01,"**",ifelse(balance[1,5]<.05,"*",ifelse(balance[1,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[1,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[1,2]}) & (
+\backslash
+Sexpr{balance[1,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Total Capacity of milk tanks (in liters)  & 
+\backslash
+Sexpr{balance[4,1]} & 
+\backslash
+Sexpr{balance[4,3]}$^{
+\backslash
+Sexpr{ifelse(balance[4,5]<.01,"**",ifelse(balance[4,5]<.05,"*",ifelse(balance[4,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[4,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[4,2]}) & (
+\backslash
+Sexpr{balance[4,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC pays quality premium (1=yes) & 
+\backslash
+Sexpr{balance[6,1]} & 
+\backslash
+Sexpr{balance[6,3]}$^{
+\backslash
+Sexpr{ifelse(balance[6,5]<.01,"**",ifelse(balance[6,5]<.05,"*",ifelse(balance[6,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[6,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[6,2]}) & (
+\backslash
+Sexpr{balance[6,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+MCC age in years of operation  & 
+\backslash
+Sexpr{balance[7,1]} & 
+\backslash
+Sexpr{balance[7,3]}$^{
+\backslash
+Sexpr{ifelse(balance[7,5]<.01,"**",ifelse(balance[7,5]<.05,"*",ifelse(balance[7,5]<.1,"+","")))}}$ &  
+\backslash
+Sexpr{balance[7,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[7,2]}) & (
+\backslash
+Sexpr{balance[7,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+Facilitates supply of acaricides?
+ (1=yes) & 
+\backslash
+Sexpr{balance[10,1]} & 
+\backslash
+Sexpr{balance[10,3]}$^{
+\backslash
+Sexpr{ifelse(balance[10,5]<.01,"**",ifelse(balance[10,5]<.05,"*",ifelse(balance[10,5]<.1,"+","")))}}$ & 
+\backslash
+Sexpr{balance[10,8]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+& (
+\backslash
+Sexpr{balance[10,2]}) & (
+\backslash
+Sexpr{balance[10,4]}) 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+F-statistic & & 
+\backslash
+Sexpr{F_test[1,1]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+p-value & & 
+\backslash
+Sexpr{F_test[2,1]} 
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+hline
+\backslash
+hline
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tabular}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ Column 1 presents control group means with standard deviations in parentheses.
+ Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
+ Column 3 lists the number of non-missing observations.
+ “Total tank capacity” is measured in liters and “MCC age” in years.
+ The F-statistic and p-value correspond to a joint test of equality of all covariates.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7287,6 +7606,10 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 & Control Mean & Treatment Effect & N
 \backslash
 
@@ -7297,7 +7620,11 @@ hline
 \begin_layout Plain Layout
 
 \backslash
-hline
+cline{2-4}
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -7442,21 +7769,8 @@ Sexpr{res_traders[5,2]}) &
 
 \backslash
 hline
-\end_layout
-
-\begin_layout Plain Layout
-
 \backslash
-multicolumn{4}{p{0.85
-\backslash
-textwidth}}{
-\backslash
-footnotesize Notes:
- OLS estimates with CR2 cluster-robust standard errors in parentheses.
- Significance stars based on randomization inference p-values:
- $^{***}$ p $<$ 0.01,
- $^{**}$ p $<$ 0.05,
- $^{*}$ p $<$ 0.1.}
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -7469,6 +7783,26 @@ end{tabular}
 
 \backslash
 end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Notes:
+ OLS estimates with CR2 cluster-robust standard errors in parentheses.
+ Significance stars based on randomization inference p-values:
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -7539,10 +7873,6 @@ alignment document
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -7836,6 +8166,8 @@ Sexpr{res_farmers_fu[8,2]}) &
 
 \backslash
 hline
+\backslash
+hline
 \end_layout
 
 \begin_layout Plain Layout
@@ -7847,24 +8179,23 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-par
+end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
-vspace{2mm}
+scriptsize
 \end_layout
 
 \begin_layout Plain Layout
-
-\backslash
-footnotesize Notes:
+Notes:
  OLS estimates with CR2 cluster-robust standard errors in parentheses.
- Significance stars from randomization inference p-values.
- * p$<$0.10,
- ** p$<$0.05,
- *** p$<$0.01.
+ Significance stars based on randomization inference p-values:
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
