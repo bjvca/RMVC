@@ -6928,12 +6928,6 @@ Note:
  ** p < 0.01 (RI p-values).
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{table}
-\end_layout
-
 \end_inset
 
 
@@ -7474,15 +7468,11 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-end{table}
+end{center}
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -7875,12 +7865,6 @@ footnotesize Notes:
  * p$<$0.10,
  ** p$<$0.05,
  *** p$<$0.01.
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{table}
 \end_layout
 
 \end_inset
