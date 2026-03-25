@@ -370,11 +370,11 @@ res_farmers_fu <- readRDS(paste0(path,
 
 \begin_layout Plain Layout
 stars <- function(p) ifelse(p < 0.01,
- "***",
- ifelse(p < 0.05,
  "**",
- ifelse(p < 0.1,
+ ifelse(p < 0.05,
  "*",
+ ifelse(p < 0.1,
+ "+",
  "")))
 \end_layout
 
@@ -7519,9 +7519,9 @@ scriptsize
 Notes:
  OLS estimates with CR2 cluster-robust standard errors in parentheses.
  Significance stars from randomization inference p-values:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \begin_layout Plain Layout
@@ -7914,9 +7914,9 @@ scriptsize
 Notes:
  OLS estimates with CR2 cluster-robust standard errors in parentheses.
  Significance stars from randomization inference p-values:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
@@ -10761,9 +10761,9 @@ Note:
  All prices are in Ugandan shillings (UGX).
  The “Index of uptake” is an Anderson (2008) index of the variables listed above.
  Significance levels:
- * p < 0.10,
- ** p < 0.05,
- *** p < 0.01.
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
 \end_layout
 
 \end_inset
