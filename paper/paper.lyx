@@ -6955,8 +6955,16 @@ Over the full period,
  Treated traders also deliver 124 liters more per day (RI p = 0.013,
  WY p = 0.025).
  To summarize the economic magnitude of these behavioral responses,
- we compute a shadow bonus for all traders (including control) by applying the bonus formula to each day's quality readings and volume.
- The treatment effect on this shadow bonus is 13,000 UGX per day (RI p = 0.001,
+ we compute the bonus for all traders (including a 
+\begin_inset Quotes eld
+\end_inset
+
+shadow
+\begin_inset Quotes erd
+\end_inset
+
+ bonus for the control) by applying the bonus formula to each day's quality readings and volume.
+ The treatment effect on this bonus is 13,000 UGX per day (RI p = 0.001,
  WY p = 0.004),
  meaning that treated traders' quality and volume improvements would translate into roughly 13,000 UGX in additional daily earnings relative to control traders operating under the same pricing schedule.
  The fat and quantity effects are robust to multiple testing correction;
@@ -6994,7 +7002,7 @@ When the threshold increases to 3.9 percent at the start of Stage 2,
  WY p = 0.004),
  respectively.
  The emergence of strong quality effects only after the threshold increase maps directly onto the model's prediction about the extensive margin:
- as the minimum quality standard
+ as the minimum quality standard 
 \begin_inset Formula $q_{\min}$
 \end_inset
 
