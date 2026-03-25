@@ -6319,7 +6319,7 @@ The experiment proceeds in two stages.
  2025),
  the quality thresholds are set at the East African Community standards:
  3.3 percent fat and 8.5 percent SNF.
- Because Stage 1 coincided with the rainy season,
+ Because the experiment coincided with the rainy season,
  when pasture quality is high and milk naturally exceeds these thresholds,
  nearly all treated traders qualified for the bonus.
  In terms of the model,
@@ -6337,7 +6337,8 @@ The experiment proceeds in two stages.
 \end_layout
 
 \begin_layout Standard
-In Stage 2 (beginning November 15),
+In Stage 2 (beginning November 15,
+ 2025),
  the fat threshold is raised without prior announcement to 3.9 percent while the SNF threshold remains unchanged.
  This unannounced increase shifts the regime:
  a substantial share of deliveries now falls near or below the new threshold,
@@ -6360,9 +6361,16 @@ name "subsec:exp2-sample"
 \end_layout
 
 \begin_layout Standard
-Ex ante power calculations,
- conducted using the DeclareDesign framework,
- indicated that a sample of 100 traders with approximately 5 farmers per trader would provide adequate power to detect a 0.5 percentage point increase in fat content at the trader level,
+Ex ante power calculations were conducted following the DeclareDesign framework 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "blair2019declaring"
+literal "false"
+
+\end_inset
+
+.
+ Results indicated that a sample of 100 traders with approximately 5 farmers per trader would provide adequate power to detect a 0.5 percentage point increase in fat content at the trader level,
  assuming an intra-cluster correlation of 0.11.
 \begin_inset Foot
 status collapsed
