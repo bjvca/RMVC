@@ -7014,21 +7014,9 @@ When the threshold increases to 3.9 percent at the start of Stage 2,
  favor those with higher-fat milk).
 \end_layout
 
-\begin_layout Subsubsection
-Behavioral Dynamics
-\end_layout
-
 \begin_layout Standard
 The daily panel reveals adjustment dynamics that would be invisible in a standard endline-only design.
  Figures 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:daily-fat"
-nolink "false"
-
-\end_inset
-
- and 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:daily-quantity"
@@ -7036,7 +7024,15 @@ nolink "false"
 
 \end_inset
 
- plot average daily fat content and quantity by treatment status over the 30-day experiment.
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:daily-fat"
+nolink "false"
+
+\end_inset
+
+ plot average quantity and daily fat content by treatment status over the 30-day experiment.
  The volume response in Stage 1 is immediate:
  within the first few days of the bonus activation,
  treated traders deliver visibly more milk than control traders,
@@ -7048,50 +7044,6 @@ nolink "false"
  with the fat content gap between treatment and control widening visibly only after about a week.
  This slower adjustment is consistent with quality sourcing requiring more costly restructuring of supplier networks,
  such as identifying which farmers produce higher-fat milk and redirecting collection accordingly.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename figures/fig_daily_fat.png
-	lyxscale 50
-	scale 50
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Daily Average Fat Content by Treatment Status
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:daily-fat"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -7122,6 +7074,50 @@ Daily Average Quantity by Treatment Status
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:daily-quantity"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename figures/fig_daily_fat.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Daily Average Fat Content by Treatment Status
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:daily-fat"
 
 \end_inset
 
