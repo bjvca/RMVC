@@ -456,7 +456,7 @@ name "sec:introduction"
 \end_layout
 
 \begin_layout Standard
-Quality of commodities transacted within value chains,
+The quality of commodities transacted within value chains,
  and the preservation of that quality throughout the chain,
  is central to value chain development 
 \begin_inset CommandInset citation
@@ -595,7 +595,9 @@ literal "false"
 
  shows,
  individual incentives are governed not only by one's own quality choices but by the group's aggregate track record,
- since individual contributions are observed only with noise;
+ since,
+ under poole marketing,
+ individual contributions are observed only with noise;
  each producer can therefore free-ride on the group's standing by supplying below-optimal quality while transacting at the pool price.
  
 \begin_inset CommandInset citation
@@ -626,7 +628,7 @@ literal "false"
  no individual agent fully internalizes the returns to their effort,
  weakening quality investments at precisely the point where aggregation severs the link between individual performance and observed outcomes.
  The practical consequence is that even when buyers wish to pay for quality,
- the absence of traceability prevents quality-enhancing investments from translating into higher returns,
+ the absence of traceability prevents quality-enhancing investments from translating into higher returns for producers,
  a pattern well-documented empirically across commodity supply chains in developing countries 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -692,8 +694,7 @@ literal "false"
  casein,
  and infant formula,
  and maintaining sanitary conditions is essential given the perishability of raw milk.
- Yet,
- despite this transformation,
+ Yet despite this transformation,
  there is generally no functioning market for quality in Uganda;
  prices are typically fixed per liter,
  irrespective of compositional quality attributes such as butterfat,
@@ -714,10 +715,22 @@ We use this setting to test whether strengthening quality observability can enab
  randomly assigning 125 MCCs to receive milk analyzer equipment,
  digital record-keeping infrastructure,
  and farmer-facing quality information.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+In dairy market analysis,
+ a milk shed refers to the geographically defined catchment area from which a processing plant,
+ collection center,
+ or urban market sources its raw milk supply.
+\end_layout
+
+\end_inset
+
  Following a one-year intervention period,
  we measure outcomes at three levels.
  At the MCC level,
- we examine whether quality testing became embedded in routine operations (both for incoming farmer deliveries and outgoing sales to buyers) and whether this translated into higher prices or the emergence of explicit quality premiums on either side of the market.
+ we examine whether quality testing became embedded in routine operations (both for incoming farmer deliveries and outgoing sales to buyers) and whether this translated into higher average prices and/or the emergence of explicit quality premiums on either side of the market.
  At the farmer level,
  we measure prices received and the incidence of quality bonuses.
  Finally,
@@ -2270,7 +2283,8 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & Diff.  & nobs
+& mean ctrl & Diff.
+  & nobs
 \backslash
 
 \backslash
@@ -2659,7 +2673,8 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & Diff. & nobs
+& mean ctrl & Diff.
+ & nobs
 \backslash
 
 \backslash
@@ -3453,7 +3468,8 @@ Note:
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
  Standard errors are clustered at the catchment-area level.
- CLR denotes the Corrected Lactometer Reading, a standard density-based measure of milk composition adjusted for temperature.
+ CLR denotes the Corrected Lactometer Reading,
+ a standard density-based measure of milk composition adjusted for temperature.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
@@ -4020,7 +4036,8 @@ Note:
  Prices are in Ugandan shillings (UGX).
  The “Index of primary farmer outcomes” is an Anderson (2008) index of the variables listed above.
  Standard errors are clustered at the catchment-area level.
- All estimates are intent-to-treat (ITT). Corresponding LATE estimates are reported in Appendix Table
+ All estimates are intent-to-treat (ITT).
+ Corresponding LATE estimates are reported in Appendix Table
 \backslash
 ref{tab:Primary-outcomes-farmer-LATE}.
  Significance levels:
