@@ -1421,6 +1421,10 @@ name "subsec:design"
 \begin_layout Standard
 We use a simple cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
  The unit of randomization is the MCC catchment area.
+ We define an MCC's catchment area as the geographic zone from which farmers routinely deliver milk to that center,
+ typically extending 5 to 10 kilometers from the MCC.
+ Because farmers within the same catchment share exposure to MCC-level treatment,
+ we cluster standard errors at this level.
  Of the 125 MCCs enrolled in the study,
  about half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection,
  while the remaining MCCs served as controls.
@@ -2266,7 +2270,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer  & nobs 
+& mean ctrl & Diff.  & nobs
 \backslash
 
 \backslash
@@ -2655,7 +2659,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & treatment & nobs
+& mean ctrl & Diff. & nobs
 \backslash
 
 \backslash
@@ -3098,6 +3102,29 @@ It is important to note that the compositional quality measures obtained through
 \end_layout
 
 \begin_layout Standard
+One concern is that supervised testing at endline could induce differential behavior if treatment MCC managers,
+ aware of the analyzers and their parameters,
+ coached farmers or screened deliveries more carefully on the testing day.
+ Several features of the design mitigate this concern.
+ First,
+ testing visits were unannounced and conducted identically at treatment and control MCCs.
+ Second,
+ the quality measures (butterfat,
+ protein,
+ SNF,
+ density) reflect compositional attributes determined primarily by cattle breed,
+ feeding,
+ and handling practices that cannot be altered on short notice.
+ Third,
+ added water,
+ the outcome showing the largest treatment effect,
+ captures adulteration that occurs during transport or at the point of sale,
+ not at the MCC itself.
+ While we cannot fully rule out Hawthorne effects,
+ these considerations suggest they are unlikely to account for the observed patterns.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement document
 alignment document
@@ -3426,10 +3453,14 @@ Note:
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
  Standard errors are clustered at the catchment-area level.
+ CLR denotes the Corrected Lactometer Reading, a standard density-based measure of milk composition adjusted for temperature.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+ Corresponding LATE estimates are reported in Appendix Table
+\backslash
+ref{tab:Primary-outcomes-milk-quality-LATE}.
 \end_layout
 
 \end_inset
@@ -3443,7 +3474,7 @@ Note:
 \end_layout
 
 \begin_layout Standard
-Table 
+Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-milk-quality"
@@ -3989,6 +4020,9 @@ Note:
  Prices are in Ugandan shillings (UGX).
  The “Index of primary farmer outcomes” is an Anderson (2008) index of the variables listed above.
  Standard errors are clustered at the catchment-area level.
+ All estimates are intent-to-treat (ITT). Corresponding LATE estimates are reported in Appendix Table
+\backslash
+ref{tab:Primary-outcomes-farmer-LATE}.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
@@ -4234,7 +4268,7 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
-begin{tabular}{rcccc}
+begin{tabular}{p{5.5cm}cccc}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4250,7 +4284,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs 
+& mean ctrl & analyzer & nobs
 \backslash
 
 \backslash
@@ -4548,6 +4582,9 @@ Note:
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
  The “Index of primary MCC outcomes” is an Anderson (2008) index of the variables listed above.
+ Corresponding LATE estimates are reported in Appendix Table
+\backslash
+ref{tab:Primary-outcomes-MCC-LATE}.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
@@ -5992,7 +6029,7 @@ tuple "list"
 placement document
 alignment document
 wide false
-sideways false
+sideways true
 status open
 
 \begin_layout Plain Layout
@@ -9285,6 +9322,9 @@ Note:
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
  Standard errors are clustered at the catchment-area level.
+ This table reports LATE estimates corresponding to the ITT results in Table
+\backslash
+ref{tab:Primary-outcomes-milk-quality}.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
@@ -9572,6 +9612,9 @@ Note:
  Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the four primary outcomes.
  Standard errors are clustered at the catchment-area level.
+ This table reports LATE estimates corresponding to the ITT results in Table
+\backslash
+ref{tab:Primary-outcomes-farmer}.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
@@ -9923,6 +9966,9 @@ Note:
  Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the six primary MCC outcomes.
  Standard errors are clustered at the catchment-area level.
+ This table reports LATE estimates corresponding to the ITT results in Table
+\backslash
+ref{tab:Primary-outcomes-MCC}.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
