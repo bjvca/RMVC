@@ -740,7 +740,18 @@ In dairy market analysis,
  solids-not-fat,
  protein,
  added water,
- and density across the full pool of active suppliers.
+ and density across the full pool of active suppliers (testing visits were unannounced and conducted identically across arms; see Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:milk-quality"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ for a discussion of potential Hawthorne effects).
 \end_layout
 
 \begin_layout Standard
