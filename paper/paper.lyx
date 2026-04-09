@@ -846,13 +846,14 @@ not
  pass value upstream to farmers;
  if anything,
  farm-gate prices move slightly downward,
- by around 17 UGX per liter.
- One plausible mechanism is that traders facing stronger incentives to source high-quality milk expand their supplier networks to increase the probability of meeting quality thresholds,
- and the resulting increase in the supply of potential sellers shifts bargaining power toward the trader.
- Alternatively,
- traders may substitute away from price-based competition for suppliers toward quality-based screening,
- spending more effort on selection and less on offering attractive prices.
- Whatever the mechanism,
+ by around 17 UGX per liter (about 1.9 percent of the control mean of 906 UGX).
+ One plausible mechanism is informational:
+ the bonus was paid privately to traders and farmers were not informed of its existence,
+ so traders have no competitive pressure from suppliers to share the rent.
+ At the same time,
+ the testing infrastructure gives treated traders verifiable quality readings that farmers cannot independently observe,
+ allowing traders to credibly discount milk they claim is below standard and extract more surplus in the bilateral bargain.
+ Whatever the exact channel,
  the result underscores a central finding of the paper:
  even when price incentives are injected into the chain,
  the structure of intermediation prevents them from reaching the farmers whose behavior ultimately determines raw milk quality at the source.
@@ -1025,11 +1026,13 @@ literal "false"
  traders receiving explicit,
  daily quality-linked bonuses paid via mobile money do not transmit value upstream;
  farm-gate prices if anything drift slightly downward,
- consistent with expanded sourcing shifting bargaining power toward traders.
+ consistent with traders capturing the informational rent created by private,
+ verifiable quality readings that farmers cannot observe.
  The contrast clarifies a mechanism:
  unconditional subsidies create competitive pressure that raises farmer prices,
- whereas quality-contingent premiums induce traders to expand supplier networks and screen for quality,
- responses that need not raise prices to any individual farmer.
+ whereas quality-contingent premiums paid privately to traders,
+ combined with asymmetric access to quality information,
+ allow traders to retain the surplus rather than share it with upstream suppliers.
  This distinction matters for how the literature interprets pass-through evidence and has direct implications for the design of quality-upgrading programs.
  
 \begin_inset CommandInset citation
@@ -1383,8 +1386,12 @@ Pricing along the chain reinforces the low-quality equilibrium.
  A similar rigidity prevails downstream:
  processors typically announce fixed procurement prices for two-week periods,
  adjusting only in response to acute shortages or seasonal gluts.
+ Notably,
+ in interviews with the research team,
+ processors indicate that they would be willing to pay premiums for higher-quality milk if composition could be credibly verified at the point of delivery,
+ suggesting that the absence of differentiated pricing reflects verification constraints rather than a lack of downstream demand for quality.
  This structure severs the link between the quality of a specific delivery and the price paid for it,
- even when testing infrastructure is available to measure that quality.
+ even when testing infrastructure is available at only one node of the chain.
 \end_layout
 
 \begin_layout Standard
@@ -1451,11 +1458,13 @@ name "subsec:design"
 
 \begin_layout Standard
 We use a simple cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
- The unit of randomization is the MCC catchment area.
- We define an MCC's catchment area as the geographic zone from which farmers routinely deliver milk to that center,
- typically extending 5 to 10 kilometers from the MCC.
- Because farmers within the same catchment share exposure to MCC-level treatment,
- we cluster standard errors at this level.
+ The unit of randomization is the catchment area,
+ defined operationally as a cluster of one or more nearby or co-located MCCs together with the pool of farmers delivering milk to them at the time of the baseline census.
+ Most catchments contain a single MCC,
+ but in some trading centers two to four MCCs operate in the same location and draw from an overlapping pool of farmers;
+ these MCCs were grouped into a single catchment and assigned jointly to avoid contamination.
+ Because all farmers in a given catchment share exposure to the same treatment status,
+ we cluster standard errors at the catchment level in all regressions.
  Of the 125 MCCs enrolled in the study,
  about half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection,
  while the remaining MCCs served as controls.
@@ -1463,13 +1472,9 @@ We use a simple cluster-randomized controlled trial to test whether making quali
 status collapsed
 
 \begin_layout Plain Layout
-In some cases,
- multiple MCCs were located in the same catchment area (e.g.,
- in a trading center).
- Such MCCs were assigned to the same treatment group to avoid contamination.
- As a result,
- the 125 endline MCCs map to 92 distinct randomization clusters.
- A minimum detectable effect analysis confirms that this reduction does not materially affect statistical power:
+The 124 MCCs surveyed at baseline map to 95 distinct catchments (randomization clusters);
+ the 120 MCCs re-surveyed at endline map to 92 catchments.
+ A minimum detectable effect analysis confirms that the grouping of co-located MCCs does not materially affect statistical power:
  with baseline controls,
  the MDE for MCC-level prices is approximately 21 UGX,
  well below the hypothesized 30 UGX effect,
@@ -1769,7 +1774,10 @@ Processors set fairly stable procurement prices and MCCs adjust tightly around t
 
 \end_inset
 
- We assumed the intervention would increase MCC prices by 30 UGX/liter (medium to large effect size) and translate into a 40 UGX/liter increase for farmers (small to medium effect).
+ We assumed the intervention would increase MCC prices by 30 UGX/liter (about 3 percent of the assumed baseline,
+ or roughly 0.008 USD/liter at March 2026 exchange rates;
+ a medium to large effect size) and translate into a 40 UGX/liter increase for farmers (about 4 percent,
+ a small to medium effect).
  Power was calculated at the 5 percent significance level using 1,000 simulations across varying combinations of clusters (100 to 130 MCCs) and farmers per cluster (10 to 40).
  Results showed that with about 125 MCCs and 20 farmers per MCC (total sample of about 2,500 farmers),
  power was just above 0.80 for a joint significance test,
@@ -1793,7 +1801,7 @@ status collapsed
 \begin_layout Plain Layout
 As noted above,
  co-located MCCs were assigned to the same treatment group,
- yielding 92 distinct randomization clusters from the 125 endline MCCs.
+ yielding 95 distinct randomization clusters from the 124 MCCs surveyed at baseline (and 92 clusters from the 120 MCCs re-surveyed at endline).
 \end_layout
 
 \end_inset
@@ -1861,7 +1869,7 @@ nolink "false"
  illustrates the randomization in three of the four study districts.
  The left panel displays the spatial distribution of MCCs and their treatment assignment.
  The right panel shows the corresponding treatment assignment for farmers connected to those MCCs,
- reflecting the cluster-randomized design in which all farmers within a treated MCC's catchment area are assigned to treatment.
+ reflecting the cluster-randomized design in which all farmers delivering to MCCs in a treated catchment (which may span more than one co-located MCC) are assigned to treatment.
 \end_layout
 
 \begin_layout Standard
@@ -2996,15 +3004,17 @@ Meeting sample size targets within the available budget proved challenging at ba
  In the end,
  we surveyed 2,261 farmers across 124 MCCs,
  corresponding to 87 percent of our planned farmer sample and 99 percent of our planned MCC sample.
- Of these 124 MCCs,
- 60 were randomly assigned to the control condition and 64 to the treatment condition.
+ Because co-located MCCs were grouped together for randomization,
+ these 124 MCCs form 95 distinct catchments (randomization clusters).
+ At the catchment level,
+ 47 were assigned to control (containing 60 MCCs) and 48 to treatment (containing 64 MCCs).
 \end_layout
 
 \begin_layout Standard
 By the time of the endline survey,
  4 of the 124 baseline MCCs had attrited:
  2 could not be re-contacted and 2 refused to cooperate,
- leaving us with data for 120 MCCs.
+ leaving us with data for 120 MCCs in 92 catchments.
  Of the 4 attrited MCCs,
  one was originally assigned to the control group and 3 to the treatment group.
  A Fisher exact test does not reject equal attrition rates across treatment arms (p = 0.62),
@@ -3047,6 +3057,16 @@ The resulting first-stage relationship between random assignment and actual anal
  Given this,
  we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
  The fact that we detect significant quality improvements despite this attenuation suggests that the true effect of a functioning quality measurement system is substantially larger than the ITT estimates indicate.
+\end_layout
+
+\begin_layout Standard
+The presence of functioning analyzers at some control MCCs also raises a potential SUTVA concern:
+ if those MCCs acquired project devices through informal transfers from nearby treatment sites,
+ the control group is effectively partially treated,
+ which would attenuate the estimated treatment effect.
+ We return to this concern after presenting the main results and show that re-estimating on the clean subsample of MCCs yields qualitatively similar,
+ and if anything slightly sharper,
+ findings.
 \end_layout
 
 \begin_layout Subsection
@@ -3094,7 +3114,9 @@ tuple "list"
  butterfat,
  solids-not-fat (SNF),
  protein,
- and density (corrected lactometer reading).
+ and density,
+ measured by the corrected lactometer reading (CLR),
+ a temperature-adjusted density measure reflecting compositional integrity.
  These variables are also combined into an index of overall quality.
 \end_layout
 
@@ -4757,6 +4779,50 @@ At the farmer level,
  not farmer education.
  Improved analyzer use at MCCs did not spill over into farmer knowledge or practice,
  reinforcing the interpretation that the intervention operated through the enforcement channel at the MCC level rather than through changes in farmer behavior.
+\end_layout
+
+\begin_layout Subsubsection
+Robustness to Control-Group Contamination
+\end_layout
+
+\begin_layout Standard
+As noted in Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:attrition-compliance"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 14 of the 59 control MCCs had a functioning milk analyzer on site at endline,
+ raising the possibility that informal transfers between nearby MCCs contaminated the control group and attenuated our estimates.
+ To assess the quantitative importance of this concern,
+ we re-estimate the main specifications on the subsample of 106 MCCs (and their 1,814 associated farmers) that remains after dropping these 14 contaminated control MCCs.
+ The point estimates are qualitatively unchanged and,
+ consistent with attenuation from contamination,
+ somewhat sharper.
+ The composite milk-quality index rises by 0.22 standard deviations on the clean sample,
+ compared to 0.21 on the full sample,
+ and the individual components of the index (fat,
+ added water,
+ CLR,
+ protein) move in the same direction and retain or gain statistical significance.
+ At the MCC level,
+ the probability of testing incoming milk with a functioning analyzer increases by 75 percentage points on the clean sample,
+ compared to 53 in the full sample,
+ while the other MCC-level outcomes (farm-gate and buyer prices,
+ quality premiums) remain statistically indistinguishable from zero.
+ At the farmer level,
+ the composite index of primary outcomes becomes statistically significant at conventional levels (coefficient 0.13,
+ p = 0.007),
+ compared to marginal significance in the full sample,
+ driven again by the increase in buyer testing of milk quality.
+ We conclude that the observed contamination does not drive the main findings,
+ and that if anything it has caused us to understate the effect of a functioning quality measurement infrastructure.
 \end_layout
 
 \begin_layout Section
@@ -8163,7 +8229,7 @@ literal "false"
  Our setting represents an extreme case:
  when no quality premium exists at the processor-MCC interface,
  pass-through is trivially zero regardless of measurement capacity.
- The negative pass-through in the follow-up stands in contrast to 
+ The negative pass-through in the follow-up extends the contrast with
 \begin_inset CommandInset citation
 LatexCommand citet
 key "casaburi2022individual"
@@ -8171,14 +8237,24 @@ literal "false"
 
 \end_inset
 
-,
- who find that unconditional subsidies to traders generate competitive pass-through to farmers.
- The divergence is informative:
- unconditional subsidies raise willingness to pay for the same product,
- whereas quality-contingent premiums induce screening and network restructuring that may shift bargaining power toward the trader.
- Our experiment provides causal evidence that the structure of intermediation,
- rather than information frictions,
- may constitute a binding constraint on price transmission.
+ drawn in Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:introduction"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ unlike the unconditional trader subsidies in the Sierra Leone cocoa chain,
+ a quality-contingent bonus paid privately to traders is not subject to the same competitive discipline,
+ because neither the bonus itself nor the underlying quality readings are observed by upstream suppliers.
+ The follow-up experiment therefore provides causal evidence that the information structure of the incentive,
+ not just the structure of intermediation,
+ matters for whether rents are transmitted upstream.
 \end_layout
 
 \begin_layout Standard
@@ -9325,8 +9401,11 @@ scriptsize
 Note:
  Column 1 reports mean milk quality measures for the control group,
  with standard deviations in parentheses.
- Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
+ Column 2 presents second-stage 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
  with robust standard errors in parentheses.
+ The first stage is not separately reported;
+ the first-stage F-statistic for instrument relevance is 262.7,
+ well above conventional weak-instrument thresholds.
  Column 3 shows the number of non-missing observations.
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
@@ -9616,8 +9695,11 @@ scriptsize
 \begin_layout Plain Layout
 Note:
  Column 1 reports control group means with standard deviations in parentheses.
- Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
+ Column 2 presents second-stage 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
  with robust standard errors in parentheses.
+ The first stage is not separately reported;
+ first-stage F-statistics for instrument relevance range from 178 to 300 across outcomes,
+ well above conventional weak-instrument thresholds.
  Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the four primary outcomes.
  Standard errors are clustered at the catchment-area level.
@@ -9970,8 +10052,11 @@ scriptsize
 \begin_layout Plain Layout
 Note:
  Column 1 reports control group means with standard deviations in parentheses.
- Column 2 presents 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
+ Column 2 presents second-stage 2SLS estimates instrumenting actual analyzer use with randomized treatment assignment,
  with robust standard errors in parentheses.
+ The first stage is not separately reported;
+ first-stage F-statistics for instrument relevance range from 14.9 to 19.1 across outcomes,
+ above conventional weak-instrument thresholds.
  Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the six primary MCC outcomes.
  Standard errors are clustered at the catchment-area level.
