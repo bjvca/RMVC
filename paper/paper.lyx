@@ -740,7 +740,8 @@ In dairy market analysis,
  solids-not-fat,
  protein,
  added water,
- and density across the full pool of active suppliers (testing visits were unannounced and conducted identically across arms; see Section
+ and density across the full pool of active suppliers (testing visits were unannounced and conducted identically across arms;
+ see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:milk-quality"
@@ -769,7 +770,7 @@ The intervention substantially increased the visibility,
  Most importantly,
  analyzer installation improved milk quality itself (butterfat increased by around 0.11 percentage points,
  added water fell by nearly half a percentage point,
- and an overall quality index improved by roughly 0.2 standard deviations) while leaving biologically determined components such as SNF and protein unchanged.
+ and an overall quality index improved by roughly 0.2 standard deviations) while leaving biologically determined components such as solid-non-fat (SNF) and protein unchanged.
  This pattern of effects,
  with adulteration falling but production-side attributes unchanged,
  is consistent with adjustments in handling and integrity rather than deeper shifts in feeding or animal management practices.
@@ -805,7 +806,7 @@ The pattern of results (large increases in testing,
 To test whether activating the pricing channel can shift the chain to a higher equilibrium,
  we conduct a follow-up experiment at 20 MCCs where the measurement infrastructure is already operational,
  randomly assigning quality premiums to traders delivering milk to these MCCs.
- Treated traders receive UGX 100 per liter for each 0.1 percentage point of butterfat and solids-not-fat above East African standards,
+ Treated traders receive UGX 100 per liter for each 0.1 percentage point of butterfat and SNF above East African standards,
  paid daily via mobile money.
  The experiment proceeds in two stages that jointly allow us to separate the contribution of rewards from the contribution of stricter enforcement to quality upgrading.
  In Stage 1,
@@ -838,7 +839,11 @@ The follow-up experiment reveals that injecting explicit quality premiums into t
 Yet the most striking finding concerns price transmission.
  Despite receiving explicit,
  exogenously introduced quality premiums,
- treated traders do not pass value upstream to farmers;
+ treated traders do 
+\emph on
+not
+\emph default
+ pass value upstream to farmers;
  if anything,
  farm-gate prices move slightly downward,
  by around 17 UGX per liter.
@@ -848,7 +853,7 @@ Yet the most striking finding concerns price transmission.
  traders may substitute away from price-based competition for suppliers toward quality-based screening,
  spending more effort on selection and less on offering attractive prices.
  Whatever the mechanism,
- the result underscores the central finding of the paper:
+ the result underscores a central finding of the paper:
  even when price incentives are injected into the chain,
  the structure of intermediation prevents them from reaching the farmers whose behavior ultimately determines raw milk quality at the source.
  Farmer feeding practices show some marginal improvement,
@@ -1267,6 +1272,8 @@ Dairy farmers:
  At the upstream end of the chain are farmer households,
  who are the primary producers of milk.
  These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
+ The majority of farmers typically have a motorbike and deliver the milk themselves,
+ which is consistent with the organization of supply chains around cooperatives.
 \end_layout
 
 \begin_layout Enumerate
@@ -1361,7 +1368,7 @@ literal "false"
  Beyond adulteration,
  compositional quality (butterfat,
  protein,
- solids-not-fat) varies substantially across farmers depending on breed,
+ SNF) varies substantially across farmers depending on breed,
  feeding practices,
  and animal health,
  but these differences are not reflected in prices.
@@ -1528,16 +1535,16 @@ Generally milk was tested per (25 or 50 liter) milk can.
 
  By providing immediate feedback,
  the milk analyzers help ensure that quality standards are met and maintained.
- More information on the milk analyzer can be obtained from the 
-\begin_inset CommandInset href
-LatexCommand href
-name "manufacturer's website"
-target "https://www.essae.com/milk-fat-analyzer-machine.php"
-literal "false"
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+More information on the milk analyzer can be obtained from the manufacturer's website (https://www.essae.com/milk-fat-analyzer-machine.php).
+ 
+\end_layout
 
 \end_inset
 
-.
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1640,43 +1647,15 @@ Farmers are typically paid on the 1st and the 15th of the month.
 \end_inset
 
  In addition to the app,
- we also developed different online portals that can be used to obtain data for different stakeholders.
- For instance,
+ we also developed two online portals that can be used to obtain data for different stakeholders:
  one portal targeted MCC owners,
- such that they can monitor key parameters in the MCCs they own.
- Another portal aggregated information from all MCCs,
+ such that they can monitor key parameters in the MCCs they own;
+ a second portal aggregated information from all MCCs,
  enabling government officials such as the DDA to monitor quality parameters,
  prices and quantities in real time.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The portal can be found 
-\begin_inset CommandInset href
-LatexCommand href
-name "here"
-target "https://bjvca.shinyapps.io/sample_submission_viewer_public/"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
  This digital system enhances efficiency and transparency,
  providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
- The android app can be downloaded from 
-\begin_inset CommandInset href
-LatexCommand href
-name "google play store"
-target "https://play.google.com/store/search?q=cgiar%20milk&c=apps&hl=en"
-literal "false"
-
-\end_inset
-
-;
+ The android app can be downloaded from the Google Play Store.
  A screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1766,6 +1745,15 @@ Sample and Timeline
 \begin_layout Standard
 Sample size was determined using a series of power simulations,
  details of which can be found in the pre-analysis plan.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The pre-analysis plan was pre-registered at the AEA RCT registry (https://www.socialscienceregistry.org/trials/10262)
+\end_layout
+
+\end_inset
+
  The primary outcome for these calculations was the price of milk,
  modeled at both the MCC and farmer level.
  At the MCC level,
@@ -2125,7 +2113,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Statistical inference is based on Fisher randomization inference (RI).
+Statistical inference is based on Fisher Randomization Inference.
  Using the OLS coefficient as the test statistic,
  we evaluate its significance against a permutation distribution generated from 5,000 reassignments of treatment at the MCC catchment level,
  maintaining the number of treated clusters.
@@ -5858,7 +5846,7 @@ A higher
 
  increases the value of quality for the MCC.
  As a result,
- MCCs may tighten acceptance standard,
+ MCCs may tighten acceptance standards,
  rejecting more low-quality milk and thereby increasing average quality 
 \begin_inset Formula $\bar{q}_{m}$
 \end_inset
@@ -6432,7 +6420,7 @@ Bonuses are paid daily via mobile money,
 
 \begin_layout Standard
 The experiment proceeds in two stages.
- In Stage 1 (which ran fro November 1,
+ In Stage 1 (which ran from November 1,
  2025 through November 14,
  2025),
  the quality thresholds are set at the East African Community standards:
@@ -6490,21 +6478,12 @@ literal "false"
 .
  Results indicated that a sample of 100 traders with approximately 5 farmers per trader would provide adequate power to detect a 0.5 percentage point increase in fat content at the trader level,
  assuming an intra-cluster correlation of 0.11.
+ More details can be found in a separate entry in the AEA RCT registry for the follow-up study.
 \begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The DeclareDesign code and simulation results are available in the project repository (
-\begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
-follow_up/design.R
-\end_layout
-
-\end_inset
-
-).
+The pre-analysis plan was pre-registered at the AEA RCT registry (https://www.socialscienceregistry.org/trials/16750)
 \end_layout
 
 \end_inset
@@ -6660,7 +6639,7 @@ For the trader endline,
 
 \begin_layout Standard
 As was the case in the main experiment,
- our primary inferential framework is Fisher randomization inference (RI),
+ our primary inferential framework is Fisher randomization inference,
  computed from 5,000 permutations of the treatment indicator within MCC blocks.
  To match the fixed-effects specification,
  outcomes are demeaned at the MCC level before computing the RI distribution.
@@ -8006,7 +7985,8 @@ name "sec:discussion"
 \end_layout
 
 \begin_layout Standard
-The results point to three findings that merit further interpretation:
+Overall,
+ the results we present in this paper indicate three key findings that merit further interpretation:
  the dominance of the threshold over the gradient in the follow-up experiment,
  the negative effect on farm-gate prices,
  and the broader relationship between the two experiments.
@@ -8251,8 +8231,9 @@ Notes
 \end_layout
 
 \begin_layout Standard
-This research received clearance form Makerere’s School of Social Sciences Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI IRB (DSGD-22-1057).
+This research received clearance from Makerere University’s School of Social Sciences Research Ethics Committee (MAKSSREC-10.2022.594/AR) as well as from IFPRI IRB (DSGD-22-1057).
  The research was also registered at the Ugandan National Commission for Science and Technology (SS1520ES).
+ Corresponding pre-analysis plans were registered at the AEA RCT Registry as AEARCTR-0010262 (main experiment) and AEARCTR-0016750 (follow-up).
 \end_layout
 
 \begin_layout Standard
