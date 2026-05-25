@@ -8233,7 +8233,7 @@ literal "false"
  Our setting represents an extreme case:
  when no quality premium exists at the processor-MCC interface,
  pass-through is trivially zero regardless of measurement capacity.
- The negative pass-through in the follow-up extends the contrast with
+ The negative pass-through in the follow-up extends the contrast with 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "casaburi2022individual"
@@ -8304,7 +8304,7 @@ We would like to thank Denis Athua and Benon Byarugaba of the Ministry of Agricu
  We also would like to thank Leocardia Nabwire,
  Wilberforce Walukano and Marc Charles Wanume for field support.
  Funding was received from the CGIAR Rethinking Markets Research Initiatives and the CGIAR Better Diets and Nutrition Science Program.
- We would like to thank all funders who supported this research through their contributions to the
+ We would like to thank all funders who supported this research through their contributions to the 
 \begin_inset CommandInset href
 LatexCommand href
 name "CGIAR Trust Fund"
