@@ -42,7 +42,10 @@ source("04_analysis_followup.R")
 cat("\n--- Step 5: Randomization inference (5,000 permutations) ---\n")
 source("06_randomization_inference.R")
 
-cat("\n--- Step 6: Generating figures ---\n")
+cat("\n--- Step 6: Attrition correlates and analysis-sample balance ---\n")
+source("08_attrition_balance.R")
+
+cat("\n--- Step 7: Generating figures ---\n")
 source("05_figures.R")
 
 cat("\n=== Pipeline complete ===\n")

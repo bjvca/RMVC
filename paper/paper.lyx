@@ -392,6 +392,34 @@ res_farmers_fu <- readRDS(paste0(path,
 \end_layout
 
 \begin_layout Plain Layout
+# Attrition correlates and analysis-sample balance (08_attrition_balance.R)
+\end_layout
+
+\begin_layout Plain Layout
+attrition_correlates_farmer <- readRDS(paste0(path,
+ "/results/attrition_correlates_farmer.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+balance_farmer_analysis <- readRDS(paste0(path,
+ "/results/balance_farmer_analysis.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+balance_followup_ext <- readRDS(paste0(path,
+ "/results/balance_followup_ext.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+balance_farmer_fu <- readRDS(paste0(path,
+ "/results/balance_farmer_fu.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 # Helper for significance stars in tables
 \end_layout
 
@@ -3041,6 +3069,32 @@ By the time of the endline survey,
  we get 2,059.
  Also at the farmer level,
  attrition is unrelated to treatment assignment.
+ To examine whether the analysis sample remains representative of the baseline frame,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:attrition_correlates_farmer"
+
+\end_inset
+
+ compares baseline characteristics of retained versus attrited farmers.
+ Most differences are small and statistically insignificant,
+ and a joint Wald test fails to reject the null that baseline characteristics jointly predict attrition (F = 1.55,
+ p = 0.16).
+ Two characteristics differ at the 10 percent level (head age and herd size),
+ with attrited farmers being slightly younger and operating larger herds on average.
+ As a complementary check,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:balance_farmer_analysis"
+
+\end_inset
+
+ re-estimates the baseline balance regression on the analysis sample.
+ The joint F-tests for both treatment arms remain comfortably above conventional thresholds (p = 0.61 for the analyzer arm,
+ p = 0.81 for the video arm),
+ indicating that selective attrition has not undone baseline balance among survivors.
 \end_layout
 
 \begin_layout Standard
@@ -6736,6 +6790,28 @@ Attrition is minimal.
  99 of the 100 targeted traders were interviewed,
  and 422 of the approximately 500 targeted farmers completed the questionnaire (197 in treated trader catchments and 225 in control).
  The shortfall in the farmer sample reflects the difficulty of locating smallholder farmers who sell through mobile traders rather than differential attrition by treatment status.
+ To verify that randomization produced comparable samples,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:balance_trader"
+
+\end_inset
+
+ reports balance for the 99 traders on pre-treatment quality and quantity outcomes and on plausibly pre-determined trader characteristics,
+ and Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:balance_farmer_fu"
+
+\end_inset
+
+ reports balance for the 422 farmers on plausibly pre-determined production and trader-linkage characteristics.
+ Pre-treatment outcomes and farmer characteristics are well balanced.
+ One trader characteristic shows a difference at conventional levels:
+ traders in the treatment arm are somewhat more likely to be owner-operators rather than employees of a larger trading firm.
+ We control for this characteristic in robustness specifications,
+ but note that the MCC fixed effects in our main specification already absorb most of the relevant cross-trader variation.
 \end_layout
 
 \begin_layout Subsection
@@ -10727,6 +10803,328 @@ Note:
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
  The “Index of uptake” is an Anderson (2008) index of the variables listed above.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Attrition correlates,
+ Experiment 1 farmer sample
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:attrition_correlates_farmer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_attrition_correlates_farmer.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Comparison of baseline characteristics between farmers retained in the endline analysis sample (N=2,058) and those lost to attrition (N=203,
+ 9.0 percent of the baseline sample).
+ Columns 1-2 report unconditional means;
+ column 3 reports the difference (attrited minus retained) with cluster-robust standard errors at the catchment level (CR2).
+ The joint test is a Hotelling-type Wald test (HTZ) of the null that all 10 baseline characteristics jointly fail to predict attrition;
+ listwise deletion is used and N reflects observations with complete data on all covariates (Acaricide expenditure has substantial missingness in the baseline).
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance on Experiment 1 farmer analysis sample
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:balance_farmer_analysis"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_balance_farmer_analysis.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Re-estimation of baseline balance on the Experiment 1 analysis sample (farmers retained at endline,
+ N=2,058) rather than on the full baseline sample.
+ Each row reports the pure control (T1=0 & T2=0) mean and standard deviation,
+ the T1 (analyzer) and T2 (video) coefficients from a fully factorial regression with CR2 cluster-robust standard errors at the catchment level,
+ and the observation count.
+ The joint test is a Hotelling-type Wald test (HTZ) of the null that all baseline characteristics jointly fail to predict treatment assignment in the analysis sample;
+ listwise deletion is used and N reflects observations with complete data on all covariates.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Experiment 2 trader balance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:balance_trader"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_balance_trader.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Balance check for the 99 traders enrolled in Experiment 2 (47 treatment,
+ 52 control).
+ The top panel reports pre-treatment daily-submission outcomes (averages over the period up to 1 November 2025),
+ estimated with MCC fixed effects and trader-clustered standard errors.
+ The bottom panel reports trader characteristics measured at the trader endline survey but plausibly pre-determined at the time of randomization (employment structure and delivered quantities),
+ with MCC fixed effects and heteroskedasticity-robust standard errors.
+ Transport-mode dummies are omitted because all traders use the same mode (motorcycle).
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Experiment 2 farmer balance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:balance_farmer_fu"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_balance_farmer_fu.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Balance check for the 422 farmers in the Experiment 2 farmer follow-up survey (197 linked to treated traders,
+ 225 to control traders).
+ Farmers were recruited at endline through traders;
+ no separate baseline survey exists for this sample.
+ Outcomes shown are plausibly pre-determined at the time of trader randomization:
+ farmer-reported total daily production and sales,
+ quantity sold to the recruiting trader,
+ and years linked to that trader.
+ Estimates use MCC fixed effects with trader-clustered standard errors.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
