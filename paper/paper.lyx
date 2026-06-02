@@ -1024,16 +1024,27 @@ literal "false"
 
 \end_inset
 
- uses a randomized trader subsidy in the Sierra Leone cocoa chain and finds competitive pass-through to farmers,
+ uses a randomized trader subsidy in the Sierra Leone cocoa chain and finds substantial pass-through to farmers,
  delivered either through prices or credit.
- Our follow-up experiment generates a sharply different result under otherwise similar experimental logic:
- traders receiving explicit,
+ The broader experimental record on trader pass-through is, however, far from settled.
+
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bergquist2020competition"
+literal "false"
+
+\end_inset
+
+ use randomized cost shocks among maize traders in Kenya and reach the opposite conclusion: only about 22 percent of the cost reduction reaches consumers, and trader conduct is statistically indistinguishable from joint profit maximization, with intermediaries capturing roughly 82 percent of total surplus.
+ The two studies bracket the question this paper addresses: when does value introduced at the intermediary level transmit through the chain, and when is it retained as rent?
+ Our follow-up experiment speaks directly to this question under experimental logic similar to that of the Sierra Leone study, but in a setting where the value being transferred is informational rather than a flat cost reduction.
+ Traders receiving explicit,
  daily quality-linked bonuses paid via mobile money do not transmit value upstream;
  farm-gate prices if anything drift slightly downward,
  consistent with traders capturing the informational rent created by private,
  verifiable quality readings that farmers cannot observe.
  The contrast clarifies a mechanism:
- unconditional subsidies create competitive pressure that raises farmer prices,
+ unconditional subsidies can generate competitive pressure that raises farmer prices where market structure allows,
  whereas quality-contingent premiums paid privately to traders,
  combined with asymmetric access to quality information,
  allow traders to retain the surplus rather than share it with upstream suppliers.
