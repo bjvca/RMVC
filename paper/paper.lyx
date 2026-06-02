@@ -6807,11 +6807,16 @@ reference "tab:balance_farmer_fu"
 \end_inset
 
  reports balance for the 422 farmers on plausibly pre-determined production and trader-linkage characteristics.
- Pre-treatment outcomes and farmer characteristics are well balanced.
- One trader characteristic shows a difference at conventional levels:
- traders in the treatment arm are somewhat more likely to be owner-operators rather than employees of a larger trading firm.
- We control for this characteristic in robustness specifications,
- but note that the MCC fixed effects in our main specification already absorb most of the relevant cross-trader variation.
+ Pre-treatment fat content is approximately 0.24 percentage points lower among traders subsequently assigned to treatment (significant at the 1 percent level),
+ while pre-treatment SNF and quantity are balanced.
+ Because our daily-submission specification includes MCC fixed effects but does not net out trader-level pre-treatment outcomes,
+ we estimate a robustness specification that adds the trader-specific pre-treatment mean fat as a control;
+ the estimated treatment effect on post-treatment fat shifts only marginally,
+ from 0.109 percentage points in the main specification to 0.096 percentage points (significant at the 5 percent level) when conditioning on pre-treatment levels,
+ indicating that the result is not driven by mean reversion from the lower pre-treatment baseline.
+ One trader characteristic also differs at conventional levels:
+ traders in the treatment arm are somewhat more likely to be owner-operators rather than employees of a larger trading firm,
+ a pre-determined feature that the MCC fixed effects in our main specification partially absorb.
 \end_layout
 
 \begin_layout Subsection
