@@ -545,6 +545,24 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+Quality is a multi-dimensional concept that may encompass visual appearance,
+ nutritional content,
+ taste,
+ food safety,
+ water content,
+ and the absence of adulteration,
+ among other attributes.
+ The relative importance of each dimension varies across products,
+ markets,
+ and stages of the value chain,
+ and a given intervention typically operates on only a subset.
+ Throughout this paper we use the term to refer specifically to the compositional and adulteration-related dimensions that are measurable with a milk analyzer at the point of aggregation, namely fat and solids-not-fat content and the detection of added water.
+ These dimensions correspond to what is priced under the East African Community raw milk standards and are the attributes that buyers in our setting cite as the basis for premium payments;
+ we set aside attributes such as microbial safety and taste,
+ which require different measurement infrastructure and pricing arrangements.
+\end_layout
+
+\begin_layout Standard
 For quality to become an important driver of behavior,
  actors must be properly incentivized to produce and preserve it.
  In many markets,
@@ -628,7 +646,7 @@ literal "false"
  shows,
  individual incentives are governed not only by one's own quality choices but by the group's aggregate track record,
  since,
- under poole marketing,
+ under pooled marketing,
  individual contributions are observed only with noise;
  each producer can therefore free-ride on the group's standing by supplying below-optimal quality while transacting at the pool price.
  
