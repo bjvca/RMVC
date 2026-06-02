@@ -1312,8 +1312,6 @@ literal "false"
  productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
  such as Holstein Friesians and Jersey cows,
  significantly increasing milk yields and overall sector efficiency.
- Today,
- the dairy subsector is one of the main export earners of the country.
 \end_layout
 
 \begin_layout Standard
@@ -4926,7 +4924,12 @@ This section presents a simple analytical framework to rationalize the findings 
  in which quality measurement enables quality-differentiated pricing.
  The main experiment results are consistent with the enforcement channel operating in isolation:
  quality improves but prices do not differentiate.
- We then present results from a follow-up experiment that tests the price channel directly by exogenously activating quality-based premiums.
+ We then present results from a follow-up experiment that tests the price channel directly by introducing quality-based premiums at the trader-MCC interface,
+ bypassing the processor-MCC pass-through that would be required for the model's
+\begin_inset Formula $\alpha$
+\end_inset
+
+ to emerge endogenously.
 \end_layout
 
 \begin_layout Subsection
@@ -6179,12 +6182,37 @@ tuple "list"
 \end_inset
 
  does not activate.
- The remaining predictions concern the follow-up experiment,
- where quality-based pricing is exogenously activated (
+ The remaining predictions concern the follow-up experiment.
+ We emphasize that the follow-up does not literally activate
+\begin_inset Formula $\alpha$
+\end_inset
+
+ as defined in the model,
+ since
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is the per-unit premium that the processor pays the MCC for verifiable quality;
+ inducing
 \begin_inset Formula $\alpha>0$
 \end_inset
 
-) under varying threshold stringency.
+ would require an intervention at the processor stage,
+ which the project could not implement.
+ Instead,
+ the follow-up injects a quality-contingent premium one node downstream,
+ paying traders directly for the verified compositional quality of milk they deliver to the MCC.
+ In the notation of the model this corresponds to setting the product
+\begin_inset Formula $\lambda\alpha$
+\end_inset
+
+ to a positive value at the trader-MCC interface by external transfer rather than letting it emerge from processor pricing.
+ The resulting test is therefore not of whether
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ propagates through the chain,
+ but of whether a positive quality-linked transfer received by an intermediary alters its own quality behavior and is passed further upstream to farmers.
 \end_layout
 
 \begin_layout Standard
