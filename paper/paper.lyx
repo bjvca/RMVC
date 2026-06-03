@@ -4796,7 +4796,7 @@ status collapsed
 \begin_layout Plain Layout
 These self-reported outcomes may raise concerns about experimenter bias.
  However,
- as shown in Table 
+ as shown in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Secondary-outcomes-MCC-uptake"
@@ -4873,7 +4873,7 @@ We examine several pre-registered secondary outcomes capturing treatment uptake 
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Secondary-outcomes-MCC-uptake"
+reference "tab:Secondary-outcomes-farmer-uptake"
 nolink "false"
 
 \end_inset
@@ -4885,7 +4885,7 @@ nolink "false"
 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "tab:Secondary-outcomes-farmer-uptake"
+reference "tab:Secondary-outcomes-MCC-uptake"
 nolink "false"
 
 \end_inset
@@ -4917,7 +4917,7 @@ Robustness to Control-Group Contamination
 \end_layout
 
 \begin_layout Standard
-As noted in Section
+As noted in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:attrition-compliance"
@@ -4933,6 +4933,17 @@ nolink "false"
  raising the possibility that informal transfers between nearby MCCs contaminated the control group and attenuated our estimates.
  To assess the quantitative importance of this concern,
  we re-estimate the main specifications on the subsample of 106 MCCs (and their 1,814 associated farmers) that remains after dropping these 14 contaminated control MCCs.
+ Full results are reported in Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:robustness_contamination"
+
+\end_inset
+
+,
+ which places full-sample and clean-sample treatment effects side by side for the three result levels (milk samples,
+ MCC outcomes,
+ farmer outcomes).
  The point estimates are qualitatively unchanged and,
  consistent with attenuation from contamination,
  somewhat sharper.
@@ -11358,6 +11369,111 @@ reference "tab:Primary-outcomes-farmer"
 ;
  the marginally negative coefficients indicate mild selection,
  while the price rows (estimated conditional on having sold) show no statistically detectable treatment effect on prices received.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways true
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contamination robustness:
+ full sample vs.
+ clean subsample
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:robustness_contamination"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_robustness_contamination.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Side-by-side comparison of treatment effects on the full estimation sample versus the clean subsample,
+ which drops the 14 control MCCs found to host a functioning milk analyzer at endline (and their associated farmers).
+ Panel A covers the supervised milk-sample outcomes from Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-milk-quality"
+
+\end_inset
+
+,
+ Panel B the MCC-level outcomes from Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-MCC"
+
+\end_inset
+
+,
+ and Panel C the farmer-level primary outcomes from Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer"
+
+\end_inset
+
+.
+ Across all three panels,
+ point estimates retain their sign and most retain or gain statistical significance on the clean sample,
+ consistent with attenuation from informal analyzer transfers between treatment and control MCCs.
+ Standard errors are CR2 cluster-robust at the catchment level.
  Significance levels:
  + p < 0.10,
  * p < 0.05,

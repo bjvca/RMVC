@@ -411,5 +411,78 @@ tab_E <- paste(c(
 writeLines(tab_E, paste(tex_dir, "tab_sec_sold.tex", sep = "/"))
 
 
+## --- Table F: contamination robustness side-by-side ------------------------
+## Compares full-sample point estimates with clean-subsample estimates for the
+## three result levels (milk samples, MCCs, farmers). Renders the previously
+## computed but undisplayed robustness_contamination object.
+
+rc       <- readRDS(paste(tex_dir, "robustness_contamination.rds", sep = "/"))
+rs_full  <- readRDS(paste(tex_dir, "res_samples.rds", sep = "/"))
+rm_full  <- readRDS(paste(tex_dir, "res_MCCs.rds", sep = "/"))
+rf_full  <- readRDS(paste(tex_dir, "res_farmers.rds", sep = "/"))
+
+sample_labs <- c("Butterfat (%)", "SNF (%)", "Added water (%)",
+                 "Protein (%)", "CLR", "Quality index")
+mcc_labs    <- c("Tests incoming milk", "Tests outgoing milk",
+                 "Farm-gate price", "Buyer price",
+                 "Pays quality premium", "Receives quality premium",
+                 "Uptake index")
+farmer_labs <- c("Improved practices index", "Buyer checks quality",
+                 "Average price received", "Receives quality bonus",
+                 "Primary farmer index")
+
+panel_rows <- function(full, clean, labs, full_coef_col, full_se_col, full_p_col,
+                       full_n_col, clean_coef_col, clean_se_col, clean_p_col,
+                       clean_n_col) {
+  out <- character(0)
+  for (i in seq_len(nrow(full))) {
+    out <- c(out, sprintf(
+      "%s & %s%s & (%s) & %s & %s%s & (%s) & %s \\\\",
+      labs[i],
+      fmt(full[i,  full_coef_col]),  stars(full[i,  full_p_col]),
+      fmt(full[i,  full_se_col]),
+      formatC(full[i, full_n_col], format = "d"),
+      fmt(clean[i, clean_coef_col]), stars(clean[i, clean_p_col]),
+      fmt(clean[i, clean_se_col]),
+      formatC(clean[i, clean_n_col], format = "d")))
+  }
+  out
+}
+
+## Milk samples: full uses res_samples (cols 3,4,5,9); clean uses rc$res_samples
+rows_s <- panel_rows(rs_full, rc$res_samples, sample_labs,
+                     full_coef_col = 3, full_se_col = 4, full_p_col = 5, full_n_col = 9,
+                     clean_coef_col = 3, clean_se_col = 4, clean_p_col = 5, clean_n_col = 6)
+
+## MCCs: full res_MCCs has cols 3 coef, 4 se, 5 p, 9 N; clean rc$res_MCCs cols 3,4,5,6
+rows_m <- panel_rows(rm_full, rc$res_MCCs, mcc_labs,
+                     full_coef_col = 3, full_se_col = 4, full_p_col = 5, full_n_col = 9,
+                     clean_coef_col = 3, clean_se_col = 4, clean_p_col = 5, clean_n_col = 6)
+
+## Farmers: full res_farmers cols 3 coef, 4 se, 5 p, 9 N; clean rc$res_farmers same layout
+rows_f <- panel_rows(rf_full, rc$res_farmers, farmer_labs,
+                     full_coef_col = 3, full_se_col = 4, full_p_col = 5, full_n_col = 9,
+                     clean_coef_col = 3, clean_se_col = 4, clean_p_col = 5, clean_n_col = 9)
+
+tab_F <- paste(c(
+  "\\begin{tabular}{lcccccc}", "\\hline\\hline",
+  " & \\multicolumn{3}{c}{Full sample} & \\multicolumn{3}{c}{Clean sample} \\\\",
+  "\\cline{2-4} \\cline{5-7}",
+  " & treat & SE & N & treat & SE & N \\\\",
+  "\\hline",
+  "\\multicolumn{7}{l}{\\textit{Panel A: Milk samples (supervised endline testing)}} \\\\",
+  rows_s,
+  "\\hline",
+  "\\multicolumn{7}{l}{\\textit{Panel B: MCC-level outcomes}} \\\\",
+  rows_m,
+  "\\hline",
+  "\\multicolumn{7}{l}{\\textit{Panel C: Farmer-level primary outcomes}} \\\\",
+  rows_f,
+  "\\hline\\hline",
+  "\\end{tabular}"
+), collapse = "\n")
+writeLines(tab_F, paste(tex_dir, "tab_robustness_contamination.tex", sep = "/"))
+
+
 cat("\n08_attrition_balance.R completed successfully.\n")
-cat("Wrote 5 .tex tabular files to paper/results/\n")
+cat("Wrote 6 .tex tabular files to paper/results/\n")
