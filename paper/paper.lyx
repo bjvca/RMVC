@@ -1719,8 +1719,7 @@ Farmers are typically paid on the 1st and the 15th of the month.
  prices and quantities in real time.
  This digital system enhances efficiency and transparency,
  providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
- The android app can be downloaded from the Google Play Store.
- A screenshot of the application can be found in Figure 
+ The android app can be downloaded from the Google Play Store; a screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Application"
@@ -1942,7 +1941,11 @@ Baseline data from both MCCs and associated farmers was collected towards the en
  endline data was collected.
  This involved in-person surveys at the MCC level and at the farmer level.
  In addition,
- during endline we also measured quality of incoming milk.
+ during endline we also measured the quality of incoming milk at each MCC under supervised conditions,
+ yielding 2,518 individual milk samples across the 120 MCCs visited at endline.
+ After endline data collection was complete,
+ milk analyzers were also installed at all control MCCs together with the same training and follow-up protocol used in the treatment arm,
+ both to honour our commitment to participating MCCs and to avoid leaving a quality-measurement gap in the catchments where the intervention had shown positive effects.
 \end_layout
 
 \begin_layout Subsection
