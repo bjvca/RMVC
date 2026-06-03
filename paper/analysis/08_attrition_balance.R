@@ -272,8 +272,7 @@ for (i in seq_len(nrow(A))) {
 }
 tab_A <- paste(c(
   "\\begin{tabular}{lccccc}", "\\hline\\hline",
-  " & Mean & Mean & Diff. & SE & N \\\\",
-  " & (retained) & (attrited) & & & \\\\",
+  " & retained & attrited & diff. & SE & N \\\\",
   "\\hline",
   rows,
   "\\hline",
@@ -303,7 +302,7 @@ for (i in seq_len(nrow(B))) {
 }
 tab_B <- paste(c(
   "\\begin{tabular}{lcccc}", "\\hline\\hline",
-  " & Control mean & Measurement system & Video & N \\\\",
+  " & ctrl & treat & video & N \\\\",
   "\\hline",
   rows,
   "\\hline",
@@ -347,7 +346,7 @@ for (i in seq_len(nrow(C_mat))) {
 }
 tab_C <- paste(c(
   "\\begin{tabular}{lcccc}", "\\hline\\hline",
-  " & Control mean & Treatment diff. & SE & N \\\\",
+  " & ctrl & treat & SE & N \\\\",
   "\\hline",
   rows,
   "\\hline\\hline",
@@ -373,7 +372,7 @@ for (i in seq_len(nrow(D))) {
 }
 tab_D <- paste(c(
   "\\begin{tabular}{lcccc}", "\\hline\\hline",
-  " & Control mean & Treatment diff. & SE & N \\\\",
+  " & ctrl & treat & SE & N \\\\",
   "\\hline",
   rows,
   "\\hline\\hline",

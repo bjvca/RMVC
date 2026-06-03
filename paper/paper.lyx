@@ -1575,7 +1575,7 @@ In response to the challenge of unobservable milk quality in the Ugandan dairy v
 \emph on
 measurement system
 \emph default
- throughout the text and in tables;
+ throughout the text;
  we reserve the term
 \emph on
 analyzer
@@ -2359,7 +2359,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & Diff.
+& ctrl & treat
   & nobs
 \backslash
 
@@ -2749,7 +2749,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & Diff.
+& ctrl & treat
  & nobs
 \backslash
 
@@ -3313,7 +3313,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs 
+& ctrl & treat & nobs 
 \backslash
 
 \backslash
@@ -3931,7 +3931,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs
+& ctrl & treat & nobs
 \backslash
 
 \backslash
@@ -4421,7 +4421,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs
+& ctrl & treat & nobs
 \backslash
 
 \backslash
@@ -7000,7 +7000,7 @@ textit{Panel A:
 \end_layout
 
 \begin_layout Plain Layout
-Treatment &
+treat &
 \backslash
 Sexpr{fmt(res_submissions[1,1])}$^{
 \backslash
@@ -7056,7 +7056,7 @@ Sexpr{res_submissions[4,4]}
 \end_layout
 
 \begin_layout Plain Layout
-Control mean &
+ctrl &
 \backslash
 Sexpr{fmt(res_submissions[1,5])} &
 \backslash
@@ -7093,7 +7093,7 @@ textit{Panel B:
 \end_layout
 
 \begin_layout Plain Layout
-Treatment &
+treat &
 \backslash
 Sexpr{fmt(res_submissions[1,6])}$^{
 \backslash
@@ -7149,7 +7149,7 @@ Sexpr{res_submissions[4,9]}
 \end_layout
 
 \begin_layout Plain Layout
-Control mean &
+ctrl &
 \backslash
 Sexpr{fmt(res_submissions[1,10])} &
 \backslash
@@ -7186,7 +7186,7 @@ textit{Panel C:
 \end_layout
 
 \begin_layout Plain Layout
-Treatment &
+treat &
 \backslash
 Sexpr{fmt(res_submissions[1,11])}$^{
 \backslash
@@ -7242,7 +7242,7 @@ Sexpr{res_submissions[4,14]}
 \end_layout
 
 \begin_layout Plain Layout
-Control mean &
+ctrl &
 \backslash
 Sexpr{fmt(res_submissions[1,15])} &
 \backslash
@@ -8705,7 +8705,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs
+& ctrl & treat & nobs
 \backslash
 
 \backslash
@@ -9031,7 +9031,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs
+& ctrl & treat & nobs
 \backslash
 
 \backslash
@@ -9348,7 +9348,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system (LATE) & nobs
+& ctrl & treat (LATE) & nobs
 \backslash
 
 \backslash
@@ -9699,7 +9699,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system (LATE) & nobs
+& ctrl & treat (LATE) & nobs
 \backslash
 
 \backslash
@@ -9992,7 +9992,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system (LATE) & nobs
+& ctrl & treat (LATE) & nobs
 \backslash
 
 \backslash
@@ -10349,7 +10349,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs
+& ctrl & treat & nobs
 \backslash
 
 \backslash
@@ -10648,7 +10648,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & measurement system & nobs 
+& ctrl & treat & nobs 
 \backslash
 
 \backslash
