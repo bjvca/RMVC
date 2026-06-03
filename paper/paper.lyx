@@ -2603,7 +2603,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -3037,7 +3037,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -3645,7 +3645,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -4268,7 +4268,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -4863,7 +4863,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -7482,7 +7482,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -8070,7 +8070,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -8481,7 +8481,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -9185,7 +9185,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -9532,7 +9532,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -9906,7 +9906,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -10232,7 +10232,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -10620,7 +10620,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -10956,7 +10956,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11326,7 +11326,7 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11438,7 +11438,7 @@ input{results/tab_attrition_correlates_farmer.tex}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11548,7 +11548,7 @@ input{results/tab_balance_farmer_analysis.tex}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11659,7 +11659,7 @@ input{results/tab_balance_trader.tex}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11770,7 +11770,7 @@ input{results/tab_balance_farmer_fu.tex}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11883,7 +11883,7 @@ input{results/tab_sec_sold.tex}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
@@ -11997,7 +11997,7 @@ input{results/tab_robustness_contamination.tex}
 \begin_layout Plain Layout
 
 \backslash
-begin{tablenotes}
+begin{tablenotes}[flushleft]
 \end_layout
 
 \begin_layout Plain Layout
