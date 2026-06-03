@@ -49,7 +49,7 @@ res_farmers_fu     <- readRDS(paste(path, "paper/results/res_farmers_fu.rds", se
 ## ---------------------------------------------------------------------------
 ## Consistent styling
 ## ---------------------------------------------------------------------------
-custom_colors_treat <- c("Treatment" = "#d95f02", "Control" = "#1b9e77")
+custom_colors_treat <- c("Treatment" = "#1b9e77", "Control" = "#d95f02")
 custom_colors_3arm  <- c("Lactoscan" = "#1f77b4", "Video" = "#ff7f0e",
                           "Bundle" = "#2ca02c")
 
