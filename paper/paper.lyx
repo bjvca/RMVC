@@ -3118,8 +3118,7 @@ reference "tab:balance_farmer_analysis"
 \end_inset
 
  re-estimates the baseline balance regression on the analysis sample.
- The joint F-tests for both treatment arms remain comfortably above conventional thresholds (p = 0.61 for the measurement-system arm,
- p = 0.81 for the video arm),
+ The joint F-test remains comfortably above conventional thresholds (p = 0.61),
  indicating that selective attrition has not undone baseline balance among survivors.
 \end_layout
 
@@ -11072,7 +11071,7 @@ Note:
  Re-estimation of baseline balance on the Experiment 1 analysis sample (farmers retained at endline,
  N=2,058) rather than on the full baseline sample.
  Each row reports the pure control (T1=0 & T2=0) mean and standard deviation,
- the measurement-system and video coefficients from a fully factorial regression with CR2 cluster-robust standard errors at the catchment level,
+ the pooled measurement-system coefficient (orthogonalised with respect to the second randomised arm) with CR2 cluster-robust standard errors at the catchment level,
  and the observation count.
  The joint test is a Hotelling-type Wald test (HTZ) of the null that all baseline characteristics jointly fail to predict treatment assignment in the analysis sample;
  listwise deletion is used and N reflects observations with complete data on all covariates.

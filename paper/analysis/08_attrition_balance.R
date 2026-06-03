@@ -114,39 +114,37 @@ saveRDS(list(table = attrition_correlates_farmer, joint = attrition_F_farmer),
 
 ana <- farmers_balance[!farmers_balance$attrited, ]
 
-balance_farmer_analysis <- array(NA, dim = c(length(X_vars), 9),
+## Pooled (orthogonalized) lactoscan coefficient, matching the main balance
+## tables: outcome ~ lactoscan + vid_demeaned, where vid_demeaned is the
+## video indicator demeaned. (Video analysis is not reported in the paper.)
+ana$vid_demeaned <- ana$video_shown - mean(ana$video_shown, na.rm = TRUE)
+
+balance_farmer_analysis <- array(NA, dim = c(length(X_vars), 6),
                                  dimnames = list(X_vars,
                                                  c("ctrl_mean", "ctrl_sd",
-                                                   "T1_coef", "T1_se", "T1_p",
-                                                   "T2_coef", "T2_se", "T2_p",
-                                                   "n")))
+                                                   "coef", "se", "p", "n")))
 
 for (i in seq_along(X_vars)) {
   v <- X_vars[i]
-  ols <- lm(as.formula(paste(v, "~ lactoscan * video_shown")), data = ana)
+  ols <- lm(as.formula(paste(v, "~ lactoscan + vid_demeaned")), data = ana)
   vcv <- vcovCR(ols, cluster = ana$catchment_ID, type = "CR2")
   res <- coef_test(ols, vcv)
 
-  ctrl <- ana[ana$lactoscan == "C" & ana$video_shown == FALSE, v]
+  ctrl <- ana[ana$lactoscan == "C", v]
   balance_farmer_analysis[i, 1] <- mean(ctrl, na.rm = TRUE)
   balance_farmer_analysis[i, 2] <- sd(ctrl,   na.rm = TRUE)
   balance_farmer_analysis[i, 3:5] <- c(res[2, 2], res[2, 3], res[2, 7])
-  balance_farmer_analysis[i, 6:8] <- c(res[3, 2], res[3, 3], res[3, 7])
-  balance_farmer_analysis[i, 9]   <- nobs(ols)
+  balance_farmer_analysis[i, 6]   <- nobs(ols)
 }
 
-## Joint F-tests: T1 and T2 each predicted by all baseline X
-keep <- complete.cases(ana[, c("lactoscan", "video_shown", X_vars, "catchment_ID")])
-mod_T1 <- lm(as.formula(paste("(lactoscan == 'T') ~", rhs)), data = ana[keep, ])
-W_T1 <- Wald_test(mod_T1, constraints = constrain_zero(X_vars),
-                  vcov = "CR2", cluster = ana$catchment_ID[keep], test = "HTZ")
-mod_T2 <- lm(as.formula(paste("video_shown ~", rhs)), data = ana[keep, ])
-W_T2 <- Wald_test(mod_T2, constraints = constrain_zero(X_vars),
-                  vcov = "CR2", cluster = ana$catchment_ID[keep], test = "HTZ")
+## Joint F-test: lactoscan predicted by all baseline X (on the analysis sample)
+keep <- complete.cases(ana[, c("lactoscan", X_vars, "catchment_ID")])
+mod_F <- lm(as.formula(paste("(lactoscan == 'T') ~", rhs)), data = ana[keep, ])
+W_F   <- Wald_test(mod_F, constraints = constrain_zero(X_vars),
+                   vcov = "CR2", cluster = ana$catchment_ID[keep], test = "HTZ")
 
-balance_F_analysis <- c(F_T1 = W_T1$Fstat, p_T1 = W_T1$p_val,
-                        F_T2 = W_T2$Fstat, p_T2 = W_T2$p_val,
-                        n    = nobs(mod_T1))
+balance_F_analysis <- c(F = W_F$Fstat, p = W_F$p_val,
+                        n = nobs(mod_F))
 
 balance_farmer_analysis <- round(balance_farmer_analysis, 3)
 balance_F_analysis      <- round(balance_F_analysis,      3)
@@ -290,25 +288,23 @@ B <- balance_farmer_analysis
 rows <- character(0)
 for (i in seq_len(nrow(B))) {
   rows <- c(rows, sprintf(
-    "%s & %s & %s%s & %s%s & %s \\\\",
+    "%s & %s & %s%s & %s \\\\",
     labs_X[i],
     fmt(B[i, 1]),
     fmt(B[i, 3]), stars(B[i, 5]),
-    fmt(B[i, 6]), stars(B[i, 8]),
-    formatC(B[i, 9], format = "d")))
+    formatC(B[i, 6], format = "d")))
   rows <- c(rows, sprintf(
-    "(SD) & (%s) & (%s) & (%s) & \\\\",
-    fmt(B[i, 2]), fmt(B[i, 4]), fmt(B[i, 7])))
+    "(SD) & (%s) & (%s) & \\\\",
+    fmt(B[i, 2]), fmt(B[i, 4])))
 }
 tab_B <- paste(c(
-  "\\begin{tabular}{lcccc}", "\\hline\\hline",
-  " & ctrl & treat & video & N \\\\",
+  "\\begin{tabular}{lccc}", "\\hline\\hline",
+  " & ctrl & treat & N \\\\",
   "\\hline",
   rows,
   "\\hline",
-  sprintf("Joint $F$ on all covariates (HTZ) & & $F=%s$, $p=%s$ & $F=%s$, $p=%s$ & %s \\\\",
-          fmt(balance_F_analysis["F_T1"]), fmt(balance_F_analysis["p_T1"]),
-          fmt(balance_F_analysis["F_T2"]), fmt(balance_F_analysis["p_T2"]),
+  sprintf("Joint $F$ on all covariates (HTZ) & & $F=%s$, $p=%s$ & %s \\\\",
+          fmt(balance_F_analysis["F"]), fmt(balance_F_analysis["p"]),
           formatC(balance_F_analysis["n"], format = "d")),
   "\\hline\\hline",
   "\\end{tabular}"
