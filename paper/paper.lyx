@@ -3156,7 +3156,12 @@ The resulting first-stage relationship between random assignment and actual anal
  and are likely attenuated relative to the effect of actual analyzer use.
  Given this,
  we supplement our intent-to-treat estimates with local average treatment effect (LATE) estimates that instrument actual analyzer use with random assignment.
- The fact that we detect significant quality improvements despite this attenuation suggests that the true effect of a functioning quality measurement system is substantially larger than the ITT estimates indicate.
+ The fact that we detect significant quality improvements despite this attenuation suggests that the effect on MCCs that actually operate the system is substantially larger than the ITT estimates indicate.
+ The LATE should be interpreted accordingly,
+ as the effect on the sub-population of MCCs whose managers chose to retain and use the analyzer rather than as a generic causal effect of a functioning system.
+ The non-compliance pattern itself is informative:
+ it reveals heterogeneity in how MCC managers value the technology,
+ and the policy-relevant effect at scale will depend on the share of MCCs for which continued operation is worthwhile.
 \end_layout
 
 \begin_layout Standard
