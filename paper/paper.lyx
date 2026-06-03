@@ -2599,17 +2599,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -2647,6 +2636,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -3032,17 +3033,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -3080,6 +3070,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -3639,17 +3641,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -3695,6 +3686,18 @@ ref{tab:Primary-outcomes-milk-quality-LATE}.
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -4261,17 +4264,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -4315,6 +4307,18 @@ ref{tab:Primary-outcomes-farmer-LATE}.
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -4855,17 +4859,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -4907,6 +4900,18 @@ ref{tab:Primary-outcomes-MCC-LATE}.
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -7473,17 +7478,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -7521,6 +7515,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -8060,17 +8066,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -8107,6 +8102,18 @@ Notes:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -8470,17 +8477,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -8513,6 +8509,18 @@ Notes:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -9173,17 +9181,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -9220,6 +9217,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -9519,17 +9528,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -9567,6 +9565,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -9892,17 +9902,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -9948,6 +9947,18 @@ ref{tab:Primary-outcomes-milk-quality}.
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -10217,17 +10228,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -10271,6 +10271,18 @@ ref{tab:Primary-outcomes-farmer}.
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -10604,17 +10616,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -10658,6 +10659,18 @@ ref{tab:Primary-outcomes-MCC}.
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -10939,17 +10952,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -10987,6 +10989,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11308,17 +11322,6 @@ hline
 end{tabular}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11357,6 +11360,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11419,17 +11434,6 @@ begin{threeparttable}
 input{results/tab_attrition_correlates_farmer.tex}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11467,6 +11471,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11528,17 +11544,6 @@ begin{threeparttable}
 input{results/tab_balance_farmer_analysis.tex}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11577,6 +11582,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11638,17 +11655,6 @@ begin{threeparttable}
 input{results/tab_balance_trader.tex}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11687,6 +11693,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11748,17 +11766,6 @@ begin{threeparttable}
 input{results/tab_balance_farmer_fu.tex}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11799,6 +11806,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11860,17 +11879,6 @@ begin{threeparttable}
 input{results/tab_sec_sold.tex}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -11910,6 +11918,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
@@ -11973,17 +11993,6 @@ begin{threeparttable}
 input{results/tab_robustness_contamination.tex}
 \end_layout
 
-\begin_layout Plain Layout
-
-\backslash
-end{threeparttable}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-end{center}
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -12024,6 +12033,18 @@ Note:
 
 \backslash
 end{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
 \end_layout
 
 \end_inset
