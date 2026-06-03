@@ -377,5 +377,39 @@ tab_D <- paste(c(
 writeLines(tab_D, paste(tex_dir, "tab_balance_farmer_fu.tex", sep = "/"))
 
 
+## --- Table E: sale-channel selection diagnostic (sec_sold) -----------------
+## Renders the existing res_farmers_sec_sold object so that selection into the
+## price/sale-conditional analysis sample is visible to readers. Pre-empts the
+## reviewer concern that treatment may differentially affect whether farmers
+## sell milk in the survey reference period.
+
+sec_sold <- readRDS(paste(tex_dir, "res_farmers_sec_sold.rds", sep = "/"))
+E_labs <- c("Sold to MCC (wet season)",
+            "Sold to MCC (dry season)",
+            "Sold to MCC (last 7 days)",
+            "Price received (wet season, UGX/L)",
+            "Price received (dry season, UGX/L)",
+            "Anderson index of sales-channel outcomes")
+rows <- character(0)
+for (i in seq_len(nrow(sec_sold))) {
+  rows <- c(rows, sprintf(
+    "%s & %s & %s%s & (%s) & %s \\\\",
+    E_labs[i],
+    fmt(sec_sold[i, 1]),
+    fmt(sec_sold[i, 3]), stars(sec_sold[i, 5]),
+    fmt(sec_sold[i, 4]),
+    formatC(sec_sold[i, 9], format = "d")))
+}
+tab_E <- paste(c(
+  "\\begin{tabular}{lcccc}", "\\hline\\hline",
+  " & ctrl & treat & SE & N \\\\",
+  "\\hline",
+  rows,
+  "\\hline\\hline",
+  "\\end{tabular}"
+), collapse = "\n")
+writeLines(tab_E, paste(tex_dir, "tab_sec_sold.tex", sep = "/"))
+
+
 cat("\n08_attrition_balance.R completed successfully.\n")
-cat("Wrote 4 .tex tabular files to paper/results/\n")
+cat("Wrote 5 .tex tabular files to paper/results/\n")

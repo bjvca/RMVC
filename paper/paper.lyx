@@ -3886,6 +3886,25 @@ The third outcome is the price received for milk sold.
  This question was posed in general terms,
  without reference to a specific time frame.
  These outcomes capture whether quality improvements translate into tangible financial benefits for farmers.
+ Note that the price and quality-bonus outcomes are defined only for farmers who sold milk in the seven days preceding the survey;
+ the observation count for these outcomes therefore falls below the full analysis sample of 2,058 (to roughly 1,250-1,340,
+ depending on the outcome) because farmers who did not sell during that window cannot report a transaction price or quality bonus.
+ Because the act of selling is itself potentially affected by the intervention,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:sec_sold"
+
+\end_inset
+
+ reports treatment effects on sales-channel outcomes,
+ including the probability that a farmer sold milk to the MCC.
+ Treated farmers are marginally less likely to have sold to the MCC in the wet and dry seasons (a reduction of roughly seven percentage points in each case,
+ significant at the ten percent level),
+ indicating mild selection into the price-conditional analysis sample;
+ conditional on having sold,
+ however,
+ average prices received are statistically indistinguishable between treated and control farmers in either season.
 \end_layout
 
 \begin_layout Standard
@@ -4242,7 +4261,7 @@ nolink "false"
 \end_inset
 
 ,
- we also present LATE estimates instrumenting actual analyzer availability with randomized treatment assignment (See Appendix Table
+ we also present LATE estimates instrumenting actual analyzer availability with randomized treatment assignment (See Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-farmer-LATE"
@@ -11251,6 +11270,94 @@ Note:
  quantity sold to the recruiting trader,
  and years linked to that trader.
  Estimates use MCC fixed effects with trader-clustered standard errors.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Treatment effects on sales-channel outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:sec_sold"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_sec_sold.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Estimated treatment effects on sales-channel outcomes for the Experiment 1 farmer analysis sample.
+ The first three rows show the probability that a farmer sold milk to the MCC during the indicated period;
+ the next two rows show the average price received per liter conditional on having sold during the indicated period;
+ the last row reports an Anderson index of these channel outcomes.
+ Standard errors are CR2 cluster-robust at the catchment level.
+ The first three rows speak directly to whether treatment differentially affects selection into the price-conditional analysis sample of Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Primary-outcomes-farmer"
+
+\end_inset
+
+;
+ the marginally negative coefficients indicate mild selection,
+ while the price rows (estimated conditional on having sold) show no statistically detectable treatment effect on prices received.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
