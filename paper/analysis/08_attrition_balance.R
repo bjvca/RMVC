@@ -294,7 +294,7 @@ for (i in seq_len(nrow(B))) {
     fmt(B[i, 3]), stars(B[i, 5]),
     formatC(B[i, 6], format = "d")))
   rows <- c(rows, sprintf(
-    "(SD) & (%s) & (%s) & \\\\",
+    " & (%s) & (%s) & \\\\",
     fmt(B[i, 2]), fmt(B[i, 4])))
 }
 tab_B <- paste(c(
