@@ -3592,7 +3592,8 @@ Note:
  with standard deviations in parentheses.
  Column 2 presents the average treatment effect of the MCC-level measurement-system intervention,
  with robust standard errors in parentheses.
- Column 3 shows the number of non-missing observations.
+ Column 3 shows the number of individual milk samples tested,
+ where each sample corresponds to one delivery brought to an MCC on the day of supervised endline testing.
  The index is an Anderson (2008) index of the five quality components,
  with added water entering with a negative sign.
  Standard errors are clustered at the catchment-area level.
@@ -3618,7 +3619,7 @@ ref{tab:Primary-outcomes-milk-quality-LATE}.
 \end_layout
 
 \begin_layout Standard
-Table
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Primary-outcomes-milk-quality"
@@ -3629,7 +3630,9 @@ nolink "false"
 
 \end_inset
 
- reports the results obtained from the analysis of supervised testing data.
+ reports the results obtained from the analysis of supervised testing data,
+ in which enumerators visited each of 120 endline MCCs over one full day and tested every incoming milk delivery with a milk analyzer,
+ yielding 2,518 individual milk samples in total (the unit of observation in this table).
  Average butterfat content of milk samples delivered to control MCCs was 3.88 percent;
  this increased to approximately 4.00 percent in MCCs equipped with analyzers.
  SNF shows a similar directional increase,
