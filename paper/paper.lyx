@@ -1736,7 +1736,8 @@ Farmers are typically paid on the 1st and the 15th of the month.
  prices and quantities in real time.
  This digital system enhances efficiency and transparency,
  providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
- The android app can be downloaded from the Google Play Store; a screenshot of the application can be found in Figure 
+ The android app can be downloaded from the Google Play Store;
+ a screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Application"
@@ -3262,7 +3263,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -3633,7 +3634,8 @@ nolink "false"
 We also observe improvements in adulteration-related measures.
  Milk delivered to treated MCCs contains significantly less added water,
  with a reduction of nearly half a percentage point relative to the control mean of 1.63 percent.
- Density, measured by the corrected lactometer reading (CLR),
+ Density,
+ measured by the corrected lactometer reading (CLR),
  rises by 0.44 lactometer units,
  consistent with lower dilution and greater compositional integrity.
 \end_layout
@@ -7417,13 +7419,13 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/fig_daily_quantity.png
-	lyxscale 50
+	lyxscale 25
 	scale 50
 
 \end_inset
@@ -7461,13 +7463,13 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
 	filename figures/fig_daily_fat.png
-	lyxscale 50
+	lyxscale 25
 	scale 50
 
 \end_inset
@@ -8653,7 +8655,7 @@ placement H
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
