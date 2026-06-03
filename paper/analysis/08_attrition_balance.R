@@ -1,0 +1,386 @@
+###############################################################################
+## 08_attrition_balance.R
+##
+## Attrition correlates and analysis-sample balance tables.
+## Addresses coauthor request: (i) is attrition correlated with baseline
+## characteristics (external validity)? (ii) does balance hold on the
+## analysis sample, not just on baseline (internal validity on survivors)?
+##
+## Must be run with working directory set to paper/analysis/.
+## Sources 00_utilities.R for helper functions.
+##
+## Outputs (saved to paper/results/):
+##   attrition_correlates_farmer.rds — Exp 1 farmer: attrition ~ baseline X
+##   balance_farmer_analysis.rds     — Exp 1 farmer: balance on analysis sample
+##   balance_followup_ext.rds        — Exp 2 trader: extended balance
+##   balance_farmer_fu.rds           — Exp 2 farmer: balance on observable chars
+###############################################################################
+
+source("00_utilities.R")
+
+library(clubSandwich)
+library(car)
+library(fixest)
+
+path <- strsplit(getwd(), "/paper/analysis")[[1]]
+
+## ---------------------------------------------------------------------------
+## Load prepped data
+## ---------------------------------------------------------------------------
+farmers_balance <- readRDS(paste(path, "paper/results/farmers_balance.rds", sep = "/"))
+farmers_end     <- readRDS(paste(path, "paper/results/prepped_farmers.rds", sep = "/"))
+traders         <- readRDS(paste(path, "paper/results/prepped_traders.rds", sep = "/"))
+farmers_fu      <- readRDS(paste(path, "paper/results/prepped_farmers_fu.rds", sep = "/"))
+submissions     <- readRDS(paste(path, "paper/results/prepped_submissions.rds", sep = "/"))
+
+
+###############################################################################
+## TABLE A. EXP 1 FARMER ATTRITION CORRELATES
+###############################################################################
+## Define attrited = baseline farmer not in endline analysis sample.
+
+farmers_balance$attrited <- !(farmers_balance$farmer_ID %in% farmers_end$farmer_ID)
+
+cat("Exp 1 farmer attrition:",
+    sum(farmers_balance$attrited), "of", nrow(farmers_balance),
+    "(", round(100 * mean(farmers_balance$attrited), 1), "%)\n")
+
+X_vars <- c("hh_size", "age_head", "herd_size", "improved_share",
+            "liter_day_wet", "liter_sold_day_wet", "sell_MCC_wet",
+            "use_steel", "coop_member", "acaracide_exp")
+
+## Coerce logicals to numeric so means/regressions behave consistently
+for (v in X_vars) {
+  if (is.logical(farmers_balance[[v]])) {
+    farmers_balance[[v]] <- as.numeric(farmers_balance[[v]])
+  }
+}
+
+## Columns: retained_mean | attrited_mean | diff | se | p | n
+attrition_correlates_farmer <- array(NA, dim = c(length(X_vars), 6),
+                                     dimnames = list(X_vars,
+                                                     c("retained_mean", "attrited_mean",
+                                                       "diff", "se", "p", "n")))
+
+for (i in seq_along(X_vars)) {
+  v <- X_vars[i]
+  ret <- farmers_balance[[v]][!farmers_balance$attrited]
+  att <- farmers_balance[[v]][ farmers_balance$attrited]
+
+  ## Regression: X ~ attrited, CR2 by catchment
+  ols <- lm(as.formula(paste(v, "~ attrited")), data = farmers_balance)
+  vcv <- vcovCR(ols, cluster = farmers_balance$catchment_ID, type = "CR2")
+  res <- coef_test(ols, vcv)
+
+  attrition_correlates_farmer[i, ] <- c(
+    mean(ret, na.rm = TRUE),
+    mean(att, na.rm = TRUE),
+    res[2, 2], res[2, 3], res[2, 7],
+    nobs(ols)
+  )
+}
+
+## Joint F-test: do baseline X jointly predict attrition?
+rhs  <- paste(X_vars, collapse = " + ")
+keep <- complete.cases(farmers_balance[, c("attrited", X_vars, "catchment_ID")])
+mod  <- lm(as.formula(paste("attrited ~", rhs)),
+           data = farmers_balance[keep, ])
+W <- Wald_test(mod,
+               constraints = constrain_zero(X_vars),
+               vcov = "CR2",
+               cluster = farmers_balance$catchment_ID[keep],
+               test = "HTZ")
+
+attrition_F_farmer <- c(Fstat = W$Fstat, pval = W$p_val,
+                        n = nobs(mod))
+
+attrition_correlates_farmer <- round(attrition_correlates_farmer, 3)
+attrition_F_farmer          <- round(attrition_F_farmer, 3)
+
+saveRDS(list(table = attrition_correlates_farmer, joint = attrition_F_farmer),
+        file = paste(path, "paper/results/attrition_correlates_farmer.rds", sep = "/"))
+
+
+###############################################################################
+## TABLE B. EXP 1 FARMER BALANCE ON ANALYSIS SAMPLE
+###############################################################################
+## Re-run the existing factorial balance regression restricted to the
+## endline analysis sample (farmers actually used in primary regressions).
+## Layout mirrors balance_farmer.rds: 10 outcomes x 8 cols.
+##  1-2: ctrl_mean, ctrl_sd   (pure control: lactoscan=C & video=FALSE)
+##  3-5: T1 (lactoscan) coef, se, p
+##  6-8: T2 (video)    coef, se, p
+##  9:   N
+
+ana <- farmers_balance[!farmers_balance$attrited, ]
+
+balance_farmer_analysis <- array(NA, dim = c(length(X_vars), 9),
+                                 dimnames = list(X_vars,
+                                                 c("ctrl_mean", "ctrl_sd",
+                                                   "T1_coef", "T1_se", "T1_p",
+                                                   "T2_coef", "T2_se", "T2_p",
+                                                   "n")))
+
+for (i in seq_along(X_vars)) {
+  v <- X_vars[i]
+  ols <- lm(as.formula(paste(v, "~ lactoscan * video_shown")), data = ana)
+  vcv <- vcovCR(ols, cluster = ana$catchment_ID, type = "CR2")
+  res <- coef_test(ols, vcv)
+
+  ctrl <- ana[ana$lactoscan == "C" & ana$video_shown == FALSE, v]
+  balance_farmer_analysis[i, 1] <- mean(ctrl, na.rm = TRUE)
+  balance_farmer_analysis[i, 2] <- sd(ctrl,   na.rm = TRUE)
+  balance_farmer_analysis[i, 3:5] <- c(res[2, 2], res[2, 3], res[2, 7])
+  balance_farmer_analysis[i, 6:8] <- c(res[3, 2], res[3, 3], res[3, 7])
+  balance_farmer_analysis[i, 9]   <- nobs(ols)
+}
+
+## Joint F-tests: T1 and T2 each predicted by all baseline X
+keep <- complete.cases(ana[, c("lactoscan", "video_shown", X_vars, "catchment_ID")])
+mod_T1 <- lm(as.formula(paste("(lactoscan == 'T') ~", rhs)), data = ana[keep, ])
+W_T1 <- Wald_test(mod_T1, constraints = constrain_zero(X_vars),
+                  vcov = "CR2", cluster = ana$catchment_ID[keep], test = "HTZ")
+mod_T2 <- lm(as.formula(paste("video_shown ~", rhs)), data = ana[keep, ])
+W_T2 <- Wald_test(mod_T2, constraints = constrain_zero(X_vars),
+                  vcov = "CR2", cluster = ana$catchment_ID[keep], test = "HTZ")
+
+balance_F_analysis <- c(F_T1 = W_T1$Fstat, p_T1 = W_T1$p_val,
+                        F_T2 = W_T2$Fstat, p_T2 = W_T2$p_val,
+                        n    = nobs(mod_T1))
+
+balance_farmer_analysis <- round(balance_farmer_analysis, 3)
+balance_F_analysis      <- round(balance_F_analysis,      3)
+
+saveRDS(list(table = balance_farmer_analysis, joint = balance_F_analysis),
+        file = paste(path, "paper/results/balance_farmer_analysis.rds", sep = "/"))
+
+
+###############################################################################
+## TABLE C. EXP 2 TRADER BALANCE (EXTENDED)
+###############################################################################
+## Extends the existing balance_followup (pre-treatment fat, snf, qty, bonus)
+## with trader characteristics plausibly pre-determined at recruitment:
+##   - self (own trader vs employed)
+##   - nr_employed
+##   - transport modes (bodaboda, car) — proxy for scale
+##   - delivered_quantity (endline-reported but reflects pre-existing scale)
+## Each tested with MCC fixed effects, trader-clustered SEs (HC1).
+
+## Note: transport_car has zero variance (no traders use cars);
+## transport_bodaboda is near-constant (~99% use bodaboda). Both dropped.
+balance_t_vars <- c("self", "nr_employed", "delivered_quantity",
+                    "delivered_quantity_othermcc")
+## Coerce logicals
+for (v in balance_t_vars) {
+  if (is.logical(traders[[v]])) traders[[v]] <- as.numeric(traders[[v]])
+}
+
+balance_trader_ext <- array(NA, dim = c(length(balance_t_vars), 5),
+                            dimnames = list(balance_t_vars,
+                                            c("ctrl_mean", "coef", "se", "p", "n")))
+
+for (i in seq_along(balance_t_vars)) {
+  v <- balance_t_vars[i]
+  ctrl <- traders[[v]][traders$treat == 0]
+  fit  <- feols(as.formula(paste(v, "~ treat | MCC_ID")),
+                data = traders, vcov = "hetero")
+  balance_trader_ext[i, 1] <- mean(ctrl, na.rm = TRUE)
+  balance_trader_ext[i, 2] <- coef(fit)["treat"]
+  balance_trader_ext[i, 3] <- se(fit)["treat"]
+  balance_trader_ext[i, 4] <- pvalue(fit)["treat"]
+  balance_trader_ext[i, 5] <- fit$nobs
+}
+
+balance_trader_ext <- round(balance_trader_ext, 4)
+saveRDS(balance_trader_ext,
+        file = paste(path, "paper/results/balance_followup_ext.rds", sep = "/"))
+
+
+###############################################################################
+## TABLE D. EXP 2 FARMER BALANCE
+###############################################################################
+## Exp 2 farmers (N=422) recruited at endline through traders; no separate
+## baseline survey exists. Test balance across trader-treatment status on
+## plausibly pre-determined characteristics measured at endline.
+## Cluster SEs at trader level. Include trader-randomization fixed effect
+## (MCC) since randomization was stratified by MCC.
+
+balance_ffu_vars <- c("farmer.tot_prod", "farmer.tot_sold",
+                      "farmer.tot_sold_trader", "farmer.trader_link")
+for (v in balance_ffu_vars) {
+  if (is.logical(farmers_fu[[v]])) farmers_fu[[v]] <- as.numeric(farmers_fu[[v]])
+}
+
+balance_farmer_fu <- array(NA, dim = c(length(balance_ffu_vars), 5),
+                           dimnames = list(balance_ffu_vars,
+                                           c("ctrl_mean", "coef", "se", "p", "n")))
+
+for (i in seq_along(balance_ffu_vars)) {
+  v <- balance_ffu_vars[i]
+  ctrl <- farmers_fu[[v]][farmers_fu$treat == 0]
+  fit  <- feols(as.formula(paste(v, "~ treat | MCC_ID")),
+                data = farmers_fu, cluster = ~trader_ID)
+  balance_farmer_fu[i, 1] <- mean(ctrl, na.rm = TRUE)
+  balance_farmer_fu[i, 2] <- coef(fit)["treat"]
+  balance_farmer_fu[i, 3] <- se(fit)["treat"]
+  balance_farmer_fu[i, 4] <- pvalue(fit)["treat"]
+  balance_farmer_fu[i, 5] <- fit$nobs
+}
+
+balance_farmer_fu <- round(balance_farmer_fu, 4)
+saveRDS(balance_farmer_fu,
+        file = paste(path, "paper/results/balance_farmer_fu.rds", sep = "/"))
+
+
+###############################################################################
+## RENDER LATEX TABULAR FILES (consumed by paper.lyx via \input)
+###############################################################################
+
+fmt <- function(x) {
+  if (is.na(x)) return("")
+  ax <- abs(x)
+  if (ax < 1)   return(sprintf("%.3f", x))
+  if (ax < 100) return(sprintf("%.2f", x))
+  sprintf("%.1f", x)
+}
+stars <- function(p) {
+  if (is.na(p)) return("")
+  if (p < 0.01) return("$^{**}$")
+  if (p < 0.05) return("$^{*}$")
+  if (p < 0.1)  return("$^{+}$")
+  ""
+}
+
+tex_dir <- paste(path, "paper/results", sep = "/")
+
+## Load balance_followup (from 04_analysis_followup.R) for Table C
+balance_followup <- readRDS(paste(tex_dir, "balance_followup.rds", sep = "/"))
+
+## --- Table A: attrition correlates (Exp 1 farmers) -------------------------
+labs_X <- c("Household size", "Household head age", "Herd size",
+            "Share improved breed", "Liters/day (wet)",
+            "Liters sold/day (wet)", "Sells to MCC (wet)",
+            "Uses steel container", "Cooperative member",
+            "Acaricide expenditure")
+A <- attrition_correlates_farmer
+rows <- character(0)
+for (i in seq_len(nrow(A))) {
+  rows <- c(rows, sprintf(
+    "%s & %s & %s & %s%s & (%s) & %s \\\\",
+    labs_X[i], fmt(A[i, 1]), fmt(A[i, 2]),
+    fmt(A[i, 3]), stars(A[i, 5]), fmt(A[i, 4]), formatC(A[i, 6], format = "d")))
+}
+tab_A <- paste(c(
+  "\\begin{tabular}{lccccc}", "\\hline\\hline",
+  " & Mean & Mean & Diff. & SE & N \\\\",
+  " & (retained) & (attrited) & & & \\\\",
+  "\\hline",
+  rows,
+  "\\hline",
+  sprintf("Joint $F$ on all covariates (HTZ) & \\multicolumn{4}{c}{$F = %s$, $p = %s$} & %s \\\\",
+          fmt(attrition_F_farmer["Fstat"]), fmt(attrition_F_farmer["pval"]),
+          formatC(attrition_F_farmer["n"], format = "d")),
+  "\\hline\\hline",
+  "\\end{tabular}"
+), collapse = "\n")
+writeLines(tab_A, paste(tex_dir, "tab_attrition_correlates_farmer.tex", sep = "/"))
+
+
+## --- Table B: balance on analysis sample (Exp 1 farmers) -------------------
+B <- balance_farmer_analysis
+rows <- character(0)
+for (i in seq_len(nrow(B))) {
+  rows <- c(rows, sprintf(
+    "%s & %s & %s%s & %s%s & %s \\\\",
+    labs_X[i],
+    fmt(B[i, 1]),
+    fmt(B[i, 3]), stars(B[i, 5]),
+    fmt(B[i, 6]), stars(B[i, 8]),
+    formatC(B[i, 9], format = "d")))
+  rows <- c(rows, sprintf(
+    "(SD) & (%s) & (%s) & (%s) & \\\\",
+    fmt(B[i, 2]), fmt(B[i, 4]), fmt(B[i, 7])))
+}
+tab_B <- paste(c(
+  "\\begin{tabular}{lcccc}", "\\hline\\hline",
+  " & Control mean & Measurement system & Video & N \\\\",
+  "\\hline",
+  rows,
+  "\\hline",
+  sprintf("Joint $F$ on all covariates (HTZ) & & $F=%s$, $p=%s$ & $F=%s$, $p=%s$ & %s \\\\",
+          fmt(balance_F_analysis["F_T1"]), fmt(balance_F_analysis["p_T1"]),
+          fmt(balance_F_analysis["F_T2"]), fmt(balance_F_analysis["p_T2"]),
+          formatC(balance_F_analysis["n"], format = "d")),
+  "\\hline\\hline",
+  "\\end{tabular}"
+), collapse = "\n")
+writeLines(tab_B, paste(tex_dir, "tab_balance_farmer_analysis.tex", sep = "/"))
+
+
+## --- Table C: Exp 2 trader balance (extended) ------------------------------
+C_mat <- balance_trader_ext
+C_labs_pre <- c("Pre-treatment fat (\\%)", "Pre-treatment SNF (\\%)",
+                "Pre-treatment quantity (litres/day)", "Pre-treatment bonus (UGX/day)")
+C_labs_ext <- c("Self (owner-trader, $\\in\\{1,2\\}$)", "Number of employees",
+                "Delivered quantity (litres)", "Delivered to other MCC (litres)")
+rows <- character(0)
+## Block 1: existing pre-treatment outcomes
+for (i in seq_len(nrow(balance_followup))) {
+  rows <- c(rows, sprintf(
+    "%s & %s & %s%s & (%s) & %s \\\\",
+    C_labs_pre[i],
+    fmt(balance_followup[i, "ctrl_mean"]),
+    fmt(balance_followup[i, "coef"]), stars(balance_followup[i, "p"]),
+    fmt(balance_followup[i, "se"]),
+    formatC(balance_followup[i, "n"], format = "d")))
+}
+rows <- c(rows, "\\hline", "\\multicolumn{5}{l}{\\textit{Trader characteristics}} \\\\")
+## Block 2: extended trader characteristics
+for (i in seq_len(nrow(C_mat))) {
+  rows <- c(rows, sprintf(
+    "%s & %s & %s%s & (%s) & %s \\\\",
+    C_labs_ext[i],
+    fmt(C_mat[i, "ctrl_mean"]),
+    fmt(C_mat[i, "coef"]), stars(C_mat[i, "p"]),
+    fmt(C_mat[i, "se"]),
+    formatC(C_mat[i, "n"], format = "d")))
+}
+tab_C <- paste(c(
+  "\\begin{tabular}{lcccc}", "\\hline\\hline",
+  " & Control mean & Treatment diff. & SE & N \\\\",
+  "\\hline",
+  rows,
+  "\\hline\\hline",
+  "\\end{tabular}"
+), collapse = "\n")
+writeLines(tab_C, paste(tex_dir, "tab_balance_trader.tex", sep = "/"))
+
+
+## --- Table D: Exp 2 farmer balance -----------------------------------------
+D <- balance_farmer_fu
+D_labs <- c("Total production (litres/day)", "Total sold (litres/day)",
+            "Sold to recruiting trader (litres/day)",
+            "Years linked to trader")
+rows <- character(0)
+for (i in seq_len(nrow(D))) {
+  rows <- c(rows, sprintf(
+    "%s & %s & %s%s & (%s) & %s \\\\",
+    D_labs[i],
+    fmt(D[i, "ctrl_mean"]),
+    fmt(D[i, "coef"]), stars(D[i, "p"]),
+    fmt(D[i, "se"]),
+    formatC(D[i, "n"], format = "d")))
+}
+tab_D <- paste(c(
+  "\\begin{tabular}{lcccc}", "\\hline\\hline",
+  " & Control mean & Treatment diff. & SE & N \\\\",
+  "\\hline",
+  rows,
+  "\\hline\\hline",
+  "\\end{tabular}"
+), collapse = "\n")
+writeLines(tab_D, paste(tex_dir, "tab_balance_farmer_fu.tex", sep = "/"))
+
+
+cat("\n08_attrition_balance.R completed successfully.\n")
+cat("Wrote 4 .tex tabular files to paper/results/\n")

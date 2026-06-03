@@ -392,6 +392,34 @@ res_farmers_fu <- readRDS(paste0(path,
 \end_layout
 
 \begin_layout Plain Layout
+# Attrition correlates and analysis-sample balance (08_attrition_balance.R)
+\end_layout
+
+\begin_layout Plain Layout
+attrition_correlates_farmer <- readRDS(paste0(path,
+ "/results/attrition_correlates_farmer.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+balance_farmer_analysis <- readRDS(paste0(path,
+ "/results/balance_farmer_analysis.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+balance_followup_ext <- readRDS(paste0(path,
+ "/results/balance_followup_ext.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+balance_farmer_fu <- readRDS(paste0(path,
+ "/results/balance_farmer_fu.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
 # Helper for significance stars in tables
 \end_layout
 
@@ -519,6 +547,18 @@ literal "false"
 \begin_layout Standard
 For quality to become an important driver of behavior,
  actors must be properly incentivized to produce and preserve it.
+ We use the term broadly here;
+ in our empirical setting it refers specifically to compositional and adulteration-related attributes measurable by a milk analyzer (fat,
+ solids-not-fat,
+ added water),
+ as defined in Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:experiment1"
+
+\end_inset
+
+.
  In many markets,
  such incentives take the form of price premiums for higher-quality products,
  which reward the additional effort or investment required to meet quality standards 
@@ -600,7 +640,7 @@ literal "false"
  shows,
  individual incentives are governed not only by one's own quality choices but by the group's aggregate track record,
  since,
- under poole marketing,
+ under pooled marketing,
  individual contributions are observed only with noise;
  each producer can therefore free-ride on the group's standing by supplying below-optimal quality while transacting at the pool price.
  
@@ -1279,8 +1319,6 @@ literal "false"
  productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
  such as Holstein Friesians and Jersey cows,
  significantly increasing milk yields and overall sector efficiency.
- Today,
- the dairy subsector is one of the main export earners of the country.
 \end_layout
 
 \begin_layout Standard
@@ -1297,7 +1335,7 @@ Dairy farmers:
  At the upstream end of the chain are farmer households,
  who are the primary producers of milk.
  These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
- The majority of farmers typically have a motorbike and deliver the milk themselves,
+ Our data suggests that the majority of farmers typically have a motorbike and deliver the milk themselves,
  which is consistent with the organization of supply chains around cooperatives.
 \end_layout
 
@@ -1533,6 +1571,16 @@ In response to the challenge of unobservable milk quality in the Ugandan dairy v
  This bundle aims to enhance transparency,
  improve record-keeping,
  and empower both MCC managers and farmers by making milk quality measurable and visible.
+ For brevity we refer to the full bundle as the
+\emph on
+measurement system
+\emph default
+ throughout the text and in tables;
+ we reserve the term
+\emph on
+analyzer
+\emph default
+ for the device itself.
  The bundle,
  developed after extensive consultations with stakeholders and implemented together with the DDA,
  consists of three key components:
@@ -1631,11 +1679,17 @@ name "fig:Milk-analyzer"
 \end_layout
 
 \begin_layout Standard
-The milk analyzers were delivered with clear Standard Operating Procedures.
+The milk analyzers were delivered with clear Standard Operating Procedures (SOPs),
+ distributed as laminated reference sheets to remain usable in the day-to-day MCC working environment.
  Two separate training sessions were organized.
- One training targeted MCC owners,
- where the focus was mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality.
- A second training was geared toward MCC managers and focused more on use and maintenance of the milk analyzers.
+ The first targeted MCC owners and was held as a half-day workshop in a centralized location,
+ with the focus mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality and on persuading owners to enforce the new measurement and record-keeping system in their MCCs.
+ The second training was geared toward MCC managers and was delivered individually at each MCC,
+ also lasting about half a day.
+ Its focus was more practical:
+ taking representative milk samples,
+ operating the analyzer,
+ and cleaning and maintaining the device.
 \end_layout
 
 \begin_layout Standard
@@ -1682,8 +1736,7 @@ Farmers are typically paid on the 1st and the 15th of the month.
  prices and quantities in real time.
  This digital system enhances efficiency and transparency,
  providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
- The android app can be downloaded from the Google Play Store.
- A screenshot of the application can be found in Figure 
+ The android app can be downloaded from the Google Play Store; a screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Application"
@@ -1894,7 +1947,11 @@ Baseline data from both MCCs and associated farmers was collected towards the en
  endline data was collected.
  This involved in-person surveys at the MCC level and at the farmer level.
  In addition,
- during endline we also measured quality of incoming milk.
+ during endline we also measured the quality of incoming milk at each MCC under supervised conditions,
+ yielding 2,518 individual milk samples across the 120 MCCs visited at endline.
+ After endline data collection was complete,
+ milk analyzers were also installed at all control MCCs together with the same training and follow-up protocol used in the treatment arm,
+ both to honour our commitment to participating MCCs and to avoid leaving a quality-measurement gap in the catchments where the intervention had shown positive effects.
 \end_layout
 
 \begin_layout Subsection
@@ -2543,7 +2600,7 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ This table reports baseline balance between MCCs assigned to the measurement-system treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
  Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
  Column 3 lists the number of non-missing observations.
@@ -3037,6 +3094,32 @@ By the time of the endline survey,
  we get 2,059.
  Also at the farmer level,
  attrition is unrelated to treatment assignment.
+ To examine whether the analysis sample remains representative of the baseline frame,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:attrition_correlates_farmer"
+
+\end_inset
+
+ compares baseline characteristics of retained versus attrited farmers.
+ Most differences are small and statistically insignificant,
+ and a joint Wald test fails to reject the null that baseline characteristics jointly predict attrition (F = 1.55,
+ p = 0.16).
+ Two characteristics differ at the 10 percent level (head age and herd size),
+ with attrited farmers being slightly younger and operating larger herds on average.
+ As a complementary check,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:balance_farmer_analysis"
+
+\end_inset
+
+ re-estimates the baseline balance regression on the analysis sample.
+ The joint F-tests for both treatment arms remain comfortably above conventional thresholds (p = 0.61 for the measurement-system arm,
+ p = 0.81 for the video arm),
+ indicating that selective attrition has not undone baseline balance among survivors.
 \end_layout
 
 \begin_layout Standard
@@ -3075,9 +3158,11 @@ The presence of functioning analyzers at some control MCCs also raises a potenti
  if those MCCs acquired project devices through informal transfers from nearby treatment sites,
  the control group is effectively partially treated,
  which would attenuate the estimated treatment effect.
- We return to this concern after presenting the main results and show that re-estimating on the clean subsample of MCCs yields qualitatively similar,
- and if anything slightly sharper,
- findings.
+ We return to this concern after presenting the main results,
+ where re-estimating on the clean subsample yields qualitatively similar and slightly sharper findings;
+ the accompanying LATE estimates,
+ which instrument actual analyzer use with random assignment,
+ provide the natural complement.
 \end_layout
 
 \begin_layout Subsection
@@ -3227,7 +3312,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs 
+& mean ctrl & measurement system & nobs 
 \backslash
 
 \backslash
@@ -3494,7 +3579,7 @@ scriptsize
 Note:
  Column 1 reports mean milk quality measures for the control group,
  with standard deviations in parentheses.
- Column 2 presents the average treatment effect of the MCC-level analyzer intervention,
+ Column 2 presents the average treatment effect of the MCC-level measurement-system intervention,
  with robust standard errors in parentheses.
  Column 3 shows the number of non-missing observations.
  The index is an Anderson (2008) index of the five quality components,
@@ -3548,7 +3633,8 @@ nolink "false"
 We also observe improvements in adulteration-related measures.
  Milk delivered to treated MCCs contains significantly less added water,
  with a reduction of nearly half a percentage point relative to the control mean of 1.63 percent.
- Density (CLR) rises by 0.44 units,
+ Density, measured by the corrected lactometer reading (CLR),
+ rises by 0.44 lactometer units,
  consistent with lower dilution and greater compositional integrity.
 \end_layout
 
@@ -3843,7 +3929,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -4062,7 +4148,7 @@ scriptsize
 Note:
  Column 1 reports the mean of each outcome for control farmers,
  with standard deviations in parentheses.
- Column 2 shows the estimated treatment effect of the analyzer intervention,
+ Column 2 shows the estimated treatment effect of the measurement-system intervention,
  with robust standard errors in parentheses.
  Column 3 lists the number of farmers with non-missing observations.
  Prices are in Ugandan shillings (UGX).
@@ -4127,7 +4213,7 @@ nolink "false"
 
 .
  The first column reports the control group mean (with standard deviations in parentheses),
- the second column reports the estimated treatment effect of the analyzer intervention (with cluster-robust standard errors in parentheses),
+ the second column reports the estimated treatment effect of the measurement-system intervention (with cluster-robust standard errors in parentheses),
  and the third column reports the number of non-missing observations.
  In light of the compliance issues reported in Section 
 \begin_inset CommandInset ref
@@ -4156,7 +4242,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-We do not find evidence that the analyzer intervention affected farmers’ production investments and management practices.
+We do not find evidence that the measurement-system intervention affected farmers’ production investments and management practices.
  The point estimate is small and statistically insignificant.
  Among control farmers,
  approximately 16 percent report that their milk was tested using an analyzer.
@@ -4173,7 +4259,7 @@ Although these effects are generally small and imprecise,
  and therefore may not fully reflect this selective-use pattern.
  Even so,
  selective but credible testing can still shift behavior:
- the possibility of being tested may be sufficient to induce farmers to upgrade milk quality.
+ the possibility of being tested may be sufficient to induce farmers to reduce bad practices or upgrade milk quality.
 \end_layout
 
 \end_inset
@@ -4260,7 +4346,7 @@ Our first two outcomes measure the extent to which quality testing becomes embed
 
 \begin_layout Standard
 The next two outcomes reflect how increased transparency affects prices.
- We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey.
+ We measure the average price at which MCCs purchase milk from suppliers during the seven days preceding the survey.
  For onward sales by MCCs,
  we ask about the average price MCCs received for sales to various buyers during the last transaction in the previous week,
  and take a (weighted) average of these.
@@ -4333,7 +4419,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -4419,7 +4505,7 @@ Sexpr{fmt(res_MCCs[2,4])})
 \end_layout
 
 \begin_layout Plain Layout
-Price at which milk was bought from farmers (UGX) & 
+Price at which milk was bought from suppliers (UGX) & 
 \backslash
 Sexpr{fmt(res_MCCs[3,1])} & 
 \backslash
@@ -4626,7 +4712,7 @@ scriptsize
 Note:
  Column 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
- Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
+ Column 2 shows the estimated treatment effect of the measurement-system intervention at the MCC level,
  with robust standard errors in parentheses.
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
@@ -4737,7 +4823,7 @@ nolink "false"
  MCC-level data indicate that the intervention produced a sizable and consistent increase in testing activity,
  yet we find no evidence that it generated quality-based price differentiation.
  When we consider the composite index of pre-registered MCC-level outcomes,
- the data indicate that the analyzer intervention led to marginal improvements at the MCC level,
+ the data indicate that the measurement-system intervention led to marginal improvements at the MCC level,
  but this is entirely driven by an increase in MCC milk testing behaviour.
 \end_layout
 
@@ -4856,7 +4942,12 @@ This section presents a simple analytical framework to rationalize the findings 
  in which quality measurement enables quality-differentiated pricing.
  The main experiment results are consistent with the enforcement channel operating in isolation:
  quality improves but prices do not differentiate.
- We then present results from a follow-up experiment that tests the price channel directly by exogenously activating quality-based premiums.
+ We then present results from a follow-up experiment that tests the price channel directly by introducing quality-based premiums at the trader-MCC interface,
+ bypassing the processor-MCC pass-through that would be required for the model's
+\begin_inset Formula $\alpha$
+\end_inset
+
+ to emerge endogenously.
 \end_layout
 
 \begin_layout Subsection
@@ -6109,12 +6200,37 @@ tuple "list"
 \end_inset
 
  does not activate.
- The remaining predictions concern the follow-up experiment,
- where quality-based pricing is exogenously activated (
+ The remaining predictions concern the follow-up experiment.
+ We emphasize that the follow-up does not literally activate
+\begin_inset Formula $\alpha$
+\end_inset
+
+ as defined in the model,
+ since
+\begin_inset Formula $\alpha$
+\end_inset
+
+ is the per-unit premium that the processor pays the MCC for verifiable quality;
+ inducing
 \begin_inset Formula $\alpha>0$
 \end_inset
 
-) under varying threshold stringency.
+ would require an intervention at the processor stage,
+ which the project could not implement.
+ Instead,
+ the follow-up injects a quality-contingent premium one node downstream,
+ paying traders directly for the verified compositional quality of milk they deliver to the MCC.
+ In the notation of the model this corresponds to setting the product
+\begin_inset Formula $\lambda\alpha$
+\end_inset
+
+ to a positive value at the trader-MCC interface by external transfer rather than letting it emerge from processor pricing.
+ The resulting test is therefore not of whether
+\begin_inset Formula $\alpha>0$
+\end_inset
+
+ propagates through the chain,
+ but of whether a positive quality-linked transfer received by an intermediary alters its own quality behavior and is passed further upstream to farmers.
 \end_layout
 
 \begin_layout Standard
@@ -6732,6 +6848,33 @@ Attrition is minimal.
  99 of the 100 targeted traders were interviewed,
  and 422 of the approximately 500 targeted farmers completed the questionnaire (197 in treated trader catchments and 225 in control).
  The shortfall in the farmer sample reflects the difficulty of locating smallholder farmers who sell through mobile traders rather than differential attrition by treatment status.
+ To verify that randomization produced comparable samples,
+ Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:balance_trader"
+
+\end_inset
+
+ reports balance for the 99 traders on pre-treatment quality and quantity outcomes and on plausibly pre-determined trader characteristics,
+ and Appendix Table
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:balance_farmer_fu"
+
+\end_inset
+
+ reports balance for the 422 farmers on plausibly pre-determined production and trader-linkage characteristics.
+ Pre-treatment fat content is approximately 0.24 percentage points lower among traders subsequently assigned to treatment (significant at the 1 percent level),
+ while pre-treatment SNF and quantity are balanced.
+ Because our daily-submission specification includes MCC fixed effects but does not net out trader-level pre-treatment outcomes,
+ we estimate a robustness specification that adds the trader-specific pre-treatment mean fat as a control;
+ the estimated treatment effect on post-treatment fat shifts only marginally,
+ from 0.109 percentage points in the main specification to 0.096 percentage points (significant at the 5 percent level) when conditioning on pre-treatment levels,
+ indicating that the result is not driven by mean reversion from the lower pre-treatment baseline.
+ One trader characteristic also differs at conventional levels:
+ traders in the treatment arm are somewhat more likely to be owner-operators rather than employees of a larger trading firm,
+ a pre-determined feature that the MCC fixed effects in our main specification partially absorb.
 \end_layout
 
 \begin_layout Subsection
@@ -6911,6 +7054,22 @@ Sexpr{res_submissions[4,4]}
 \end_layout
 
 \begin_layout Plain Layout
+Control mean &
+\backslash
+Sexpr{fmt(res_submissions[1,5])} &
+\backslash
+Sexpr{fmt(res_submissions[2,5])} &
+\backslash
+Sexpr{fmt(res_submissions[3,5])} &
+\backslash
+Sexpr{round(res_submissions[4,5]/1000,1)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \backslash
 hline
@@ -6988,6 +7147,22 @@ Sexpr{res_submissions[4,9]}
 \end_layout
 
 \begin_layout Plain Layout
+Control mean &
+\backslash
+Sexpr{fmt(res_submissions[1,10])} &
+\backslash
+Sexpr{fmt(res_submissions[2,10])} &
+\backslash
+Sexpr{fmt(res_submissions[3,10])} &
+\backslash
+Sexpr{round(res_submissions[4,10]/1000,1)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \backslash
 hline
@@ -7058,6 +7233,22 @@ Sexpr{res_submissions[2,14]} &
 Sexpr{res_submissions[3,14]} &
 \backslash
 Sexpr{res_submissions[4,14]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Control mean &
+\backslash
+Sexpr{fmt(res_submissions[1,15])} &
+\backslash
+Sexpr{fmt(res_submissions[2,15])} &
+\backslash
+Sexpr{fmt(res_submissions[3,15])} &
+\backslash
+Sexpr{round(res_submissions[4,15]/1000,1)}
 \backslash
 
 \backslash
@@ -8512,7 +8703,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer  & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -8761,7 +8952,7 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- This table reports additional baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ This table reports additional baseline balance between MCCs assigned to the measurement-system treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
  Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
  Column 3 lists the number of non-missing observations.
@@ -8838,7 +9029,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & treatment & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -9155,7 +9346,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & nobs
+& mean ctrl & measurement system (LATE) & nobs
 \backslash
 
 \backslash
@@ -9506,7 +9697,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & nobs
+& mean ctrl & measurement system (LATE) & nobs
 \backslash
 
 \backslash
@@ -9799,7 +9990,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & nobs
+& mean ctrl & measurement system (LATE) & nobs
 \backslash
 
 \backslash
@@ -10156,7 +10347,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -10378,7 +10569,7 @@ scriptsize
 \begin_layout Plain Layout
 Note:
  Column 1 reports control group means with standard deviations in parentheses.
- Column 2 presents the treatment effect of the MCC-level analyzer intervention,
+ Column 2 presents the treatment effect of the MCC-level measurement-system intervention,
  with robust standard errors in parentheses.
  Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the four uptake outcomes.
@@ -10455,7 +10646,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs 
+& mean ctrl & measurement system & nobs 
 \backslash
 
 \backslash
@@ -10718,11 +10909,333 @@ scriptsize
 Note:
  olumn 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
- Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
+ Column 2 shows the estimated treatment effect of the measurement-system intervention at the MCC level,
  with robust standard errors in parentheses.
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
  The “Index of uptake” is an Anderson (2008) index of the variables listed above.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Attrition correlates,
+ Experiment 1 farmer sample
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:attrition_correlates_farmer"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_attrition_correlates_farmer.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Comparison of baseline characteristics between farmers retained in the endline analysis sample (N=2,058) and those lost to attrition (N=203,
+ 9.0 percent of the baseline sample).
+ Columns 1-2 report unconditional means;
+ column 3 reports the difference (attrited minus retained) with cluster-robust standard errors at the catchment level (CR2).
+ The joint test is a Hotelling-type Wald test (HTZ) of the null that all 10 baseline characteristics jointly fail to predict attrition;
+ listwise deletion is used and N reflects observations with complete data on all covariates (Acaricide expenditure has substantial missingness in the baseline).
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Balance on Experiment 1 farmer analysis sample
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:balance_farmer_analysis"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_balance_farmer_analysis.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Re-estimation of baseline balance on the Experiment 1 analysis sample (farmers retained at endline,
+ N=2,058) rather than on the full baseline sample.
+ Each row reports the pure control (T1=0 & T2=0) mean and standard deviation,
+ the measurement-system and video coefficients from a fully factorial regression with CR2 cluster-robust standard errors at the catchment level,
+ and the observation count.
+ The joint test is a Hotelling-type Wald test (HTZ) of the null that all baseline characteristics jointly fail to predict treatment assignment in the analysis sample;
+ listwise deletion is used and N reflects observations with complete data on all covariates.
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Experiment 2 trader balance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:balance_trader"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_balance_trader.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Balance check for the 99 traders enrolled in Experiment 2 (47 treatment,
+ 52 control).
+ The top panel reports pre-treatment daily-submission outcomes (averages over the period up to 1 November 2025),
+ estimated with MCC fixed effects and trader-clustered standard errors.
+ The bottom panel reports trader characteristics measured at the trader endline survey but plausibly pre-determined at the time of randomization (employment structure and delivered quantities),
+ with MCC fixed effects and heteroskedasticity-robust standard errors.
+ Transport-mode dummies are omitted because all traders use the same mode (motorcycle).
+ Significance levels:
+ + p < 0.10,
+ * p < 0.05,
+ ** p < 0.01.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Experiment 2 farmer balance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:balance_farmer_fu"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+input{results/tab_balance_farmer_fu.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+Note:
+ Balance check for the 422 farmers in the Experiment 2 farmer follow-up survey (197 linked to treated traders,
+ 225 to control traders).
+ Farmers were recruited at endline through traders;
+ no separate baseline survey exists for this sample.
+ Outcomes shown are plausibly pre-determined at the time of trader randomization:
+ farmer-reported total daily production and sales,
+ quantity sold to the recruiting trader,
+ and years linked to that trader.
+ Estimates use MCC fixed effects with trader-clustered standard errors.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
