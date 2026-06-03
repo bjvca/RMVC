@@ -2167,7 +2167,7 @@ where
 \end_layout
 
 \begin_layout Standard
-We report point estimates and CR2 cluster-robust standard errors 
+We report point estimates and CR2 cluster-robust standard errors
 \begin_inset CommandInset citation
 LatexCommand citep
 key "imbens2016robust"
@@ -2177,6 +2177,12 @@ literal "false"
 
  clustered at the MCC catchment area level,
  for effect size interpretation.
+ Because randomization is at the catchment level but sampling is uniform within MCC (twenty farmers per MCC),
+ catchments containing more than one MCC contribute proportionally more observations to the farmer-level regressions.
+ This is a deliberate feature of the design rather than a source of bias:
+ inference correctly accounts for the design through catchment-level clustering,
+ and the resulting estimand is a probability-proportional-to-size population-average treatment effect over MCCs and farmers,
+ which is the policy-relevant quantity given that the intervention operates at the MCC level.
  To summarize effects across multiple outcomes within a family,
  we construct Anderson indices 
 \begin_inset CommandInset citation
