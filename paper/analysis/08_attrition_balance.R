@@ -421,8 +421,8 @@ rs_full  <- readRDS(paste(tex_dir, "res_samples.rds", sep = "/"))
 rm_full  <- readRDS(paste(tex_dir, "res_MCCs.rds", sep = "/"))
 rf_full  <- readRDS(paste(tex_dir, "res_farmers.rds", sep = "/"))
 
-sample_labs <- c("Butterfat (%)", "SNF (%)", "Added water (%)",
-                 "Protein (%)", "CLR", "Quality index")
+sample_labs <- c("Butterfat (\\%)", "SNF (\\%)", "Added water (\\%)",
+                 "Protein (\\%)", "CLR", "Quality index")
 mcc_labs    <- c("Tests incoming milk", "Tests outgoing milk",
                  "Farm-gate price", "Buyer price",
                  "Pays quality premium", "Receives quality premium",
