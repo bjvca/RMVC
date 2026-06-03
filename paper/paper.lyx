@@ -9294,7 +9294,7 @@ Note:
 
 \begin_layout Standard
 \begin_inset Float table
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -9645,7 +9645,7 @@ ref{tab:Primary-outcomes-milk-quality}.
 
 \begin_layout Standard
 \begin_inset Float table
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -9938,7 +9938,7 @@ ref{tab:Primary-outcomes-farmer}.
 
 \begin_layout Standard
 \begin_inset Float table
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -10295,7 +10295,7 @@ ref{tab:Primary-outcomes-MCC}.
 
 \begin_layout Standard
 \begin_inset Float table
-placement document
+placement H
 alignment document
 wide false
 sideways true
@@ -10594,7 +10594,7 @@ Note:
 
 \begin_layout Standard
 \begin_inset Float table
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -10938,7 +10938,7 @@ placement H
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
