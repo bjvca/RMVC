@@ -1564,6 +1564,16 @@ In response to the challenge of unobservable milk quality in the Ugandan dairy v
  This bundle aims to enhance transparency,
  improve record-keeping,
  and empower both MCC managers and farmers by making milk quality measurable and visible.
+ For brevity we refer to the full bundle as the
+\emph on
+measurement system
+\emph default
+ throughout the text and in tables;
+ we reserve the term
+\emph on
+analyzer
+\emph default
+ for the device itself.
  The bundle,
  developed after extensive consultations with stakeholders and implemented together with the DDA,
  consists of three key components:
@@ -2594,7 +2604,7 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- This table reports baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ This table reports baseline balance between MCCs assigned to the measurement-system treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
  Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
  Column 3 lists the number of non-missing observations.
@@ -3111,7 +3121,7 @@ reference "tab:balance_farmer_analysis"
 \end_inset
 
  re-estimates the baseline balance regression on the analysis sample.
- The joint F-tests for both treatment arms remain comfortably above conventional thresholds (p = 0.61 for the analyzer arm,
+ The joint F-tests for both treatment arms remain comfortably above conventional thresholds (p = 0.61 for the measurement-system arm,
  p = 0.81 for the video arm),
  indicating that selective attrition has not undone baseline balance among survivors.
 \end_layout
@@ -3304,7 +3314,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs 
+& mean ctrl & measurement system & nobs 
 \backslash
 
 \backslash
@@ -3571,7 +3581,7 @@ scriptsize
 Note:
  Column 1 reports mean milk quality measures for the control group,
  with standard deviations in parentheses.
- Column 2 presents the average treatment effect of the MCC-level analyzer intervention,
+ Column 2 presents the average treatment effect of the MCC-level measurement-system intervention,
  with robust standard errors in parentheses.
  Column 3 shows the number of non-missing observations.
  The index is an Anderson (2008) index of the five quality components,
@@ -3920,7 +3930,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -4139,7 +4149,7 @@ scriptsize
 Note:
  Column 1 reports the mean of each outcome for control farmers,
  with standard deviations in parentheses.
- Column 2 shows the estimated treatment effect of the analyzer intervention,
+ Column 2 shows the estimated treatment effect of the measurement-system intervention,
  with robust standard errors in parentheses.
  Column 3 lists the number of farmers with non-missing observations.
  Prices are in Ugandan shillings (UGX).
@@ -4204,7 +4214,7 @@ nolink "false"
 
 .
  The first column reports the control group mean (with standard deviations in parentheses),
- the second column reports the estimated treatment effect of the analyzer intervention (with cluster-robust standard errors in parentheses),
+ the second column reports the estimated treatment effect of the measurement-system intervention (with cluster-robust standard errors in parentheses),
  and the third column reports the number of non-missing observations.
  In light of the compliance issues reported in Section 
 \begin_inset CommandInset ref
@@ -4233,7 +4243,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-We do not find evidence that the analyzer intervention affected farmers’ production investments and management practices.
+We do not find evidence that the measurement-system intervention affected farmers’ production investments and management practices.
  The point estimate is small and statistically insignificant.
  Among control farmers,
  approximately 16 percent report that their milk was tested using an analyzer.
@@ -4410,7 +4420,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -4703,7 +4713,7 @@ scriptsize
 Note:
  Column 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
- Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
+ Column 2 shows the estimated treatment effect of the measurement-system intervention at the MCC level,
  with robust standard errors in parentheses.
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
@@ -4814,7 +4824,7 @@ nolink "false"
  MCC-level data indicate that the intervention produced a sizable and consistent increase in testing activity,
  yet we find no evidence that it generated quality-based price differentiation.
  When we consider the composite index of pre-registered MCC-level outcomes,
- the data indicate that the analyzer intervention led to marginal improvements at the MCC level,
+ the data indicate that the measurement-system intervention led to marginal improvements at the MCC level,
  but this is entirely driven by an increase in MCC milk testing behaviour.
 \end_layout
 
@@ -8646,7 +8656,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer  & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -8895,7 +8905,7 @@ scriptsize
 
 \begin_layout Plain Layout
 Note:
- This table reports additional baseline balance between MCCs assigned to the analyzer treatment and those in the control group.
+ This table reports additional baseline balance between MCCs assigned to the measurement-system treatment and those in the control group.
  Column 1 presents control group means with standard deviations in parentheses.
  Column 2 shows the difference in means (treatment minus control) with robust standard errors in parentheses.
  Column 3 lists the number of non-missing observations.
@@ -8972,7 +8982,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & treatment & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -9289,7 +9299,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & nobs
+& mean ctrl & measurement system (LATE) & nobs
 \backslash
 
 \backslash
@@ -9640,7 +9650,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & nobs
+& mean ctrl & measurement system (LATE) & nobs
 \backslash
 
 \backslash
@@ -9933,7 +9943,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer (LATE) & nobs
+& mean ctrl & measurement system (LATE) & nobs
 \backslash
 
 \backslash
@@ -10290,7 +10300,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs
+& mean ctrl & measurement system & nobs
 \backslash
 
 \backslash
@@ -10512,7 +10522,7 @@ scriptsize
 \begin_layout Plain Layout
 Note:
  Column 1 reports control group means with standard deviations in parentheses.
- Column 2 presents the treatment effect of the MCC-level analyzer intervention,
+ Column 2 presents the treatment effect of the MCC-level measurement-system intervention,
  with robust standard errors in parentheses.
  Column 3 shows the number of observations.
  The index is an Anderson (2008) index of the four uptake outcomes.
@@ -10589,7 +10599,7 @@ hline
 \end_layout
 
 \begin_layout Plain Layout
-& mean ctrl & analyzer & nobs 
+& mean ctrl & measurement system & nobs 
 \backslash
 
 \backslash
@@ -10852,7 +10862,7 @@ scriptsize
 Note:
  olumn 1 reports the mean of each outcome for the control group,
  with standard deviations in parentheses.
- Column 2 shows the estimated treatment effect of the analyzer intervention at the MCC level,
+ Column 2 shows the estimated treatment effect of the measurement-system intervention at the MCC level,
  with robust standard errors in parentheses.
  Column 3 lists the number of MCCs with non-missing observations.
  All prices are in Ugandan shillings (UGX).
@@ -11013,7 +11023,7 @@ Note:
  Re-estimation of baseline balance on the Experiment 1 analysis sample (farmers retained at endline,
  N=2,058) rather than on the full baseline sample.
  Each row reports the pure control (T1=0 & T2=0) mean and standard deviation,
- the T1 (analyzer) and T2 (video) coefficients from a fully factorial regression with CR2 cluster-robust standard errors at the catchment level,
+ the measurement-system and video coefficients from a fully factorial regression with CR2 cluster-robust standard errors at the catchment level,
  and the observation count.
  The joint test is a Hotelling-type Wald test (HTZ) of the null that all baseline characteristics jointly fail to predict treatment assignment in the analysis sample;
  listwise deletion is used and N reflects observations with complete data on all covariates.

@@ -303,7 +303,7 @@ for (i in seq_len(nrow(B))) {
 }
 tab_B <- paste(c(
   "\\begin{tabular}{lcccc}", "\\hline\\hline",
-  " & Control mean & T1 (analyzer) & T2 (video) & N \\\\",
+  " & Control mean & Measurement system & Video & N \\\\",
   "\\hline",
   rows,
   "\\hline",
