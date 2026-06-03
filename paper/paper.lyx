@@ -8,6 +8,7 @@
 \begin_preamble
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{threeparttable}
 \emergencystretch 3em
 \sloppy
 \end_preamble
@@ -2349,6 +2350,12 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 begin{tabular}{rccc}
 \end_layout
 
@@ -2595,13 +2602,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -2616,6 +2641,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -2733,6 +2764,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -2998,13 +3035,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -3019,6 +3074,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -3305,6 +3366,12 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 begin{tabular}{rcccc}
 \end_layout
 
@@ -3575,13 +3642,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -3604,6 +3689,12 @@ Note:
  Corresponding LATE estimates are reported in Appendix Table
 \backslash
 ref{tab:Primary-outcomes-milk-quality-LATE}.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -3945,6 +4036,12 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 begin{tabular}{rccc}
 \end_layout
 
@@ -4167,13 +4264,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -4194,6 +4309,12 @@ ref{tab:Primary-outcomes-farmer-LATE}.
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01 (Benjamini-Krieger-Yekutieli sharpened q-values).
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -4430,6 +4551,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -4731,13 +4858,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -4756,6 +4901,12 @@ ref{tab:Primary-outcomes-MCC-LATE}.
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -6998,6 +7149,12 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 begin{tabular}{rcccc}
 \end_layout
 
@@ -7319,13 +7476,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -7340,6 +7515,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01 (RI p-values).
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -7688,6 +7869,12 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 begin{tabular}{rccc}
 \end_layout
 
@@ -7876,13 +8063,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -7896,6 +8101,12 @@ Notes:
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -7979,6 +8190,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8256,7 +8473,19 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tablenotes}
 \end_layout
 
 \begin_layout Plain Layout
@@ -8266,12 +8495,24 @@ scriptsize
 \end_layout
 
 \begin_layout Plain Layout
+
+\backslash
+item
+\end_layout
+
+\begin_layout Plain Layout
 Notes:
  OLS estimates with CR2 cluster-robust standard errors in parentheses.
  Significance stars from randomization inference p-values:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -8675,6 +8916,12 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 begin{tabular}{rccc}
 \end_layout
 
@@ -8929,13 +9176,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -8949,6 +9214,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -8996,6 +9267,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9245,13 +9522,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -9266,6 +9561,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -9313,6 +9614,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9588,13 +9895,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -9617,6 +9942,12 @@ ref{tab:Primary-outcomes-milk-quality}.
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -9664,6 +9995,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -9883,13 +10220,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -9910,6 +10265,12 @@ ref{tab:Primary-outcomes-farmer}.
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -9957,6 +10318,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10240,13 +10607,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -10267,6 +10652,12 @@ ref{tab:Primary-outcomes-MCC}.
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -10314,6 +10705,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10545,13 +10942,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -10566,6 +10981,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -10613,6 +11034,12 @@ status open
 
 \backslash
 begin{center}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begin{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10884,13 +11311,31 @@ end{tabular}
 \begin_layout Plain Layout
 
 \backslash
+end{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 end{center}
 \end_layout
 
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -10906,6 +11351,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -10959,7 +11410,19 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 input{results/tab_attrition_correlates_farmer.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -10971,7 +11434,19 @@ end{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -10986,6 +11461,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -11038,7 +11519,19 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 input{results/tab_balance_farmer_analysis.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11050,7 +11543,19 @@ end{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -11066,6 +11571,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -11118,7 +11629,19 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 input{results/tab_balance_trader.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11130,7 +11653,19 @@ end{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -11146,6 +11681,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -11198,7 +11739,19 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 input{results/tab_balance_farmer_fu.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11210,7 +11763,19 @@ end{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -11228,6 +11793,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -11280,7 +11851,19 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 input{results/tab_sec_sold.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11292,7 +11875,19 @@ end{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -11309,6 +11904,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
@@ -11363,7 +11964,19 @@ begin{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{threeparttable}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 input{results/tab_robustness_contamination.tex}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{threeparttable}
 \end_layout
 
 \begin_layout Plain Layout
@@ -11375,7 +11988,19 @@ end{center}
 \begin_layout Plain Layout
 
 \backslash
+begin{tablenotes}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
 scriptsize
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+item
 \end_layout
 
 \begin_layout Plain Layout
@@ -11393,6 +12018,12 @@ Note:
  + p < 0.10,
  * p < 0.05,
  ** p < 0.01.
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+end{tablenotes}
 \end_layout
 
 \end_inset
