@@ -4263,7 +4263,7 @@ Although these effects are generally small and imprecise,
  and therefore may not fully reflect this selective-use pattern.
  Even so,
  selective but credible testing can still shift behavior:
- the possibility of being tested may be sufficient to induce farmers to upgrade milk quality.
+ the possibility of being tested may be sufficient to induce farmers to reduce bad practices or upgrade milk quality.
 \end_layout
 
 \end_inset
@@ -4350,7 +4350,7 @@ Our first two outcomes measure the extent to which quality testing becomes embed
 
 \begin_layout Standard
 The next two outcomes reflect how increased transparency affects prices.
- We measure the average price at which MCCs purchase milk from farmers during the seven days preceding the survey.
+ We measure the average price at which MCCs purchase milk from suppliers during the seven days preceding the survey.
  For onward sales by MCCs,
  we ask about the average price MCCs received for sales to various buyers during the last transaction in the previous week,
  and take a (weighted) average of these.
@@ -4509,7 +4509,7 @@ Sexpr{fmt(res_MCCs[2,4])})
 \end_layout
 
 \begin_layout Plain Layout
-Price at which milk was bought from farmers (UGX) & 
+Price at which milk was bought from suppliers (UGX) & 
 \backslash
 Sexpr{fmt(res_MCCs[3,1])} & 
 \backslash
@@ -7058,6 +7058,22 @@ Sexpr{res_submissions[4,4]}
 \end_layout
 
 \begin_layout Plain Layout
+Control mean &
+\backslash
+Sexpr{fmt(res_submissions[1,5])} &
+\backslash
+Sexpr{fmt(res_submissions[2,5])} &
+\backslash
+Sexpr{fmt(res_submissions[3,5])} &
+\backslash
+Sexpr{round(res_submissions[4,5]/1000,1)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \backslash
 hline
@@ -7135,6 +7151,22 @@ Sexpr{res_submissions[4,9]}
 \end_layout
 
 \begin_layout Plain Layout
+Control mean &
+\backslash
+Sexpr{fmt(res_submissions[1,10])} &
+\backslash
+Sexpr{fmt(res_submissions[2,10])} &
+\backslash
+Sexpr{fmt(res_submissions[3,10])} &
+\backslash
+Sexpr{round(res_submissions[4,10]/1000,1)}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \backslash
 hline
@@ -7205,6 +7237,22 @@ Sexpr{res_submissions[2,14]} &
 Sexpr{res_submissions[3,14]} &
 \backslash
 Sexpr{res_submissions[4,14]}
+\backslash
+
+\backslash
+
+\end_layout
+
+\begin_layout Plain Layout
+Control mean &
+\backslash
+Sexpr{fmt(res_submissions[1,15])} &
+\backslash
+Sexpr{fmt(res_submissions[2,15])} &
+\backslash
+Sexpr{fmt(res_submissions[3,15])} &
+\backslash
+Sexpr{round(res_submissions[4,15]/1000,1)}
 \backslash
 
 \backslash
