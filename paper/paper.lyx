@@ -8403,68 +8403,18 @@ The two experiments,
 \end_layout
 
 \begin_layout Standard
-The enforcement result confirms and extends recent findings on quality information in agricultural markets.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "bold2022market"
-literal "false"
+The enforcement result fits the recurring pattern documented in the experimental literature reviewed in Section
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:introduction"
 
 \end_inset
 
- show that the causal return to quality in Ugandan maize markets is zero absent an explicit buyer premium;
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "xu2024farm"
-literal "false"
-
-\end_inset
-
- find that digital traceability in Kenyan dairy reduces adulteration through enforcement,
- not price signals;
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "rao2023got"
-literal "false"
-
-\end_inset
-
- document that group-level quality incentives in Indian dairy cooperatives work through informal monitoring,
- with no quality-differentiated payments reaching farmers.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "treurniet2021potency"
-literal "false"
-
-\end_inset
-
- finds rapid quality improvements in an Indonesian dairy cooperative,
- but the cooperative itself activated the pricing channel as part of the intervention.
- Across these studies,
+:
  quality measurement disciplines the lower tail of the distribution without activating continuous quality pricing.
- The collective reputation frameworks of 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "tirole1996"
-literal "false"
+ The model rationalises this pattern as the absence of the price channel,
+ leaving only the enforcement channel operative.
 
-\end_inset
-
- and 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "winfree2005collective"
-literal "false"
-
-\end_inset
-
- offer the most precise theoretical lens for this pattern:
- individual-level observability is necessary but not sufficient for quality premia;
- the downstream contractual infrastructure linking measured quality to differentiated payments must also exist.
- 
 \begin_inset CommandInset citation
 LatexCommand citet
 key "macchiavello2026quality"
@@ -8472,11 +8422,11 @@ literal "false"
 
 \end_inset
 
- document that quality premia in Colombian coffee diminish as they flow upstream through intermediation layers.
- Our setting represents an extreme case:
- when no quality premium exists at the processor-MCC interface,
- pass-through is trivially zero regardless of measurement capacity.
- The negative pass-through in the follow-up extends the contrast with 
+ document that even where downstream quality premia exist,
+ they attenuate as they flow upstream through intermediation layers;
+ our setting is the extreme case in which no premium exists at the processor-MCC interface,
+ so pass-through is trivially zero regardless of measurement capacity.
+ The negative pass-through finding in the follow-up sharpens the contrast with
 \begin_inset CommandInset citation
 LatexCommand citet
 key "casaburi2022individual"
@@ -8484,24 +8434,19 @@ literal "false"
 
 \end_inset
 
- drawn in Section
+ introduced in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:introduction"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
 
 \end_inset
 
 :
- unlike the unconditional trader subsidies in the Sierra Leone cocoa chain,
- a quality-contingent bonus paid privately to traders is not subject to the same competitive discipline,
+ a quality-contingent bonus paid privately to traders is not subject to the competitive discipline of an unconditional subsidy,
  because neither the bonus itself nor the underlying quality readings are observed by upstream suppliers.
- The follow-up experiment therefore provides causal evidence that the information structure of the incentive,
+ The information structure of the incentive,
  not just the structure of intermediation,
- matters for whether rents are transmitted upstream.
+ governs whether rents are transmitted upstream.
 \end_layout
 
 \begin_layout Standard
