@@ -3162,9 +3162,11 @@ The presence of functioning analyzers at some control MCCs also raises a potenti
  if those MCCs acquired project devices through informal transfers from nearby treatment sites,
  the control group is effectively partially treated,
  which would attenuate the estimated treatment effect.
- We return to this concern after presenting the main results and show that re-estimating on the clean subsample of MCCs yields qualitatively similar,
- and if anything slightly sharper,
- findings.
+ We return to this concern after presenting the main results,
+ where re-estimating on the clean subsample yields qualitatively similar and slightly sharper findings;
+ the accompanying LATE estimates,
+ which instrument actual analyzer use with random assignment,
+ provide the natural complement.
 \end_layout
 
 \begin_layout Subsection
