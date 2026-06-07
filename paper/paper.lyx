@@ -1150,7 +1150,10 @@ literal "false"
  since ownership can realign the quantity-quality trade-off that pay-per-unit contracts leave distorted.
  We study the market-preserving alternative,
  making quality observable through measurement technology and injecting explicit premiums while leaving ownership and market relationships intact,
- and find that observability alone disciplines adulteration but does not reproduce the quality upgrading that integration achieves.
+ and find that observability alone reproduces the enforcement effect of integration,
+ disciplining the lower tail of the quality distribution,
+ but not its continuous quality gradient,
+ because individual quality is never individually rewarded.
 \end_layout
 
 \begin_layout Standard
