@@ -652,7 +652,8 @@ Aggregation across suppliers introduces a further and conceptually distinct impe
  When buyers observe only a group-level quality signal (as is common in commodity markets where grading,
  traceability,
  and individual branding are absent),
- the shared reputational stock of the aggregated pool functions as a common-pool resource.
+ individual contributions are observed only with noise,
+ and the shared reputation of the pool becomes a common-pool resource.
  As 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -662,26 +663,18 @@ literal "false"
 \end_inset
 
  shows,
- individual incentives are governed not only by one's own quality choices but by the group's aggregate track record,
- since,
- under pooled marketing,
- individual contributions are observed only with noise;
- each producer can therefore free-ride on the group's standing by supplying below-optimal quality while transacting at the pool price.
-\end_layout
-
-\begin_layout Standard
-This incentive-dilution logic is reinforced by the moral hazard in teams mechanism 
+ and as the moral-hazard-in-teams logic of 
 \begin_inset CommandInset citation
-LatexCommand citep
+LatexCommand citet
 key "holmstrom1982moral"
 literal "false"
 
 \end_inset
 
-:
- when only aggregate output is contractible,
- no individual agent fully internalizes the returns to their effort,
- weakening quality investments at precisely the point where aggregation severs the link between individual performance and observed outcomes.
+ implies,
+ no producer paid the pool price fully internalizes the returns to their own quality effort;
+ each can free-ride on the group's standing by supplying below-optimal quality,
+ severing the link between individual performance and reward.
  The practical consequence is that even when buyers wish to pay for quality,
  the absence of traceability prevents quality-enhancing investments from translating into higher returns for producers,
  a pattern well-documented empirically across commodity supply chains in developing countries 
