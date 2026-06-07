@@ -1304,7 +1304,7 @@ Dairy Development Authority,
  Despite this growth,
  per capita milk consumption remains approximately 62 liters per year,
  well below the 200 liters recommended by WHO,
- suggesting substantial scope for both domestic market expansion and quality upgrading along the value chain.
+ suggesting substantial scope for (domestic) market expansion.
 \end_layout
 
 \begin_layout Standard
@@ -1314,8 +1314,17 @@ The Ugandan dairy subsector's development is closely linked to significant polic
  These reforms also led to the establishment of the Dairy Development Authority (DDA),
  a statutory body under the Ministry of Agriculture,
  Animal Industry,
- and Fisheries.
- The DDA has a dual mandate to regulate and promote the dairy sector,
+ and Fisheries (MAAIF).
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+The DDA was recently absorbed into MAAIF.
+\end_layout
+
+\end_inset
+
+ The DDA had a dual mandate to regulate and promote the dairy sector,
  ensuring compliance with quality standards while supporting farmers and stakeholders through training,
  improved technologies,
  and market development initiatives.
@@ -1324,7 +1333,13 @@ The Ugandan dairy subsector's development is closely linked to significant polic
 \begin_layout Standard
 The policy changes spurred an influx of foreign direct investment,
  particularly in Mbarara,
- a key town in southwestern Uganda often referred to as the country’s "milk shed” 
+ a key town in southwestern Uganda often referred to as the country’s "southwestern milk shed”.
+ This investment fostered the emergence of a cluster of milk processors in the region,
+ enhancing value addition and market access.
+ Additionally,
+ productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
+ such as Holstein Friesians and Jersey cows,
+ significantly increasing milk yields and overall sector efficiency 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "vancampenhout2021leading"
@@ -1333,12 +1348,6 @@ literal "false"
 \end_inset
 
 .
- This investment fostered the emergence of a cluster of milk processors in the region,
- enhancing value addition and market access.
- Additionally,
- productivity in the sector has been bolstered by the widespread adoption of improved dairy breeds,
- such as Holstein Friesians and Jersey cows,
- significantly increasing milk yields and overall sector efficiency.
 \end_layout
 
 \begin_layout Standard
