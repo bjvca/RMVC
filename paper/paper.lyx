@@ -552,7 +552,7 @@ For quality to become an important driver of behavior,
 status collapsed
 
 \begin_layout Plain Layout
-n the context of commodities such as maize,
+In the context of commodities such as maize,
  milk,
  or coffee,
  quality refers to the set of characteristics of a product that determine its value,
@@ -623,7 +623,10 @@ literal "false"
 \begin_layout Standard
 The emergence of quality premiums is often hindered by difficulties in observing and verifying quality at the point of transaction.
  When quality attributes are not directly visible and are costly to discover,
- buyers face a classic problem of asymmetric information 
+ buyers face a classic problem of asymmetric information:
+ without credible verification mechanisms,
+ high- and low-quality products trade at similar prices,
+ resulting in adverse selection equilibria in which low-quality goods drive out high-quality ones 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "akerlof1970lemons"
@@ -631,10 +634,7 @@ literal "false"
 
 \end_inset
 
-:
- without credible verification mechanisms,
- high- and low-quality products trade at similar prices,
- resulting in adverse selection equilibria in which low-quality goods drive out high-quality ones.
+.
  Even in settings where quality can be observed,
  the absence of systematic verification at the point of sale can prevent quality-based pricing from emerging 
 \begin_inset CommandInset citation
@@ -667,19 +667,6 @@ literal "false"
  under pooled marketing,
  individual contributions are observed only with noise;
  each producer can therefore free-ride on the group's standing by supplying below-optimal quality while transacting at the pool price.
- 
-\begin_inset CommandInset citation
-LatexCommand citet
-key "winfree2005collective"
-literal "false"
-
-\end_inset
-
- formalize this mechanism directly in agricultural markets,
- showing that without firm-level traceability,
- individual producers rationally extract from the collective reputational stock in a dynamic analogous to common-pool resource overuse,
- producing an equilibrium in which the group as a whole undersupplies quality even when a premium would be available to a verifiably high-quality producer.
- 
 \end_layout
 
 \begin_layout Standard
