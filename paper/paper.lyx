@@ -514,7 +514,7 @@ literal "false"
  transport and processing is also critical for food safety and consumer health 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "hoffmann2023upside,hansman2020vertical"
+key "hoffmann2023upside"
 literal "false"
 
 \end_inset
@@ -548,11 +548,30 @@ literal "false"
 \begin_layout Standard
 For quality to become an important driver of behavior,
  actors must be properly incentivized to produce and preserve it.
- We use the term broadly here;
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+n the context of commodities such as maize,
+ milk,
+ or coffee,
+ quality refers to the set of characteristics of a product that determine its value,
+ usability,
+ safety,
+ and suitability for particular buyers or end uses.
+ We use 
+\begin_inset Quotes eld
+\end_inset
+
+quality
+\begin_inset Quotes erd
+\end_inset
+
+ broadly here;
  in our empirical setting it refers specifically to compositional and adulteration-related attributes measurable by a milk analyzer (fat,
- solids-not-fat,
+ solids-not-fat (SNF),
  added water),
- as defined in Section
+ as defined in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:experiment1"
@@ -560,6 +579,10 @@ reference "sec:experiment1"
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
  In many markets,
  such incentives take the form of price premiums for higher-quality products,
  which reward the additional effort or investment required to meet quality standards 
@@ -586,7 +609,7 @@ literal "false"
 .
  In the absence of such premiums,
  quality improvements may not be financially viable,
- and actors may instead prioritize volume over quality 
+ and actors may instead prioritize quantity over quality 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "bai2025quality"
@@ -1136,7 +1159,11 @@ literal "false"
 \end_inset
 
  show theoretically that the organization of value chains shapes the incentive to invest in quality at each stage.
- We contribute experimental evidence that even when price incentives are cleanly injected at the intermediary level,
+ 
+\end_layout
+
+\begin_layout Standard
+We contribute experimental evidence that even when price incentives are cleanly injected at the intermediary level,
  the structure of intermediation can block their transmission to the farmers whose behavior determines raw material quality at the source.
  
 \begin_inset CommandInset citation
