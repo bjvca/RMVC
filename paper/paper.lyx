@@ -653,7 +653,15 @@ Aggregation across suppliers introduces a further and conceptually distinct impe
  traceability,
  and individual branding are absent),
  individual contributions are observed only with noise,
- and the shared reputation of the pool becomes a common-pool resource.
+ and the shared reputation of the pool becomes a common-pool resource 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "winfree2005collective"
+literal "false"
+
+\end_inset
+
+.
  As 
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -689,7 +697,7 @@ literal "false"
 .
  Further constraints arise from the coordination and investment required to establish quality-based payment systems in the first place,
  including grading infrastructure,
- third-party certification,
+ standards and (third-party) certification,
  and monitoring capacity,
  each of which constitutes a public or collective good subject to its own underprovision problem.
 \end_layout
@@ -714,7 +722,7 @@ literal "false"
  increasing the scope for effective quality-based incentives to emerge 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "bergquist2020competition"
+key "bergquist2020competition,hansman2020vertical"
 literal "false"
 
 \end_inset
@@ -747,7 +755,7 @@ literal "false"
  there is generally no functioning market for quality in Uganda;
  prices are typically fixed per liter,
  irrespective of compositional quality attributes such as butterfat,
- solids-not-fat,
+ solids-not-fat (SNF),
  or protein content.
  Part of the explanation may lie in the lack of technological capacity to measure and communicate compositional quality at the point of aggregation.
  Most MCCs limit testing to freshness and basic adulteration checks,
@@ -789,19 +797,7 @@ In dairy market analysis,
  solids-not-fat,
  protein,
  added water,
- and density across the full pool of active suppliers (testing visits were unannounced and conducted identically across arms;
- see Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:milk-quality"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- for a discussion of potential Hawthorne effects).
+ and density across the full pool of active suppliers.
 \end_layout
 
 \begin_layout Standard
