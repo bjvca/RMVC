@@ -857,7 +857,7 @@ To test whether activating the pricing channel can shift the chain to a higher e
  The experiment proceeds in two stages that jointly allow us to separate the contribution of rewards from the contribution of stricter enforcement to quality upgrading.
  In Stage 1,
  thresholds are set at the East African standards (3.3 percent fat and 8.5 percent SNF),
- coinciding with the rainy season when high-quality milk is naturally abundant and the premium tier is relatively accessible.
+ a standard that is easy to meet particularly during the rainy season when high-quality milk is naturally abundant and the premium tier is relatively accessible.
  In Stage 2,
  the fat threshold is raised from 3.3 to 3.9 percent,
  simulating the scarcity conditions of the dry season under which sourcing high-quality milk requires active effort from upstream suppliers.
@@ -882,7 +882,7 @@ The follow-up experiment reveals that injecting explicit quality premiums into t
 \end_layout
 
 \begin_layout Standard
-Yet the most striking finding concerns price transmission.
+Another striking finding concerns price transmission.
  Despite receiving explicit,
  exogenously introduced quality premiums,
  treated traders do 
@@ -903,9 +903,6 @@ not
  the result underscores a central finding of the paper:
  even when price incentives are injected into the chain,
  the structure of intermediation prevents them from reaching the farmers whose behavior ultimately determines raw milk quality at the source.
- Farmer feeding practices show some marginal improvement,
- but broader behavioral changes at the farm level do not survive to endline,
- likely reflecting the limited window over which upstream production decisions can adjust.
 \end_layout
 
 \begin_layout Standard
@@ -940,7 +937,7 @@ literal "false"
 ,
  all of which predict that the absence of credible quality measurement severs the link between individual effort and observed outcomes,
  generating pooling equilibria in which quality investment is socially suboptimal.
- A growing experimental literature explores how strengthening observability alters these equilibria.
+ A growing experimental literature explores how strengthening observability in supply chains alters these equilibria.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -949,7 +946,9 @@ literal "false"
 
 \end_inset
 
- show in the Vietnamese dairy sector that third-party verification of previously unobservable quality attributes substantially raises production intensity when embedded in a processor-run contract.
+ show that,
+ in the Vietnamese dairy sector,
+ third-party verification of previously unobservable quality attributes substantially raises production intensity when embedded in a processor-run contract.
  
 \begin_inset CommandInset citation
 LatexCommand citet
@@ -962,7 +961,7 @@ literal "false"
  though elite resistance to transparency limits their impact.
  Our study sharpens this literature by isolating the effect of observability from the effect of pricing:
  despite a large,
- credibly identified increase in testing intensity (the probability of testing incoming deliveries rising by over 50 percentage points),
+ credibly identified increase in testing intensity,
  no quality premiums materialized anywhere in the chain.
  This result establishes that observability is necessary but not sufficient for quality markets to emerge,
  and that the downstream contractual infrastructure linking observable quality to price differentials constitutes an independently binding constraint.
@@ -992,7 +991,7 @@ literal "false"
 
 \end_inset
 
- find in the Vietnamese dairy sector that both penalties and bonuses improve farmer investment in quality-enhancing inputs,
+ find that both penalties and bonuses improve farmer investment in quality-enhancing inputs,
  with bonuses generating the stronger response.
  
 \begin_inset CommandInset citation
@@ -1056,7 +1055,6 @@ literal "false"
 
 \begin_layout Standard
 Third,
- and perhaps most consequentially,
  the paper contributes to the literature on price transmission through intermediaries in agricultural value chains.
  
 \begin_inset CommandInset citation
