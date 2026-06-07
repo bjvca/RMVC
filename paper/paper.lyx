@@ -672,7 +672,8 @@ literal "false"
 \end_inset
 
  implies,
- no producer paid the pool price fully internalizes the returns to their own quality effort;
+ because all suppliers are paid the same pool price,
+ no producer fully internalizes the returns to their own quality effort;
  each can free-ride on the group's standing by supplying below-optimal quality,
  severing the link between individual performance and reward.
  The practical consequence is that even when buyers wish to pay for quality,
