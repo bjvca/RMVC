@@ -172,18 +172,18 @@ When Quality (doesn't) Pay:
 \end_layout
 
 \begin_layout Abstract
-Quality in agri-food supply chains is often unobservable at first sale,
- and early aggregation limits traceability,
+Quality in agri-food supply chains is often unobservable at first sale and early aggregation limits traceability,
  weakening incentives for quality provision.
- We study whether measurement can create such incentives,
- in two field experiments in Uganda’s dairy sector.
- Making quality visible and traceable reduces adulteration and raises a quality index by 0.2 standard deviations,
- yet no premium emerges,
- because processors pay flat per-liter rates.
- Injecting that premium for traders raises quality when binding,
- but informed intermediaries capture it and farm-gate prices do not rise.
- Observability is necessary but not sufficient:
- absent downstream demand and intermediary rent capture both foreclose the market.
+ We study whether making milk quality visible and traceable creates a market for quality in Uganda’s dairy sector.
+ Increasing observability reduces adulteration and improves quality,
+ but no premium emerges.
+ In a follow-up experiment,
+ we introduce trader quality premiums.
+ This increases quality when binding,
+ yet informed intermediaries capture the gains and farm-gate prices do not rise.
+ Observability is necessary but insufficient:
+ without downstream demand for quality and pass-through by intermediaries,
+ incentives for quality upgrading remain weak.
 \end_layout
 
 \begin_layout Abstract
@@ -2599,7 +2599,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -3032,7 +3031,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -3640,7 +3638,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -4264,7 +4261,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -4858,7 +4854,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -7478,7 +7473,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -8066,7 +8060,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -8476,7 +8469,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -9181,7 +9173,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -9527,7 +9518,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -9902,7 +9892,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -10227,7 +10216,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -10616,7 +10604,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -10951,7 +10938,6 @@ hline
 \backslash
 end{tabular}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -11322,7 +11308,6 @@ hline
 end{tabular}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -11434,7 +11419,6 @@ begin{threeparttable}
 input{results/tab_attrition_correlates_farmer.tex}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -11543,7 +11527,6 @@ begin{threeparttable}
 \backslash
 input{results/tab_balance_farmer_analysis.tex}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -11655,7 +11638,6 @@ begin{threeparttable}
 input{results/tab_balance_trader.tex}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -11765,7 +11747,6 @@ begin{threeparttable}
 \backslash
 input{results/tab_balance_farmer_fu.tex}
 \end_layout
-
 
 \begin_layout Plain Layout
 
@@ -11879,7 +11860,6 @@ begin{threeparttable}
 input{results/tab_sec_sold.tex}
 \end_layout
 
-
 \begin_layout Plain Layout
 
 \backslash
@@ -11992,7 +11972,6 @@ begin{threeparttable}
 \backslash
 input{results/tab_robustness_contamination.tex}
 \end_layout
-
 
 \begin_layout Plain Layout
 
