@@ -621,7 +621,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-The emergence of quality premia is often hindered by difficulties in observing and verifying quality at the point of transaction.
+The emergence of quality premiums is often hindered by difficulties in observing and verifying quality at the point of transaction.
  When quality attributes are not directly visible and are costly to discover,
  buyers face a classic problem of asymmetric information 
 \begin_inset CommandInset citation
@@ -774,11 +774,11 @@ literal "false"
  and farmers rarely have access to test results.
  Without the ability to credibly observe and attribute quality at the farm level,
  the informational preconditions for quality-based pricing are simply absent,
- making it difficult to establish the kind of verification mechanism necessary for quality premia to emerge and sustain incentives along the chain.
+ making it difficult to establish the kind of verification mechanism necessary for quality premiums to emerge and sustain incentives along the chain.
 \end_layout
 
 \begin_layout Standard
-We use this setting to test whether strengthening quality observability can enable the emergence of quality premia in Uganda's dairy sector.
+We use this setting to test whether strengthening quality observability can enable the emergence of quality premiums in Uganda's dairy sector.
  We implement a cluster randomized controlled trial across four districts in the southwestern milk shed around Mbarara,
  randomly assigning 125 MCCs to receive milk analyzer equipment,
  digital record-keeping infrastructure,
@@ -830,7 +830,7 @@ The intervention substantially increased the visibility,
  generating large and consistent increases in actual testing of both incoming and outgoing milk;
  the probability that an MCC tests incoming deliveries rose by over 50 percentage points relative to the control group.
  Despite this operational uptake,
- the intervention did not affect prices or the emergence of quality premia at any stage of the chain:
+ the intervention did not affect prices or the emergence of quality premiums at any stage of the chain:
  farmer sales prices,
  the incidence of quality bonuses,
  and all pricing outcomes at the MCC level were uniformly unresponsive,
@@ -985,7 +985,7 @@ literal "false"
  Our study sharpens this literature by isolating the effect of observability from the effect of pricing:
  despite a large,
  credibly identified increase in testing intensity (the probability of testing incoming deliveries rising by over 50 percentage points),
- no quality premia materialized anywhere in the chain.
+ no quality premiums materialized anywhere in the chain.
  This result establishes that observability is necessary but not sufficient for quality markets to emerge,
  and that the downstream contractual infrastructure linking observable quality to price differentials constitutes an independently binding constraint.
  
@@ -8703,7 +8703,7 @@ literal "false"
 
 \end_inset
 
- document that even where downstream quality premia exist,
+ document that even where downstream quality premiums exist,
  they attenuate as they flow upstream through intermediation layers;
  our setting is the extreme case in which no premium exists at the processor-MCC interface,
  so pass-through is trivially zero regardless of measurement capacity.
