@@ -1138,6 +1138,19 @@ literal "false"
  show theoretically that the organization of value chains shapes the incentive to invest in quality at each stage.
  We contribute experimental evidence that even when price incentives are cleanly injected at the intermediary level,
  the structure of intermediation can block their transmission to the farmers whose behavior determines raw material quality at the source.
+ 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "hansman2020vertical"
+literal "false"
+
+\end_inset
+
+ show in Peruvian fishmeal exports that firms resolve this non-contractibility by vertically integrating their suppliers,
+ since ownership can realign the quantity-quality trade-off that pay-per-unit contracts leave distorted.
+ We study the market-preserving alternative,
+ making quality observable through measurement technology and injecting explicit premiums while leaving ownership and market relationships intact,
+ and find that observability alone disciplines adulteration but does not reproduce the quality upgrading that integration achieves.
 \end_layout
 
 \begin_layout Standard
