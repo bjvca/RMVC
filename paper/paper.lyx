@@ -1436,8 +1436,12 @@ This layered structure,
 \begin_layout Standard
 Milk quality remains a persistent challenge in Uganda's dairy sector.
  Media reports and anecdotal evidence from industry stakeholders point to widespread adulteration,
- particularly the addition of water to increase the volume of milk delivered,
- but systematic data on the prevalence of adulteration in Uganda are scarce.
+ most visibly the addition of water to increase delivered volume and,
+ less visibly,
+ the skimming of butterfat for separate sale as cream,
+ ghee,
+ or butter,
+ but systematic data on its prevalence in Uganda are scarce.
  Evidence from neighboring Kenya,
  where similar value chain structures prevail,
  suggests that 5 to 10 percent of milk samples at retail show signs of water addition,
@@ -1451,7 +1455,10 @@ literal "false"
 
 .
  Because traders in Uganda are paid per liter with no adjustment for composition,
- the incentive structure is similar.
+ the same incentives apply,
+ and both practices pay:
+ watering inflates the volume sold,
+ while skimming extracts the milk's most valuable component without reducing that volume.
  Adulterated milk reduces processing yields for butter,
  cheese,
  and powdered milk,
@@ -3758,6 +3765,10 @@ nolink "false"
  which is a component of SNF,
  shows no detectable change,
  consistent with the null finding for SNF.
+ The increase in butterfat is consistent with reduced skimming once fat content becomes measurable and verifiable,
+ though it may also reflect the reduction in added water,
+ which mechanically raises measured fat;
+ the two channels cannot be fully separated.
 \end_layout
 
 \begin_layout Standard
