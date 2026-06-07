@@ -1363,7 +1363,7 @@ Although dairy value chains in Uganda differ in their organizational form,
 Dairy farmers:
  At the upstream end of the chain are farmer households,
  who are the primary producers of milk.
- These farmers deliver milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
+ These farmers deliver raw milk daily to milk collection centers (MCCs) either personally or by relying on intermediaries such as small traders or transporters.
  Our data suggests that the majority of farmers typically have a motorbike and deliver the milk themselves,
  which is consistent with the organization of supply chains around cooperatives.
 \end_layout
@@ -1372,7 +1372,7 @@ Dairy farmers:
 Transporters and Traders:
  Transporters collect milk directly from farms and deliver it to MCCs for a fee,
  thus providing a service.
- Traders purchase milk from farmers with the intent to sell it at MCCs or to other traders for profit,
+ Traders purchase milk from farmers at the farm gate with the intent to sell it at MCCs or to other traders for profit,
  thus functioning as commercial intermediaries within the chain.
  In the follow-up study (Section 
 \begin_inset CommandInset ref
@@ -1405,7 +1405,7 @@ Milk Collection Centers:
 \end_layout
 
 \begin_layout Enumerate
-Large Traders:
+Bulk Traders:
  Once milk is chilled and bulked at MCCs,
  large traders transport it to processing facilities.
  This step often involves the use of specialized milk tankers to preserve quality during transit.
@@ -1414,7 +1414,7 @@ Large Traders:
 \begin_layout Enumerate
 Processors:
  Processors,
- concentrated in or around key towns such as Mbarara (Uganda’s dairy hub),
+ concentrated in or around key towns such as Mbarara,
  convert raw milk into value-added products with extended shelf lives,
  such as ultra-heat-treated (UHT) milk,
  powdered milk,
@@ -1482,10 +1482,6 @@ Pricing along the chain reinforces the low-quality equilibrium.
  A similar rigidity prevails downstream:
  processors typically announce fixed procurement prices for two-week periods,
  adjusting only in response to acute shortages or seasonal gluts.
- Notably,
- in interviews with the research team,
- processors indicate that they would be willing to pay premiums for higher-quality milk if composition could be credibly verified at the point of delivery,
- suggesting that the absence of differentiated pricing reflects verification constraints rather than a lack of downstream demand for quality.
  This structure severs the link between the quality of a specific delivery and the price paid for it,
  even when testing infrastructure is available at only one node of the chain.
 \end_layout
@@ -1496,7 +1492,7 @@ Quality of raw milk is difficult to observe without proper testing equipment.
  the lactometer test and the alcohol test.
  The lactometer test is a gravity based test that measures milk density using a floating hydrometer and is primarily employed to detect added water,
  since dilution lowers density,
- although readings are sensitive to temperature and cannot distinguish intentional adulteration from natural variation in fat or SNF.
+ although readings are sensitive to temperature.
  The alcohol test,
  typically using 68 to 75 percent ethanol,
  assesses protein stability as a proxy for freshness and acidity;
@@ -1553,33 +1549,12 @@ name "subsec:design"
 \end_layout
 
 \begin_layout Standard
-We use a simple cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
+We use a cluster-randomized controlled trial to test whether making quality observable and traceable at the MCC level improves quality outcomes and generates quality-based pricing along the chain.
  The unit of randomization is the catchment area,
  defined operationally as a cluster of one or more nearby or co-located MCCs together with the pool of farmers delivering milk to them at the time of the baseline census.
  Most catchments contain a single MCC,
  but in some trading centers two to four MCCs operate in the same location and draw from an overlapping pool of farmers;
- these MCCs were grouped into a single catchment and assigned jointly to avoid contamination.
- Because all farmers in a given catchment share exposure to the same treatment status,
- we cluster standard errors at the catchment level in all regressions.
- Of the 125 MCCs enrolled in the study,
- about half were randomly assigned to receive the quality measurement and digital monitoring system described in the next subsection,
- while the remaining MCCs served as controls.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The 124 MCCs surveyed at baseline map to 95 distinct catchments (randomization clusters);
- the 120 MCCs re-surveyed at endline map to 92 catchments.
- A minimum detectable effect analysis confirms that the grouping of co-located MCCs does not materially affect statistical power:
- with baseline controls,
- the MDE for MCC-level prices is approximately 21 UGX,
- well below the hypothesized 30 UGX effect,
- and Fisher randomization inference does not depend on asymptotic cluster counts.
-\end_layout
-
-\end_inset
-
-
+ these MCCs were grouped into a single cluster.
 \end_layout
 
 \begin_layout Standard
@@ -1594,7 +1569,7 @@ The design enables us to estimate treatment effects at multiple levels of the va
  and production practices.
  Finally,
  through supervised milk sample collection and testing at endline,
- we obtain objective measures of milk quality that are independent of self-reported survey data.
+ we obtain objective measures of milk quality at the transaction level.
 \end_layout
 
 \begin_layout Subsection
@@ -1602,21 +1577,10 @@ Intervention
 \end_layout
 
 \begin_layout Standard
-In response to the challenge of unobservable milk quality in the Ugandan dairy value chain,
- we designed a socio-technical innovation bundle targeting Milk Collection Centers (MCCs).
+We designed a socio-technical innovation bundle targeting Milk Collection Centers (MCCs).
  This bundle aims to enhance transparency,
  improve record-keeping,
  and empower both MCC managers and farmers by making milk quality measurable and visible.
- For brevity we refer to the full bundle as the
-\emph on
-measurement system
-\emph default
- throughout the text;
- we reserve the term
-\emph on
-analyzer
-\emph default
- for the device itself.
  The bundle,
  developed after extensive consultations with stakeholders and implemented together with the DDA,
  consists of three key components:
@@ -1646,16 +1610,6 @@ Generally milk was tested per (25 or 50 liter) milk can.
 
  By providing immediate feedback,
  the milk analyzers help ensure that quality standards are met and maintained.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-More information on the milk analyzer can be obtained from the manufacturer's website (https://www.essae.com/milk-fat-analyzer-machine.php).
- 
-\end_layout
-
-\end_inset
-
  Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1668,6 +1622,16 @@ nolink "false"
 \end_inset
 
  shows a milk analyzer during piloting.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+More information on the milk analyzer can be obtained from the manufacturer's website (https://www.essae.com/milk-fat-analyzer-machine.php).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1717,7 +1681,8 @@ name "fig:Milk-analyzer"
 \begin_layout Standard
 The milk analyzers were delivered with clear Standard Operating Procedures (SOPs),
  distributed as laminated reference sheets to remain usable in the day-to-day MCC working environment.
- Two separate training sessions were organized.
+ In addition,
+ two separate training sessions were organized.
  The first targeted MCC owners and was held as a half-day workshop in a centralized location,
  with the focus mostly on generating buy-in by pointing out the benefits of measuring and tracking milk quality and on persuading owners to enforce the new measurement and record-keeping system in their MCCs.
  The second training was geared toward MCC managers and was delivered individually at each MCC,
@@ -1772,8 +1737,7 @@ Farmers are typically paid on the 1st and the 15th of the month.
  prices and quantities in real time.
  This digital system enhances efficiency and transparency,
  providing both MCC managers and farmers with reliable records that integrate milk quality metrics.
- The android app can be downloaded from the Google Play Store;
- a screenshot of the application can be found in Figure 
+ A screenshot of the application can be found in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Application"
@@ -1785,6 +1749,17 @@ nolink "false"
 \end_inset
 
 .
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The android app can be downloaded from the Google Play Store:
+ https://play.google.com/store/apps/details?id=com.symatechlabs.ifpri&hl=en
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1851,7 +1826,9 @@ Milk collection centers were provided with Samsung Galaxy Tab A7 Android tablet 
 
 \begin_layout Standard
 Together,
- these three components form an integrated strategy to make milk quality observable and actionable,
+ these three components form an integrated strategy to make milk quality observable,
+ traceable,
+ and actionable,
  improving information flows throughout the dairy value chain.
 \end_layout
 
@@ -1894,19 +1871,28 @@ The primary outcome for these calculations was the price of milk,
  and Kirihura.
  The study began with a comprehensive census of all milk collection centers (MCCs) in the region,
  from which we sampled 125 MCCs.
- About half of these were randomly assigned to receive the quality measurement and digital monitoring system,
- while the other half served as controls.
+ As noted above,
+ co-located MCCs were assigned to the same treatment group,
+ yielding 95 distinct randomization clusters.
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-As noted above,
- co-located MCCs were assigned to the same treatment group,
- yielding 95 distinct randomization clusters from the 124 MCCs surveyed at baseline (and 92 clusters from the 120 MCCs re-surveyed at endline).
+At the design stage,
+ when power calculations were performed and sample size was determined,
+ we did not anticipate the fact that several MCCs share the same location.
+ The implied reduction in sample size due to the clustering raises concerns about statistical power.
+ A minimum detectable effect analysis confirms that the grouping of co-located MCCs does not materially affect statistical power:
+ with baseline controls,
+ the MDE for MCC-level prices is approximately 21 UGX,
+ well below the hypothesized 30 UGX effect,
+ and Fisher randomization inference does not depend on asymptotic cluster counts.
 \end_layout
 
 \end_inset
 
+ About half of these clusters were randomly assigned to receive the quality measurement and digital monitoring system,
+ while the other half served as controls.
  In each of the 125 MCCs,
  we randomly selected 20 farmers who deliver milk to the center for baseline and endline surveys.
 \end_layout
@@ -1970,7 +1956,7 @@ nolink "false"
  illustrates the randomization in three of the four study districts.
  The left panel displays the spatial distribution of MCCs and their treatment assignment.
  The right panel shows the corresponding treatment assignment for farmers connected to those MCCs,
- reflecting the cluster-randomized design in which all farmers delivering to MCCs in a treated catchment (which may span more than one co-located MCC) are assigned to treatment.
+ reflecting the cluster-randomized design in which all farmers delivering to MCCs in a treated catchment (which may span more than one co-located MCC) are assigned to the same treatment.
 \end_layout
 
 \begin_layout Standard
@@ -2017,7 +2003,9 @@ At the MCC level,
 
 \begin_layout Standard
 At the farmer level,
- primary outcomes capture changes in production practices and market returns.
+ primary outcomes capture changes in production practices,
+ quality assessment,
+ and market returns.
  These include an index of improved dairy management practices (oversowing,
  legume pastures,
  controlled grazing,
@@ -2026,7 +2014,6 @@ At the farmer level,
  whether the farmer's buyer uses a milk analyzer for quality testing,
  the quantity-weighted average sales price received,
  and whether the farmer receives a quality bonus from any buyer.
- We combine these four outcomes into an Anderson index as a summary measure.
 \end_layout
 
 \begin_layout Standard
