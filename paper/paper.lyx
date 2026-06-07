@@ -769,7 +769,8 @@ literal "false"
 \begin_layout Standard
 We use this setting to test whether strengthening quality observability can enable the emergence of quality premiums in Uganda's dairy sector.
  We implement a cluster randomized controlled trial across four districts in the southwestern milk shed around Mbarara,
- randomly assigning 125 MCCs to receive milk analyzer equipment,
+ randomly assigning 95 catchment areas (clusters of one or more co-located MCCs,
+ 125 in total) to receive milk analyzer equipment,
  digital record-keeping infrastructure,
  and farmer-facing quality information.
 \begin_inset Foot
@@ -2076,7 +2077,7 @@ We estimate intent-to-treat (ITT) effects using ordinary least squares with Anal
 \begin_inset Formula $m$
 \end_inset
 
- was assigned to receive the quality measurement and monitoring system.
+ lies in a catchment assigned to receive the quality measurement and monitoring system.
  The MCC-level estimating equation is:
 \end_layout
 
@@ -2151,7 +2152,7 @@ where
 \begin_inset Formula $i$
 \end_inset
 
-'s MCC was assigned to treatment and 
+'s catchment was assigned to treatment and 
 \begin_inset Formula $\varepsilon_{i,m}$
 \end_inset
 
