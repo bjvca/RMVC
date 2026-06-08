@@ -2041,7 +2041,10 @@ This exercise posed logistical challenges,
 
 \end_inset
 
-
+ Secondary outcome families,
+ reported in the appendix,
+ comprise treatment-uptake indicators at both the farmer level and the MCC level,
+ and farmer-level sales-channel choices.
 \end_layout
 
 \begin_layout Standard
@@ -2059,11 +2062,7 @@ It is important to note that the compositional quality measures obtained through
 \end_layout
 
 \begin_layout Standard
-Secondary outcome families,
- reported in the appendix,
- comprise treatment-uptake indicators at both the farmer level and the MCC level,
- and farmer-level sales-channel choices.
- Outcomes are generally organized in outcome families.
+Outcomes are generally organized in outcome families.
  To summarize effects across multiple outcomes within a family,
  we construct Anderson indices 
 \begin_inset CommandInset citation
@@ -2078,9 +2077,7 @@ literal "false"
  so that outcomes carrying redundant (highly correlated) information receive less weight.
  Collapsing a family of related outcomes into a single summary measure is a widely used strategy for mitigating the multiple hypothesis testing problem,
  as it reduces the number of tests while increasing statistical power.
- It complements,
- rather than replaces,
- the explicit control of the familywise error rate (FWER) that we apply in the estimation and inference section (Section 
+ It complements the explicit control of the familywise error rate (FWER) that we describe below in the estimation and inference section (Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Estimation-and-inference"
@@ -2231,6 +2228,12 @@ where
 ,
  weighted by the quantity delivered.
  No baseline control is available for these outcomes as supervised quality testing was conducted only at endline.
+ Also here,
+ we allow 
+\begin_inset Formula $\varepsilon_{j,m}$
+\end_inset
+
+ to be correlated within catchment areas.
 \end_layout
 
 \begin_layout Standard
