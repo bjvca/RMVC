@@ -8153,7 +8153,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8557,11 +8557,7 @@ Three mechanisms could generate this pattern.
  loss aversion:
  traders who earned the bonus in Stage 1 may perceive the higher threshold as a loss,
  motivating costly adjustment to restore the payment.
- The approximately one-week delay in quality response (Figure
-\begin_inset space ~
-\end_inset
-
-
+ The approximately one-week delay in quality response (Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:daily-fat"
