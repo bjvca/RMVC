@@ -3271,8 +3271,7 @@ We also documented several compliance challenges.
 
 \begin_layout Standard
 The resulting first-stage relationship between random assignment and actual analyzer availability is 0.37:
- assignment to treatment increases the probability of having a functioning analyzer by 37 percentage points,
- from 24 percent in the control group to 61 percent in the treatment group.
+ assignment to treatment raises the probability of having a functioning analyzer from 24 percent in the control group to 61 percent in the treatment group.
  The ITT estimates should therefore be interpreted as the effect of being assigned to receive the system,
  averaging over substantial non-compliance in both directions,
  and are likely attenuated relative to the effect of actual analyzer use.
