@@ -2274,8 +2274,10 @@ literal "false"
 \end_inset
 
  using the same permutation distribution,
- controlling the familywise error rate while exploiting the correlation structure across outcomes.
- CR2-based p-values and Anderson-Sharp q-values are reported in the appendix.
+ controlling the familywise error rate while exploiting the correlation structure across outcomes;
+ our main results on milk quality and testing uptake remain significant under this correction.
+ Significance stars in all tables are based on the randomization-inference p-values,
+ with CR2 cluster-robust standard errors reported in parentheses for effect-size interpretation.
 \end_layout
 
 \begin_layout Subsection
@@ -4344,7 +4346,7 @@ ref{tab:Primary-outcomes-farmer-LATE}.
  Significance levels:
  + p < 0.10,
  * p < 0.05,
- ** p < 0.01 (Benjamini-Krieger-Yekutieli sharpened q-values).
+ ** p < 0.01 (significance stars based on randomization-inference p-values).
 \end_layout
 
 \begin_layout Plain Layout
