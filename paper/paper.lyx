@@ -2245,12 +2245,14 @@ literal "false"
 
 \end_inset
 
- clustered at the treatment cluster level,
- for effect size interpretation.
+ clustered at the catchment level,
+ which we report for effect-size interpretation and as confidence intervals rather than as our primary test;
+ hypothesis testing relies on the randomization inference described below,
+ whose cluster-level permutation already embeds the design's dependence structure.
  Because randomization is at the catchment level but sampling is uniform within MCC (twenty farmers per MCC),
  catchments containing more than one MCC contribute proportionally more observations to the farmer-level regressions.
  This is a deliberate feature of the design rather than a source of bias:
- inference correctly accounts for the design through catchment-level clustering,
+ both our randomization inference and the clustered standard errors account for the design,
  and the resulting estimand is a probability-proportional-to-size population-average treatment effect over MCCs and farmers,
  which is the policy-relevant quantity given that the intervention operates at the MCC level.
 \end_layout
