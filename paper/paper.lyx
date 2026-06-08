@@ -8631,40 +8631,30 @@ The negative effect on farm-gate prices is another striking finding and warrants
 \end_layout
 
 \begin_layout Standard
-The two experiments,
- viewed together,
- illuminate the structure of the model's central parameter:
- the share of quality that is priced.
- The main experiment operates in a world where quality is not priced at all.
- Measurement technology enables enforcement (the credible threat of detection disciplines the lower tail of the quality distribution) but does not activate pricing,
- because processors purchase from MCCs at uniform per-liter rates with no quality premium to transmit.
- The follow-up experiment externally imposes quality-contingent payments,
- moving the system into a regime where pricing is active.
- This pairing reveals that measurement technology is necessary (it enables both enforcement and the possibility of pricing) but not sufficient (it does not generate quality-differentiated payments on its own).
- The follow-up further demonstrates that even when the price channel activates,
- the resulting surplus accrues to intermediaries rather than to farmers.
- This is the paper's core theoretical contribution:
- information resolves asymmetry at a single node,
- but absent institutional infrastructure linking quality measurement to payments at every node,
- the welfare gains from pricing remain captured within the intermediation layer.
+Mapped onto the model,
+ the two experiments trace its central parameter,
+ the share of quality that is priced:
+ the main experiment holds it at zero,
+ and the follow-up raises it above zero by fiat.
+ The contrast isolates the paper's theoretical point.
+ Information resolves the asymmetry at the node where the technology is deployed,
+ but unless quality measurement is tied to payment at every node of the chain,
+ putting a price on quality merely relocates the surplus to whichever intermediary holds the information rather than delivering it to the producer whose effort created the quality.
 \end_layout
 
 \begin_layout Standard
 For policy,
- the results suggest that quality measurement infrastructure has clear value for enforcement,
- even absent quality-differentiated pricing.
- The 24 percent adoption rate of milk analyzers among control MCCs by endline confirms revealed-preference demand for measurement as a compliance tool.
- However,
- enforcement alone disciplines the bottom of the quality distribution without rewarding the top.
- Moving beyond this partial equilibrium requires coordinated interventions that address measurement,
- downstream demand for quality,
- and the contractual infrastructure linking individual performance to rewards.
- In Uganda's dairy chain,
- the processor-MCC interface is where quality signals die:
- processors pay uniform per-liter prices,
- providing no demand signal that MCCs could transmit to farmers.
- Until this specific institutional gap is addressed,
- measurement technology will enable enforcement but not quality-differentiated markets.
+ measurement infrastructure has clear standalone value:
+ it enforces a quality floor,
+ and the 24 percent adoption rate among control MCCs by endline reveals genuine demand for it as a compliance tool.
+ But a floor is not a market.
+ Rewarding quality at the top requires coordinated action on margins a single technology cannot reach:
+ downstream demand for quality and contractual infrastructure linking individual performance to pay at each node.
+ In Uganda's dairy chain that gap is concrete,
+ at the processor-MCC interface,
+ where uniform per-liter pricing leaves MCCs no quality signal to pass to farmers.
+ Until it is closed,
+ measurement will enforce quality but not price it.
 \end_layout
 
 \begin_layout Section*
