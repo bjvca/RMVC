@@ -2251,9 +2251,7 @@ literal "false"
  whose cluster-level permutation already embeds the design's dependence structure.
  Because randomization is at the catchment level but sampling is uniform within MCC (twenty farmers per MCC),
  catchments containing more than one MCC contribute proportionally more observations to the farmer-level regressions.
- This is a deliberate feature of the design rather than a source of bias:
- both our randomization inference and the clustered standard errors account for the design,
- and the resulting estimand is a probability-proportional-to-size population-average treatment effect over MCCs and farmers,
+ The resulting estimand is a probability-proportional-to-size population-average treatment effect over MCCs and farmers,
  which is the policy-relevant quantity given that the intervention operates at the MCC level.
 \end_layout
 
@@ -2262,8 +2260,6 @@ Statistical inference is based on Fisher Randomization Inference.
  Using the OLS coefficient as the test statistic,
  we evaluate its significance against a permutation distribution generated from 5,000 reassignments of treatment at the MCC catchment level,
  maintaining the number of treated clusters.
- Because the permutation scheme mirrors the actual randomization,
- the resulting p-values are exact and do not depend on asymptotic approximations or assumptions about within-cluster correlation or the number of clusters.
  To account for multiple testing across outcomes within a family,
  we apply Westfall-Young stepdown adjustments 
 \begin_inset CommandInset citation
