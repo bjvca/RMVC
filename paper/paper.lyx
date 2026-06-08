@@ -8643,6 +8643,89 @@ Mapped onto the model,
 \end_layout
 
 \begin_layout Standard
+These findings connect to,
+ and sharpen,
+ several active literatures.
+ On the informational preconditions for quality markets,
+ our result that large gains in measurement raise quality through enforcement while leaving prices untouched echoes 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "rao2023got"
+literal "false"
+
+\end_inset
+
+,
+ where aggregate quality incentives in Indian dairy cooperatives improve cleanliness without quality-based farmer pay,
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "xu2024farm"
+literal "false"
+
+\end_inset
+
+,
+ where digital traceability in Kenyan dairy curbs adulteration through monitoring rather than new price signals.
+ By randomizing observability and pricing separately,
+ we isolate what these studies bundle:
+ observability is necessary but not sufficient,
+ and the absence of downstream demand,
+ as in the near-zero return to quality that 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bold2022market"
+literal "false"
+
+\end_inset
+
+ document for Ugandan maize,
+ is the binding constraint.
+ On pass-through,
+ our finding that an exogenous trader premium is captured rather than transmitted aligns with 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bergquist2020competition"
+literal "false"
+
+\end_inset
+
+,
+ who show that intermediaries retain the bulk of surplus,
+ and with 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "macchiavello2026quality"
+literal "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "bai2025quality"
+literal "false"
+
+\end_inset
+
+,
+ where quality premiums attenuate upstream under intermediary buyer power.
+ It contrasts with 
+\begin_inset CommandInset citation
+LatexCommand citet
+key "casaburi2022individual"
+literal "false"
+
+\end_inset
+
+,
+ where an unconditional trader subsidy in Sierra Leone cocoa passes through to farmers under competition:
+ the divergence points to the information structure of the incentive,
+ since a private,
+ quality-contingent bonus paid on readings that farmers cannot observe creates no competitive pressure to share the rent.
+\end_layout
+
+\begin_layout Standard
 For policy,
  measurement infrastructure has clear standalone value:
  it enforces a quality floor,
