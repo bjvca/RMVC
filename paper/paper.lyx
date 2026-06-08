@@ -2045,10 +2045,35 @@ This exercise posed logistical challenges,
 \end_layout
 
 \begin_layout Standard
+It is important to note that the compositional quality measures obtained through supervised testing at MCCs are farmer-level outcomes,
+ but they need not correspond to the same individuals who appear in the farmer survey.
+ The universe of suppliers observed in the testing data reflects the set of farmers who delivered milk on the specific day of supervised measurement,
+ which may include new entrants who began supplying after analyzers were introduced,
+ as well as exclude farmers who had previously supplied but stopped delivering.
+ Conversely,
+ the survey sample includes baseline suppliers regardless of whether they continued or ceased deliveries by endline.
+ Each data source therefore captures a different margin of adjustment.
+ The MCC testing data reveal changes in the composition and quality of actual incoming supply,
+ incorporating potential selection effects induced by the technology.
+ The survey-based outcomes capture how the intervention affected the behaviors and perceptions of a fixed cohort of farmers.
+\end_layout
+
+\begin_layout Standard
 Secondary outcome families,
  reported in the appendix,
  comprise treatment-uptake indicators at both the farmer level and the MCC level,
  and farmer-level sales-channel choices.
+ Outcomes are generally organized in outcome families;
+ to summarize effects across multiple outcomes within a family,
+ we construct Anderson indices 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "anderson2008multiple"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2210,16 +2235,6 @@ literal "false"
  inference correctly accounts for the design through catchment-level clustering,
  and the resulting estimand is a probability-proportional-to-size population-average treatment effect over MCCs and farmers,
  which is the policy-relevant quantity given that the intervention operates at the MCC level.
- To summarize effects across multiple outcomes within a family,
- we construct Anderson indices 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "anderson2008multiple"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
@@ -3310,23 +3325,6 @@ tuple "list"
  measured by the corrected lactometer reading (CLR),
  a temperature-adjusted density measure reflecting compositional integrity.
  These variables are also combined into an index of overall quality.
-\end_layout
-
-\begin_layout Standard
-It is important to note that the compositional quality measures obtained through supervised testing at MCCs are farmer-level outcomes,
- but they need not correspond to the same individuals who appear in the farmer survey.
- The universe of suppliers observed in the testing data reflects the set of farmers who delivered milk on the specific day of supervised measurement,
- which may include new entrants who began supplying after analyzers were introduced,
- as well as exclude farmers who had previously supplied but stopped delivering.
- Conversely,
- the survey sample includes baseline suppliers regardless of whether they continued or ceased deliveries by endline.
- Each data source therefore captures a different margin of adjustment.
- The MCC testing data reveal changes in the composition and quality of actual incoming supply,
- incorporating potential selection effects induced by the technology.
- The survey-based outcomes capture how the intervention affected the behaviors and perceptions of a fixed cohort of farmers.
- Both perspectives are essential for identifying the mechanisms at play:
- selection into supplying higher-quality milk is itself part of the theory of change,
- and observing it requires precisely this dual use of administrative-style testing data and survey follow-up.
 \end_layout
 
 \begin_layout Standard
