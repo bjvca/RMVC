@@ -3761,7 +3761,6 @@ nolink "false"
 \end_inset
 
  reports the results obtained from the analysis of supervised testing data,
- in which enumerators visited each of 120 endline MCCs over one full day and tested every incoming milk delivery with a milk analyzer,
  yielding 2,518 individual milk samples in total (the unit of observation in this table).
  Average butterfat content of milk samples delivered to control MCCs was 3.88 percent,
  rising by an estimated 0.11 percentage points (to approximately 4.0 percent) in MCCs equipped with analyzers.
@@ -3771,10 +3770,6 @@ nolink "false"
  which is a component of SNF,
  shows no detectable change,
  consistent with the null finding for SNF.
- The increase in butterfat is consistent with reduced skimming once fat content becomes measurable and verifiable,
- though it may also reflect the reduction in added water,
- which mechanically raises measured fat;
- the two channels cannot be fully separated.
 \end_layout
 
 \begin_layout Standard
@@ -3821,15 +3816,6 @@ tuple "list"
  roughly half the control rate.
  The treatment effect thus appears concentrated in the right tail of the adulteration distribution:
  the intervention disciplines the most egregious adulterators without necessarily changing behavior among suppliers who were already delivering clean milk.
- We return to the interpretation of this pattern in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:model"
-nolink "false"
-
-\end_inset
-
- where we develop a framework that distinguishes enforcement from price-based channels.
 \end_layout
 
 \begin_layout Standard
@@ -3890,44 +3876,13 @@ nolink "false"
 
  for completeness,
  are generally less precisely estimated than the intention-to-treat (ITT) effects.
- The instrument only shifts the probability that an MCC consistently uses the analyzer,
- and the first stage is mechanically weaker than the underlying ITT assignment.
- As a result,
- the 2SLS estimator inflates sampling variability because it attributes all treatment effects to the subset of MCCs that actually complied with analyzer use.
- Moreover,
- if assignment affects outcomes partly through channels other than actual machine use (such as expectations,
- monitoring incentives,
- or changes in manager behavior),
- then the instrument captures only a fraction of the relevant variation,
- further reducing precision.
- Together,
- these factors imply wider confidence intervals for the LATE relative to the more precise ITT estimates.
- 
-\end_layout
-
-\begin_layout Standard
-Consistent with this,
- the LATE point estimates in Appendix Table 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:Primary-outcomes-milk-quality-LATE"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- are roughly two to three times larger than the corresponding ITT coefficients,
+ The LATE point estimates are roughly two to three times larger than the corresponding ITT coefficients,
  reflecting the rescaling by the compliance rate.
  The composite quality index remains statistically significant at the 5 percent level under 2SLS,
  and the individual estimates for fat content and density (CLR) are marginally significant,
- while added water,
- SNF,
- and protein lose statistical significance despite retaining the expected signs.
+ while added water loses statistical significance despite retaining the expected signs.
  The qualitative conclusions are thus unchanged:
- actual analyzer use improves milk composition,
- but the effects are estimated with considerably less precision.
+ actual analyzer use improves milk composition.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4012,7 +3967,7 @@ The second outcome captures whether buyers actively checked milk quality at the 
 \begin_layout Standard
 The third outcome is the price received for milk sold.
  Specifically,
- we record the average price per liter obtained in the farmer’s most recent sale during the past seven days,
+ we record the price per liter obtained in the farmer’s most recent sale during the past seven days,
  inclusive of any quality premiums.
  Farmers reported prices by buyer category,
  and we construct a weighted average across categories using transaction volumes as weights.
@@ -4022,9 +3977,14 @@ The third outcome is the price received for milk sold.
  These outcomes capture whether quality improvements translate into tangible financial benefits for farmers.
  Note that the price and quality-bonus outcomes are defined only for farmers who sold milk in the seven days preceding the survey;
  the observation count for these outcomes therefore falls below the full analysis sample of 2,058 (to roughly 1,250-1,340,
- depending on the outcome) because farmers who did not sell during that window cannot report a transaction price or quality bonus.
- Because the act of selling is itself potentially affected by the intervention,
- Appendix Table
+ depending on the outcome).
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Because the act of selling is itself potentially affected by the intervention,
+ Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:sec_sold"
@@ -4039,6 +3999,11 @@ reference "tab:sec_sold"
  conditional on having sold,
  however,
  average prices received are statistically indistinguishable between treated and control farmers in either season.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4452,9 +4417,6 @@ status collapsed
 \begin_layout Plain Layout
 Although these effects are generally small and imprecise,
  they are consistent with qualitative reports from MCC managers who stated that analyzers were typically used only in suspected cases of adulteration rather than on every single delivery.
- Our outcome measure captures self-reported testing across all potential offtakers,
- not just MCCs,
- and therefore may not fully reflect this selective-use pattern.
  Even so,
  selective but credible testing can still shift behavior:
  the possibility of being tested may be sufficient to induce farmers to reduce bad practices or upgrade milk quality.
@@ -4481,9 +4443,6 @@ We find no evidence that the intervention affected the prices farmers receive fo
 While no individual outcome reaches conventional significance,
  the composite index of primary farmer outcomes is marginally significant (p < 0.10),
  driven primarily by the increase in buyer quality testing.
- The pricing components of the index,
- however,
- remain firmly null.
  Results for the LATE analysis in Appendix Table
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4522,7 +4481,6 @@ literal "false"
 \end_inset
 
 .
- This index provides a single measure of how the intervention influenced the overall development of a market for quality at the MCC level.
 \end_layout
 
 \begin_layout Standard
@@ -5060,11 +5018,7 @@ Secondary outcomes
 \end_layout
 
 \begin_layout Standard
-We examine several pre-registered secondary outcomes capturing treatment uptake and compliance at both the MCC and farmer level (Appendix Tables
-\begin_inset space ~
-\end_inset
-
-
+We examine several pre-registered secondary outcomes capturing treatment uptake and compliance at both the MCC and farmer level (Appendix Tables 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Secondary-outcomes-farmer-uptake"
@@ -5072,11 +5026,7 @@ nolink "false"
 
 \end_inset
 
- and
-\begin_inset space ~
-\end_inset
-
-
+ and 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Secondary-outcomes-MCC-uptake"
@@ -5097,13 +5047,14 @@ nolink "false"
 
 \begin_layout Standard
 At the farmer level,
- we find no evidence that the intervention affected secondary uptake outcomes,
+ we find no evidence that the intervention affected secondary outcomes,
  including seed usage or understanding of compositional quality.
  This is consistent with the intervention design:
  the treatment targeted technology adoption at collection centers,
  not farmer education.
  Improved analyzer use at MCCs did not spill over into farmer knowledge or practice,
- reinforcing the interpretation that the intervention operated through the enforcement channel at the MCC level rather than through changes in farmer behavior.
+ reinforcing the interpretation that the intervention operated through the enforcement channel at the MCC level,
+ without affecting the incentive structure that would lead to changes in farmer behaviour.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5127,7 +5078,7 @@ nolink "false"
  raising the possibility that informal transfers between nearby MCCs contaminated the control group and attenuated our estimates.
  To assess the quantitative importance of this concern,
  we re-estimate the main specifications on the subsample of 106 MCCs (and their 1,814 associated farmers) that remains after dropping these 14 contaminated control MCCs.
- Full results are reported in Appendix Table
+ Full results are reported in Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:robustness_contamination"
@@ -5182,11 +5133,7 @@ This section presents a simple analytical framework to rationalize the findings 
  The main experiment results are consistent with the enforcement channel operating in isolation:
  quality improves but prices do not differentiate.
  We then present results from a follow-up experiment that tests the price channel directly by introducing quality-based premiums at the trader-MCC interface,
- bypassing the processor-MCC pass-through that would be required for the model's
-\begin_inset Formula $\alpha$
-\end_inset
-
- to emerge endogenously.
+ bypassing the processor-MCC pass-through that would be required for a market to emerge.
 \end_layout
 
 \begin_layout Subsection
@@ -6233,7 +6180,7 @@ The enforcement channel explains the main experiment results:
  however,
  also generates predictions about what would happen if quality-based pricing were activated,
  i.e.,
- if
+ if 
 \begin_inset Formula $\alpha$
 \end_inset
 
@@ -6334,7 +6281,7 @@ When
 \begin_inset Formula $q_{min}$
 \end_inset
 
- is raised (as when quality thresholds are tightened or when the dry season reduces the natural quality of available milk),
+ is raised (as when quality thresholds are tightened or when the dry season reduces the natural quality distribution of available milk),
  a larger fraction of suppliers falls near or below the threshold.
  The acceptance probability 
 \begin_inset Formula $\pi_{i}$
@@ -6408,11 +6355,7 @@ Summary of Testable Predictions
 \end_layout
 
 \begin_layout Standard
-Table
-\begin_inset space ~
-\end_inset
-
-
+Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Model-Predictions"
@@ -6440,17 +6383,17 @@ tuple "list"
 
  does not activate.
  The remaining predictions concern the follow-up experiment.
- We emphasize that the follow-up does not literally activate
+ We emphasize that the follow-up does not literally activate 
 \begin_inset Formula $\alpha$
 \end_inset
 
  as defined in the model,
- since
+ since 
 \begin_inset Formula $\alpha$
 \end_inset
 
  is the per-unit premium that the processor pays the MCC for verifiable quality;
- inducing
+ inducing 
 \begin_inset Formula $\alpha>0$
 \end_inset
 
@@ -6459,12 +6402,12 @@ tuple "list"
  Instead,
  the follow-up injects a quality-contingent premium one node downstream,
  paying traders directly for the verified compositional quality of milk they deliver to the MCC.
- In the notation of the model this corresponds to setting the product
+ In the notation of the model this corresponds to setting the product 
 \begin_inset Formula $\lambda\alpha$
 \end_inset
 
  to a positive value at the trader-MCC interface by external transfer rather than letting it emerge from processor pricing.
- The resulting test is therefore not of whether
+ The resulting test is therefore not of whether 
 \begin_inset Formula $\alpha>0$
 \end_inset
 
@@ -6771,7 +6714,7 @@ tuple "list"
 \begin_layout Standard
 The design exploits the high-frequency,
  repeated-transaction structure of dairy supply chains.
- Unlike staple crops where farmers typically sell the bulk of their harvest in a single post-harvest transaction 
+ Unlike staple crops where farmers often sell the bulk of their harvest in a single or only a few post-harvest transactions 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "van2015inter"
@@ -6878,7 +6821,7 @@ The experiment proceeds in two stages.
 In Stage 2 (beginning November 15,
  2025),
  the fat threshold is raised without prior announcement to 3.9 percent while the SNF threshold remains unchanged.
- This unannounced increase shifts the regime:
+ This increase shifts the regime:
  a substantial share of deliveries now falls near or below the new threshold,
  activating the extensive margin.
  The model predicts that quality-improving effort should strengthen in this regime,
@@ -6966,8 +6909,7 @@ The first source is the daily submission data recorded by the milk analyzer at e
  and the quality bonus earned (UGX).
  These readings are produced by the milk analyzer and submitted by MCC managers through the digital monitoring system.
  While this avoids the recall bias inherent in survey-based quality measures,
- the data depend on the manager correctly testing each delivery and entering the results,
- introducing the possibility of selective testing or data entry errors.
+ the data depend on the manager correctly testing each delivery and entering the results.
 \end_layout
 
 \begin_layout Standard
@@ -7050,8 +6992,6 @@ where
 \end_inset
 
  delivers.
- Because treatment was randomized within MCC,
- the MCC fixed effects absorb all time-invariant MCC-level confounders and increase precision.
  Standard errors are clustered at the trader level.
  We estimate this specification over three windows:
  the full post-treatment period (November 3 onward),
@@ -7071,13 +7011,17 @@ For the trader endline,
 
 \begin_layout Standard
 As was the case in the main experiment,
- our primary inferential framework is Fisher randomization inference,
+ our primary inferential framework is Fisher Randomization Inference,
  computed from 5,000 permutations of the treatment indicator within MCC blocks.
  To match the fixed-effects specification,
  outcomes are demeaned at the MCC level before computing the RI distribution.
  To account for multiple testing across outcomes within a family,
  we report Westfall-Young stepdown-adjusted p-values,
  which control the familywise error rate while exploiting the correlation structure across outcomes.
+\end_layout
+
+\begin_layout Subsection
+Attrition and Balance
 \end_layout
 
 \begin_layout Standard
@@ -7087,8 +7031,12 @@ Attrition is minimal.
  99 of the 100 targeted traders were interviewed,
  and 422 of the approximately 500 targeted farmers completed the questionnaire (197 in treated trader catchments and 225 in control).
  The shortfall in the farmer sample reflects the difficulty of locating smallholder farmers who sell through mobile traders rather than differential attrition by treatment status.
- To verify that randomization produced comparable samples,
- Appendix Table
+ 
+\end_layout
+
+\begin_layout Standard
+To verify that randomization produced comparable samples,
+ Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:balance_trader"
@@ -7096,7 +7044,7 @@ reference "tab:balance_trader"
 \end_inset
 
  reports balance for the 99 traders on pre-treatment quality and quantity outcomes and on plausibly pre-determined trader characteristics,
- and Appendix Table
+ and Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:balance_farmer_fu"
