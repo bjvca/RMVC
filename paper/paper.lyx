@@ -2784,7 +2784,7 @@ tuple "list"
 
  and shows that the average household counts nearly ten members and produces about 70 liters of milk per day during the rainy season (implying they keep about 10 liters for own consumption).
  Roughly 79 percent of farmers sell most of their milk to an MCC,
- three-quarters report using only steel containers when transacting,
+ three-quarters report using only steel containers when transacting (rather than less hygienic plastic jerry cans),
  and a similarly high share are members of a dairy cooperative.
 \end_layout
 
@@ -3220,7 +3220,7 @@ By the time of the endline survey,
  Also at the farmer level,
  attrition is unrelated to treatment assignment.
  To examine whether the analysis sample remains representative of the baseline frame,
- Appendix Table
+ Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:attrition_correlates_farmer"
@@ -3234,7 +3234,7 @@ reference "tab:attrition_correlates_farmer"
  Two characteristics differ at the 10 percent level (head age and herd size),
  with attrited farmers being slightly younger and operating larger herds on average.
  As a complementary check,
- Appendix Table
+ Appendix Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:balance_farmer_analysis"
