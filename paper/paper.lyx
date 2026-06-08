@@ -8530,8 +8530,8 @@ name "sec:discussion"
 \end_layout
 
 \begin_layout Standard
-This paper asked whether making quality observable and traceable can give rise to a market for quality in a smallholder value chain where one is otherwise absent.
- We studied the question in two linked field experiments in Uganda's dairy sector.
+This paper asked whether making quality observable and traceable can give rise to a market for quality in smallholder value chain where quality discovery is costly and aggregation happens early in the chain.
+ We studied the question in two linked field experiments in the context of Uganda's dairy sector.
  The first,
  a cluster-randomized trial across 95 catchment areas,
  introduced milk analyzers and digital record-keeping at collection centers;
@@ -8608,7 +8608,7 @@ These findings have implications for incentive design,
 \end_layout
 
 \begin_layout Standard
-The negative effect on farm-gate prices is the most striking welfare finding and warrants careful interpretation.
+The negative effect on farm-gate prices is another striking finding and warrants careful interpretation.
  Three mechanisms may contribute.
  First,
  a composition effect:
@@ -8647,68 +8647,6 @@ The two experiments,
  information resolves asymmetry at a single node,
  but absent institutional infrastructure linking quality measurement to payments at every node,
  the welfare gains from pricing remain captured within the intermediation layer.
-\end_layout
-
-\begin_layout Standard
-The enforcement result fits the recurring pattern documented in the experimental literature reviewed in Section
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:introduction"
-
-\end_inset
-
-:
- quality measurement disciplines the lower tail of the distribution without activating continuous quality pricing.
- The model rationalises this pattern as the absence of the price channel,
- leaving only the enforcement channel operative.
-\begin_inset CommandInset citation
-LatexCommand citet
-key "macchiavello2026quality"
-literal "false"
-
-\end_inset
-
- document that even where downstream quality premiums exist,
- they attenuate as they flow upstream through intermediation layers;
- our setting is the extreme case in which no premium exists at the processor-MCC interface,
- so pass-through is trivially zero regardless of measurement capacity.
- The negative pass-through finding in the follow-up sharpens the contrast with
-\begin_inset CommandInset citation
-LatexCommand citet
-key "casaburi2022individual"
-literal "false"
-
-\end_inset
-
- introduced in Section
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:introduction"
-
-\end_inset
-
-:
- a quality-contingent bonus paid privately to traders is not subject to the competitive discipline of an unconditional subsidy,
- because neither the bonus itself nor the underlying quality readings are observed by upstream suppliers.
- The information structure of the incentive,
- not just the structure of intermediation,
- governs whether rents are transmitted upstream.
-\end_layout
-
-\begin_layout Standard
-Several limitations warrant discussion.
- The follow-up experiment was conducted over 31 days in a single district,
- limiting inference about longer-run dynamics and external validity.
- Traders self-selected into the follow-up,
- so the estimated effects reflect willingness to participate as well as treatment response.
- Treated and control traders operated in the same catchment areas,
- so quality-sourcing spillovers (treated traders bidding away high-quality milk from control traders) may inflate treatment effects.
- The follow-up lacked a true baseline period,
- precluding difference-in-differences estimation;
- identification relies on random assignment.
- Finally,
- the divergence between the daily administrative panel and the cross-sectional endline survey highlights that survey-based measures may lack the frequency and precision needed to detect effects visible in high-frequency data,
- particularly when behavioral responses operate over days rather than months.
 \end_layout
 
 \begin_layout Standard
