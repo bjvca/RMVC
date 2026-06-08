@@ -3291,7 +3291,7 @@ The presence of functioning analyzers at some control MCCs also raises a potenti
  the control group is effectively partially treated,
  which would attenuate the estimated treatment effect.
  We return to this concern after presenting the main results,
- where re-estimating on the clean subsample yields qualitatively similar and slightly sharper findings;
+ where re-estimating on the clean subsample (dropping the control MCCs with an analyzer on site) yields qualitatively similar and slightly sharper findings;
  the accompanying LATE estimates,
  which instrument actual analyzer use with random assignment,
  provide the natural complement.
