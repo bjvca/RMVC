@@ -1761,11 +1761,19 @@ nolink "false"
 
 .
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-The android app can be downloaded from the Google Play Store:
- https://play.google.com/store/apps/details?id=com.symatechlabs.ifpri&hl=en
+The android app can be downloaded from the 
+\begin_inset CommandInset href
+LatexCommand href
+name "Google Play Store"
+target "https://play.google.com/store/apps/details?id=com.symatechlabs.ifpri&hl=en"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -9236,12 +9244,7 @@ This paper asked whether making quality observable and traceable can give rise t
 \end_layout
 
 \begin_layout Standard
-Two of these findings merit closer interpretation:
- the dominance of the threshold over the gradient in the follow-up experiment,
- and the broader relationship between the two experiments.
- The third,
- the negative effect on farm-gate prices,
- we interpreted in Section 
+In addition to the negative effect on farm-gate prices which we discussed in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:exp2-farmer-outcomes"
@@ -9249,10 +9252,12 @@ nolink "false"
 
 \end_inset
 
-,
- where exploratory heterogeneity analysis pointed to trader bargaining power,
+ (where exploratory heterogeneity analysis pointed to trader bargaining power,
  rather than changes in supplier composition,
- as the most plausible channel.
+ as the most plausible channel),
+ two additional findings merit closer interpretation:
+ the dominance of the threshold over the gradient in the follow-up experiment,
+ and the broader relationship between the two experiments.
 \end_layout
 
 \begin_layout Standard
