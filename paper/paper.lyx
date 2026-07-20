@@ -3994,6 +3994,21 @@ Sexpr{sprintf("%.0f",
 \end_inset
 
  percent,
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Testing intensity is measured conditional on a delivery being recorded in the digital system:
+ deliveries that were never logged are not observed.
+ If record-keeping itself decayed alongside testing,
+ the true testing rate declined by more than these figures suggest.
+ Monthly record volumes remain fairly stable throughout the experimental period,
+ so there is no indication of a wholesale collapse in logging,
+ but partial under-recording cannot be ruled out.
+\end_layout
+
+\end_inset
+
  and the share of tested deliveries with any added water had risen to 
 \begin_inset ERT
 status open
