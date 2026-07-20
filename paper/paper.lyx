@@ -8522,6 +8522,13 @@ end{center}
 
 \begin_layout Subsubsection
 Farmer-Level Outcomes
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:exp2-farmer-outcomes"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -9229,10 +9236,23 @@ This paper asked whether making quality observable and traceable can give rise t
 \end_layout
 
 \begin_layout Standard
-Three of these findings merit closer interpretation:
+Two of these findings merit closer interpretation:
  the dominance of the threshold over the gradient in the follow-up experiment,
- the negative effect on farm-gate prices,
  and the broader relationship between the two experiments.
+ The third,
+ the negative effect on farm-gate prices,
+ we interpreted in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:exp2-farmer-outcomes"
+nolink "false"
+
+\end_inset
+
+,
+ where exploratory heterogeneity analysis pointed to trader bargaining power,
+ rather than changes in supplier composition,
+ as the most plausible channel.
 \end_layout
 
 \begin_layout Standard
