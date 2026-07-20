@@ -389,6 +389,16 @@ res_farmers_fu <- readRDS(paste0(path,
 \end_layout
 
 \begin_layout Plain Layout
+res_price_het_fu <- readRDS(paste0(path,
+ "/results/res_price_het_fu.rds"))
+\end_layout
+
+\begin_layout Plain Layout
+res_app_decomp <- readRDS(paste0(path,
+ "/results/res_app_decomp.rds"))
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -853,7 +863,7 @@ The pattern of results (large increases in testing,
 To test whether activating the pricing channel can shift the chain to a higher equilibrium,
  we conduct a follow-up experiment at 20 MCCs where the measurement infrastructure is already operational,
  randomly assigning quality premiums to traders delivering milk to these MCCs.
- Treated traders receive UGX 100 per liter for each 0.1 percentage point of butterfat and SNF above East African standards,
+ Treated traders receive UGX 10 per liter for each 0.1 percentage point of butterfat and SNF above East African standards,
  paid daily via mobile money.
  The experiment proceeds in two stages that jointly allow us to separate the contribution of rewards from the contribution of stricter enforcement to quality upgrading.
  In Stage 1,
@@ -3886,6 +3896,400 @@ nolink "false"
 \end_layout
 
 \begin_layout Subsubsection
+Within-Supplier Discipline or Supplier Turnover?
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:discipline-turnover"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reduction in serious adulteration could arise through two distinct processes:
+ the same suppliers behaving differently once their milk is tested,
+ or the replacement of adulterating suppliers by cleaner ones.
+ The digital record-keeping system provides transaction-level evidence on this question.
+ At treated MCCs,
+ the system records 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{format(unname(res_app_decomp$meta["n_sub"]), big.mark=",")}
+\end_layout
+
+\end_inset
+
+ deliveries by 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{format(unname(res_app_decomp$meta["n_sup"]), big.mark=",")}
+\end_layout
+
+\end_inset
+
+ registered suppliers at 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{unname(res_app_decomp$meta["n_mcc"])}
+\end_layout
+
+\end_inset
+
+ MCCs between installation in the second half of 2023 and the December 2024 endline.
+ Because the system operates only where an analyzer was installed,
+ these data describe dynamics within the treated arm and cannot reproduce the experimental contrast;
+ we therefore use them descriptively,
+ comparing each MCC's first 90 days of operation (October 2023 to February 2024) with the seasonally aligned 90 days preceding the endline.
+\end_layout
+
+\begin_layout Standard
+Three patterns stand out.
+ First,
+ discipline operated immediately.
+ In the first 90 days after installation,
+ when 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.0f", 100*res_app_decomp$diag["test_share_early"])}
+\end_layout
+
+\end_inset
+
+ percent of recorded deliveries were tested with the analyzer,
+ only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$reg["aw_pos","early_mean"])}
+\end_layout
+
+\end_inset
+
+ percent of tested deliveries showed any added water and 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$reg["aw_gt5","early_mean"])}
+\end_layout
+
+\end_inset
+
+ percent showed serious adulteration,
+ well below the extensive-margin rates later measured among control deliveries in the supervised endline samples.
+ Second,
+ measured adulteration drifts upward as testing intensity erodes.
+ By the 90 days preceding the endline,
+ the share of deliveries tested had fallen to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.0f", 100*res_app_decomp$diag["test_share_late"])}
+\end_layout
+
+\end_inset
+
+ percent,
+ and the share of tested deliveries with any added water had risen to 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*(res_app_decomp$reg["aw_pos","early_mean"]+res_app_decomp$reg["aw_pos","total_coef"]))}
+\end_layout
+
+\end_inset
+
+ percent,
+ although serious adulteration (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*(res_app_decomp$reg["aw_gt5","early_mean"]+res_app_decomp$reg["aw_gt5","total_coef"]))}
+\end_layout
+
+\end_inset
+
+ percent) remained below the 11 percent control endline rate.
+ Part of this drift is likely a testing-selection artifact:
+ once testing is no longer universal,
+ managers plausibly target suspicious deliveries,
+ which mechanically raises measured adulteration among the tested.
+ Third,
+ and central to the question at hand,
+ these dynamics play out within suppliers,
+ not through turnover.
+ Supplier turnover is substantial:
+ only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$comp["retention"])}
+\end_layout
+
+\end_inset
+
+ percent of suppliers observed in the first window still deliver in the final window,
+ and new suppliers account for 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$comp["entrant_sub_share"])}
+\end_layout
+
+\end_inset
+
+ percent of late-window deliveries.
+ Yet the change in the any-added-water share is virtually identical whether we compare all deliveries with MCC fixed effects (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$reg["aw_pos","total_coef"])}
+\end_layout
+
+\end_inset
+
+ percentage points,
+ standard error 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$reg["aw_pos","total_se"])}
+\end_layout
+
+\end_inset
+
+) or hold supplier composition fixed with supplier fixed effects (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$reg["aw_pos","within_coef"])}
+\end_layout
+
+\end_inset
+
+ points,
+ standard error 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_app_decomp$reg["aw_pos","within_se"])}
+\end_layout
+
+\end_inset
+
+);
+ butterfat estimates are similarly indistinguishable (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_app_decomp$reg["Fat","total_coef"])}$
+\end_layout
+
+\end_inset
+
+ versus 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_app_decomp$reg["Fat","within_coef"])}$
+\end_layout
+
+\end_inset
+
+ percentage points).
+ If supplier replacement drove quality dynamics,
+ these estimates would diverge.
+ Consistent with this,
+ suppliers who stop delivering are only marginally more adulterated than those who stay (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{fmt(res_app_decomp$comp["aw_exiter_early"])}
+\end_layout
+
+\end_inset
+
+ versus 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{fmt(res_app_decomp$comp["aw_stayer_early"])}
+\end_layout
+
+\end_inset
+
+ percent added water in the early window),
+ and entrants deliver cleaner milk than incumbent stayers in the late window (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{fmt(res_app_decomp$comp["aw_entrant_late"])}
+\end_layout
+
+\end_inset
+
+ versus 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{fmt(res_app_decomp$comp["aw_stayer_late"])}
+\end_layout
+
+\end_inset
+
+ percent).
+\end_layout
+
+\begin_layout Standard
+The pre-specified secondary switching outcomes from the farmer endline survey corroborate the absence of a composition channel on the experimental margin.
+ Treatment does not affect whether a baseline farmer remains connected to the MCC (coefficient 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_farmers_sec_switching[1,3])}$
+\end_layout
+
+\end_inset
+
+,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_farmers_sec_switching[1,5])}
+\end_layout
+
+\end_inset
+
+),
+ nor whether the farmer still supplies the same MCC in the wet (p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_farmers_sec_switching[2,5])}
+\end_layout
+
+\end_inset
+
+) or dry (p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_farmers_sec_switching[3,5])}
+\end_layout
+
+\end_inset
+
+) season,
+ and an Anderson index over the three switching outcomes is likewise unaffected (p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_farmers_sec_switching[4,5])}
+\end_layout
+
+\end_inset
+
+).
+ Taken together,
+ the evidence indicates that quality measurement works by disciplining continuing suppliers rather than by screening out adulterators,
+ and that the strength of this discipline tracks the intensity of testing:
+ deterrence was strongest when testing was near-universal and weakened as testing became less frequent.
+ The gains from measurement technology thus appear to depend on sustained use rather than one-off installation.
+ These app-based comparisons are descriptive,
+ cover only the treated arm,
+ record adulteration only for tested deliveries,
+ and identify suppliers from registered accounts,
+ so re-registration would overstate turnover;
+ they complement rather than substitute for the experimental estimates.
+\end_layout
+
+\begin_layout Subsubsection
 Farmer Level
 \begin_inset CommandInset label
 LatexCommand label
@@ -6765,7 +7169,7 @@ name "subsec:exp2-intervention"
 \end_layout
 
 \begin_layout Standard
-Treated traders receive a quality premium of UGX 100 per liter for each 0.1 percentage point of fat and of UGX 100 per liter for each 0.1 percentage point of SNF content above the East African Community standards (which are 3.3 percent fat and 8.5 percent SNF).
+Treated traders receive a quality premium of UGX 10 per liter for each 0.1 percentage point of fat and of UGX 10 per liter for each 0.1 percentage point of SNF content above the East African Community standards (which are 3.3 percent fat and 8.5 percent SNF).
  The digital infrastructure from the main experiment is essential to this intervention:
  it provides the verifiable,
  timestamped quality records on which bonus calculations are based.
@@ -8625,7 +9029,244 @@ The negative effect on farm-gate prices is another striking finding and warrants
  Treated traders screening for quality would then source disproportionately from these low-competition pockets,
  lowering the average price observed among their suppliers even without any change in the price offered to a given farmer.
  These channels are not mutually exclusive,
- and the short duration of the follow-up experiment limits our ability to assess their relative importance.
+ and the short duration of the follow-up experiment limits our ability to assess their relative importance conclusively.
+ Exploratory heterogeneity analysis,
+ not part of the pre-analysis plan and based on farmer attributes measured at the follow-up endline,
+ nevertheless offers some traction.
+\end_layout
+
+\begin_layout Standard
+If the composition channel were driving the result,
+ conditioning on the compositional variable should attenuate it.
+ It does not:
+ the price effect is similar for farmers selling at or below the median daily quantity (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["Sold <= median","coef"])}$
+\end_layout
+
+\end_inset
+
+ UGX per liter,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_price_het_fu["Sold <= median","p"])}
+\end_layout
+
+\end_inset
+
+) and for those selling more (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["Sold > median","coef"])}$
+\end_layout
+
+\end_inset
+
+,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_price_het_fu["Sold > median","p"])}
+\end_layout
+
+\end_inset
+
+),
+ and the interaction between treatment and an above-median indicator is small and statistically insignificant (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["Interaction: treat x high_sold","coef"])}$
+\end_layout
+
+\end_inset
+
+,
+ standard error 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{fmt(res_price_het_fu["Interaction: treat x high_sold","se"])}
+\end_layout
+
+\end_inset
+
+);
+ splitting by milk production instead of sales yields the same picture.
+ A more direct test uses the reported duration of the farmer-trader relationship:
+ only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_price_het_fu["Outcome: new_supplier","ctrl_mean"])}
+\end_layout
+
+\end_inset
+
+ percent of control-group farmers started selling to their trader within the month before the interview,
+ roughly the experimental window,
+ and treatment does not increase this share (coefficient 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["Outcome: new_supplier","coef"])}$
+\end_layout
+
+\end_inset
+
+,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_price_het_fu["Outcome: new_supplier","p"])}
+\end_layout
+
+\end_inset
+
+),
+ indicating little recruitment of new suppliers at the farmer margin.
+ The outside-options channel is harder to test because we lack farm-level distance measures,
+ but the price effect is not confined to one area:
+ it appears in both Kazo (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["District: Kazo","coef"])}$
+\end_layout
+
+\end_inset
+
+,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_price_het_fu["District: Kazo","p"])}
+\end_layout
+
+\end_inset
+
+) and Kiruhura (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["District: Kiruhura","coef"])}$
+\end_layout
+
+\end_inset
+
+,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_price_het_fu["District: Kiruhura","p"])}
+\end_layout
+
+\end_inset
+
+).
+ Farmer reports corroborate the absence of pass-through:
+ only 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.1f", 100*res_price_het_fu["Outcome: bett_prc","ctrl_mean"])}
+\end_layout
+
+\end_inset
+
+ percent of control-group farmers say their trader paid a better price for better-quality milk in the week before the interview,
+ and treatment does not change this (coefficient 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+Sexpr{fmt(res_price_het_fu["Outcome: bett_prc","coef"])}$
+\end_layout
+
+\end_inset
+
+,
+ p = 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+Sexpr{sprintf("%.3f", res_price_het_fu["Outcome: bett_prc","p"])}
+\end_layout
+
+\end_inset
+
+).
+ A price reduction that is broad-based across volume groups and districts,
+ combined with minimal supplier turnover,
+ is most consistent with the bargaining channel:
+ traders retain the premium and,
+ if anything,
+ use their strengthened position to lower the prices they pay.
+ These results are suggestive rather than conclusive,
+ given modest subsample sizes and moderators measured after treatment.
  The finding underscores that quality-contingent incentives introduced at one node of the chain can redistribute surplus in ways that disadvantage upstream actors,
  and deserves further investigation in longer-run settings.
 \end_layout

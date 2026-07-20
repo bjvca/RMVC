@@ -39,6 +39,12 @@ source("03_prep_followup.R")
 cat("\n--- Step 4: Running Experiment 2 analysis ---\n")
 source("04_analysis_followup.R")
 
+cat("\n--- Step 4b: Exploratory heterogeneity, Experiment 2 farm-gate prices ---\n")
+source("09_heterogeneity_price_fu.R")
+
+cat("\n--- Step 4c: App-based decomposition, Experiment 1 quality dynamics ---\n")
+source("10_decomposition_app.R")
+
 cat("\n--- Step 5: Randomization inference (5,000 permutations) ---\n")
 source("06_randomization_inference.R")
 
